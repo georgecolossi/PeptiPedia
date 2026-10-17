@@ -2,6 +2,23 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
+/* Fallback crítico de segurança de interface caso Tailwind CDN falhe ou atrase */
+.hidden {
+  display: none !important;
+}
+
+/* Modais e Overlays com garantia de isolamento */
+#disclaimer-modal.hidden,
+#detail-modal.hidden,
+#protocol-export-modal.hidden,
+#comparator-modal.hidden,
+#evidence-ladder-modal.hidden,
+#citation-drawer.hidden,
+.modal.hidden {
+  display: none !important;
+  pointer-events: none !important;
+}
+
 :root {
   --primary-glow: rgba(6, 182, 212, 0.15);
   --accent-glow: rgba(56, 189, 248, 0.2);

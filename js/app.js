@@ -5,6 +5,72 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // ----------------------------------------------------
+  // Camada de Resiliência: Armazenamento e Ícones Seguros
+  // ----------------------------------------------------
+  function safeGetStorage(key, defaultValue = null) {
+    try {
+      if (typeof window === 'undefined' || !window.localStorage) return defaultValue;
+      const item = window.localStorage.getItem(key);
+      if (item === null || item === undefined) return defaultValue;
+      return JSON.parse(item);
+    } catch (err) {
+      console.warn(`[PeptiPedia Storage] Erro ao ler '${key}', usando fallback:`, err);
+      return defaultValue;
+    }
+  }
+
+  function safeSetStorage(key, value) {
+    try {
+      if (typeof window === 'undefined' || !window.localStorage) return false;
+      window.localStorage.setItem(key, JSON.stringify(value));
+      return true;
+    } catch (err) {
+      console.warn(`[PeptiPedia Storage] Erro ao gravar '${key}':`, err);
+      return false;
+    }
+  }
+
+  function safeGetStorageRaw(key, defaultValue = '') {
+    try {
+      if (typeof window === 'undefined' || !window.localStorage) return defaultValue;
+      const item = window.localStorage.getItem(key);
+      return item !== null ? item : defaultValue;
+    } catch (err) {
+      console.warn(`[PeptiPedia Storage] Erro ao ler texto '${key}':`, err);
+      return defaultValue;
+    }
+  }
+
+  function safeSetStorageRaw(key, value) {
+    try {
+      if (typeof window === 'undefined' || !window.localStorage) return false;
+      window.localStorage.setItem(key, String(value));
+      return true;
+    } catch (err) {
+      console.warn(`[PeptiPedia Storage] Erro ao gravar texto '${key}':`, err);
+      return false;
+    }
+  }
+
+  function safeCreateIcons() {
+    try {
+      if (typeof window !== 'undefined' && window.lucide && typeof window.lucide.createIcons === 'function') {
+        window.lucide.createIcons();
+      }
+    } catch (err) {
+      console.warn('[PeptiPedia Icons] Falha tolerada ao renderizar ícones Lucide:', err);
+    }
+  }
+
+  function safeInit(moduleName, fn) {
+    try {
+      fn();
+    } catch (err) {
+      console.error(`[PeptiPedia Init] Erro isolado na inicialização de ${moduleName}:`, err);
+    }
+  }
+
+  // ----------------------------------------------------
   // Constantes de Configuração de Protocolos
   // ----------------------------------------------------
 
@@ -47,9 +113,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Função auxiliar de normalização de itens do planejador (evita campos 'undefined')
   function normalizePlannerItem(item) {
-    const orig = PEPTIDES_DATABASE.find(p => p.id === item.id);
-    const proto = orig?.researchProtocols || {};
-    const recon = orig?.reconstitution || {};
+    if (!item || typeof item !== 'object') return null;
+    const db = (typeof PEPTIDES_DATABASE !== 'undefined' && Array.isArray(PEPTIDES_DATABASE)) ? PEPTIDES_DATABASE : [];
+    const orig = db.find(p => p.id === item.id) || {};
+    const proto = orig.researchProtocols || {};
+    const recon = orig.reconstitution || {};
 
     let defaultTiming = "Manhã em jejum (ao acordar)";
     if (proto.timing?.toLowerCase().includes('dormir') || proto.timing?.toLowerCase().includes('deitar') || proto.timing?.toLowerCase().includes('noite')) {
@@ -89,8 +157,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   }
 
-  // Estado da Aplicação
-  const rawSavedStack = JSON.parse(localStorage.getItem('peptipedia_custom_stack') || '[]');
+  // Estado da Aplicação com Recuperação Segura
+  const rawFavorites = safeGetStorage('peptipedia_favorites', []);
+  const rawSavedStack = safeGetStorage('peptipedia_custom_stack', []);
+  const validStack = Array.isArray(rawSavedStack) ? rawSavedStack.map(normalizePlannerItem).filter(Boolean) : [];
+
   const state = {
     searchQuery: '',
     selectedCategory: 'all',
@@ -102,8 +173,8 @@ document.addEventListener('DOMContentLoaded', () => {
     studySearchQuery: '',
     selectedStudyPeptide: 'all',
     glossarySearchQuery: '',
-    favorites: JSON.parse(localStorage.getItem('peptipedia_favorites') || '[]'),
-    customStack: rawSavedStack.map(normalizePlannerItem),
+    favorites: Array.isArray(rawFavorites) ? rawFavorites : [],
+    customStack: validStack,
     selectedChemicalType: 'all',
     selectedEvidenceGrade: 'all',
     filterHumanOnly: false,
@@ -169,28 +240,28 @@ document.addEventListener('DOMContentLoaded', () => {
     closeEvidenceLadderBtn: document.getElementById('close-evidence-ladder-btn')
   };
 
-  // Inicialização
-  initTheme();
-  updateHeaderCounters();
-  renderCategories();
-  renderTargetFilter();
-  renderPeptides();
-  renderStacks();
-  renderStudiesFilterDropdown();
-  renderStudies();
-  renderGlossary();
-  initCalculatorUI();
-  initStabilityClockUI();
-  updatePlannerUI();
-  setupEventListeners();
-  handleUrlHash();
-  checkFirstVisitDisclaimer();
+  // Inicialização Robusta e Isolada (Falha em submódulo não impede catálogo)
+  safeInit('Tema', initTheme);
+  safeInit('Configuração de Eventos Globais', setupEventListeners);
+  safeInit('Contadores do Cabeçalho', updateHeaderCounters);
+  safeInit('Categorias', renderCategories);
+  safeInit('Filtro de Alvos', renderTargetFilter);
+  safeInit('Catálogo de Peptídeos', renderPeptides);
+  safeInit('Combinações Farmacológicas', renderStacks);
+  safeInit('Dropdown de Estudos', renderStudiesFilterDropdown);
+  safeInit('Dossiê de Estudos', renderStudies);
+  safeInit('Glossário Científico', renderGlossary);
+  safeInit('Calculadora Farmacotécnica', initCalculatorUI);
+  safeInit('Relógio de Estabilidade', initStabilityClockUI);
+  safeInit('Planejador de Protocolos', updatePlannerUI);
+  safeInit('Sincronização de URL Hash', handleUrlHash);
+  safeInit('Aviso Regulatório Obrigatório', checkFirstVisitDisclaimer);
 
   // ----------------------------------------------------
   // Verificação de Aviso Obrigatório na Entrada
   // ----------------------------------------------------
   function checkFirstVisitDisclaimer() {
-    const accepted = localStorage.getItem('peptipedia_disclaimer_accepted');
+    const accepted = safeGetStorageRaw('peptipedia_disclaimer_accepted');
     if (!accepted && elements.disclaimerModal) {
       setTimeout(() => {
         elements.disclaimerModal.classList.remove('hidden');
@@ -204,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Tema Escuro Padrão Permanente
   // ----------------------------------------------------
   function initTheme() {
-    localStorage.removeItem('peptipedia_theme');
+    safeRemoveStorage('peptipedia_theme');
     document.documentElement.classList.add('dark');
     document.documentElement.classList.remove('light');
   }
@@ -383,7 +454,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </button>
         </div>
       `;
-      lucide.createIcons();
+      safeCreateIcons();
       document.getElementById('reset-filters-btn')?.addEventListener('click', resetAllFilters);
       return;
     }
@@ -514,8 +585,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     elements.cardsGrid.innerHTML = cardsHtml;
-    lucide.createIcons();
     attachCardActionListeners();
+    safeCreateIcons();
   }
 
   function getStatusBadgeHtml(type, text) {
@@ -586,7 +657,7 @@ document.addEventListener('DOMContentLoaded', () => {
       state.favorites.push(peptideId);
       showToast('Salvo nos seus favoritos!');
     }
-    localStorage.setItem('peptipedia_favorites', JSON.stringify(state.favorites));
+    safeSetStorage('peptipedia_favorites', state.favorites);
     renderPeptides();
     updateFavoritesToggleBtn();
   }
@@ -679,7 +750,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     elements.citationDrawer.classList.remove('hidden');
-    lucide.createIcons();
+    safeCreateIcons();
     document.body.classList.add('overflow-hidden');
   }
 
@@ -717,7 +788,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!elements.comparatorModal || !elements.comparatorContent) return;
     renderComparatorMatrix();
     elements.comparatorModal.classList.remove('hidden');
-    lucide.createIcons();
+    safeCreateIcons();
     document.body.classList.add('overflow-hidden');
   }
 
@@ -739,7 +810,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <p class="text-xs text-slate-400 mt-1 max-w-sm mx-auto">Navegue pelo catálogo e clique no botão <strong>Comparar</strong> nos cards dos compostos (até 4 compostos simultâneos).</p>
         </div>
       `;
-      lucide.createIcons();
+      safeCreateIcons();
       return;
     }
 
@@ -834,7 +905,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderComparatorMatrix();
       });
     });
-    lucide.createIcons();
+    safeCreateIcons();
   }
 
   // ----------------------------------------------------
@@ -1117,7 +1188,7 @@ document.addEventListener('DOMContentLoaded', () => {
     elements.detailModal.classList.remove('hidden');
     elements.detailModal.classList.add('flex');
     document.body.classList.add('overflow-hidden');
-    lucide.createIcons();
+    safeCreateIcons();
 
     // Event listeners inside modal
     document.getElementById('modal-close-bottom-btn')?.addEventListener('click', closePeptideModal);
@@ -1198,7 +1269,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function saveCustomStack() {
-    localStorage.setItem('peptipedia_custom_stack', JSON.stringify(state.customStack));
+    safeSetStorage('peptipedia_custom_stack', state.customStack);
   }
 
   function updatePlannerUI() {
@@ -1229,7 +1300,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
       `;
-      lucide.createIcons();
+      safeCreateIcons();
       document.getElementById('planner-empty-explore-btn')?.addEventListener('click', () => {
         closePlannerDrawer();
         switchTab('catalog');
@@ -1359,7 +1430,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `;
 
-    lucide.createIcons();
+    safeCreateIcons();
 
     // Sincronização em tempo real de inputs e selects
     elements.plannerList.querySelectorAll('.planner-input, .planner-select').forEach(input => {
@@ -1618,7 +1689,7 @@ document.addEventListener('DOMContentLoaded', () => {
     elements.protocolExportModal.classList.remove('hidden');
     elements.protocolExportModal.classList.add('flex');
     document.body.classList.add('overflow-hidden');
-    lucide.createIcons();
+    safeCreateIcons();
 
     document.getElementById('print-protocol-now-btn')?.addEventListener('click', () => {
       document.body.classList.remove('overflow-hidden');
@@ -1777,7 +1848,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <p class="text-sm font-semibold text-slate-200">Nenhum estudo clínico encontrado com os filtros atuais</p>
         </div>
       `;
-      lucide.createIcons();
+      safeCreateIcons();
       return;
     }
 
@@ -1836,7 +1907,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `).join('');
 
-    lucide.createIcons();
+    safeCreateIcons();
 
     elements.studiesContainer.querySelectorAll('.open-pep-from-study-btn').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -1956,7 +2027,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
     }).join('');
 
-    lucide.createIcons();
+    safeCreateIcons();
 
     elements.stacksContainer.querySelectorAll('.open-pep-link').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -2472,7 +2543,7 @@ document.addEventListener('DOMContentLoaded', () => {
     toast.className = 'bg-slate-900 border border-cyan-500/50 text-white text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-xl flex items-center gap-2 transform translate-y-2 opacity-0 transition-all duration-300 pointer-events-auto';
     toast.innerHTML = `<i data-lucide="check-circle" class="w-4 h-4 text-cyan-400"></i><span>${message}</span>`;
     elements.toastContainer.appendChild(toast);
-    lucide.createIcons();
+    safeCreateIcons();
 
     setTimeout(() => {
       toast.classList.remove('translate-y-2', 'opacity-0');
@@ -2561,7 +2632,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Modal Escada de Evidência
     elements.openEvidenceLadderBtn?.addEventListener('click', () => {
       elements.evidenceLadderModal?.classList.remove('hidden');
-      lucide.createIcons();
+      safeCreateIcons();
     });
     elements.closeEvidenceLadderBtn?.addEventListener('click', () => {
       elements.evidenceLadderModal?.classList.add('hidden');
@@ -2622,7 +2693,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const closeDisclaimerModal = () => {
-      localStorage.setItem('peptipedia_disclaimer_accepted', 'true');
+      safeSetStorageRaw('peptipedia_disclaimer_accepted', 'true');
       elements.disclaimerModal?.classList.add('hidden');
       elements.disclaimerModal?.classList.remove('flex');
       document.body.classList.remove('overflow-hidden');

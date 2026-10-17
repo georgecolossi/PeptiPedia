@@ -54,7 +54,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "2°C a 8°C antes do uso; após aberto, estável por 30 dias em temperatura ambiente até 30°C ou sob refrigeração",
       "storageUnmixed": "2°C a 8°C ao abrigo da luz",
       "handlingNotes": "Caneta pré-carregada pronta. Não congelar.",
-      "warnings": "Descartar a caneta após 30 dias da primeira utilização."
+      "warnings": "Descartar a caneta após 30 dias da primeira utilização.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -86,7 +88,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "0.6 mg a 3.0 mg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "16 semanas",
+      "defaultCycleWeeks": 16,
+      "timing": "Mesmo horário diariamente",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Agonista de GLP-1 de administração diária com ampla documentação clínica e segurança cardiovascular comprovada no ensaio"
+    }
   },
   {
     "id": "exenatide",
@@ -137,7 +151,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Uso imediato após suspensão das microesferas de Bydureon",
       "storageUnmixed": "2°C a 8°C ao abrigo da luz",
       "handlingNotes": "Para a forma semanal em microesferas de PLGA, misturar suavemente sem agitação brusca.",
-      "warnings": "Formulação de microesferas requer agulha específica (23G) e aplicação imediata."
+      "warnings": "Formulação de microesferas requer agulha específica (23G) e aplicação imediata.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -168,7 +184,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "5 mcg a 10 mcg (diário) ou 2 mg (semanal)",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "2x ao dia ou 1x por semana",
+      "defaultFrequency": "2x ao dia ou 1x por semana",
+      "cycleLength": "12 semanas",
+      "defaultCycleWeeks": 12,
+      "timing": "Antes das principais refeições",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Primeiro mimético de incretina aprovado para uso clínico no mundo."
+    }
   },
   {
     "id": "pramlintide",
@@ -219,7 +247,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Refrigerado 2°C a 8°C; após aberto, estável até 30 dias em temperatura ambiente até 30°C",
       "storageUnmixed": "2°C a 8°C ao abrigo da luz",
       "handlingNotes": "Nunca misturar na mesma seringa com insulina; administrar em locais anatômicos distintos.",
-      "warnings": "pH ácido incompatível com misturas de insulina."
+      "warnings": "pH ácido incompatível com misturas de insulina.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -250,7 +280,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "15 mcg a 120 mcg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "2x a 3x ao dia",
+      "defaultFrequency": "2x a 3x ao dia",
+      "cycleLength": "12 semanas",
+      "defaultCycleWeeks": 12,
+      "timing": "Imediatamente antes das refeições",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Análogo da amilina que regula a homeostase de glicose pós-prandial sem formação de placas amiloides."
+    }
   },
   {
     "id": "teduglutide",
@@ -301,7 +343,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Uso imediato; pode ser mantido a até 25°C por no máximo 3 horas após reconstituição",
       "storageUnmixed": "2°C a 25°C (não congelar)",
       "handlingNotes": "Adicionar 0.5 mL de WFI lentamente. Deixar em repouso por 30 segundos e rolar suavemente.",
-      "warnings": "Não agitar vigorosamente. Descartar após 3 horas."
+      "warnings": "Não agitar vigorosamente. Descartar após 3 horas.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -331,7 +375,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "0.05 mg/kg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "24 semanas",
+      "defaultCycleWeeks": 24,
+      "timing": "Manhã em jejum",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Agonista do receptor de GLP-2 com potente ação trófica sobre o epitélio do intestino delgado."
+    }
   },
   {
     "id": "setmelanotide",
@@ -382,7 +438,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "2°C a 8°C refrigerado; estável por 30 dias em temperatura ambiente até 25°C após primeira punção",
       "storageUnmixed": "2°C a 8°C ao abrigo da luz",
       "handlingNotes": "Frasco comercial pronto para aspiração com seringa de insulina calibrada.",
-      "warnings": "Não congelar."
+      "warnings": "Não congelar.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -412,7 +470,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "Início em 1 mg SC 1x/dia pela manhã por 2 semanas; titular para 2 mg SC 1x/dia se tolerado (máx",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Conforme prescrição médica",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Peptídeo cíclico agonista de MC4R para obesidades hipotalâmicas raras."
+    }
   },
   {
     "id": "octreotide",
@@ -464,7 +534,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Sandostatin LAR deve ser administrado imediatamente após suspensão",
       "storageUnmixed": "2°C a 8°C ao abrigo da luz",
       "handlingNotes": "Para a forma LAR, deixar atingir temperatura ambiente antes de misturar com o veículo próprio.",
-      "warnings": "Injeção intramuscular profunda obrigatória para microesferas LAR."
+      "warnings": "Injeção intramuscular profunda obrigatória para microesferas LAR.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -494,7 +566,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "SC imediato: 50 a 100 mcg a cada 8 horas",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Conforme prescrição médica",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Análogo sintético da somatostatina padrão-ouro na supressão de hipersecreção hormonal."
+    }
   },
   {
     "id": "lanreotide",
@@ -545,7 +629,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Pronto para uso",
       "storageUnmixed": "2°C a 8°C ao abrigo da luz",
       "handlingNotes": "Retirar da geladeira 30 minutos antes para atingir temperatura ambiente.",
-      "warnings": "Injeção subcutânea profunda obrigatória."
+      "warnings": "Injeção subcutânea profunda obrigatória.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -575,7 +661,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "60 mg a 120 mg por via subcutânea profunda a cada 28 dias",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Conforme prescrição médica",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Análogo de somatostatina com formulação autogel que dispensa reconstituição e agulhas de grosso calibre."
+    }
   },
   {
     "id": "pasireotide",
@@ -627,7 +725,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Suspensão LAR deve ser injetada imediatamente",
       "storageUnmixed": "2°C a 8°C ao abrigo da luz",
       "handlingNotes": "Monitorar glicemia em jejum antes e semanalmente no início do tratamento.",
-      "warnings": "Injeção IM profunda exclusiva para Signifor LAR."
+      "warnings": "Injeção IM profunda exclusiva para Signifor LAR.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -658,7 +758,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "Cushing SC: 0",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Conforme prescrição médica",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Análogo multirreceptor de somatostatina com seletividade superior para sst5 e sst1."
+    }
   },
   {
     "id": "teriparatide",
@@ -709,7 +821,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Refrigeração contínua (2°C a 8°C); descartar após 28 dias do primeiro uso",
       "storageUnmixed": "2°C a 8°C (não congelar)",
       "handlingNotes": "Guardar na geladeira imediatamente após a aplicação.",
-      "warnings": "Não congelar."
+      "warnings": "Não congelar.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -740,7 +854,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "20 mcg SC 1x ao dia na coxa ou abdômen por até 24 meses",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Conforme prescrição médica",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Primeiro agente anabólico ósseo aprovado clinicamente no mundo."
+    }
   },
   {
     "id": "abaloparatide",
@@ -791,7 +917,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Pode ser mantido em temperatura ambiente (20°C a 25°C) por até 30 dias após primeira punção",
       "storageUnmixed": "2°C a 8°C",
       "handlingNotes": "Caneta pré-carregada pronta para uso diário.",
-      "warnings": "Não congelar."
+      "warnings": "Não congelar.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -823,7 +951,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "80 mcg por via subcutânea uma vez ao dia no abdômen",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Conforme prescrição médica",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Análogo de PTHrP formador de osso com perfil seletivo de ativação osteoblástica."
+    }
   },
   {
     "id": "desmopressin",
@@ -878,7 +1018,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Solução injetável pronta",
       "storageUnmixed": "2°C a 8°C (ampolas) ou 15°C a 25°C seco (comprimidos)",
       "handlingNotes": "Para hemostasia IV, diluir em 50 mL de soro fisiológico e infundir em 20 minutos.",
-      "warnings": "Monitorar sódio sérico."
+      "warnings": "Monitorar sódio sérico.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -909,7 +1051,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "Diabetes insípido: 0",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Conforme prescrição médica",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Análogo da vasopressina com potente atividade antidiurética seletiva."
+    }
   },
   {
     "id": "leuprolide",
@@ -961,7 +1115,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Injeção imediata após reconstituição",
       "storageUnmixed": "15°C a 25°C temperatura ambiente controlada",
       "handlingNotes": "Homogeneizar acoplando as seringas do kit e misturando suavemente.",
-      "warnings": "Uso exclusivo parenteral profundo conforme formulação."
+      "warnings": "Uso exclusivo parenteral profundo conforme formulação.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -992,7 +1148,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "7",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Conforme prescrição médica",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Agente padrão-ouro de ablação hormonal química reversível."
+    }
   },
   {
     "id": "gonadorelin",
@@ -1044,7 +1212,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Uso imediato após reconstituição",
       "storageUnmixed": "15°C a 25°C ao abrigo da luz",
       "handlingNotes": "Para testes diagnósticos, injetar em bolus IV rápido e colher amostras de LH nos minutos 0, 15, 30 e 60.",
-      "warnings": "Não utilizar soluções turvas."
+      "warnings": "Não utilizar soluções turvas.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -1074,7 +1244,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "Teste diagnóstico: 100 mcg IV em bolus único",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Conforme prescrição médica",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "GnRH nativo de meia-vida extremamente fugaz. A administração pulsátil estimula a fertilidade, enquanto a administração c"
+    }
   },
   {
     "id": "linaclotide",
@@ -1125,7 +1307,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Não aplicável",
       "storageUnmixed": "20°C a 25°C no frasco original com dessecante",
       "handlingNotes": "Deglutir com água com o estômago vazio 30 minutos antes da refeição.",
-      "warnings": "Não mastigar."
+      "warnings": "Não mastigar.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -1155,7 +1339,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "SII-C: 290 mcg oral 1x/dia em jejum",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Conforme prescrição médica",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Peptídeo de ação local entérica que alivia a dor abdominal e estimula o trânsito intestinal."
+    }
   },
   {
     "id": "plecanatide",
@@ -1206,7 +1402,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Não aplicável",
       "storageUnmixed": "20°C a 25°C em frasco com dessecante",
       "handlingNotes": "Deglutir com água com ou sem alimentos.",
-      "warnings": "Proteger da umidade."
+      "warnings": "Proteger da umidade.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -1236,7 +1434,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "3 mg por via oral uma vez ao dia",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Conforme prescrição médica",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Análogo da uroguanilina com atividade regulada pelo gradiente fisiológico de pH do trato intestinal."
+    }
   },
   {
     "id": "bivalirudin",
@@ -1287,7 +1497,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Solução reconstituída estável por até 24 horas entre 2°C e 8°C",
       "storageUnmixed": "20°C a 25°C",
       "handlingNotes": "Rolar suavemente até total transparência.",
-      "warnings": "Uso exclusivamente hospitalar IV monitorado."
+      "warnings": "Uso exclusivamente hospitalar IV monitorado.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -1317,7 +1529,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "Bolus IV de 0",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Conforme prescrição médica",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Anticoagulante peptídico parenteral direto de ação previsível em cardiologia intervencionista."
+    }
   },
   {
     "id": "ziconotide",
@@ -1368,7 +1592,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Estável na bomba intratecal por até 60 dias a 37°C sob reabastecimento estéril",
       "storageUnmixed": "2°C a 8°C ao abrigo da luz",
       "handlingNotes": "Manipulação estritamente estéril sob capela de fluxo laminar.",
-      "warnings": "A administração parenteral intravenosa inadvertida é potencialmente letal por colapso autonômico."
+      "warnings": "A administração parenteral intravenosa inadvertida é potencialmente letal por colapso autonômico.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -1399,7 +1625,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "Infusão intratecal contínua iniciando em no máximo 2",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Conforme prescrição médica",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Analgésico peptídico não-opioide ultra-potente de uso intratecal estrito sem indução de tolerância farmacológica."
+    }
   },
   {
     "id": "salmon-calcitonin",
@@ -1452,7 +1690,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Solução pronta para injeção",
       "storageUnmixed": "2°C a 8°C ao abrigo da luz",
       "handlingNotes": "Teste cutâneo de sensibilidade recomendado em indivíduos atópicos antes da primeira injeção.",
-      "warnings": "Não congelar."
+      "warnings": "Não congelar.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -1482,7 +1722,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "Hipercalcemia: 4 UI/kg a cada 12 horas SC ou IM, titulada até 8 UI/kg a cada 6-12 horas",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Conforme prescrição médica",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Hormônio peptídico que antagoniza diretamente a reabsorção óssea osteoclástica."
+    }
   },
   {
     "id": "glucagon",
@@ -1536,7 +1788,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Uso emergencial imediato após reconstituição; descartar sobras",
       "storageUnmixed": "20°C a 25°C temperatura ambiente",
       "handlingNotes": "Injetar todo o diluente no frasco de pó, girar suavemente até total transparência e aspirar.",
-      "warnings": "A solução reconstituída tende a formar fibrilas amiloides se mantida em repouso prolongado."
+      "warnings": "A solução reconstituída tende a formar fibrilas amiloides se mantida em repouso prolongado.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -1565,7 +1819,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "Adultos e crianças >25 kg: 1 mg IM ou SC; ou 3 mg nasal em pó seco (Baqsimi)",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Conforme prescrição médica",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Hormônio contrarregulador de resgate de ação rápida para reversão de choque hipoglicêmico."
+    }
   },
   {
     "id": "carbetocin",
@@ -1617,7 +1883,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Solução pronta para injeção",
       "storageUnmixed": "Versão termoestável suporta até 30°C",
       "handlingNotes": "Administrar dose única de 100 mcg lentamente por via IV em 1 minuto ou IM logo após o parto.",
-      "warnings": "Uso exclusivo hospitalar/obstétrico."
+      "warnings": "Uso exclusivo hospitalar/obstétrico.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -1649,7 +1917,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "Dose única de 100 mcg IV lenta ou IM profunda imediatamente após o parto",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Conforme prescrição médica",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Análogo ocitócico termoestável de ação prolongada para prevenção de choque hemorrágico pós-parto."
+    }
   },
   {
     "id": "bpc-157",
@@ -1702,7 +1982,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Soluções experimentais aquosas degradam sob temperatura ambiente; manter em refrigeração estrita de 2°C a 8°C por tempo limitado",
       "storageUnmixed": "-20°C liofilizado protegido da luz e umidade",
       "handlingNotes": "Para manipulação laboratorial, adicionar o diluente suavemente pela parede do frasco estéril sem turbulência mecânica.",
-      "warnings": "Frascos comercializados online para pesquisa não possuem grau de pureza farmacêutico garantido por órgãos sanitários."
+      "warnings": "Frascos comercializados online para pesquisa não possuem grau de pureza farmacêutico garantido por órgãos sanitários.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -1743,7 +2025,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 2,
     "evidenceScore": 33.0,
     "protocolEvidenceType": "Grau D",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "250 mcg a 500 mcg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1 a 2x ao dia",
+      "defaultFrequency": "1 a 2x ao dia",
+      "cycleLength": "6 semanas",
+      "defaultCycleWeeks": 6,
+      "timing": "Manhã em jejum e/ou antes de dormir",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Fragmento derivado de proteína gástrica amplamente investigado em modelos murinos de cicatrização tecidual e proteção da"
+    }
   },
   {
     "id": "bpc-157-arginate",
@@ -1793,7 +2087,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Não aplicável",
       "storageUnmixed": "15°C a 25°C em local seco ao abrigo da umidade",
       "handlingNotes": "Cápsulas orais sólidas devem ser mantidas no frasco com dessecante.",
-      "warnings": "Ausência de validação farmacêutica regulatória."
+      "warnings": "Ausência de validação farmacêutica regulatória.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -1815,7 +2111,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 2,
     "evidenceScore": 33.0,
     "protocolEvidenceType": "Grau D",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "250 mcg a 500 mcg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1 a 2x ao dia",
+      "defaultFrequency": "1 a 2x ao dia",
+      "cycleLength": "6 semanas",
+      "defaultCycleWeeks": 6,
+      "timing": "Manhã em jejum e/ou antes de dormir",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Formulação oral estabilizada do pentadecapeptídeo BPC-157 para investigação de absorção entérica."
+    }
   },
   {
     "id": "tb-500",
@@ -1866,7 +2174,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Solução aquosa sensível a calor e oscilação; 2°C a 8°C refrigerado",
       "storageUnmixed": "-20°C liofilizado",
       "handlingNotes": "Escorrer o solvente pelas paredes do frasco sem agitação mecânica.",
-      "warnings": "Ausência de garantia analítica de pureza ou esterilidade em produtos de fornecedores não regulados."
+      "warnings": "Ausência de garantia analítica de pureza ou esterilidade em produtos de fornecedores não regulados.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -1894,7 +2204,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 2,
     "evidenceScore": 33.0,
     "protocolEvidenceType": "Grau D",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "2.0 mg a 5.0 mg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "2x por semana",
+      "defaultFrequency": "2x por semana",
+      "cycleLength": "6 semanas",
+      "defaultCycleWeeks": 6,
+      "timing": "Manhã ou pós-treino",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Fragmento ativo sintético derivado da Timosina Beta-4 comercializado no mercado cinzento de research chemicals. Frequent"
+    }
   },
   {
     "id": "thymosin-beta-4",
@@ -1945,7 +2267,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Refrigerado 2°C a 8°C estéril",
       "storageUnmixed": "-20°C liofilizado",
       "handlingNotes": "Proteína sensível à oxidação de resíduos de metionina na posição 6.",
-      "warnings": "Frascos com pó liofilizado de fornecedores de internet não possuem conformação nem pureza idênticas à proteína de ensaios clínicos."
+      "warnings": "Frascos com pó liofilizado de fornecedores de internet não possuem conformação nem pureza idênticas à proteína de ensaios clínicos.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -1966,7 +2290,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 3,
     "evidenceScore": 49.5,
     "protocolEvidenceType": "Grau C",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "1.0 mg a 2.0 mg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "2x por semana",
+      "defaultFrequency": "2x por semana",
+      "cycleLength": "6 semanas",
+      "defaultCycleWeeks": 6,
+      "timing": "Manhã em jejum",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Proteína endógena ubíqua essencial para a homeostase do citoesqueleto de actina e reparação tecidual."
+    }
   },
   {
     "id": "cjc-1295-dac",
@@ -2017,7 +2353,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "2°C a 8°C refrigerado",
       "storageUnmixed": "-20°C liofilizado",
       "handlingNotes": "Manipular com suavidade. Não agitar mecanicamente.",
-      "warnings": "Uso em humanos não respaldado pela comunidade médica devido ao perfil desfavorável de risco-benefício."
+      "warnings": "Uso em humanos não respaldado pela comunidade médica devido ao perfil desfavorável de risco-benefício.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -2055,7 +2393,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 3,
     "evidenceScore": 49.5,
     "protocolEvidenceType": "Grau C",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "1.0 mg a 2.0 mg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x a 2x por semana",
+      "defaultFrequency": "1x a 2x por semana",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Antes de dormir (ao deitar)",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Análogo de GHRH de ação ultralonga desenvolvido para estimulação somatotrófica sustentada. Projeto abandonado por toxici"
+    }
   },
   {
     "id": "cjc-1295-no-dac",
@@ -2105,7 +2455,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Solução aquosa sensível; manter a 2°C a 8°C refrigerado",
       "storageUnmixed": "-20°C liofilizado",
       "handlingNotes": "Adicionar o diluente suavemente pelas paredes do frasco sem turbulência.",
-      "warnings": "Ausência de controle analítico farmacêutico oficial."
+      "warnings": "Ausência de controle analítico farmacêutico oficial.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -2133,7 +2485,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 2,
     "evidenceScore": 33.0,
     "protocolEvidenceType": "Grau D",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "100 mcg a 200 mcg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1 a 3x ao dia",
+      "defaultFrequency": "1 a 3x ao dia",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Manhã em jejum e antes de dormir",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Análogo de GHRH de ação curta com resistência aprimorada à DPP-4 em comparação com a sermorelina nativa."
+    }
   },
   {
     "id": "ipamorelin",
@@ -2185,7 +2549,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Solução aquosa refrigerada a 2°C a 8°C",
       "storageUnmixed": "-20°C liofilizado",
       "handlingNotes": "Dissolver suavemente sem agitação vigorosa.",
-      "warnings": "Compostos comercializados na internet não possuem garantia farmacopeica de pureza."
+      "warnings": "Compostos comercializados na internet não possuem garantia farmacopeica de pureza.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -2227,7 +2593,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 3,
     "evidenceScore": 49.5,
     "protocolEvidenceType": "Grau C",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "100 mcg a 300 mcg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1 a 2x ao dia",
+      "defaultFrequency": "1 a 2x ao dia",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Antes de dormir ou pós-treino em jejum",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Secretagogo de GH com a maior seletividade molecular documentada entre os miméticos de grelina de primeira e segunda ger"
+    }
   },
   {
     "id": "ghrp-2",
@@ -2278,7 +2656,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "2°C a 8°C refrigerado",
       "storageUnmixed": "-20°C liofilizado",
       "handlingNotes": "Homogeneizar suavemente.",
-      "warnings": "Ausência de registro farmacêutico ocidental."
+      "warnings": "Ausência de registro farmacêutico ocidental.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -2309,7 +2689,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 3,
     "evidenceScore": 49.5,
     "protocolEvidenceType": "Grau C",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "100 mcg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1 a 2x ao dia",
+      "defaultFrequency": "1 a 2x ao dia",
+      "cycleLength": "6 semanas",
+      "defaultCycleWeeks": 6,
+      "timing": "Em jejum ou antes de dormir",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Hexapeptídeo secretagogo de GH de segunda geração com elevada potência no pico agudo de secreção."
+    }
   },
   {
     "id": "ghrp-6",
@@ -2360,7 +2752,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "2°C a 8°C refrigerado",
       "storageUnmixed": "-20°C liofilizado",
       "handlingNotes": "Homogeneizar sem agitação brusca.",
-      "warnings": "Ausência de controle farmacêutico oficial."
+      "warnings": "Ausência de controle farmacêutico oficial.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -2391,7 +2785,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 3,
     "evidenceScore": 49.5,
     "protocolEvidenceType": "Grau C",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "100 mcg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1 a 2x ao dia",
+      "defaultFrequency": "1 a 2x ao dia",
+      "cycleLength": "6 semanas",
+      "defaultCycleWeeks": 6,
+      "timing": "Em jejum ou antes de dormir",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Primeiro hexapeptídeo sintético desenvolvido capaz de estimular a secreção hipofisária de GH."
+    }
   },
   {
     "id": "hexarelin",
@@ -2441,7 +2847,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "2°C a 8°C refrigerado",
       "storageUnmixed": "-20°C liofilizado",
       "handlingNotes": "Rolar suavemente sem chacoalhar.",
-      "warnings": "Ausência de registro farmacopeico."
+      "warnings": "Ausência de registro farmacopeico.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -2472,7 +2880,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 3,
     "evidenceScore": 49.5,
     "protocolEvidenceType": "Grau C",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "100 mcg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1 a 2x ao dia",
+      "defaultFrequency": "1 a 2x ao dia",
+      "cycleLength": "6 semanas",
+      "defaultCycleWeeks": 6,
+      "timing": "Em jejum ou antes de dormir",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Secretagogo de GH com potente ativação receptora dupla (GHS-R1a e receptor CD36 cardíaco)."
+    }
   },
   {
     "id": "retatrutide",
@@ -2523,7 +2943,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Refrigerado 2°C a 8°C estéril sob ensaio clínico",
       "storageUnmixed": "2°C a 8°C ao abrigo da luz",
       "handlingNotes": "Canetas de injeção clínica seladas pelo patrocinador do estudo.",
-      "warnings": "Frascos comercializados no mercado paralelo de pesquisa não possuem autenticidade analítica nem controle endotoxêmico."
+      "warnings": "Frascos comercializados no mercado paralelo de pesquisa não possuem autenticidade analítica nem controle endotoxêmico.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -2563,7 +2985,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 5,
     "evidenceScore": 82.5,
     "protocolEvidenceType": "Grau A",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "2 mg a 12 mg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x por semana",
+      "defaultFrequency": "1x por semana",
+      "cycleLength": "12 semanas",
+      "defaultCycleWeeks": 12,
+      "timing": "Semanal (mesmo dia e horário)",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Agonista triplo ('triple G') investigacional de alta potência metabólica."
+    }
   },
   {
     "id": "cagrilintide",
@@ -2611,7 +3045,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Refrigerado 2°C a 8°C",
       "storageUnmixed": "2°C a 8°C ao abrigo da luz",
       "handlingNotes": "Canetas prontas sob custódia de centros de pesquisa clínica credenciados.",
-      "warnings": "Não disponível como medicamento comercial."
+      "warnings": "Não disponível como medicamento comercial.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -2648,7 +3084,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 5,
     "evidenceScore": 82.5,
     "protocolEvidenceType": "Grau A",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "0.3 mg a 4.5 mg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x por semana",
+      "defaultFrequency": "1x por semana",
+      "cycleLength": "12 semanas",
+      "defaultCycleWeeks": 12,
+      "timing": "Semanal (mesmo dia e horário)",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Agonista de amilina semanal desenvolvido para atuar de forma aditiva aos agonistas incretínicos."
+    }
   },
   {
     "id": "cagrisema",
@@ -2698,7 +3146,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Refrigerado 2°C a 8°C",
       "storageUnmixed": "2°C a 8°C ao abrigo da luz",
       "handlingNotes": "Caneta de câmara única com estabilizadores físico-químicos para impedir precipitação cruzada entre semaglutida e cagrilintida.",
-      "warnings": "Misturar soluções separadas em uma mesma seringa pode causar precipitação coloidal irreversível dos peptídeos."
+      "warnings": "Misturar soluções separadas em uma mesma seringa pode causar precipitação coloidal irreversível dos peptídeos.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -2731,7 +3181,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 5,
     "evidenceScore": 82.5,
     "protocolEvidenceType": "Grau A",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "2.4 mg cagrilintida + 2.4 mg semaglutida",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x por semana",
+      "defaultFrequency": "1x por semana",
+      "cycleLength": "16 semanas",
+      "defaultCycleWeeks": 16,
+      "timing": "Semanal (mesmo dia e horário)",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Primeira combinação peptídica unimultialvo de agonista de amilina e agonista de GLP-1 em caneta única semanal."
+    }
   },
   {
     "id": "survodutide",
@@ -2781,7 +3243,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Refrigerado 2°C a 8°C",
       "storageUnmixed": "2°C a 8°C ao abrigo da luz",
       "handlingNotes": "Canetas de uso clínico restrito sob supervisão médica institucional.",
-      "warnings": "Ausência de formulação comercial aprovada."
+      "warnings": "Ausência de formulação comercial aprovada.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -2814,7 +3278,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 4,
     "evidenceScore": 66.0,
     "protocolEvidenceType": "Grau B",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "0.6 mg a 4.8 mg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x por semana",
+      "defaultFrequency": "1x por semana",
+      "cycleLength": "16 semanas",
+      "defaultCycleWeeks": 16,
+      "timing": "Semanal (mesmo dia e horário)",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Co-agonista duplo de glucagon e GLP-1 com ação direcionada primordialmente à desinflamação hepática e fibrose na MASH."
+    }
   },
   {
     "id": "orforglipron",
@@ -2864,7 +3340,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Não aplicável",
       "storageUnmixed": "20°C a 25°C temperatura ambiente ao abrigo da umidade",
       "handlingNotes": "Comprimido administrado por via oral uma vez ao dia com ou sem alimentos.",
-      "warnings": "Não requer jejum prévio nem restrição de ingestão hídrica (diferente da semaglutida oral Rybelsus)."
+      "warnings": "Não requer jejum prévio nem restrição de ingestão hídrica (diferente da semaglutida oral Rybelsus).",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -2896,7 +3374,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 5,
     "evidenceScore": 82.5,
     "protocolEvidenceType": "Grau A",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "12 mg a 45 mg (oral)",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "16 semanas",
+      "defaultCycleWeeks": 16,
+      "timing": "Manhã com ou sem alimento",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Primeiro agonista pleno do receptor de GLP-1 oral de pequena molécula não-peptídica aprovado nos EUA."
+    }
   },
   {
     "id": "mazdutide",
@@ -2946,7 +3436,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Refrigerado 2°C a 8°C",
       "storageUnmixed": "2°C a 8°C ao abrigo da luz",
       "handlingNotes": "Caneta pronta comercializada sob prescrição médica na China.",
-      "warnings": "Não congelar."
+      "warnings": "Não congelar.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -2978,7 +3470,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 5,
     "evidenceScore": 82.5,
     "protocolEvidenceType": "Grau A",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "3 mg a 9 mg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x por semana",
+      "defaultFrequency": "1x por semana",
+      "cycleLength": "12 semanas",
+      "defaultCycleWeeks": 12,
+      "timing": "Semanal (mesmo dia e horário)",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Co-agonista de GLP-1 e receptor de glucagon pioneiro aprovado na Ásia para controle de peso e esteatose hepática."
+    }
   },
   {
     "id": "ss-31",
@@ -3029,7 +3533,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Refrigerado 2°C a 8°C",
       "storageUnmixed": "2°C a 8°C ao abrigo da luz",
       "handlingNotes": "Administrar por via subcutânea conforme peso do paciente pediátrico ou adulto com Síndrome de Barth.",
-      "warnings": "Produtos de pesquisa comercializados em pó não possuem grau de pureza analítico do fármaco Forzinity."
+      "warnings": "Produtos de pesquisa comercializados em pó não possuem grau de pureza analítico do fármaco Forzinity.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -3064,7 +3570,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "40 mg SC (Forzinity)",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x ao dia",
+      "defaultFrequency": "1x ao dia",
+      "cycleLength": "24 semanas",
+      "defaultCycleWeeks": 24,
+      "timing": "Manhã",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Tetrapeptídeo carreador de cardiolipina que restaura a bioenergética mitocondrial em patologias genéticas de desestrutur"
+    }
   },
   {
     "id": "5-amino-1mq",
@@ -3114,7 +3632,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Não aplicável",
       "storageUnmixed": "15°C a 25°C em frasco com dessecante protegido da luz",
       "handlingNotes": "Deglutir em cápsula oral com água filtrada em ambiente de pesquisa.",
-      "warnings": "Ausência de padrões farmacopeicos oficiais."
+      "warnings": "Ausência de padrões farmacopeicos oficiais.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -3144,7 +3664,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 2,
     "evidenceScore": 33.0,
     "protocolEvidenceType": "Grau D",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "50 mg a 150 mg (oral)",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Manhã junto à refeição",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Inibidor de molécula pequena da enzima NNMT com propriedades metabólicas demonstradas em modelos murinos de adiposidade."
+    }
   },
   {
     "id": "slu-pp-332",
@@ -3195,7 +3727,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Solução lipofílica degradável; uso em testes de bancada",
       "storageUnmixed": "-20°C pó sólido liofilizado",
       "handlingNotes": "Molécula insolúvel em água pura; requer pré-dissolução estrita em DMSO antes da adição da fase aquosa.",
-      "warnings": "DMSO não é diluente parenteral para autoadministração humana."
+      "warnings": "DMSO não é diluente parenteral para autoadministração humana.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -3228,7 +3762,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 2,
     "evidenceScore": 33.0,
     "protocolEvidenceType": "Grau D",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "Investigacional (modelos pré-clínicos)",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "Protocolo de laboratório",
+      "defaultFrequency": "Protocolo de laboratório",
+      "cycleLength": "4 semanas",
+      "defaultCycleWeeks": 4,
+      "timing": "Em jejum",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Molécula sintética mimética de exercício de baixa massa molecular que reprograma o metabolismo energético muscular em mo"
+    }
   },
   {
     "id": "slu-pp-915",
@@ -3279,7 +3825,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Uso imediato de bancada",
       "storageUnmixed": "-20°C",
       "handlingNotes": "Dissolver em solvente orgânico compatível.",
-      "warnings": "Não apto para consumo humano."
+      "warnings": "Não apto para consumo humano.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -3299,7 +3847,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 2,
     "evidenceScore": 33.0,
     "protocolEvidenceType": "Grau D",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "Investigacional (modelos pré-clínicos)",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "Protocolo de laboratório",
+      "defaultFrequency": "Protocolo de laboratório",
+      "cycleLength": "4 semanas",
+      "defaultCycleWeeks": 4,
+      "timing": "Em jejum",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Molécula de segunda geração para investigação de bioenergética miocárdica em modelos pré-clínicos de insuficiência cardí"
+    }
   },
   {
     "id": "nad-plus",
@@ -3351,7 +3911,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Solução diluída deve ser utilizada imediatamente",
       "storageUnmixed": "-20°C em frasco estéril liofilizado",
       "handlingNotes": "Sensível à umidade e luz. Reconstituir suavemente.",
-      "warnings": "Infusões IV devem ser administradas em prazo nunca inferior a 2 a 3 horas."
+      "warnings": "Infusões IV devem ser administradas em prazo nunca inferior a 2 a 3 horas.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -3381,7 +3943,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 3,
     "evidenceScore": 49.5,
     "protocolEvidenceType": "Grau C",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "100 mg a 500 mg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "Infusão lenta ou 1x a 2x por semana SC/IM",
+      "defaultFrequency": "Infusão lenta ou 1x a 2x por semana SC/IM",
+      "cycleLength": "4 semanas",
+      "defaultCycleWeeks": 4,
+      "timing": "Manhã",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Coenzima celular fundamental para a transferência bioenergética mitocondrial e sobrevivência celular."
+    }
   },
   {
     "id": "dihexa",
@@ -3433,7 +4007,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Solução em DMSO a -20°C",
       "storageUnmixed": "-20°C pó liofilizado",
       "handlingNotes": "Composto altamente lipofílico. Não dissolve em água pura ou soro fisiológico.",
-      "warnings": "Ausência de ensaios de toxicologia humana."
+      "warnings": "Ausência de ensaios de toxicologia humana.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -3461,7 +4037,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 2,
     "evidenceScore": 33.0,
     "protocolEvidenceType": "Grau D",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "5 mg a 20 mg (oral)",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x ao dia",
+      "defaultFrequency": "1x ao dia",
+      "cycleLength": "6 semanas",
+      "defaultCycleWeeks": 6,
+      "timing": "Manhã",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Peptidomimético ativador da via HGF/c-Met com potente estímulo sinaptogênico em roedores."
+    }
   },
   {
     "id": "follistatin-344",
@@ -3511,7 +4099,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Proteína de alta suscetibilidade à desnaturação; 2°C a 8°C por tempo estrito",
       "storageUnmixed": "-80°C ou -20°C liofilizado",
       "handlingNotes": "Proteína de grande tamanho molecular. Jamais agitar. Qualquer turbulência mecânica rompe suas 18 pontes dissulfeto estruturais.",
-      "warnings": "Produtos de vendedores underground de peptídeos frequentemente contêm proteínas truncadas ou agregados inativos sem laudo de espectrometria de massas."
+      "warnings": "Produtos de vendedores underground de peptídeos frequentemente contêm proteínas truncadas ou agregados inativos sem laudo de espectrometria de massas.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -3541,7 +4131,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 2,
     "evidenceScore": 33.0,
     "protocolEvidenceType": "Grau D",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "100 mcg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia por 10 dias",
+      "defaultFrequency": "1x ao dia por 10 dias",
+      "cycleLength": "2 semanas",
+      "defaultCycleWeeks": 2,
+      "timing": "Pós-treino",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Glicoproteína neutralizadora de miostatina com potente ação miotrófica demonstrada em roedores e primatas não humanos."
+    }
   },
   {
     "id": "cerebrolysin",
@@ -3592,7 +4194,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Solução pronta em ampola; após aberta, uso imediato com filtro de agulha",
       "storageUnmixed": "Temperatura ambiente até 25°C em caixa protegida da luz (não congelar)",
       "handlingNotes": "Para doses superiores a 5 mL, diluir em 100 mL de Soro Fisiológico 0.9% e infundir por gotejamento IV durante 30 a 60 minutos.",
-      "warnings": "Utilizar agulha com filtro para aspiração de ampolas de vidro."
+      "warnings": "Utilizar agulha com filtro para aspiração de ampolas de vidro.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -3623,7 +4227,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 4,
     "evidenceScore": 66.0,
     "protocolEvidenceType": "Grau B",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "5 mL a 10 mL (IM/IV)",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "Diário por 10 a 20 dias",
+      "defaultFrequency": "Diário por 10 a 20 dias",
+      "cycleLength": "4 semanas",
+      "defaultCycleWeeks": 4,
+      "timing": "Manhã",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Mistura peptídica neurotrófica padronizada de origem biológica aprovada internacionalmente para reabilitação do sistema "
+    }
   },
   {
     "id": "cortexin",
@@ -3673,7 +4289,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Uso imediato após reconstituição; não armazenar solução reconstituída",
       "storageUnmixed": "2°C a 20°C em local seco ao abrigo da luz",
       "handlingNotes": "Injetar o diluente suavemente pela parede do frasco para não formar espuma persistente.",
-      "warnings": "Injeção intramuscular profunda diária."
+      "warnings": "Injeção intramuscular profunda diária.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -3696,7 +4314,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 3,
     "evidenceScore": 49.5,
     "protocolEvidenceType": "Grau C",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "10 mg (IM)",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x ao dia por 10 dias",
+      "defaultFrequency": "1x ao dia por 10 dias",
+      "cycleLength": "2 semanas",
+      "defaultCycleWeeks": 2,
+      "timing": "Manhã",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Mistura peptídica cortical de origem animal aprovada regionalmente na Rússia para neuro-reabilitação."
+    }
   },
   {
     "id": "thymalin",
@@ -3746,7 +4376,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Uso imediato após diluição; não armazenar reconstituído",
       "storageUnmixed": "2°C a 20°C em local seco ao abrigo da luz",
       "handlingNotes": "Injetar o soro fisiológico lentamente e agitar suavemente até dissolução completa e límpida.",
-      "warnings": "Injeção intramuscular profunda obrigatória."
+      "warnings": "Injeção intramuscular profunda obrigatória.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -3768,7 +4400,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 3,
     "evidenceScore": 49.5,
     "protocolEvidenceType": "Grau C",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "10 mg (IM)",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x ao dia por 10 dias",
+      "defaultFrequency": "1x ao dia por 10 dias",
+      "cycleLength": "2 semanas",
+      "defaultCycleWeeks": 2,
+      "timing": "Manhã",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Extrato de biorregulador tímico clássico da escola de gerontologia e imunologia de São Petersburgo."
+    }
   },
   {
     "id": "kpv",
@@ -3821,7 +4465,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "2°C a 8°C refrigerado",
       "storageUnmixed": "-20°C liofilizado",
       "handlingNotes": "Homogeneizar com suavidade.",
-      "warnings": "Ausência de padrões farmacopeicos oficiais."
+      "warnings": "Ausência de padrões farmacopeicos oficiais.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -3860,7 +4506,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 2,
     "evidenceScore": 33.0,
     "protocolEvidenceType": "Grau D",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "200 mcg a 500 mcg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x a 2x ao dia",
+      "defaultFrequency": "1x a 2x ao dia",
+      "cycleLength": "6 semanas",
+      "defaultCycleWeeks": 6,
+      "timing": "Manhã e noite",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Tripeptídeo anti-inflamatório derivado de alfa-MSH com potente bloqueio de NF-kB demonstrado em modelos de colite murina"
+    }
   },
   {
     "id": "larazotide",
@@ -3911,7 +4569,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Não aplicável",
       "storageUnmixed": "20°C a 25°C em frasco com dessecante",
       "handlingNotes": "Deglutir com água antes das refeições com glúten nos ensaios clínicos.",
-      "warnings": "Não disponível como medicamento comercial aprovado."
+      "warnings": "Não disponível como medicamento comercial aprovado.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -3946,7 +4606,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 4,
     "evidenceScore": 66.0,
     "protocolEvidenceType": "Grau B",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "0.5 mg a 1.0 mg (oral)",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "3x ao dia",
+      "defaultFrequency": "3x ao dia",
+      "cycleLength": "12 semanas",
+      "defaultCycleWeeks": 12,
+      "timing": "15 min antes das refeições",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Regulador da barreira epitelial entérica concebido para reduzir a translocação de glúten e toxinas na doença celíaca."
+    }
   },
   {
     "id": "ara-290",
@@ -3997,7 +4669,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Refrigerado 2°C a 8°C estéril",
       "storageUnmixed": "-20°C liofilizado",
       "handlingNotes": "Dissolver suavemente sem agitação vigorosa.",
-      "warnings": "Ausência de formulação comercial aprovada."
+      "warnings": "Ausência de formulação comercial aprovada.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -4027,7 +4701,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 3,
     "evidenceScore": 49.5,
     "protocolEvidenceType": "Grau C",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "4 mg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x ao dia por 28 dias",
+      "defaultFrequency": "1x ao dia por 28 dias",
+      "cycleLength": "4 semanas",
+      "defaultCycleWeeks": 4,
+      "timing": "Manhã",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Peptídeo projetado especificamente para desencadear reparo tecidual imune e regeneração de fibras nervosas sem estimular"
+    }
   },
   {
     "id": "argireline",
@@ -4077,7 +4763,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "15°C a 25°C em recipiente âmbar cosmético ao abrigo do calor",
       "storageUnmixed": "2°C a 8°C",
       "handlingNotes": "Aplicar diretamente na pele limpa e seca.",
-      "warnings": "JAMAIS INJETAR por via subcutânea ou intramuscular."
+      "warnings": "JAMAIS INJETAR por via subcutânea ou intramuscular.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -4111,7 +4799,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 3,
     "evidenceScore": 49.5,
     "protocolEvidenceType": "Grau C",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "Uso cosmético tópico: aplicar pequena quantidade de sérum a 5-10% na região periorbital e frontal duas vezes ao dia sobre a pele limpa",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Conforme prescrição médica",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Peptídeo cosmecêutico tópico desenvolvido como atenuador superficial de rugas de expressão periorbitais."
+    }
   },
   {
     "id": "semax",
@@ -4162,7 +4862,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Refrigeração obrigatória de 2°C a 8°C ao abrigo da luz; uso em até 30 dias após aberto",
       "storageUnmixed": "2°C a 8°C",
       "handlingNotes": "Instilar as gotas diretamente na mucosa nasal sem deglutir imediatamente.",
-      "warnings": "Sensível a temperaturas acima de 15°C por tempo prolongado."
+      "warnings": "Sensível a temperaturas acima de 15°C por tempo prolongado.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -4197,7 +4899,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 3,
     "evidenceScore": 49.5,
     "protocolEvidenceType": "Grau C",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "200 mcg a 600 mcg (intranasal)",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "2x ao dia",
+      "defaultFrequency": "2x ao dia",
+      "cycleLength": "4 semanas",
+      "defaultCycleWeeks": 4,
+      "timing": "Manhã e tarde",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Heptapeptídeo nootrópico e neuroprotetor derivado de ACTH desenvolvido pelo Instituto de Genética Molecular da Academia "
+    }
   },
   {
     "id": "selank",
@@ -4248,7 +4962,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "Refrigerado 2°C a 8°C ao abrigo da luz; uso em até 30 dias após aberto",
       "storageUnmixed": "2°C a 8°C",
       "handlingNotes": "Instilar gotas nas narinas sobre a mucosa interna.",
-      "warnings": "Não submeter a temperaturas acima de 15°C por tempo prolongado."
+      "warnings": "Não submeter a temperaturas acima de 15°C por tempo prolongado.",
+      "recommendedBacWater": "Formulação comercial pronta (dispensa reconstituição)",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": true,
@@ -4282,7 +4998,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 3,
     "evidenceScore": 49.5,
     "protocolEvidenceType": "Grau C",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "200 mcg a 600 mcg (intranasal)",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "2x ao dia",
+      "defaultFrequency": "2x ao dia",
+      "cycleLength": "4 semanas",
+      "defaultCycleWeeks": 4,
+      "timing": "Manhã e tarde",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Heptapeptídeo ansiolítico e imunomodulador com propriedades nootrópicas desenvolvido na Rússia."
+    }
   },
   {
     "id": "dsip",
@@ -4334,7 +5062,9 @@ const PEPTIDES_DATABASE = [
       "storageMixed": "2°C a 8°C refrigerado",
       "storageUnmixed": "-20°C liofilizado ao abrigo da luz",
       "handlingNotes": "Dissolver suavemente.",
-      "warnings": "Ausência de registro farmacêutico oficial."
+      "warnings": "Ausência de registro farmacêutico oficial.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg"
     },
     "clinicalOrResearchProtocol": {
       "isHumanApprovedStandard": false,
@@ -4370,7 +5100,19 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 2,
     "evidenceScore": 33.0,
     "protocolEvidenceType": "Grau D",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "researchProtocols": {
+      "typicalDose": "100 mcg a 200 mcg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia",
+      "defaultFrequency": "1x ao dia",
+      "cycleLength": "4 semanas",
+      "defaultCycleWeeks": 4,
+      "timing": "30-60 min antes de dormir",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Nonapeptídeo isolado na década de 1970 investigado em neurobiologia do sono com resultados clínicos humanos marcadamente"
+    }
   },
   {
     "id": "semaglutide",
@@ -4437,7 +5179,12 @@ const PEPTIDES_DATABASE = [
         "DMSO",
         "Soluções ácidas orgânicas não parenterais"
       ],
-      "preparationNotes": "Produtos farmacêuticos comerciais são fornecidos como solução límpida em caneta descartável. Viais liofilizados clandestinos ou de farmácia magistral não possuem dados oficiais padronizados de solubilidade sob ICH Q1A."
+      "preparationNotes": "Produtos farmacêuticos comerciais são fornecidos como solução límpida em caneta descartável. Viais liofilizados clandestinos ou de farmácia magistral não possuem dados oficiais padronizados de solubilidade sob ICH Q1A.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -4468,7 +5215,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": true,
+      "labelOrTrialDosing": "Posologia conforme bula oficial registrada para a indicação terapêutica aprovada.",
+      "empiricalCommunityReported": null,
+      "warning": null
+    },
+    "researchProtocols": {
+      "typicalDose": "0.25 mg a 2.4 mg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x por semana",
+      "defaultFrequency": "1x por semana",
+      "cycleLength": "16 semanas",
+      "defaultCycleWeeks": 16,
+      "timing": "Semanal (mesmo dia e horário)",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Agonista seletivo do receptor de GLP-1 com 94% de homologia com o GLP-1 nativo humano, derivatizado com espaçador hidrof"
+    }
   },
   {
     "id": "tirzepatide",
@@ -4534,7 +5299,12 @@ const PEPTIDES_DATABASE = [
         "DMSO",
         "Soluções orgânicas puras"
       ],
-      "preparationNotes": "Formulação oficial descartável e estéril. Não requer reconstituição manual pelo paciente."
+      "preparationNotes": "Formulação oficial descartável e estéril. Não requer reconstituição manual pelo paciente.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -4562,7 +5332,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": true,
+      "labelOrTrialDosing": "Posologia conforme bula oficial registrada para a indicação terapêutica aprovada.",
+      "empiricalCommunityReported": null,
+      "warning": null
+    },
+    "researchProtocols": {
+      "typicalDose": "2.5 mg a 15 mg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x por semana",
+      "defaultFrequency": "1x por semana",
+      "cycleLength": "16 semanas",
+      "defaultCycleWeeks": 16,
+      "timing": "Semanal (mesmo dia e horário)",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Primeiro agonista duplo dos receptores de GIP (Glucose-dependent Insulinotropic Polypeptide) e GLP-1 da classe dos 'twin"
+    }
   },
   {
     "id": "ghk-cu",
@@ -4628,7 +5416,12 @@ const PEPTIDES_DATABASE = [
         "DMSO concentrado",
         "Agentes quelantes fortes (EDTA degrada o complexo)"
       ],
-      "preparationNotes": "O pó liofilizado apresenta coloração azul viva intensa decorrente da quelação do íon Cu2+. Soluções descoloridas indicam dissociação do cobre ou hidrólise peptídica."
+      "preparationNotes": "O pó liofilizado apresenta coloração azul viva intensa decorrente da quelação do íon Cu2+. Soluções descoloridas indicam dissociação do cobre ou hidrólise peptídica.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -4655,7 +5448,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 3,
     "evidenceScore": 49.5,
     "protocolEvidenceType": "Grau C",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": false,
+      "labelOrTrialDosing": null,
+      "empiricalCommunityReported": "Comunidade underground relata injeções SC de 1 a 2 mg ao dia por ciclos de 30 dias. Uso tópico padronizado em 1-3% de creme/sérum.",
+      "warning": "AVISO CIENTÍFICO OBRIGATÓRIO: Não derivado de ensaio clínico humano validado. Não constitui indicação clínica nem recomendação posológica médica."
+    },
+    "researchProtocols": {
+      "typicalDose": "1 mg a 2 mg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x ao dia",
+      "defaultFrequency": "1x ao dia",
+      "cycleLength": "6 semanas",
+      "defaultCycleWeeks": 6,
+      "timing": "Noite",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Complexo tripeptídico de ocorrência natural (glicil-L-histidil-L-lisina quelada a cobre bivalente Cu2+) isolado inicialm"
+    }
   },
   {
     "id": "sermorelin",
@@ -4722,7 +5533,12 @@ const PEPTIDES_DATABASE = [
         "DMSO",
         "Soluções alcalinas ou ácidas concentradas"
       ],
-      "preparationNotes": "Após reconstituição com cloreto de sódio ou água bacteriostática, manter sob refrigeração de 2°C a 8°C e protegido da luz. Usar preferencialmente em até 21 dias se bacteriostática."
+      "preparationNotes": "Após reconstituição com cloreto de sódio ou água bacteriostática, manter sob refrigeração de 2°C a 8°C e protegido da luz. Usar preferencialmente em até 21 dias se bacteriostática.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -4751,7 +5567,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 5,
     "evidenceScore": 82.5,
     "protocolEvidenceType": "Grau A",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": true,
+      "labelOrTrialDosing": "Posologia conforme bula oficial registrada para a indicação terapêutica aprovada.",
+      "empiricalCommunityReported": null,
+      "warning": null
+    },
+    "researchProtocols": {
+      "typicalDose": "1 mg a 2 mg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "12 semanas",
+      "defaultCycleWeeks": 12,
+      "timing": "Antes de dormir (ao deitar)",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Análogo sintético truncado do hormônio liberador do hormônio do crescimento (GHRH 1-29 amida), correspondente ao domínio"
+    }
   },
   {
     "id": "tesamorelin",
@@ -4815,7 +5649,12 @@ const PEPTIDES_DATABASE = [
         "DMSO",
         "Soluções alcoólicas"
       ],
-      "preparationNotes": "Reconstituir injetando suavemente o diluente contra a parede do frasco-ampola. Não agitar vigorosamente para evitar cisalhamento e formação de espuma. Usar imediatamente após reconstituição se formulado sem conservante."
+      "preparationNotes": "Reconstituir injetando suavemente o diluente contra a parede do frasco-ampola. Não agitar vigorosamente para evitar cisalhamento e formação de espuma. Usar imediatamente após reconstituição se formulado sem conservante.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -4846,7 +5685,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": true,
+      "labelOrTrialDosing": "Posologia conforme bula oficial registrada para a indicação terapêutica aprovada.",
+      "empiricalCommunityReported": null,
+      "warning": null
+    },
+    "researchProtocols": {
+      "typicalDose": "1 mg a 2 mg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "12 semanas",
+      "defaultCycleWeeks": 12,
+      "timing": "Antes de dormir (ao deitar)",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Análogo sintético estabilizado do GHRH humano (1-44) com adição de um grupo trans-3-hexenoil na porção N-terminal, confe"
+    }
   },
   {
     "id": "aod-9604",
@@ -4912,7 +5769,12 @@ const PEPTIDES_DATABASE = [
         "DMSO",
         "Soluções ácidas fortes que possam romper a ligação dissulfeto"
       ],
-      "preparationNotes": "Contém ponte dissulfeto Cys182-Cys189 crítica para conformação espacial. Evitar agentes redutores como DTT ou calor excessivo."
+      "preparationNotes": "Contém ponte dissulfeto Cys182-Cys189 crítica para conformação espacial. Evitar agentes redutores como DTT ou calor excessivo.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -4938,7 +5800,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 3,
     "evidenceScore": 49.5,
     "protocolEvidenceType": "Grau C",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": false,
+      "labelOrTrialDosing": null,
+      "empiricalCommunityReported": "Comunidade fitness frequentemente relata 300 a 500 mcg SC pela manhã em jejum. Não há base clínica em humanos que comprove eficácia lipolítica nessas condições.",
+      "warning": "AVISO CIENTÍFICO OBRIGATÓRIO: Não derivado de ensaio clínico humano validado. Não constitui indicação clínica nem recomendação posológica médica."
+    },
+    "researchProtocols": {
+      "typicalDose": "300 mcg a 500 mcg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Manhã em jejum 30-45 min antes de comer",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Fragmento sintético C-terminal estabilizado do hormônio do crescimento humano (hGH 177-191 com tirosina na porção aminot"
+    }
   },
   {
     "id": "epitalon",
@@ -5004,7 +5884,12 @@ const PEPTIDES_DATABASE = [
       "strictlyLaboratorySolvents": [
         "DMSO"
       ],
-      "preparationNotes": "Peptídeo hidrofílico de fácil solubilização em água estéril ou salina fisiológica. Estabilidade refrigerada em solução bacteriostática estimada em 20 dias."
+      "preparationNotes": "Peptídeo hidrofílico de fácil solubilização em água estéril ou salina fisiológica. Estabilidade refrigerada em solução bacteriostática estimada em 20 dias.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -5030,7 +5915,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 3,
     "evidenceScore": 49.5,
     "protocolEvidenceType": "Grau C",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": false,
+      "labelOrTrialDosing": null,
+      "empiricalCommunityReported": "Protocolo clássico de Khavinson adaptado pela comunidade: 5 a 10 mg ao dia SC por 10 a 20 dias consecutivos, repetido 1 a 2 vezes ao ano.",
+      "warning": "AVISO CIENTÍFICO OBRIGATÓRIO: Não derivado de ensaio clínico humano validado. Não constitui indicação clínica nem recomendação posológica médica."
+    },
+    "researchProtocols": {
+      "typicalDose": "5 mg a 10 mg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x ao dia por 10-20 dias (ciclo semestral)",
+      "defaultFrequency": "1x ao dia por 10-20 dias (ciclo semestral)",
+      "cycleLength": "3 semanas",
+      "defaultCycleWeeks": 3,
+      "timing": "Manhã ou antes de dormir",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Tetrapeptídeo sintético (Ala-Glu-Asp-Gly) desenvolvido pelo Instituto de Biorregulação e Gerontologia de São Petersburgo"
+    }
   },
   {
     "id": "mots-c",
@@ -5096,7 +5999,12 @@ const PEPTIDES_DATABASE = [
         "DMSO",
         "Soluções com pH incompatível"
       ],
-      "preparationNotes": "Peptídeo moderadamente hidrofóbico. Em baixas temperaturas pode apresentar lenta dissolução; homogeneizar suavemente sem turbilhonamento."
+      "preparationNotes": "Peptídeo moderadamente hidrofóbico. Em baixas temperaturas pode apresentar lenta dissolução; homogeneizar suavemente sem turbilhonamento.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -5122,7 +6030,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 2,
     "evidenceScore": 33.0,
     "protocolEvidenceType": "Grau D",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": false,
+      "labelOrTrialDosing": null,
+      "empiricalCommunityReported": "Comunidade underground reporta 5 a 10 mg administrados 1 a 3 vezes por semana por 4 a 6 semanas. Não há respaldo clínico formal.",
+      "warning": "AVISO CIENTÍFICO OBRIGATÓRIO: Não derivado de ensaio clínico humano validado. Não constitui indicação clínica nem recomendação posológica médica."
+    },
+    "researchProtocols": {
+      "typicalDose": "5 mg a 10 mg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x a 3x por semana",
+      "defaultFrequency": "1x a 3x por semana",
+      "cycleLength": "4 semanas",
+      "defaultCycleWeeks": 4,
+      "timing": "Manhã em jejum ou pré-treino",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Peptídeo de 16 aminoácidos derivado da região 12S rRNA do genoma mitocondrial (MDP - Mitochondrial-Derived Peptide), atu"
+    }
   },
   {
     "id": "thymosin-alpha-1",
@@ -5188,7 +6114,12 @@ const PEPTIDES_DATABASE = [
       "strictlyLaboratorySolvents": [
         "DMSO"
       ],
-      "preparationNotes": "Reconstituir 1.6 mg em 1.0 mL de água estéril para injeção. Injetar imediatamente. Não conservar sobras sem conservante antimicrobiano."
+      "preparationNotes": "Reconstituir 1.6 mg em 1.0 mL de água estéril para injeção. Injetar imediatamente. Não conservar sobras sem conservante antimicrobiano.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -5215,7 +6146,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 5,
     "evidenceScore": 82.5,
     "protocolEvidenceType": "Grau A",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": true,
+      "labelOrTrialDosing": "Posologia conforme bula oficial registrada para a indicação terapêutica aprovada.",
+      "empiricalCommunityReported": null,
+      "warning": null
+    },
+    "researchProtocols": {
+      "typicalDose": "1.6 mg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "2x por semana",
+      "defaultFrequency": "2x por semana",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Manhã",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Peptídeo acetilado de 28 aminoácidos isolado originariamente da fração 5 do timo, atuando como potente modulador da imun"
+    }
   },
   {
     "id": "pt-141",
@@ -5278,7 +6227,12 @@ const PEPTIDES_DATABASE = [
       "strictlyLaboratorySolvents": [
         "DMSO"
       ],
-      "preparationNotes": "O produto comercial Vyleesi não exige reconstituição. Peptídeos liofilizados de pesquisa requerem água bacteriostática 0.9% e técnica asséptica rigorosa."
+      "preparationNotes": "O produto comercial Vyleesi não exige reconstituição. Peptídeos liofilizados de pesquisa requerem água bacteriostática 0.9% e técnica asséptica rigorosa.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -5308,7 +6262,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": true,
+      "labelOrTrialDosing": "Posologia conforme bula oficial registrada para a indicação terapêutica aprovada.",
+      "empiricalCommunityReported": null,
+      "warning": null
+    },
+    "researchProtocols": {
+      "typicalDose": "1.0 mg a 1.75 mg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "Sob demanda (SOS)",
+      "defaultFrequency": "Sob demanda (SOS)",
+      "cycleLength": "4 semanas",
+      "defaultCycleWeeks": 4,
+      "timing": "45 min antes da atividade sexual",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Heptapeptídeo cíclico sintético análogo do alfa-MSH, atuando como agonista não seletivo dos receptores de melanocortina "
+    }
   },
   {
     "id": "igf-1-lr3",
@@ -5374,7 +6346,12 @@ const PEPTIDES_DATABASE = [
         "DMSO concentrado",
         "Soluções neutras não tamponadas que causam precipitação"
       ],
-      "preparationNotes": "Proteína altamente sensível ao calor, agitação mecânica e pH neutro em altas concentrações. Dissolver primariamente em solução ácida diluída estéril antes da diluição com água bacteriostática."
+      "preparationNotes": "Proteína altamente sensível ao calor, agitação mecânica e pH neutro em altas concentrações. Dissolver primariamente em solução ácida diluída estéril antes da diluição com água bacteriostática.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -5403,7 +6380,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 2,
     "evidenceScore": 33.0,
     "protocolEvidenceType": "Grau D",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": false,
+      "labelOrTrialDosing": null,
+      "empiricalCommunityReported": "Fóruns de fisiculturismo relatam uso empírico de 20 a 50 mcg SC ou intra-muscular pós-treino por 4 a 6 semanas. Prática associada a alto risco metabólico e mitogênico.",
+      "warning": "AVISO CIENTÍFICO OBRIGATÓRIO: Não derivado de ensaio clínico humano validado. Não constitui indicação clínica nem recomendação posológica médica."
+    },
+    "researchProtocols": {
+      "typicalDose": "Fóruns de fisiculturismo relatam uso empírico de 2",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia",
+      "defaultFrequency": "1x ao dia",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Manhã em jejum",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Proteína recombinante sintética de 83 aminoácidos constituída pela sequência de IGF-1 humano com substituição de Glu por"
+    }
   },
   {
     "id": "igf-1-des",
@@ -5460,7 +6455,12 @@ const PEPTIDES_DATABASE = [
       "strictlyLaboratorySolvents": [
         "DMSO concentrado"
       ],
-      "preparationNotes": "Extremamente frágil e sujeito a agregação espontânea. Manter estritamente refrigerado ou congelado em alíquotas."
+      "preparationNotes": "Extremamente frágil e sujeito a agregação espontânea. Manter estritamente refrigerado ou congelado em alíquotas.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -5486,7 +6486,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 2,
     "evidenceScore": 33.0,
     "protocolEvidenceType": "Grau D",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": false,
+      "labelOrTrialDosing": null,
+      "empiricalCommunityReported": "Uso empírico de 50 a 100 mcg administrado bilateralmente na musculatura treinada imediatamente pré-treino.",
+      "warning": "AVISO CIENTÍFICO OBRIGATÓRIO: Não derivado de ensaio clínico humano validado. Não constitui indicação clínica nem recomendação posológica médica."
+    },
+    "researchProtocols": {
+      "typicalDose": "Uso empírico de 50 a 100 mcg administrado bilatera",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia",
+      "defaultFrequency": "1x ao dia",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Manhã em jejum",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Forma truncada de 67 aminoácidos do IGF-1 desprovida do tripeptídeo aminoterminal Gly-Pro-Glu, encontrada naturalmente n"
+    }
   },
   {
     "id": "peg-mgf",
@@ -5542,7 +6560,12 @@ const PEPTIDES_DATABASE = [
       "strictlyLaboratorySolvents": [
         "DMSO"
       ],
-      "preparationNotes": "Após peguilação, o peptídeo apresenta aspecto mais viscoso e lenta solubilização. Homogeneizar por rotação suave sem agitação vigorosa."
+      "preparationNotes": "Após peguilação, o peptídeo apresenta aspecto mais viscoso e lenta solubilização. Homogeneizar por rotação suave sem agitação vigorosa.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -5568,7 +6591,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 2,
     "evidenceScore": 33.0,
     "protocolEvidenceType": "Grau D",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": false,
+      "labelOrTrialDosing": null,
+      "empiricalCommunityReported": "Fóruns de fisiculturismo relatam 200 a 400 mcg SC administrados 2 a 3 vezes por semana em dias de descanso pós-treino.",
+      "warning": "AVISO CIENTÍFICO OBRIGATÓRIO: Não derivado de ensaio clínico humano validado. Não constitui indicação clínica nem recomendação posológica médica."
+    },
+    "researchProtocols": {
+      "typicalDose": "Fóruns de fisiculturismo relatam 200 a 400 mcg SC ",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia",
+      "defaultFrequency": "1x ao dia",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Manhã em jejum",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Forma peguilada do peptídeo derivado do splicing alternativo do gene IGF-1 (IGF-1Eb / MGF), projetada para estabilizar a"
+    }
   },
   {
     "id": "snap-8",
@@ -5625,7 +6666,12 @@ const PEPTIDES_DATABASE = [
       "strictlyLaboratorySolvents": [
         "DMSO puro"
       ],
-      "preparationNotes": "Ingrediente de incorporação cosmética formulado em temperatura inferior a 40°C para evitar desnaturação térmica."
+      "preparationNotes": "Ingrediente de incorporação cosmética formulado em temperatura inferior a 40°C para evitar desnaturação térmica.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -5647,7 +6693,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 3,
     "evidenceScore": 49.5,
     "protocolEvidenceType": "Grau C",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": false,
+      "labelOrTrialDosing": null,
+      "empiricalCommunityReported": "Formulação tópica em séruns e cremes a concentrações de 3% a 10%.",
+      "warning": "AVISO CIENTÍFICO OBRIGATÓRIO: Não derivado de ensaio clínico humano validado. Não constitui indicação clínica nem recomendação posológica médica."
+    },
+    "researchProtocols": {
+      "typicalDose": "Formulação tópica em séruns e cremes a concentraçõ",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia",
+      "defaultFrequency": "1x ao dia",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Manhã em jejum",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Octapeptídeo sintético cosmético derivado do N-terminal da proteína SNAP-25, desenvolvido para atenuar contrações muscul"
+    }
   },
   {
     "id": "oxytocin",
@@ -5712,7 +6776,12 @@ const PEPTIDES_DATABASE = [
       "strictlyLaboratorySolvents": [
         "DMSO"
       ],
-      "preparationNotes": "Apresentação farmacêutica em ampolas líquidas estáveis prontas para diluição intravenosa hospitalar. Proteger do congelamento e calor excessivo."
+      "preparationNotes": "Apresentação farmacêutica em ampolas líquidas estáveis prontas para diluição intravenosa hospitalar. Proteger do congelamento e calor excessivo.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -5742,7 +6811,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": true,
+      "labelOrTrialDosing": "Posologia conforme bula oficial registrada para a indicação terapêutica aprovada.",
+      "empiricalCommunityReported": null,
+      "warning": null
+    },
+    "researchProtocols": {
+      "typicalDose": "10 UI a 20 UI",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "Sob demanda ou 1x ao dia",
+      "defaultFrequency": "Sob demanda ou 1x ao dia",
+      "cycleLength": "4 semanas",
+      "defaultCycleWeeks": 4,
+      "timing": "Conforme protocolo médico",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Nonapeptídeo cíclico endógeno hipotalâmico-neuroipofisário com ponte dissulfeto essencial, amplamente utilizado na práti"
+    }
   },
   {
     "id": "glutathione",
@@ -5807,7 +6894,12 @@ const PEPTIDES_DATABASE = [
       "strictlyLaboratorySolvents": [
         "DMSO"
       ],
-      "preparationNotes": "Apresentação em pó liofilizado com frasco de diluente estéril. Reconstituir imediatamente antes do uso. A glutationa oxida rapidamente em solução aquosa em contato com ar gerando dissulfeto GSSG."
+      "preparationNotes": "Apresentação em pó liofilizado com frasco de diluente estéril. Reconstituir imediatamente antes do uso. A glutationa oxida rapidamente em solução aquosa em contato com ar gerando dissulfeto GSSG.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -5833,7 +6925,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 4,
     "evidenceScore": 66.0,
     "protocolEvidenceType": "Grau B",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": false,
+      "labelOrTrialDosing": null,
+      "empiricalCommunityReported": "Prática clínica hospitalar: 600 a 1200 mg IV infundido antes de esquemas quimioterápicos. Clínicas de estética utilizam megadoses empíricas IV de 1200 a 2400 mg para clareamento da pele.",
+      "warning": "AVISO CIENTÍFICO OBRIGATÓRIO: Não derivado de ensaio clínico humano validado. Não constitui indicação clínica nem recomendação posológica médica."
+    },
+    "researchProtocols": {
+      "typicalDose": "200 mg a 600 mg",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x a 2x por semana",
+      "defaultFrequency": "1x a 2x por semana",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Manhã",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Tripeptídeo antioxidante endógeno (gama-L-glutamil-L-cisteinilglicina) ubíquo nos tecidos mamíferos, atuando como o prin"
+    }
   },
   {
     "id": "vip",
@@ -5898,7 +7008,12 @@ const PEPTIDES_DATABASE = [
       "strictlyLaboratorySolvents": [
         "DMSO"
       ],
-      "preparationNotes": "Altamente suscetível a adsorção em plásticos e degradação térmica. Preparar em recipientes adequados e manter sob cadeia de frio rigorosa."
+      "preparationNotes": "Altamente suscetível a adsorção em plásticos e degradação térmica. Preparar em recipientes adequados e manter sob cadeia de frio rigorosa.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -5924,7 +7039,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 4,
     "evidenceScore": 66.0,
     "protocolEvidenceType": "Grau B",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": false,
+      "labelOrTrialDosing": null,
+      "empiricalCommunityReported": "Protocolos clínicos investigacionais: infusão IV contínua de 4 a 12 pmol/kg/min ou inalação por nebulizador. Uso empírico em Síndrome da Resposta Inflamatória Crônica (CIRS/Shoemaker) relata sprays nasais de 50 mcg 4x ao dia.",
+      "warning": "AVISO CIENTÍFICO OBRIGATÓRIO: Não derivado de ensaio clínico humano validado. Não constitui indicação clínica nem recomendação posológica médica."
+    },
+    "researchProtocols": {
+      "typicalDose": "Protocolos clínicos investigacionais: infusão IV c",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia",
+      "defaultFrequency": "1x ao dia",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Manhã em jejum",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Neuropeptídeo endógeno de 28 aminoácidos com propriedades vasodilatadoras potentes, broncodilatadoras e anti-inflamatóri"
+    }
   },
   {
     "id": "ll-37",
@@ -5989,7 +7122,12 @@ const PEPTIDES_DATABASE = [
       "strictlyLaboratorySolvents": [
         "DMSO"
       ],
-      "preparationNotes": "Peptídeo fortemente catiônico. Interage fortemente com vidrarias ou plásticos não tratados. Evitar contato com soluções aniônicas que possam induzir precipitação rápida."
+      "preparationNotes": "Peptídeo fortemente catiônico. Interage fortemente com vidrarias ou plásticos não tratados. Evitar contato com soluções aniônicas que possam induzir precipitação rápida.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -6015,7 +7153,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 3,
     "evidenceScore": 49.5,
     "protocolEvidenceType": "Grau C",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": false,
+      "labelOrTrialDosing": null,
+      "empiricalCommunityReported": "Protocolo de ensaio de fase IIa utilizou 0.5 a 1.6 mg/mL em solução tópica aplicada sobre a ferida crônica 2 vezes por semana. Comunidade de biohacking relata injeções SC de 100 mcg a 500 mcg para infecções crônicas.",
+      "warning": "AVISO CIENTÍFICO OBRIGATÓRIO: Não derivado de ensaio clínico humano validado. Não constitui indicação clínica nem recomendação posológica médica."
+    },
+    "researchProtocols": {
+      "typicalDose": "Protocolo de ensaio de fase IIa utilizou 0",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia",
+      "defaultFrequency": "1x ao dia",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Manhã em jejum",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Peptídeo antimicrobiano catiônico humano de 37 aminoácidos gerado pela clivagem da pró-proteína hCAP18 por serina protea"
+    }
   },
   {
     "id": "humanin",
@@ -6072,7 +7228,12 @@ const PEPTIDES_DATABASE = [
       "strictlyLaboratorySolvents": [
         "DMSO"
       ],
-      "preparationNotes": "Sensível à oxidação de metionina na posição 1. Armazenar estritamente liofilizado e a -20°C até o momento da reconstituição."
+      "preparationNotes": "Sensível à oxidação de metionina na posição 1. Armazenar estritamente liofilizado e a -20°C até o momento da reconstituição.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -6096,7 +7257,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 2,
     "evidenceScore": 33.0,
     "protocolEvidenceType": "Grau D",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": false,
+      "labelOrTrialDosing": null,
+      "empiricalCommunityReported": "Uso empírico clandestino relata 1 a 2 mg administrados SC 2 vezes por semana.",
+      "warning": "AVISO CIENTÍFICO OBRIGATÓRIO: Não derivado de ensaio clínico humano validado. Não constitui indicação clínica nem recomendação posológica médica."
+    },
+    "researchProtocols": {
+      "typicalDose": "Uso empírico clandestino relata 1 a 2 mg administr",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x ao dia",
+      "defaultFrequency": "1x ao dia",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Manhã em jejum",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Polipeptídeo de 24 aminoácidos codificado pelo genoma mitocondrial (16S rRNA), descoberto em 2001 por Hashimoto et al. c"
+    }
   },
   {
     "id": "pinealon",
@@ -6153,7 +7332,12 @@ const PEPTIDES_DATABASE = [
       "strictlyLaboratorySolvents": [
         "DMSO"
       ],
-      "preparationNotes": "Tripeptídeo de elevada solubilidade em água estéril ou salina fisiológica tamponada."
+      "preparationNotes": "Tripeptídeo de elevada solubilidade em água estéril ou salina fisiológica tamponada.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -6175,7 +7359,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 2,
     "evidenceScore": 33.0,
     "protocolEvidenceType": "Grau D",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": false,
+      "labelOrTrialDosing": null,
+      "empiricalCommunityReported": "Protocolos empíricos relatam 1 a 2 mg ao dia SC ou intranasal por ciclos de 10 a 20 dias, ou apresentações orais em cápsulas de 100 mcg.",
+      "warning": "AVISO CIENTÍFICO OBRIGATÓRIO: Não derivado de ensaio clínico humano validado. Não constitui indicação clínica nem recomendação posológica médica."
+    },
+    "researchProtocols": {
+      "typicalDose": "Protocolos empíricos relatam 1 a 2 mg ao dia SC ou",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mg",
+      "frequency": "1x ao dia",
+      "defaultFrequency": "1x ao dia",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Manhã em jejum",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Tripeptídeo sintético ultracurto (Glu-Asp-Arg) desenvolvido pelo Instituto de São Petersburgo de Biorregulação e Geronto"
+    }
   },
   {
     "id": "melanotan-1",
@@ -6238,7 +7440,12 @@ const PEPTIDES_DATABASE = [
       "strictlyLaboratorySolvents": [
         "DMSO"
       ],
-      "preparationNotes": "Scenesse é fornecido pronto para aplicação via trocarte sob assepsia. Viais clandestinos de pesquisa com pó liofilizado não equivalem à farmacocinética de liberação lenta do implante."
+      "preparationNotes": "Scenesse é fornecido pronto para aplicação via trocarte sob assepsia. Viais clandestinos de pesquisa com pó liofilizado não equivalem à farmacocinética de liberação lenta do implante.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -6264,7 +7471,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": true,
+      "labelOrTrialDosing": "Posologia conforme bula oficial registrada para a indicação terapêutica aprovada.",
+      "empiricalCommunityReported": null,
+      "warning": null
+    },
+    "researchProtocols": {
+      "typicalDose": "Posologia conforme bula oficial registrada para a indicação terapêutica aprovada",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Conforme prescrição médica",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Análogo linear sintético de 13 aminoácidos do hormônio estimulador de alfa-melanócitos (alfa-MSH) com substituições [Nle"
+    }
   },
   {
     "id": "melanotan-2",
@@ -6319,7 +7544,12 @@ const PEPTIDES_DATABASE = [
       "strictlyLaboratorySolvents": [
         "DMSO"
       ],
-      "preparationNotes": "Produtos do mercado ilícito apresentam alta taxa de contaminação e heterogeneidade analítica."
+      "preparationNotes": "Produtos do mercado ilícito apresentam alta taxa de contaminação e heterogeneidade analítica.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -6349,7 +7579,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 3,
     "evidenceScore": 49.5,
     "protocolEvidenceType": "Grau C",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": false,
+      "labelOrTrialDosing": null,
+      "empiricalCommunityReported": "Comunidade underground relata 250 mcg a 1000 mcg SC ao deitar antes de exposição a câmaras de bronzeamento ou sol.",
+      "warning": "AVISO CIENTÍFICO OBRIGATÓRIO: Não derivado de ensaio clínico humano validado. Não constitui indicação clínica nem recomendação posológica médica."
+    },
+    "researchProtocols": {
+      "typicalDose": "Comunidade underground relata 250 mcg a 1000 mcg S",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia",
+      "defaultFrequency": "1x ao dia",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Manhã em jejum",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Heptapeptídeo cíclico análogo sintético de alfa-MSH, desenvolvido na Universidade do Arizona na década de 1990; não sele"
+    }
   },
   {
     "id": "kisspeptin-10",
@@ -6414,7 +7662,12 @@ const PEPTIDES_DATABASE = [
       "strictlyLaboratorySolvents": [
         "DMSO"
       ],
-      "preparationNotes": "Decapeptídeo moderadamente estável quando conservado em solução bacteriostática sob refrigeração rigorosa e ausência de luz."
+      "preparationNotes": "Decapeptídeo moderadamente estável quando conservado em solução bacteriostática sob refrigeração rigorosa e ausência de luz.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -6440,7 +7693,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 3,
     "evidenceScore": 49.5,
     "protocolEvidenceType": "Grau C",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": false,
+      "labelOrTrialDosing": null,
+      "empiricalCommunityReported": "Fóruns de terapia pós-ciclo (TPC) relatam injeções empíricas SC de 100 a 300 mcg para 'reiniciar o eixo hormonal'.",
+      "warning": "AVISO CIENTÍFICO OBRIGATÓRIO: Não derivado de ensaio clínico humano validado. Não constitui indicação clínica nem recomendação posológica médica."
+    },
+    "researchProtocols": {
+      "typicalDose": "Fóruns de terapia pós-ciclo (TPC) relatam injeções",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia",
+      "defaultFrequency": "1x ao dia",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Manhã em jejum",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Decapeptídeo C-terminal funcional biologicamente ativo derivado do precursor kisspeptina-1, atuando como o principal est"
+    }
   },
   {
     "id": "degarelix",
@@ -6503,7 +7774,12 @@ const PEPTIDES_DATABASE = [
       "strictlyLaboratorySolvents": [
         "DMSO"
       ],
-      "preparationNotes": "Forma um gel coloidal de liberação lenta in situ após injeção profunda no tecido subcutâneo abdominal. Não massagear o local de injeção após a aplicação."
+      "preparationNotes": "Forma um gel coloidal de liberação lenta in situ após injeção profunda no tecido subcutâneo abdominal. Não massagear o local de injeção após a aplicação.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -6531,7 +7807,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": true,
+      "labelOrTrialDosing": "Posologia conforme bula oficial registrada para a indicação terapêutica aprovada.",
+      "empiricalCommunityReported": null,
+      "warning": null
+    },
+    "researchProtocols": {
+      "typicalDose": "Posologia conforme bula oficial registrada para a indicação terapêutica aprovada",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Conforme prescrição médica",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Decapeptídeo sintético antagonista competitivo de terceira geração do receptor de GnRH, desenvolvido para bloqueio andro"
+    }
   },
   {
     "id": "goserelin",
@@ -6596,7 +7890,12 @@ const PEPTIDES_DATABASE = [
       "strictlyLaboratorySolvents": [
         "DMSO"
       ],
-      "preparationNotes": "Aplicado diretamente sob a parede abdominal anterior no tecido subcutâneo com técnica asséptica e sistema de proteção de agulha."
+      "preparationNotes": "Aplicado diretamente sob a parede abdominal anterior no tecido subcutâneo com técnica asséptica e sistema de proteção de agulha.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -6624,7 +7923,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": true,
+      "labelOrTrialDosing": "Posologia conforme bula oficial registrada para a indicação terapêutica aprovada.",
+      "empiricalCommunityReported": null,
+      "warning": null
+    },
+    "researchProtocols": {
+      "typicalDose": "Posologia conforme bula oficial registrada para a indicação terapêutica aprovada",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Conforme prescrição médica",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Decapeptídeo sintético superagonista do receptor hipofisário de GnRH formulado em implante cilíndrico de liberação suste"
+    }
   },
   {
     "id": "enfuvirtide",
@@ -6687,7 +8004,12 @@ const PEPTIDES_DATABASE = [
       "strictlyLaboratorySolvents": [
         "DMSO"
       ],
-      "preparationNotes": "Reconstituir 108 mg de liofilizado com 1.1 mL de água estéril para fornecer 90 mg/mL. Não agitar; deixar o frasco repousar por até 45 minutos até que o pó se dissolva completamente formando uma solução límpida."
+      "preparationNotes": "Reconstituir 108 mg de liofilizado com 1.1 mL de água estéril para fornecer 90 mg/mL. Não agitar; deixar o frasco repousar por até 45 minutos até que o pó se dissolva completamente formando uma solução límpida.",
+      "recommendedBacWater": "2.0 mL",
+      "vialSize": "5 mg",
+      "resultingConcentration": "Conforme volume de diluição parametrizado",
+      "storageMixed": "2°C a 8°C (refrigerado)",
+      "handlingNotes": "Injetar o diluente suavemente pela parede do frasco sem agitação mecânica brusca."
     },
     "safetyProfile": {
       "contraindications": [
@@ -6714,7 +8036,25 @@ const PEPTIDES_DATABASE = [
     "evidenceRank": 6,
     "evidenceScore": 99.0,
     "protocolEvidenceType": "Grau A+",
-    "popularityScore": 85
+    "popularityScore": 85,
+    "clinicalOrResearchProtocol": {
+      "isHumanApprovedStandard": true,
+      "labelOrTrialDosing": "Posologia conforme bula oficial registrada para a indicação terapêutica aprovada.",
+      "empiricalCommunityReported": null,
+      "warning": null
+    },
+    "researchProtocols": {
+      "typicalDose": "Posologia conforme bula oficial registrada para a indicação terapêutica aprovada",
+      "defaultDoseNumber": 1,
+      "defaultUnit": "mcg",
+      "frequency": "1x ao dia (diário)",
+      "defaultFrequency": "1x ao dia (diário)",
+      "cycleLength": "8 semanas",
+      "defaultCycleWeeks": 8,
+      "timing": "Conforme prescrição médica",
+      "titration": "Titulação conforme tolerabilidade clínica individual.",
+      "researchFocus": "Peptídeo biomimético sintético de 36 aminoácidos correspondente à região HR2 da glicoproteína gp41 transmembrana do HIV-"
+    }
   }
 ];
 const PEPTIDES_DATA = PEPTIDES_DATABASE;
@@ -6723,192 +8063,55 @@ const PEPTIDE_CATEGORIES = [
   {
     "id": "all",
     "name": "Todos os Compostos",
-    "icon": "sparkles",
-    "count": 79
+    "icon": "layers",
+    "description": "Exibição consolidada de todas as entidades biomédicas registradas"
   },
   {
-    "id": "metabolism",
+    "id": "metabolismo & incretinas",
     "name": "Metabolismo & Incretinas",
     "icon": "flame",
-    "count": 4
+    "description": "Agonistas GLP-1, GIP, Glucagon e moduladores mitocondriais/energéticos"
   },
   {
-    "id": "regeneration",
+    "id": "regeneração & tecidos",
     "name": "Regeneração & Tecidos",
-    "icon": "activity",
-    "count": 1
+    "icon": "shield-plus",
+    "description": "Cicatrizantes teciduais, angiogênicos e reparadores de barreira"
   },
   {
-    "id": "gh-secretagogues",
+    "id": "secretagogos de gh",
     "name": "Secretagogos de GH",
-    "icon": "trending-up",
-    "count": 2
+    "icon": "zap",
+    "description": "GHRH, GHRPs e secretagogos do hormônio do crescimento"
   },
   {
-    "id": "longevity",
-    "name": "Longevidade & Mitocôndria",
-    "icon": "hourglass",
-    "count": 3
+    "id": "longevidade & biorreguladores",
+    "name": "Longevidade & Biorreguladores",
+    "icon": "dna",
+    "description": "Peptídeos mitocondriais, reguladores de telômeros e coenzimas"
   },
   {
-    "id": "cognition",
-    "name": "Nootrópicos & Cognição",
-    "icon": "brain",
-    "count": 1
-  },
-  {
-    "id": "immunity",
+    "id": "imunidade & defesa",
     "name": "Imunidade & Defesa",
     "icon": "shield-check",
-    "count": 6
+    "description": "Moduladores tímicos, peptídeos antimicrobianos e reguladores de citocinas"
   },
   {
-    "id": "libido",
+    "id": "nootrópicos & cognição",
+    "name": "Nootrópicos & Cognição",
+    "icon": "brain",
+    "description": "Neuropeptídeos neuroprotetores, fatores neurotróficos e misturas peptídicas"
+  },
+  {
+    "id": "libido & melanocortinas",
     "name": "Libido & Melanocortinas",
-    "icon": "zap",
-    "count": 4
+    "icon": "heart",
+    "description": "Agonistas de receptores de melanocortina e neuropeptídeos do eixo hipotalâmico"
   },
   {
-    "id": "muscle-anabolism",
+    "id": "anabolismo & músculo",
     "name": "Anabolismo & Músculo",
-    "icon": "dumbbell",
-    "count": 3
-  },
-  {
-    "id": "hormone-regulation",
-    "name": "Regulação Hormonal & Gonadal",
-    "icon": "target",
-    "count": 2
+    "icon": "activity",
+    "description": "Fatores de crescimento semelhantes à insulina e moduladores de miostatina"
   }
 ];
-const THERAPEUTIC_TARGETS = [
-  {
-    "id": "all",
-    "name": "Todos os Objetivos"
-  },
-  {
-    "id": "articulacoes",
-    "name": "Articulações & Tendões"
-  },
-  {
-    "id": "musculo",
-    "name": "Recuperação Muscular & Anabolismo"
-  },
-  {
-    "id": "gastrointestinal",
-    "name": "Saúde Digestiva / Intestinal"
-  },
-  {
-    "id": "emagrecimento",
-    "name": "Perda de Gordura & Incretinas"
-  },
-  {
-    "id": "diabetes",
-    "name": "Glicemia & Controle Metabólico"
-  },
-  {
-    "id": "anti-aging",
-    "name": "Longevidade & Anti-Aging"
-  },
-  {
-    "id": "cognicao",
-    "name": "Foco, Memória & Cognição"
-  },
-  {
-    "id": "sono",
-    "name": "Sono & Ritmo Circadiano"
-  },
-  {
-    "id": "imunidade",
-    "name": "Imunidade & Defesa"
-  },
-  {
-    "id": "libido",
-    "name": "Libido & Função Sexual"
-  }
-];
-const CHEMICAL_TYPES = [
-  {
-    "id": "all",
-    "name": "Todas as Estruturas Químicas",
-    "isPeptide": true
-  },
-  {
-    "id": "peptide",
-    "name": "Peptídeo",
-    "description": "Cadeia peptídica curta linear ou cíclica",
-    "isPeptide": true
-  },
-  {
-    "id": "peptide_drug",
-    "name": "Medicamento Peptídico Aprovado",
-    "description": "Fármaco peptídico aprovado por agências regulatórias",
-    "isPeptide": true
-  },
-  {
-    "id": "protein",
-    "name": "Proteína / Polipeptídeo Longo",
-    "description": "Polipeptídeo grande (>50 aa) ou proteína recombinante",
-    "isPeptide": true
-  },
-  {
-    "id": "peptide_mixture",
-    "name": "Mistura / Complexo Peptídico",
-    "description": "Frações peptídicas biologicamente extraídas",
-    "isPeptide": true
-  },
-  {
-    "id": "peptidomimetic",
-    "name": "Peptidomimético",
-    "description": "Molécula desenhada para mimetizar estrutura peptídica",
-    "isPeptide": false
-  },
-  {
-    "id": "small_molecule",
-    "name": "Pequena Molécula (Não-Peptídeo)",
-    "description": "Composto sintético não-peptídico de baixo peso molecular",
-    "isPeptide": false
-  },
-  {
-    "id": "coenzyme",
-    "name": "Coenzima / Dinucleotídeo",
-    "description": "Cofator celular não-peptídico",
-    "isPeptide": false
-  },
-  {
-    "id": "other",
-    "name": "Outros",
-    "description": "Outras classes moleculares",
-    "isPeptide": false
-  }
-];
-
-// Expose globally
-if (typeof window !== 'undefined') {
-    window.PEPTIDES_DATABASE = PEPTIDES_DATABASE;
-    window.PEPTIDES_DATA = PEPTIDES_DATA;
-    window.PEPTIDE_CATEGORIES = PEPTIDE_CATEGORIES;
-    window.THERAPEUTIC_TARGETS = THERAPEUTIC_TARGETS;
-    window.CHEMICAL_TYPES = CHEMICAL_TYPES;
-    
-    // Taxonomy helper: Count strictly real peptides
-    window.getRealPeptidesCount = function() {
-        return PEPTIDES_DATABASE.filter(p => ['peptide', 'peptide_drug'].includes(p.chemicalType)).length;
-    };
-    window.getApprovedDrugsCount = function() {
-        return PEPTIDES_DATABASE.filter(p => p.evidenceGrade === 'A+').length;
-    };
-    window.getNonPeptidesCount = function() {
-        return PEPTIDES_DATABASE.filter(p => ['small_molecule', 'coenzyme', 'peptidomimetic', 'other'].includes(p.chemicalType)).length;
-    };
-}
-
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        PEPTIDES_DATABASE,
-        PEPTIDES_DATA,
-        PEPTIDE_CATEGORIES,
-        THERAPEUTIC_TARGETS,
-        CHEMICAL_TYPES
-    };
-}
