@@ -15,9 +15,9 @@ class PeptideCalculator {
     this.vialCost = 0; // custo opcional em R$ para cálculo financeiro
     
     this.syringeConfigs = {
-      u100: { capacityMl: 1.0, units: 100, label: "U-100 (1.0 mL / 100 Unidades)", tickInterval: 10 },
-      u50: { capacityMl: 0.5, units: 50, label: "U-50 (0.5 mL / 50 Unidades)", tickInterval: 5 },
-      u30: { capacityMl: 0.3, units: 30, label: "U-30 (0.3 mL / 30 Unidades - Alta Precisão)", tickInterval: 5 }
+      u100: { capacityMl: 1.0, units: 100, label: "U-100 | 1.0 mL capacity | 100-unit scale", tickInterval: 10 },
+      u50: { capacityMl: 0.5, units: 50, label: "U-100 | 0.5 mL capacity | 50-unit scale", tickInterval: 5 },
+      u30: { capacityMl: 0.3, units: 30, label: "U-100 | 0.3 mL capacity | 30-unit scale", tickInterval: 5 }
     };
 
     // Presets rápidos dos compostos mais comuns com suporte a mcg e mg
@@ -99,13 +99,13 @@ class PeptideCalculator {
     let warningLevel = "info"; // "info", "warning", "danger"
 
     if (unitsOnSyringe > config.units) {
-      warning = `ATENÇÃO CRÍTICA: A dose solicitada (${unitsOnSyringe.toFixed(1)} unidades) EXCEDEU a capacidade máxima desta seringa (${config.units} UI = ${config.capacityMl} mL). É mandatório utilizar uma seringa de maior volume ou reduzir o volume de água para concentrar a solução.`;
+      warning = `AVISO DE CAPACIDADE EXCEDIDA: O volume da dose calculada (${volumePerDoseMl.toFixed(3)} mL = ${unitsOnSyringe.toFixed(1)} unidades) excede a capacidade máxima da seringa selecionada (${config.label}). É mandatório selecionar uma seringa de maior capacidade (ex: 1.0 mL) ou reduzir o volume de água para concentrar a solução.`;
       warningLevel = "danger";
     } else if (unitsOnSyringe < 1) {
-      warning = `ALERTA DE IMPRECISÃO: O volume calculado (${unitsOnSyringe.toFixed(2)} UI) é excessivamente pequeno para leitura confiável a olho nu. Adicione mais água bacteriostática ao frasco para diluir a concentração.`;
+      warning = `ALERTA DE IMPRECISÃO: O volume calculado (${unitsOnSyringe.toFixed(2)} unidades) é excessivamente reduzido para aspiração confiável a olho nu. Adicione mais água ao frasco para diluir a concentração.`;
       warningLevel = "warning";
-    } else if (unitsOnSyringe < 4 && this.syringeType === "u100") {
-      warning = `DICA DE PRECISÃO: Para volumes baixos (${unitsOnSyringe.toFixed(1)} UI), a seringa U-30 (0.3 mL) com agulha fina é muito mais precisa e fácil de alinhar do que a U-100.`;
+    } else if (unitsOnSyringe < 5 && this.syringeType === "u100") {
+      warning = `DICA DE PRECISÃO: Para doses menores que 5 unidades (${unitsOnSyringe.toFixed(1)} UI), a seringa U-100 de 0.3 mL (escala de 30 unidades) oferece maior precisão de leitura volumétrica.`;
       warningLevel = "info";
     }
 

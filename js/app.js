@@ -104,6 +104,11 @@ document.addEventListener('DOMContentLoaded', () => {
     glossarySearchQuery: '',
     favorites: JSON.parse(localStorage.getItem('peptipedia_favorites') || '[]'),
     customStack: rawSavedStack.map(normalizePlannerItem),
+    selectedChemicalType: 'all',
+    selectedEvidenceGrade: 'all',
+    filterHumanOnly: false,
+    filterRctOnly: false,
+    comparatorList: [],
     activePeptideModal: null,
     activeTab: 'catalog'
   };
@@ -142,11 +147,31 @@ document.addEventListener('DOMContentLoaded', () => {
     openDisclaimerBtns: document.querySelectorAll('.open-disclaimer-btn'),
     closeDisclaimerBtn: document.getElementById('close-disclaimer-btn'),
     toastContainer: document.getElementById('toast-container'),
-    navLinks: document.querySelectorAll('.nav-tab-link')
+    navLinks: document.querySelectorAll('.nav-tab-link'),
+    // New Taxonomy, Evidence, Citation & Comparator Elements
+    chemicalTypeFilter: document.getElementById('chemical-type-filter'),
+    evidenceGradeFilter: document.getElementById('evidence-grade-filter'),
+    statRealPeptides: document.getElementById('stat-real-peptides'),
+    statApprovedDrugs: document.getElementById('stat-approved-drugs'),
+    statNonPeptides: document.getElementById('stat-non-peptides'),
+    statIndexedSources: document.getElementById('stat-indexed-sources'),
+    citationDrawer: document.getElementById('citation-drawer'),
+    citationDrawerContent: document.getElementById('citation-drawer-content'),
+    closeCitationDrawerBtn: document.getElementById('close-citation-drawer-btn'),
+    closeCitationDrawerBtn2: document.getElementById('close-citation-drawer-btn2'),
+    comparatorModal: document.getElementById('comparator-modal'),
+    comparatorContent: document.getElementById('comparator-content'),
+    comparatorCount: document.getElementById('comparator-count'),
+    openComparatorBtn: document.getElementById('open-comparator-btn'),
+    closeComparatorBtn: document.getElementById('close-comparator-btn'),
+    evidenceLadderModal: document.getElementById('evidence-ladder-modal'),
+    openEvidenceLadderBtn: document.getElementById('open-evidence-ladder-btn'),
+    closeEvidenceLadderBtn: document.getElementById('close-evidence-ladder-btn')
   };
 
   // Inicialização
   initTheme();
+  updateHeaderCounters();
   renderCategories();
   renderTargetFilter();
   renderPeptides();
@@ -257,8 +282,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Via de administração
       if (state.selectedRoute !== 'all') {
-        const hasRoute = peptide.administrationRoutes.some(r => r.toLowerCase().includes(state.selectedRoute.toLowerCase()));
+        const hasRoute = peptide.administrationRoutes ? peptide.administrationRoutes.some(r => r.toLowerCase().includes(state.selectedRoute.toLowerCase())) : true;
         if (!hasRoute) return false;
+      }
+
+      // Estrutura química / Taxonomia
+      if (state.selectedChemicalType && state.selectedChemicalType !== 'all') {
+        if (peptide.chemicalType !== state.selectedChemicalType) return false;
+      }
+
+      // Grau de Evidência (EvidenceGrade A+, A, B, C, D, E)
+      if (state.selectedEvidenceGrade && state.selectedEvidenceGrade !== 'all') {
+        if (peptide.evidenceGrade !== state.selectedEvidenceGrade) return false;
+      }
+
+      // Filtro de Evidência Humana
+      if (state.filterHumanOnly && (!peptide.humanEvidenceCount || peptide.humanEvidenceCount === 0)) {
+        return false;
+      }
+
+      // Filtro de Ensaios Randomizados (RCT)
+      if (state.filterRctOnly && (!peptide.randomizedHumanTrialCount || peptide.randomizedHumanTrialCount === 0)) {
+        return false;
       }
 
       // Apenas favoritos
@@ -270,14 +315,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function getEvidenceBadgeHtml(evidenceType) {
-    if (evidenceType === 'clinical_proven') {
-      return `<span class="badge-clinical-proven text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="check-circle-2" class="w-3 h-3"></i>Ensaio Clínico em Humanos</span>`;
-    } else if (evidenceType === 'clinical_pilot') {
-      return `<span class="badge-clinical-pilot text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="microscope" class="w-3 h-3"></i>Estudo Piloto Humano</span>`;
-    } else {
-      return `<span class="badge-preclinical-empirical text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="alert-triangle" class="w-3 h-3"></i>Prática Empírica Online</span>`;
+  function getEvidenceBadgeHtml(grade, evidenceType) {
+    const finalGrade = grade || (evidenceType === 'clinical_proven' ? 'A+' : (evidenceType === 'clinical_pilot' ? 'B' : 'D'));
+    switch(finalGrade) {
+      case 'A+':
+        return `<span class="bg-emerald-500/15 text-emerald-300 border border-emerald-500/40 text-[10px] font-mono font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm" title="Aprovado por Agência Regulatória + Evidência Pivotal"><i data-lucide="check-circle-2" class="w-3 h-3 text-emerald-400"></i>Grau A+ (Aprovado)</span>`;
+      case 'A':
+        return `<span class="bg-teal-500/15 text-teal-300 border border-teal-500/40 text-[10px] font-mono font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm" title="Fase III ou Múltiplos RCTs Humanos Robustos"><i data-lucide="shield-check" class="w-3 h-3 text-teal-400"></i>Grau A (Fase III)</span>`;
+      case 'B':
+        return `<span class="bg-cyan-500/15 text-cyan-300 border border-cyan-500/40 text-[10px] font-mono font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm" title="Ao menos um RCT / Fase II Humano Relevante"><i data-lucide="microscope" class="w-3 h-3 text-cyan-400"></i>Grau B (Fase II / RCT)</span>`;
+      case 'C':
+        return `<span class="bg-blue-500/15 text-blue-300 border border-blue-500/40 text-[10px] font-mono font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm" title="Fase I, PK/PD, Piloto ou Estudos Pequenos"><i data-lucide="activity" class="w-3 h-3 text-blue-400"></i>Grau C (Piloto / PK)</span>`;
+      case 'D':
+        return `<span class="bg-amber-500/15 text-amber-300 border border-amber-500/40 text-[10px] font-mono font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm" title="Evidência Principalmente Animal ou In Vitro"><i data-lucide="flask-conical" class="w-3 h-3 text-amber-400"></i>Grau D (Pré-Clínico)</span>`;
+      case 'E':
+      default:
+        return `<span class="bg-rose-500/15 text-rose-300 border border-rose-500/40 text-[10px] font-mono font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm" title="Empírico, Anedótico ou Marketing"><i data-lucide="alert-triangle" class="w-3 h-3 text-rose-400"></i>Grau E (Empírico)</span>`;
     }
+  }
+
+  function getChemicalTypeBadgeHtml(chemType) {
+    const types = {
+      peptide: { label: "Peptídeo", cls: "bg-cyan-500/10 text-cyan-300 border-cyan-500/30" },
+      peptide_drug: { label: "Fármaco Peptídico", cls: "bg-emerald-500/10 text-emerald-300 border-emerald-500/30" },
+      protein: { label: "Proteína / Polipeptídeo", cls: "bg-indigo-500/10 text-indigo-300 border-indigo-500/30" },
+      peptide_mixture: { label: "Mistura Peptídica", cls: "bg-purple-500/10 text-purple-300 border-purple-500/30" },
+      peptidomimetic: { label: "Peptidomimético", cls: "bg-blue-500/10 text-blue-300 border-blue-500/30" },
+      small_molecule: { label: "Pequena Molécula (Não-Peptídeo)", cls: "bg-amber-500/10 text-amber-300 border-amber-500/30" },
+      coenzyme: { label: "Coenzima / Dinucleotídeo", cls: "bg-violet-500/10 text-violet-300 border-violet-500/30" },
+      other: { label: "Outros", cls: "bg-slate-500/10 text-slate-300 border-slate-500/30" }
+    };
+    const t = types[chemType] || types.peptide;
+    return `<span class="text-[9px] font-mono font-semibold px-2 py-0.5 rounded-md border ${t.cls}">${t.label}</span>`;
   }
 
   function renderPeptides() {
@@ -294,7 +363,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (elements.resultsCount) {
-      elements.resultsCount.textContent = `${filtered.length} peptídeo${filtered.length === 1 ? '' : 's'} encontrado${filtered.length === 1 ? '' : 's'}`;
+      const realCount = filtered.filter(p => ['peptide', 'peptide_drug'].includes(p.chemicalType)).length;
+      const nonPeptideCount = filtered.length - realCount;
+      let countText = `${realCount} peptídeo${realCount === 1 ? '' : 's'}`;
+      if (nonPeptideCount > 0) {
+        countText += ` + ${nonPeptideCount} não-peptídeo${nonPeptideCount === 1 ? '' : 's'}`;
+      }
+      elements.resultsCount.textContent = `${countText} (${filtered.length} total)`;
     }
 
     if (filtered.length === 0) {
@@ -340,13 +415,20 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
             </div>
 
-            <!-- Badges de Evidência e Regulatório -->
-            <div class="flex flex-wrap items-center gap-1.5 mb-3">
-              ${statusBadge}
-              ${evidenceBadge}
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
-                Score: ${peptide.evidenceScore}/100
-              </span>
+            <!-- Badges de Evidência, Taxonomia e Regulatório -->
+            <div class="flex flex-wrap items-center gap-1.5 mb-2.5">
+              ${getChemicalTypeBadgeHtml(peptide.chemicalType)}
+              ${getEvidenceBadgeHtml(peptide.evidenceGrade, peptide.protocolEvidenceType)}
+              ${peptide.sourceIds && peptide.sourceIds.length > 0 ? `
+                <button 
+                  type="button" 
+                  data-citation-id="${peptide.sourceIds[0]}" 
+                  class="open-citation-btn text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-800/80 hover:bg-cyan-950/60 text-cyan-400 hover:text-cyan-300 border border-slate-700 hover:border-cyan-500/40 transition-colors flex items-center gap-1"
+                  title="Ver dossiê de referências científicas">
+                  <i data-lucide="book-open" class="w-3 h-3"></i>
+                  ${peptide.sourceIds.length} fonte${peptide.sourceIds.length === 1 ? '' : 's'}
+                </button>
+              ` : ''}
             </div>
 
             <!-- Resumo -->
@@ -455,6 +537,20 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
+    document.querySelectorAll('.comparator-toggle-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleComparatorItem(btn.dataset.comparatorToggleId);
+      });
+    });
+
+    document.querySelectorAll('.open-citation-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openCitationDrawer(btn.dataset.citationId);
+      });
+    });
+
     document.querySelectorAll('.fav-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -507,6 +603,241 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ----------------------------------------------------
+  // Contadores Dinâmicos de Taxonomia e Evidência
+  // ----------------------------------------------------
+  function updateHeaderCounters() {
+    if (typeof PEPTIDES_DATABASE === 'undefined') return;
+    const realPeptidesCount = PEPTIDES_DATABASE.filter(p => ['peptide', 'peptide_drug'].includes(p.chemicalType)).length;
+    const approvedDrugsCount = PEPTIDES_DATABASE.filter(p => p.evidenceGrade === 'A+').length;
+    const nonPeptidesCount = PEPTIDES_DATABASE.filter(p => ['small_molecule', 'coenzyme', 'peptidomimetic', 'other'].includes(p.chemicalType)).length;
+    const sourcesCount = typeof SOURCES_REGISTRY !== 'undefined' ? Object.keys(SOURCES_REGISTRY).length : 132;
+
+    if (elements.statRealPeptides) elements.statRealPeptides.textContent = realPeptidesCount;
+    if (elements.statApprovedDrugs) elements.statApprovedDrugs.textContent = approvedDrugsCount;
+    if (elements.statNonPeptides) elements.statNonPeptides.textContent = nonPeptidesCount;
+    if (elements.statIndexedSources) elements.statIndexedSources.textContent = sourcesCount;
+  }
+
+  // ----------------------------------------------------
+  // Dossiê de Citações Científicas (Citation Drawer)
+  // ----------------------------------------------------
+  function openCitationDrawer(sourceId) {
+    if (!elements.citationDrawer || !elements.citationDrawerContent) return;
+    const source = (typeof SOURCES_REGISTRY !== 'undefined' && SOURCES_REGISTRY[sourceId]) ? SOURCES_REGISTRY[sourceId] : null;
+
+    if (!source) {
+      elements.citationDrawerContent.innerHTML = `
+        <div class="py-8 text-center text-slate-400">
+          <i data-lucide="help-circle" class="w-8 h-8 mx-auto text-slate-500 mb-2"></i>
+          <p class="text-sm font-semibold text-white">Fonte ${sourceId}</p>
+          <p class="text-xs text-slate-400 mt-1">Metadados detalhados em processo de indexação no acervo primário.</p>
+        </div>
+      `;
+    } else {
+      const authorsStr = source.authors && source.authors.length > 0 ? source.authors.join(', ') : 'Autores institucionais / Órgão regulador';
+      elements.citationDrawerContent.innerHTML = `
+        <div class="space-y-4 text-xs">
+          <div>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-cyan-400 font-bold block mb-1">
+              ${source.studyType ? source.studyType.toUpperCase().replace('_', ' ') : 'REFERÊNCIA CIENTÍFICA'}
+            </span>
+            <h4 class="text-base font-bold text-white leading-snug font-mono">${source.title}</h4>
+            <p class="text-slate-400 mt-1 text-[11px]">${authorsStr}</p>
+            <p class="text-cyan-300 font-mono text-[11px] mt-0.5">${source.journal || ''} ${source.year ? `(${source.year})` : ''} ${source.volume ? `Vol. ${source.volume}` : ''} ${source.pages ? `pp. ${source.pages}` : ''}</p>
+          </div>
+
+          <div class="bg-slate-950/70 p-3.5 rounded-xl border border-slate-800 space-y-2">
+            <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">Identificadores Digitais:</span>
+            <div class="flex flex-wrap gap-2">
+              ${source.pmid ? `
+                <a href="https://pubmed.ncbi.nlm.nih.gov/${source.pmid}/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-cyan-950/50 hover:bg-cyan-900/60 text-cyan-300 border border-cyan-800/50 text-[11px] font-mono transition-colors">
+                  <span>PubMed PMID: ${source.pmid}</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              ` : ''}
+              ${source.doi ? `
+                <a href="https://doi.org/${source.doi}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-[11px] font-mono transition-colors">
+                  <span>DOI: ${source.doi}</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              ` : ''}
+              ${source.url && !source.pmid && !source.doi ? `
+                <a href="${source.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-950/50 hover:bg-emerald-900/60 text-emerald-300 border border-emerald-800/50 text-[11px] font-mono transition-colors">
+                  <span>Documento Oficial</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              ` : ''}
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950/50 border border-slate-800/80">
+            <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider block mb-1">Resumo Clínico / Enquadramento:</span>
+            <p class="text-slate-300 leading-relaxed">${source.summary || 'Dados completos disponíveis no artigo original indexado.'}</p>
+          </div>
+        </div>
+      `;
+    }
+
+    elements.citationDrawer.classList.remove('hidden');
+    lucide.createIcons();
+    document.body.classList.add('overflow-hidden');
+  }
+
+  function closeCitationDrawer() {
+    if (!elements.citationDrawer) return;
+    elements.citationDrawer.classList.add('hidden');
+    if (!state.activePeptideModal && (!elements.comparatorModal || elements.comparatorModal.classList.contains('hidden'))) {
+      document.body.classList.remove('overflow-hidden');
+    }
+  }
+
+  // ----------------------------------------------------
+  // Comparador Científico de Compostos (Side-by-Side)
+  // ----------------------------------------------------
+  function toggleComparatorItem(peptideId) {
+    const idx = state.comparatorList.indexOf(peptideId);
+    if (idx !== -1) {
+      state.comparatorList.splice(idx, 1);
+      showToast('Composto removido do comparador.');
+    } else {
+      if (state.comparatorList.length >= 4) {
+        showToast('Máximo de 4 compostos no comparador simultâneo.');
+        return;
+      }
+      state.comparatorList.push(peptideId);
+      showToast('Composto adicionado ao comparador!');
+    }
+    if (elements.comparatorCount) {
+      elements.comparatorCount.textContent = state.comparatorList.length;
+    }
+    renderPeptides();
+  }
+
+  function openComparatorModal() {
+    if (!elements.comparatorModal || !elements.comparatorContent) return;
+    renderComparatorMatrix();
+    elements.comparatorModal.classList.remove('hidden');
+    lucide.createIcons();
+    document.body.classList.add('overflow-hidden');
+  }
+
+  function closeComparatorModal() {
+    if (!elements.comparatorModal) return;
+    elements.comparatorModal.classList.add('hidden');
+    if (!state.activePeptideModal) {
+      document.body.classList.remove('overflow-hidden');
+    }
+  }
+
+  function renderComparatorMatrix() {
+    if (!elements.comparatorContent) return;
+    if (state.comparatorList.length === 0) {
+      elements.comparatorContent.innerHTML = `
+        <div class="py-16 text-center text-slate-400">
+          <i data-lucide="columns" class="w-12 h-12 mx-auto text-slate-600 mb-3"></i>
+          <h4 class="text-base font-bold text-white">Nenhum composto selecionado</h4>
+          <p class="text-xs text-slate-400 mt-1 max-w-sm mx-auto">Navegue pelo catálogo e clique no botão <strong>Comparar</strong> nos cards dos compostos (até 4 compostos simultâneos).</p>
+        </div>
+      `;
+      lucide.createIcons();
+      return;
+    }
+
+    const comps = state.comparatorList.map(id => PEPTIDES_DATABASE.find(p => p.id === id)).filter(Boolean);
+
+    elements.comparatorContent.innerHTML = `
+      <table class="w-full text-xs text-left border-collapse">
+        <thead>
+          <tr class="border-b border-slate-800">
+            <th class="p-3 text-slate-400 font-mono uppercase text-[10px] w-44">Parâmetro Científico</th>
+            ${comps.map(c => `
+              <th class="p-3 text-white font-mono font-bold text-sm min-w-[200px] border-l border-slate-800/80">
+                <div class="flex items-center justify-between gap-2">
+                  <span>${c.name}</span>
+                  <button type="button" data-remove-compare="${c.id}" class="remove-compare-btn text-slate-500 hover:text-rose-400 p-1 rounded" title="Remover da comparação">
+                    <i data-lucide="x" class="w-3.5 h-3.5"></i>
+                  </button>
+                </div>
+              </th>
+            `).join('')}
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-800/60 font-sans">
+          <!-- Taxonomia / Tipo Químico -->
+          <tr class="bg-slate-950/40">
+            <td class="p-3 text-slate-400 font-semibold">Estrutura Química</td>
+            ${comps.map(c => `
+              <td class="p-3 border-l border-slate-800/80">
+                ${getChemicalTypeBadgeHtml(c.chemicalType)}
+              </td>
+            `).join('')}
+          </tr>
+          <!-- EvidenceGrade -->
+          <tr>
+            <td class="p-3 text-slate-400 font-semibold">Grau de Evidência</td>
+            ${comps.map(c => `
+              <td class="p-3 border-l border-slate-800/80">
+                ${getEvidenceBadgeHtml(c.evidenceGrade)}
+                <p class="text-[11px] text-slate-400 mt-1 leading-snug">${c.gradeReason || ''}</p>
+              </td>
+            `).join('')}
+          </tr>
+          <!-- Evidências Humanas / RCTs -->
+          <tr class="bg-slate-950/40">
+            <td class="p-3 text-slate-400 font-semibold">Ensaios em Humanos</td>
+            ${comps.map(c => `
+              <td class="p-3 border-l border-slate-800/80 text-slate-300">
+                <div><strong>RCTs:</strong> ${c.randomizedHumanTrialCount ?? 0} ensaios</div>
+                <div><strong>Total Humano:</strong> ${c.humanEvidenceCount ?? 0} estudos</div>
+                <div><strong>Maior Amostra:</strong> ${c.largestHumanSample ? `${c.largestHumanSample.toLocaleString()} pacientes` : '0'}</div>
+              </td>
+            `).join('')}
+          </tr>
+          <!-- Status Regulatório -->
+          <tr>
+            <td class="p-3 text-slate-400 font-semibold">Status Regulatório</td>
+            ${comps.map(c => `
+              <td class="p-3 border-l border-slate-800/80 text-slate-300 text-[11px] space-y-1">
+                <div><span class="text-cyan-400 font-bold">FDA:</span> ${c.regulatoryStatus?.fda || 'Não avaliado'}</div>
+                <div><span class="text-cyan-400 font-bold">EMA:</span> ${c.regulatoryStatus?.ema || 'Não avaliado'}</div>
+                <div><span class="text-cyan-400 font-bold">Anvisa:</span> ${c.regulatoryStatus?.anvisa || 'Não avaliado'}</div>
+                <div><span class="text-cyan-400 font-bold">NMPA:</span> ${c.regulatoryStatus?.nmpa || 'Não avaliado'}</div>
+              </td>
+            `).join('')}
+          </tr>
+          <!-- Diluentes e Solventes -->
+          <tr class="bg-slate-950/40">
+            <td class="p-3 text-slate-400 font-semibold">Diluentes / Solventes</td>
+            ${comps.map(c => `
+              <td class="p-3 border-l border-slate-800/80 text-[11px]">
+                <div class="mb-1"><strong class="text-emerald-400">Validados:</strong> ${(c.reconstitution?.verifiedDiluents || []).join('; ') || 'Nenhum oficial'}</div>
+                <div><strong class="text-rose-400">Restrito a Lab:</strong> ${(c.reconstitution?.strictlyLaboratorySolvents || []).join(', ') || 'Nenhum solvente orgânico parenteral'}</div>
+              </td>
+            `).join('')}
+          </tr>
+          <!-- Advertências e Contraindicações -->
+          <tr>
+            <td class="p-3 text-slate-400 font-semibold">Contraindicações Primárias</td>
+            ${comps.map(c => `
+              <td class="p-3 border-l border-slate-800/80 text-[11px] text-amber-300/90 leading-snug">
+                ${(c.safetyProfile?.contraindications || []).slice(0, 3).map(ci => `• ${ci}`).join('<br>') || 'Consulte dossiê'}
+              </td>
+            `).join('')}
+          </tr>
+        </tbody>
+      </table>
+    `;
+
+    elements.comparatorContent.querySelectorAll('.remove-compare-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        toggleComparatorItem(btn.dataset.removeCompare);
+        renderComparatorMatrix();
+      });
+    });
+    lucide.createIcons();
+  }
+
+  // ----------------------------------------------------
   // Modal de Detalhes Completos do Peptídeo
   // ----------------------------------------------------
 
@@ -517,36 +848,77 @@ document.addEventListener('DOMContentLoaded', () => {
     state.activePeptideModal = peptide;
     const isFav = state.favorites.includes(peptide.id);
     const isInStack = state.customStack.some(p => p.id === peptide.id);
-    const peptideStudiesCount = CLINICAL_STUDIES_DATABASE.filter(s => s.peptideId === peptide.id).length;
+    const peptideStudiesCount = typeof CLINICAL_STUDIES_DATABASE !== 'undefined' 
+      ? CLINICAL_STUDIES_DATABASE.filter(s => s.peptideId === peptide.id).length 
+      : 0;
 
-    let evidenceBoxHtml = '';
-    if (peptide.protocolEvidenceType === 'clinical_proven') {
-      evidenceBoxHtml = `
-        <div class="p-3.5 rounded-xl bg-emerald-950/30 border border-emerald-800/50 text-emerald-200 text-xs flex items-start gap-2.5">
-          <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5"></i>
-          <div>
-            <strong class="text-emerald-300 block mb-0.5">PROTOCOLO COM VALIDAÇÃO CLÍNICA EM HUMANOS:</strong>
-            ${peptide.protocolEvidenceNote}
+    // Claims HTML com triggers para Citation Drawer
+    const claimsHtml = (peptide.claims || []).map((cl, idx) => `
+      <div class="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 flex items-start justify-between gap-3 text-xs">
+        <div class="space-y-1">
+          <div class="flex items-center gap-2">
+            <span class="text-[9px] font-mono uppercase font-bold px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800/50">
+              ${cl.type.replace('_', ' ')}
+            </span>
           </div>
+          <p class="text-slate-300 leading-relaxed">${cl.text}</p>
         </div>
-      `;
-    } else if (peptide.protocolEvidenceType === 'clinical_pilot') {
-      evidenceBoxHtml = `
-        <div class="p-3.5 rounded-xl bg-cyan-950/30 border border-cyan-800/50 text-cyan-200 text-xs flex items-start gap-2.5">
-          <i data-lucide="microscope" class="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5"></i>
-          <div>
-            <strong class="text-cyan-300 block mb-0.5">PROTOCOLO PILOTO / INVESTIGACIONAL:</strong>
-            ${peptide.protocolEvidenceNote}
+        ${cl.sourceIds && cl.sourceIds.length > 0 ? `
+          <div class="flex items-center gap-1 shrink-0">
+            ${cl.sourceIds.map((sid, sidx) => `
+              <button 
+                type="button" 
+                data-citation-id="${sid}" 
+                class="open-citation-btn text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-800 hover:bg-cyan-950 text-cyan-400 border border-slate-700 hover:border-cyan-500 transition-colors"
+                title="Abrir citação ${sid}">
+                [${sidx + 1}]
+              </button>
+            `).join('')}
           </div>
+        ` : ''}
+      </div>
+    `).join('') || '<p class="text-xs text-slate-500 italic">Sem afirmações analíticas indexadas.</p>';
+
+    // Regulatory Status Grid
+    const reg = peptide.regulatoryStatus || {};
+    const regHtml = `
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+        <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800">
+          <span class="text-[10px] font-mono text-cyan-400 font-bold block mb-0.5">FDA (EUA)</span>
+          <span class="text-slate-300 text-[11px] leading-tight block">${reg.fda || 'Não aprovado'}</span>
         </div>
-      `;
-    } else {
-      evidenceBoxHtml = `
-        <div class="p-3.5 rounded-xl bg-amber-950/30 border border-amber-800/50 text-amber-200 text-xs flex items-start gap-2.5">
-          <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5"></i>
-          <div>
-            <strong class="text-amber-300 block mb-0.5">AVISO CIENTÍFICO OBRIGATÓRIO (PRÁTICA EMPÍRICA ONLINE):</strong>
-            ${peptide.protocolEvidenceNote}
+        <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800">
+          <span class="text-[10px] font-mono text-cyan-400 font-bold block mb-0.5">EMA (Europa)</span>
+          <span class="text-slate-300 text-[11px] leading-tight block">${reg.ema || 'Não aprovado'}</span>
+        </div>
+        <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800">
+          <span class="text-[10px] font-mono text-cyan-400 font-bold block mb-0.5">ANVISA (Brasil)</span>
+          <span class="text-slate-300 text-[11px] leading-tight block">${reg.anvisa || 'Não registrado'}</span>
+        </div>
+        <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800">
+          <span class="text-[10px] font-mono text-cyan-400 font-bold block mb-0.5">NMPA (China)</span>
+          <span class="text-slate-300 text-[11px] leading-tight block">${reg.nmpa || 'Não aprovado'}</span>
+        </div>
+      </div>
+    `;
+
+    // Reconstitution & Solvent Warning
+    const recon = peptide.reconstitution || {};
+    const diluentsList = (recon.verifiedDiluents || []).map(d => `<li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i><span>${d}</span></li>`).join('') || '<li>Diluente conforme prescrição médica oficial.</li>';
+    const strictSolventsList = (recon.strictlyLaboratorySolvents || []).map(s => `<li class="flex items-center gap-1.5"><i data-lucide="alert-octagon" class="w-3.5 h-3.5 text-rose-400"></i><span>${s}</span></li>`).join('');
+
+    // Empirical Practices Warning Box
+    let empiricalHtml = '';
+    if (peptide.empiricalPractices) {
+      empiricalHtml = `
+        <div class="p-4 rounded-xl bg-amber-950/20 border border-amber-900/40 text-xs space-y-2">
+          <div class="flex items-center gap-2 text-amber-400 font-bold text-xs uppercase tracking-wider font-mono">
+            <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+            Práticas Reportadas pela Comunidade / Uso Empírico
+          </div>
+          <p class="text-slate-300 leading-relaxed">${peptide.empiricalPractices.reportedDosing}</p>
+          <div class="p-2 rounded bg-rose-950/30 border border-rose-900/50 text-rose-300 font-bold text-[11px]">
+            ⚠️ ADVERTÊNCIA: Não derivado de ensaio clínico humano validado.
           </div>
         </div>
       `;
@@ -554,256 +926,189 @@ document.addEventListener('DOMContentLoaded', () => {
 
     elements.detailModalContent.innerHTML = `
       <div class="p-6 sm:p-8 space-y-6">
-        <!-- Topo: Título, Status e Isenção -->
+        <!-- Topo: Título, Taxonomia e Badges -->
         <div class="flex items-start justify-between gap-4 border-b border-slate-800 pb-5">
           <div>
-            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+            <div class="flex flex-wrap items-center gap-2 mb-2">
               <span class="text-xs font-mono uppercase tracking-wider text-cyan-400 font-bold">${peptide.category}</span>
-              ${getStatusBadgeHtml(peptide.statusType, peptide.status)}
-              ${getEvidenceBadgeHtml(peptide.protocolEvidenceType)}
+              ${getChemicalTypeBadgeHtml(peptide.chemicalType)}
+              ${getEvidenceBadgeHtml(peptide.evidenceGrade, peptide.protocolEvidenceType)}
             </div>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-white font-mono">${peptide.name}</h2>
-            <p class="text-xs sm:text-sm text-slate-400 font-mono mt-0.5">${peptide.fullName}</p>
+            <div class="flex flex-wrap gap-3 text-xs text-slate-400 font-mono mt-1">
+              ${peptide.casNumber ? `<span>CAS: <strong class="text-slate-300">${peptide.casNumber}</strong></span>` : ''}
+              ${peptide.molecularWeight ? `<span>Massa: <strong class="text-slate-300">${peptide.molecularWeight}</strong></span>` : ''}
+              ${peptide.halfLife ? `<span>Meia-Vida: <strong class="text-slate-300">${peptide.halfLife}</strong></span>` : ''}
+            </div>
           </div>
           <div class="flex items-center gap-2">
-            <button id="modal-share-btn" class="p-2 rounded-xl text-slate-400 hover:text-cyan-400 bg-slate-800/80 transition-colors" title="Copiar link direto para este dossiê">
-              <i data-lucide="share-2" class="w-5 h-5"></i>
+            <button 
+              type="button" 
+              data-comparator-toggle-id="${peptide.id}"
+              class="comparator-toggle-btn p-2 rounded-xl text-slate-400 hover:text-cyan-400 bg-slate-800/80 transition-colors"
+              title="Adicionar ao comparador de compostos">
+              <i data-lucide="columns" class="w-5 h-5"></i>
             </button>
-            <button id="modal-fav-btn" class="p-2 rounded-xl text-slate-400 hover:text-amber-400 bg-slate-800/80 transition-colors" title="${isFav ? 'Remover dos favoritos' : 'Salvar nos favoritos'}">
+            <button id="modal-stack-btn" class="p-2 rounded-xl text-slate-400 hover:text-cyan-400 bg-slate-800/80 transition-colors" title="Adicionar ao planejador">
+              <i data-lucide="${isInStack ? 'check-check' : 'plus'}" class="w-5 h-5 ${isInStack ? 'text-cyan-400' : ''}"></i>
+            </button>
+            <button id="modal-fav-btn" class="p-2 rounded-xl text-slate-400 hover:text-amber-400 bg-slate-800/80 transition-colors" title="Favoritar">
               <i data-lucide="bookmark" class="w-5 h-5 ${isFav ? 'fill-amber-400 text-amber-400' : ''}"></i>
             </button>
-            <button id="modal-close-x" class="p-2 rounded-xl text-slate-400 hover:text-white bg-slate-800/80 transition-colors">
-              <i data-lucide="x" class="w-5 h-5"></i>
-            </button>
           </div>
         </div>
 
-        <!-- Alerta Crítico / Box de Advertência Severa -->
-        <div class="bg-rose-950/30 border border-rose-900/60 rounded-xl p-4 text-xs sm:text-sm text-rose-200/90 flex items-start gap-3">
-          <i data-lucide="shield-alert" class="w-5 h-5 text-rose-400 flex-shrink-0 mt-0.5"></i>
-          <div class="space-y-1">
-            <strong class="text-rose-300 uppercase tracking-wide text-xs block">Advertência e Responsabilidade de Pesquisa:</strong>
-            <p class="leading-relaxed">${peptide.criticalAlert}</p>
-          </div>
-        </div>
-
-        <!-- Box de Classificação da Evidência do Protocolo -->
-        ${evidenceBoxHtml}
-
-        <!-- Informações Farmacológicas & Bioquímicas -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-          <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800">
-            <span class="text-slate-400 block mb-0.5">Estrutura</span>
-            <span class="text-white font-mono font-medium">${peptide.structure}</span>
-          </div>
-          <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800">
-            <span class="text-slate-400 block mb-0.5">Peso Molecular</span>
-            <span class="text-white font-mono font-medium">${peptide.molecularWeight}</span>
-          </div>
-          <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800">
-            <span class="text-slate-400 block mb-0.5">Meia-Vida</span>
-            <span class="text-white font-mono font-medium">${peptide.halfLife}</span>
-          </div>
-          <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800">
-            <span class="text-slate-400 block mb-0.5">Via Principal</span>
-            <span class="text-cyan-400 font-mono font-semibold">${peptide.primaryRoute}</span>
-          </div>
-        </div>
-
-        <!-- Sequência Molecular -->
-        ${peptide.sequence ? `
-          <div class="bg-slate-950/70 p-3.5 rounded-xl border border-slate-800 font-mono text-xs">
-            <span class="text-slate-400 block mb-1 uppercase tracking-wider text-[10px]">Sequência de Aminoácidos:</span>
-            <span class="text-cyan-300 break-all select-all font-semibold">${peptide.sequence}</span>
-          </div>
-        ` : ''}
-
-        <!-- Mecanismo de Ação Detalhado -->
-        <div class="space-y-2">
-          <h4 class="text-sm font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
-            <i data-lucide="dna" class="w-4 h-4 text-cyan-400"></i>
-            Mecanismo de Ação Molecular
-          </h4>
-          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed bg-slate-950/40 p-4 rounded-xl border border-slate-800">
-            ${peptide.mechanism}
-          </p>
-        </div>
-
-        <!-- Protocolo & Prática de Pesquisa -->
-        <div class="space-y-3">
-          <h4 class="text-sm font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
-            <i data-lucide="clipboard-check" class="w-4 h-4 text-emerald-400"></i>
-            Protocolo de Pesquisa & Posologia Documentada
-          </h4>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
-            <div class="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800 space-y-1">
-              <span class="text-slate-400 block text-xs">Dosagem Usual:</span>
-              <span class="text-white font-mono font-bold text-sm text-cyan-300">${peptide.researchProtocols.typicalDose}</span>
-              ${peptide.researchProtocols.titration ? `<p class="text-[11px] text-slate-400 mt-1"><strong>Titulação:</strong> ${peptide.researchProtocols.titration}</p>` : ''}
+        <!-- SEÇÃO: Por que este Evidence Grade? -->
+        <div class="p-4 rounded-xl bg-slate-950/80 border border-cyan-500/30 space-y-3">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <div class="flex items-center gap-2 text-cyan-400 font-bold font-mono text-xs uppercase tracking-wider">
+              <i data-lucide="award" class="w-4 h-4"></i>
+              Por que este Evidence Grade? (${peptide.evidenceGrade || 'N/A'})
             </div>
-            <div class="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800 space-y-1">
-              <span class="text-slate-400 block text-xs">Frequência:</span>
-              <span class="text-white font-medium">${peptide.researchProtocols.frequency}</span>
-            </div>
-            <div class="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800 space-y-1">
-              <span class="text-slate-400 block text-xs">Horário / Timing:</span>
-              <span class="text-slate-300">${peptide.researchProtocols.timing}</span>
-            </div>
-            <div class="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800 space-y-1">
-              <span class="text-slate-400 block text-xs">Duração do Ciclo:</span>
-              <span class="text-slate-300 font-mono">${peptide.researchProtocols.cycleLength}</span>
-            </div>
+            <span class="text-[10px] text-slate-400 font-mono">Revisão biomédica: ${peptide.evidenceLastReviewed || '2026-10-17'}</span>
           </div>
-          <p class="text-xs text-slate-400 italic">
-            <strong>Foco investigacional:</strong> ${peptide.researchProtocols.researchFocus}
-          </p>
-        </div>
-
-        <!-- Artigos Completos com Links Diretos para PubMed / PMC / PDF -->
-        <div class="space-y-3">
-          <div class="flex items-center justify-between">
-            <h4 class="text-sm font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
-              <i data-lucide="book-open" class="w-4 h-4 text-cyan-400"></i>
-              Textos Completos & Publicações Oficiais (PubMed / PMC)
-            </h4>
-            ${peptideStudiesCount > 0 ? `
-              <button id="modal-view-studies-link" class="text-xs text-cyan-400 hover:underline flex items-center gap-1 font-semibold">
-                <span>Ver na aba de estudos (${peptideStudiesCount})</span>
-                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-              </button>
-            ` : ''}
-          </div>
+          <p class="text-slate-300 text-xs leading-relaxed">${peptide.gradeReason || 'Avaliação hierárquica baseada na presença de ensaios clínicos controlados e aprovação regulatória.'}</p>
           
-          <div class="space-y-2">
-            ${(() => {
-              const studiesList = (peptide.fullTextStudies && peptide.fullTextStudies.length > 0)
-                ? peptide.fullTextStudies
-                : (peptide.clinicalStudies && peptide.clinicalStudies.length > 0)
-                  ? peptide.clinicalStudies.map(cs => ({
-                      title: cs.title,
-                      journal: `${cs.journal} (${cs.year || ''})`,
-                      pmid: cs.pmid,
-                      url: `https://pubmed.ncbi.nlm.nih.gov/${cs.pmid}/`
-                    }))
-                  : [];
-
-              if (studiesList.length === 0) {
-                return `
-                  <div class="p-3 bg-slate-950/50 rounded-xl text-xs text-slate-400">
-                    Consulte as referências científicas listadas abaixo para identificadores PubMed.
-                  </div>
-                `;
-              }
-
-              return studiesList.map(s => `
-                <div class="p-3 bg-slate-950/70 border border-slate-800 rounded-xl text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                  <div>
-                    <span class="font-bold text-slate-200 block">${s.title}</span>
-                    <span class="text-slate-400">${s.journal} • PMID: ${s.pmid}</span>
-                  </div>
-                  <div class="flex items-center gap-2 flex-shrink-0">
-                    <a href="${s.url || `https://pubmed.ncbi.nlm.nih.gov/${s.pmid}/`}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-cyan-300 rounded-lg font-mono text-[11px] flex items-center gap-1 transition-colors">
-                      <span>PubMed</span>
-                      <i data-lucide="external-link" class="w-3 h-3"></i>
-                    </a>
-                    ${s.pdfUrl ? `
-                      <a href="${s.pdfUrl}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 bg-cyan-950 hover:bg-cyan-900 text-cyan-300 border border-cyan-800/50 rounded-lg font-mono text-[11px] flex items-center gap-1 transition-colors">
-                        <span>PDF Completo</span>
-                        <i data-lucide="download" class="w-3 h-3"></i>
-                      </a>
-                    ` : ''}
-                  </div>
-                </div>
-              `).join('');
-            })()}
-          </div>
-        </div>
-
-        <!-- Guia de Reconstituição e Estabilidade -->
-        <div class="space-y-2">
-          <h4 class="text-sm font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
-            <i data-lucide="flask-conical" class="w-4 h-4 text-amber-400"></i>
-            Reconstituição, Diluente & Armazenamento Seguro
-          </h4>
-          <div class="bg-amber-950/20 border border-amber-900/40 p-4 rounded-xl text-xs sm:text-sm space-y-2.5 text-slate-300">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div>
-                <span class="text-amber-300 font-semibold block text-xs">Diluente Recomendado:</span>
-                <span class="text-cyan-300 font-mono font-bold">${peptide.reconstitution?.recommendedDiluent || 'Água Bacteriostática USP (BAC 0.9%)'}</span>
-              </div>
-              <div>
-                <span class="text-amber-300 font-semibold block text-xs">Diluição de Referência:</span>
-                <span>Frasco de ${peptide.reconstitution?.vialSize || '5 mg'} com ${peptide.reconstitution?.recommendedBacWater || '2.0 mL'} (${peptide.reconstitution?.resultingConcentration || ''}).</span>
-              </div>
-              <div>
-                <span class="text-amber-300 font-semibold block text-xs">Estabilidade Refrigerado:</span>
-                <span>${peptide.reconstitution?.storageMixed || '2°C a 8°C (geladeira)'}</span>
-              </div>
-              <div>
-                <span class="text-amber-300 font-semibold block text-xs">Armazenamento Liofilizado:</span>
-                <span>${peptide.reconstitution?.storageUnmixed || '-20°C ou 2°C a 8°C (ao abrigo da luz)'}</span>
-              </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-xs pt-1">
+            <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
+              <span class="text-slate-400 text-[10px] block">Evidências Humanas</span>
+              <strong class="text-white font-mono text-sm">${peptide.humanEvidenceCount ?? 0} estudos</strong>
             </div>
-            <div class="pt-2 border-t border-amber-900/30 text-amber-200/90 text-xs">
-              <strong>Manuseio:</strong> ${peptide.reconstitution?.handlingNotes || 'Manipular com suavidade sem agitação mecânica.'}
+            <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
+              <span class="text-slate-400 text-[10px] block">RCTs Controlados</span>
+              <strong class="text-cyan-400 font-mono text-sm">${peptide.randomizedHumanTrialCount ?? 0} ensaios</strong>
+            </div>
+            <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
+              <span class="text-slate-400 text-[10px] block">Maior Amostra Humana</span>
+              <strong class="text-emerald-400 font-mono text-sm">${peptide.largestHumanSample ? `${peptide.largestHumanSample.toLocaleString()} pacientes` : '0'}</strong>
             </div>
           </div>
-        </div>
 
-        <!-- Sinergias Conhecidas (Stacks) -->
-        ${peptide.synergies && peptide.synergies.length > 0 ? `
-          <div class="space-y-2">
-            <h4 class="text-sm font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
-              <i data-lucide="layers" class="w-4 h-4 text-cyan-400"></i>
-              Combinações Sinérgicas Estudadas (Stacks)
-            </h4>
-            <div class="space-y-2">
-              ${peptide.synergies.map(syn => `
-                <div class="p-3 bg-slate-900/70 border border-slate-800 rounded-xl text-xs sm:text-sm flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                  <div>
-                    <span class="font-bold text-cyan-300">${syn.name}:</span>
-                    <span class="text-slate-300 ml-1">${syn.effect}</span>
-                  </div>
-                </div>
+          ${peptide.sourceIds && peptide.sourceIds.length > 0 ? `
+            <div class="pt-2 border-t border-slate-800/80 flex flex-wrap items-center gap-1.5">
+              <span class="text-[10px] uppercase font-bold text-slate-400 mr-1">Fontes Primárias:</span>
+              ${peptide.sourceIds.map(sid => `
+                <button type="button" data-citation-id="${sid}" class="open-citation-btn text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-900 hover:bg-cyan-950 text-cyan-400 hover:text-cyan-300 border border-slate-800 hover:border-cyan-500/50 transition-colors flex items-center gap-1">
+                  <i data-lucide="book-open" class="w-3 h-3"></i>
+                  <span>${sid}</span>
+                </button>
               `).join('')}
             </div>
-          </div>
-        ` : ''}
+          ` : ''}
+        </div>
 
-        <!-- Segurança, Efeitos Adversos & Contraindicações -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-          <div class="p-4 bg-rose-950/20 border border-rose-900/40 rounded-xl space-y-2">
-            <h5 class="font-bold text-rose-400 uppercase tracking-wider flex items-center gap-1.5">
-              <i data-lucide="alert-triangle" class="w-4 h-4"></i>
-              Efeitos Colaterais Observados
-            </h5>
-            <ul class="list-disc list-inside space-y-1 text-slate-300">
-              ${peptide.sideEffects.map(se => `<li>${se}</li>`).join('')}
-            </ul>
-          </div>
-          <div class="p-4 bg-slate-950/60 border border-slate-800 rounded-xl space-y-2">
-            <h5 class="font-bold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
-              <i data-lucide="shield-alert" class="w-4 h-4 text-slate-400"></i>
-              Contraindicações & Precauções
-            </h5>
-            <ul class="list-disc list-inside space-y-1 text-slate-400">
-              ${peptide.contraindications.map(ci => `<li>${ci}</li>`).join('')}
-            </ul>
+        <!-- SEÇÃO: Mecanismo Molecular e Resumo -->
+        <div>
+          <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 mb-2 font-mono flex items-center gap-2">
+            <i data-lucide="dna" class="w-4 h-4 text-cyan-400"></i>
+            Mecanismo de Ação & Farmacologia
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed bg-slate-900/50 p-4 rounded-xl border border-slate-800">
+            ${peptide.summary}
+          </p>
+        </div>
+
+        <!-- SEÇÃO: Rastreabilidade das Afirmações (Claims) -->
+        <div>
+          <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 mb-2 font-mono flex items-center gap-2">
+            <i data-lucide="check-square" class="w-4 h-4 text-cyan-400"></i>
+            Afirmações Biomédicas & Nível de Evidência
+          </h4>
+          <div class="space-y-2">
+            ${claimsHtml}
           </div>
         </div>
 
-        <!-- Barra de Ações Rápidas no Rodapé do Modal -->
+        <!-- SEÇÃO: Status Regulatório por Jurisdição -->
+        <div>
+          <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 mb-2 font-mono flex items-center gap-2">
+            <i data-lucide="shield" class="w-4 h-4 text-cyan-400"></i>
+            Status Regulatório Internacional
+          </h4>
+          ${regHtml}
+        </div>
+
+        <!-- SEÇÃO: Farmacotécnica & Reconstituição -->
+        <div class="bg-slate-950/60 p-4 rounded-xl border border-slate-800 space-y-3 text-xs">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <h4 class="uppercase tracking-wider font-bold text-slate-300 font-mono flex items-center gap-2">
+              <i data-lucide="flask-conical" class="w-4 h-4 text-emerald-400"></i>
+              Protocolo Farmacotécnico de Reconstituição
+            </h4>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 text-cyan-300 border border-slate-800">
+              Status: ${recon.status || 'LAB_SOP_ONLY'}
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+            <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800">
+              <span class="text-[11px] font-bold text-emerald-400 block mb-1">Diluentes Validados:</span>
+              <ul class="text-slate-300 space-y-1">
+                ${diluentsList}
+              </ul>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-900/80 border border-rose-900/40">
+              <span class="text-[11px] font-bold text-rose-400 block mb-1">Solventes Estritamente Laboratoriais:</span>
+              <ul class="text-rose-200/90 space-y-1">
+                ${strictSolventsList || '<li>Nenhum solvente orgânico de pesquisa estrito.</li>'}
+              </ul>
+              <p class="text-[10px] text-rose-300/80 mt-1 italic">DMSO e solventes concentrados destinam-se exclusivamente a ensaios analíticos in vitro, sendo contraindicados para uso parenteral.</p>
+            </div>
+          </div>
+          ${recon.preparationNotes ? `<p class="text-slate-400 text-[11px] pt-1"><strong>Nota de Preparação:</strong> ${recon.preparationNotes}</p>` : ''}
+        </div>
+
+        <!-- SEÇÃO: Práticas Empíricas da Comunidade -->
+        ${empiricalHtml}
+
+        <!-- SEÇÃO: Perfil de Segurança e Toxicologia -->
+        <div class="bg-slate-950/60 p-4 rounded-xl border border-slate-800 space-y-3 text-xs">
+          <h4 class="uppercase tracking-wider font-bold text-slate-300 font-mono flex items-center gap-2">
+            <i data-lucide="alert-octagon" class="w-4 h-4 text-amber-400"></i>
+            Perfil de Segurança & Farmacovigilância
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+              <strong class="text-rose-400 block mb-1 text-[11px]">Contraindicações:</strong>
+              <ul class="text-slate-300 space-y-1 text-[11px]">
+                ${(peptide.safetyProfile?.contraindications || []).map(c => `• ${c}`).join('<br>') || 'Nenhuma contraindicação formal reportada.'}
+              </ul>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+              <strong class="text-amber-400 block mb-1 text-[11px]">Efeitos Adversos:</strong>
+              <ul class="text-slate-300 space-y-1 text-[11px]">
+                ${(peptide.safetyProfile?.adverseEffects || []).map(e => `• ${e}`).join('<br>') || 'Consulte os ensaios clínicos.'}
+              </ul>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+              <strong class="text-cyan-400 block mb-1 text-[11px]">Monitoramento Clínico:</strong>
+              <ul class="text-slate-300 space-y-1 text-[11px]">
+                ${(peptide.safetyProfile?.monitoring || []).map(m => `• ${m}`).join('<br>') || 'Acompanhamento médico regular.'}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rodapé do Modal -->
         <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-800">
-          <button id="modal-stack-toggle-btn" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all border ${
-            isInStack ? 'bg-emerald-500/20 border-emerald-500/50 text-emerald-300' : 'bg-slate-800 hover:bg-slate-700 text-white border-slate-700'
-          } flex items-center gap-2">
-            <i data-lucide="${isInStack ? 'check' : 'plus'}" class="w-4 h-4"></i>
-            <span>${isInStack ? 'No seu Planejador' : 'Adicionar ao Planejador'}</span>
-          </button>
-          
-          <button id="modal-calc-btn" class="px-5 py-2.5 bg-cyan-500 hover:bg-cyan-400 text-slate-950 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 shadow-lg shadow-cyan-500/20">
-            <i data-lucide="calculator" class="w-4 h-4"></i>
-            <span>Calcular Diluição Deste Peptídeo</span>
+          <div class="flex items-center gap-2">
+            <button 
+              type="button" 
+              data-peptide-quick-calc="${peptide.id}" 
+              class="modal-calc-btn py-2.5 px-4 bg-cyan-500/10 hover:bg-cyan-500 text-cyan-400 hover:text-slate-950 rounded-xl text-xs font-semibold transition-colors border border-cyan-500/30 flex items-center gap-1.5 font-mono">
+              <i data-lucide="calculator" class="w-4 h-4"></i>
+              <span>Calcular Diluição</span>
+            </button>
+            <button 
+              type="button" 
+              data-peptide-quick-stability="${peptide.id}" 
+              class="modal-stability-btn py-2.5 px-4 bg-emerald-500/10 hover:bg-emerald-500 text-emerald-400 hover:text-slate-950 rounded-xl text-xs font-semibold transition-colors border border-emerald-500/30 flex items-center gap-1.5 font-mono">
+              <i data-lucide="clock" class="w-4 h-4"></i>
+              <span>Ver Estabilidade</span>
+            </button>
+          </div>
+          <button id="modal-close-bottom-btn" class="py-2.5 px-5 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-semibold transition-colors">
+            Fechar Dossiê
           </button>
         </div>
       </div>
@@ -814,43 +1119,44 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('overflow-hidden');
     lucide.createIcons();
 
-    try {
-      history.replaceState(null, '', '#peptide-' + peptide.id);
-    } catch (e) {}
-
-    document.getElementById('modal-close-x')?.addEventListener('click', closePeptideModal);
-    document.getElementById('modal-share-btn')?.addEventListener('click', () => {
-      const shareUrl = `${window.location.origin}${window.location.pathname}#peptide-${peptide.id}`;
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(shareUrl).then(() => {
-          showToast(`Link do dossiê de ${peptide.name} copiado!`);
-        }).catch(() => {
-          prompt('Copie o link direto do peptídeo:', shareUrl);
-        });
-      } else {
-        prompt('Copie o link direto do peptídeo:', shareUrl);
-      }
-    });
+    // Event listeners inside modal
+    document.getElementById('modal-close-bottom-btn')?.addEventListener('click', closePeptideModal);
+    
     document.getElementById('modal-fav-btn')?.addEventListener('click', () => {
       toggleFavorite(peptide.id);
       openPeptideModal(peptide.id);
     });
-    document.getElementById('modal-stack-toggle-btn')?.addEventListener('click', () => {
+
+    document.getElementById('modal-stack-btn')?.addEventListener('click', () => {
       toggleCustomStackItem(peptide.id);
       openPeptideModal(peptide.id);
     });
-    document.getElementById('modal-calc-btn')?.addEventListener('click', () => {
-      prefillCalculatorWithPeptide(peptide);
-      closePeptideModal();
-      switchTab('calculator');
-      showToast(`Parâmetros de ${peptide.name} transferidos para a calculadora!`);
+
+    document.querySelectorAll('.open-citation-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openCitationDrawer(btn.dataset.citationId);
+      });
     });
-    document.getElementById('modal-view-studies-link')?.addEventListener('click', () => {
+
+    document.querySelectorAll('.comparator-toggle-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleComparatorItem(btn.dataset.comparatorToggleId);
+      });
+    });
+
+    document.querySelector('.modal-calc-btn')?.addEventListener('click', () => {
       closePeptideModal();
-      if (elements.studyPeptideFilter) elements.studyPeptideFilter.value = peptide.name;
-      state.selectedStudyPeptide = peptide.name;
-      switchTab('studies');
-      renderStudies();
+      prefillCalculatorWithPeptide(peptide);
+      switchTab('calculator');
+      showToast(`Configuração de ${peptide.name} carregada na calculadora!`);
+    });
+
+    document.querySelector('.modal-stability-btn')?.addEventListener('click', () => {
+      closePeptideModal();
+      switchTab('stability');
+      showToast(`Visualizando estabilidade molecular de ${peptide.name}`);
     });
   }
 
@@ -1546,112 +1852,131 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderStacks() {
     if (!elements.stacksContainer) return;
 
-    elements.stacksContainer.innerHTML = RESEARCH_STACKS.map(stack => {
-      const durationDisplay = stack.protocolSchedule?.duration || (stack.durationWeeks ? `${stack.durationWeeks} semanas` : 'Duração personalizada');
-      const summaryText = stack.summary || stack.objective || '';
+    const stacksData = typeof COMBINATIONS_DATABASE !== 'undefined' ? COMBINATIONS_DATABASE : (typeof RESEARCH_STACKS !== 'undefined' ? RESEARCH_STACKS : []);
+
+    elements.stacksContainer.innerHTML = stacksData.map(stack => {
+      const durationDisplay = stack.protocolSchedule?.duration || (stack.protocolSchedule?.durationWeeks ? `${stack.protocolSchedule.durationWeeks} semanas` : (stack.durationWeeks ? `${stack.durationWeeks} semanas` : '4 a 6 semanas'));
+      const summaryText = stack.summary || '';
+      
+      const evidenceBadges = {
+        studied_synergy: { label: "Sinergia Estudada Formalmente", cls: "bg-emerald-950/60 text-emerald-300 border-emerald-500/50" },
+        mechanistic_rationale: { label: "Racional Mecanicista Hipotético", cls: "bg-cyan-950/60 text-cyan-300 border-cyan-500/50" },
+        empirical_only: { label: "Prática Empírica de Comunidade", cls: "bg-amber-950/60 text-amber-300 border-amber-500/50" },
+        contraindicated_or_caution: { label: "Alerta Crítico / Risco", cls: "bg-rose-950/60 text-rose-300 border-rose-500/50" }
+      };
+      const evBadge = evidenceBadges[stack.combinationEvidence] || evidenceBadges.empirical_only;
 
       return `
       <div class="bg-slate-900/80 border border-slate-800/80 hover:border-cyan-500/40 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-950/20 flex flex-col justify-between">
         <div>
-          <!-- Topo do Card: Categoria e Badge -->
+          <!-- Topo do Card: Categoria, Título Neutro e Apelidos -->
           <div class="flex items-center justify-between gap-2 mb-2">
             <span class="text-[10px] font-mono uppercase tracking-wider text-cyan-400 font-semibold">${stack.category}</span>
-            ${stack.badge ? `
-              <span class="text-[10px] uppercase font-mono px-2.5 py-0.5 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-800/60 font-semibold tracking-wide flex-shrink-0">
-                ${stack.badge}
-              </span>
+            <span class="text-[9px] font-mono px-2 py-0.5 rounded-full border ${evBadge.cls} font-semibold">
+              ${evBadge.label}
+            </span>
+          </div>
+
+          <h3 class="text-lg font-bold text-white font-mono mb-1 leading-snug">
+            ${stack.title}
+          </h3>
+          
+          ${stack.popularAliases && stack.popularAliases.length > 0 ? `
+            <div class="flex items-center gap-1.5 mb-3 flex-wrap">
+              <span class="text-[10px] text-slate-500">Apelidos populares:</span>
+              ${stack.popularAliases.map(a => `<span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">"${a}"</span>`).join('')}
+            </div>
+          ` : ''}
+
+          <!-- Aviso de Evidência Conjunta em Destaque -->
+          ${stack.evidenceNotice ? `
+            <div class="p-3 rounded-xl ${stack.combinationEvidence === 'contraindicated_or_caution' ? 'bg-rose-950/30 border-rose-900/50 text-rose-200' : 'bg-amber-950/20 border-amber-900/40 text-amber-200/90'} border text-xs mb-3 leading-relaxed">
+              <strong class="block mb-0.5 font-bold ${stack.combinationEvidence === 'contraindicated_or_caution' ? 'text-rose-300' : 'text-amber-300'}">Nota de Evidência da Combinação:</strong>
+              ${stack.evidenceNotice}
+            </div>
+          ` : ''}
+
+          <!-- Resumo e Racional -->
+          <p class="text-xs text-slate-300 leading-relaxed mb-3">
+            ${summaryText}
+          </p>
+
+          ${stack.synergyRationale ? `
+            <div class="text-[11px] text-slate-400 bg-slate-950/50 p-3 rounded-xl border border-slate-800/80 mb-4 leading-relaxed">
+              <strong class="text-slate-300 block mb-0.5">Racional Farmacológico:</strong>
+              ${stack.synergyRationale}
+            </div>
+          ` : ''}
+
+          <!-- Duração e Cronograma -->
+          <div class="bg-slate-950/60 rounded-xl p-3 border border-slate-800 text-xs space-y-1.5 mb-4">
+            <div class="flex items-center justify-between">
+              <span class="text-slate-400">Duração Reportada:</span>
+              <span class="text-cyan-300 font-mono font-bold">${durationDisplay}</span>
+            </div>
+            ${stack.protocolSchedule?.morning ? `
+              <div class="flex items-center justify-between text-slate-400 pt-1 border-t border-slate-800/60">
+                <span>Manhã / Horário:</span>
+                <span class="text-slate-300 text-right truncate max-w-[200px]">${stack.protocolSchedule.morning}</span>
+              </div>
             ` : ''}
-          </div>
-
-          <!-- Título com largura total -->
-          <h3 class="text-base sm:text-lg font-bold text-white font-mono leading-snug mb-2.5">${stack.title}</h3>
-
-          <!-- Metadados do Stack: Duração com quebra responsiva e contagem de peptídeos -->
-          <div class="flex flex-wrap items-center gap-2 mb-3">
-            <div class="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-lg bg-slate-950/90 text-cyan-300 border border-cyan-900/50 font-mono font-medium max-w-full leading-tight">
-              <i data-lucide="clock" class="w-3.5 h-3.5 text-cyan-400 flex-shrink-0"></i>
-              <span class="break-words">${durationDisplay}</span>
-            </div>
-            <div class="inline-flex items-center gap-1 text-[11px] px-2 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/60 font-mono flex-shrink-0">
-              <i data-lucide="layers" class="w-3 h-3 text-slate-400"></i>
-              <span>${stack.peptides.length} Compostos</span>
-            </div>
-          </div>
-
-          <p class="text-xs text-slate-300 mb-4 leading-relaxed">${summaryText}</p>
-
-          <div class="mb-4">
-            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1.5">Composição do Stack:</span>
-            <div class="flex flex-wrap gap-1.5">
-              ${stack.peptides.map(pId => {
-                const pep = PEPTIDES_DATABASE.find(p => p.id === pId);
-                const name = pep ? pep.name : pId;
-                return `
-                  <span data-pep-modal-id="${pId}" class="stack-pep-tag text-xs font-mono font-semibold px-2.5 py-1 rounded-lg bg-cyan-950 text-cyan-300 border border-cyan-800/50 cursor-pointer hover:bg-cyan-900 transition-colors">
-                    ${name}
-                  </span>
-                `;
-              }).join('')}
-            </div>
-          </div>
-
-          <div class="text-xs text-slate-300 bg-slate-950/60 p-3 rounded-xl border border-slate-800/60 mb-3 space-y-1">
-            <strong class="text-cyan-400 block text-[11px] font-mono">Sinergia Bioquímica:</strong>
-            ${stack.synergyRationale}
-          </div>
-
-          <div class="space-y-1.5 text-xs bg-slate-900/60 p-3 rounded-xl border border-slate-800/40 mb-4 text-slate-300">
-            ${stack.protocolSchedule?.morning ? `<div><strong class="text-slate-400 font-mono">Manhã:</strong> ${stack.protocolSchedule.morning}</div>` : ''}
-            ${stack.protocolSchedule?.evening ? `<div><strong class="text-slate-400 font-mono">Noite:</strong> ${stack.protocolSchedule.evening}</div>` : ''}
-            ${stack.protocolSchedule?.weeklyNotes ? `<div><strong class="text-slate-400 font-mono">Semanal / Obs:</strong> ${stack.protocolSchedule.weeklyNotes}</div>` : ''}
-            ${stack.protocolSchedule?.washout ? `<div><strong class="text-amber-400 font-mono">Pausa (Washout):</strong> ${stack.protocolSchedule.washout}</div>` : ''}
+            ${stack.protocolSchedule?.washout ? `
+              <div class="flex items-center justify-between text-slate-400 pt-1 border-t border-slate-800/60">
+                <span>Janela de Repouso:</span>
+                <span class="text-amber-300 text-right truncate max-w-[200px]">${stack.protocolSchedule.washout}</span>
+              </div>
+            ` : ''}
           </div>
         </div>
 
-        <div>
-          ${stack.safetyAlert ? `
-            <div class="text-[11px] text-rose-300/80 bg-rose-950/20 p-2.5 rounded-lg border border-rose-900/30 mb-3 flex items-start gap-1.5">
-              <i data-lucide="alert-circle" class="w-3.5 h-3.5 flex-shrink-0 mt-0.5 text-rose-400"></i>
-              <span>${stack.safetyAlert}</span>
+        <!-- Ações do Card -->
+        <div class="pt-3 border-t border-slate-800 flex items-center justify-between gap-2">
+          ${stack.peptides && stack.peptides.length > 0 ? `
+            <div class="flex items-center gap-1.5 flex-wrap">
+              ${stack.peptides.map(pid => {
+                const pep = PEPTIDES_DATABASE.find(p => p.id === pid);
+                return pep ? `
+                  <button type="button" data-open-pep="${pep.id}" class="open-pep-link text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 transition-colors">
+                    ${pep.name}
+                  </button>
+                ` : '';
+              }).join('')}
             </div>
-          ` : ''}
+          ` : '<div></div>'}
+          
           <button 
+            type="button"
             data-load-stack-id="${stack.id}"
-            class="load-stack-btn w-full py-2.5 bg-slate-800 hover:bg-cyan-500 text-slate-200 hover:text-slate-950 rounded-xl text-xs font-bold transition-all duration-200 flex items-center justify-center gap-2 border border-slate-700">
-            <i data-lucide="plus-circle" class="w-4 h-4"></i>
-            <span>Carregar Peptídeos deste Stack no Planejador</span>
+            class="load-stack-planner-btn px-3 py-1.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500 text-cyan-400 hover:text-slate-950 border border-cyan-500/30 text-xs font-semibold transition-all flex items-center gap-1.5">
+            <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+            <span>Importar ao Planejador</span>
           </button>
         </div>
       </div>
-    `}).join('');
+      `;
+    }).join('');
 
     lucide.createIcons();
 
-    elements.stacksContainer.querySelectorAll('.stack-pep-tag').forEach(tag => {
-      tag.addEventListener('click', () => {
-        openPeptideModal(tag.dataset.pepModalId);
+    elements.stacksContainer.querySelectorAll('.open-pep-link').forEach(btn => {
+      btn.addEventListener('click', () => {
+        openPeptideModal(btn.dataset.openPep);
       });
     });
 
-    elements.stacksContainer.querySelectorAll('.load-stack-btn').forEach(btn => {
+    elements.stacksContainer.querySelectorAll('.load-stack-planner-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        const stack = RESEARCH_STACKS.find(s => s.id === btn.dataset.loadStackId);
-        if (stack) {
-          stack.peptides.forEach(pId => {
-            const pep = PEPTIDES_DATABASE.find(p => p.id === pId);
-            if (pep && !state.customStack.some(item => item.id === pep.id)) {
-              state.customStack.push(normalizePlannerItem({
-                id: pep.id,
-                name: pep.name,
-                category: pep.category
-              }));
-            }
-          });
-          saveCustomStack();
-          updatePlannerUI();
-          openPlannerDrawer();
-          showToast(`Stack "${stack.title}" carregado no seu planejador!`);
-        }
+        const stackId = btn.dataset.loadStackId;
+        const stack = (typeof COMBINATIONS_DATABASE !== 'undefined' ? COMBINATIONS_DATABASE : RESEARCH_STACKS).find(s => s.id === stackId);
+        if (!stack || !stack.peptides) return;
+        
+        stack.peptides.forEach(pid => {
+          if (!state.customStack.some(p => p.id === pid)) {
+            toggleCustomStackItem(pid);
+          }
+        });
+        openPlannerDrawer();
+        showToast(`Combinação '${stack.title}' importada para o seu planejador!`);
       });
     });
   }
@@ -2219,6 +2544,48 @@ document.addEventListener('DOMContentLoaded', () => {
     elements.sortFilter?.addEventListener('change', (e) => {
       state.sortBy = e.target.value;
       renderPeptides();
+    });
+
+    // Filtro de Taxonomia Química
+    elements.chemicalTypeFilter?.addEventListener('change', (e) => {
+      state.selectedChemicalType = e.target.value;
+      renderPeptides();
+    });
+
+    // Filtro de Grau de Evidência (EvidenceGrade)
+    elements.evidenceGradeFilter?.addEventListener('change', (e) => {
+      state.selectedEvidenceGrade = e.target.value;
+      renderPeptides();
+    });
+
+    // Modal Escada de Evidência
+    elements.openEvidenceLadderBtn?.addEventListener('click', () => {
+      elements.evidenceLadderModal?.classList.remove('hidden');
+      lucide.createIcons();
+    });
+    elements.closeEvidenceLadderBtn?.addEventListener('click', () => {
+      elements.evidenceLadderModal?.classList.add('hidden');
+    });
+
+    // Modal Comparador de Compostos
+    elements.openComparatorBtn?.addEventListener('click', openComparatorModal);
+    elements.closeComparatorBtn?.addEventListener('click', closeComparatorModal);
+
+    // Citation Drawer
+    elements.closeCitationDrawerBtn?.addEventListener('click', closeCitationDrawer);
+    elements.closeCitationDrawerBtn2?.addEventListener('click', closeCitationDrawer);
+    document.getElementById('citation-drawer-backdrop')?.addEventListener('click', closeCitationDrawer);
+
+    // Tecla Escape para fechar qualquer modal ou drawer aberto
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closePeptideModal();
+        closeCitationDrawer();
+        closeComparatorModal();
+        closeProtocolDossierModal();
+        if (elements.evidenceLadderModal) elements.evidenceLadderModal.classList.add('hidden');
+        if (elements.disclaimerModal) elements.disclaimerModal.classList.add('hidden');
+      }
     });
 
     elements.favoritesToggleBtn?.addEventListener('click', () => {
