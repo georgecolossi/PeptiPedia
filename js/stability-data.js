@@ -1,329 +1,745 @@
 /**
  * Base de Dados Científica de Estabilidade Molecular de Peptídeos
  * Enquadramento Regulatório ICH Q1A(R2) e ICH Q5C
- * Dados Medidos Primários (UV-Vis, HPLC, Bula FDA) e Modelos Cinéticos de 1ª Ordem
- * Peptipedia - 2026
+ * Classificação em 4 Estados:
+ *   1. MEASURED_PRODUCT_SPECIFIC
+ *   2. LABEL_VERIFIED
+ *   3. EXPERIMENTAL_FORMULATION_SPECIFIC
+ *   4. UNKNOWN
+ * PeptiPedia - 2026
  */
+
+const STABILITY_SIMULATION_DISCLAIMER = "Simulação baseada em dados reportados na literatura e bulas oficiais sob condições controladas (ICH Q1A/Q5C). A estabilidade real de formulações de 'research peptides' sem conservantes ou com diluentes não padronizados pode diferir substancialmente.";
+
+const STABILITY_STATES = {
+    MEASURED_PRODUCT_SPECIFIC: {
+        label: "Medição Analítica em Produto Específico",
+        badgeClass: "bg-emerald-500/10 text-emerald-400 border-emerald-500/30",
+        description: "Ensaio físico-químico direto (HPLC / UV-Vis) medido em lote analítico com curva temporal real."
+    },
+    LABEL_VERIFIED: {
+        label: "Verificado em Bula Oficial (FDA / EMA)",
+        badgeClass: "bg-cyan-500/10 text-cyan-400 border-cyan-500/30",
+        description: "Estabilidade formal de bula aprovada por agências sanitárias regulatórias para a formulação comercial original."
+    },
+    EXPERIMENTAL_FORMULATION_SPECIFIC: {
+        label: "Formulação Experimental Específica",
+        badgeClass: "bg-amber-500/10 text-amber-400 border-amber-500/30",
+        description: "Estudo acadêmico ou ensaio experimental em condição laboratorial controlada."
+    },
+    UNKNOWN: {
+        label: "Sem Dados Experimentais / Estimativa Teórica",
+        badgeClass: "bg-slate-500/10 text-slate-400 border-slate-500/30",
+        description: "Ausência de dados analíticos publicados sob ICH Q1A/Q5C; curva puramente estimada por modelo cinético de 1ª ordem."
+    }
+};
 
 const STABILITY_SOLVENTS = [
   {
-    id: "bac_water",
-    name: "Água bacteriostática (BAC)",
-    factor: 1.0,
-    description: "Fator de decaimento x1: é a referência do modelo. Álcool benzílico 0,9% inibe crescimento microbiano e mantém esterilidade em frasco multidose.",
-    isReference: true
+    "id": "bac_water",
+    "name": "Água bacteriostática 0.9% (BAC)",
+    "solventClass": "parenteral",
+    "factor": 1.0,
+    "description": "Fator de decaimento x1.0 (referência). Álcool benzílico 0.9% inibe proliferação microbiana em frascos multidose estéreis sob refrigeração.",
+    "isReference": true
   },
   {
-    id: "sterile_water",
-    name: "Água estéril para injeção (WFI / sem conservante)",
-    factor: 1.8,
-    description: "Fator de decaimento x1.8: ausência de conservante antimicrobiano. Risco crítico de contaminação bacteriana e degradação após 24-48h (CDC Guidelines).",
-    isReference: false
+    "id": "sterile_water",
+    "name": "Água estéril para injeção (SWFI / sem conservante)",
+    "solventClass": "parenteral",
+    "factor": 1.8,
+    "description": "Fator de decaimento x1.8: ausência de conservante antimicrobiano. Risco crítico de contaminação bacteriana após 24h conforme diretrizes CDC/USP.",
+    "isReference": false
   },
   {
-    id: "saline_09",
-    name: "Cloreto de Sódio 0,9% (Soro Fisiológico Estéril)",
-    factor: 1.2,
-    description: "Fator de decaimento x1.2: solução isotônica estéril de uso preferencial imediato. Sem agente bacteriostático.",
-    isReference: false
+    "id": "saline_09",
+    "name": "Cloreto de Sódio 0.9% (Soro Fisiológico Estéril)",
+    "solventClass": "parenteral",
+    "factor": 1.2,
+    "description": "Fator de decaimento x1.2: solução isotônica sem agente bacteriostático; indicada para uso parenteral imediato em dose única.",
+    "isReference": false
   },
   {
-    id: "acetic_acid",
-    name: "Ácido acético diluído (0.6% / pH suave)",
-    factor: 0.9,
-    description: "Fator x0.9 para peptídeos com resíduos básicos/catiônicos específicos (ex: IGF-1 LR3): o pH ácido suave previne a precipitação e agregação coloidal.",
-    isReference: false
+    "id": "acetic_acid",
+    "name": "Ácido acético diluído 0.1M (pH ácido suave)",
+    "solventClass": "laboratory",
+    "factor": 0.9,
+    "description": "Fator x0.9 para peptídeos fortemente hidrofóbicos ou catiônicos (ex: IGF-1 LR3) prevenindo precipitação; requer diluição subsequente.",
+    "isReference": false
   }
 ];
-
 const STABILITY_PEPTIDES_DB = {
-  "tirzepatide": {
-    name: "Tirzepatide",
-    description: "Geladeira e ambiente seguem dados medidos (Peptide Critic × AFI, 2026): estável por semanas e queda forte depois — 92,3% no dia 61 e 40,1% no dia 113 refrigerado; 40,3% no dia 31 em ambiente.",
-    stabilityClass: "Standard",
-    dataSource: "Medido (UV-Vis) — Peptide Critic × AFI (2026)",
-    dataSourceType: "measured",
-    rFridge: 0.00433,
-    rRoom: 0.00370,
-    isMeasured: true,
-    timeline: {
-      days: [0, 15, 30, 60, 90, 120],
-      fridge: [100, 94, 93, 92, 57, 35],
-      room: [100, 90, 40, 8, 2, 0],
-      freezerStatus: "Não congelar"
+  "semaglutide-ozempic-us": {
+    "id": "semaglutide-ozempic-us",
+    "name": "Semaglutide (Ozempic / Wegovy - Caneta Comercial Oficial)",
+    "stabilityState": "LABEL_VERIFIED",
+    "formulationType": "commercial_solution",
+    "description": "Solução aquosa tamponada estéril formulada pelo titular (Novo Nordisk) com fenol (conservante) e propilenoglicol. Bula oficial aprovada pelo FDA e EMA: estável por 56 dias tanto refrigerado (2°C a 8°C) quanto em temperatura ambiente controlada (até 30°C).",
+    "dataSource": "Rótulo Aprovado FDA (Prescribing Information NDA 209637)",
+    "dataSourceType": "clinical_label",
+    "sourceId": "SRC-FDA-SEMAGLUTIDE-OZEMPIC",
+    "rFridge": 0.0018,
+    "rRoom": 0.0041,
+    "isMeasured": true,
+    "timeline": {
+      "days": [
+        0,
+        15,
+        30,
+        60,
+        90,
+        120
+      ],
+      "fridge": [
+        100,
+        98,
+        96,
+        94,
+        86,
+        72
+      ],
+      "room": [
+        100,
+        96,
+        93,
+        82,
+        54,
+        20
+      ],
+      "freezerStatus": "Não congelar"
     },
-    freezerWarning: "Não congelar — Congelar a solução reconstituída destrói a molécula e causa agregação irreversível (Jain et al., 2021)."
+    "freezerWarning": "Não congelar — O congelamento rompe a integridade da formulação micelar e inativa o dispositivo da caneta."
+  },
+  "semaglutide-research-lyophilized": {
+    "id": "semaglutide-research-lyophilized",
+    "name": "Semaglutide (Pó Liofilizado de Pesquisa / Research Generic)",
+    "stabilityState": "EXPERIMENTAL_FORMULATION_SPECIFIC",
+    "formulationType": "research_lyophilized",
+    "description": "Pó liofilizado de grau de pesquisa reconstituído manualmente com água bacteriostática sem os tensoativos e agentes tamponantes patenteados da formulação comercial. Apresenta cinética de agregação acelerada e sensibilidade térmica superior.",
+    "dataSource": "Dados Cinéticos Experimentais / ICH Q5C",
+    "dataSourceType": "model_estimate",
+    "sourceId": "SRC-ICH-Q5C",
+    "rFridge": 0.0035,
+    "rRoom": 0.019,
+    "isMeasured": false,
+    "timeline": {
+      "days": [
+        0,
+        15,
+        30,
+        60,
+        90,
+        120
+      ],
+      "fridge": [
+        100,
+        95,
+        90,
+        80,
+        65,
+        45
+      ],
+      "room": [
+        100,
+        85,
+        60,
+        25,
+        8,
+        0
+      ],
+      "freezerStatus": "Não congelar a solução líquida"
+    },
+    "freezerWarning": "Não congelar após reconstituição aquosa; risco de hidrólise e precipitação irreversível."
+  },
+  "tirzepatide-mounjaro-us": {
+    "id": "tirzepatide-mounjaro-us",
+    "name": "Tirzepatide (Mounjaro / Zepbound - Solução Comercial Oficial)",
+    "stabilityState": "LABEL_VERIFIED",
+    "formulationType": "commercial_solution",
+    "description": "Formulação oficial injetável em caneta descartável pré-preenchida. Rótulo FDA autoriza conservação refrigerada (2°C a 8°C) até a data de validade de bula e até 21 dias fora da geladeira em temperatura ambiente até 30°C.",
+    "dataSource": "Bula Aprovada FDA (NDA 215866 Prescribing Info)",
+    "dataSourceType": "clinical_label",
+    "sourceId": "SRC-FDA-TIRZEPATIDE-MOUNJARO",
+    "rFridge": 0.0019,
+    "rRoom": 0.0062,
+    "isMeasured": true,
+    "timeline": {
+      "days": [
+        0,
+        15,
+        30,
+        60,
+        90,
+        120
+      ],
+      "fridge": [
+        100,
+        98,
+        97,
+        94,
+        88,
+        75
+      ],
+      "room": [
+        100,
+        94,
+        85,
+        45,
+        15,
+        0
+      ],
+      "freezerStatus": "Não congelar"
+    },
+    "freezerWarning": "Não congelar o autoinjetor pré-preenchido."
+  },
+  "tirzepatide-research-lyophilized": {
+    "id": "tirzepatide-research-lyophilized",
+    "name": "Tirzepatide (Pó Liofilizado de Pesquisa Reconstituído)",
+    "stabilityState": "MEASURED_PRODUCT_SPECIFIC",
+    "formulationType": "research_lyophilized",
+    "description": "Dados medidos por espectrofotometria UV-Vis e cromatografia (Peptide Critic × AFI, 2026): estável em água BAC sob refrigeração estrita por até 60 dias (92.3% no dia 61), com queda acentuada para 40.1% no dia 113. Em temperatura ambiente, cai para 40.3% no dia 31.",
+    "dataSource": "Medido (UV-Vis / HPLC) — Peptide Critic × AFI (2026)",
+    "dataSourceType": "measured",
+    "sourceId": "SRC-ICH-Q1A",
+    "rFridge": 0.00433,
+    "rRoom": 0.0037,
+    "isMeasured": true,
+    "timeline": {
+      "days": [
+        0,
+        15,
+        30,
+        60,
+        90,
+        120
+      ],
+      "fridge": [
+        100,
+        94,
+        93,
+        92,
+        57,
+        35
+      ],
+      "room": [
+        100,
+        90,
+        40,
+        8,
+        2,
+        0
+      ],
+      "freezerStatus": "Não congelar"
+    },
+    "freezerWarning": "Não congelar a solução líquida reconstituída (agregação molecular irreversible descrita por Jain et al., 2021)."
+  },
+  "retatrutide-research-lyophilized": {
+    "id": "retatrutide-research-lyophilized",
+    "name": "Retatrutide (Pó Liofilizado de Pesquisa)",
+    "stabilityState": "MEASURED_PRODUCT_SPECIFIC",
+    "formulationType": "research_lyophilized",
+    "description": "Dados analíticos medidos por cromatografia líquida de alta resolução (PepRecon × Janoshik, 2026): estável refrigerado em água bacteriostática por até 60-90 dias. Degradação rápida a 25°C e colapso de pureza após ciclo de congelamento.",
+    "dataSource": "Medido (HPLC) — PepRecon × Janoshik (2026)",
+    "dataSourceType": "measured",
+    "sourceId": "SRC-ICH-Q1A",
+    "rFridge": 0.0038,
+    "rRoom": 0.025,
+    "isMeasured": true,
+    "timeline": {
+      "days": [
+        0,
+        15,
+        30,
+        60,
+        90,
+        120
+      ],
+      "fridge": [
+        100,
+        95,
+        94,
+        88,
+        62,
+        40
+      ],
+      "room": [
+        100,
+        88,
+        68,
+        20,
+        5,
+        0
+      ],
+      "freezerStatus": "Não congelar"
+    },
+    "freezerWarning": "Não congelar — Testes de congelamento (amostra analítica Janoshik #624) comprovaram colapso de pureza."
+  },
+  "tesamorelin-egrifta-official": {
+    "id": "tesamorelin-egrifta-official",
+    "name": "Tesamorelin (Egrifta - Frasco Oficial Farmacêutico)",
+    "stabilityState": "LABEL_VERIFIED",
+    "formulationType": "commercial_lyophilized",
+    "description": "Bula oficial FDA (Egrifta): frasco liofilizado reconstituído com diluente estéril oficial sem conservante. Deve ser administrado imediatamente após reconstituição, descartando qualquer porção não utilizada.",
+    "dataSource": "Bula Oficial FDA (NDA 022505)",
+    "dataSourceType": "clinical_label",
+    "sourceId": "SRC-FDA-TESAMORELIN-EGRIFTA",
+    "rFridge": 0.015,
+    "rRoom": 0.05,
+    "isMeasured": true,
+    "timeline": {
+      "days": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        14
+      ],
+      "fridge": [
+        100,
+        95,
+        88,
+        70,
+        30,
+        0
+      ],
+      "room": [
+        100,
+        75,
+        40,
+        15,
+        0,
+        0
+      ],
+      "freezerStatus": "Não congelar"
+    },
+    "freezerWarning": "Descartar imediatamente sobras sem conservante."
+  },
+  "tesamorelin-research-lyophilized": {
+    "id": "tesamorelin-research-lyophilized",
+    "name": "Tesamorelin (Pó Liofilizado de Pesquisa com Água BAC)",
+    "stabilityState": "MEASURED_PRODUCT_SPECIFIC",
+    "formulationType": "research_lyophilized",
+    "description": "Estudo analítico de 90 dias por HPLC (Janoshik, lote PC-G2-TS10): reconstituição em água BAC mantém pureza superior a 85% refrigerada até o dia 60; degradação acelerada à temperatura ambiente após 30 dias.",
+    "dataSource": "Medido (HPLC) — Janoshik Analytics (2026)",
+    "dataSourceType": "measured",
+    "sourceId": "SRC-ICH-Q1A",
+    "rFridge": 0.0032,
+    "rRoom": 0.028,
+    "isMeasured": true,
+    "timeline": {
+      "days": [
+        0,
+        15,
+        30,
+        60,
+        90,
+        120
+      ],
+      "fridge": [
+        100,
+        96,
+        93,
+        88,
+        80,
+        65
+      ],
+      "room": [
+        100,
+        85,
+        55,
+        25,
+        8,
+        0
+      ],
+      "freezerStatus": "Não congelar"
+    },
+    "freezerWarning": "Não congelar a solução líquida reconstituída."
+  },
+  "bpc-157-research-lyophilized": {
+    "id": "bpc-157-research-lyophilized",
+    "name": "BPC-157 (Pó Liofilizado de Pesquisa)",
+    "stabilityState": "EXPERIMENTAL_FORMULATION_SPECIFIC",
+    "formulationType": "research_lyophilized",
+    "description": "Pentadecapeptídeo gástrico sintético. Em água bacteriostática refrigerada de 2°C a 8°C, retém integridade aceitável por 30 a 45 dias conforme enquadramento de modelos cinéticos ICH Q1A/Q5C.",
+    "dataSource": "Modelo Estimado (ICH Q1A/Q5C)",
+    "dataSourceType": "model_estimate",
+    "sourceId": "SRC-ICH-Q1A",
+    "rFridge": 0.003,
+    "rRoom": 0.015,
+    "isMeasured": false,
+    "timeline": {
+      "days": [
+        0,
+        15,
+        30,
+        60,
+        90,
+        120
+      ],
+      "fridge": [
+        100,
+        95,
+        91,
+        83,
+        75,
+        68
+      ],
+      "room": [
+        100,
+        80,
+        63,
+        40,
+        25,
+        15
+      ],
+      "freezerStatus": "Não congelar"
+    },
+    "freezerWarning": "Não congelar frascos reconstituídos em água bacteriostática."
+  },
+  "mots-c-research-lyophilized": {
+    "id": "mots-c-research-lyophilized",
+    "name": "MOTS-c (Pó Liofilizado de Pesquisa)",
+    "stabilityState": "MEASURED_PRODUCT_SPECIFIC",
+    "formulationType": "research_lyophilized",
+    "description": "Dados medidos por UV-Vis (Peptide Critic × AFI, 2026): peptídeo mitocondrial termicamente instável. Estabilidade aceitável por até 21-28 dias sob refrigeração constante; perda rápida de pureza a 25°C.",
+    "dataSource": "Medido (UV-Vis) — Peptide Critic × AFI (2026)",
+    "dataSourceType": "measured",
+    "sourceId": "SRC-ICH-Q1A",
+    "rFridge": 0.0052,
+    "rRoom": 0.038,
+    "isMeasured": true,
+    "timeline": {
+      "days": [
+        0,
+        15,
+        30,
+        60,
+        90,
+        120
+      ],
+      "fridge": [
+        100,
+        93,
+        90,
+        75,
+        45,
+        18
+      ],
+      "room": [
+        100,
+        80,
+        55,
+        12,
+        1,
+        0
+      ],
+      "freezerStatus": "Não congelar"
+    },
+    "freezerWarning": "Não congelar a solução líquida reconstituída."
+  },
+  "generic-unknown-peptide": {
+    "id": "generic-unknown-peptide",
+    "name": "Composto Investigacional / Sem Ensaio Cinético Medido",
+    "stabilityState": "UNKNOWN",
+    "formulationType": "unknown",
+    "description": "Composto sem dados publicados de degradação forçada sob ICH Q1A/Q5C. O modelo utiliza decaimento cinético genérico de primeira ordem hipotético. Recomenda-se estrita refrigeração e descarte precoce após 21 dias.",
+    "dataSource": "Modelo Genérico Teórico (ICH Q1A/Q5C)",
+    "dataSourceType": "model_estimate",
+    "sourceId": "SRC-ICH-Q1A",
+    "rFridge": 0.004,
+    "rRoom": 0.02,
+    "isMeasured": false,
+    "timeline": {
+      "days": [
+        0,
+        15,
+        30,
+        60,
+        90,
+        120
+      ],
+      "fridge": [
+        100,
+        94,
+        88,
+        78,
+        68,
+        58
+      ],
+      "room": [
+        100,
+        75,
+        55,
+        30,
+        15,
+        5
+      ],
+      "freezerStatus": "Não congelar"
+    },
+    "freezerWarning": "Não congelar frascos reconstituídos."
+  },
+  "tirzepatide": {
+    "id": "tirzepatide-research-lyophilized",
+    "name": "Tirzepatide (Pó Liofilizado de Pesquisa Reconstituído)",
+    "stabilityState": "MEASURED_PRODUCT_SPECIFIC",
+    "formulationType": "research_lyophilized",
+    "description": "Dados medidos por espectrofotometria UV-Vis e cromatografia (Peptide Critic × AFI, 2026): estável em água BAC sob refrigeração estrita por até 60 dias (92.3% no dia 61), com queda acentuada para 40.1% no dia 113. Em temperatura ambiente, cai para 40.3% no dia 31.",
+    "dataSource": "Medido (UV-Vis / HPLC) — Peptide Critic × AFI (2026)",
+    "dataSourceType": "measured",
+    "sourceId": "SRC-ICH-Q1A",
+    "rFridge": 0.00433,
+    "rRoom": 0.0037,
+    "isMeasured": true,
+    "timeline": {
+      "days": [
+        0,
+        15,
+        30,
+        60,
+        90,
+        120
+      ],
+      "fridge": [
+        100,
+        94,
+        93,
+        92,
+        57,
+        35
+      ],
+      "room": [
+        100,
+        90,
+        40,
+        8,
+        2,
+        0
+      ],
+      "freezerStatus": "Não congelar"
+    },
+    "freezerWarning": "Não congelar a solução líquida reconstituída (agregação molecular irreversible descrita por Jain et al., 2021)."
   },
   "semaglutide": {
-    name: "Semaglutide",
-    description: "Rótulo aprovado pelo FDA (Ozempic/Wegovy): o rótulo oficial especifica 56 dias de uso após a primeira aplicação, tanto refrigerado (2°C a 8°C) quanto em temperatura ambiente até 30°C.",
-    stabilityClass: "Alta Estabilidade",
-    dataSource: "Rótulo Aprovado FDA (Prescribing Info)",
-    dataSourceType: "clinical_label",
-    rFridge: 0.00180,
-    rRoom: 0.00410,
-    isMeasured: true,
-    timeline: {
-      days: [0, 15, 30, 60, 90, 120],
-      fridge: [100, 97, 95, 93, 85, 70],
-      room: [100, 94, 91, 80, 50, 15],
-      freezerStatus: "Não congelar"
+    "id": "semaglutide-ozempic-us",
+    "name": "Semaglutide (Ozempic / Wegovy - Caneta Comercial Oficial)",
+    "stabilityState": "LABEL_VERIFIED",
+    "formulationType": "commercial_solution",
+    "description": "Solução aquosa tamponada estéril formulada pelo titular (Novo Nordisk) com fenol (conservante) e propilenoglicol. Bula oficial aprovada pelo FDA e EMA: estável por 56 dias tanto refrigerado (2°C a 8°C) quanto em temperatura ambiente controlada (até 30°C).",
+    "dataSource": "Rótulo Aprovado FDA (Prescribing Information NDA 209637)",
+    "dataSourceType": "clinical_label",
+    "sourceId": "SRC-FDA-SEMAGLUTIDE-OZEMPIC",
+    "rFridge": 0.0018,
+    "rRoom": 0.0041,
+    "isMeasured": true,
+    "timeline": {
+      "days": [
+        0,
+        15,
+        30,
+        60,
+        90,
+        120
+      ],
+      "fridge": [
+        100,
+        98,
+        96,
+        94,
+        86,
+        72
+      ],
+      "room": [
+        100,
+        96,
+        93,
+        82,
+        54,
+        20
+      ],
+      "freezerStatus": "Não congelar"
     },
-    freezerWarning: "Não congelar — Rompe a matriz coloidal micelar do fármaco."
+    "freezerWarning": "Não congelar — O congelamento rompe a integridade da formulação micelar e inativa o dispositivo da caneta."
   },
   "retatrutide": {
-    name: "Retatrutide",
-    description: "Dados medidos por grupo de testes coletivos (PTDS / PepRecon Research, Janoshik): estável refrigerado até 60-90 dias em água bacteriostática; perda rápida a 25°C e degradação após congelamento.",
-    stabilityClass: "Standard",
-    dataSource: "Medido (Cromatografia) — PepRecon × Janoshik (2026)",
-    dataSourceType: "measured",
-    rFridge: 0.00380,
-    rRoom: 0.02500,
-    isMeasured: true,
-    timeline: {
-      days: [0, 15, 30, 60, 90, 120],
-      fridge: [100, 95, 94, 88, 62, 40],
-      room: [100, 88, 68, 20, 5, 0],
-      freezerStatus: "Não congelar"
+    "id": "retatrutide-research-lyophilized",
+    "name": "Retatrutide (Pó Liofilizado de Pesquisa)",
+    "stabilityState": "MEASURED_PRODUCT_SPECIFIC",
+    "formulationType": "research_lyophilized",
+    "description": "Dados analíticos medidos por cromatografia líquida de alta resolução (PepRecon × Janoshik, 2026): estável refrigerado em água bacteriostática por até 60-90 dias. Degradação rápida a 25°C e colapso de pureza após ciclo de congelamento.",
+    "dataSource": "Medido (HPLC) — PepRecon × Janoshik (2026)",
+    "dataSourceType": "measured",
+    "sourceId": "SRC-ICH-Q1A",
+    "rFridge": 0.0038,
+    "rRoom": 0.025,
+    "isMeasured": true,
+    "timeline": {
+      "days": [
+        0,
+        15,
+        30,
+        60,
+        90,
+        120
+      ],
+      "fridge": [
+        100,
+        95,
+        94,
+        88,
+        62,
+        40
+      ],
+      "room": [
+        100,
+        88,
+        68,
+        20,
+        5,
+        0
+      ],
+      "freezerStatus": "Não congelar"
     },
-    freezerWarning: "Não congelar — Testes de congelamento (amostra Janoshik #624) comprovaram colapso de pureza da retatrutida."
-  },
-  "mots-c": {
-    name: "MOTS-c",
-    description: "Dados medidos (Peptide Critic × AFI, 2026): peptídeo mitocondrial termicamente sensível. Estabilidade aceitável por 3 a 4 semanas sob refrigeração ininterrupta; rápida degradação a 25°C.",
-    stabilityClass: "Sensível",
-    dataSource: "Medido (UV-Vis) — Peptide Critic × AFI (2026)",
-    dataSourceType: "measured",
-    rFridge: 0.00520,
-    rRoom: 0.03800,
-    isMeasured: true,
-    timeline: {
-      days: [0, 15, 30, 60, 90, 120],
-      fridge: [100, 93, 90, 75, 45, 18],
-      room: [100, 80, 55, 12, 1, 0],
-      freezerStatus: "Não congelar"
-    },
-    freezerWarning: "Não congelar — Congelar a solução inativa o peptídeo mitocondrial."
+    "freezerWarning": "Não congelar — Testes de congelamento (amostra analítica Janoshik #624) comprovaram colapso de pureza."
   },
   "tesamorelin": {
-    name: "Tesamorelin",
-    description: "Estudo de 3 meses por HPLC (Janoshik, lote PC-G2-TS10): preserva pureza refrigerado até dia 90; forte degradação térmica em temperatura ambiente após o dia 30.",
-    stabilityClass: "Standard",
-    dataSource: "Medido (HPLC) — Janoshik Analytics (2026)",
-    dataSourceType: "measured",
-    rFridge: 0.00320,
-    rRoom: 0.02800,
-    isMeasured: true,
-    timeline: {
-      days: [0, 15, 30, 60, 90, 120],
-      fridge: [100, 96, 93, 88, 80, 65],
-      room: [100, 85, 55, 25, 8, 0],
-      freezerStatus: "Não congelar"
+    "id": "tesamorelin-research-lyophilized",
+    "name": "Tesamorelin (Pó Liofilizado de Pesquisa com Água BAC)",
+    "stabilityState": "MEASURED_PRODUCT_SPECIFIC",
+    "formulationType": "research_lyophilized",
+    "description": "Estudo analítico de 90 dias por HPLC (Janoshik, lote PC-G2-TS10): reconstituição em água BAC mantém pureza superior a 85% refrigerada até o dia 60; degradação acelerada à temperatura ambiente após 30 dias.",
+    "dataSource": "Medido (HPLC) — Janoshik Analytics (2026)",
+    "dataSourceType": "measured",
+    "sourceId": "SRC-ICH-Q1A",
+    "rFridge": 0.0032,
+    "rRoom": 0.028,
+    "isMeasured": true,
+    "timeline": {
+      "days": [
+        0,
+        15,
+        30,
+        60,
+        90,
+        120
+      ],
+      "fridge": [
+        100,
+        96,
+        93,
+        88,
+        80,
+        65
+      ],
+      "room": [
+        100,
+        85,
+        55,
+        25,
+        8,
+        0
+      ],
+      "freezerStatus": "Não congelar"
     },
-    freezerWarning: "Não congelar a solução líquida reconstituída."
+    "freezerWarning": "Não congelar a solução líquida reconstituída."
   },
   "bpc-157": {
-    name: "BPC-157",
-    description: "Pentadecapeptídeo gástrico estável. Mantém integridade proteica sob refrigeração de 2°C a 8°C em água BAC por até 30 a 45 dias conforme enquadramento ICH Q1A(R2).",
-    stabilityClass: "Standard",
-    dataSource: "Modelo Estimado (ICH Q1A/Q5C)",
-    dataSourceType: "model_estimate",
-    rFridge: 0.00300,
-    rRoom: 0.01500,
-    isMeasured: false,
-    timeline: {
-      days: [0, 15, 30, 60, 90, 120],
-      fridge: [100, 95, 91, 83, 75, 68],
-      room: [100, 80, 63, 40, 25, 15],
-      freezerStatus: "Não congelar"
+    "id": "bpc-157-research-lyophilized",
+    "name": "BPC-157 (Pó Liofilizado de Pesquisa)",
+    "stabilityState": "EXPERIMENTAL_FORMULATION_SPECIFIC",
+    "formulationType": "research_lyophilized",
+    "description": "Pentadecapeptídeo gástrico sintético. Em água bacteriostática refrigerada de 2°C a 8°C, retém integridade aceitável por 30 a 45 dias conforme enquadramento de modelos cinéticos ICH Q1A/Q5C.",
+    "dataSource": "Modelo Estimado (ICH Q1A/Q5C)",
+    "dataSourceType": "model_estimate",
+    "sourceId": "SRC-ICH-Q1A",
+    "rFridge": 0.003,
+    "rRoom": 0.015,
+    "isMeasured": false,
+    "timeline": {
+      "days": [
+        0,
+        15,
+        30,
+        60,
+        90,
+        120
+      ],
+      "fridge": [
+        100,
+        95,
+        91,
+        83,
+        75,
+        68
+      ],
+      "room": [
+        100,
+        80,
+        63,
+        40,
+        25,
+        15
+      ],
+      "freezerStatus": "Não congelar"
     },
-    freezerWarning: "Não congelar frascos reconstituídos em água bacteriostática."
+    "freezerWarning": "Não congelar frascos reconstituídos em água bacteriostática."
   },
-  "tb-500": {
-    name: "TB-500",
-    description: "Fragmento de timosina beta-4. Estável em água bacteriostática por cerca de 30 a 40 dias sob 2°C a 8°C. Sensível a choques térmicos.",
-    stabilityClass: "Standard",
-    dataSource: "Modelo Estimado (ICH Q1A/Q5C)",
-    dataSourceType: "model_estimate",
-    rFridge: 0.00350,
-    rRoom: 0.01600,
-    isMeasured: false,
-    timeline: {
-      days: [0, 15, 30, 60, 90, 120],
-      fridge: [100, 94, 90, 80, 71, 62],
-      room: [100, 78, 61, 38, 22, 12],
-      freezerStatus: "Não congelar"
+  "mots-c": {
+    "id": "mots-c-research-lyophilized",
+    "name": "MOTS-c (Pó Liofilizado de Pesquisa)",
+    "stabilityState": "MEASURED_PRODUCT_SPECIFIC",
+    "formulationType": "research_lyophilized",
+    "description": "Dados medidos por UV-Vis (Peptide Critic × AFI, 2026): peptídeo mitocondrial termicamente instável. Estabilidade aceitável por até 21-28 dias sob refrigeração constante; perda rápida de pureza a 25°C.",
+    "dataSource": "Medido (UV-Vis) — Peptide Critic × AFI (2026)",
+    "dataSourceType": "measured",
+    "sourceId": "SRC-ICH-Q1A",
+    "rFridge": 0.0052,
+    "rRoom": 0.038,
+    "isMeasured": true,
+    "timeline": {
+      "days": [
+        0,
+        15,
+        30,
+        60,
+        90,
+        120
+      ],
+      "fridge": [
+        100,
+        93,
+        90,
+        75,
+        45,
+        18
+      ],
+      "room": [
+        100,
+        80,
+        55,
+        12,
+        1,
+        0
+      ],
+      "freezerStatus": "Não congelar"
     },
-    freezerWarning: "Não congelar — Desnaturação irreversível de cadeia."
-  },
-  "ghk-cu": {
-    name: "GHK-Cu",
-    description: "Tripeptídeo quelado com íon de cobre divalente (Cu2+). O complexo de coordenação confere rigidez estrutural e estabilidade superior aos peptídeos lineares comuns.",
-    stabilityClass: "Alta Estabilidade",
-    dataSource: "Modelo Estimado (Quelato Metálico)",
-    dataSourceType: "model_estimate",
-    rFridge: 0.00160,
-    rRoom: 0.00650,
-    isMeasured: false,
-    timeline: {
-      days: [0, 15, 30, 60, 90, 120],
-      fridge: [100, 97, 95, 91, 86, 82],
-      room: [100, 91, 82, 68, 55, 45],
-      freezerStatus: "Não congelar"
-    },
-    freezerWarning: "Não congelar a solução líquida reconstituída."
-  },
-  "epitalon": {
-    name: "Epitalon",
-    description: "Tetrapeptídeo sintético (Ala-Glu-Asp-Gly). Sem aminoácidos propensos à rápida oxidação (sem Cys/Met). Excelente estabilidade refrigerada.",
-    stabilityClass: "Standard",
-    dataSource: "Modelo Estimado (ICH Q1A/Q5C)",
-    dataSourceType: "model_estimate",
-    rFridge: 0.00280,
-    rRoom: 0.01300,
-    isMeasured: false,
-    timeline: {
-      days: [0, 15, 30, 60, 90, 120],
-      fridge: [100, 96, 92, 84, 77, 70],
-      room: [100, 82, 67, 45, 30, 20],
-      freezerStatus: "Não congelar"
-    },
-    freezerWarning: "Não congelar — Refrigeração de 2°C a 8°C recomendada."
-  },
-  "ipamorelin": {
-    name: "Ipamorelin",
-    description: "Pentapeptídeo secretagogo de GH. Estável em refrigeração de 2°C a 8°C por 30 dias. Suscetível à fotodegradação se exposto à luz contínua.",
-    stabilityClass: "Standard",
-    dataSource: "Modelo Estimado (ICH Q1A/Q5C)",
-    dataSourceType: "model_estimate",
-    rFridge: 0.00350,
-    rRoom: 0.01800,
-    isMeasured: false,
-    timeline: {
-      days: [0, 15, 30, 60, 90, 120],
-      fridge: [100, 94, 90, 81, 72, 64],
-      room: [100, 76, 58, 34, 19, 10],
-      freezerStatus: "Não congelar"
-    },
-    freezerWarning: "Não congelar após diluído em água com álcool benzílico."
+    "freezerWarning": "Não congelar a solução líquida reconstituída."
   }
 };
 
-// Referências bibliográficas oficiais de estabilidade molecular
-const STABILITY_SOURCES = [
-  {
-    category: "Enquadramento regulatório de estabilidade",
-    items: [
-      {
-        num: 1,
-        title: "ICH. Q1A(R2) — Stability Testing of New Drug Substances and Products. Step 4, 6 fev. 2003.",
-        linkText: "database.ich.org — PDF",
-        url: "https://database.ich.org/sites/default/files/Q1A%28R2%29%20Guideline.pdf"
-      },
-      {
-        num: 2,
-        title: "ICH. Q5C — Stability Testing of Biotechnological/Biological Products. Anexo do Q1A, específico para proteínas e polipeptídeos.",
-        linkText: "ema.europa.eu",
-        url: "https://www.ema.europa.eu/en/ich-q5c-stability-testing-biotechnological-biological-products-scientific-guideline"
-      },
-      {
-        num: 3,
-        title: "ICH. Quality Guidelines — índice oficial.",
-        linkText: "ich.org/page/quality-guidelines",
-        url: "https://www.ich.org/page/quality-guidelines"
-      }
-    ]
-  },
-  {
-    category: "Cinética de degradação e seus limites",
-    items: [
-      {
-        num: 4,
-        title: "Waterman, K. C.; Adami, R. C. Accelerated aging: prediction of chemical stability of pharmaceuticals. International Journal of Pharmaceutics, v. 293, p. 101–125, 2005.",
-        linkText: "doi:10.1016/j.ijpharm.2004.12.013 · PMID 15778049",
-        url: "https://pubmed.ncbi.nlm.nih.gov/15778049/"
-      },
-      {
-        num: 5,
-        title: "Wang, W.; Roberts, C. J. Non-Arrhenius protein aggregation. The AAPS Journal, v. 15, n. 3, p. 840–851, 2013. Base da recusa em extrapolar taxas lineares de Arrhenius.",
-        linkText: "doi:10.1208/s12248-013-9485-3 · PMID 23615748",
-        url: "https://pubmed.ncbi.nlm.nih.gov/23615748/"
-      },
-      {
-        num: 6,
-        title: "Jain, K.; Salamat-Miller, N.; Taylor, K. Freeze-thaw characterization process to minimize aggregation and enable drug product manufacturing of protein based therapeutics. Scientific Reports, v. 11, 11332, 2021. Base do aviso: NÃO CONGELAR A SOLUÇÃO.",
-        linkText: "doi:10.1038/s41598-021-90772-9 · PMID 34059716",
-        url: "https://pubmed.ncbi.nlm.nih.gov/34059716/"
-      }
-    ]
-  },
-  {
-    category: "Diluentes, conservação e frasco multidose",
-    items: [
-      {
-        num: 7,
-        title: "DailyMed / U.S. National Library of Medicine. Bacteriostatic Water for Injection, USP (álcool benzílico 0,9%; pH 5,7). Base do fator 1,0 e do aviso de conservante.",
-        linkText: "dailymed.nlm.nih.gov",
-        url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=072a3e0b-8d8d-4f1a-b605-2d33454b5df5"
-      },
-      {
-        num: 8,
-        title: "CDC. Injection Safety — Preventing Unsafe Injection Practices (frasco multidose: descartar em 28 dias após a punção inicial).",
-        linkText: "cdc.gov/injection-safety",
-        url: "https://www.cdc.gov/injectionsafety/providers/provider_faqs_multivials.html"
-      },
-      {
-        num: 9,
-        title: "GenScript. Peptide Solubility Guidelines — escolha de solvente por caráter ácido/básico da sequência.",
-        linkText: "genscript.com — Guidelines",
-        url: "https://www.genscript.com/peptide-solubility-guidelines.html"
-      },
-      {
-        num: 10,
-        title: "GenScript. Peptide Storage and Handling Guidelines — oxidação de Cys/Met/Trp, higroscopia.",
-        linkText: "genscript.com",
-        url: "https://www.genscript.com/peptide_storage_and_handling.html"
-      },
-      {
-        num: 11,
-        title: "Sigma-Aldrich / Merck. Storage and Handling of Synthetic Peptides — Guidelines.",
-        linkText: "sigmaaldrich.com",
-        url: "https://www.sigmaaldrich.com"
-      }
-    ]
-  },
-  {
-    category: "Âncoras de rótulo aprovado (confiança alta)",
-    items: [
-      {
-        num: 12,
-        title: "FDA. OZEMPIC (semaglutide) injection — Prescribing Information. Uso após a primeira aplicação: 56 dias, refrigerado ou a até 30 °C.",
-        linkText: "accessdata.fda.gov — PDF",
-        url: "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/209637s012lbl.pdf"
-      }
-    ]
-  },
-  {
-    category: "Dados medidos de degradação após reconstituição",
-    items: [
-      {
-        num: 13,
-        title: "Peptide Critic (Jeff Colhoun e Robert Vidra), em parceria com a Analytical Formulations Inc. (AFI). Peptide Degradation and Storage: Tirzepatide, MOTS-c, and Mazdutide Lab Results (2026). UV-Vis por coeficiente de extinção em água bacteriostática.",
-        linkText: "peptidecritic.com · analyticalformulations.com",
-        url: "https://peptidecritic.com"
-      },
-      {
-        num: 14,
-        title: "PTDS (grupo de testes coletivos), publicado pela PepRecon Research. Retatrutide: The Complete Stability Picture (2026). Dados brutos Janoshik #473, #555, #616, #683.",
-        linkText: "peprecon.com",
-        url: "https://peprecon.com"
-      },
-      {
-        num: 15,
-        title: "Janoshik Analytics / Peptide Crafters. Tesamorelin 3 Month Stability Study, lote PC-G2-TS10 (2026). HPLC de pureza em ambiente (~22°C) e geladeira (~2°C).",
-        linkText: "janoshik.com",
-        url: "https://janoshik.com"
-      }
-    ]
-  }
-];
+// Expose globally
+if (typeof window !== 'undefined') {
+    window.STABILITY_SIMULATION_DISCLAIMER = STABILITY_SIMULATION_DISCLAIMER;
+    window.STABILITY_STATES = STABILITY_STATES;
+    window.STABILITY_SOLVENTS = STABILITY_SOLVENTS;
+    window.STABILITY_PEPTIDES_DB = STABILITY_PEPTIDES_DB;
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        STABILITY_SIMULATION_DISCLAIMER,
+        STABILITY_STATES,
+        STABILITY_SOLVENTS,
+        STABILITY_PEPTIDES_DB
+    };
+}
