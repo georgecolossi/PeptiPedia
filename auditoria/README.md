@@ -22,7 +22,8 @@ auditoria/
 │   ├── P2B1/                # Microetapa P2B.1: 2 correções pontuais de consistência (SS-31 e Sepse)
 │   ├── P2C/                 # Microetapa P2C: alinhamento científico de 3 dossiês em peptides-data.js
 │   ├── P2C1/                # Microetapa P2C.1: microcorreção de Epitalon e atualização regulatória FDA SS-31
-│   └── P2C3/                # Microetapa P2C.3: correção crítica do TB-500 (Ac-LKKTETQ vs Tβ4) e desfecho nulo RGN-259
+│   ├── P2C3/                # Microetapa P2C.3: correção crítica do TB-500 (Ac-LKKTETQ vs Tβ4) e desfecho nulo RGN-259
+│   └── P2C31/               # Microetapa P2C.3.1: retificação bibliográfica e padrão multiformulação
 ├── relatorios/              # Diffs técnicos, pendências e validações científicas
 │   ├── P2A/                 # Diff, testes e pendências editoriais da microetapa P2A
 │   ├── P2B/                 # Diff, integridade e validação científica da microetapa P2B
@@ -30,9 +31,12 @@ auditoria/
 │   ├── P2C/                 # Diff, integridade e validação dos dossiês da microetapa P2C
 │   ├── P2C1/                # Diff e validação científica da microetapa P2C.1
 │   ├── P2C3/                # Diff, validação científica do TB-500 e errata farmacotécnica da microetapa P2C.3
+│   ├── P2C31/               # Diff, conferência bibliográfica, auditoria documental TB-500 e padrão multiformulação (P2C.3.1)
 │   ├── benchmark/           # Benchmark comparativo de 3 sites, auditoria de fontes e expansão reconciliada
 │   └── pesquisas/           # Auditorias independentes V1/V2, pareceres e benchmarks
 ├── manifestos/              # Planilhas CSV com metadados primários e inventários
+│   ├── PeptiPedia-P2C31-Matriz-51-Estudos.csv          # Matriz auditada dos 51 estudos com pares finais TB-500 (P2C.3.1)
+│   ├── PeptiPedia-P2C31-Lacunas-Corrigidas.csv         # Matriz de lacunas dos 54 dossiês (P2C.3.1)
 │   ├── PeptiPedia-P2C3-Matriz-51-Estudos.csv           # Matriz auditada dos 51 estudos com TB-500 retificado (P2C.3)
 │   ├── PeptiPedia-P2C3-Lacunas-Corrigidas.csv          # Matriz de lacunas dos 54 dossiês com TB-500 atualizado (P2C.3)
 │   ├── PeptiPedia-P2C2-Inventario-Verificado.csv       # Inventário verificado de 125 entidades únicas (P2C.2)
@@ -69,6 +73,7 @@ Nenhum estudo é promovido ou alterado sem confronto direto de fontes primárias
 | **P2B.1** | `758BFC79AA55C3DADB09079F97D657579F39866B58C174F02146B324DD2ED3DA` | Ajuste de consistência em SS-31 (6MWT / fadiga) e Sepse ETASS |
 | **P2C / P2C.1** | `758BFC79AA55C3DADB09079F97D657579F39866B58C174F02146B324DD2ED3DA` | **Preservado 100% intacto** (base de estudos inalterada) |
 | **P2C.3** | `5623F870CE845BA87AD70B8ED1D10657498CAFFD5FC73312D7CF881C0F11CE99` | Retificação dos estudos `study-tb500-cornea` (PMID 26056426 / desfechos nulos) e `study-tb500-nature` (evidência indireta Tβ4) |
+| **P2C.3.1** | `B0F3C26B8C5CBB2E59A155DE487825D061E02DBFF60C1C0DC5EF748ED0976E3D` | Retificação de DOI e alinhamento do estudo Smart et al. (Nature 2011, PMID 21654746, DOI 10.1038/nature10188) e estudo oftálmico (DOI 10.2147/OPTH.S80954) |
 
 ### 3.2. Catálogo de Peptídeos e Dossiês (`js/peptides-data.js`)
 
@@ -77,7 +82,7 @@ Nenhum estudo é promovido ou alterado sem confronto direto de fontes primárias
 | **P1 / P2A / P2B / P2B.1** | `6F67A0610C45CEF1ECDCD9C8840E98A4B1B2A0E6892CF1FC57F7591B02654B24` | Base descritiva original com 54 compostos |
 | **P2C** | `48275C94C6781423A143A58E1BF14C6A292FA580E80A52B76968F05820A4D76F` | Alinhamento científico e bibliográfico de Timosina Alfa-1, Epitalon e SS-31 |
 | **P2C.1** | `3EF83BEB6F6A035A81795FE7112E0008C4EEF50BD0DC7CACE620494340633822` | Microcorreção de DOI/Hayflick em Epitalon e aprovação acelerada FDA em SS-31 |
-| **P2C.3** | `F42D4E58142C2E296239ABD4147A8FBC019B529A3E28AA12BF3849B8CA31A781` | Ajuste estrito do dossiê `tb-500` (identidade química Ac-LKKTETQ vs Tβ4, PM 889 Da e nota de evidência indireta) |
+| **P2C.3 / P2C.3.1** | `F42D4E58142C2E296239ABD4147A8FBC019B529A3E28AA12BF3849B8CA31A781` | **Preservado 100% intacto em P2C.3.1** (dossiê `tb-500` auditado sem alteração operacional) |
 
 > [!NOTE]
 > **Diferenciação entre Hashes Locais e Blobs Git:**
