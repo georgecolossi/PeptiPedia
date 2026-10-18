@@ -19,11 +19,13 @@ auditoria/
 │   ├── P1/                  # Versão inicial funcional aprovada (código original intacto)
 │   ├── P2A/                 # Microetapa P2A: 8 correções bibliográficas estritas (PMID/DOI)
 │   ├── P2B/                 # Microetapa P2B: 4 correções científicas fundamentadas
-│   └── P2B1/                # Microetapa P2B.1: 2 correções pontuais de consistência (SS-31 e Sepse)
+│   ├── P2B1/                # Microetapa P2B.1: 2 correções pontuais de consistência (SS-31 e Sepse)
+│   └── P2C/                 # Microetapa P2C: alinhamento científico de 3 dossiês em peptides-data.js
 ├── relatorios/              # Diffs técnicos, pendências e validações científicas
 │   ├── P2A/                 # Diff, testes e pendências editoriais da microetapa P2A
 │   ├── P2B/                 # Diff, integridade e validação científica da microetapa P2B
 │   ├── P2B1/                # Diff, integridade e validação científica da microetapa P2B.1
+│   ├── P2C/                 # Diff, integridade e validação dos dossiês da microetapa P2C
 │   └── pesquisas/           # Auditorias independentes V1/V2, pareceres e benchmarks
 ├── manifestos/              # Planilhas CSV com metadados primários e inventários
 └── README.md                # Este guia de governança e sincronização
@@ -45,7 +47,7 @@ Nenhum estudo é promovido ou alterado sem confronto direto de fontes primárias
 
 ## 3. Hashes Criptográficos SHA-256 de Referência
 
-Arquivo central auditado: `js/studies-data.js`
+### 3.1. Base de Estudos (`js/studies-data.js`)
 
 | Versão | SHA-256 de `js/studies-data.js` (Local Windows) | Descrição do Escopo |
 | :--- | :--- | :--- |
@@ -53,6 +55,14 @@ Arquivo central auditado: `js/studies-data.js`
 | **P2A** | `EA560D3A1AD853F318978382E838C6379EBE96C09389C4D4361CA178FF94BC8B` | Correção exclusiva de 8 pares bibliográficos autorizados |
 | **P2B** | `38F4D4135E5ABD609ABF2B3E3975666C58E1A2244D569FE6F600BB1657A92799` | Correção científica dos estudos COVID, Hayflick, SS-31 e Sepse |
 | **P2B.1** | `758BFC79AA55C3DADB09079F97D657579F39866B58C174F02146B324DD2ED3DA` | Ajuste de consistência em SS-31 (6MWT / fadiga) e Sepse ETASS |
+| **P2C** | `758BFC79AA55C3DADB09079F97D657579F39866B58C174F02146B324DD2ED3DA` | **Preservado 100% intacto** (base de estudos inalterada) |
+
+### 3.2. Catálogo de Peptídeos e Dossiês (`js/peptides-data.js`)
+
+| Versão | SHA-256 de `js/peptides-data.js` (Local Windows) | Descrição do Escopo |
+| :--- | :--- | :--- |
+| **P1 / P2A / P2B / P2B.1** | `6F67A0610C45CEF1ECDCD9C8840E98A4B1B2A0E6892CF1FC57F7591B02654B24` | Base descritiva original com 54 compostos |
+| **P2C** | `48275C94C6781423A143A58E1BF14C6A292FA580E80A52B76968F05820A4D76F` | Alinhamento científico e bibliográfico de Timosina Alfa-1, Epitalon e SS-31 |
 
 > [!NOTE]
 > **Diferenciação entre Hashes Locais e Blobs Git:**
@@ -70,7 +80,7 @@ Todas as versões auditadas mantêm conformidade com as entidades canônicas do 
 
 ---
 
-## 5. Protocolo de Sincronização para Etapas Futuras (P2C, P2D, etc.)
+## 5. Protocolo de Sincronização para Etapas Futuras (P2D, P2E, etc.)
 
 Esta regra persistente rege a atuação do assistente e dos mantenedores nas próximas tarefas:
 
@@ -78,7 +88,7 @@ Esta regra persistente rege a atuação do assistente e dos mantenedores nas pr�
 > **Garantia Operacional Efetiva:**
 > A rotina de sincronização e a segurança do repositório **somente são garantidas quando efetivamente executadas e verificadas pelo agente Antigravity**, e não meramente por estarem descritas neste documento. Cada entrega exige validação cruzada pré-commit por script automatizado.
 
-1. **Conclusão Local da Etapa:** Finalizar e testar localmente a microetapa em pasta isolada (ex.: `PeptiPedia-P2C-TESTE`).
+1. **Conclusão Local da Etapa:** Finalizar e testar localmente a microetapa em pasta isolada (ex.: `PeptiPedia-P2D-TESTE`).
 2. **Criação do Snapshot:** Criar `auditoria/snapshots/<ETAPA>/` contendo a cópia fiel dos arquivos operacionais do site, preservando caminhos relativos.
 3. **Criação dos Relatórios:** Criar `auditoria/relatorios/<ETAPA>/` com os relatórios de diff, validação científica e pendências.
 4. **Atualização dos Manifestos:** Atualizar ou adicionar planilhas de conferência em `auditoria/manifestos/`.
