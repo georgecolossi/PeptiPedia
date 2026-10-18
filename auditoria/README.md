@@ -28,10 +28,11 @@ auditoria/
 │   ├── P2B1/                # Diff, integridade e validação científica da microetapa P2B.1
 │   ├── P2C/                 # Diff, integridade e validação dos dossiês da microetapa P2C
 │   ├── P2C1/                # Diff e validação científica da microetapa P2C.1
-│   ├── benchmark/           # Benchmark comparativo de 3 sites e plano de expansão priorizada
+│   ├── benchmark/           # Benchmark comparativo de 3 sites, auditoria de fontes e expansão reconciliada
 │   └── pesquisas/           # Auditorias independentes V1/V2, pareceres e benchmarks
 ├── manifestos/              # Planilhas CSV com metadados primários e inventários
-│   └── PeptiPedia-Benchmark-3-Sites-Inventario.csv # Inventário comparativo unificado de 133 compostos
+│   ├── PeptiPedia-Benchmark-Inventario-Reconciliado.csv # Inventário consolidado de 125 entidades moleculares únicas
+│   └── PeptiPedia-Matriz-Lacunas-54-Dossies.csv        # Matriz analítica de lacunas dos 54 dossiês PeptiPedia
 └── README.md                # Este guia de governança e sincronização
 ```
 
@@ -78,10 +79,10 @@ Nenhum estudo é promovido ou alterado sem confronto direto de fontes primárias
 ## 4. Auditoria de Contagens e Integridade do Catálogo
 
 Todas as versões auditadas mantêm conformidade com as entidades canônicas do PeptiPedia:
-- **Peptídeos:** 54 compostos em `PEPTIDES_DATABASE`.
-- **Estudos Clínicos:** 51 estudos indexados em `CLINICAL_STUDIES_DATABASE`.
-- **Stacks de Pesquisa:** 18 stacks documentados no projeto (sendo 12 objetos estruturados no array `RESEARCH_STACKS`, mantidos sem exclusões).
-- **Termos de Glossário:** 37 termos documentados no projeto (sendo 27 objetos estruturados no array `GLOSSARY_DATABASE`, mantidos sem exclusões).
+- **Peptídeos (`PEPTIDES_DATABASE`):** 54 compostos no array JavaScript.
+- **Estudos Clínicos e Evidências (`CLINICAL_STUDIES_DATABASE`):** 51 registros de pesquisa (sendo 26 ensaios clínicos humanos randomizados, 2 estudos observacionais humanos, 4 revisões científicas sistemáticas, 12 pesquisas animais in vivo e 7 estudos in vitro/ex vivo).
+- **Stacks de Pesquisa (`RESEARCH_STACKS`):** 18 stacks ativos no array JavaScript (resolvendo o artefato de parsing que decorria da mistura histórica de chaves com e sem aspas).
+- **Termos de Glossário (`GLOSSARY_DATABASE`):** 37 termos conceituais ativos no array JavaScript (resolvendo o artefato de parsing que decorria da mistura histórica de chaves com e sem aspas).
 
 ---
 
