@@ -1,0 +1,16 @@
+# Dependências e caches
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+__pycache__/
+*.pyc
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Arquivos temporários
+*.tmp
