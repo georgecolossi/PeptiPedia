@@ -31,8 +31,11 @@ auditoria/
 │   ├── benchmark/           # Benchmark comparativo de 3 sites, auditoria de fontes e expansão reconciliada
 │   └── pesquisas/           # Auditorias independentes V1/V2, pareceres e benchmarks
 ├── manifestos/              # Planilhas CSV com metadados primários e inventários
-│   ├── PeptiPedia-Benchmark-Inventario-Reconciliado.csv # Inventário consolidado de 125 entidades moleculares únicas
-│   └── PeptiPedia-Matriz-Lacunas-54-Dossies.csv        # Matriz analítica de lacunas dos 54 dossiês PeptiPedia
+│   ├── PeptiPedia-P2C2-Inventario-Verificado.csv       # Inventário verificado de 125 entidades únicas (P2C.2)
+│   ├── PeptiPedia-P2C2-Matriz-51-Estudos.csv           # Matriz auditada dos 51 estudos com desenho confirmado (P2C.2)
+│   ├── PeptiPedia-P2C2-Lacunas-Corrigidas.csv          # Matriz de lacunas dos 54 dossiês sem textos genéricos (P2C.2)
+│   ├── PeptiPedia-Benchmark-Inventario-Reconciliado.csv # Inventário consolidado preliminar de 125 entidades
+│   └── PeptiPedia-Matriz-Lacunas-54-Dossies.csv        # Matriz preliminar de lacunas dos 54 dossiês
 └── README.md                # Este guia de governança e sincronização
 ```
 
@@ -80,7 +83,7 @@ Nenhum estudo é promovido ou alterado sem confronto direto de fontes primárias
 
 Todas as versões auditadas mantêm conformidade com as entidades canônicas do PeptiPedia:
 - **Peptídeos (`PEPTIDES_DATABASE`):** 54 compostos no array JavaScript.
-- **Estudos Clínicos e Evidências (`CLINICAL_STUDIES_DATABASE`):** 51 registros de pesquisa (sendo 26 ensaios clínicos humanos randomizados, 2 estudos observacionais humanos, 4 revisões científicas sistemáticas, 12 pesquisas animais in vivo e 7 estudos in vitro/ex vivo).
+- **Estudos Clínicos e Evidências (`CLINICAL_STUDIES_DATABASE`):** 51 registros de pesquisa auditados individualmente (24 ensaios clínicos randomizados de Fase 1 a 3, 4 ensaios clínicos controlados/abertos em humanos, 2 estudos observacionais de coorte em humanos, 4 revisões científicas sistemáticas, 13 pesquisas animais in vivo e 4 estudos celulares in vitro/ex vivo).
 - **Stacks de Pesquisa (`RESEARCH_STACKS`):** 18 stacks ativos no array JavaScript (resolvendo o artefato de parsing que decorria da mistura histórica de chaves com e sem aspas).
 - **Termos de Glossário (`GLOSSARY_DATABASE`):** 37 termos conceituais ativos no array JavaScript (resolvendo o artefato de parsing que decorria da mistura histórica de chaves com e sem aspas).
 

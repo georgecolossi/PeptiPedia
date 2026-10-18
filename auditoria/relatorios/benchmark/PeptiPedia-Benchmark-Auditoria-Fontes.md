@@ -45,7 +45,7 @@ Abaixo apresenta-se a conferência sistemática realizada em uma amostra de dez 
 |---|---|---|---|
 | **URL Auditada** | `/peptideos/ss-31-elamipretide` | `/longevity/ss-31` | Dossiê `#ss-31` |
 | **Mecanismo Descrito** | Proteção da cardiolipina e redução de ROS | Estabilização mitocondrial e aumento de ATP | Ligação seletiva à cardiolipina mitocondrial interna e restauração dos complexos I-IV |
-| **Relato do Ensaio MMPOWER-3** | **Ausente:** Ensaio não é mencionado; texto foca em potencial mitocondrial | **Ausente:** Foco em propriedades antienvelhecimento celular | **Presente:** Registra explicitamente que o ensaio Fase 3 não atingiu desfechos primários (-3,2 m no 6MWT, $p=0,73$) |
+| **Relato do Ensaio MMPOWER-3** | **Ausente:** Ensaio não é mencionado; texto foca em potencial mitocondrial | **Ausente:** Foco em propriedades antienvelhecimento celular | **Presente:** Registra explicitamente que o ensaio Fase 3 não atingiu desfechos primários (-3,2 m no 6MWT, $p=0,69$) |
 | **Status Regulatório FDA (2025)** | Desatualizado (rotulado apenas como pesquisa) | Desatualizado (rotulado como composto investigacional) | Atualizado com a **Aprovação Acelerada FDA em 19/09/2025 (Forzinity para Barth $\ge 30\text{ kg}$)** |
 | **Identificadores PMID/DOI** | Ausentes | 1 referência bibliográfica geral | PMID `37268435` / PMC `PMC10382259` com links para texto completo |
 
@@ -75,19 +75,17 @@ Abaixo apresenta-se a conferência sistemática realizada em uma amostra de dez 
 
 ---
 
-## 3. Síntese das Métricas de Auditoria
+## 3. Síntese das Métricas de Auditoria na Amostra
 
-A compilação quantitativa da amostragem revela o seguinte panorama comparativo entre as plataformas:
+A análise comparativa na amostra direta de compostos revela padrões estruturais diferenciados entre as três plataformas:
 
-```text
-Métrica Observável                       Arcana Labs    Peptidepedia.org    PeptiPedia (P2C.1)
-----------------------------------------------------------------------------------------------
-Presença de PMID/DOI em Dossiês              < 15%            ~ 45%               100%
-Resolução de Hiperlinks Externos             < 10%            ~ 40%               100%
-Registro de Ensaios com Desfecho Negativo    < 5%             ~ 10%               100% (quando aplicável)
-Distinção Explícita Humano vs. In Vitro      Ocasional        Moderada            Sistemática
-Acompanhamento Regulatório (ex.: FDA 2025)   Defasado         Defasado            Atualizado
-```
+| Critério Observável na Amostra | Arcana Labs | Peptidepedia.org | PeptiPedia (P2C.1) |
+|---|---|---|---|
+| **Rastreabilidade de Fontes Primárias** | Citações textuais predominantemente sem PMID/DOI direto | Citações bibliográficas presentes na maioria das páginas; links indiretos | Identificadores indexados (PMID/DOI) presentes nos estudos auditados |
+| **Links Externos para Fontes Primárias** | Raros; navegação interna prioriza catálogo comercial | Links presentes no rodapé para PubMed em parte das páginas | Links diretos para PubMed e DOI no catálogo de estudos |
+| **Documentação de Ensaios Nulos/Negativos** | Não documentados na amostra (foco em benefícios potenciais) | Mencionados de forma sumária (ex.: AOD-9604 resultados modestos) | Documentados explicitamente nos estudos e dossiês aplicáveis (MMPOWER-3, AOD-9604, Larazotida) |
+| **Segregação de Evidência Humana vs Pré-Clínica** | Ocasional; dados de roedores frequentemente apresentados como efeito geral | Moderada; ressalta limitações pré-clínicas nos textos introdutórios | Sistemática; categorização explícita por modelo experimental |
+| **Atualização Regulatória Formal** | Defasada na amostra (ex.: SS-31 como apenas pesquisa) | Defasada na amostra (SS-31 como investigacional) | Atualizada na amostra (aprovação FDA 2025 para SS-31 em Barth $\ge 30\text{ kg}$) |
 
 ---
 

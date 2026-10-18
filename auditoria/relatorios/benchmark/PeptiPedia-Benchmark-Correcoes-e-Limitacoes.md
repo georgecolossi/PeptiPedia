@@ -124,13 +124,14 @@ Para prevenir confusão bibliográfica, estabelece-se a separação estrita dos 
 
 ## 7. Discriminação dos 51 Estudos em `studies-data.js`
 
-Em conformidade com a diretriz de não confundir quantidade de registros com número de evidências clínicas humanas confirmadas, os 51 estudos catalogados foram auditados e estratificados:
+Em conformidade com a diretriz de não classificar automaticamente todos os registros como ensaios clínicos nem utilizar generalizações, os 51 estudos catalogados foram auditados individualmente e estratificados conforme desenho experimental confirmado (disponível detalhadamente em `PeptiPedia-P2C2-Matriz-51-Estudos.csv`):
 
-| Delineamento Metodológico Real | Total de Estudos | Exemplos Notáveis |
+| Delineamento Metodológico Confirmado | Total de Estudos | Exemplos Notáveis |
 |---|:---:|---|
-| **Ensaios Clínicos Humanos Randomizados (RCTs)** | **26** | Semaglutida STEP-1 e SELECT; Tirzepatida SURMOUNT-1 e OSA; Retatrutida Fase 2; Cagrilintida Fase 2; Tesamorelin Fase 3; Elamipretida MMPOWER-3 Fase 3; Cerebrolysin CARS Fase 3; Timosina Alfa-1 ETASS Sepse; PT-141 RECONNECT Fase 3. |
-| **Estudos Observacionais Humanos** | **2** | Timosina Alfa-1 em coorte COVID-19 retrospectiva; ARA-290 em sarcoidose. |
-| **Revisões Científicas Sistemáticas** | **4** | BPC-157 (revisão de farmacocinética); GHK-Cu (Pickart transcriptômica); Humanina (revisão neuroprotetora); DSIP (compilação de sono). |
-| **Pesquisa Animal (*In Vivo*)** | **12** | 5-Amino-1MQ (roedores); BPC-157 (tendão em ratos); Folistatina-344 (primatas); IGF-1 LR3 (modelos catabólicos); MOTS-c (camundongos); Dihexa (sinaptogênese em ratos); SLU-PP-332 e SLU-PP-915 (murinos). |
-| **Estudos *In Vitro* / *Ex Vivo*** | **7** | AOD-9604 (lipólise em explantes); Epitalon (telomerase em fibroblastos diploides humanos); Ipamorelin (seletividade hipofisária in vitro); NAD+ (fisiologia mitocondrial celular); LL-37 (cultura de queratinócitos). |
-| **TOTAL DE ESTUDOS INDEXADOS** | **51** | Base de estudos 100% auditada e transparente. |
+| **Ensaios Clínicos Randomizados Controlados (RCTs de Fase 1 a 3)** | **24** | Semaglutida STEP-1 e SELECT; Tirzepatida SURMOUNT-1 e OSA; Retatrutida Fase 2; Cagrilintida Fase 2; Mazdutida Fase 2; Survodutida Fase 2 MASH; Orforglipron Fase 2; TB-500 Córnea; Larazotida Fase 2b; ARA-290 Fase 2b; Tesamorelin Fase 3; CJC-1295 Mod GRF 1-29; CJC-1295 DAC; Sermorelin Idosos; SS-31 MMPOWER-3 Fase 3; Semax AVC; Cerebrolysin CARS Fase 3b; Cortexin AVC; Timosina Alfa-1 ETASS Sepse; PT-141 RECONNECT Fase 3; Kisspeptina-10; Ocitocina. |
+| **Ensaios Clínicos Controlados / Abertos em Humanos** | **4** | GHK-Cu Fotoenvelhecimento; Argireline Rugas com réplicas de silicone; SNAP-8 Eficácia 3D; Selank Ansiedade comparativo vs medazepam. |
+| **Estudos Observacionais / Coortes Clínicas Humanas** | **2** | Timosina Alfa-1 em coorte COVID-19 retrospectiva (Wuhan); MOTS-c em coorte de exercício físico agudo em voluntários humanos. |
+| **Revisões Científicas Sistemáticas / Integrativas** | **4** | BPC-157 (revisão de farmacocinética e pilotos); GHK-Cu (análise transcriptômica CMap); Humanina (revisão de peptídeos mitocondriais); DSIP (compilação de sono e polissonografia). |
+| **Pesquisa Animal (*In Vivo*)** | **13** | 5-Amino-1MQ (camundongos induzidos à obesidade); TB-500 Nature (miocárdio em camundongos); KPV (colite murina); LL-37 (enxertos de pele em camundongos); Ipamorelin (seletividade em suínos/ratos); Folistatina-344 (primatas e camundongos mdx); IGF-1 LR3 (modelos catabólicos); MOTS-c (camundongos); NAD+ (envelhecimento mitocondrial em camundongos); Semax (BDNF hipocampal em ratos); Pinealon (hipóxia em ratos); SLU-PP-332 e SLU-PP-915 (modelos murinos). |
+| **Estudos *In Vitro* / *Ex Vivo* Celulares** | **4** | AOD-9604 (lipólise em explantes adiposos humanos); BPC-157 (culturas de fibroblastos de tendão de Aquiles); Epitalon (telomerase em fibroblastos diploides humanos in vitro); Dihexa (culturas primárias de neurônios hipocampais de ratos). |
+| **TOTAL DE ESTUDOS AUDITADOS** | **51** | Base de 51 estudos primários com identificadores e metadados validados individualmente. |
