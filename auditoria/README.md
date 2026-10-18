@@ -21,16 +21,20 @@ auditoria/
 │   ├── P2B/                 # Microetapa P2B: 4 correções científicas fundamentadas
 │   ├── P2B1/                # Microetapa P2B.1: 2 correções pontuais de consistência (SS-31 e Sepse)
 │   ├── P2C/                 # Microetapa P2C: alinhamento científico de 3 dossiês em peptides-data.js
-│   └── P2C1/                # Microetapa P2C.1: microcorreção de Epitalon e atualização regulatória FDA SS-31
+│   ├── P2C1/                # Microetapa P2C.1: microcorreção de Epitalon e atualização regulatória FDA SS-31
+│   └── P2C3/                # Microetapa P2C.3: correção crítica do TB-500 (Ac-LKKTETQ vs Tβ4) e desfecho nulo RGN-259
 ├── relatorios/              # Diffs técnicos, pendências e validações científicas
 │   ├── P2A/                 # Diff, testes e pendências editoriais da microetapa P2A
 │   ├── P2B/                 # Diff, integridade e validação científica da microetapa P2B
 │   ├── P2B1/                # Diff, integridade e validação científica da microetapa P2B.1
 │   ├── P2C/                 # Diff, integridade e validação dos dossiês da microetapa P2C
 │   ├── P2C1/                # Diff e validação científica da microetapa P2C.1
+│   ├── P2C3/                # Diff, validação científica do TB-500 e errata farmacotécnica da microetapa P2C.3
 │   ├── benchmark/           # Benchmark comparativo de 3 sites, auditoria de fontes e expansão reconciliada
 │   └── pesquisas/           # Auditorias independentes V1/V2, pareceres e benchmarks
 ├── manifestos/              # Planilhas CSV com metadados primários e inventários
+│   ├── PeptiPedia-P2C3-Matriz-51-Estudos.csv           # Matriz auditada dos 51 estudos com TB-500 retificado (P2C.3)
+│   ├── PeptiPedia-P2C3-Lacunas-Corrigidas.csv          # Matriz de lacunas dos 54 dossiês com TB-500 atualizado (P2C.3)
 │   ├── PeptiPedia-P2C2-Inventario-Verificado.csv       # Inventário verificado de 125 entidades únicas (P2C.2)
 │   ├── PeptiPedia-P2C2-Matriz-51-Estudos.csv           # Matriz auditada dos 51 estudos com desenho confirmado (P2C.2)
 │   ├── PeptiPedia-P2C2-Lacunas-Corrigidas.csv          # Matriz de lacunas dos 54 dossiês sem textos genéricos (P2C.2)
@@ -64,6 +68,7 @@ Nenhum estudo é promovido ou alterado sem confronto direto de fontes primárias
 | **P2B** | `38F4D4135E5ABD609ABF2B3E3975666C58E1A2244D569FE6F600BB1657A92799` | Correção científica dos estudos COVID, Hayflick, SS-31 e Sepse |
 | **P2B.1** | `758BFC79AA55C3DADB09079F97D657579F39866B58C174F02146B324DD2ED3DA` | Ajuste de consistência em SS-31 (6MWT / fadiga) e Sepse ETASS |
 | **P2C / P2C.1** | `758BFC79AA55C3DADB09079F97D657579F39866B58C174F02146B324DD2ED3DA` | **Preservado 100% intacto** (base de estudos inalterada) |
+| **P2C.3** | `5623F870CE845BA87AD70B8ED1D10657498CAFFD5FC73312D7CF881C0F11CE99` | Retificação dos estudos `study-tb500-cornea` (PMID 26056426 / desfechos nulos) e `study-tb500-nature` (evidência indireta Tβ4) |
 
 ### 3.2. Catálogo de Peptídeos e Dossiês (`js/peptides-data.js`)
 
@@ -72,6 +77,7 @@ Nenhum estudo é promovido ou alterado sem confronto direto de fontes primárias
 | **P1 / P2A / P2B / P2B.1** | `6F67A0610C45CEF1ECDCD9C8840E98A4B1B2A0E6892CF1FC57F7591B02654B24` | Base descritiva original com 54 compostos |
 | **P2C** | `48275C94C6781423A143A58E1BF14C6A292FA580E80A52B76968F05820A4D76F` | Alinhamento científico e bibliográfico de Timosina Alfa-1, Epitalon e SS-31 |
 | **P2C.1** | `3EF83BEB6F6A035A81795FE7112E0008C4EEF50BD0DC7CACE620494340633822` | Microcorreção de DOI/Hayflick em Epitalon e aprovação acelerada FDA em SS-31 |
+| **P2C.3** | `F42D4E58142C2E296239ABD4147A8FBC019B529A3E28AA12BF3849B8CA31A781` | Ajuste estrito do dossiê `tb-500` (identidade química Ac-LKKTETQ vs Tβ4, PM 889 Da e nota de evidência indireta) |
 
 > [!NOTE]
 > **Diferenciação entre Hashes Locais e Blobs Git:**
