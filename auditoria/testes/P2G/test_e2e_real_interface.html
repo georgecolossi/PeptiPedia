@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>PeptiPedia — Teste E2E de Interface Real (P2G)</title>
+  <script>
+    window.addEventListener('error', (e) => {
+      const out = document.getElementById('output');
+      if (out) out.textContent += '[JS ERROR IN PAGE]: ' + e.message + ' at ' + e.filename + ':' + e.lineno + '\n';
+    });
+    window.lucide = {
+      createIcons: () => {}
+    };
+  </script>
+  <script src="js/peptides-data.js"></script>
+  <script src="js/stacks-data.js"></script>
+  <script src="js/studies-data.js"></script>
+  <script src="js/glossary-data.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/stability-data.js"></script>
+  <script src="js/stability.js"></script>
+</head>
+<body style="background:#0f172a;color:#f8fafc;font-family:monospace;padding:20px;">
+  <h1>PeptiPedia — Teste E2E de Interface Real (DOM e Modais)</h1>
+  <div id="status">Executando testes E2E...</div>
+  <pre id="output" style="background:#1e293b;padding:15px;border-radius:8px;border:1px solid #334155;white-space:pre-wrap;"></pre>
+
+  <!-- Container de Toasts -->
+  <div id="toast-container"></div>
+
+  <!-- Modal de Detalhes do Peptídeo -->
+  <div id="detail-modal" class="hidden">
+    <div id="detail-modal-content"></div>
+    <div id="modal-footer">
+      <button id="close-modal-btn">Fechar</button>
+      <button id="modal-fav-btn">Favorito</button>
+      <button id="modal-stack-toggle-btn">Stack</button>
+      <button id="modal-calc-btn">Calcular Reconstituição</button>
+      <button id="modal-view-studies-link">Ver Estudos</button>
+    </div>
+  </div>
+
+  <!-- Seção da Calculadora (IDs Idênticos aos de index.html) -->
+  <div id="calculator-section">
+    <input id="calc-vial-mg" type="number" />
+    <input id="calc-water-ml" type="number" />
+    <input id="calc-dose-input" type="number" />
+    <button id="calc-unit-mcg-btn">mcg</button>
+    <button id="calc-unit-mg-btn">mg</button>
+    <span id="calc-dose-unit-label">mcg</span>
+    <select id="calc-syringe-type">
+      <option value="u100">U-100 (1,0 mL / 100 UI)</option>
+      <option value="u50">U-50 (0,5 mL / 50 UI)</option>
+      <option value="u30">U-30 (0,3 mL / 30 UI)</option>
+    </select>
+    <input id="calc-vial-cost" type="number" />
+    <input id="calc-frequency" type="number" value="7" />
+
+    <div id="calc-res-units">—</div>
+    <div id="calc-res-volume">—</div>
+    <div id="calc-res-conc">—</div>
+    <div id="calc-res-unit-val">—</div>
+    <div id="calc-res-doses">—</div>
+    <div id="calc-res-days">—</div>
+    <div id="calc-res-cost">—</div>
+    <div id="syringe-visual-container"></div>
+
+    <div id="calc-warning-box" class="hidden"></div>
+    <div id="calc-dose-presets-container"></div>
+    <div id="calc-presets-container"></div>
+  </div>
+
+  <!-- Elementos auxiliares para app.js inicializar sem erros -->
+  <div style="display:none;">
+    <input id="search-input" />
+    <button id="clear-search-btn"></button>
+    <div id="categories-container"></div>
+    <select id="target-filter"></select>
+    <select id="status-filter"></select>
+    <select id="route-filter"></select>
+    <select id="sort-filter"></select>
+    <button id="favorites-toggle-btn"></button>
+    <div id="cards-grid"></div>
+    <span id="results-count"></span>
+    <div id="stacks-container"></div>
+    <div id="studies-container"></div>
+    <input id="study-search-input" />
+    <select id="study-peptide-filter"></select>
+    <span id="studies-count"></span>
+    <div id="glossary-container"></div>
+    <input id="glossary-search-input" />
+    <div id="planner-drawer"></div>
+    <button id="open-planner-btn"></button>
+    <button id="close-planner-btn"></button>
+    <div id="planner-list"></div>
+    <span id="planner-count-badge"></span>
+    <div id="protocol-export-modal"></div>
+    <div id="protocol-export-content"></div>
+    <button id="close-export-modal-btn"></button>
+    <div id="disclaimer-modal"></div>
+    <button id="close-disclaimer-btn"></button>
+    <div id="stab-peptide-select"></div>
+    <div id="stab-solvent-select"></div>
+    <input id="stab-date-input" />
+    <button id="stab-recalc-btn"></button>
+  </div>
+
+  <!-- Carregar Lógica Principal da Aplicação -->
+  <script src="js/app.js"></script>
+
+  <script>
+    const log = (msg) => {
+      document.getElementById('output').textContent += msg + '\n';
+    };
+
+    let passed = 0;
+    let failed = 0;
+
+    const assert = (condition, name) => {
+      if (condition) {
+        passed++;
+        log(`[PASS] ${name}`);
+      } else {
+        failed++;
+        log(`[FAIL] ${name}`);
+      }
+    };
+
+    window.addEventListener('load', () => {
+      try {
+        log("======================================================================");
+        log("EXECUTANDO TESTES E2E SÍNCRONOS NO DOM REAL DA APLICAÇÃO (P2G)");
+        log("======================================================================\n");
+
+        const modalEl = document.getElementById('detail-modal');
+        const modalContent = document.getElementById('detail-modal-content');
+        const toastContainer = document.getElementById('toast-container');
+
+        // -----------------------------------------------------------
+        // TESTE E2E 1: Modal de Semax
+        // -----------------------------------------------------------
+        log("--- Teste E2E 1: Modal do Semax ---");
+        window.openPeptideModal('semax');
+        assert(!modalEl.classList.contains('hidden'), "Modal do Semax visível");
+        const semaxHtml = modalContent.innerHTML;
+        assert(semaxHtml.includes("Semax"), "Conteúdo contém Semax");
+        assert(semaxHtml.includes("Carregar massa (30 mg) na calculadora"), "Botão para frasco de pesquisa de 30 mg presente");
+        assert(semaxHtml.includes("Solução nasal pronta para uso"), "Badge de solução nasal pronta presente para 0.1% e 1.0%");
+
+        // -----------------------------------------------------------
+        // TESTE E2E 2: Modal de Selank
+        // -----------------------------------------------------------
+        log("\n--- Teste E2E 2: Modal do Selank ---");
+        window.openPeptideModal('selank');
+        assert(!modalEl.classList.contains('hidden'), "Modal do Selank visível");
+        const selankHtml = modalContent.innerHTML;
+        assert(selankHtml.includes("Selank"), "Conteúdo contém Selank");
+        assert(selankHtml.includes("Carregar massa (10 mg) na calculadora"), "Botão para frasco de pesquisa de 10 mg presente");
+        assert(selankHtml.includes("Solução nasal pronta para uso"), "Badge de solução nasal pronta presente para 0.15%");
+
+        // -----------------------------------------------------------
+        // TESTE E2E 3: Modal da Liraglutida
+        // -----------------------------------------------------------
+        log("\n--- Teste E2E 3: Modal da Liraglutida ---");
+        window.openPeptideModal('liraglutide');
+        assert(!modalEl.classList.contains('hidden'), "Modal da Liraglutida visível");
+        const liraHtml = modalContent.innerHTML;
+        assert(liraHtml.includes("Liraglutida"), "Conteúdo contém Liraglutida");
+        assert(liraHtml.includes("Carregar massa (10 mg) na calculadora"), "Botão para frasco de pesquisa de 10 mg presente");
+        assert(liraHtml.includes("Caneta subcutânea pronta para uso (sem reconstituição)"), "Badge de caneta Victoza/Saxenda presente");
+        assert(!liraHtml.includes("Solução nasal pronta"), "Liraglutida NUNCA exibe badge nasal");
+
+        // -----------------------------------------------------------
+        // TESTE E2E 4: Modal da Teduglutida e Interações
+        // -----------------------------------------------------------
+        log("\n--- Teste E2E 4: Modal da Teduglutida e Ações ---");
+        window.openPeptideModal('teduglutide');
+        assert(!modalEl.classList.contains('hidden'), "Modal da Teduglutida visível");
+        const teduHtml = modalContent.innerHTML;
+        assert(teduHtml.includes("Teduglutida"), "Conteúdo contém Teduglutida");
+        assert(teduHtml.includes("Kit oficial de bula (0,38 mL recuperável / seringa do fabricante)"), "Badge de Kit Oficial de Bula para Gattex presente");
+        assert(teduHtml.includes("Carregar massa (5 mg) na calculadora"), "Botão de carregar 5 mg presente para frasco de pesquisa");
+
+        // Testar clique no botão do footer do modal (tenta prefill com Gattex)
+        const modalCalcBtn = document.getElementById('modal-calc-btn');
+        modalCalcBtn.click();
+        const toastHtml = toastContainer ? toastContainer.innerText : '';
+        assert(toastHtml.includes("kit oficial de bula") || toastHtml.includes("0,38 mL recuperável"), "Toast acusa impossibilidade de prefill para kit oficial Gattex");
+
+        // Clicar no botão do frasco de pesquisa de bancada
+        const researchBtn = modalContent.querySelector('button[data-form-id="teduglutide-lyophilized-research"]');
+        assert(researchBtn !== null, "Botão do frasco de pesquisa localizado");
+        researchBtn.click();
+
+        const vialInput = document.getElementById('calc-vial-mg');
+        assert(vialInput.value === '5', "Calculadora preenchida com 5 mg do frasco de pesquisa");
+
+        // -----------------------------------------------------------
+        // TESTE E2E 5: Formulário da Calculadora e Rejeição de Impossibilidades
+        // -----------------------------------------------------------
+        log("\n--- Teste E2E 5: Calculadora — Rejeição de Impossibilidades ---");
+        const waterInput = document.getElementById('calc-water-ml');
+        const doseInput = document.getElementById('calc-dose-input');
+        const syringeSelect = document.getElementById('calc-syringe-type');
+        const resUnits = document.getElementById('calc-res-units');
+        const warningBox = document.getElementById('calc-warning-box');
+
+        // 5.1 Dose > Frasco (10000 mcg = 10 mg em frasco de 5 mg)
+        waterInput.value = '2.0';
+        doseInput.value = '10000';
+        vialInput.dispatchEvent(new Event('input', { bubbles: true }));
+        waterInput.dispatchEvent(new Event('input', { bubbles: true }));
+        doseInput.dispatchEvent(new Event('input', { bubbles: true }));
+
+        assert(resUnits.innerText === '—' || resUnits.innerText === '-', "Unidades na seringa zeradas ('—') quando dose > frasco");
+        assert(!warningBox.classList.contains('hidden'), "Cartão de erro visível na calculadora");
+        assert(warningBox.innerText.includes("maior que a massa total do frasco") || warningBox.innerText.includes("excede a quantidade total"), "Texto de erro acusa dose maior que massa do frasco");
+
+        // 5.2 Volume excede capacidade da seringa
+        // Frasco 5 mg, diluente 5 mL (1000 mcg/mL), dose 2000 mcg -> volume = 2.0 mL -> 200 UI em U-100 (100 UI máx)
+        doseInput.value = '2000';
+        waterInput.value = '5.0';
+        syringeSelect.value = 'u100';
+        waterInput.dispatchEvent(new Event('input', { bubbles: true }));
+        doseInput.dispatchEvent(new Event('input', { bubbles: true }));
+        syringeSelect.dispatchEvent(new Event('change', { bubbles: true }));
+
+        assert(resUnits.innerText === '—' || resUnits.innerText === '-', "Unidades zeradas quando excede seringa");
+        assert(!warningBox.classList.contains('hidden'), "Cartão de erro visível para estouro de seringa");
+        assert(warningBox.innerText.includes("capacidade volumétrica máxima") || warningBox.innerText.includes("excede o limite da seringa"), "Texto de erro informa excesso de capacidade da seringa");
+
+        // 5.3 Caso válido com Alerta de Precisão de Medição (< 5 UI)
+        // Frasco 10 mg, diluente 1 mL, dose 100 mcg -> 1 UI na seringa U-100
+        vialInput.value = '10';
+        waterInput.value = '1.0';
+        doseInput.value = '100';
+        vialInput.dispatchEvent(new Event('input', { bubbles: true }));
+        waterInput.dispatchEvent(new Event('input', { bubbles: true }));
+        doseInput.dispatchEvent(new Event('input', { bubbles: true }));
+
+        assert(resUnits.innerText.includes('1.0') || resUnits.innerText.includes('1 UI'), "Unidades calculadas corretamente para dose válida (1.0 UI)");
+        assert(!warningBox.classList.contains('hidden'), "Cartão de alerta de precisão visível para < 5 UI");
+        assert(warningBox.innerText.includes("Abaixo de 5 unidades") || warningBox.innerText.includes("ALERTA DE PRECISÃO DE MEDIÇÃO"), "Texto de precisão informa graduação difícil de medir");
+
+        // 5.4 Ausência de texto prescritivo em todo o DOM da calculadora
+        const calcSection = document.getElementById('calculator-section');
+        const calcFullText = calcSection ? calcSection.innerText.toLowerCase() : '';
+        assert(!calcFullText.includes("adicione mais água"), "DOM da calculadora NÃO contém 'adicione mais água'");
+        assert(!calcFullText.includes("reduzir o volume de água"), "DOM da calculadora NÃO contém 'reduzir o volume de água'");
+
+        log("\n======================================================================");
+        log(`RESULTADO FINAL TESTES E2E: ${passed} PASSOU, ${failed} FALHOU`);
+        log("======================================================================");
+
+        const statusEl = document.getElementById('status');
+        if (failed === 0) {
+          statusEl.innerHTML = `<strong style="color:#4ade80;">>>> TESTES E2E APROVADOS COM 100% DE SUCESSO (${passed}/${passed}) <<<</strong>`;
+        } else {
+          statusEl.innerHTML = `<strong style="color:#f87171;">>>> FALHA NOS TESTES E2E (${failed} erros) <<<</strong>`;
+        }
+      } catch (err) {
+        log(`\n[ERRO CRÍTICO E2E]: ${err.stack || err}`);
+        document.getElementById('status').innerHTML = `<strong style="color:#f87171;">ERRO FATAL E2E: ${err.message}</strong>`;
+      }
+    });
+  </script>
+</body>
+</html>

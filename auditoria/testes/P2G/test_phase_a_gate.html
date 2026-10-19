@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>PeptiPedia — Portão de Homologação Fase A (P2G)</title>
+  <script src="js/peptides-data.js"></script>
+  <script src="js/studies-data.js"></script>
+  <script src="js/stability-data.js"></script>
+  <script src="js/calculator.js"></script>
+</head>
+<body style="background:#0f172a;color:#f8fafc;font-family:monospace;padding:20px;">
+  <h1>PeptiPedia — Testes JavaScript em Navegador Real (Fase A - P2G)</h1>
+  <div id="status">Executando testes...</div>
+  <pre id="output" style="background:#1e293b;padding:15px;border-radius:8px;border:1px solid #334155;white-space:pre-wrap;"></pre>
+
+  <script>
+    const log = (msg) => {
+      document.getElementById('output').textContent += msg + '\n';
+    };
+
+    let passed = 0;
+    let failed = 0;
+
+    const assert = (condition, name) => {
+      if (condition) {
+        passed++;
+        log(`[PASS] ${name}`);
+      } else {
+        failed++;
+        log(`[FAIL] ${name}`);
+      }
+    };
+
+    try {
+      log("======================================================================");
+      log("INICIANDO SUÍTE DE TESTES EM NAVEGADOR REAL V8 (PORTÃO FASE A - P2G)");
+      log("======================================================================\n");
+
+      // ---------------------------------------------------------------
+      // GRUPO 1: Rejeição Estrita de Impossibilidades na Calculadora
+      // ---------------------------------------------------------------
+      log("--- GRUPO 1: PeptideCalculator — Rejeição Estrita de Impossibilidades ---");
+      const calc = new PeptideCalculator();
+
+      // 1.1 Dose > Massa do Frasco (15 mg desejados em frasco de 10 mg)
+      calc.reset();
+      calc.setValues({ vialMg: 10, waterMl: 2.0, desiredDoseMcg: 15000, syringeType: 'u100' });
+      let res = calc.calculate();
+      assert(res.isValid === false, "Rejeição de dose maior que massa do frasco (isValid === false)");
+      assert(res.volumePerDoseMl === null, "Volume por dose é null quando dose > frasco");
+      assert(res.unitsOnSyringe === null, "Unidades na seringa é null quando dose > frasco");
+      assert(res.calculationError && res.calculationError.includes("maior que a massa total do frasco"), "Mensagem de erro específica: dose excede frasco");
+
+      // 1.2 Volume por dose > Volume de diluente
+      // Frasco 1 mg, diluente 1 mL, dose 2 mg -> dose > frasco já pega, mas vamos testar volumePerDoseMl > waterMl
+      calc.reset();
+      // Criamos situação com dose 5000 mcg em 5 mg com 0.5 mL -> volume = 0.5 mL (igual, ok)
+      // Se dose 6000 mcg em 5 mg -> já rejeita por dose > massa
+      // E se vialMg = 10, waterMl = 0.1, dose = 10000 mcg -> volumePerDoseMl = 0.1 mL (100% do frasco)
+      // Se vialMg = 10, waterMl = 0.05, dose = 10000 mcg -> volume = 0.05 mL
+      // A condição volumePerDoseMl > waterMl protege contra inconsistências de arredondamento
+
+      // 1.3 Unidades requeridas excedem a capacidade da seringa
+      // Frasco 5 mg, diluente 5 mL (1 mg/mL = 1000 mcg/mL). Dose 2000 mcg -> volume = 2.0 mL -> 200 UI em seringa U-100 (cap: 100 UI)
+      calc.reset();
+      calc.setValues({ vialMg: 5, waterMl: 5.0, desiredDoseMcg: 2000, syringeType: 'u100' });
+      res = calc.calculate();
+      assert(res.isValid === false, "Rejeição quando unidades excedem a capacidade da seringa U-100 (isValid === false)");
+      assert(res.unitsOnSyringe === null, "Unidades na seringa é null quando excede capacidade");
+      assert(res.calculationError && res.calculationError.includes("excede a capacidade volumétrica máxima"), "Mensagem de erro de seringa insuficiente");
+
+      // Testar em U-50 (cap: 50 UI = 0.5 mL): frasco 10 mg, diluente 2 mL (5 mg/mL), dose 3000 mcg -> volume = 0.6 mL -> 60 UI
+      calc.reset();
+      calc.setValues({ vialMg: 10, waterMl: 2.0, desiredDoseMcg: 3000, syringeType: 'u50' });
+      res = calc.calculate();
+      assert(res.isValid === false, "Rejeição quando unidades excedem a capacidade da seringa U-50 (60 UI > 50 UI)");
+
+      // Testar em U-30 (cap: 30 UI = 0.3 mL): dose 2000 mcg -> volume = 0.4 mL -> 40 UI
+      calc.reset();
+      calc.setValues({ vialMg: 10, waterMl: 2.0, desiredDoseMcg: 2000, syringeType: 'u30' });
+      res = calc.calculate();
+      assert(res.isValid === false, "Rejeição quando unidades excedem a capacidade da seringa U-30 (40 UI > 30 UI)");
+
+      // 1.4 Alerta de Precisão de Medição (separado de erro matemático)
+      // Frasco 10 mg, diluente 1 mL, dose 100 mcg -> volume = 0.01 mL -> 1 UI na seringa U-100
+      calc.reset();
+      calc.setValues({ vialMg: 10, waterMl: 1.0, desiredDoseMcg: 100, syringeType: 'u100' });
+      res = calc.calculate();
+      assert(res.isValid === true, "Cálculo válido com marcação pequena (1 UI) -> isValid === true");
+      assert(res.exactUnitsNumber === 1.0 || res.unitsOnSyringe === '1.0', "Marcação calculada corretamente: 1.0 UI");
+      assert(res.measurementPrecisionAlert !== null, "Alerta de precisão de medição gerado para < 5 UI");
+      assert(res.measurementPrecisionAlert.includes("Abaixo de 5 unidades"), "Texto claro sobre limite de precisão visual na graduação");
+
+      // 1.5 Ausência de recomendações de alteração de diluente
+      assert(!res.measurementPrecisionAlert.includes("adicione mais água"), "Mensagem NÃO contém 'adicione mais água'");
+      assert(!res.measurementPrecisionAlert.includes("reduzir o volume de água"), "Mensagem NÃO contém 'reduzir o volume de água'");
+      assert(!res.measurementPrecisionAlert.includes("adicionar mais"), "Mensagem NÃO contém 'adicionar mais'");
+
+      // 1.6 Aviso farmacotécnico estruturado
+      assert(typeof res.pharmacotechnicalNotice === 'string' && res.pharmacotechnicalNotice.includes("ICH"), "Aviso farmacotécnico presente com referência a normas técnicas/ICH");
+
+      // 1.7 Não-finitos e entradas absurdas
+      calc.reset();
+      calc.setValues({ vialMg: Infinity, waterMl: 2.0, desiredDoseMcg: 250 });
+      assert(calc.vialMg === null, "Rejeição de Infinity no frasco");
+      calc.setValues({ vialMg: 10, waterMl: -Infinity, desiredDoseMcg: 250 });
+      assert(calc.waterMl === null, "Rejeição de -Infinity no diluente");
+      calc.setValues({ vialMg: 10, waterMl: 2.0, desiredDoseMcg: NaN });
+      assert(calc.desiredDoseMcg === null, "Rejeição de NaN na dose");
+      calc.setValues({ vialMg: '1e309', waterMl: 2.0, desiredDoseMcg: 250 });
+      assert(calc.vialMg === null, "Rejeição de estouro '1e309'");
+      calc.setValues({ vialMg: 0, waterMl: 2.0, desiredDoseMcg: 250 });
+      assert(calc.vialMg === null, "Rejeição de 0 no frasco");
+
+      // ---------------------------------------------------------------
+      // GRUPO 2: Dossiê e Estudos da Teduglutida
+      // ---------------------------------------------------------------
+      log("\n--- GRUPO 2: Teduglutida — Jurisdição, Função Renal e Ensaio Gut 2011 ---");
+      const tedu = PEPTIDES_DATABASE.find(p => p.id === 'teduglutide');
+      assert(!!tedu, "Teduglutida presente no banco de peptídeos");
+
+      // 2.1 Contraindicações por Jurisdição
+      const fdaContra = tedu.contraindications.find(c => c.includes("FDA"));
+      const emaContra = tedu.contraindications.filter(c => c.includes("EMA"));
+      assert(!!fdaContra && fdaContra.includes("Nenhuma contraindicação formal") && fdaContra.includes("Seção 4"), "FDA Gattex Seção 4 taxativa: Nenhuma contraindicação formal");
+      assert(emaContra.length >= 3, "EMA Revestive Seção 4.3 lista explicitamente contraindicações");
+      assert(tedu.contraindications.some(c => c.includes("Hipersensibilidade")), "EMA contraindicação: Hipersensibilidade");
+      assert(tedu.contraindications.some(c => c.includes("Malignidade ativa ou suspeita")), "EMA contraindicação: Malignidade ativa ou suspeita");
+      assert(tedu.contraindications.some(c => c.includes("trato gastrointestinal") && c.includes("5 anos")), "EMA contraindicação: Histórico de malignidade no TGI nos últimos 5 anos");
+
+      // 2.2 Função Renal: eGFR < 60 mL/min/1,73 m²
+      const adminGuide = tedu.researchProtocols.administrationGuide;
+      assert(adminGuide.includes("eGFR < 60 mL/min/1,73 m²") || adminGuide.includes("TFGe / eGFR < 60"), "Critério renal oficial: eGFR < 60 mL/min/1,73 m² (não <50 genérico)");
+      assert(adminGuide.includes("reduzida em 50%"), "Redução de dose em 50% para insuficiência renal documentada");
+
+      // 2.3 Ensaio Clínico Gut 2011 (PMID 21317170)
+      const gutStudyPeptide = tedu.clinicalStudies.find(s => s.pmid === '21317170');
+      const gutStudyDB = CLINICAL_STUDIES_DATABASE.find(s => s.pmid === '21317170' || s.id === 'study-teduglutide-gut');
+      assert(!!gutStudyPeptide, "Estudo Gut 2011 presente no dossiê de Teduglutida");
+      assert(!!gutStudyDB, "Estudo Gut 2011 presente em CLINICAL_STUDIES_DATABASE");
+
+      assert(gutStudyPeptide.keyFindings.includes("Graded Response Score") || gutStudyPeptide.keyFindings.includes("GRS"), "Gut 2011 dossiê: desfecho primário identificado como Graded Response Score (GRS)");
+      assert(gutStudyPeptide.keyFindings.includes("p = 0,007") || gutStudyPeptide.keyFindings.includes("p=0.007"), "Gut 2011 dossiê: GRS significativo para 0,05 mg/kg (p = 0,007)");
+      assert(gutStudyPeptide.keyFindings.includes("p = 0,161") || gutStudyPeptide.keyFindings.includes("p=0.161"), "Gut 2011 dossiê: GRS não significativo para 0,10 mg/kg (p = 0,161)");
+      assert(gutStudyPeptide.keyFindings.includes("desbalanceamento") || gutStudyPeptide.keyFindings.includes("heterogeneidade"), "Gut 2011 dossiê: explica ausência de significância por heterogeneidade basal");
+      assert(gutStudyPeptide.keyFindings.includes("46%") && gutStudyPeptide.keyFindings.includes("6%"), "Gut 2011 dossiê: desfecho secundário pré-especificado de 46% vs 6% documentado");
+      assert(!gutStudyPeptide.keyFindings.toLowerCase().includes("saturação de receptores"), "Gut 2011 dossiê: especulação sobre saturação de receptores removida");
+
+      assert(gutStudyDB.primaryEndpoint.includes("Graded Response Score") || gutStudyDB.primaryEndpoint.includes("GRS"), "Gut 2011 banco: desfecho primário é Graded Response Score");
+      assert(!gutStudyDB.keyFindings.toLowerCase().includes("saturação de receptores"), "Gut 2011 banco: especulação sobre saturação removida dos resultados");
+
+      // ---------------------------------------------------------------
+      // GRUPO 3: Apresentações de Teduglutida (Gattex vs Frasco Pesquisa)
+      // ---------------------------------------------------------------
+      log("\n--- GRUPO 3: Teduglutida — Kit Gattex vs Frasco de Pesquisa ---");
+      assert(tedu.formulations && tedu.formulations.length === 2, "Teduglutida possui exatamente 2 formulações");
+      const gattex = tedu.formulations[0];
+      const teduResearch = tedu.formulations[1];
+
+      assert(gattex.id === 'teduglutide-vial-gattex-5mg', "ID Gattex correto");
+      assert(gattex.isOfficialMedicineKit === true, "Gattex marcado como isOfficialMedicineKit === true");
+      assert(gattex.isReconstitutionVial === false, "Gattex marcado como isReconstitutionVial === false");
+      assert(gattex.recoverableVolumeMl === 0.38, "Gattex volume recuperável = 0.38 mL");
+      assert(gattex.recoverableDoseMg === 3.8, "Gattex dose recuperável = 3.8 mg");
+
+      assert(teduResearch.id === 'teduglutide-lyophilized-research', "ID Teduglutida pesquisa correto");
+      assert(teduResearch.isOfficialMedicineKit === false, "Frasco pesquisa isOfficialMedicineKit === false");
+      assert(teduResearch.isReconstitutionVial === true, "Frasco pesquisa isReconstitutionVial === true");
+      assert(teduResearch.nominalVialMg === 5, "Frasco pesquisa nominalVialMg === 5");
+
+      // ---------------------------------------------------------------
+      // GRUPO 4: Renderização de Ações na Interface
+      // ---------------------------------------------------------------
+      log("\n--- GRUPO 4: Renderização de Ações na Interface ---");
+      const renderFormulationAction = (f) => {
+        const formType = (f.formType || '').toLowerCase();
+        const route = (f.route || '').toLowerCase();
+        const name = (f.commercialName || '').toLowerCase();
+
+        if (f.isOfficialMedicineKit) {
+          return `Kit oficial de bula (0,38 mL recuperável / seringa do fabricante)`;
+        }
+        if (f.isReconstitutionVial && (formType === 'lyophilized_vial' || f.formType === 'lyophilized_vial')) {
+          if (f.nominalVialMg) {
+            return `Carregar massa (${f.nominalVialMg} mg) na calculadora`;
+          }
+          return `Liofilizado para reconstituição`;
+        }
+        if (formType === 'nasal_drops' || route.includes('nasal')) {
+          return `Solução nasal pronta para uso (dispensa seringa e diluente)`;
+        }
+        if (formType === 'prefilled_pen' || formType.includes('pen') || name.includes('caneta') || (route.includes('subcut') && !formType.includes('lyophilized'))) {
+          return `Caneta subcutânea pronta para uso (sem reconstituição)`;
+        }
+        if (formType.includes('oral') || route.includes('oral')) {
+          return `Administração oral direta (não injetável)`;
+        }
+        if (formType.includes('topical') || route.includes('tópica') || route.includes('topica')) {
+          return `Uso tópico direto`;
+        }
+        return `Apresentação pronta para uso`;
+      };
+
+      // Gattex ação
+      const gattexAction = renderFormulationAction(gattex);
+      assert(gattexAction.includes("Kit oficial de bula (0,38 mL recuperável / seringa do fabricante)"), "Gattex exibe badge de kit oficial de bula");
+      assert(!gattexAction.includes("Carregar massa"), "Gattex NÃO exibe botão de carregar massa na calculadora genérica");
+
+      // Teduglutida pesquisa ação
+      const teduResearchAction = renderFormulationAction(teduResearch);
+      assert(teduResearchAction.includes("Carregar massa (5 mg) na calculadora"), "Teduglutida pesquisa exibe botão 'Carregar massa (5 mg) na calculadora'");
+
+      // Semax (3)
+      const semax = PEPTIDES_DATABASE.find(p => p.id === 'semax');
+      assert(renderFormulationAction(semax.formulations[0]).includes("Carregar massa (30 mg) na calculadora"), "Semax frasco 30 mg carrega calculadora");
+      assert(renderFormulationAction(semax.formulations[1]).includes("Solução nasal pronta"), "Semax 0.1% nasal pronta");
+      assert(renderFormulationAction(semax.formulations[2]).includes("Solução nasal pronta"), "Semax 1.0% nasal pronta");
+
+      // Selank (2)
+      const selank = PEPTIDES_DATABASE.find(p => p.id === 'selank');
+      assert(renderFormulationAction(selank.formulations[0]).includes("Carregar massa (10 mg) na calculadora"), "Selank frasco 10 mg carrega calculadora");
+      assert(renderFormulationAction(selank.formulations[1]).includes("Solução nasal pronta"), "Selank 0.15% nasal pronta");
+
+      // Liraglutida (3)
+      const lira = PEPTIDES_DATABASE.find(p => p.id === 'liraglutide');
+      assert(renderFormulationAction(lira.formulations[0]).includes("Carregar massa (10 mg) na calculadora"), "Liraglutida frasco 10 mg carrega calculadora");
+      assert(renderFormulationAction(lira.formulations[1]).includes("Caneta subcutânea pronta para uso"), "Victoza caneta pronta para uso");
+      assert(!renderFormulationAction(lira.formulations[1]).toLowerCase().includes("nasal"), "Victoza NÃO é nasal");
+      assert(renderFormulationAction(lira.formulations[2]).includes("Caneta subcutânea pronta para uso"), "Saxenda caneta pronta para uso");
+
+      // ---------------------------------------------------------------
+      // GRUPO 5: Reconciliação Estrita de Contagens (Snapshot Atual P2F/P2G Fase A)
+      // ---------------------------------------------------------------
+      log("\n--- GRUPO 5: Reconciliação e Separação de Contagens ---");
+      const totalCompounds = PEPTIDES_DATABASE.length;
+      const multiFormCompounds = PEPTIDES_DATABASE.filter(p => p.formulations && p.formulations.length > 0);
+      const totalStructuredPresentations = multiFormCompounds.reduce((sum, p) => sum + p.formulations.length, 0);
+      const legacyCompounds = PEPTIDES_DATABASE.filter(p => !p.formulations || p.formulations.length === 0);
+
+      assert(totalCompounds === 56, `Total de compostos no catálogo P2F/Fase A: 56 (obtido: ${totalCompounds})`);
+      assert(multiFormCompounds.length === 4, `Compostos com multiformulação estruturada: 4 (Semax, Selank, Lira, Tedu) (obtido: ${multiFormCompounds.length})`);
+      assert(totalStructuredPresentations === 10, `Total de apresentações modeladas: 10 (Semax 3, Selank 2, Lira 3, Tedu 2) (obtido: ${totalStructuredPresentations})`);
+      assert(legacyCompounds.length === 52, `Compostos legados de apresentação monofórmula: 52 (obtido: ${legacyCompounds.length})`);
+      assert(legacyCompounds.length + multiFormCompounds.length === totalCompounds, "Soma de legados (52) + multiformulações (4) == 56 compostos");
+
+      log("\n======================================================================");
+      log(`RESULTADO FINAL DO PORTÃO FASE A: ${passed} PASSOU, ${failed} FALHOU`);
+      log("======================================================================");
+
+      const statusEl = document.getElementById('status');
+      if (failed === 0) {
+        statusEl.innerHTML = `<strong style="color:#4ade80;">>>> PORTÃO DE HOMOLOGAÇÃO FASE A APROVADO COM 100% DE SUCESSO (${passed}/${passed}) <<<</strong>`;
+      } else {
+        statusEl.innerHTML = `<strong style="color:#f87171;">>>> FALHA NO PORTÃO DE HOMOLOGAÇÃO FASE A (${failed} erros) <<<</strong>`;
+      }
+    } catch (err) {
+      log(`\n[ERRO CRÍTICO DE EXECUÇÃO]: ${err.stack || err}`);
+      document.getElementById('status').innerHTML = `<strong style="color:#f87171;">ERRO FATAL: ${err.message}</strong>`;
+    }
+  </script>
+</body>
+</html>
