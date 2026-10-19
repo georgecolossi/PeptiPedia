@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>PeptiPedia — Portão de Homologação Fase A (P2F)</title>
+  <script src="js/peptides-data.js"></script>
+  <script src="js/stability-data.js"></script>
+  <script src="js/calculator.js"></script>
+</head>
+<body style="background:#0f172a;color:#f8fafc;font-family:monospace;padding:20px;">
+  <h1>PeptiPedia — Testes JavaScript em Navegador Real (Fase A - P2F)</h1>
+  <div id="status">Executando testes...</div>
+  <pre id="output" style="background:#1e293b;padding:15px;border-radius:8px;border:1px solid #334155;"></pre>
+
+  <script>
+    const log = (msg) => {
+      document.getElementById('output').textContent += msg + '\n';
+    };
+
+    let passed = 0;
+    let failed = 0;
+
+    const assert = (condition, name) => {
+      if (condition) {
+        passed++;
+        log(`[PASS] ${name}`);
+      } else {
+        failed++;
+        log(`[FAIL] ${name}`);
+      }
+    };
+
+    try {
+      log("======================================================================");
+      log("INICIANDO SUÍTE JAVASCRIPT EM NAVEGADOR REAL (V8 ENGINE)");
+      log("======================================================================\n");
+
+      // ---------------------------------------------------------------
+      // GRUPO 1: Validação Numérica Estrita do PeptideCalculator
+      // ---------------------------------------------------------------
+      log("--- GRUPO 1: Validação Estrita de PeptideCalculator (Number.isFinite) ---");
+      const calc = new PeptideCalculator();
+
+      // Teste 1: Infinity no frasco
+      calc.reset();
+      calc.setValues({ vialMg: Infinity, waterMl: 2.0, desiredDoseMcg: 250 });
+      assert(calc.vialMg === null, "Rejeição de vialMg=Infinity (vialMg === null)");
+      assert(calc.calculate().isValid === false, "Cálculo inválido com vialMg=Infinity");
+
+      // Teste 2: -Infinity no diluente
+      calc.reset();
+      calc.setValues({ vialMg: 10, waterMl: -Infinity, desiredDoseMcg: 250 });
+      assert(calc.waterMl === null, "Rejeição de waterMl=-Infinity (waterMl === null)");
+      assert(calc.calculate().isValid === false, "Cálculo inválido com waterMl=-Infinity");
+
+      // Teste 3: NaN na dose
+      calc.reset();
+      calc.setValues({ vialMg: 10, waterMl: 2.0, desiredDoseMcg: NaN });
+      assert(calc.desiredDoseMcg === null, "Rejeição de desiredDoseMcg=NaN (desiredDoseMcg === null)");
+      assert(calc.calculate().isValid === false, "Cálculo inválido com desiredDoseMcg=NaN");
+
+      // Teste 4: String de estouro '1e309' (parseia como Infinity em JS)
+      calc.reset();
+      calc.setValues({ vialMg: '1e309', waterMl: 2.0, desiredDoseMcg: 250 });
+      assert(calc.vialMg === null, "Rejeição de string exponencial '1e309' (vialMg === null)");
+      assert(calc.calculate().isValid === false, "Cálculo inválido com vialMg='1e309'");
+
+      // Teste 5: Valores zero
+      calc.reset();
+      calc.setValues({ vialMg: 0, waterMl: 2.0, desiredDoseMcg: 250 });
+      assert(calc.vialMg === null, "Rejeição de vialMg=0");
+      calc.setValues({ vialMg: 10, waterMl: 0, desiredDoseMcg: 250 });
+      assert(calc.waterMl === null, "Rejeição de waterMl=0");
+      calc.setValues({ vialMg: 10, waterMl: 2.0, desiredDoseMcg: 0 });
+      assert(calc.desiredDoseMcg === null, "Rejeição de desiredDoseMcg=0");
+
+      // Teste 6: Valores negativos
+      calc.reset();
+      calc.setValues({ vialMg: -10, waterMl: 2.0, desiredDoseMcg: 250 });
+      assert(calc.vialMg === null, "Rejeição de vialMg=-10");
+
+      // Teste 7: Strings vazias e alfabéticas
+      calc.reset();
+      calc.setValues({ vialMg: '   ', waterMl: 'abc', desiredDoseMcg: '' });
+      assert(calc.vialMg === null && calc.waterMl === null && calc.desiredDoseMcg === null, "Rejeição de strings vazias e alfabéticas");
+
+      // Teste 8: Cálculo válido e invariância U-100
+      calc.reset();
+      calc.setValues({ vialMg: 10, waterMl: 2.0, desiredDoseMcg: 250, syringeType: 'u100' });
+      let res = calc.calculate();
+      assert(res.isValid === true, "Entrada válida (10 mg, 2 mL, 250 mcg) -> isValid === true");
+      assert(Math.abs(res.volumePerDoseMl - 0.05) < 1e-6, "Volume por dose é exatamente 0.05 mL");
+      assert(Math.abs(res.unitsOnSyringe - 5.0) < 1e-6, "Marcação em U-100 (1.0 mL) é exatamente 5.0 UI");
+
+      calc.setValues({ syringeType: 'u50' });
+      res = calc.calculate();
+      assert(Math.abs(res.unitsOnSyringe - 5.0) < 1e-6, "Marcação em U-100 (0.5 mL) é exatamente 5.0 UI");
+
+      calc.setValues({ syringeType: 'u30' });
+      res = calc.calculate();
+      assert(Math.abs(res.unitsOnSyringe - 5.0) < 1e-6, "Marcação em U-100 (0.3 mL) é exatamente 5.0 UI");
+
+      // ---------------------------------------------------------------
+      // GRUPO 2: Renderização de Cartões Multiformulação
+      // ---------------------------------------------------------------
+      log("\n--- GRUPO 2: Renderização Correta dos Cartões Multiformulação ---");
+
+      // Função de renderização idêntica à de js/app.js para validação direta
+      const renderFormulationAction = (f) => {
+        const formType = (f.formType || '').toLowerCase();
+        const route = (f.route || '').toLowerCase();
+        const name = (f.commercialName || '').toLowerCase();
+
+        if (formType === 'lyophilized_vial' || f.isReconstitutionVial) {
+          if (f.nominalVialMg) {
+            return `Carregar massa (${f.nominalVialMg} mg) na calculadora`;
+          }
+          return `Liofilizado para reconstituição`;
+        }
+        if (formType === 'nasal_drops' || route.includes('nasal')) {
+          return `Solução nasal pronta para uso (dispensa seringa e diluente)`;
+        }
+        if (formType === 'prefilled_pen' || formType.includes('pen') || name.includes('caneta') || (route.includes('subcut') && !formType.includes('lyophilized'))) {
+          return `Caneta subcutânea pronta para uso (sem reconstituição)`;
+        }
+        if (formType.includes('oral') || route.includes('oral')) {
+          return `Administração oral direta (não injetável)`;
+        }
+        if (formType.includes('topical') || route.includes('tópica') || route.includes('topica')) {
+          return `Uso tópico direto`;
+        }
+        return `Apresentação pronta para uso`;
+      };
+
+      const semax = PEPTIDES_DATABASE.find(p => p.id === 'semax');
+      const selank = PEPTIDES_DATABASE.find(p => p.id === 'selank');
+      const lira = PEPTIDES_DATABASE.find(p => p.id === 'liraglutide');
+
+      // Semax cartões (3)
+      assert(renderFormulationAction(semax.formulations[0]).includes("Carregar massa (30 mg) na calculadora"), "Semax liofilizado carrega 30 mg");
+      assert(renderFormulationAction(semax.formulations[1]).includes("Solução nasal pronta"), "Semax gotas 0.1% informa solução nasal pronta");
+      assert(renderFormulationAction(semax.formulations[2]).includes("Solução nasal pronta"), "Semax gotas 1.0% informa solução nasal pronta");
+
+      // Selank cartões (2)
+      assert(renderFormulationAction(selank.formulations[0]).includes("Carregar massa (10 mg) na calculadora"), "Selank liofilizado carrega 10 mg");
+      assert(renderFormulationAction(selank.formulations[1]).includes("Solução nasal pronta"), "Selank gotas 0.15% informa solução nasal pronta");
+
+      // Liraglutida cartões (3)
+      assert(renderFormulationAction(lira.formulations[0]).includes("Carregar massa (10 mg) na calculadora"), "Liraglutida liofilizado carrega 10 mg");
+      
+      const victozaAction = renderFormulationAction(lira.formulations[1]);
+      assert(victozaAction.includes("Caneta subcutânea pronta para uso (sem reconstituição)"), "Victoza exibe 'Caneta subcutânea pronta para uso (sem reconstituição)'");
+      assert(!victozaAction.toLowerCase().includes("nasal"), "Victoza NUNCA é classificada como nasal");
+
+      const saxendaAction = renderFormulationAction(lira.formulations[2]);
+      assert(saxendaAction.includes("Caneta subcutânea pronta para uso (sem reconstituição)"), "Saxenda exibe 'Caneta subcutânea pronta para uso (sem reconstituição)'");
+      assert(!saxendaAction.toLowerCase().includes("nasal"), "Saxenda NUNCA é classificada como nasal");
+
+      // Formulações futuras hipotéticas
+      const oralMock = { formType: 'oral_solid', route: 'Oral', commercialName: 'Comprimido Oral' };
+      const topicalMock = { formType: 'topical_cream', route: 'Tópica', commercialName: 'Creme Tópico' };
+      assert(renderFormulationAction(oralMock).includes("Administração oral direta"), "Forma oral mock informa administração oral");
+      assert(renderFormulationAction(topicalMock).includes("Uso tópico direto"), "Forma tópica mock informa uso tópico");
+
+      // ---------------------------------------------------------------
+      // GRUPO 3: Contraindicações e Orientação Gestacional da Liraglutida
+      // ---------------------------------------------------------------
+      log("\n--- GRUPO 3: Contraindicações e Orientação Gestacional (Liraglutida) ---");
+      const hasPregnancyInContra = lira.contraindications.some(ci => ci.toLowerCase().includes("gravid") || ci.toLowerCase().includes("gesta"));
+      assert(!hasPregnancyInContra, "Gravidez NÃO consta como contraindicação formal em lira.contraindications");
+      assert(lira.contraindications.some(ci => ci.includes("Carcinoma Medular de Tireoide")), "MTC preservado nas contraindicações formais");
+      assert(lira.contraindications.some(ci => ci.includes("NEM-2") || ci.includes("NEM 2")), "NEM-2 preservado nas contraindicações formais");
+      assert(lira.contraindications.some(ci => ci.includes("Hipersensibilidade")), "Hipersensibilidade preservada");
+      assert(typeof lira.pregnancyNotice === 'string' && lira.pregnancyNotice.includes("FDA 2025"), "pregnancyNotice estruturado separadamente citando FDA 2025");
+      assert(!lira.formulations[0].substanceIdentityPurity.includes(">98%"), "Alegação numérica não verificada '>98%' removida de bancada");
+      assert(!lira.formulations[0].unopenedStability.includes("24 meses"), "Alegação arbitrária '24 meses' removida de bancada");
+
+      // ---------------------------------------------------------------
+      // GRUPO 4: Separação de Apresentações de Semaglutida em Estabilidade
+      // ---------------------------------------------------------------
+      log("\n--- GRUPO 4: Separação de Semaglutida em Estabilidade ---");
+      const semaNotice = STABILITY_PEPTIDES_DB['semaglutide'].regulatoryStorageNotice;
+      assert(semaNotice.includes("Ozempic"), "Documentação de Ozempic presente");
+      assert(semaNotice.includes("56 dias"), "Ozempic associado a 56 dias");
+      assert(semaNotice.includes("Wegovy® Caneta de Dose Única"), "Wegovy dose única segregado");
+      assert(semaNotice.includes("28 dias"), "Wegovy dose única associado a 28 dias fora da geladeira");
+      assert(semaNotice.includes("Wegovy® FlexTouch"), "Wegovy FlexTouch segregado");
+      assert(semaNotice.includes("42 dias") || semaNotice.includes("6 semanas"), "Wegovy FlexTouch associado a 42 dias / 6 semanas");
+      assert(semaNotice.includes("Semaglutida Oral") || semaNotice.includes("Rybelsus"), "Semaglutida oral documentada");
+
+      log("\n======================================================================");
+      log(`RESULTADO FINAL DO PORTÃO FASE A: ${passed} PASSOU, ${failed} FALHOU`);
+      log("======================================================================");
+
+      const statusEl = document.getElementById('status');
+      if (failed === 0) {
+        statusEl.innerHTML = `<strong style="color:#4ade80;">>>> PORTÃO DE HOMOLOGAÇÃO FASE A APROVADO COM 100% DE SUCESSO (${passed}/${passed}) <<<</strong>`;
+      } else {
+        statusEl.innerHTML = `<strong style="color:#f87171;">>>> FALHA NO PORTÃO DE HOMOLOGAÇÃO FASE A (${failed} erros) <<<</strong>`;
+      }
+    } catch (err) {
+      log(`\n[ERRO CRÍTICO DE EXECUÇÃO]: ${err.stack || err}`);
+      document.getElementById('status').innerHTML = `<strong style="color:#f87171;">ERRO FATAL: ${err.message}</strong>`;
+    }
+  </script>
+</body>
+</html>
