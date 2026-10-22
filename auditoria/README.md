@@ -31,13 +31,15 @@ auditoria/
 │   ├── P2F/                 # Etapa P2F: correções de interface e calculadora (Number.isFinite), sanitização Liraglutida e expansão para 56 compostos (Teduglutida)
 │   ├── P2G/                 # Etapa P2G: saneamento P2F (contraindicações Teduglutida, eGFR < 60, desfecho GRS Gut 2011, isolamento Gattex, validação física da calculadora) e expansão para 57 compostos (Setmelanotida e ensaios POMC/BBS)
 │   ├── P2G1/                # Microetapa P2G.1: saneamento bibliográfico estrito de Setmelanotida (PMID 36356613, eliminação m-cresol, álcool benzílico/fenol, AHO 2026, negative checks)
-│   └── P2G2/                # Microetapa P2G.2: correção científica independente Setmelanotida (CIDs canônicos 11993702/155491122), reconciliação amostral BBS/Alström (38 pivotal: 32+6, 14 suplementar, 52 total, 32,3% FAS Rubin), status inconclusivo Alström, posologia FDA abril 2026 oficial (AHO 0,5 mg, BBS ≥12a 2,0 mg, estratificação renal) e testes E2E reais Playwright
+│   ├── P2G2/                # Microetapa P2G.2: correção científica independente Setmelanotida (CIDs canônicos 11993702/155491122), reconciliação amostral BBS/Alström (38 pivotal: 32+6, 14 suplementar, 52 total, 32,3% FAS Rubin), status inconclusivo Alström, posologia FDA abril 2026 oficial (AHO 0,5 mg, BBS ≥12a 2,0 mg, estratificação renal) e testes E2E reais Playwright
+│   └── P2G21/               # Microetapa P2G.2.1: errata científica Haqq et al. (FAS primário 31: 28 BBS + 3 Alström; 12 centros em 5 países; fome semana 14 71,4% vs 20,2% ajustada por modelo; Alström 0/3 FAS e 0/6 pivotal inconclusivo) e isolamento dos rótulos de armazenamento no modal
 ├── testes/                  # Suítes automatizadas de testes e portões de homologação
 │   ├── P2E/                 # Suítes test_p2e_phase_a.py (portão Fase A) e test_p2e_final.py (regressão Fase B)
 │   ├── P2F/                 # Suítes test_phase_a_gate.html, run_phase_a_gate.py, test_p2f_gate.html, run_p2f_gate.py e test_p2f_final.py
 │   ├── P2G/                 # Suítes do portão Fase A (test_phase_a_gate.html, run_phase_a_gate.py, test_e2e_real_interface.html) e homologação final (test_p2g_final.html, run_p2g_final.py)
 │   ├── P2G1/                # Suítes test_p2g1_final.html (96 testes V8) e run_p2g1_final.py
-│   └── P2G2/                # Suítes test_p2g2_final.html (104 testes V8), run_p2g2_final.py e test_e2e_playwright.py (22 testes E2E com 8 screenshots)
+│   ├── P2G2/                # Suítes test_p2g2_final.html (104 testes V8), run_p2g2_final.py e test_e2e_playwright.py (22 testes E2E com 8 screenshots)
+│   └── P2G21/               # Suítes test_p2g21_final.html (120 testes V8), run_p2g21_final.py e test_e2e_playwright_p2g21.py (24 testes E2E com 8 screenshots)
 ├── relatorios/              # Diffs técnicos, pendências e validações científicas
 │   ├── P2A/                 # Diff, testes e pendências editoriais da microetapa P2A
 │   ├── P2B/                 # Diff, integridade e validação científica da microetapa P2B
@@ -53,9 +55,12 @@ auditoria/
 │   ├── P2G/                 # Saneamento Fase A, dossiê Setmelanotida, conferência ensaios POMC/BBS, testes automatizados e manifesto de integridade (P2G)
 │   ├── P2G1/                # Saneamento bibliográfico estrito, conferência ensaios BBS/POMC, validação farmacotécnica e manifesto de integridade (P2G.1)
 │   ├── P2G2/                # Parecer científico antes/depois, reconciliação amostral Haqq et al., conferência oficial FDA NDA 213793 abril 2026, relatório E2E Playwright e manifesto de integridade (P2G.2)
+│   ├── P2G21/               # Errata científica, reconciliação FAS/Alström, correção de interface, testes automatizados e manifesto de integridade (P2G.2.1)
 │   ├── benchmark/           # Benchmark comparativo de 3 sites, auditoria de fontes e expansão reconciliada
 │   └── pesquisas/           # Auditorias independentes V1/V2, pareceres e benchmarks
 ├── manifestos/              # Planilhas CSV com metadados primários e inventários
+│   ├── PeptiPedia-P2G21-Matriz-57-Estudos.csv          # Matriz auditada dos 57 estudos com errata populacional e de centros em Haqq et al. (P2G.2.1)
+│   ├── PeptiPedia-P2G21-Lacunas-Corrigidas.csv         # Matriz de lacunas com rotulagem de estabilidade e errata científica reconciliada (P2G.2.1)
 │   ├── PeptiPedia-P2G2-Matriz-57-Estudos.csv           # Matriz auditada dos 57 estudos com reconciliação amostral pivotal/suplementar e modelo de imputação Rubin (P2G.2)
 │   ├── PeptiPedia-P2G2-Lacunas-Corrigidas.csv          # Matriz de lacunas dos 57 compostos com PubChem CIDs canônicos, posologia FDA 2026 e multiformulações (P2G.2)
 │   ├── PeptiPedia-P2G1-Matriz-57-Estudos.csv           # Matriz auditada dos 57 estudos com retificação de PMID 36356613 e DOI de Haqq et al. (P2G.1)
@@ -116,6 +121,7 @@ Nenhum estudo é promovido ou alterado sem confronto direto de fontes primárias
 | **P2G** | `F0A56B9C0476789F3FA9DE34B64FC1581EA7D317B56B0982208F45BC30019425` | Retificação do desfecho primário de Gut 2011 (`study-teduglutide-gut`) para Graded Response Score (GRS, p=0,007 para 0,05 mg/kg vs p=0,161 para 0,10 mg/kg por heterogeneidade basal) e expansão para 57 estudos com os ensaios de Setmelanotida |
 | **P2G.1** | `EE35BD2185C3CFD413007C697419C9F2B0B63096AA7ACB08F30C331B23B6A55C` | Saneamento bibliográfico estrito dos estudos de Setmelanotida: PMID correto 36356613, DOI 10.1016/S2213-8587(22)00277-7, Haqq et al. (Lancet Diabetes Endocrinol 2022) |
 | **P2G.2** | `2E7B6D0A5D3CD9EA0250B82AD3ECDB7BB1EB311D61FA6B90FBAC0F7BC462283A` | Reconciliação populacional de Haqq et al. 2022 (38 pivotal: 32 BBS e 6 Alström; 14 suplementar: 12 BBS e 2 Alström; total 52: 44 BBS e 8 Alström), desfecho primário de 32,3% no FAS ≥12 anos via modelo de imputação múltipla sob regra de Rubin, resultados da semana 14 duplo-cega (-2,4% vs -0,3%, fome 71,4% vs 20,2%), e esclarecimento do status inconclusivo em Síndrome de Alström (0/6 respondedores no pivotal) |
+| **P2G.2.1** | `46da8a13cbf36da741ffbd9f9aa89efeef9501e12e8faaae8cc31a8bd3cc3675` | Errata científica de Haqq et al. 2022: FAS primário elegível ao peso (≥12 anos) de exatamente 31 pacientes (28 BBS e 3 Alström), 12 centros em 5 países (EUA, Canadá, Reino Unido, França, Espanha), fome semana 14 ajustada por modelo (71,4% vs 20,2%, p=0,0081, sem fração bruta 2/10), Alström estratificado em 0/3 FAS e 0/6 pivotal (inconclusivo por tamanho amostral) |
 
 ### 3.2. Catálogo de Peptídeos e Dossiês (`js/peptides-data.js`)
 
@@ -131,7 +137,8 @@ Nenhum estudo é promovido ou alterado sem confronto direto de fontes primárias
 | **P2F** | `E592DC1E353FFD6523E9CADA35C5F78B2541992FC42C689FDB2EB19804D0DE05` | Sanitização da Liraglutida e adição da Teduglutida como 56º composto com 2 apresentações (Gattex 5 mg e bancada 5 mg) |
 | **P2G** | `E210650254F468462A2BCCA7460BEA023A7553BC7366E27BE9D0F001D9F2A6AF` | Saneamento de Teduglutida (FDA Gattex Seção 4 'None' vs EMA Revestive Seção 4.3 neoplasias/hipersensibilidade), limiar renal eGFR < 60 mL/min/1,73 m², e adição da Setmelanotida como 57º composto |
 | **P2G.1** | `1F38396CC404076BE4416C7EF69681B8B1556CBD78FCD8C41776EE6BD54AD871` | Saneamento científico de Setmelanotida: fórmula da base anidra C49H68N18O9S2 (MW ~1117,3 Da), eliminação definitiva de m-cresol, registro oficial dos conservantes álcool benzílico (10 mg/mL) e fenol (5 mg/mL) |
-| **P2G.2** | `7219E85E164EFB6C6B43B65B30D5539DBE1C0956943E75EC9D3A1AB0A4DE362F` | Saneamento farmacopeico de Setmelanotida: PubChem CID canônico 11993702 (base anidra) e CID 155491122 (sal acetato), posologia oficial DailyMed FDA abril 2026 (AHO dose inicial 0,5 mg para todos ≥4 anos; BBS/POMC ≥12a dose inicial 2,0 mg e manutenção 3,0 mg; 6 a <12a início 1,0 mg; 2 a <6a início 0,5 mg), ajuste renal estratificado (leve/moderado sem ajuste; grave não recomendado em AHO, 0,5 mg início e 1,5 mg manutenção em BBS; ESRD não recomendado), alertas formais para crise adrenal aguda em AHO e desequilíbrio de sódio em AHO com DI central, e critérios de descontinuação às 12-16 semanas (<5%) |
+| **P2G.2** | `7219E85E164EFB6C6B43B65B30D5539DBE1C0956943E75EC9D3A1AB0A4DE362F` | Saneamento farmacopeico de Setmelanotida: PubChem CID canônico 11993702 (base anidra) e CID 155491122 (sal acetato), posologia oficial DailyMed FDA abril 2026 |
+| **P2G.2.1** | `e01c668bb6f89e0e778826af7031f232d28988d0be6fb1b1fe0eeb90f72fbd54` | Rotulagem de armazenamento isolada no dossiê Setmelanotida com storageUnmixedLabel ('Armazenamento do Pó (Liofilizado de Pesquisa):') e storageMixedLabel ('Estabilidade em Uso / Solução:'), especificando -20°C para o reagente de bancada e evitando confusão com o medicamento líquido Imcivree; errata clínica Haqq et al. |
 
 ### 3.3. Script de Interface (`js/app.js`)
 
@@ -142,7 +149,8 @@ Nenhum estudo é promovido ou alterado sem confronto direto de fontes primárias
 | **P2D.1** | `3566B680318B331EF99A0B25F580D60C5779DBCABF2B2A6588EF0565B93C1301` | Integração corrigida da calculadora com `formulations[]`, bloqueio de soluções nasais/orais prontas para seringas de reconstituição |
 | **P2E** | `B4D15B8D9C436AC2D44AA77E53D9D011D0D2A0798F3B2C95AB0E41338BC5B7F1` | Consumo genérico de `targetForm.nominalVialMg`, limpeza de diluente/dose ao alternar compostos/formulações |
 | **P2F** | `0CF579A65997AB93A929E245B081DB95CA93191B90C36FD7B0FE961A0A982D92` | Correção contextual da interface multiformulação (eliminação de texto cego nasal em canetas prontas) |
-| **P2G / P2G.1 / P2G.2** | `ECB8F31501C8649E4F676213C88707EADC554EE8251984A214CE53F75AA2F644` | Diferenciação estrita de caneta preenchida (`prefilled_pen`) vs frasco multidose comercial (`multidose_vial`), badges factuais, bloqueio com toasts explicativos para soluções prontas em seringas — **Preservado 100% idêntico em P2G.2** |
+| **P2G / P2G.1 / P2G.2** | `ECB8F31501C8649E4F676213C88707EADC554EE8251984A214CE53F75AA2F644` | Diferenciação estrita de caneta preenchida (`prefilled_pen`) vs frasco multidose comercial (`multidose_vial`), badges factuais, bloqueio com toasts explicativos para soluções prontas em seringas |
+| **P2G.2.1** | `e9195ac031aabe61171992880853428b9944bfa22fe0c6aeba8fca59bbf510ee` | Renderização dinâmica dos rótulos de armazenamento e estabilidade do modal (${peptide.reconstitution?.storageMixedLabel || 'Estabilidade Refrigerado:'} e ${peptide.reconstitution?.storageUnmixedLabel || 'Armazenamento Liofilizado:'}) preservando 100% de compatibilidade com os outros 56 compostos |
 
 ### 3.4. Banco de Estabilidade e Degradação (`js/stability-data.js`)
 
@@ -151,14 +159,14 @@ Nenhum estudo é promovido ou alterado sem confronto direto de fontes primárias
 | **P1 até P2D** | `38A0325D647F0CF13348E068446F118247B8A4E298BC597B3F9F0163F449FEF6` | Banco original com curvas estimadas genéricas |
 | **P2D.1** | `AE2B9E10BD69A0B76DC0DBE4B58DFB640B37D50032325FE568B96876402DEA8A` | Homologação com flag `hasStabilityData: true` para os 5 peptídeos com literatura analítica real |
 | **P2E** | `1597831F7D59FFFE7F26C3D31F1865BFCD8840CB9FB9A1E3617817330AABDB05` | Desativação total de curvas de degradação percentual (`hasStabilityData: false`) |
-| **P2F até P2G.2** | `B80F563C823ADD5A61C66C3435E4EADAD7379D59EC0BBDDEC4409C070CBCB53C` | Segregação estrita das apresentações de Semaglutida em `regulatoryStorageNotice` — **Preservado 100% intacto em P2G.2** |
+| **P2F até P2G.2.1** | `B80F563C823ADD5A61C66C3435E4EADAD7379D59EC0BBDDEC4409C070CBCB53C` | Segregação estrita das apresentações de Semaglutida em `regulatoryStorageNotice` — **Preservado 100% intacto em P2G.2.1** |
 
 ### 3.5. Módulo do Relógio de Estabilidade (`js/stability.js`)
 
 | Versão | SHA-256 de `js/stability.js` (Local Windows) | Descrição do Escopo |
 | :--- | :--- | :--- |
 | **P1 até P2D** | `95A7871AEE2AF4660AFB36844EA483F6D95EEB46671F01564355946D7E7D904A` | Módulo original com fallback universal pseudo-ICH |
-| **P2D.1 até P2G.2** | `559E87AA8EAE579BBCB46DAF4CB7C85478AEB28E9878E8F279E1F9E4136293D9` | Preservado 100% intacto em P2G.2 (painel SVG orientativo e suporte total a `regulatoryStorageNotice`) |
+| **P2D.1 até P2G.2.1** | `559E87AA8EAE579BBCB46DAF4CB7C85478AEB28E9878E8F279E1F9E4136293D9` | Preservado 100% intacto em P2G.2.1 (painel SVG orientativo e suporte total a `regulatoryStorageNotice`) |
 
 ### 3.6. Motor da Calculadora de Reconstituição (`js/calculator.js`)
 
@@ -167,14 +175,14 @@ Nenhum estudo é promovido ou alterado sem confronto direto de fontes primárias
 | **P1 até P2D.1** | `27D088E50AA1E5EB7AF37716E88923AA6F59E331AD61BF4C172EE9C4E8779140` | Motor original com fallbacks numéricos silenciosos |
 | **P2E** | `6D55D26488E618C47774A57115D260D6EED33DBCE96FC44E8E67EC6E717F4182` | Validação estrita sem fallbacks silenciosos e calibração física universal U-100 |
 | **P2F** | `4742A173DA5101EA8616EDBBE22958403956937614291A8F3BDB68C643B5D260` | Validação numérica estrita com `Number.isFinite()` rejeitando categoricamente não finitos |
-| **P2G até P2G.2** | `09B2F3E9B5F8FC1331248B7BE46CFBCE575953E4678BCE168EE3C466C63BC67D` | Validação física e matemática rigorosa — **Preservado 100% intacto em P2G.2** |
+| **P2G até P2G.2.1** | `09B2F3E9B5F8FC1331248B7BE46CFBCE575953E4678BCE168EE3C466C63BC67D` | Validação física e matemática rigorosa — **Preservado 100% intacto em P2G.2.1** |
 
 ### 3.7. Estrutura HTML Principal (`index.html`)
 
 | Versão | SHA-256 de `index.html` (Local Windows) | Descrição do Escopo |
 | :--- | :--- | :--- |
 | **P1 até P2D.1** | `0A02B02476C756007B58C19F88732070985B50AA5AA8B7BD78CAF0B49C82A919` | Estrutura HTML original com opções de seringa ambíguas |
-| **P2E até P2G.2** | `81B738CE090959465E9EF1F3E53903148603D7A951CC4D7A34C543C5E42E6A90` | Nomenclatura explícita das seringas U-100 no elemento `#calc-syringe-type` — **Preservado 100% intacto em P2G.2** |
+| **P2E até P2G.2.1** | `81B738CE090959465E9EF1F3E53903148603D7A951CC4D7A34C543C5E42E6A90` | Nomenclatura explícita das seringas U-100 no elemento `#calc-syringe-type` — **Preservado 100% intacto em P2G.2.1** |
 
 > [!NOTE]
 > **Diferenciação entre Hashes Locais e Blobs Git:**
@@ -182,15 +190,16 @@ Nenhum estudo é promovido ou alterado sem confronto direto de fontes primárias
 
 ---
 
-## 4. Auditoria de Contagens e Integridade do Catálogo (Homologação P2G.2)
+## 4. Auditoria de Contagens e Integridade do Catálogo (Homologação P2G.2.1)
 
-A versão P2G.2 consolida e homologa as seguintes contagens oficiais no sistema:
+A versão P2G.2.1 consolida e homologa as seguintes contagens oficiais no sistema:
 - **Peptídeos (`PEPTIDES_DATABASE`):** **57 compostos** no array JavaScript (Setmelanotida auditada cientificamente).
 - **Dossiês Multiformulação:** **5 compostos** (`semax`, `selank`, `liraglutide`, `teduglutide`, `setmelanotide`), totalizando 12 formulações estruturadas.
 - **Dossiês Monofórmula Legados:** **52 compostos** preservados sem alteração.
 - **Estudos Clínicos e Evidências (`CLINICAL_STUDIES_DATABASE`):** **57 registros de pesquisa** auditados individualmente (ensaios POMC/LEPR e BBS de Setmelanotida 100% conferidos com literatura primária).
 - **Stacks de Pesquisa (`RESEARCH_STACKS`):** **18 stacks** ativos no array JavaScript.
 - **Termos de Glossário (`GLOSSARY_DATABASE`):** **37 termos conceituais** ativos no array JavaScript.
+
 
 ---
 
