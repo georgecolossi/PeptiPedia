@@ -1,170 +1,164 @@
-﻿======================================================================
-SU├ìTE DE HOMOLOGA├ç├âO CIENT├ìFICA P2G.2.3 ÔÇö REPRODUTIBILIDADE TOTAL
-Origem da Aplica├º├úo: C:\Users\georg\Documents\PeptiPedia\workspace
-Arquivo de Teste:    C:\Users\georg\Documents\PeptiPedia\workspace\test_p2g23_final.html
-======================================================================
-├ürea Tempor├íria Isolada: C:\Users\georg\AppData\Local\Temp\peptipedia_p2g23_0lw720mt
-Valida├º├úo HTTP 200 conclu├¡da com sucesso em todos os recursos essenciais (Porta: 52887)
-Navegando para su├¡te cient├¡fica: http://127.0.0.1:52887/test_p2g23_final.html
+Área Temporária Isolada: C:\Users\georg\AppData\Local\Temp\peptipedia_p2g23_mslk448g
+Validação HTTP 200 concluída com sucesso em todos os recursos essenciais (Porta: 53793)
+Navegando para suíte científica: http://127.0.0.1:53793/test_p2g23_final.html
 
 ======================================================================
-INICIANDO SU├ìTE DE HOMOLOGA├ç├âO P2G.2.3 NO MOTOR V8 DO GOOGLE CHROME
+INICIANDO SUÍTE DE HOMOLOGAÇÃO P2G.2.3 NO MOTOR V8 DO GOOGLE CHROME
 ======================================================================
 
 --- GRUPO 1: Saneamento Fase A (Teduglutida e Calculadora) ---
 [PASS] 1.1 Teduglutida presente no banco de dados
-[PASS] 1.2 Teduglutida: FDA Gattex registra formalmente contraindica├º├Áes como None / Nenhuma
+[PASS] 1.2 Teduglutida: FDA Gattex registra formalmente contraindicações como None / Nenhuma
 [PASS] 1.3 Teduglutida: EMA Revestive contraindica formalmente neoplasias
-[PASS] 1.4 Teduglutida: ajuste renal formalmente estabelecido como eGFR < 60 mL/min/1,73 m┬▓
-[PASS] 1.5 Gut 2011: desfecho prim├írio ├® Graded Response Score (GRS)
-[PASS] 1.6 Gut 2011: removida especula├º├úo sobre satura├º├úo de receptores
+[PASS] 1.4 Teduglutida: ajuste renal formalmente estabelecido como eGFR < 60 mL/min/1,73 m²
+[PASS] 1.5 Gut 2011: desfecho primário é Graded Response Score (GRS)
+[PASS] 1.6 Gut 2011: removida especulação sobre saturação de receptores
 [PASS] 1.7 Gut 2011: valores de p diferenciados (0,05 mg/kg p=0,007; 0,10 mg/kg p=0,161)
-[PASS] 1.8 Teduglutida possui 2 formula├º├Áes estruturadas
-[PASS] 1.9 Gattex isolado como kit oficial de bula sem seringa gen├®rica
-[PASS] 1.10 Gattex 0,38 mL e 3,8 mg recuper├íveis da solu├º├úo 10 mg/mL
+[PASS] 1.8 Teduglutida possui 2 formulações estruturadas
+[PASS] 1.9 Gattex isolado como kit oficial de bula sem seringa genérica
+[PASS] 1.10 Gattex 0,38 mL e 3,8 mg recuperáveis da solução 10 mg/mL
 [PASS] 1.11 Rejeita dose em mcg maior que o total do frasco (6000 mcg > 5000 mcg)
 [PASS] 1.12 Rejeita volume da dose excedendo a capacidade da seringa U-50 (1,0 mL > 0,5 mL)
 [PASS] 1.13 Rejeita entrada Infinity no frasco
 [PASS] 1.14 Rejeita massa negativa no frasco
-[PASS] 1.15 C├ílculo v├ílido U-100: 10 mg / 2 mL, dose 1000 mcg -> 20 UI
+[PASS] 1.15 Cálculo válido U-100: 10 mg / 2 mL, dose 1000 mcg -> 20 UI
 
---- GRUPO 2: Setmelanotida Identidade Qu├¡mica e Formula├º├úo Pronta ---
+--- GRUPO 2: Setmelanotida Identidade Química e Formulação Pronta ---
 [PASS] 2.1 Setmelanotida presente no banco de dados
-[PASS] 2.2 F├│rmula molecular can├┤nica C49H68N18O9S2
+[PASS] 2.2 Fórmula molecular canônica C49H68N18O9S2
 [PASS] 2.3 Peso molecular ~1117,3 Da
 [PASS] 2.4 Base anidra associada ao PubChem CID 11993702
 [PASS] 2.5 Sal acetato medicinal associado ao PubChem CID 155491122
-[PASS] 2.6 Estrutura qu├¡mica documenta ponte dissulfeto entre Cys2 e Cys8
-[PASS] 2.7 Sequ├¬ncia pept├¡dica can├┤nica documentada
+[PASS] 2.6 Estrutura química documenta ponte dissulfeto entre Cys2 e Cys8
+[PASS] 2.7 Sequência peptídica canônica documentada
 [PASS] 2.8 ID Imcivree correto
-[PASS] 2.9 Imcivree ├® multidose_vial pronta sem reconstitui├º├úo
-[PASS] 2.10 Imcivree cont├®m 10 mg em 1,0 mL (10 mg/mL)
-[PASS] 2.11 Conservantes oficiais s├úo ├ílcool benz├¡lico (10 mg/mL) e fenol (5 mg/mL)
-[PASS] 2.12 Excipientes incluem CMC s├│dica, EDTA diss├│dico, manitol e derivado mPEG-DSPE
-[PASS] 2.13 Estabilidade ap├│s abertura ├® de at├® 30 dias (2-25┬░C)
-[PASS] 2.14 Estabilidade fechada oficial entre 2┬░C e 8┬░C na embalagem original
+[PASS] 2.9 Imcivree é multidose_vial pronta sem reconstituição
+[PASS] 2.10 Imcivree contém 10 mg em 1,0 mL (10 mg/mL)
+[PASS] 2.11 Conservantes oficiais são álcool benzílico (10 mg/mL) e fenol (5 mg/mL)
+[PASS] 2.12 Excipientes incluem CMC sódica, EDTA dissódico, manitol e derivado mPEG-DSPE
+[PASS] 2.13 Estabilidade após abertura é de até 30 dias (2-25°C)
+[PASS] 2.14 Estabilidade fechada oficial entre 2°C e 8°C na embalagem original
 
---- GRUPO 3: Setmelanotida Marco Regulat├│rio Vigente (FDA, EMA 2026, Anvisa) ---
-[PASS] 3.1 FDA 2026: documenta aprova├º├úo formal de abril de 2026 (NDA 213793)
-[PASS] 3.2 FDA 2026: aprova├º├úo formal para Obesidade Hipotal├ómica Adquirida a partir de 4 anos
-[PASS] 3.3 EMA 2026: autoriza├º├úo formal ampliada para Obesidade Hipotal├ómica Adquirida a partir de 4 anos (Decis├úo C(2026) 3032)
+--- GRUPO 3: Setmelanotida Marco Regulatório Vigente (FDA, EMA 2026, Anvisa) ---
+[PASS] 3.1 FDA 2026: documenta aprovação formal de abril de 2026 (NDA 213793)
+[PASS] 3.2 FDA 2026: aprovação formal para Obesidade Hipotalâmica Adquirida a partir de 4 anos
+[PASS] 3.3 EMA 2026: autorização formal ampliada para Obesidade Hipotalâmica Adquirida a partir de 4 anos (Decisão C(2026) 3032)
 [PASS] 3.4 BBS aprovada a partir de 2 anos tanto na FDA quanto na EMA
 [PASS] 3.5 POMC/PCSK1/LEPR aprovado a partir de 2 anos tanto na FDA quanto na EMA
-[PASS] 3.6 Anvisa: confirma├º├úo oficial de aus├¬ncia de registro sanit├írio comercial deferido no sistema de medicamentos
-[PASS] 3.7 Anvisa: importa├º├úo por pessoa f├¡sica regida pela RDC Anvisa n┬║ 81/2008 sob prescri├º├úo m├®dica para uso pr├│prio
-[PASS] 3.8 Anvisa: aus├¬ncia de exig├¬ncia de controle especial (Portaria 344/98)
+[PASS] 3.6 Anvisa: confirmação oficial de ausência de registro sanitário comercial deferido no sistema de medicamentos
+[PASS] 3.7 Anvisa: importação por pessoa física regida pela RDC Anvisa nº 81/2008 sob prescrição médica para uso próprio
+[PASS] 3.8 Anvisa: ausência de exigência de controle especial (Portaria 344/98)
 
---- GRUPO 4: Seguran├ºa Cl├¡nica, Alertas e Posologia ---
-[PASS] 4.1 Contraindica├º├úo formal restrita a hipersensibilidade ├á setmelanotida ou excipientes
-[PASS] 4.2 Obesidade comum classificada tecnicamente como limita├º├úo de uso / indica├º├úo n├úo aprovada
-[PASS] 4.3 Alerta toxicol├│gico sobre ├ílcool benz├¡lico em neonatos (gasping syndrome)
-[PASS] 4.4 Alerta sobre insufici├¬ncia adrenal aguda em Obesidade Hipotal├ómica Adquirida
-[PASS] 4.5 Alerta sobre desequil├¡brio de s├│dio em AHO com diabetes insipidus central
-[PASS] 4.6 Alerta sobre ere├º├Áes prolongadas (> 4 horas) e priapismo
-[PASS] 4.7 Alerta cl├¡nico sobre depress├úo e risco de idea├º├úo suicida
-[PASS] 4.8 AHO: dose inicial oficial ├® 0,5 mg/dia (0,05 mL) para ÔëÑ4 anos
-[PASS] 4.9 BBS/POMC: dose inicial oficial para ÔëÑ12 anos ├® 2,0 mg/dia (0,2 mL)
-[PASS] 4.10 BBS/POMC: dose inicial para 6 a <12 anos ├® 1,0 mg/dia (0,1 mL)
-[PASS] 4.11 BBS/POMC: dose inicial para 2 a <6 anos ├® 0,5 mg/dia (0,05 mL)
-[PASS] 4.12 Ajuste Renal: Comprometimento leve e moderado N├âO requer altera├º├úo posol├│gica
-[PASS] 4.13 Ajuste Renal: Insufici├¬ncia grave N├âO recomendada em AHO
-[PASS] 4.14 Ajuste Renal: Em BBS/POMC grave, dose de manuten├º├úo ├® 1,5 mg/dia (ÔëÑ12a) ou 1,0 mg/dia (6 a <12a)
-[PASS] 4.15 Ajuste Renal: Doen├ºa renal terminal (<15) N├âO recomendada
-[PASS] 4.16 Crit├®rio de interrup├º├úo se perda de peso <5% ├ás 12-16 semanas
+--- GRUPO 4: Segurança Clínica, Alertas e Posologia ---
+[PASS] 4.1 Contraindicação formal restrita a hipersensibilidade à setmelanotida ou excipientes
+[PASS] 4.2 Obesidade comum classificada tecnicamente como limitação de uso / indicação não aprovada
+[PASS] 4.3 Alerta toxicológico sobre álcool benzílico em neonatos (gasping syndrome)
+[PASS] 4.4 Alerta sobre insuficiência adrenal aguda em Obesidade Hipotalâmica Adquirida
+[PASS] 4.5 Alerta sobre desequilíbrio de sódio em AHO com diabetes insipidus central
+[PASS] 4.6 Alerta sobre ereções prolongadas (> 4 horas) e priapismo
+[PASS] 4.7 Alerta clínico sobre depressão e risco de ideação suicida
+[PASS] 4.8 AHO: dose inicial oficial é 0,5 mg/dia (0,05 mL) para ≥4 anos
+[PASS] 4.9 BBS/POMC: dose inicial oficial para ≥12 anos é 2,0 mg/dia (0,2 mL)
+[PASS] 4.10 BBS/POMC: dose inicial para 6 a <12 anos é 1,0 mg/dia (0,1 mL)
+[PASS] 4.11 BBS/POMC: dose inicial para 2 a <6 anos é 0,5 mg/dia (0,05 mL)
+[PASS] 4.12 Ajuste Renal: Comprometimento leve e moderado NÃO requer alteração posológica
+[PASS] 4.13 Ajuste Renal: Insuficiência grave NÃO recomendada em AHO
+[PASS] 4.14 Ajuste Renal: Em BBS/POMC grave, dose de manutenção é 1,5 mg/dia (≥12a) ou 1,0 mg/dia (6 a <12a)
+[PASS] 4.15 Ajuste Renal: Doença renal terminal (<15) NÃO recomendada
+[PASS] 4.16 Critério de interrupção se perda de peso <5% às 12-16 semanas
 
---- GRUPO 5: Liofilizado de Bancada e R├│tulos Din├ómicos ---
+--- GRUPO 5: Liofilizado de Bancada e Rótulos Dinâmicos ---
 [PASS] 5.1 Liofilizado identificado separadamente como insumo de bancada
-[PASS] 5.2 Liofilizado n├úo afirma obrigatoriedade de diluente BAC 0,9%
-[PASS] 5.3 Liofilizado n├úo presume esterilidade farmacopeica
-[PASS] 5.4 Calculadora do PeptiPedia restrita a convers├Áes te├│ricas
+[PASS] 5.2 Liofilizado não afirma obrigatoriedade de diluente BAC 0,9%
+[PASS] 5.3 Liofilizado não presume esterilidade farmacopeica
+[PASS] 5.4 Calculadora do PeptiPedia restrita a conversões teóricas
 [PASS] 5.5 storageUnmixedLabel configurado para isolar liofilizado de bancada
-[PASS] 5.6 storageMixedLabel configurado para isolar estabilidade de solu├º├úo
-[PASS] 5.7 storageUnmixed explicita -20┬░C para pesquisa e rejeita confus├úo com Imcivree
+[PASS] 5.6 storageMixedLabel configurado para isolar estabilidade de solução
+[PASS] 5.7 storageUnmixed explicita -20°C para pesquisa e rejeita confusão com Imcivree
 
---- GRUPO 6: Ensaios Cl├¡nicos Pivatais ---
+--- GRUPO 6: Ensaios Clínicos Pivatais ---
 [PASS] 6.1 Estudo study-setmelanotide-bbs presente em CLINICAL_STUDIES_DATABASE
 [PASS] 6.2 Estudo BBS possui PMID 36356613 (Haqq et al. Lancet 2022)
 [PASS] 6.3 Estudo BBS possui DOI 10.1016/S2213-8587(22)00277-7
-[PASS] 6.4 Estudo BBS realizado em 12 centros cl├¡nicos de 5 pa├¡ses
-[PASS] 6.5 Pa├¡ses corretos documentados (EUA, Canad├í, Reino Unido, Fran├ºa, Espanha)
-[PASS] 6.6 Popula├º├úo FAS prim├íria eleg├¡vel descrita com rigor
-[PASS] 6.7 FAS prim├írio ÔëÑ12 anos ├® de exatamente 31 pacientes (28 BBS e 3 Alstr├Âm)
-[PASS] 6.8 Coorte pivotal de 38 pacientes randomizados (32 BBS e 6 Alstr├Âm)
-[PASS] 6.9 Coorte suplementar com 14 pacientes: 12 BBS e 2 Alstr├Âm
-[PASS] 6.10 Ensaio ampliado total de 52 pacientes (44 BBS e 8 Alstr├Âm)
-[PASS] 6.11 Desenho com 14 semanas duplo-cegas e extens├úo aberta
-[PASS] 6.12 Desfecho prim├írio FAS ÔëÑ12 anos ├® 32,3% sob regra de Rubin
+[PASS] 6.4 Estudo BBS realizado em 12 centros clínicos de 5 países
+[PASS] 6.5 Países corretos documentados (EUA, Canadá, Reino Unido, França, Espanha)
+[PASS] 6.6 População FAS primária elegível descrita com rigor
+[PASS] 6.7 FAS primário ≥12 anos é de exatamente 31 pacientes (28 BBS e 3 Alström)
+[PASS] 6.8 Coorte pivotal de 38 pacientes randomizados (32 BBS e 6 Alström)
+[PASS] 6.9 Coorte suplementar com 14 pacientes: 12 BBS e 2 Alström
+[PASS] 6.10 Ensaio ampliado total de 52 pacientes (44 BBS e 8 Alström)
+[PASS] 6.11 Desenho com 14 semanas duplo-cegas e extensão aberta
+[PASS] 6.12 Desfecho primário FAS ≥12 anos é 32,3% sob regra de Rubin
 [PASS] 6.13 Todos os 10 respondedores observados eram BBS
 [PASS] 6.14 Semana 14 duplo-cega: perda ponderal -2,4% vs -0,3%
-[PASS] 6.15 Redu├º├úo de fome semana 14: 71,4% vs 20,2% estimado por modelo
-[PASS] 6.16 Alstr├Âm estratificado (0 de 3 FAS e 0 de 6 pivotal) classificado como inconclusivo
+[PASS] 6.15 Redução de fome semana 14: 71,4% vs 20,2% estimado por modelo
+[PASS] 6.16 Alström estratificado (0 de 3 FAS e 0 de 6 pivotal) classificado como inconclusivo
 [PASS] 6.17 Estudo study-setmelanotide-pomc-lepr presente em CLINICAL_STUDIES_DATABASE
 [PASS] 6.18 Estudo POMC/LEPR possui PMID 33137293
 [PASS] 6.19 Estudo POMC/LEPR possui DOI 10.1016/S2213-8587(20)30364-8
-[PASS] 6.20 Estudo POMC/LEPR esclarece desenho com per├¡odo de retirada
+[PASS] 6.20 Estudo POMC/LEPR esclarece desenho com período de retirada
 [PASS] 6.21 Estudo POMC/LEPR documenta resposta de 80% POMC e 45% LEPR
 
 --- GRUPO 7: Negative Checks Estritos ---
-[PASS] 7.1 NEGATIVE CHECK: Dossi├¬ N├âO possui CID 56841936
-[PASS] 7.2 NEGATIVE CHECK: Estudo BBS N├âO possui CID 56841936
-[PASS] 7.3 NEGATIVE CHECK: study-setmelanotide-bbs N├âO possui PMID 35468323
-[PASS] 7.4 NEGATIVE CHECK: Dossi├¬ peptides-data.js N├âO possui PMID 35468323
-[PASS] 7.5 NEGATIVE CHECK: Amostra N├âO ├® descrita genericamente como 66 pacientes
-[PASS] 7.6 NEGATIVE CHECK: Alstr├Âm pivotal N├âO ├® descrito como 0 de 12
-[PASS] 7.7 NEGATIVE CHECK: Ensaio N├âO alega ter comprovado inefic├ícia biol├│gica
-[PASS] 7.8 NEGATIVE CHECK: Setmelanotida N├âO cont├®m f├│rmula C49H71N19O9S2
-[PASS] 7.9 NEGATIVE CHECK: Imcivree N├âO cita m-cresol
-[PASS] 7.10 NEGATIVE CHECK: Dossi├¬ global N├âO cita m-cresol
-[PASS] 7.11 NEGATIVE CHECK: AHO N├âO inicia com 1,0 mg ou 2,0 mg
-[PASS] 7.12 NEGATIVE CHECK: BBS N├âO descreve placebo paralelo de 52 semanas
-[PASS] 7.13 NEGATIVE CHECK: Comprometimento renal leve/moderado N├âO sofre redu├º├úo
-[PASS] 7.14 NEGATIVE CHECK P2G.2.1: Rejeita soma err├┤nea de 37 no FAS prim├írio
-[PASS] 7.15 NEGATIVE CHECK P2G.2.1: Dossi├¬ N├âO cont├®m '37 pacientes'
-[PASS] 7.16 NEGATIVE CHECK P2G.2.1: Rejeita 14 centros ou 7 pa├¡ses
-[PASS] 7.17 NEGATIVE CHECK P2G.2.1: Rejeita men├º├úo a centros na Alemanha ou Holanda
-[PASS] 7.18 NEGATIVE CHECK P2G.2.1: Rejeita fra├º├úo artificial (2/10)
-[PASS] 7.19 NEGATIVE CHECK P2G.2.1: Dossi├¬ cl├¡nico N├âO cont├®m fra├º├úo (2/10)
-[PASS] 7.20 NEGATIVE CHECK P2G.2.2: Rejeita afirma├º├úo obsoleta de que EMA ├® restrita a 6 anos
-[PASS] 7.21 NEGATIVE CHECK P2G.2.2: Rejeita afirma├º├úo de que AHO n├úo ├® aprovada na EMA
+[PASS] 7.1 NEGATIVE CHECK: Dossiê NÃO possui CID 56841936
+[PASS] 7.2 NEGATIVE CHECK: Estudo BBS NÃO possui CID 56841936
+[PASS] 7.3 NEGATIVE CHECK: study-setmelanotide-bbs NÃO possui PMID 35468323
+[PASS] 7.4 NEGATIVE CHECK: Dossiê peptides-data.js NÃO possui PMID 35468323
+[PASS] 7.5 NEGATIVE CHECK: Amostra NÃO é descrita genericamente como 66 pacientes
+[PASS] 7.6 NEGATIVE CHECK: Alström pivotal NÃO é descrito como 0 de 12
+[PASS] 7.7 NEGATIVE CHECK: Ensaio NÃO alega ter comprovado ineficácia biológica
+[PASS] 7.8 NEGATIVE CHECK: Setmelanotida NÃO contém fórmula C49H71N19O9S2
+[PASS] 7.9 NEGATIVE CHECK: Imcivree NÃO cita m-cresol
+[PASS] 7.10 NEGATIVE CHECK: Dossiê global NÃO cita m-cresol
+[PASS] 7.11 NEGATIVE CHECK: AHO NÃO inicia com 1,0 mg ou 2,0 mg
+[PASS] 7.12 NEGATIVE CHECK: BBS NÃO descreve placebo paralelo de 52 semanas
+[PASS] 7.13 NEGATIVE CHECK: Comprometimento renal leve/moderado NÃO sofre redução
+[PASS] 7.14 NEGATIVE CHECK P2G.2.1: Rejeita soma errônea de 37 no FAS primário
+[PASS] 7.15 NEGATIVE CHECK P2G.2.1: Dossiê NÃO contém '37 pacientes'
+[PASS] 7.16 NEGATIVE CHECK P2G.2.1: Rejeita 14 centros ou 7 países
+[PASS] 7.17 NEGATIVE CHECK P2G.2.1: Rejeita menção a centros na Alemanha ou Holanda
+[PASS] 7.18 NEGATIVE CHECK P2G.2.1: Rejeita fração artificial (2/10)
+[PASS] 7.19 NEGATIVE CHECK P2G.2.1: Dossiê clínico NÃO contém fração (2/10)
+[PASS] 7.20 NEGATIVE CHECK P2G.2.2: Rejeita afirmação obsoleta de que EMA é restrita a 6 anos
+[PASS] 7.21 NEGATIVE CHECK P2G.2.2: Rejeita afirmação de que AHO não é aprovada na EMA
 [PASS] 7.22 NEGATIVE CHECK P2G.2.2: Rejeita registro comercial ativo ou aprovado pela Anvisa
-[PASS] 7.23 NEGATIVE CHECK P2G.2.3: Rejeita afirma├º├úo de exig├¬ncia universal de autoriza├º├úo pr├®via individual na Anvisa para importa├º├úo por pessoa f├¡sica
-[PASS] 7.24 NEGATIVE CHECK P2G.2.3: Rejeita integralmente qualquer men├º├úo ou aplica├º├úo da RDC 660/2022 (norma de Cannabis) no dossi├¬ de setmelanotida
+[PASS] 7.23 NEGATIVE CHECK P2G.2.3: Rejeita afirmação de exigência universal de autorização prévia individual na Anvisa para importação por pessoa física
+[PASS] 7.24 NEGATIVE CHECK P2G.2.3: Rejeita integralmente qualquer menção ou aplicação da RDC 660/2022 (norma de Cannabis) no dossiê de setmelanotida
 
---- GRUPO 8: Multiformula├º├Áes Estruturadas (Semax, Selank, Lira, Tedu, Setm) ---
-[PASS] 8.1 Total de compostos multiformula├º├úo ├® exatamente 5
-[PASS] 8.2 Os 5 multiformula├º├úo s├úo rigorosamente Semax, Selank, Liraglutida, Teduglutida e Setmelanotida
-[PASS] 8.3 NEGATIVE CHECK: Semaglutida, Tirzepatida e Retatrutida N├âO possuem array formulations (s├úo monof├│rmula)
-[PASS] 8.4 Semax possui exatamente 3 apresenta├º├Áes (liofilizado, gotas 0,1%, gotas 1,0%)
-[PASS] 8.5 Selank possui exatamente 2 apresenta├º├Áes (liofilizado, gotas 0,15%)
-[PASS] 8.6 Liraglutida possui exatamente 3 apresenta├º├Áes (liofilizado, Victoza, Saxenda)
-[PASS] 8.7 Teduglutida possui exatamente 2 apresenta├º├Áes (Gattex kit, liofilizado)
-[PASS] 8.8 Setmelanotida possui exatamente 2 apresenta├º├Áes (Imcivree solu├º├úo pronta, liofilizado), totalizando 12 no cat├ílogo
+--- GRUPO 8: Multiformulações Estruturadas (Semax, Selank, Lira, Tedu, Setm) ---
+[PASS] 8.1 Total de compostos multiformulação é exatamente 5
+[PASS] 8.2 Os 5 multiformulação são rigorosamente Semax, Selank, Liraglutida, Teduglutida e Setmelanotida
+[PASS] 8.3 NEGATIVE CHECK: Semaglutida, Tirzepatida e Retatrutida NÃO possuem array formulations (são monofórmula)
+[PASS] 8.4 Semax possui exatamente 3 apresentações (liofilizado, gotas 0,1%, gotas 1,0%)
+[PASS] 8.5 Selank possui exatamente 2 apresentações (liofilizado, gotas 0,15%)
+[PASS] 8.6 Liraglutida possui exatamente 3 apresentações (liofilizado, Victoza, Saxenda)
+[PASS] 8.7 Teduglutida possui exatamente 2 apresentações (Gattex kit, liofilizado)
+[PASS] 8.8 Setmelanotida possui exatamente 2 apresentações (Imcivree solução pronta, liofilizado), totalizando 12 no catálogo
 
 --- GRUPO 9: Interface Real e Modais ---
 [PASS] 9.1 Modal Semax aberto com sucesso
-[PASS] 9.2 Semax liofilizado exibe bot├úo calculadora
-[PASS] 9.3 Selank liofilizado exibe bot├úo calculadora
+[PASS] 9.2 Semax liofilizado exibe botão calculadora
+[PASS] 9.3 Selank liofilizado exibe botão calculadora
 [PASS] 9.4 Victoza/Saxenda exibem caneta pronta
-[PASS] 9.5 Liraglutida n├úo exibe texto de solu├º├úo nasal
+[PASS] 9.5 Liraglutida não exibe texto de solução nasal
 [PASS] 9.6 Gattex exibe badge de kit oficial de bula
 [PASS] 9.7 Modal Setmelanotida aberto com sucesso
-[PASS] 9.8 Modal cont├®m t├¡tulo Setmelanotida
-[PASS] 9.9 Imcivree exibe badge de solu├º├úo pronta multidose
-[PASS] 9.10 Setmelanotida frasco pesquisa exibe bot├úo calculadora 10 mg
-[PASS] 9.11 Modal exibe r├│tulo din├ómico 'Armazenamento do P├│ (Liofilizado de Pesquisa):'
-[PASS] 9.12 Modal exibe r├│tulo din├ómico 'Estabilidade em Uso / Solu├º├úo:'
-[PASS] 9.13 NEGATIVE CHECK: Modal N├âO exibe r├│tulo est├ítico antigo gen├®rico
+[PASS] 9.8 Modal contém título Setmelanotida
+[PASS] 9.9 Imcivree exibe badge de solução pronta multidose
+[PASS] 9.10 Setmelanotida frasco pesquisa exibe botão calculadora 10 mg
+[PASS] 9.11 Modal exibe rótulo dinâmico 'Armazenamento do Pó (Liofilizado de Pesquisa):'
+[PASS] 9.12 Modal exibe rótulo dinâmico 'Estabilidade em Uso / Solução:'
+[PASS] 9.13 NEGATIVE CHECK: Modal NÃO exibe rótulo estático antigo genérico
 [PASS] 9.14 Bloqueio de prefill Imcivree pronta gera toast explicativo
 
 ======================================================================
-RESUMO DA EXECU├ç├âO: TOTAL 127 ASSER├ç├òES | 127 APROVADAS | 0 FALHAS
+RESUMO DA EXECUÇÃO: TOTAL 127 ASSERÇÕES | 127 APROVADAS | 0 FALHAS
 ======================================================================
 
 
 ======================================================================
-STATUS FINAL V8: STATUS: 100% APROVADO (127/127 asser├º├Áes). 0 FALHOU.
+STATUS FINAL V8: STATUS: 100% APROVADO (127/127 asserções). 0 FALHOU.
 ======================================================================
 
-[SUCESSO ABSOLUTO]: Todas as 127 asser├º├Áes cient├¡ficas foram aprovadas (100% de sucesso, 0 falhas).
-Servidor HTTP e navegador encerrados com seguran├ºa.
-Log cient├¡fico gravado em: C:\Users\georg\Documents\PeptiPedia\workspace\logs\scientific-tests.log
+[SUCESSO ABSOLUTO]: Todas as 127 asserções científicas foram aprovadas (100% de sucesso, 0 falhas).
+Servidor HTTP e navegador encerrados com segurança.
