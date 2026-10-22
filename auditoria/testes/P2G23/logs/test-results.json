@@ -1,0 +1,38 @@
+{
+  "version": "P2G23",
+  "classification": "PENDENTE DE AUDITORIA EXTERNA",
+  "commitTested": "a6a65b366b1a2e90053c7736d9d73068c6fc5aa1",
+  "timestamp": "2026-10-22T23:46:34.227064+00:00",
+  "scientificSuite": {
+    "runner": "run_p2g23_final.py",
+    "assertionsRun": 127,
+    "assertionsPassed": 127,
+    "assertionsFailed": 0,
+    "exitCode": 0,
+    "status": "PASSED"
+  },
+  "e2eSuite": {
+    "runner": "test_e2e_playwright_p2g23.py",
+    "checksRun": 26,
+    "checksPassed": 26,
+    "checksFailed": 0,
+    "screenshotsSaved": 8,
+    "exitCode": 0,
+    "status": "PASSED"
+  },
+  "catalogCounts": {
+    "totalCompounds": 57,
+    "totalStudies": 57,
+    "totalStacks": 18,
+    "totalGlossary": 37,
+    "multiFormulationCompounds": 5,
+    "totalStructuredPresentations": 12
+  },
+  "regulatoryContext": {
+    "setmelanotideAnvisaStatus": "sem_registro_comercial_ativo",
+    "importFramework": "RDC Anvisa nº 81/2008 (uso pessoal sob prescrição médica)",
+    "controlledSubstance344": false,
+    "cannabisRDC660Applicable": false
+  },
+  "overallStatus": "PASSED"
+}

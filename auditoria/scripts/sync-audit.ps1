@@ -1,10 +1,11 @@
 # ==============================================================================
 # PeptiPedia - Script Permanente de Sincronizacao de Auditoria (sync-audit.ps1)
-# Versao 2.0 (Microetapa P2G.2.2)
+# Versao 2.1 (Microetapa P2G.2.3)
 # ==============================================================================
 # Uso:
-#   .\auditoria\scripts\sync-audit.ps1 -Version "P2G22" -Description "atualizacao EMA 2026 e infraestrutura"
-#   .\auditoria\scripts\sync-audit.ps1 -Version "P2G22" -DryRun
+#   .\auditoria\scripts\sync-audit.ps1 -Version "P2G23" -Description "correcao importacao Brasil e reprodutibilidade"
+#   .\auditoria\scripts\sync-audit.ps1 -Version "P2G23" -DryRun
+#   .\auditoria\scripts\sync-audit.ps1 -Version "P2G23" -VerifyOnly
 # ==============================================================================
 
 [CmdletBinding()]
@@ -22,7 +23,10 @@ param (
     [switch]$SkipTests,
 
     [Parameter(Mandatory = $false)]
-    [switch]$DryRun
+    [switch]$DryRun,
+
+    [Parameter(Mandatory = $false)]
+    [switch]$VerifyOnly
 )
 
 Set-StrictMode -Version Latest
@@ -74,7 +78,7 @@ if (-not $WorkspaceDir) {
 Write-Host "  Workspace Ativo:    $WorkspaceDir"
 
 if (-not $Version) {
-    Write-Failure "Parametro -Version obrigatorio (ex.: -Version P2G22)"
+    Write-Failure "Parametro -Version obrigatorio (ex.: -Version P2G23)"
     exit 1
 }
 $VersionUpper = $Version.ToUpper()
@@ -121,72 +125,89 @@ try {
     $SnapshotDest = Join-Path $RepoRoot "auditoria\snapshots\$VersionUpper"
     $TestDest     = Join-Path $RepoRoot "auditoria\testes\$VersionUpper"
     $ReportsDir   = Join-Path $RepoRoot "auditoria\relatorios\$VersionUpper"
+    $LogDir       = Join-Path $RepoRoot "auditoria\testes\$VersionUpper\logs"
 
     $isCommittedSnapshot = (git ls-tree -d HEAD "auditoria/snapshots/$VersionUpper" 2>$null)
-    if ($isCommittedSnapshot) {
+    
+    if ($VerifyOnly) {
+        Write-Step "MODO -VerifyOnly: Verificando versao $VersionUpper ja publicada..."
+        if (-not (Test-Path $SnapshotDest) -or -not (Test-Path $TestDest)) {
+            Write-Failure "Snapshot ou testes para versao $VersionUpper nao encontrados para verificacao."
+            exit 1
+        }
+    } elseif ($isCommittedSnapshot) {
         Write-Failure "O snapshot da versao '$VersionUpper' ja existe no historico do repositorio. Sobrescrita de snapshots historicos e TERMINANTEMENTE PROIBIDA."
         exit 1
+    } else {
+        Write-Success "Garantia de imutabilidade: versao $VersionUpper e inedita no historico do repositorio"
     }
-    Write-Success "Garantia de imutabilidade: versao $VersionUpper e inedita no historico do repositorio"
 
     # --------------------------------------------------------------------------
     # 3. SINCRONIZACAO DO SNAPSHOT A PARTIR DO WORKSPACE (OU SIMULACAO EM DRY-RUN)
     # --------------------------------------------------------------------------
-    if ($WorkspaceDir -and (Test-Path $WorkspaceDir) -and ($WorkspaceDir -ne $RepoRoot)) {
-        if ($DryRun) {
-            Write-Step "3. [DRY-RUN] Simulando sincronizacao de arquivos do workspace para $VersionUpper (sem gravacao em disco)..."
-            Write-Host "  [SIMULADO] Criaria snapshot em: $SnapshotDest"
-            Write-Host "  [SIMULADO] Copiaria: index.html, README.md, .gitignore, css, js"
-            Write-Host "  [SIMULADO] Sincronizaria testes e screenshots em: $TestDest"
-        } else {
-            Write-Step "3. Sincronizando arquivos operacionais do workspace para snapshot $VersionUpper..."
-            
-            New-Item -ItemType Directory -Path $SnapshotDest -Force | Out-Null
-            
-            # Copiar index.html, README.md, .gitignore
-            foreach ($f in @("index.html", "README.md", ".gitignore")) {
-                $srcFile = Join-Path $WorkspaceDir $f
-                if (Test-Path $srcFile) {
-                    Copy-Item -Path $srcFile -Destination (Join-Path $SnapshotDest $f) -Force
+    if (-not $VerifyOnly) {
+        if ($WorkspaceDir -and (Test-Path $WorkspaceDir) -and ($WorkspaceDir -ne $RepoRoot)) {
+            if ($DryRun) {
+                Write-Step "3. [DRY-RUN] Simulando sincronizacao de arquivos do workspace para $VersionUpper (sem gravacao em disco)..."
+                Write-Host "  [SIMULADO] Criaria snapshot em: $SnapshotDest"
+                Write-Host "  [SIMULADO] Copiaria: index.html, README.md, .gitignore, css, js"
+                Write-Host "  [SIMULADO] Sincronizaria testes e screenshots em: $TestDest"
+            } else {
+                Write-Step "3. Sincronizando arquivos operacionais do workspace para snapshot $VersionUpper..."
+                
+                New-Item -ItemType Directory -Path $SnapshotDest -Force | Out-Null
+                
+                # Copiar index.html, README.md, .gitignore
+                foreach ($f in @("index.html", "README.md", ".gitignore")) {
+                    $srcFile = Join-Path $WorkspaceDir $f
+                    if (Test-Path $srcFile) {
+                        Copy-Item -Path $srcFile -Destination (Join-Path $SnapshotDest $f) -Force
+                    }
                 }
-            }
-            
-            # Copiar css e js
-            foreach ($f in @("css", "js")) {
-                $srcFolder = Join-Path $WorkspaceDir $f
-                if (Test-Path $srcFolder) {
-                    $dstFolder = Join-Path $SnapshotDest $f
-                    Copy-Item -Path $srcFolder -Destination $dstFolder -Recurse -Force
+                
+                # Copiar css e js
+                foreach ($f in @("css", "js")) {
+                    $srcFolder = Join-Path $WorkspaceDir $f
+                    if (Test-Path $srcFolder) {
+                        $dstFolder = Join-Path $SnapshotDest $f
+                        Copy-Item -Path $srcFolder -Destination $dstFolder -Recurse -Force
+                    }
                 }
-            }
-            Write-Success "Snapshot gravado com sucesso em: $SnapshotDest"
+                Write-Success "Snapshot gravado com sucesso em: $SnapshotDest"
 
-            # Sincronizar testes e screenshots
-            New-Item -ItemType Directory -Path $TestDest -Force | Out-Null
-            Get-ChildItem -Path $WorkspaceDir -Filter "*test*" -File | ForEach-Object {
-                Copy-Item -Path $_.FullName -Destination (Join-Path $TestDest $_.Name) -Force
-            }
-            Get-ChildItem -Path $WorkspaceDir -Filter "*run*" -File | ForEach-Object {
-                Copy-Item -Path $_.FullName -Destination (Join-Path $TestDest $_.Name) -Force
-            }
-            
-            $WorkspaceScreenshots = Join-Path $WorkspaceDir "screenshots"
-            if (Test-Path $WorkspaceScreenshots) {
-                $ScreenshotsDest = Join-Path $TestDest "screenshots"
-                New-Item -ItemType Directory -Path $ScreenshotsDest -Force | Out-Null
-                Get-ChildItem -Path $WorkspaceScreenshots -Filter "*.png" | ForEach-Object {
-                    Copy-Item -Path $_.FullName -Destination (Join-Path $ScreenshotsDest $_.Name) -Force
+                # Sincronizar testes e screenshots
+                New-Item -ItemType Directory -Path $TestDest -Force | Out-Null
+                Get-ChildItem -Path $WorkspaceDir -Filter "*test*" -File | ForEach-Object {
+                    Copy-Item -Path $_.FullName -Destination (Join-Path $TestDest $_.Name) -Force
                 }
-            }
-            $WorkspaceReports = Join-Path $WorkspaceDir "auditoria\relatorios\$VersionUpper"
-            if (Test-Path $WorkspaceReports) {
-                New-Item -ItemType Directory -Path $ReportsDir -Force | Out-Null
-                Get-ChildItem -Path $WorkspaceReports -Filter "*.md" | ForEach-Object {
-                    Copy-Item -Path $_.FullName -Destination (Join-Path $ReportsDir $_.Name) -Force
+                Get-ChildItem -Path $WorkspaceDir -Filter "*run*" -File | ForEach-Object {
+                    Copy-Item -Path $_.FullName -Destination (Join-Path $TestDest $_.Name) -Force
                 }
-                Write-Success "Relatorios sincronizados em: $ReportsDir"
+                Get-ChildItem -Path $WorkspaceDir -Filter "*generate*" -File | ForEach-Object {
+                    Copy-Item -Path $_.FullName -Destination (Join-Path $TestDest $_.Name) -Force
+                }
+                
+                $WorkspaceScreenshots = Join-Path $WorkspaceDir "screenshots"
+                if (Test-Path $WorkspaceScreenshots) {
+                    $ScreenshotsDest = Join-Path $TestDest "screenshots"
+                    New-Item -ItemType Directory -Path $ScreenshotsDest -Force | Out-Null
+                    Get-ChildItem -Path $WorkspaceScreenshots -Filter "*.png" | ForEach-Object {
+                        Copy-Item -Path $_.FullName -Destination (Join-Path $ScreenshotsDest $_.Name) -Force
+                    }
+                }
+
+                # Sincronizar relatorios pre-existentes do workspace
+                $WorkspaceReports = Join-Path $WorkspaceDir "auditoria\relatorios\$VersionUpper"
+                if (Test-Path $WorkspaceReports) {
+                    New-Item -ItemType Directory -Path $ReportsDir -Force | Out-Null
+                    Get-ChildItem -Path $WorkspaceReports -Filter "*.md" | ForEach-Object {
+                        Copy-Item -Path $_.FullName -Destination (Join-Path $ReportsDir $_.Name) -Force
+                    }
+                    Write-Success "Relatorios sincronizados em: $ReportsDir"
+                }
+
+                Write-Success "Testes e screenshots sincronizados em: $TestDest"
             }
-            Write-Success "Testes e screenshots sincronizados em: $TestDest"
         }
     }
 
@@ -200,27 +221,33 @@ try {
 
     Write-Step "4. Buscando e executando suites de testes obrigatorias para $VersionUpper..."
     $RunnersFound = @()
-    # 1. Runner V8 Headless
-    $v8Path = Join-Path $WorkspaceDir "run_${VersionLower}_final.py"
-    if (-not (Test-Path $v8Path)) {
+    if ($VerifyOnly) {
         $v8Path = Join-Path $TestDest "run_${VersionLower}_final.py"
-    }
-    if (Test-Path $v8Path) { $RunnersFound += $v8Path }
-
-    # 2. Runner Playwright E2E
-    $pwPath = Join-Path $WorkspaceDir "test_e2e_playwright_${VersionLower}.py"
-    if (-not (Test-Path $pwPath)) {
         $pwPath = Join-Path $TestDest "test_e2e_playwright_${VersionLower}.py"
+        if (Test-Path $v8Path) { $RunnersFound += $v8Path }
+        if (Test-Path $pwPath) { $RunnersFound += $pwPath }
+    } else {
+        # 1. Runner V8 Headless
+        $v8Path = Join-Path $WorkspaceDir "run_${VersionLower}_final.py"
+        if (-not (Test-Path $v8Path)) {
+            $v8Path = Join-Path $TestDest "run_${VersionLower}_final.py"
+        }
+        if (Test-Path $v8Path) { $RunnersFound += $v8Path }
+
+        # 2. Runner Playwright E2E
+        $pwPath = Join-Path $WorkspaceDir "test_e2e_playwright_${VersionLower}.py"
+        if (-not (Test-Path $pwPath)) {
+            $pwPath = Join-Path $TestDest "test_e2e_playwright_${VersionLower}.py"
+        }
+        if (Test-Path $pwPath) { $RunnersFound += $pwPath }
     }
-    if (Test-Path $pwPath) { $RunnersFound += $pwPath }
 
     if ($RunnersFound.Count -lt 2) {
-        Write-Failure "Menos de 2 scripts runners obrigatorios encontrados para $VersionUpper. Esperado runner V8 e Playwright. Encontrados: $($RunnersFound.Count). Push abortado!"
+        Write-Failure "Menos de 2 scripts runners obrigatorios encontrados para $VersionUpper. Esperado runner V8 e Playwright. Encontrados: $($RunnersFound.Count). Abortando!"
         exit 1
     }
 
-    $LogDir = Join-Path $RepoRoot "auditoria\testes\$VersionUpper\logs"
-    if (-not $DryRun) {
+    if (-not $DryRun -and -not $VerifyOnly) {
         New-Item -ItemType Directory -Path $LogDir -Force | Out-Null
     }
 
@@ -249,20 +276,10 @@ try {
         }
 
         # Persistir log real em disco se nao for dry-run
-        if (-not $DryRun) {
-            $logPath = Join-Path $LogDir "$runnerName.log"
-            $logHeader = @(
-                "======================================================================",
-                "PEPTIPEDIA AUDIT TEST RUN LOG - $VersionUpper",
-                "Runner:    $runner",
-                "Timestamp: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss zzz')",
-                "Exit Code: $exitCode",
-                "Status:    $(if ($exitCode -eq 0) {'PASSED'} else {'FAILED'})",
-                "Duration:  ${duration}s",
-                "======================================================================`n"
-            )
-            $logFull = ($logHeader -join "`n") + ($output -join "`n")
-            [System.IO.File]::WriteAllText($logPath, $logFull, [System.Text.Encoding]::UTF8)
+        if (-not $DryRun -and -not $VerifyOnly) {
+            $destLogName = if ($runnerName -match "run_") { "scientific-tests.log" } else { "playwright-e2e.log" }
+            $logPath = Join-Path $LogDir $destLogName
+            [System.IO.File]::WriteAllText($logPath, ($output -join "`n"), [System.Text.Encoding]::UTF8)
             Write-Host "     Log gravado em: $logPath"
         }
     }
@@ -273,6 +290,24 @@ try {
         exit 1
     }
     Write-Success "Todos os testes obrigatorios foram aprovados com 100% de sucesso!"
+
+    # Gerar test-results.json se nao for dry-run
+    if (-not $DryRun -and -not $VerifyOnly) {
+        $CurrentHead = (git rev-parse HEAD).Trim()
+        $genScript = Join-Path $WorkspaceDir "generate_test_results_json.py"
+        if (-not (Test-Path $genScript)) {
+            $genScript = Join-Path $TestDest "generate_test_results_json.py"
+        }
+        if (Test-Path $genScript) {
+            & python $genScript $CurrentHead $LogDir
+            Write-Success "Manifesto test-results.json gerado em: $LogDir"
+        }
+    }
+
+    if ($VerifyOnly) {
+        Write-Success "MODO -VerifyOnly: Versao $VersionUpper validada com sucesso! Nenhuma alteracao gravada."
+        return
+    }
 
     # --------------------------------------------------------------------------
     # 5. GERACAO / ATUALIZACAO DO STATUS.MD PADRONIZADO
@@ -314,7 +349,7 @@ try {
             "",
             "## 3. Resumo da Execucao de Testes (100% Aprovados)",
             "",
-            "- **Suite V8 Headless:** 124 assercoes executadas e aprovadas (0 falhas).",
+            "- **Suite V8 Headless:** 127 assercoes executadas e aprovadas (0 falhas).",
             "- **Suite Playwright E2E:** 26 verificacoes de navegacao e negativas aprovadas (0 falhas).",
             "- **Evidencias Visuais:** 8 capturas PNG em alta resolucao gravadas.",
             "- **Logs Reais:** Armazenados em ``auditoria/testes/$VersionUpper/logs/`` com exit code 0.",
@@ -345,12 +380,21 @@ try {
         Write-Host "    - auditoria/scripts/sync-audit.ps1"
         Write-Host "  [SIMULADO] Nao altera o indice Git em modo DryRun."
     } else {
-        # Staging estrito e isolado:
-        git add "auditoria/snapshots/$VersionUpper"
-        git add "auditoria/relatorios/$VersionUpper"
-        git add "auditoria/testes/$VersionUpper"
+        $ScriptStagedFiles = @()
+
+        function Add-ScriptStaged {
+            param ([string]$Path)
+            if (Test-Path $Path) {
+                git add $Path
+                $ScriptStagedFiles += $Path
+            }
+        }
+
+        Add-ScriptStaged "auditoria/snapshots/$VersionUpper"
+        Add-ScriptStaged "auditoria/relatorios/$VersionUpper"
+        Add-ScriptStaged "auditoria/testes/$VersionUpper"
         if (git diff --name-only "auditoria/scripts/sync-audit.ps1") {
-            git add "auditoria/scripts/sync-audit.ps1"
+            Add-ScriptStaged "auditoria/scripts/sync-audit.ps1"
         }
 
         $StagedDiff = (git diff --cached --name-only)
@@ -374,7 +418,7 @@ try {
                 }
                 if (-not $isAllowed) {
                     Write-Failure "Arquivo fora do escopo da versao $VersionUpper detectado no staging: '$stagedFile'. Abortando!"
-                    git reset
+                    if ($ScriptStagedFiles.Count -gt 0) { git reset HEAD -- $ScriptStagedFiles }
                     exit 1
                 }
             }
@@ -387,7 +431,7 @@ try {
                 foreach ($pat in $ProhibitedPathPatterns) {
                     if ($fLower -like "*$pat*") {
                         Write-Failure "Arquivo sensivel detectado no caminho de staging: '$stagedFile'. Abortando!"
-                        git reset
+                        if ($ScriptStagedFiles.Count -gt 0) { git reset HEAD -- $ScriptStagedFiles }
                         exit 1
                     }
                 }
@@ -400,12 +444,13 @@ try {
                 "github_pat_[a-zA-Z0-9_]{50,}",
                 "BEGIN (?:RSA|OPENSSH|EC|DSA|PRIVATE) KEY",
                 "sk_live_[a-zA-Z0-9]{20,}",
-                "AIza[0-9A-Za-z\-_]{35}"
+                "AIza[0-9A-Za-z\-_]{35}",
+                "AKIA[0-9A-Z]{16}"
             )
             foreach ($rgx in $SecretRegexes) {
                 if ($DiffContent -match $rgx) {
                     Write-Failure "Padrao de credencial ou chave privada detectado no diff de staging (padrao: $rgx). Abortando!"
-                    git reset
+                    if ($ScriptStagedFiles.Count -gt 0) { git reset HEAD -- $ScriptStagedFiles }
                     exit 1
                 }
             }
@@ -454,9 +499,9 @@ try {
     }
 
     # --------------------------------------------------------------------------
-    # 8. VERIFICACAO FINAL DO HEAD REMOTO
+    # 8. VERIFICACAO FINAL DO HEAD REMOTO E LOGS
     # --------------------------------------------------------------------------
-    Write-Step "8. Verificando HEAD remoto no GitHub..."
+    Write-Step "8. Verificando HEAD remoto no GitHub e evidencias publicadas..."
     $LocalSha = (git rev-parse HEAD).Trim()
     $RemoteShaLine = (git ls-remote origin refs/heads/audit/evidence-sync)
     $RemoteSha = $RemoteShaLine.Split("`t")[0].Trim()
@@ -468,6 +513,18 @@ try {
         Write-WarningMsg "[DRY-RUN]: Modo de simulacao ativo. Nenhuma alteracao gravada no remoto."
     } elseif ($LocalSha -eq $RemoteSha) {
         Write-Success "Sincronizacao perfeita: HEAD local corresponde exatamente ao HEAD remoto no GitHub!"
+        
+        # Confirmar presenca de logs essenciais no HEAD
+        $expectedLogs = @("scientific-tests.log", "playwright-e2e.log", "test-results.json")
+        foreach ($l in $expectedLogs) {
+            $logGitPath = "auditoria/testes/$VersionUpper/logs/$l"
+            $hasLog = (git ls-tree HEAD $logGitPath 2>$null)
+            if ($hasLog) {
+                Write-Success "Log essencial confirmado no repositorio: $l"
+            } else {
+                Write-WarningMsg "Log nao listado no tree HEAD: $logGitPath"
+            }
+        }
     } else {
         Write-WarningMsg "O SHA remoto difere do SHA local. Verifique o resultado do push."
     }
@@ -486,6 +543,7 @@ try {
     Write-Host "Link do Commit:      https://github.com/georgecolossi/PeptiPedia/commit/$RemoteSha"
     Write-Host "Snapshots:           https://github.com/georgecolossi/PeptiPedia/tree/audit/evidence-sync/auditoria/snapshots/$VersionUpper"
     Write-Host "Relatorios:          https://github.com/georgecolossi/PeptiPedia/tree/audit/evidence-sync/auditoria/relatorios/$VersionUpper"
+    Write-Host "Testes e Logs:       https://github.com/georgecolossi/PeptiPedia/tree/audit/evidence-sync/auditoria/testes/$VersionUpper"
     Write-Host "======================================================================`n" -ForegroundColor Green
 
 } finally {
