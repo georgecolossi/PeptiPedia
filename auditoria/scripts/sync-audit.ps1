@@ -393,6 +393,11 @@ try {
         Add-ScriptStaged "auditoria/snapshots/$VersionUpper"
         Add-ScriptStaged "auditoria/relatorios/$VersionUpper"
         Add-ScriptStaged "auditoria/testes/$VersionUpper"
+        $VersionLogsDir = "auditoria/testes/$VersionUpper/logs"
+        if (Test-Path $VersionLogsDir) {
+            git add -f "$VersionLogsDir"
+            $ScriptStagedFiles += "$VersionLogsDir"
+        }
         if (git diff --name-only "auditoria/scripts/sync-audit.ps1") {
             Add-ScriptStaged "auditoria/scripts/sync-audit.ps1"
         }
