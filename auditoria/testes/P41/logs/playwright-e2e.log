@@ -1,0 +1,39 @@
+======================================================================
+PEPTIPEDIA P4.1 — SUÍTE E2E PLAYWRIGHT (HOMOLOGAÇÃO VISUAL E FUNCIONAL)
+Timestamp UTC: 2026-10-23T21:00:23.793788+00:00
+Diretório dos Testes:     C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P41
+Diretório de Logs:        C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P41\logs
+Diretório de Screenshots: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P41\screenshots
+======================================================================
+
+[OK] Raiz da aplicação: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\snapshots\P41
+[OK] Servidor E2E ativo em http://127.0.0.1:49348/
+[OK] Carregando http://127.0.0.1:49348/index.html com disclaimer aceito
+[PASS] Grid exibe exatamente 91 cards de compostos (encontrados: 91)
+[PASS] Contador de resultados reflete 91 peptídeos ('91 peptídeos encontrados')
+[PASS] Busca por 'HGH Fragment 176-191' filtra exatamente 1 card (encontrados: 1)
+[PASS] Modal HGH Frag 176-191 aberto com sucesso: HGH Fragment 176-191
+[PASS] Modal exibe massa molecular reconciliada ~1799.1 g/mol
+[PASS] Modal documenta diferenciação tripartite entre 176-191 (16 aa), 177-191 (15 aa) e AOD-9604
+[PASS] HGH Fragment bloqueia fail-closed na calculadora com toast ('HGH Fragment 176-191: composto em fase investigacional sem dose humana validada. Calculadora indisponível.')
+[PASS] Busca por 'Orexina B' filtra exatamente 1 card (encontrados: 1)
+[PASS] Modal Orexina B aberto: Orexina B
+[PASS] Modal exibe massa molecular reconciliada de 2899.4 g/mol
+[PASS] Modal impede formalmente herança de ensaios clínicos da Orexina A
+[PASS] Orexina B bloqueia fail-closed na calculadora com toast ('HGH Fragment 176-191: composto em fase investigacional sem dose humana validada. Calculadora indisponível.
+Orexina B: composto em fase investigacional sem dose humana validada. Calculadora indisponível.')
+[PASS] Busca por 'Bronchogen' filtra exatamente 1 card (encontrados: 1)
+[PASS] Modal Bronchogen aberto: Bronchogen
+[PASS] Modal exibe status IDENTIDADE_PENDENTE e documenta divergência AEDL vs ADEL
+[PASS] Bronchogen bloqueia fail-closed na calculadora ('Orexina B: composto em fase investigacional sem dose humana validada. Calculadora indisponível.
+Bronchogen: composto em fase investigacional sem dose humana validada. Calculadora indisponível.')
+[PASS] Busca por 'Crystagen' retorna 0 cards no catálogo ativo (quarentena confirmada: 0)
+[PASS] Abaloparatida exibe 20°C a 25°C por até 30 dias após primeiro uso sem excursões não autorizadas
+[PASS] Adipotide exibe alerta crítico de nefrotoxicidade em primatas rhesus (PMID 22072637)
+[PASS] Adipotide bloqueia fail-closed na calculadora ('Bronchogen: composto em fase investigacional sem dose humana validada. Calculadora indisponível.
+Adipotide: composto em fase investigacional sem dose humana validada. Calculadora indisponível.')
+[PASS] Aba de estudos exibe exatamente 66 estudos clínicos (encontrados: 66)
+[PASS] Busca na aba de estudos localiza novo ensaio de Orexina A (PMID 24406723)
+[PASS] Aba de Stacks exibe exatamente 18 protocolos preservados (encontrados: 18)
+[PASS] Zero erros JavaScript detectados durante a sessão E2E (erros: [])
+[PASS] Todos os 24 testes E2E aprovados com zero falhas!

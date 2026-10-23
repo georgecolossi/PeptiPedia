@@ -1,0 +1,28 @@
+{
+  "version": "P41",
+  "suite": "playwright_e2e_homologation",
+  "status": "PASSED",
+  "exitCode": 0,
+  "startTimeUtc": "2026-10-23T21:00:23.793788+00:00",
+  "endTimeUtc": "2026-10-23T21:00:35.413583+00:00",
+  "expectedChecks": 24,
+  "checksRun": 24,
+  "passedChecks": 24,
+  "checksPassed": 24,
+  "failedChecks": 0,
+  "checksFailed": 0,
+  "pageErrors": [],
+  "screenshotsCount": 9,
+  "screenshots": [
+    "01_home_catalog_91_p41.png",
+    "02_p41_modal_hgh_frag_176_191.png",
+    "03_p41_modal_orexin_b_reconciled.png",
+    "04_p41_modal_bronchogen_divergence.png",
+    "05_p41_search_crystagen_quarantine_0_cards.png",
+    "06_p41_modal_abaloparatide_storage.png",
+    "07_p41_modal_adipotide_nephrotoxicity.png",
+    "08_p41_studies_tab_66_studies.png",
+    "09_p41_stacks_tab_18_stacks.png"
+  ],
+  "error": null
+}
