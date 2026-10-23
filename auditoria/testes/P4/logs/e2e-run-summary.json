@@ -1,0 +1,28 @@
+{
+  "version": "P4",
+  "suite": "playwright_e2e_homologation",
+  "status": "PASSED",
+  "exitCode": 0,
+  "startTimeUtc": "2026-10-23T19:44:43.083881+00:00",
+  "endTimeUtc": "2026-10-23T19:44:52.232802+00:00",
+  "expectedChecks": 24,
+  "checksRun": 24,
+  "passedChecks": 24,
+  "checksPassed": 24,
+  "failedChecks": 0,
+  "checksFailed": 0,
+  "pageErrors": [],
+  "screenshotsCount": 9,
+  "screenshots": [
+    "01_home_catalog_92_p4.png",
+    "02_p4_modal_abaloparatide_storage_corrected.png",
+    "03_p4_modal_adipotide_nephrotoxicity_alert.png",
+    "04_p4_modal_mgf_negative_replication.png",
+    "05_p4_modal_dermorphin_opioid_warning.png",
+    "06_p4_modal_acth_distinction.png",
+    "07_p4_modal_orexin_a_narcolepsy.png",
+    "08_p4_studies_tab_66_studies.png",
+    "09_p4_stacks_tab_18_stacks.png"
+  ],
+  "error": null
+}

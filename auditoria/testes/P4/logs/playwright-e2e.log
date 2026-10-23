@@ -1,0 +1,36 @@
+======================================================================
+PEPTIPEDIA P4 — SUÍTE E2E PLAYWRIGHT (HOMOLOGAÇÃO VISUAL E FUNCIONAL)
+Timestamp UTC: 2026-10-23T19:44:43.083881+00:00
+Diretório dos Testes:     C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P4
+Diretório de Logs:        C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P4\logs
+Diretório de Screenshots: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P4\screenshots
+======================================================================
+
+[OK] Raiz da aplicação: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\snapshots\P4
+[OK] Servidor E2E ativo em http://127.0.0.1:64219/
+[OK] Carregando http://127.0.0.1:64219/index.html com disclaimer aceito
+[PASS] Grid exibe exatamente 92 cards de compostos (encontrados: 92)
+[PASS] Contador de resultados reflete 92 peptídeos ('92 peptídeos encontrados')
+[PASS] Busca por 'Abaloparatida' filtra exatamente 1 card (encontrados: 1)
+[PASS] Modal aberto com título correto: Abaloparatida
+[PASS] Modal de Abaloparatida exibe armazenamento refrigerado 2°C a 8°C antes do uso
+[PASS] Modal exibe tolerância de 20°C a 25°C por até 30 dias após abertura
+[PASS] Modal retificou e removeu excursões não autorizadas de 15°C a 30°C
+[PASS] Modal classifica risco de osteossarcoma sob Advertências e Precauções Seção 5
+[PASS] Adipotide exibe alerta crítico de nefrotoxicidade
+[PASS] Adipotide referencia ensaio em primatas rhesus PMID 22072637
+[PASS] Adipotide exibe badge Investigacional (Sem Dose Humana)
+[PASS] Adipotide bloqueia fail-closed na calculadora com toast ('Adipotide: composto em fase investigacional sem dose humana validada. Calculadora indisponível.')
+[PASS] MGF exibe alerta de replicação negativa independente documentada
+[PASS] MGF cita publicação da replicação negativa (Fornaro et al. PMID 24253050)
+[PASS] MGF distingue formalmente o peptídeo sintético do PEG-MGF
+[PASS] Dermorfina categorizada explicitamente como Opioide Potente
+[PASS] Dermorfina exibe alerta severo de risco de depressão respiratória fatal e dependência
+[PASS] ACTH distingue rigorosamente substância pura de Acthar/Cortrophin
+[PASS] ACTH bloqueia conversão de Unidades USP para massa de peptídeo
+[PASS] Orexina A referencia ensaio cruzado PMID 24406723
+[PASS] Orexina A documenta estudo em narcolepsia com cataplexia
+[PASS] Aba de estudos exibe exatamente 66 estudos clínicos (encontrados: 66)
+[PASS] Busca na aba de estudos localiza novo ensaio de Orexina A (PMID 24406723)
+[PASS] Aba de Stacks exibe exatamente 18 protocolos famosos preservados (encontrados: 18)
+[PASS] Todos os 24 testes E2E aprovados com zero falhas!

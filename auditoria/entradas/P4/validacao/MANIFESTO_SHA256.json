@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-23",
+  "baselineCommit": "a2e63fd653e61b52f3c2746848cc78a183493a9a",
+  "snapshotP31TreeSha": "3de6ec6d8a568ffa564b0e9c9c39b8cd06300a28",
+  "counts": {
+    "CANDIDATO_FICHA_P4": 20,
+    "QUARENTENA_IDENTIDADE_OU_EVIDENCIA": 9,
+    "FORA_NUCLEO_PEPTIDICO": 2,
+    "FORA_ESQUEMA_PRIMARIO_RISCO_ALTO": 2
+  },
+  "references": 34,
+  "files": [
+    {
+      "path": "GUIA_P4.md",
+      "sha256": "3fdde14b65042a6f0904cd67f1bec94221022f824a61de06286d86c823395639",
+      "bytes": 3144
+    },
+    {
+      "path": "entradas/P4-FILA-33.json",
+      "sha256": "e49c456359d66111974449d2f71547e95662804ef0df90d7d0ff0029dc11da73",
+      "bytes": 43877
+    },
+    {
+      "path": "entradas/P4-MATRIZ-33.csv",
+      "sha256": "c7e35af733c432e60763fab9875470c833167ce90606c31c13a464a8f1bf01b4",
+      "bytes": 16424
+    },
+    {
+      "path": "implementacao/PROMPT_MESTRE_ANTIGRAVITY_P4.md",
+      "sha256": "4967a6b4afc52d09fd4b5e81fbe506ad94630eee05ffe9e7e1af461a67990a0c",
+      "bytes": 6537
+    },
+    {
+      "path": "pesquisa/P4-DOSSIES-33.md",
+      "sha256": "dcee7408ebf728484029f9a71b91f23d445f236a9ff707645289fe5cfcaa3eee",
+      "bytes": 27149
+    },
+    {
+      "path": "pesquisa/P4-ERRATAS-P31.md",
+      "sha256": "c978fd1d1d595fc56a29921b56fed571a52e01c0c49283233b215a078574cd33",
+      "bytes": 1248
+    },
+    {
+      "path": "pesquisa/P4-FONTES-PRIMARIAS.csv",
+      "sha256": "604c8a371b6fd5574af66f84eaef644e86e43c97c26fffb1c5963af58843a559",
+      "bytes": 6399
+    },
+    {
+      "path": "pesquisa/P4-FONTES-PRIMARIAS.json",
+      "sha256": "8026800a2f97202ecc280d83c26a7182a11a9c7b68f068ec0334310e03e25f40",
+      "bytes": 9534
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+﻿pmid,doi,url,type,finding_supported
+,,https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7b48ddec-e815-45f4-9ca0-5c0daaf56f30,official_label,Acthar Gel é uma mistura complexa; principal componente porcina ACTH(1-39) deamidada em N-25; formulação ≠ ACTH puro sintético
+,,https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=f27544ee-a0e2-4d84-b193-1c9efdf9e34c&type=display,official_label,Purified Cortrophin Gel é preparação de corticotropina com componentes porcina ACTH(1-39) e análogos; não assumir identidade de formulação pura
+22072637,10.1126/scitranslmed.3002621,https://pubmed.ncbi.nlm.nih.gov/22072637/,primary,Adipotide em macacos obesos: menor adiposidade; disfunção tubular renal e aumento de creatinina reversíveis em experimento
+21240358,10.1007/s10517-011-1146-x,https://pubmed.ncbi.nlm.nih.gov/21240358/,primary,"Bronchogen Ala-Asp-Glu-Leu: estudo biofísico de desnaturação/estabilidade do DNA, sem eficácia clínica"
+26468022,,https://pubmed.ncbi.nlm.nih.gov/26468022/,primary,"Bronchogen: modelo de doença pulmonar obstrutiva induzida em ratos, resposta epitelial/inflamatória"
+17152728,,https://pubmed.ncbi.nlm.nih.gov/17152728/,primary,"Cardiogen e outros tetrapeptídeos: explantes de tecidos de ratos, não ensaio clínico"
+35408963,,https://pubmed.ncbi.nlm.nih.gov/35408963/,primary,"Chonluten, Thymogen e Vilon: linhagem THP-1 in vitro, modulação inflamatória/proliferativa"
+15159690,,https://pubmed.ncbi.nlm.nih.gov/15159690/,primary,Cortagen AEDP: expressão gênica cardíaca em camundongos / microarray
+12420072,10.1023/a:1019830308824,https://pubmed.ncbi.nlm.nih.gov/12420072/,primary,"Cortagen, Vilon, Epithalon em timócitos de camundongo: resultados diferenciados"
+28976144,,https://pubmed.ncbi.nlm.nih.gov/28976144/,primary,Crystagen e outros peptídeos: marcadores de células esplênicas em envelhecimento experimental; publicação em russo
+7195758,10.1111/j.1476-5381.1981.tb16797.x,https://pubmed.ncbi.nlm.nih.gov/7195758/,primary,Dermorphin heptapeptídeo opioide com D-Ala: potência farmacológica em tecidos e roedores; tolerância e dependência experimental
+6633818,10.1159/000123559,https://pubmed.ncbi.nlm.nih.gov/6633818/,primary,Estudo farmacodinâmico em 9 homens: dermorfina IV altera secreção de GH; NÃO demonstra analgesia clínica ou segurança
+8358331,,https://pubmed.ncbi.nlm.nih.gov/8358331/,primary,"Peptídeo carboxiterminal hGH 177-191: antilipogênese em sistema experimental, sem efeito lipolítico significativo no mesmo ensaio"
+7987248,,https://pubmed.ncbi.nlm.nih.gov/7987248/,primary,"Fragmento terminal hGH 177-191: resultados em camundongos ob/ob, não ensaio humano"
+25208511,10.1002/dta.1715,https://pubmed.ncbi.nlm.nih.gov/25208511/,primary,AOD9604 com Tyr N-terminal e fragmento hGH 177-191: não presumir sinonímia com fragmento nativo
+16075683,,https://pubmed.ncbi.nlm.nih.gov/16075683/,primary,Livagen Lys-Glu-Asp-Ala: hidrolisabilidade enzimática e modelos em ratos
+21354439,10.1016/j.mad.2011.02.007,https://pubmed.ncbi.nlm.nih.gov/21354439/,primary,MGF E-peptide sintético em cultura de precursores musculares humanos; não intervenção clínica
+24253050,10.1152/ajpendo.00408.2013,https://pubmed.ncbi.nlm.nih.gov/24253050/,primary,Estudo independente não reproduziu proliferação/diferenciação atribuída ao peptídeo MGF em mioblastos e células-tronco musculares
+20130113,,https://pubmed.ncbi.nlm.nih.gov/20130113/,review,"Revisão discute distinção entre RNA IGF1-Eb, E-peptídeo sintético e produto endógeno não comprovado"
+9491897,10.1016/s0092-8674(00)80949-6,https://pubmed.ncbi.nlm.nih.gov/9491897/,primary,Descoberta de orexina A/B e receptores hipotalâmicos; não é estudo terapêutico humano
+24406723,10.1016/j.bbr.2013.12.045,https://pubmed.ncbi.nlm.nih.gov/24406723/,primary,"14 participantes com narcolepsia: crossover intranasal orexina A, efeitos limitados em REM/atenção; não comprova tratamento aprovado"
+22036605,,https://pubmed.ncbi.nlm.nih.gov/22036605/,primary,8 pacientes com narcolepsia: ensaio intranasal orexina A; ausência de efeito significativo em vigília noturna
+22448364,10.1007/s10517-011-1354-4,https://pubmed.ncbi.nlm.nih.gov/22448364/,primary,Pancragen: observação pequena em idosos com e sem DM2; condições de randomização/mascaramento não verificadas
+18642713,10.1007/s10517-007-0377-3,https://pubmed.ncbi.nlm.nih.gov/18642713/,primary,Pancragen Lys-Glu-Asp-Trp-NH2: modelos animais de diabetes com resultados glicêmicos/vasculares
+22808515,10.1007/s10517-012-1664-1,https://pubmed.ncbi.nlm.nih.gov/22808515/,primary,"Pancragen e Vesugen: cultura de células, marcadores de diferenciação, sem demonstração clínica"
+20080680,10.1073/pnas.0909364107,https://pubmed.ncbi.nlm.nih.gov/20080680/,primary,PNC-27: membranólise dependente de HDM2 em linhas celulares tumorais; não é evidência clínica de tratamento do câncer
+35625682,10.3390/biomedicines10050945,https://pubmed.ncbi.nlm.nih.gov/35625682/,primary,PNC-27: evidência celular/microscopia para complexos HDM2/peptídeo e formação de poros
+15612551,,https://pubmed.ncbi.nlm.nih.gov/15612551/,primary,Prostamax: efeitos em cromatina de linfócitos humanos in situ; não ensaio de eficácia prostática
+9637345,10.1016/s0192-0561(97)00058-1,https://pubmed.ncbi.nlm.nih.gov/9637345/,review,"Identificação L-Glu-L-Trp, origem Thymalin, efeitos imunes descritos; revisão heterogênea"
+10605346,,https://pubmed.ncbi.nlm.nih.gov/10605346/,primary,"Thymogen em tuberculose: relato histórico em russo, desenho/robustez inadequadamente caracterizados para recomendação"
+6957870,10.1073/pnas.79.17.5370,https://pubmed.ncbi.nlm.nih.gov/6957870/,primary,"Thymulin = FTS-Zn com atividade dependente de zinco, demonstrada in vitro"
+28539025,,https://pubmed.ncbi.nlm.nih.gov/28539025/,primary,"Vesugen KED: endoteliócitos/células vasculares, expressão de genes; não ensaio de desfechos clínicos"
+12420072,10.1023/a:1019830308824,https://pubmed.ncbi.nlm.nih.gov/12420072/,primary,Vilon Lys-Glu em timócitos de camundongo e sinalização de esfingomielina
+,,https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=a6f42753-d31e-4b23-8da0-4b990fee4b38&type=display,official_label,BOTOX onabotulinumtoxinA: toxina de altíssimo risco e aviso de disseminação distante; não importar como peptídeo genérico
