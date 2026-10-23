@@ -247,7 +247,11 @@ def run_failure_simulation():
         print(f"  Status JSON: {summary_data.get('status')}")
         print(f"  Erro registrado: {summary_data.get('error')}")
 
-        passed = (exit_code == 1) and (summary_data.get("status") in ["FAILED", "ERROR"])
+        err_msg = str(summary_data.get('error', ''))
+        has_pageerror = ("pageerror" in err_msg.lower()) or ("excecao catastrofica" in err_msg.lower()) or ("falha intencional" in err_msg.lower())
+        not_generic_timeout = "timeout 30000ms" not in err_msg.lower()
+        passed = (exit_code == 1) and (summary_data.get("status") in ["FAILED", "ERROR"]) and has_pageerror and not_generic_timeout
+
         scenarios_results.append({
             "scenario": 4,
             "name": "Erro JavaScript inesperado injetado",
@@ -259,8 +263,8 @@ def run_failure_simulation():
             "errorDetail": summary_data.get("error"),
             "passed": passed
         })
-        assert passed, f"Cenário 4 reprovado: exit_code={exit_code}, status={summary_data.get('status')}"
-        print("  -> RESULTADO: BLOQUEIO CONFIRMADO (Exit Code 1, Status FAILED/ERROR).")
+        assert passed, f"Cenário 4 reprovado: exit_code={exit_code}, status={summary_data.get('status')}, error={err_msg}"
+        print("  -> RESULTADO: BLOQUEIO CONFIRMADO (Exit Code 1, Status FAILED/ERROR, Listener pageerror comprovado sem timeout genérico).")
     finally:
         shutil.rmtree(sb4, ignore_errors=True)
 
@@ -374,9 +378,10 @@ def run_failure_simulation():
         print(f"   -> Detalhe: {item['errorDetail']}")
 
     # Salvar relatório JSON de falhas
-    relatorio_dir = os.path.join(current_dir, "logs")
-    os.makedirs(relatorio_dir, exist_ok=True)
-    report_file = os.path.join(relatorio_dir, "failure-simulation-report.json")
+    report_dirs = [
+        os.path.join(current_dir, "logs"),
+        os.path.join(current_dir, "auditoria", "relatorios", "P2G25")
+    ]
     report_data = {
         "suite": "test_failure_modes_p2g25.py",
         "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
@@ -385,9 +390,15 @@ def run_failure_simulation():
         "allBlockedSuccessfully": all_passed,
         "scenarios": scenarios_results
     }
-    with open(report_file, "w", encoding="utf-8") as f:
-        json.dump(report_data, f, indent=2, ensure_ascii=False)
-    print(f"\nRelatório de simulação gravado em: {report_file}")
+    for rd in report_dirs:
+        try:
+            os.makedirs(rd, exist_ok=True)
+            rf = os.path.join(rd, "failure-simulation-report.json")
+            with open(rf, "w", encoding="utf-8") as f:
+                json.dump(report_data, f, indent=2, ensure_ascii=False)
+            print(f"Relatório de simulação gravado em: {rf}")
+        except Exception:
+            pass
 
     if not all_passed:
         print("\n[FALHA GRAVE]: Nem todos os cenários de falha foram adequadamente bloqueados!")

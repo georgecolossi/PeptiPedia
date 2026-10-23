@@ -4,8 +4,8 @@ Origem da Aplicação: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\snapsh
 Diretório de Logs:   C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P2G25\logs
 Screenshots:         C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P2G25\screenshots
 ======================================================================
-Servidor HTTP temporário ativo em http://127.0.0.1:49737/
-Validação HTTP 200 concluída com sucesso em todos os recursos essenciais (Porta: 49737)
+Servidor HTTP temporário ativo em http://127.0.0.1:50054/
+Validação HTTP 200 concluída com sucesso em todos os recursos essenciais (Porta: 50054)
   [PASS] Grade renderiza exatamente 57 cards de compostos (obtido: 57)
   [SCREENSHOT] Capturada: 01_catalog_overview.png
   [PASS] Busca por 'Setmelanotida' filtra o card com sucesso

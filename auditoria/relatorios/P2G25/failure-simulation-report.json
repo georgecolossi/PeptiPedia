@@ -1,6 +1,6 @@
 {
   "suite": "test_failure_modes_p2g25.py",
-  "timestamp": "2026-10-23T03:37:00.839112+00:00",
+  "timestamp": "2026-10-23T04:52:05.673987+00:00",
   "totalScenariosTested": 6,
   "scenariosPassed": 6,
   "allBlockedSuccessfully": true,
@@ -46,7 +46,7 @@
       "actualExitCode": 1,
       "expectedStatus": "FAILED/ERROR",
       "actualStatus": "ERROR",
-      "errorDetail": "Page.wait_for_selector: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\"#cards-grid\") to be visible\n    64 × locator resolved to hidden <div id=\"cards-grid\" class=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5\">…</div>\n",
+      "errorDetail": "Erro JavaScript detectado via listener 'pageerror': FALHA INTENCIONAL: Excecao catastrofica injetada no script principal!",
       "passed": true
     },
     {

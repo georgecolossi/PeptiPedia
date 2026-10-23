@@ -31,3 +31,19 @@ Na versão P2G.2.5:
 2. **Bloqueio Incondicional do Push:** A sincronização remota é bloqueada com status de erro fatal.
 3. **Instruções Claras de Resolução:** O script orienta o auditor sobre como inspecionar o commit rejeitado (`git log -1 -p HEAD`) ou como revertê-lo manualmente (`git reset HEAD~1`) após a investigação.
 4. **Relatório Estruturado:** Os resultados da verificação são gravados em `clean-checkout-report.json`, contendo métricas completas de tempo, hashes e status de validação.
+
+---
+
+## 4. Publicação da Evidência Real no Repositório Git
+
+Em cumprimento à auditoria da errata final da P2G.2.5, o arquivo `clean-checkout-report.json` não permanece como artefato volátil ou não versionado; ele é formalmente adicionado ao commit candidato e publicado no repositório remoto Git em `auditoria/relatorios/P2G25/clean-checkout-report.json` e `auditoria/testes/P2G25/logs/clean-checkout-report.json`.
+
+O relatório atesta e pericia:
+- **Referência do Commit:** `HEAD` auditado diretamente via `git archive` isolado (sem cópia manual de arquivos de workspace).
+- **Git Tree Hash Completo e do Snapshot:** Hashes SHA-1 validados de forma cruzada.
+- **Resultados de Execução:**
+  - Runner Científico V8: Código de saída `0`, 130/130 asserções aprovadas (0 falhas).
+  - Runner E2E Playwright: Código de saída `0`, 26/26 verificações aprovadas (0 falhas).
+  - Validação de Evidências: 4 logs e 8 screenshots gerados e confirmados com timestamps atualizados (`allTimestampsFresh: true`).
+  - Status Global: `PASSED` com tempo de execução reproduzível.
+

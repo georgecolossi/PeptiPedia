@@ -208,6 +208,11 @@ def run():
         # 1. Carregamento inicial e verificação da grade
         base_url = f"http://127.0.0.1:{port}/index.html"
         page.goto(base_url, wait_until="networkidle")
+
+        # Verificação preventiva imediata do listener pageerror na carga inicial
+        if js_errors:
+            raise RuntimeError(f"Erro JavaScript detectado via listener 'pageerror': {'; '.join(js_errors)}")
+
         page.wait_for_selector("#cards-grid", state="visible")
         time.sleep(0.4)
 
@@ -339,8 +344,14 @@ def run():
         return 0
 
     except Exception as exc:
-        record_print(f"\n[EXCEÇÃO NÃO TRATADA E2E]: {exc}")
-        e2e_status["error"] = str(exc)
+        if 'js_errors' in locals() and js_errors:
+            error_msg = f"Erro JavaScript detectado via listener 'pageerror': {'; '.join(js_errors)}"
+            record_print(f"\n[ERRO JS CAPTURADO VIA PAGEERROR]: {error_msg}")
+            e2e_status["error"] = error_msg
+            e2e_status["pageErrors"] = js_errors
+        else:
+            record_print(f"\n[EXCEÇÃO NÃO TRATADA E2E]: {exc}")
+            e2e_status["error"] = str(exc)
         e2e_status["status"] = "ERROR"
         e2e_status["exitCode"] = 1
         return 1

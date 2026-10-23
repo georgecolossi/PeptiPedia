@@ -39,8 +39,18 @@ def locate_repo_dir(current_dir):
             return c
     raise FileNotFoundError("Não foi possível localizar o repositório Git (.git).")
 
+def get_base_commit_ref(repo_dir):
+    """Obtém o commit SHA do HEAD do repositório."""
+    try:
+        res = subprocess.run(["git", "rev-parse", "HEAD"], cwd=repo_dir, capture_output=True, text=True)
+        if res.returncode == 0 and res.stdout.strip():
+            return res.stdout.strip()
+    except Exception:
+        pass
+    return BASE_COMMIT_REFERENCE
+
 def get_base_git_tree_hash(repo_dir):
-    """Obtém o hash da árvore Git do HEAD (commit-base) do repositório."""
+    """Obtém o hash da árvore Git do HEAD (árvore anterior / commit-base) do repositório."""
     try:
         res = subprocess.run(["git", "rev-parse", "HEAD^{tree}"], cwd=repo_dir, capture_output=True, text=True)
         if res.returncode == 0 and res.stdout.strip():
@@ -255,14 +265,16 @@ def main():
     print(f"Diretório do Repositório: {repo_dir}")
     print(f"Diretório de Logs:        {log_dir}")
 
-    # 1. Obter Hashes Criptográficos Reais
+    # 1. Obter Hashes Criptográficos Reais e Commit de Referência
+    base_commit_ref = get_base_commit_ref(repo_dir)
     base_tree_sha = get_base_git_tree_hash(repo_dir)
     snapshot_tree_sha = compute_snapshot_tree_sha(repo_dir, TARGET_VERSION)
 
     if not snapshot_tree_sha:
         raise ValueError("CRÍTICO: testedSnapshotTreeSha não pôde ser calculado e é null! Abortando geração por integridade.")
 
-    print(f"Base Git Tree Hash (HEAD):      {base_tree_sha}")
+    print(f"Base Commit Reference:           {base_commit_ref}")
+    print(f"Base Git Tree Hash (árvore ant): {base_tree_sha}")
     print(f"Tested Snapshot Tree SHA (Disk): {snapshot_tree_sha}")
 
     # 2. Obter versões de ambiente
@@ -305,13 +317,14 @@ def main():
     manifest = {
         "generatedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "version": TARGET_VERSION,
-        "baseCommitReference": BASE_COMMIT_REFERENCE,
+        "baseCommitReference": base_commit_ref,
         "environment": {
             "pythonVersion": sys.version.split()[0],
             "playwrightVersion": playwright_version,
             "osPlatform": platform.platform(),
             "chromePath": chrome_path,
             "chromeVersion": chrome_version,
+            "baseGitTreeHash": base_tree_sha,
             "testedGitTreeHash": base_tree_sha,
             "testedSnapshotTreeSha": snapshot_tree_sha
         },

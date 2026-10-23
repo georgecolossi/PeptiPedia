@@ -39,9 +39,10 @@ A suíte executou 6 cenários de falha deliberadamente injetados em sandboxes de
 - **Injeção:** Configuração de `EXPECTED_ASSERTS = 135` no runner quando a suíte HTML executa exatamente 130.
 - **Comportamento Observado:** O runner identificou a discrepância entre asserções executadas e esperadas, registrou erro explícito no sumário e finalizou com `exitCode: 1`.
 
-### Cenário 4: Erro JavaScript Não Tratado
-- **Injeção:** Injeção de `throw new Error(...)` na raiz de `js/app.js`.
-- **Comportamento Observado:** O ouvinte `pageerror` do Playwright capturou a exceção não tratada na página, impediu o carregamento da interface e registrou `status: ERROR` com `exitCode: 1`.
+### Cenário 4: Erro JavaScript Não Tratado (Captura Direta via Listener `pageerror`)
+- **Injeção:** Injeção de `throw new Error('FALHA INTENCIONAL: Excecao catastrofica injetada no script principal!');` no topo de `js/app.js`.
+- **Comportamento Observado:** O ouvinte `pageerror` do Playwright capturou a exceção não tratada emitida pelo motor Chromium. O runner avaliou imediatamente os erros capturados pelo listener logo após a carga da página, abortando de forma instantânea e determinística com mensagem de erro explícita (`Erro JavaScript detectado via listener 'pageerror': FALHA INTENCIONAL...`), registrando `status: ERROR` e retornando `exitCode: 1`, sem depender de timeouts genéricos de 30s de seletores de interface.
+- **Efeito no Pipeline:** Bloqueio comprovado e imediato da suíte E2E em menos de 2 segundos, comprovando a sensibilidade e especificidade da auditoria de runtime.
 
 ### Cenário 5: Recurso Essencial Ausente (HTTP 404)
 - **Injeção:** Exclusão de `js/studies-data.js` da área servida pelo servidor HTTP interno.

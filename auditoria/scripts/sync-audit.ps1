@@ -26,7 +26,10 @@ param (
     [switch]$DryRun,
 
     [Parameter(Mandatory = $false)]
-    [switch]$VerifyOnly
+    [switch]$VerifyOnly,
+
+    [Parameter(Mandatory = $false)]
+    [switch]$AllowErrata
 )
 
 Set-StrictMode -Version Latest
@@ -131,6 +134,13 @@ try {
     $ReportsDir   = Join-Path $RepoRoot "auditoria\relatorios\$VersionUpper"
     $LogDir       = Join-Path $RepoRoot "auditoria\testes\$VersionUpper\logs"
 
+    # Snapshots historicos de etapas anteriores sao estritamente imutaveis
+    $PriorHistoricalVersions = @("P2G2", "P2G21", "P2G22", "P2G23", "P2G24")
+    if ($PriorHistoricalVersions -contains $VersionUpper) {
+        Write-Failure "A versao '$VersionUpper' e um snapshot historico anterior imutavel. Qualquer modificacao e TERMINANTEMENTE PROIBIDA."
+        exit 1
+    }
+
     $isCommittedSnapshot = (git ls-tree -d HEAD "auditoria/snapshots/$VersionUpper" 2>$null)
     
     if ($VerifyOnly) {
@@ -139,9 +149,11 @@ try {
             Write-Failure "Snapshot ou testes para versao $VersionUpper nao encontrados para verificacao."
             exit 1
         }
-    } elseif ($isCommittedSnapshot) {
-        Write-Failure "O snapshot da versao '$VersionUpper' ja existe no historico do repositorio. Sobrescrita de snapshots historicos e TERMINANTEMENTE PROIBIDA."
+    } elseif ($isCommittedSnapshot -and -not $AllowErrata) {
+        Write-Failure "O snapshot da versao '$VersionUpper' ja existe no historico do repositorio. Sobrescrita de snapshots e proibida sem autorizacao expressa. Para publicar errata autorizada, informe -AllowErrata."
         exit 1
+    } elseif ($isCommittedSnapshot -and $AllowErrata) {
+        Write-Success "Errata autorizada para a versao atual $VersionUpper. Snapshots historicos anteriores preservados integralmente."
     } else {
         Write-Success "Garantia de imutabilidade: versao $VersionUpper e inedita no historico do repositorio"
     }
@@ -472,6 +484,22 @@ try {
         exit 1
     }
     Write-Success "Teste genuino de checkout limpo APROVADO com 100% de sucesso!"
+
+    # 7.05. Adicionar evidencia real de checkout limpo (clean-checkout-report.json) ao commit
+    Write-Step "7.05. Adicionando clean-checkout-report.json ao commit candidato para publicacao permanente..."
+    $CleanReportRel = "auditoria/relatorios/$VersionUpper/clean-checkout-report.json"
+    if (Test-Path $CleanReportRel) {
+        git add -f $CleanReportRel
+    }
+    $CleanReportLog = "auditoria/testes/$VersionUpper/logs/clean-checkout-report.json"
+    if (Test-Path $CleanReportLog) {
+        git add -f $CleanReportLog
+    }
+    $HasAmendedDiff = (git diff --cached --name-only)
+    if ($HasAmendedDiff) {
+        git commit --amend --no-edit
+        Write-Success "Evidencia real de checkout limpo incorporada ao commit candidato com sucesso!"
+    }
 
     # 7.1. Validacao Criptografica Rigorosa do Tree SHA do Snapshot
     Write-Step "7.1. Validando consistencia criptografica do Tree SHA do Snapshot..."

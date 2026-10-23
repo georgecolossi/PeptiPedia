@@ -46,12 +46,19 @@ Esta microetapa encerra cirurgicamente os apontamentos levantados na auditoria i
    - Eliminação do comando destrutivo `git reset HEAD~1` em caso de reprovação no checkout limpo: o commit candidato é preservado localmente no histórico para perícia, o push é bloqueado e instruções de recuperação manual são exibidas.
    - Falha fatal imediata caso qualquer script mandatório (`test_clean_checkout_reproducibility.py` ou `generate_test_results_json.py`) não esteja presente ou falhe.
 
-6. **Refinamento Regulatório Brasileiro (Cadeia de Frio e Modalidades):**
-   - Atualização da nota de evidência regulatória e contexto clínico da setmelanotida (`Imcivree®`): esclarecimento de que o medicamento requer cadeia de frio estrita (2°C a 8°C), não sendo automaticamente elegível para remessas postais internacionais convencionais (Correios) devido à carência de controle térmico contínuo.
-   - Distinção clara entre remessa expressa qualificada (courier térmico) e importação formal via Licença de Importação (LI) com módulo LPCO no Portal Único Siscomex sob a RDC Anvisa nº 81/2008.
+6. **Refinamento Regulatório (Tolerância Térmica FDA 2026 e Separação Anvisa):**
+   - Incorporação formal da bula FDA de abril de 2026 (Tabela 19 / Seção 16): frasco fechado armazenado a 2°C a 8°C até vencimento; fora de geladeira, tolera 2°C a 25°C por até 30 dias com breves excursões permitidas até 30°C (podendo retornar à refrigeração); descarte mandatório em 30 dias após primeira punção.
+   - Manutenção rigorosamente separada da restrição da Anvisa: proibição de remessa postal comum (Correios) para medicamentos sob conservação especial; rejeição expressa de presunção tácita de autorização para remessas expressas (courier); reforço da via de importação formal via Licença de Importação (LI) e módulo LPCO no Portal Único Siscomex sob a RDC Anvisa nº 81/2008.
 
 7. **Integridade Absoluta e Não-Expansão:**
    - Exatamente 57 compostos, 57 estudos, 18 stacks e 37 termos de glossário.
    - 5 compostos multiformulação totalizando 12 apresentações estruturadas.
    - 56 outros compostos e 55 outros estudos 100% idênticos byte a byte.
    - Execução integral de 130 asserções científicas e 26 verificações E2E com 8 screenshots de alta resolução.
+
+8. **Entregas da Errata Final da P2G.2.5:**
+   - Bula FDA de abril de 2026 incorporada aos campos regulatórios da setmelanotida (2°C–25°C por 30 dias, excursões até 30°C, descarte em 30 dias).
+   - Restrição postal da Anvisa mantida autônoma e sem presunção tácita de courier.
+   - Manifesto `test-results.json` distinguindo formalmente `baseGitTreeHash` (árvore anterior) de `testedSnapshotTreeSha` (snapshot efetivamente testado).
+   - Evidência real de checkout limpo publicada e commitada no repositório (`clean-checkout-report.json`).
+   - Teste negativo de JavaScript (Cenário 4 de `test_failure_modes_p2g25.py` e runner) ajustado para capturar a exceção específica emitida pelo listener `pageerror` na carga inicial, sem depender de timeout de 30s de seletores.

@@ -73,3 +73,19 @@ if ($RecordedSnapSha -ne $CandidateSnapTree) {
 ```
 
 Essa asserção garante prova matemática irrefutável de que o snapshot validado nos testes é 100% idêntico ao snapshot persistido no commit publicado.
+
+---
+
+## 4. Distinção Formal entre `baseGitTreeHash` e `testedSnapshotTreeSha`
+
+Na errata final da P2G.2.5, a nomenclatura e a estrutura do manifesto `test-results.json` foram refinadas para distinguir sem qualquer ambiguidade a árvore Git herdada da árvore do snapshot sob homologação:
+
+1. **`baseGitTreeHash` (Árvore Anterior / Commit-Base):**
+   - Corresponde ao hash da árvore Git (`git rev-parse HEAD^{tree}`) do repositório antes da inclusão das alterações da microetapa.
+   - Identifica o estado exato de partida a partir do qual o snapshot e os relatórios foram desenvolvidos.
+
+2. **`testedSnapshotTreeSha` (Snapshot Efetivamente Testado):**
+   - Corresponde ao hash SHA-1 exato da sub-árvore do diretório `auditoria/snapshots/P2G25` em disco.
+   - Calculado através de índice temporário isolado e comparado contra o commit candidato no passo de homologação pré-push (`sync-audit.ps1`).
+
+Essa distinção formal elimina qualquer confusão terminológica e garante auditoria independente cristalina tanto da base pré-existente quanto do entregável auditado.

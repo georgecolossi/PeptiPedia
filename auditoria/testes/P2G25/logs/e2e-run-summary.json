@@ -1,8 +1,8 @@
 {
   "runner": "test_e2e_playwright_p2g25.py",
-  "startTime": "2026-10-23T03:48:12.402649+00:00",
-  "endTime": "2026-10-23T03:48:24.812328+00:00",
-  "durationSeconds": 12.41,
+  "startTime": "2026-10-23T04:56:51.028696+00:00",
+  "endTime": "2026-10-23T04:57:02.926865+00:00",
+  "durationSeconds": 11.898,
   "exitCode": 0,
   "status": "PASSED",
   "checksRun": 26,

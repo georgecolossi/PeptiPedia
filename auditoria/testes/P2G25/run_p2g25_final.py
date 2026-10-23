@@ -189,6 +189,10 @@ def main():
         record_print(f"Navegando para suíte científica: {test_url}")
         page.goto(test_url, timeout=15000)
 
+        # Verificação preventiva imediata de erros JS capturados pelo listener pageerror
+        if js_errors:
+            raise RuntimeError(f"Erro JavaScript detectado via listener 'pageerror': {'; '.join(js_errors)}")
+
         # Aguardar conclusão das asserções
         page.wait_for_function("() => document.getElementById('status') && document.getElementById('status').innerText.includes('STATUS:')", timeout=15000)
         
@@ -256,8 +260,13 @@ def main():
         return 0
 
     except Exception as exc:
-        record_print(f"\n[EXCEÇÃO NÃO TRATADA]: {exc}")
-        run_status["error"] = str(exc)
+        if 'js_errors' in locals() and js_errors:
+            error_msg = f"Erro JavaScript detectado via listener 'pageerror': {'; '.join(js_errors)}"
+            record_print(f"\n[ERRO JS CAPTURADO VIA PAGEERROR]: {error_msg}")
+            run_status["error"] = error_msg
+        else:
+            record_print(f"\n[EXCEÇÃO NÃO TRATADA V8]: {exc}")
+            run_status["error"] = str(exc)
         run_status["status"] = "ERROR"
         run_status["exitCode"] = 1
         return 1

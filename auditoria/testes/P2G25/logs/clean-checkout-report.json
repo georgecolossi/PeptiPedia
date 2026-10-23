@@ -1,0 +1,45 @@
+{
+  "suite": "test_clean_checkout_reproducibility.py",
+  "version": "P2G25",
+  "commitRef": "HEAD",
+  "repoDir": "C:\\Users\\georg\\Documents\\PeptiPedia\\repo",
+  "fullTreeHash": "c17da3ed99bfbcf9118fc9f7a86286c539bc74d8",
+  "snapshotTreeHash": "210c8bafd51ccfa1de6602fc23086334433efe22",
+  "startTime": "2026-10-23T04:57:08.227411+00:00",
+  "endTime": "2026-10-23T04:57:23.687953+00:00",
+  "durationSeconds": 15.461,
+  "scientificRun": {
+    "runner": "run_p2g25_final.py",
+    "startTime": "2026-10-23T04:57:08.869283+00:00",
+    "endTime": "2026-10-23T04:57:10.436599+00:00",
+    "durationSeconds": 1.567,
+    "exitCode": 0,
+    "status": "PASSED",
+    "assertionsRun": 130,
+    "assertionsPassed": 130,
+    "assertionsFailed": 0,
+    "expectedAssertions": 130,
+    "error": null
+  },
+  "e2eRun": {
+    "runner": "test_e2e_playwright_p2g25.py",
+    "startTime": "2026-10-23T04:57:11.676038+00:00",
+    "endTime": "2026-10-23T04:57:23.641222+00:00",
+    "durationSeconds": 11.965,
+    "exitCode": 0,
+    "status": "PASSED",
+    "checksRun": 26,
+    "checksPassed": 26,
+    "checksFailed": 0,
+    "expectedChecks": 26,
+    "screenshotsSaved": 8,
+    "error": null
+  },
+  "evidenceValidation": {
+    "logsCount": 4,
+    "screenshotsCount": 8,
+    "allTimestampsFresh": true
+  },
+  "overallStatus": "PASSED",
+  "exitCode": 0
+}

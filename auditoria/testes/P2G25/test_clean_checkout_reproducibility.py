@@ -227,20 +227,25 @@ def run_clean_checkout_test(repo_dir, commit_ref="HEAD", version="P2G25"):
     print(f">>> HOMOLOGAÇÃO DE CHECKOUT LIMPO E REPRODUTIBILIDADE GIT: 100% APROVADO ({duration}s) <<<")
     print("======================================================================")
 
-    # Gravar clean-checkout-report.json se diretório de relatórios estiver disponível
+    # Gravar clean-checkout-report.json em relatorios e logs
     reports_candidates = [
         os.path.join(repo_dir, "auditoria", "relatorios", version),
+        os.path.join(repo_dir, "auditoria", "testes", version, "logs"),
         os.path.join(os.path.dirname(__file__), "auditoria", "relatorios", version),
         os.path.join(os.path.dirname(__file__), "logs")
     ]
+    saved_locations = set()
     for rd in reports_candidates:
         try:
-            os.makedirs(rd, exist_ok=True)
-            report_out = os.path.join(rd, "clean-checkout-report.json")
+            norm_rd = os.path.normpath(rd)
+            if norm_rd in saved_locations:
+                continue
+            os.makedirs(norm_rd, exist_ok=True)
+            report_out = os.path.join(norm_rd, "clean-checkout-report.json")
             with open(report_out, "w", encoding="utf-8") as f:
                 json.dump(report_result, f, indent=2, ensure_ascii=False)
             print(f"Relatório de checkout limpo gravado em: {report_out}")
-            break
+            saved_locations.add(norm_rd)
         except Exception:
             pass
 

@@ -4,10 +4,10 @@ Origem da Aplicação: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\snapsh
 Arquivo de Teste:    C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P2G25\test_p2g25_final.html
 Diretório de Logs:   C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P2G25\logs
 ======================================================================
-Servidor HTTP temporário ativo em http://127.0.0.1:63728/
+Servidor HTTP temporário ativo em http://127.0.0.1:53633/
 Validação HTTP 200 concluída para todos os recursos estáticos essenciais.
 Inicializando Google Chrome V8 Engine...
-Navegando para suíte científica: http://127.0.0.1:63728/test_p2g25_final.html
+Navegando para suíte científica: http://127.0.0.1:53633/test_p2g25_final.html
 
 ======================================================================
 INICIANDO SUÍTE DE HOMOLOGAÇÃO P2G.2.5 NO MOTOR V8 DO GOOGLE CHROME
@@ -56,7 +56,7 @@ INICIANDO SUÍTE DE HOMOLOGAÇÃO P2G.2.5 NO MOTOR V8 DO GOOGLE CHROME
 [PASS] 3.7 Anvisa: importação por pessoa física regida pela RDC Anvisa nº 81/2008 sob prescrição médica para uso próprio
 [PASS] 3.8 Anvisa: ausência de exigência de controle especial (Portaria 344/98)
 [PASS] 3.9 Anvisa P2G.2.4: consulta oficial com data documentada (22/10/2026) e termos de busca especificados
-[PASS] 3.10 Anvisa P2G.2.5: exigência estrita de cadeia de frio (2°C a 8°C), inelegibilidade postal convencional sem controle térmico e distinção entre courier qualificado e LI/LPCO Siscomex
+[PASS] 3.10 Anvisa e FDA 2026: tolerância térmica FDA (2°C-25°C 30d, breves excursões a 30°C), restrição postal Anvisa para conservação especial e não presunção de autorização automática de courier
 
 --- GRUPO 4: Segurança Clínica, Alertas e Posologia ---
 [PASS] 4.1 Contraindicação formal restrita a hipersensibilidade à setmelanotida ou excipientes
@@ -133,7 +133,7 @@ INICIANDO SUÍTE DE HOMOLOGAÇÃO P2G.2.5 NO MOTOR V8 DO GOOGLE CHROME
 [PASS] 7.22 NEGATIVE CHECK P2G.2.2: Rejeita registro comercial ativo ou aprovado pela Anvisa
 [PASS] 7.23 NEGATIVE CHECK P2G.2.3: Rejeita afirmação de exigência universal de autorização prévia individual na Anvisa para importação por pessoa física
 [PASS] 7.24 NEGATIVE CHECK P2G.2.3: Rejeita integralmente qualquer menção ou aplicação da RDC 660/2022 (norma de Cannabis) no dossiê de setmelanotida
-[PASS] 7.25 NEGATIVE CHECK P2G.2.5: Rejeita alegação de que todas as modalidades seguem um único procedimento ou que via postal comum sem refrigeração é elegível
+[PASS] 7.25 NEGATIVE CHECK P2G.2.5: Rejeita alegação de conservação estritamente obrigatória a 2°C-8°C sem tolerância de excursão e presunção tácita de courier automaticamente autorizado
 
 --- GRUPO 8: Multiformulações Estruturadas (Semax, Selank, Lira, Tedu, Setm) ---
 [PASS] 8.1 Total de compostos multiformulação é exatamente 5
