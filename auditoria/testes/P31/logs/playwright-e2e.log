@@ -1,0 +1,35 @@
+======================================================================
+PEPTIPEDIA P3.1 — SUÍTE E2E PLAYWRIGHT (HOMOLOGAÇÃO VISUAL E FUNCIONAL)
+Timestamp UTC: 2026-10-23T16:52:21.840178+00:00
+Diretório dos Testes:    C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P31
+Diretório de Logs:       C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P31\logs
+Diretório de Screenshots: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P31\screenshots
+======================================================================
+
+[OK] Raiz da aplicação: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\snapshots\P31
+[OK] Servidor E2E ativo em http://127.0.0.1:64070/
+[OK] Carregando http://127.0.0.1:64070/index.html com disclaimer aceito
+[PASS] Grid exibe exatamente 72 cards de compostos (encontrados: 72)
+[PASS] Contador de resultados reflete 72 peptídeos ('72 peptídeos encontrados')
+[PASS] Busca por 'Abaloparatida' filtra exatamente 1 card (encontrados: 1)
+[PASS] Modal aberto com título correto: Abaloparatida
+[PASS] Modal de Abaloparatida exibe armazenamento estritamente refrigerado 2°C a 8°C antes do uso
+[PASS] Modal de Abaloparatida exibe tolerância de 20°C a 25°C por até 30 dias após abertura
+[PASS] Modal classifica risco de osteossarcoma sob Advertências e Precauções Seção 5
+[PASS] Busca por 'Somatropina' localizou card
+[PASS] Somatropina exibe badge 'Biológico / Proteína'
+[PASS] Somatropina declara categoricamente ser hormônio biológico exógeno, não secretagogo
+[PASS] Somatropina separa indicações de Genotropin e Serostim
+[PASS] Eloralintida exibe preferência farmacológica por AMY1R
+[PASS] Eloralintida exibe redução de peso de até -20% (corrigindo afirmação de -14,2%)
+[PASS] FOXO4-DRI exibe badge 'Investigacional (Sem Dose Humana)'
+[PASS] FOXO4-DRI exibe advertência textual expressa de ausência de dose humana
+[PASS] Botão da calculadora desativado para FOXO4-DRI ('Sem Cálculo (Investigacional)')
+[PASS] Toast de bloqueio exibido ao tentar calcular composto investigacional ('FOXO4-DRI: composto em fase investigacional sem dose humana validada. Calculadora indisponível.')
+[PASS] Matrixyl exibe nome científico completo Palmitoyl Pentapeptide-4
+[PASS] Matrixyl classificado como ingrediente cosmético (não medicamento)
+[PASS] Matrixyl restrito à via tópica
+[PASS] Aba de estudos exibe exatamente 65 estudos clínicos (encontrados: 65)
+[PASS] Busca na aba de estudos localiza REWIND trial de Dulaglutida
+[PASS] Aba de Stacks exibe exatamente 18 protocolos famosos (encontrados: 18)
+[PASS] Todos os 23 testes E2E aprovados com zero falhas!

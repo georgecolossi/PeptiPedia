@@ -1,0 +1,28 @@
+{
+  "version": "P31",
+  "suite": "playwright_e2e_homologation",
+  "status": "PASSED",
+  "exitCode": 0,
+  "startTimeUtc": "2026-10-23T16:52:21.840178+00:00",
+  "endTimeUtc": "2026-10-23T16:52:29.865997+00:00",
+  "expectedChecks": 23,
+  "checksRun": 23,
+  "passedChecks": 23,
+  "checksPassed": 23,
+  "failedChecks": 0,
+  "checksFailed": 0,
+  "pageErrors": [],
+  "screenshotsCount": 9,
+  "screenshots": [
+    "01_home_catalog_72_p31.png",
+    "02_p31_modal_abaloparatide_tymlos.png",
+    "03_p31_modal_somatropin_rhgh.png",
+    "04_p31_modal_eloralintide_amy1r.png",
+    "05_p31_calculator_blocked_fail_closed.png",
+    "06_p31_modal_matrixyl_cosmetic.png",
+    "07_p31_studies_tab_65_studies.png",
+    "08_p31_studies_tab_dulaglutide_rewind.png",
+    "09_p31_stacks_tab_18_stacks.png"
+  ],
+  "error": null
+}

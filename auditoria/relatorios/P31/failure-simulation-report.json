@@ -1,0 +1,75 @@
+{
+  "suite": "test_failure_modes_p31.py",
+  "timestamp": "2026-10-23T16:40:54.304912+00:00",
+  "totalScenariosTested": 6,
+  "scenariosPassed": 6,
+  "allBlockedSuccessfully": true,
+  "scenarios": [
+    {
+      "scenario": 1,
+      "name": "Asserção científica falsa",
+      "type": "Científico (V8)",
+      "expectedExitCode": 1,
+      "actualExitCode": 1,
+      "expectedStatus": "FAILED",
+      "actualStatus": "FAILED",
+      "errorDetail": "1 asserção(ões) reprovada(s)!",
+      "passed": true
+    },
+    {
+      "scenario": 2,
+      "name": "Verificação E2E falsa",
+      "type": "E2E Playwright",
+      "expectedExitCode": 1,
+      "actualExitCode": 1,
+      "expectedStatus": "FAILED",
+      "actualStatus": "FAILED",
+      "errorDetail": "1 verificações E2E falharam",
+      "passed": true
+    },
+    {
+      "scenario": 3,
+      "name": "Contagem de asserções menor que o esperado",
+      "type": "Integridade Quantitativa",
+      "expectedExitCode": 1,
+      "actualExitCode": 1,
+      "expectedStatus": "FAILED",
+      "actualStatus": "FAILED",
+      "errorDetail": "Contagem de asserções divergente! Esperadas: 105, Executadas: 97",
+      "passed": true
+    },
+    {
+      "scenario": 4,
+      "name": "Erro JavaScript inesperado injetado",
+      "type": "Runtime JS (pageerror)",
+      "expectedExitCode": 1,
+      "actualExitCode": 1,
+      "expectedStatus": "FAILED/ERROR",
+      "actualStatus": "ERROR",
+      "errorDetail": "Erro JavaScript detectado via listener 'pageerror': FALHA INTENCIONAL: Excecao catastrofica injetada no script principal!",
+      "passed": true
+    },
+    {
+      "scenario": 5,
+      "name": "Recurso essencial ausente (HTTP 404)",
+      "type": "Integridade de Rede HTTP",
+      "expectedExitCode": 1,
+      "actualExitCode": 1,
+      "expectedStatus": "ERROR",
+      "actualStatus": "ERROR",
+      "errorDetail": "HTTP Error 404: File not found",
+      "passed": true
+    },
+    {
+      "scenario": 6,
+      "name": "Falha no lançamento do navegador",
+      "type": "Infraestrutura / Navegador",
+      "expectedExitCode": 1,
+      "actualExitCode": 1,
+      "expectedStatus": "ERROR",
+      "actualStatus": "ERROR",
+      "errorDetail": "BrowserType.launch: Failed to launch chromium because executable doesn't exist at C:\\Invalido\\NaoExiste\\chrome.exe",
+      "passed": true
+    }
+  ]
+}

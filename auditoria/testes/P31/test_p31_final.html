@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>PeptiPedia — Suíte de Homologação Científica P3.1 (P31)</title>
+  <script>
+    window.addEventListener('error', (e) => {
+      const out = document.getElementById('output');
+      if (out) out.textContent += '[JS ERROR IN PAGE]: ' + e.message + ' at ' + e.filename + ':' + e.lineno + '\n';
+    });
+    window.lucide = {
+      createIcons: () => {}
+    };
+  </script>
+  <script src="js/peptides-data.js"></script>
+  <script src="js/stacks-data.js"></script>
+  <script src="js/studies-data.js"></script>
+  <script src="js/glossary-data.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/stability-data.js"></script>
+  <script src="js/stability.js"></script>
+</head>
+<body style="background:#0f172a;color:#f8fafc;font-family:monospace;padding:20px;">
+  <h1>PeptiPedia — Suíte de Homologação Científica P3.1 (P31 - Motor V8)</h1>
+  <div id="status">Executando homologação científica consolidada P3.1...</div>
+  <pre id="output" style="background:#1e293b;padding:15px;border-radius:8px;border:1px solid #334155;white-space:pre-wrap;"></pre>
+
+  <!-- Container de Toasts -->
+  <div id="toast-container"></div>
+
+  <!-- Modal de Detalhes do Peptídeo -->
+  <div id="detail-modal" class="hidden">
+    <div id="detail-modal-content"></div>
+    <div id="modal-footer">
+      <button id="close-modal-btn">Fechar</button>
+      <button id="modal-fav-btn">Favorito</button>
+      <button id="modal-stack-toggle-btn">Stack</button>
+      <button id="modal-calc-btn">Calcular Reconstituição</button>
+      <button id="modal-view-studies-link">Ver Estudos</button>
+    </div>
+  </div>
+
+  <!-- Seção da Calculadora -->
+  <div id="calculator-section">
+    <input id="calc-vial-mg" type="number" />
+    <input id="calc-water-ml" type="number" />
+    <input id="calc-dose-input" type="number" />
+    <button id="calc-unit-mcg-btn">mcg</button>
+    <button id="calc-unit-mg-btn">mg</button>
+    <span id="calc-dose-unit-label">mcg</span>
+    <select id="calc-syringe-type">
+      <option value="u100">U-100 (1,0 mL / 100 UI)</option>
+      <option value="u50">U-50 (0,5 mL / 50 UI)</option>
+      <option value="u30">U-30 (0,3 mL / 30 UI)</option>
+    </select>
+    <input id="calc-vial-cost" type="number" />
+    <input id="calc-frequency" type="number" value="7" />
+
+    <div id="calc-res-units">—</div>
+    <div id="calc-res-volume">—</div>
+    <div id="calc-res-conc">—</div>
+    <div id="calc-res-unit-val">—</div>
+    <div id="calc-res-doses">—</div>
+    <div id="calc-res-days">—</div>
+    <div id="calc-res-cost">—</div>
+    <div id="calc-warning-box" class="hidden"></div>
+  </div>
+
+  <!-- Script da Aplicação -->
+  <script src="js/app.js"></script>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const out = document.getElementById('output');
+      let passed = 0;
+      let failed = 0;
+      const results = [];
+
+      function log(msg) {
+        out.textContent += msg + '\n';
+      }
+
+      function assert(condition, testName) {
+        if (condition) {
+          passed++;
+          log(`[PASS] ${testName}`);
+          results.push({ test: testName, pass: true });
+        } else {
+          failed++;
+          log(`[FAIL] ${testName}`);
+          results.push({ test: testName, pass: false });
+        }
+      }
+
+      try {
+        log("======================================================================");
+        log("INICIANDO SUÍTE DE HOMOLOGAÇÃO P3.1 NO MOTOR V8 DO GOOGLE CHROME");
+        log("======================================================================\n");
+
+        // ---------------------------------------------------------------------
+        // BLOCO 1: BASELINE E INTEGRIDADE DO CATÁLOGO (72 COMPOSTOS, 65 ESTUDOS)
+        // ---------------------------------------------------------------------
+        log("--- BLOCO 1: INTEGRIDADE DO CATÁLOGO P3.1 ---");
+        assert(typeof PEPTIDES_DATABASE !== 'undefined' && Array.isArray(PEPTIDES_DATABASE), "1.1 PEPTIDES_DATABASE está definido como Array global");
+        assert(PEPTIDES_DATABASE.length === 72, "1.2 Contagem exata de 72 compostos no catálogo (57 legados + 15 novos dossiês)");
+        
+        const allIds = PEPTIDES_DATABASE.map(p => p.id);
+        const uniqueIds = new Set(allIds);
+        assert(uniqueIds.size === 72, "1.3 Todos os 72 IDs são estritamente únicos (sem colisões)");
+
+        assert(PEPTIDES_DATABASE[0].id === 'bpc-157', "1.4 Primeiro composto legado é bpc-157");
+        assert(PEPTIDES_DATABASE[56].id === 'setmelanotide', "1.5 57º composto legado é setmelanotide");
+        
+        const expectedP3Ids = [
+          "abaloparatide", "ace-031", "ahk-cu", "b7-33", "dulaglutide",
+          "eloralintide", "foxo4-dri", "gonadorelin", "hcg", "somatropin",
+          "menotropin-hmg", "palmitoyl-pentapeptide-4", "pe-22-28", "ptd-dbm", "triptorelin"
+        ];
+        const p3Present = expectedP3Ids.every(id => allIds.includes(id));
+        assert(p3Present, "1.6 Todos os 15 IDs elegíveis de P3/P3.1 estão presentes no catálogo");
+
+        // Retenção obrigatória
+        assert(!allIds.includes("p21") && !allIds.includes("p021") && !allIds.includes("p021-cntf-analog-review"), "1.7 P21/P021 permanece retido por identidade incerta fora de PEPTIDES_DATABASE");
+        assert(!allIds.includes("cbl-514"), "1.8 CBL-514 não está em PEPTIDES_DATABASE (substância não-peptídica excluída do catálogo primário)");
+
+        // ---------------------------------------------------------------------
+        // BLOCO 2: AUDITORIA BIBLIOGRÁFICA DOS 8 ESTUDOS INDEXADOS (PUBMED OFICIAL)
+        // ---------------------------------------------------------------------
+        log("--- BLOCO 2: AUDITORIA BIBLIOGRÁFICA DOS 8 ESTUDOS INDEXADOS ---");
+        assert(typeof CLINICAL_STUDIES_DATABASE !== 'undefined' && Array.isArray(CLINICAL_STUDIES_DATABASE), "2.1 CLINICAL_STUDIES_DATABASE está definido globalmente");
+        assert(CLINICAL_STUDIES_DATABASE.length === 65, "2.2 Contagem exata de 65 estudos clínicos (57 legados + 8 novos ensaios humanos)");
+
+        // 2.3 Estudo Abaloparatida (ACTIVE - PMID 27533157)
+        const stAbalo = CLINICAL_STUDIES_DATABASE.find(s => s.id === "study-abaloparatide-active");
+        assert(stAbalo && stAbalo.pmid === "27533157", "2.3.1 Estudo Abaloparatida possui PMID 27533157");
+        assert(stAbalo && stAbalo.doi === "10.1001/jama.2016.11136", "2.3.2 Estudo Abaloparatida possui DOI oficial 10.1001/jama.2016.11136");
+        assert(stAbalo && stAbalo.journal === "JAMA" && stAbalo.year === 2016, "2.3.3 Estudo Abaloparatida é do JAMA (2016)");
+        assert(stAbalo && stAbalo.title === "Effect of Abaloparatide vs Placebo on New Vertebral Fractures in Postmenopausal Women With Osteoporosis: A Randomized Clinical Trial", "2.3.4 Título oficial PubMed verificado sem paráfrases artificiais");
+
+        // 2.4 Estudo ACE-031 (PMID 27462804)
+        const stAce = CLINICAL_STUDIES_DATABASE.find(s => s.id === "study-ace031-dmd");
+        assert(stAce && stAce.pmid === "27462804", "2.4.1 Estudo ACE-031 possui PMID 27462804");
+        assert(stAce && stAce.doi === "10.1002/mus.25268", "2.4.2 Estudo ACE-031 possui DOI oficial 10.1002/mus.25268");
+        assert(stAce && stAce.journal === "Muscle & Nerve" && stAce.year === 2017, "2.4.3 Estudo ACE-031 é do Muscle & Nerve (2017)");
+        assert(stAce && stAce.title === "Myostatin inhibitor ACE-031 treatment of ambulatory boys with Duchenne muscular dystrophy: Results of a randomized, placebo-controlled clinical trial", "2.4.4 Título oficial PubMed verificado para ACE-031");
+
+        // 2.5 Estudo REWIND / Dulaglutida (PMID 31189511)
+        const stRewind = CLINICAL_STUDIES_DATABASE.find(s => s.id === "study-dulaglutide-rewind");
+        assert(stRewind && stRewind.pmid === "31189511", "2.5.1 Estudo REWIND possui PMID 31189511");
+        assert(stRewind && stRewind.doi === "10.1016/S0140-6736(19)31149-3", "2.5.2 Estudo REWIND possui DOI oficial 10.1016/S0140-6736(19)31149-3");
+        assert(stRewind && stRewind.journal === "The Lancet" && stRewind.year === 2019, "2.5.3 Estudo REWIND é do The Lancet (2019)");
+        assert(stRewind && stRewind.keyFindings.includes("594 de 4.949") && stRewind.keyFindings.includes("663 de 4.952"), "2.5.4 Denominadores não-invertidos verificados: Dulaglutida 594/4949 (12,0%) vs Placebo 663/4952 (13,4%)");
+
+        // 2.6 Estudo Eloralintida (PMID 41207310)
+        const stElora = CLINICAL_STUDIES_DATABASE.find(s => s.id === "study-eloralintide-phase2");
+        assert(stElora && stElora.pmid === "41207310", "2.6.1 Estudo Eloralintida possui PMID 41207310");
+        assert(stElora && stElora.doi === "10.1016/S0140-6736(25)02155-5", "2.6.2 Estudo Eloralintida possui DOI oficial corrigido 10.1016/S0140-6736(25)02155-5");
+        assert(stElora && stElora.journal === "The Lancet" && stElora.year === 2025, "2.6.3 Estudo Eloralintida é do The Lancet (2025)");
+        assert(stElora && stElora.title === "Eloralintide, a selective amylin receptor agonist for the treatment of obesity: a 48-week phase 2, multicentre, double-blind, randomised, placebo-controlled trial", "2.6.4 Título oficial PubMed verificado para Eloralintida");
+        assert(stElora && stElora.keyFindings.includes("-20%"), "2.6.5 Eficácia de perda de peso de até -20% documentada com estimando de eficácia completo");
+
+        // 2.7 Estudo Gonadorelina (PMID 8042461)
+        const stGonad = CLINICAL_STUDIES_DATABASE.find(s => s.id === "study-gonadorelin-pulsatile");
+        assert(stGonad && stGonad.pmid === "8042461", "2.7.1 Estudo Gonadorelina possui PMID 8042461");
+        assert(stGonad && stGonad.doi === "10.3109/00016349409013436", "2.7.2 Estudo Gonadorelina possui DOI oficial 10.3109/00016349409013436");
+        assert(stGonad && stGonad.journal === "Acta Obstetricia et Gynecologica Scandinavica" && stGonad.year === 1994, "2.7.3 Estudo Gonadorelina é da Acta Obstet Gynecol Scand (1994)");
+        assert(stGonad && stGonad.title === "Pulsatile gonadotropin releasing hormone (GnRH)--treatment for hypothalamic amenorrhoea causing infertility", "2.7.4 Título oficial PubMed verificado para Gonadorelina");
+        assert(stGonad && stGonad.keyFindings.includes("93%") && stGonad.keyFindings.includes("90%") && stGonad.keyFindings.includes("30%"), "2.7.5 Desfechos exatos do resumo (93% ovulação/paciente, 90% ovulação/ciclo, 30% gravidez/ciclo ovulatório, 18,5% aborto, 23 nascidos)");
+
+        // 2.8 Estudo hCG (PMID 3372679)
+        const stHcg = CLINICAL_STUDIES_DATABASE.find(s => s.id === "study-hcg-hypogonadism");
+        assert(stHcg && stHcg.pmid === "3372679", "2.8.1 Estudo hCG possui PMID 3372679");
+        assert(stHcg && stHcg.doi === "10.1210/jcem-66-6-1144", "2.8.2 Estudo hCG possui DOI oficial 10.1210/jcem-66-6-1144");
+        assert(stHcg && stHcg.journal === "The Journal of Clinical Endocrinology & Metabolism" && stHcg.year === 1988, "2.8.3 Estudo hCG é do JCEM (Burris et al., 1988)");
+        assert(stHcg && stHcg.title === "Gonadotropin therapy in men with isolated hypogonadotropic hypogonadism: the response to human chorionic gonadotropin is predicted by initial testicular size", "2.8.4 Título oficial PubMed verificado para hCG");
+        assert(stHcg && stHcg.keyFindings.includes("14 dos 22"), "2.8.5 Achado fundamental preservado: 14/22 homens com espermatozoides no ejaculado em monoterapia de hCG");
+
+        // 2.9 Estudo hMG (Menotropina - PMID 3928676)
+        const stHmg = CLINICAL_STUDIES_DATABASE.find(s => s.id === "study-hmg-spermatogenesis");
+        assert(stHmg && stHmg.pmid === "3928676", "2.9.1 Estudo hMG possui PMID 3928676");
+        assert(stHmg && stHmg.doi === "10.1210/jcem-61-4-746", "2.9.2 Estudo hMG possui DOI oficial 10.1210/jcem-61-4-746");
+        assert(stHmg && stHmg.journal === "The Journal of Clinical Endocrinology & Metabolism" && stHmg.year === 1985, "2.9.3 Estudo hMG é do JCEM (Ley & Leonard, 1985)");
+        assert(stHmg && stHmg.title === "Male hypogonadotropic hypogonadism: factors influencing response to human chorionic gonadotropin and human menopausal gonadotropin, including prior exogenous androgens", "2.9.4 Título oficial PubMed verificado para hMG");
+        assert(stHmg && stHmg.keyFindings.includes("11 de 12") && stHmg.keyFindings.includes("não sendo o FSH exógeno universalmente obrigatório"), "2.9.5 Denominadores reais (13 homens, 3 com esperma pós-hCG, 11/12 pós-combinado, 4/5 mantidos pós-retirada) e remoção da obrigatoriedade universal de FSH");
+
+        // 2.10 Estudo Matrixyl (PMID 36909866)
+        const stMat = CLINICAL_STUDIES_DATABASE.find(s => s.id === "study-palmitoyl-pentapeptide4-cosmetic");
+        assert(stMat && stMat.pmid === "36909866", "2.10.1 Estudo Matrixyl possui PMID 36909866");
+        assert(stMat && stMat.doi === null, "2.10.2 Estudo Matrixyl possui DOI estritamente nulo (sem DOI inventado)");
+        assert(stMat && stMat.journal === "The Journal of Clinical and Aesthetic Dermatology" && stMat.year === 2023, "2.10.3 Estudo Matrixyl é do JCAD (Aruan et al., 2023)");
+        assert(stMat && stMat.title === "Double-blind, Randomized Trial on the Effectiveness of Acetylhexapeptide-3 Cream and Palmitoyl Pentapeptide-4 Cream for Crow's Feet", "2.10.4 Título oficial PubMed verificado para Matrixyl");
+        assert(stMat && !stMat.studyDesign.toLowerCase().includes("split-face"), "2.10.5 Estudo NUNCA é classificado como split-face");
+        assert(stMat && stMat.studyDesign.includes("Grupos Paralelos"), "2.10.6 Estudo devidamente classificado em 3 Grupos Paralelos (AHP-3, PPP-4 e placebo)");
+
+        // ---------------------------------------------------------------------
+        // BLOCO 3: CORREÇÕES CIENTÍFICAS OBRIGATÓRIAS NAS FICHAS INDIVIDUAIS
+        // ---------------------------------------------------------------------
+        log("--- BLOCO 3: CORREÇÕES CIENTÍFICAS NAS FICHAS DOS DOSSIÊS ---");
+
+        // 3.1 Abaloparatida (Tymlos)
+        const abalo = PEPTIDES_DATABASE.find(p => p.id === 'abaloparatide');
+        assert(abalo && abalo.reconstitution.storageUnmixed.includes("2°C a 8°C"), "3.1.1 TYMLOS exige armazenamento antes do primeiro uso estritamente refrigerado a 2°C a 8°C");
+        assert(abalo && !abalo.reconstitution.storageUnmixed.toLowerCase().includes("20°c a 25°c antes do primeiro uso"), "3.1.2 TYMLOS NÃO indica temperatura ambiente antes do primeiro uso");
+        assert(abalo && abalo.reconstitution.storageMixed.includes("20°C a 25°C por até 30 dias"), "3.1.3 TYMLOS tolera 20°C a 25°C por até 30 dias após o primeiro uso");
+        assert(abalo && abalo.contraindications.length === 1 && abalo.contraindications[0].includes("Hipersensibilidade grave"), "3.1.4 Seção 4 da bula (Contraindicações): restrita a hipersensibilidade grave conhecida");
+        assert(abalo && abalo.criticalAlert.includes("ADVERTÊNCIAS E PRECAUÇÕES EM BULA (FDA SEÇÃO 5)"), "3.1.5 Risco potencial de osteossarcoma devidamente classificado sob Seção 5 (Advertências e Precauções)");
+
+        // 3.2 Eloralintida
+        const elora = PEPTIDES_DATABASE.find(p => p.id === 'eloralintide');
+        assert(elora && elora.summary.includes("preferência farmacológica por AMY1R"), "3.2.1 Eloralintida classificada como agonista seletivo do receptor de amilina (preferência AMY1R)");
+        assert(elora && !elora.summary.toLowerCase().includes("agonista duplo balanceado"), "3.2.2 Eloralintida NÃO utiliza classificação de agonismo duplo AMY/CTR sem evidência específica");
+        assert(elora && elora.researchProtocols.administrationGuide.includes("-20%"), "3.2.3 Eloralintida retifica afirmação errônea de perda máxima de 14,2%, registrando até -20% do ensaio fase 2");
+        assert(elora && elora.fullTextStudies[0].doi === "10.1016/S0140-6736(25)02155-5", "3.2.4 DOI corrigido na ficha da Eloralintida");
+
+        // 3.3 Dulaglutida
+        const dula = PEPTIDES_DATABASE.find(p => p.id === 'dulaglutide');
+        assert(dula && dula.clinicalStudies[0].keyFindings.includes("594 de 4.949") && dula.clinicalStudies[0].keyFindings.includes("663 de 4.952"), "3.3.1 Ficha individual da Dulaglutida reflete denominadores corretos do REWIND");
+
+        // 3.4 Gonadorelina
+        const gonad = PEPTIDES_DATABASE.find(p => p.id === 'gonadorelin');
+        assert(gonad && gonad.protocolEvidenceNote.includes("NÃO sendo uma melanocortina"), "3.4.1 Gonadorelina com classificação taxonômica HPG explícita, evitando agrupamento sob melanocortinas");
+        assert(gonad && gonad.protocolEvidenceNote.includes("Factrel") && gonad.protocolEvidenceNote.includes("Lutrelef"), "3.4.2 Separação formal de indicação diagnóstica (Factrel) de terapia de fertilidade pulsátil especializada (Lutrelef)");
+        assert(gonad && gonad.fullTextStudies[0].doi === "10.3109/00016349409013436", "3.4.3 DOI da Gonadorelina na ficha individual corrigido");
+        assert(gonad && gonad.scientificReferences[0].includes("Acta Obstet Gynecol Scand"), "3.4.4 Referência da Gonadorelina corrigida para Acta Obstet Gynecol Scand");
+
+        // 3.5 hCG
+        const hcg = PEPTIDES_DATABASE.find(p => p.id === 'hcg');
+        assert(hcg && hcg.protocolEvidenceNote.includes("NÃO sendo uma melanocortina"), "3.5.1 hCG classificado como glicoproteína gonadotrófica (HPG), sem menção indevida a melanocortinas");
+        assert(hcg && hcg.scientificReferences[0].includes("Burris AS"), "3.5.2 Estudo atribuído ao autor primário correto: Burris et al., 1988 (não Vicari 1992)");
+        assert(hcg && hcg.clinicalStudies[0].keyFindings.includes("14 de 22"), "3.5.3 Achado de 14/22 homens com espermatogênese em monoterapia de hCG preservado na ficha");
+
+        // 3.6 Somatropina (HGH)
+        const somat = PEPTIDES_DATABASE.find(p => p.id === 'somatropin');
+        assert(somat && somat.protocolEvidenceNote.includes("HORMÔNIO BIOLÓGICO RECOMBINANTE EXÓGENO") && somat.protocolEvidenceNote.includes("NÃO um secretagogo de GH"), "3.6.1 Somatropina formalmente descrita como hormônio biológico exógeno, NÃO como secretagogo");
+        assert(somat && somat.protocolEvidenceNote.includes("Genotropin") && somat.protocolEvidenceNote.includes("Serostim"), "3.6.2 Separação formal das indicações de Genotropin (DGH/Turner/Prader-Willi/SGA) e Serostim (caquexia no HIV)");
+        assert(somat && somat.fullTextStudies.some(s => s.title.includes("Serostim")), "3.6.3 Presença da referência oficial DailyMed para Serostim (caquexia no HIV)");
+
+        // 3.7 Menotropina (hMG)
+        const hmg = PEPTIDES_DATABASE.find(p => p.id === 'menotropin-hmg');
+        assert(hmg && hmg.protocolEvidenceNote.includes("NÃO sendo uma melanocortina"), "3.7.1 Menotropina classificada como preparação gonadotrófica natural (HPG), sem melanocortinas");
+        assert(hmg && hmg.scientificReferences[0].includes("Ley SB, Leonard JM"), "3.7.2 Estudo atribuído formalmente a Ley & Leonard (1985) no JCEM");
+        assert(hmg && hmg.researchProtocols.administrationGuide.includes("não é universalmente obrigatório"), "3.7.3 Remoção expressa da afirmação de que FSH exógeno é biologicamente obrigatório em todos os pacientes");
+
+        // 3.8 Matrixyl (Palmitoyl Pentapeptide-4)
+        const matrixyl = PEPTIDES_DATABASE.find(p => p.id === 'palmitoyl-pentapeptide-4');
+        assert(matrixyl && matrixyl.status.includes("Ingrediente Cosmético Tópico"), "3.8.1 Matrixyl classificado como Ingrediente Cosmético Tópico (Não é Medicamento Aprovado)");
+        assert(matrixyl && matrixyl.fullTextStudies[0].doi === null, "3.8.2 DOI na ficha individual do Matrixyl é estritamente nulo");
+        assert(matrixyl && !matrixyl.researchProtocols.administrationGuide.toLowerCase().includes("split-face"), "3.8.3 Administração e ficha do Matrixyl NÃO contêm desenho split-face");
+        assert(matrixyl && matrixyl.scientificReferences[0].includes("Aruan RR"), "3.8.4 Referência atribuída aos autores reais do ensaio clínico: Aruan et al., 2023");
+
+        // 3.9 ACE-031
+        const ace031 = PEPTIDES_DATABASE.find(p => p.id === 'ace-031');
+        assert(ace031 && ace031.researchProtocols.administrationGuide.includes("0,4 a 3 mg/kg"), "3.9.1 ACE-031 reconciliado com as doses reais do ensaio clínico de escalonamento (0,4 a 3 mg/kg)");
+        assert(ace031 && ace031.clinicalStudies[0].title.includes("Results of a randomized, placebo-controlled clinical trial"), "3.9.2 Título do estudo clínico de ACE-031 coincide com a publicação PubMed oficial");
+
+        // ---------------------------------------------------------------------
+        // BLOCO 4: COMPOSTOS INVESTIGACIONAIS SEM DOSE HUMANA E CALCULADORA
+        // ---------------------------------------------------------------------
+        log("--- BLOCO 4: COMPOSTOS INVESTIGACIONAIS SEM DOSE E CALCULADORA ---");
+        const noDoseIds = ["ahk-cu", "b7-33", "foxo4-dri", "pe-22-28", "ptd-dbm"];
+        noDoseIds.forEach((id, idx) => {
+          const comp = PEPTIDES_DATABASE.find(p => p.id === id);
+          assert(comp && comp.protocolEvidenceType === 'investigational_no_dose', `4.${idx*3 + 1} ${id} possui protocolEvidenceType === 'investigational_no_dose'`);
+          assert(comp && comp.researchProtocols && comp.researchProtocols.typicalDose.includes("Não há dose humana validada"), `4.${idx*3 + 2} ${id} bloqueia posologia com 'Não há dose humana validada'`);
+          assert(typeof prefillCalculatorWithPeptide === 'function' && prefillCalculatorWithPeptide(comp) === false, `4.${idx*3 + 3} prefillCalculatorWithPeptide recusa fail-closed para ${id}`);
+        });
+
+        // ---------------------------------------------------------------------
+        // BLOCO 5: PRESERVAÇÃO ESTRUTURAL DOS LEGADOS E DA APLICAÇÃO
+        // ---------------------------------------------------------------------
+        log("--- BLOCO 5: PRESERVAÇÃO ESTRUTURAL DO SISTEMA ---");
+        assert(typeof RESEARCH_STACKS !== 'undefined' && RESEARCH_STACKS.length === 18, "5.1 Exatamente 18 stacks preservados");
+        assert(typeof GLOSSARY_DATABASE !== 'undefined' && GLOSSARY_DATABASE.length === 37, "5.2 Exatamente 37 verbetes de glossário preservados");
+
+        const multiformPeptides = PEPTIDES_DATABASE.filter(p => p.formulations && p.formulations.length > 0);
+        assert(multiformPeptides.length === 5, "5.3 Exatamente 5 compostos multiformulação preservados");
+        const totalFormulations = multiformPeptides.reduce((acc, p) => acc + p.formulations.length, 0);
+        assert(totalFormulations === 12, "5.4 Exatamente 12 apresentações estruturadas multiformulação preservadas");
+
+        const setm = PEPTIDES_DATABASE.find(p => p.id === 'setmelanotide');
+        assert(setm && setm.formulations[0].inUseStability.includes("30 dias"), "5.5 Setmelanotida preserva tolerância de 30 dias da errata P2G25");
+
+        // ---------------------------------------------------------------------
+        // RESUMO FINAL
+        // ---------------------------------------------------------------------
+        log("\n======================================================================");
+        log(`HOMOLOGAÇÃO P3.1 CONCLUÍDA: ${passed} asserções aprovadas, ${failed} falhas.`);
+        log("======================================================================");
+
+        const statusEl = document.getElementById('status');
+        if (failed === 0) {
+          statusEl.textContent = `APROVADO: ${passed}/${passed} asserções científicas homologadas com sucesso.`;
+          statusEl.style.color = '#34d399';
+        } else {
+          statusEl.textContent = `REPROVADO: ${failed} asserções falharam.`;
+          statusEl.style.color = '#f87171';
+        }
+
+        window.__TEST_RESULTS__ = {
+          total: passed + failed,
+          passed: passed,
+          failed: failed,
+          results: results
+        };
+
+      } catch (err) {
+        log(`[FATAL ERROR]: ${err.message}\n${err.stack}`);
+        failed++;
+        const statusEl = document.getElementById('status');
+        statusEl.textContent = `ERRO FATAL: ${err.message}`;
+        statusEl.style.color = '#f87171';
+        window.__TEST_RESULTS__ = {
+          total: passed + failed,
+          passed: passed,
+          failed: failed,
+          error: err.message,
+          results: results
+        };
+      }
+    });
+  </script>
+</body>
+</html>

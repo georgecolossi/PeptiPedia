@@ -1,0 +1,18 @@
+{
+  "version": "P31",
+  "suite": "scientific_v8_homologation",
+  "status": "PASSED",
+  "exitCode": 0,
+  "startTimeUtc": "2026-10-23T16:52:18.568743+00:00",
+  "endTimeUtc": "2026-10-23T16:52:20.507736+00:00",
+  "expectedAsserts": 97,
+  "expectedAssertions": 97,
+  "totalAsserts": 97,
+  "assertionsRun": 97,
+  "passedAsserts": 97,
+  "assertionsPassed": 97,
+  "failedAsserts": 0,
+  "assertionsFailed": 0,
+  "pageErrors": [],
+  "error": null
+}

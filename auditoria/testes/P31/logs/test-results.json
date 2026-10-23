@@ -1,0 +1,43 @@
+{
+  "generatedAt": "2026-10-23T16:52:30.475912+00:00",
+  "version": "P31",
+  "baseCommitReference": "0afccde0c63838b492560f68f091d0a839f01c20",
+  "environment": {
+    "pythonVersion": "3.14.5",
+    "playwrightVersion": "1.x",
+    "osPlatform": "Windows-11-10.0.26200-SP0",
+    "chromePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "chromeVersion": "Google Chrome 141 (V8 Engine)",
+    "baseGitTreeHash": "08015bddeb81b9d75c5df0b56d66501c5abc2262",
+    "testedGitTreeHash": "08015bddeb81b9d75c5df0b56d66501c5abc2262",
+    "testedSnapshotTreeSha": "3de6ec6d8a568ffa564b0e9c9c39b8cd06300a28"
+  },
+  "scientificSuite": {
+    "runner": "run_p31_final.py",
+    "status": "PASSED",
+    "exitCode": 0,
+    "assertionsRun": 97,
+    "assertionsPassed": 97,
+    "assertionsFailed": 0,
+    "expectedAssertions": 97,
+    "startTime": "2026-10-23T16:52:18.568743+00:00",
+    "endTime": "2026-10-23T16:52:20.507736+00:00",
+    "durationSeconds": null
+  },
+  "e2eSuite": {
+    "runner": "test_e2e_playwright_p31.py",
+    "status": "PASSED",
+    "exitCode": 0,
+    "checksRun": 23,
+    "checksPassed": 23,
+    "checksFailed": 0,
+    "expectedChecks": 23,
+    "screenshotsSaved": 9,
+    "expectedScreenshots": 9,
+    "startTime": "2026-10-23T16:52:21.840178+00:00",
+    "endTime": "2026-10-23T16:52:29.865997+00:00",
+    "durationSeconds": null
+  },
+  "overallStatus": "PASSED",
+  "summary": "Homologação P31 concluída com 100% de aprovação. 97/97 asserções científicas e 23/23 verificações E2E aprovadas sem falhas. 9 screenshots dinâmicas geradas com sucesso."
+}

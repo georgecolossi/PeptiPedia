@@ -135,7 +135,7 @@ try {
     $LogDir       = Join-Path $RepoRoot "auditoria\testes\$VersionUpper\logs"
 
     # Snapshots historicos de etapas anteriores sao estritamente imutaveis
-    $PriorHistoricalVersions = @("P2G2", "P2G21", "P2G22", "P2G23", "P2G24", "P2G25")
+    $PriorHistoricalVersions = @("P2G2", "P2G21", "P2G22", "P2G23", "P2G24", "P2G25", "P3")
     if ($PriorHistoricalVersions -contains $VersionUpper) {
         Write-Failure "A versao '$VersionUpper' e um snapshot historico anterior imutavel. Qualquer modificacao e TERMINANTEMENTE PROIBIDA."
         exit 1
