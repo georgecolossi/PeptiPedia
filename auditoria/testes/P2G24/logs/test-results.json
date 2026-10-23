@@ -1,0 +1,60 @@
+{
+  "version": "P2G24",
+  "classification": "PENDENTE DE AUDITORIA EXTERNA",
+  "generationTimestamp": "2026-10-23T00:12:27.726543+00:00",
+  "baseCommitReference": "f741914fd6af9f917ba80e9c64e671f6e0dff1c1",
+  "testedGitTreeHash": "b5aec48d6f52f7e8c04557b897f2b329891ffaf5",
+  "testedSnapshotTreeSha": null,
+  "circularReferenceAvoided": true,
+  "overallStatus": "PASSED",
+  "environmentDependencies": {
+    "pythonVersion": "3.14.5",
+    "pythonExecutable": "C:\\Users\\georg\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "operatingSystem": "Windows-11-10.0.26200-SP0",
+    "playwrightVersion": "1.64.1",
+    "browserEngine": "Google Chrome / Chromium V8 Headless",
+    "chromeExecutable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+  },
+  "scientificSuite": {
+    "runner": "run_p2g24_final.py",
+    "assertionsRun": 130,
+    "assertionsPassed": 130,
+    "assertionsFailed": 0,
+    "exitCode": 0,
+    "status": "PASSED",
+    "startTime": "2026-10-23T00:12:13.387802+00:00",
+    "endTime": "2026-10-23T00:12:14.990878+00:00",
+    "durationSeconds": 1.603
+  },
+  "e2eSuite": {
+    "runner": "test_e2e_playwright_p2g24.py",
+    "checksRun": 26,
+    "checksPassed": 26,
+    "checksFailed": 0,
+    "screenshotsSaved": 8,
+    "exitCode": 0,
+    "status": "PASSED",
+    "startTime": "2026-10-23T00:12:15.310780+00:00",
+    "endTime": "2026-10-23T00:12:27.286632+00:00",
+    "durationSeconds": 11.976
+  },
+  "catalogCounts": {
+    "totalCompounds": 57,
+    "totalStudies": 57,
+    "totalStacks": 18,
+    "totalGlossary": 37,
+    "multiFormulationCompounds": 5,
+    "totalStructuredPresentations": 12
+  },
+  "regulatoryContext": {
+    "setmelanotideAnvisaStatus": "sem_registro_comercial_ativo",
+    "anvisaOfficialQueryDate": "2026-10-22",
+    "anvisaQueryTerms": [
+      "setmelanotida",
+      "Imcivree"
+    ],
+    "importFramework": "RDC Anvisa nº 81/2008 (diferenciação entre remessas postais/expressas e procedimentos LI/LPCO)",
+    "controlledSubstance344": false,
+    "cannabisRDC660Applicable": false
+  }
+}
