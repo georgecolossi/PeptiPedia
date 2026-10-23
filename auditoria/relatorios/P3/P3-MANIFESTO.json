@@ -1,0 +1,81 @@
+{
+  "version": "P3",
+  "description": "Expansão Científica P3 em Lote Único: 15 Novos Dossiês, 8 Ensaios Clínicos e Rastreabilidade Total",
+  "generatedAt": "2026-10-23T06:23:20.765609+00:00",
+  "baseCommitReference": "ba1d74a58c21633e79e263da3877917f0291c849",
+  "testedSnapshotTreeSha": "675c33cfb0a1577a6a452b2ba14c5ed42aa90c49",
+  "environment": {
+    "python": "3.14.5",
+    "os": "Windows-11-10.0.26200-SP0",
+    "chrome": "Google Chrome 141 (V8 Engine)",
+    "playwright": "1.x"
+  },
+  "metrics": {
+    "catalogCompoundsTotal": 72,
+    "catalogCompoundsLegacy": 57,
+    "catalogCompoundsImportedP3": 15,
+    "clinicalStudiesTotal": 65,
+    "clinicalStudiesLegacy": 57,
+    "clinicalStudiesImportedP3": 8,
+    "researchStacksTotal": 18,
+    "glossaryTermsTotal": 37,
+    "arcanaInventoryEntriesAudited": 123,
+    "scientificAssertionsRun": 71,
+    "scientificAssertionsPassed": 71,
+    "e2eChecksRun": 21,
+    "e2eChecksPassed": 21,
+    "failureModesSimulated": 6,
+    "failureModesBlocked": 6,
+    "screenshotsGenerated": 9
+  },
+  "snapshotFiles": {
+    ".gitignore": {
+      "sha256": "8aa39e9e9f563ece3e1c0d8b9ea88f1b9e0e81424d343fe41e0f975d83ea5677",
+      "bytes": 187
+    },
+    "index.html": {
+      "sha256": "81b738ce090959465e9ef1f3e53903148603d7a951cc4d7a34c543c5e42e6a90",
+      "bytes": 80159
+    },
+    "README.md": {
+      "sha256": "8c2ceeda090d5df814883a3615eb42d3c0576e672fb677d362a1d1e325738b72",
+      "bytes": 4457
+    },
+    "css/style.css": {
+      "sha256": "e0131ed1764fc1199a6755ba822b4c81e465ed953929691be5f9465377c43ed6",
+      "bytes": 11868
+    },
+    "js/app.js": {
+      "sha256": "4248e49633b457ef0ee2c972f15f1071ce825146aa757c3a9b1442f29a194740",
+      "bytes": 135994
+    },
+    "js/calculator.js": {
+      "sha256": "09b2f3e9b5f8fc1331248b7be46cfbce575953e4678bce168ee3c466c63bc67d",
+      "bytes": 20997
+    },
+    "js/glossary-data.js": {
+      "sha256": "1966c5c5e954e7640f7894991a057609ff59c3c5cd913247b466ada96259a533",
+      "bytes": 16353
+    },
+    "js/peptides-data.js": {
+      "sha256": "78c0ebed9c1b1e409241f64bd82248d69a82fc2ce6aa51168cc9ba0cdd46ecb6",
+      "bytes": 423815
+    },
+    "js/stability-data.js": {
+      "sha256": "b80f563c823add5a61c66c3435e4eadad7379d59ec0bbddec4409c070cbcb53c",
+      "bytes": 15557
+    },
+    "js/stability.js": {
+      "sha256": "559e87aa8eae579bbcb46daf4cb7c85478aeb28e9878e8f279e1f9e4136293d9",
+      "bytes": 13400
+    },
+    "js/stacks-data.js": {
+      "sha256": "6369e4420dbf5cab5ba775f415ed4de2b20cc75cb928133966163dfba7763871",
+      "bytes": 24239
+    },
+    "js/studies-data.js": {
+      "sha256": "cfaac712f3adcfae8abdedf085e27f3b8b772d379848e3d2cef50d8369ab7460",
+      "bytes": 108531
+    }
+  }
+}

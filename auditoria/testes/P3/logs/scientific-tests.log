@@ -1,0 +1,106 @@
+======================================================================
+PEPTIPEDIA P3 — RUNNER DE HOMOLOGAÇÃO CIENTÍFICA (MOTOR V8 CHROME)
+Timestamp UTC: 2026-10-23T06:24:09.926912+00:00
+Diretório dos Testes: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P3
+======================================================================
+
+[OK] Raiz da aplicação localizada: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\snapshots\P3
+[OK] Arquivo de teste localizado: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P3\test_p3_final.html
+[OK] Sandbox temporária criada: C:\Users\georg\AppData\Local\Temp\peptipedia_p3_v8_xl6_igpr
+[OK] Servidor HTTP ativo em http://127.0.0.1:52019/
+[OK] Recursos essenciais validados com HTTP 200
+[OK] Utilizando Google Chrome V8 nativo: C:\Program Files\Google\Chrome\Application\chrome.exe
+[OK] Navegando para http://127.0.0.1:52019/test_p3_final.html
+
+--- SAÍDA DO MOTOR V8 ---
+======================================================================
+INICIANDO SUÍTE DE HOMOLOGAÇÃO P3 NO MOTOR V8 DO GOOGLE CHROME
+======================================================================
+
+--- BLOCO 1: INTEGRIDADE DO CATÁLOGO P3 ---
+[PASS] 1.1 PEPTIDES_DATABASE está definido como Array global
+[PASS] 1.2 Contagem exata de 72 compostos no catálogo (57 legados + 15 novos dossiês)
+[PASS] 1.3 Todos os 72 IDs são estritamente únicos (sem colisões)
+[PASS] 1.4 Primeiro composto legado é bpc-157
+[PASS] 1.5 57º composto legado é setmelanotide
+[PASS] 1.6 Todos os 15 IDs elegíveis de P3 estão presentes no catálogo
+[PASS] 1.7 P21/P021 permanece retido por identidade incerta fora de PEPTIDES_DATABASE
+[PASS] 1.8 CBL-514 não está em PEPTIDES_DATABASE (substância não-peptídica excluída do catálogo primário)
+--- BLOCO 2: CLASSIFICAÇÃO DE BIOLÓGICOS / PROTEÍNAS ---
+[PASS] 2.1 Somatropina (HGH) é classificada como biologic_protein / isBiologicProtein: true
+[PASS] 2.2 Somatropina possui protocolo classificado como approved_label
+[PASS] 2.3 HCG é classificado como biologic_protein / isBiologicProtein: true
+[PASS] 2.4 HCG possui protocolo classificado como approved_label
+[PASS] 2.5 HMG (Menotropina) é classificado como biologic_protein / isBiologicProtein: true
+[PASS] 2.6 HMG possui protocolo classificado como approved_label
+[PASS] 2.7 ACE-031 é classificado como biologic_protein / isBiologicProtein: true
+[PASS] 2.8 ACE-031 possui protocolo classificado como clinical_trial_only (ensaio interrompido)
+[PASS] 2.9 Dulaglutida (Trulicity) é classificada como biologic_protein / isBiologicProtein: true
+[PASS] 2.10 Dulaglutida possui protocolo classificado como approved_label
+--- BLOCO 3: COMPOSTOS INVESTIGACIONAIS SEM DOSE HUMANA ---
+[PASS] 3.1 ahk-cu possui protocolEvidenceType === 'investigational_no_dose'
+[PASS] 3.2 ahk-cu exibe 'Não há dose humana validada nesta base de evidências'
+[PASS] 3.3 ahk-cu possui reconstituição como 'Não aplicável' sem fabricação de diluente
+[PASS] 3.4 b7-33 possui protocolEvidenceType === 'investigational_no_dose'
+[PASS] 3.5 b7-33 exibe 'Não há dose humana validada nesta base de evidências'
+[PASS] 3.6 b7-33 possui reconstituição como 'Não aplicável' sem fabricação de diluente
+[PASS] 3.7 foxo4-dri possui protocolEvidenceType === 'investigational_no_dose'
+[PASS] 3.8 foxo4-dri exibe 'Não há dose humana validada nesta base de evidências'
+[PASS] 3.9 foxo4-dri possui reconstituição como 'Não aplicável' sem fabricação de diluente
+[PASS] 3.10 pe-22-28 possui protocolEvidenceType === 'investigational_no_dose'
+[PASS] 3.11 pe-22-28 exibe 'Não há dose humana validada nesta base de evidências'
+[PASS] 3.12 pe-22-28 possui reconstituição como 'Não aplicável' sem fabricação de diluente
+[PASS] 3.13 ptd-dbm possui protocolEvidenceType === 'investigational_no_dose'
+[PASS] 3.14 ptd-dbm exibe 'Não há dose humana validada nesta base de evidências'
+[PASS] 3.15 ptd-dbm possui reconstituição como 'Não aplicável' sem fabricação de diluente
+--- BLOCO 4: BULA APROVADA E BRAÇO DE ENSAIO ---
+[PASS] 4.1 Abaloparatida possui protocolEvidenceType === 'approved_label'
+[PASS] 4.2 Abaloparatida possui dose usual de 80 mcg de bula FDA (TYMLOS)
+[PASS] 4.3 Eloralintida possui protocolEvidenceType === 'clinical_trial_only'
+[PASS] 4.4 Eloralintida cita o ensaio clínico de fase 2 NCT06230523
+[PASS] 4.5 Triptorelina possui protocolEvidenceType === 'approved_label'
+[PASS] 4.6 Triptorelina inclui aviso crítico obrigatório sobre flare hormonal
+[PASS] 4.7 Palmitoyl Pentapeptide-4 possui protocolEvidenceType === 'clinical_trial_only'
+[PASS] 4.8 Palmitoyl Pentapeptide-4 possui via principal Tópica
+--- BLOCO 5: ENSAIOS CLÍNICOS HUMANOS (CLINICAL_STUDIES_DATABASE) ---
+[PASS] 5.1 CLINICAL_STUDIES_DATABASE está definido globalmente
+[PASS] 5.2 Contagem exata de 65 estudos clínicos (57 legados + 8 novos ensaios humanos)
+[PASS] 5.3 Estudo study-abaloparatide-active está indexado em CLINICAL_STUDIES_DATABASE
+[PASS] 5.4 Estudo study-abaloparatide-active possui PMID válido (27533157)
+[PASS] 5.5 Estudo study-ace031-dmd está indexado em CLINICAL_STUDIES_DATABASE
+[PASS] 5.6 Estudo study-ace031-dmd possui PMID válido (27462804)
+[PASS] 5.7 Estudo study-dulaglutide-rewind está indexado em CLINICAL_STUDIES_DATABASE
+[PASS] 5.8 Estudo study-dulaglutide-rewind possui PMID válido (31189511)
+[PASS] 5.9 Estudo study-eloralintide-phase2 está indexado em CLINICAL_STUDIES_DATABASE
+[PASS] 5.10 Estudo study-eloralintide-phase2 possui PMID válido (41207310)
+[PASS] 5.11 Estudo study-gonadorelin-pulsatile está indexado em CLINICAL_STUDIES_DATABASE
+[PASS] 5.12 Estudo study-gonadorelin-pulsatile possui PMID válido (8042461)
+[PASS] 5.13 Estudo study-hcg-hypogonadism está indexado em CLINICAL_STUDIES_DATABASE
+[PASS] 5.14 Estudo study-hcg-hypogonadism possui PMID válido (3372679)
+[PASS] 5.15 Estudo study-hmg-spermatogenesis está indexado em CLINICAL_STUDIES_DATABASE
+[PASS] 5.16 Estudo study-hmg-spermatogenesis possui PMID válido (3928676)
+[PASS] 5.17 Estudo study-palmitoyl-pentapeptide4-cosmetic está indexado em CLINICAL_STUDIES_DATABASE
+[PASS] 5.18 Estudo study-palmitoyl-pentapeptide4-cosmetic possui PMID válido (36909866)
+--- BLOCO 6: TRAVAS DA CALCULADORA E COMPORTAMENTO DE INTERFACE ---
+[PASS] 6.1 Função prefillCalculatorWithPeptide exposta no escopo
+[PASS] 6.2 prefillCalculatorWithPeptide recusa carregar AHK-Cu (investigacional sem dose humana)
+[PASS] 6.3 prefillCalculatorWithPeptide recusa carregar FOXO4-DRI
+[PASS] 6.4 getEvidenceBadgeHtml está definida
+[PASS] 6.5 getEvidenceBadgeHtml('approved_label') renderiza badge de Bula Aprovada
+[PASS] 6.6 getEvidenceBadgeHtml('clinical_trial_only') renderiza badge de Braço de Ensaio
+[PASS] 6.7 getEvidenceBadgeHtml('investigational_no_dose') renderiza badge de Sem Dose Humana
+--- BLOCO 7: STACKS, GLOSSÁRIO E APRESENTAÇÕES MULTIFORMULAÇÃO ---
+[PASS] 7.1 RESEARCH_STACKS preserva exatamente os 18 stacks originais
+[PASS] 7.2 GLOSSARY_DATABASE preserva exatamente os 37 verbetes originais
+[PASS] 7.3 Exatamente os 5 compostos multiformulação originais permanecem configurados
+[PASS] 7.4 Exatamente as 12 apresentações farmacêuticas multiformulação estão preservadas
+[PASS] 7.5 Setmelanotida preserva tolerância térmica de até 30 dias a 2°C–25°C da bula FDA 2026
+
+======================================================================
+HOMOLOGAÇÃO P3 CONCLUÍDA: 71 asserções aprovadas, 0 falhas.
+======================================================================
+
+--- FIM DA SAÍDA V8 ---
+
+Resultado: 71 aprovados, 0 falhas de 71 asserções
+[PASS] Homologação P3 V8 100% APROVADA (71/71 asserções)!

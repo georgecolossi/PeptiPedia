@@ -1,0 +1,13 @@
+{
+  "version": "P3",
+  "suite": "scientific_v8_homologation",
+  "status": "PASSED",
+  "exitCode": 0,
+  "startTimeUtc": "2026-10-23T06:24:09.926912+00:00",
+  "endTimeUtc": "2026-10-23T06:24:11.924972+00:00",
+  "expectedAsserts": 71,
+  "totalAsserts": 71,
+  "passedAsserts": 71,
+  "failedAsserts": 0,
+  "pageErrors": []
+}

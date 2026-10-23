@@ -1,0 +1,98 @@
+{
+  "version": "P3",
+  "suite": "e2e_playwright",
+  "status": "PASSED",
+  "exitCode": 0,
+  "startTimeUtc": "2026-10-23T06:24:13.269430+00:00",
+  "endTimeUtc": "2026-10-23T06:24:21.790304+00:00",
+  "expectedChecks": 21,
+  "checksPassed": 21,
+  "checksFailed": 0,
+  "pageErrors": [],
+  "checks": [
+    {
+      "check": "Grid exibe exatamente 72 cards de compostos (encontrados: 72)",
+      "pass": true
+    },
+    {
+      "check": "Contador de resultados reflete 72 peptídeos ('72 peptídeos encontrados')",
+      "pass": true
+    },
+    {
+      "check": "Busca por 'Abaloparatida' filtra exatamente 1 card (encontrados: 1)",
+      "pass": true
+    },
+    {
+      "check": "Modal aberto com título correto: Abaloparatida",
+      "pass": true
+    },
+    {
+      "check": "Modal de Abaloparatida exibe badge 'Bula Aprovada'",
+      "pass": true
+    },
+    {
+      "check": "Modal menciona a marca de bula FDA TYMLOS",
+      "pass": true
+    },
+    {
+      "check": "Busca por 'Somatropina' localizou card",
+      "pass": true
+    },
+    {
+      "check": "Somatropina exibe badge 'Biológico / Proteína'",
+      "pass": true
+    },
+    {
+      "check": "Somatropina cita a marca de bula oficial Genotropin",
+      "pass": true
+    },
+    {
+      "check": "Eloralintida exibe badge 'Braço de Ensaio'",
+      "pass": true
+    },
+    {
+      "check": "Eloralintida referencia o ensaio clínico NCT06230523",
+      "pass": true
+    },
+    {
+      "check": "FOXO4-DRI exibe badge 'Investigacional (Sem Dose Humana)'",
+      "pass": true
+    },
+    {
+      "check": "FOXO4-DRI exibe advertência textual expressa de ausência de dose humana",
+      "pass": true
+    },
+    {
+      "check": "Botão da calculadora desativado para FOXO4-DRI ('Sem Cálculo (Investigacional)')",
+      "pass": true
+    },
+    {
+      "check": "Toast de bloqueio exibido ao tentar calcular composto investigacional ('FOXO4-DRI: composto em fase investigacional sem dose humana validada. Calculadora indisponível.')",
+      "pass": true
+    },
+    {
+      "check": "Matrixyl exibe nome científico completo Palmitoyl Pentapeptide-4",
+      "pass": true
+    },
+    {
+      "check": "Matrixyl exibe badge 'Braço de Ensaio' para RCT cosmético",
+      "pass": true
+    },
+    {
+      "check": "Aba de estudos exibe exatamente 65 estudos clínicos (encontrados: 65)",
+      "pass": true
+    },
+    {
+      "check": "Busca na aba de estudos localiza ACTIVE trial de Abaloparatida",
+      "pass": true
+    },
+    {
+      "check": "Busca na aba de estudos localiza REWIND trial de Dulaglutida",
+      "pass": true
+    },
+    {
+      "check": "Aba de Stacks exibe exatamente 18 protocolos famosos (encontrados: 18)",
+      "pass": true
+    }
+  ]
+}

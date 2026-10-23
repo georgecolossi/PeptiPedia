@@ -1,0 +1,45 @@
+{
+  "created": "2026-10-23",
+  "files": [
+    {
+      "path": "GUIA_EXPANSAO_P3.md",
+      "size": 5253,
+      "sha256": "d3f09a356b5b2b4a74c47222d3f9ed3804c7d883567ee8d9c17e58a7bb49b97b"
+    },
+    {
+      "path": "evidencias/bibliografia_primaria.csv",
+      "size": 6119,
+      "sha256": "5e94f4a4740841f21523570898253fcb7eaf4a9493dd6def1cd297700ac9c697"
+    },
+    {
+      "path": "evidencias/dossies_17_primarios.json",
+      "size": 30621,
+      "sha256": "c43fbb5d4d79255df61e09167e26468efe0acfeeaafa8f0e888c30fcb336a226"
+    },
+    {
+      "path": "implementacao/PROMPT_MESTRE_ANTIGRAVITY.md",
+      "size": 8983,
+      "sha256": "bd4ee67fec7de7f4689d3f35d210362fc482f520f9edf11efd4535eb4c180400"
+    },
+    {
+      "path": "inputs/baseline_existentes_57.json",
+      "size": 1294,
+      "sha256": "c518dddaf44ea6578f7d34b1d8cd983ed133c592e96fabd2bd348de79e050a18"
+    },
+    {
+      "path": "inputs/inventario_arcana_123.csv",
+      "size": 33757,
+      "sha256": "0eb295284646944bd44481fb35abb85c42957acf1332329bc54b787240e533d9"
+    },
+    {
+      "path": "inputs/inventario_arcana_123.json",
+      "size": 61946,
+      "sha256": "62f0a90dc4f92b6e0599499400db1edd07b0019d847a9f62688e3de5305ce8fb"
+    },
+    {
+      "path": "inputs/referencia_peptidepedia_23.json",
+      "size": 675,
+      "sha256": "90c625ddf70cff43e369d0d383ddf48deae74bc07491fc10498e2a9cb7278bda"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "version": "P3",
+  "suite": "negative_failure_modes",
+  "allBlockedSuccessfully": true,
+  "scenariosCount": 6,
+  "scenarios": [
+    {
+      "scenario": 1,
+      "name": "Asserção científica falsa (V8)",
+      "exitCode": 1,
+      "blocked": true,
+      "status": "BLOCKED_CONFIRMED"
+    },
+    {
+      "scenario": 2,
+      "name": "Verificação E2E falsa (Playwright)",
+      "exitCode": 1,
+      "blocked": true,
+      "status": "BLOCKED_CONFIRMED"
+    },
+    {
+      "scenario": 3,
+      "name": "Quantidade de asserções inferior ao esperado",
+      "exitCode": 1,
+      "blocked": true,
+      "status": "BLOCKED_CONFIRMED"
+    },
+    {
+      "scenario": 4,
+      "name": "Erro JavaScript inesperado (pageerror)",
+      "exitCode": 1,
+      "blocked": true,
+      "status": "BLOCKED_CONFIRMED"
+    },
+    {
+      "scenario": 5,
+      "name": "Recurso estático essencial ausente (HTTP 404)",
+      "exitCode": 1,
+      "blocked": true,
+      "status": "BLOCKED_CONFIRMED"
+    },
+    {
+      "scenario": 6,
+      "name": "Falha no lançamento do navegador",
+      "exitCode": 1,
+      "blocked": true,
+      "status": "BLOCKED_CONFIRMED"
+    }
+  ],
+  "timestampUtc": "2026-10-23T06:06:55.976127+00:00",
+  "durationSeconds": 19.16
+}

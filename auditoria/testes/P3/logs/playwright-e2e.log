@@ -1,0 +1,32 @@
+======================================================================
+PEPTIPEDIA P3 — SUÍTE E2E PLAYWRIGHT (SMOKE TEST E FUNCIONAL)
+Timestamp UTC: 2026-10-23T06:24:13.269430+00:00
+Diretório dos Testes: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P3
+Diretório de Screenshots: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P3\screenshots
+======================================================================
+
+[OK] Raiz da aplicação: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\snapshots\P3
+[OK] Servidor E2E ativo em http://127.0.0.1:49984/
+[OK] Carregando http://127.0.0.1:49984/index.html
+[PASS] Grid exibe exatamente 72 cards de compostos (encontrados: 72)
+[PASS] Contador de resultados reflete 72 peptídeos ('72 peptídeos encontrados')
+[PASS] Busca por 'Abaloparatida' filtra exatamente 1 card (encontrados: 1)
+[PASS] Modal aberto com título correto: Abaloparatida
+[PASS] Modal de Abaloparatida exibe badge 'Bula Aprovada'
+[PASS] Modal menciona a marca de bula FDA TYMLOS
+[PASS] Busca por 'Somatropina' localizou card
+[PASS] Somatropina exibe badge 'Biológico / Proteína'
+[PASS] Somatropina cita a marca de bula oficial Genotropin
+[PASS] Eloralintida exibe badge 'Braço de Ensaio'
+[PASS] Eloralintida referencia o ensaio clínico NCT06230523
+[PASS] FOXO4-DRI exibe badge 'Investigacional (Sem Dose Humana)'
+[PASS] FOXO4-DRI exibe advertência textual expressa de ausência de dose humana
+[PASS] Botão da calculadora desativado para FOXO4-DRI ('Sem Cálculo (Investigacional)')
+[PASS] Toast de bloqueio exibido ao tentar calcular composto investigacional ('FOXO4-DRI: composto em fase investigacional sem dose humana validada. Calculadora indisponível.')
+[PASS] Matrixyl exibe nome científico completo Palmitoyl Pentapeptide-4
+[PASS] Matrixyl exibe badge 'Braço de Ensaio' para RCT cosmético
+[PASS] Aba de estudos exibe exatamente 65 estudos clínicos (encontrados: 65)
+[PASS] Busca na aba de estudos localiza ACTIVE trial de Abaloparatida
+[PASS] Busca na aba de estudos localiza REWIND trial de Dulaglutida
+[PASS] Aba de Stacks exibe exatamente 18 protocolos famosos (encontrados: 18)
+[PASS] Todos os 21 testes E2E aprovados com zero falhas!

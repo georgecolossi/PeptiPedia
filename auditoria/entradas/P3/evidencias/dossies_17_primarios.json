@@ -1,0 +1,616 @@
+{
+  "metadata": {
+    "project": "PeptiPedia",
+    "base_snapshot": "P2G25",
+    "base_commit": "ba1d74a58c21633e79e263da3877917f0291c849",
+    "research_date": "2026-10-23",
+    "source_caveat": "Dossiês iniciais: referências verificadas; nem todos os campos do esquema operacional foram preenchidos. Antigravity deve integrar apenas após validação local",
+    "clinical_protocol_policy": "Somente dose de bula ou braço de ensaio conforme fonte, nunca extrapolar para protocolos de fornecedor."
+  },
+  "dossiers": [
+    {
+      "arcana_index": 1,
+      "id": "abaloparatide",
+      "name": "Abaloparatide",
+      "entity_type": "peptide_or_biologic",
+      "import_recommendation": "IMPORTAR_APOS_VALIDACOES_DE_SCHEMA",
+      "summary_pt": "Agente osteoanabólico com indicação aprovada nos EUA para osteoporose de alto risco em mulheres pós-menopáusicas e aumento de densidade óssea em homens selecionados.",
+      "mechanism_pt": "Análogo de PTHrP(1–34), agonista PTH1R com ação osteoanabólica.",
+      "evidence_tier": "E1_BULA_E_RCT_FASE3",
+      "regulatory_summary_pt": "Autorização FDA confirmada; não inferir autorização Anvisa.",
+      "sources": [
+        {
+          "type": "official_label",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=712143d9-e21e-4013-bb3b-3426a21060a8",
+          "pmid": null,
+          "study_design": "Bula FDA TYMLOS 2026",
+          "population_or_model": "osteoporose",
+          "primary_finding": "Estudo pivotal incluiu mulheres com osteoporose pós-menopausa; fraturas vertebrais novas 0,6% versus 4,2% em 18 meses."
+        },
+        {
+          "type": "clinical_primary",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27533157/",
+          "pmid": "27533157",
+          "study_design": "ACTIVE, ensaio randomizado fase 3",
+          "population_or_model": "mulheres pós-menopausa com osteoporose",
+          "primary_finding": "Redução de fraturas vertebrais em comparação com placebo."
+        }
+      ],
+      "dose_evidence": [
+        {
+          "origin": "approved_label",
+          "description": "TYMLOS: 80 mcg por via subcutânea uma vez ao dia, exclusivamente no contexto de bula para osteoporose.",
+          "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=712143d9-e21e-4013-bb3b-3426a21060a8",
+          "indication": "osteoporose de alto risco",
+          "context": null,
+          "not_individualized_advice": true
+        }
+      ],
+      "risks_and_limitations_pt": "Risco de hipercalcemia/hipercalciúria, tontura, hipotensão ortostática e cuidados quanto a tumor ósseo; consultar bula completa.",
+      "research_gaps": [
+        "Não confundir dose aprovada com preparação de vial de fornecedor ou protocolo de performance."
+      ],
+      "source_catalogs": [
+        "Arcana Labs"
+      ],
+      "last_review": "2026-10-23"
+    },
+    {
+      "arcana_index": 2,
+      "id": "ace-031",
+      "name": "ACE-031",
+      "entity_type": "peptide_or_biologic",
+      "import_recommendation": "IMPORTAR_APOS_VALIDACOES_DE_SCHEMA",
+      "summary_pt": "Agente investigacional para distrofia muscular; efeitos exploratórios em composição corporal, sem benefício funcional demonstrado de modo conclusivo.",
+      "mechanism_pt": "Proteína de fusão receptor ActRIIB-Fc, sequestra ligantes incluindo activina/miostatina.",
+      "evidence_tier": "E2_ENSAIO_HUMANO_INTERROMPIDO",
+      "regulatory_summary_pt": "Investigacional, sem aprovação clínica documentada nessa pesquisa.",
+      "sources": [
+        {
+          "type": "clinical_primary",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27462804/",
+          "pmid": "27462804",
+          "study_design": "Estudo randomizado placebo-controlado em DMD",
+          "population_or_model": "meninos com distrofia muscular de Duchenne",
+          "primary_finding": "Ensaio interrompido após telangiectasias e epistaxe; tendência não significativa na caminhada de 6 minutos."
+        }
+      ],
+      "dose_evidence": [],
+      "risks_and_limitations_pt": "Epistaxe e telangiectasias foram preocupações de segurança; uso experimental abandonado no programa estudado.",
+      "research_gaps": [
+        "É uma proteína de fusão, não um pequeno peptídeo de 5–40 aa; categoria editorial de biológicos."
+      ],
+      "source_catalogs": [
+        "Arcana Labs"
+      ],
+      "last_review": "2026-10-23"
+    },
+    {
+      "arcana_index": 6,
+      "id": "ahk-cu",
+      "name": "AHK-Cu",
+      "entity_type": "peptide_or_biologic",
+      "import_recommendation": "IMPORTAR_APOS_VALIDACOES_DE_SCHEMA",
+      "summary_pt": "AHK-Cu possui estudo de folículos humanos ex vivo e papila dérmica in vitro; nenhum resultado humano controlado de injeção foi identificado.",
+      "mechanism_pt": "Tripeptídeo Ala-His-Lys complexado a Cu2+, com respostas em células da papila dérmica.",
+      "evidence_tier": "E3_EX_VIVO",
+      "regulatory_summary_pt": "Uso tópico/investigacional; nenhum registro terapêutico atestado.",
+      "sources": [
+        {
+          "type": "experimental_primary",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/17703734/",
+          "pmid": "17703734",
+          "study_design": "Estudo ex vivo/in vitro",
+          "population_or_model": "folículos capilares humanos isolados e células cultivadas",
+          "primary_finding": "Aumento do alongamento de folículos ex vivo; não demonstra benefício clínico injetável."
+        }
+      ],
+      "dose_evidence": [],
+      "risks_and_limitations_pt": "Risco e exposição sistêmica não caracterizados; não confundir AHK-Cu com GHK-Cu.",
+      "research_gaps": [
+        "Verificar estrutura, CAS e sinônimos em base química",
+        "Pesquisar novas fontes primárias antes de publicar posologia não aprovada"
+      ],
+      "source_catalogs": [
+        "Arcana Labs"
+      ],
+      "last_review": "2026-10-23"
+    },
+    {
+      "arcana_index": 11,
+      "id": "b7-33",
+      "name": "B7-33",
+      "entity_type": "peptide_or_biologic",
+      "import_recommendation": "IMPORTAR_APOS_VALIDACOES_DE_SCHEMA",
+      "summary_pt": "Agonista experimental estudado como antifibrótico em modelos animais de coração e pulmão.",
+      "mechanism_pt": "Derivado de cadeia única da relaxina-2, agonista funcionalmente seletivo de RXFP1.",
+      "evidence_tier": "E3_PRECLINICO",
+      "regulatory_summary_pt": "Investigacional; sem aprovação humana comprovada.",
+      "sources": [
+        {
+          "type": "experimental_primary",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30155023/",
+          "pmid": "30155023",
+          "study_design": "Pesquisa farmacológica e modelos animais",
+          "population_or_model": "modelos de fibrose em roedores",
+          "primary_finding": "Modulação RXFP1 e fibrose em estudos pré-clínicos."
+        },
+        {
+          "type": "experimental_primary",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36753958/",
+          "pmid": "36753958",
+          "study_design": "Estudo animal",
+          "population_or_model": "camundongos com cardiomiopatia induzida",
+          "primary_finding": "Redução de fibrose ventricular em modelo animal."
+        }
+      ],
+      "dose_evidence": [],
+      "risks_and_limitations_pt": "Sem segurança ou dose terapêutica humana estabelecida.",
+      "research_gaps": [
+        "Verificar estrutura, CAS e sinônimos em base química",
+        "Pesquisar novas fontes primárias antes de publicar posologia não aprovada"
+      ],
+      "source_catalogs": [
+        "Arcana Labs"
+      ],
+      "last_review": "2026-10-23"
+    },
+    {
+      "arcana_index": 33,
+      "id": "dulaglutide",
+      "name": "Dulaglutida",
+      "entity_type": "peptide_or_biologic",
+      "import_recommendation": "IMPORTAR_APOS_VALIDACOES_DE_SCHEMA",
+      "summary_pt": "Biológico Trulicity aprovado nos EUA para diabetes tipo 2 (adultos e ≥10 anos) e redução de eventos cardiovasculares maiores em adultos elegíveis com diabetes tipo 2.",
+      "mechanism_pt": "Agonista GLP-1 de ação prolongada, biológico de administração subcutânea.",
+      "evidence_tier": "E1_BULA_E_RCT_CARDIOVASCULAR",
+      "regulatory_summary_pt": "FDA: aprovado para indicações do rótulo. Uso como medicamento de obesidade não é automaticamente aprovado.",
+      "sources": [
+        {
+          "type": "official_label",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=463050bd-2b1c-40f5-b3c3-0a04bb433309",
+          "pmid": null,
+          "study_design": "Bula FDA revisada 2026",
+          "population_or_model": "pessoas com diabetes tipo 2",
+          "primary_finding": "Indicações, contraindicações, riscos e posologia aprovados."
+        },
+        {
+          "type": "clinical_primary",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31189511/",
+          "pmid": "31189511",
+          "study_design": "REWIND, ensaio randomizado",
+          "population_or_model": "9901 adultos ≥50 anos com DM2 e risco cardiovascular",
+          "primary_finding": "Desfecho cardiovascular primário 12,0% dulaglutida vs 13,4% placebo; HR 0,88 (IC95% 0,79–0,99)."
+        }
+      ],
+      "dose_evidence": [
+        {
+          "origin": "approved_label",
+          "description": "Dose inicial FDA adulta de Trulicity 0,75 mg SC semanal; ajustes graduais em intervalos de pelo menos 4 semanas; máximo 4,5 mg semanal em adultos.",
+          "source_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=463050bd-2b1c-40f5-b3c3-0a04bb433309",
+          "indication": "diabetes tipo 2",
+          "context": null,
+          "not_individualized_advice": true
+        },
+        {
+          "origin": "clinical_trial",
+          "description": "REWIND avaliou 1,5 mg SC semanal versus placebo; N=9901.",
+          "source_url": "https://pubmed.ncbi.nlm.nih.gov/31189511/",
+          "indication": "desfechos cardiovasculares em DM2",
+          "context": null,
+          "not_individualized_advice": true
+        }
+      ],
+      "risks_and_limitations_pt": "Avisos FDA incluem tumor de células C em roedores, pancreatite, reações gastrointestinais graves, desidratação/lesão renal, vesícula, hipersensibilidade.",
+      "research_gaps": [
+        "Não incluir apresentação de frasco liofilizado genérico; Trulicity é solução industrial pronta em canetas de dose única."
+      ],
+      "source_catalogs": [
+        "Arcana Labs"
+      ],
+      "last_review": "2026-10-23"
+    },
+    {
+      "arcana_index": 34,
+      "id": "eloralintide",
+      "name": "Eloralintide",
+      "entity_type": "peptide_or_biologic",
+      "import_recommendation": "IMPORTAR_APOS_VALIDACOES_DE_SCHEMA",
+      "summary_pt": "Na fase II de 48 semanas, eloralintida demonstrou redução ponderal dose-dependente em adultos com obesidade/sobrepeso sem DM2; permanece investigacional.",
+      "mechanism_pt": "Agonista seletivo e prolongado dos receptores de amilina; pesquisa para controle de peso.",
+      "evidence_tier": "E2_RCT_FASE_II",
+      "regulatory_summary_pt": "Investigacional; nenhuma aprovação FDA/EMA atestada.",
+      "sources": [
+        {
+          "type": "clinical_primary",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+          "pmid": "41207310",
+          "study_design": "RCT fase II, 48 semanas (NCT06230523)",
+          "population_or_model": "263 adultos em 46 centros nos EUA",
+          "primary_finding": "Mudança média de peso -9%, -12%, -18% e -20% em grupos de dose fixa; placebo -0,4%. Náusea/fadiga frequentes."
+        }
+      ],
+      "dose_evidence": [
+        {
+          "origin": "clinical_trial_only",
+          "description": "Ensaio fase II comparou grupos semanais de 1, 3, 6, 9 mg e escalonamentos 6–9 e 3–9 mg por 48 semanas; NÃO é posologia aprovada.",
+          "source_url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+          "indication": "obesidade ou sobrepeso com comorbidade sem diabetes tipo 2",
+          "context": null,
+          "not_individualized_advice": true
+        }
+      ],
+      "risks_and_limitations_pt": "Náusea e fadiga dose-dependentes; segurança a longo prazo e fase III não resolvidas nesta pesquisa.",
+      "research_gaps": [
+        "Verificar estrutura, CAS e sinônimos em base química",
+        "Pesquisar novas fontes primárias antes de publicar posologia não aprovada"
+      ],
+      "source_catalogs": [
+        "Arcana Labs"
+      ],
+      "last_review": "2026-10-23"
+    },
+    {
+      "arcana_index": 36,
+      "id": "foxo4-dri",
+      "name": "FOXO4-DRI",
+      "entity_type": "peptide_or_biologic",
+      "import_recommendation": "IMPORTAR_APOS_VALIDACOES_DE_SCHEMA",
+      "summary_pt": "Em modelos animais, o bloqueio da interação FOXO4–p53 promoveu morte seletiva de células senescentes; benefício clínico em humanos não demonstrado.",
+      "mechanism_pt": "Peptídeo senolítico experimental D-retro-inverso que interfere na interação FOXO4–p53.",
+      "evidence_tier": "E3_PRECLINICO",
+      "regulatory_summary_pt": "Sem aprovação clínica comprovada; não importar doses comerciais.",
+      "sources": [
+        {
+          "type": "experimental_primary",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28340339/",
+          "pmid": "28340339",
+          "study_design": "Estudo mecanístico pré-clínico",
+          "population_or_model": "células e animais",
+          "primary_finding": "Eliminação de células senescentes em modelos experimentais."
+        }
+      ],
+      "dose_evidence": [],
+      "risks_and_limitations_pt": "Segurança humana, seletividade e risco de efeitos imprevistos sobre tecidos e câncer não caracterizados.",
+      "research_gaps": [
+        "Verificar estrutura, CAS e sinônimos em base química",
+        "Pesquisar novas fontes primárias antes de publicar posologia não aprovada"
+      ],
+      "source_catalogs": [
+        "Arcana Labs"
+      ],
+      "last_review": "2026-10-23"
+    },
+    {
+      "arcana_index": 46,
+      "id": "gonadorelin",
+      "name": "Gonadorelin",
+      "entity_type": "peptide_or_biologic",
+      "import_recommendation": "IMPORTAR_APOS_VALIDACOES_DE_SCHEMA",
+      "summary_pt": "GnRH pulsátil foi investigado para amenorreia hipotalâmica e infertilidade; não equivale a uso aleatório em TRT.",
+      "mechanism_pt": "GnRH, agonista fisiológico de receptores hipofisários; padrão pulsátil versus contínuo produz efeitos diferentes.",
+      "evidence_tier": "E2_HUMANOS_CLINICOS",
+      "regulatory_summary_pt": "Existência de tratamento GnRH não estabelece indicação em performance/TRT; registro local não verificado.",
+      "sources": [
+        {
+          "type": "clinical_primary",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/8042461/",
+          "pmid": "8042461",
+          "study_design": "Estudo clínico de GnRH pulsátil",
+          "population_or_model": "30 mulheres com amenorreia hipotalâmica e infertilidade",
+          "primary_finding": "Ovulação por paciente 93%, gravidez por ciclo ovulatório 30% na coorte estudada."
+        },
+        {
+          "type": "observational_primary",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36378460/",
+          "pmid": "36378460",
+          "study_design": "Coorte retrospectiva",
+          "population_or_model": "66 mulheres com amenorreia hipotalâmica funcional",
+          "primary_finding": "Dados de ovulação e nascidos vivos em tratamento especializado."
+        }
+      ],
+      "dose_evidence": [],
+      "risks_and_limitations_pt": "Pode induzir alterações no eixo gonadal; administração requer diagnóstico e monitoramento especializado.",
+      "research_gaps": [
+        "Verificar estrutura, CAS e sinônimos em base química",
+        "Pesquisar novas fontes primárias antes de publicar posologia não aprovada"
+      ],
+      "source_catalogs": [
+        "Arcana Labs"
+      ],
+      "last_review": "2026-10-23"
+    },
+    {
+      "arcana_index": 47,
+      "id": "hcg",
+      "name": "HCG",
+      "entity_type": "peptide_or_biologic",
+      "import_recommendation": "IMPORTAR_APOS_VALIDACOES_DE_SCHEMA",
+      "summary_pt": "Uso médico em fertilidade; estudos em hipogonadismo hipogonadotrófico demonstraram espermatogênese em participantes selecionados.",
+      "mechanism_pt": "Gonadotrofina coriônica humana (glicoproteína heterodimérica), atividade similar a LH.",
+      "evidence_tier": "E2_CLINICA_REPRODUTIVA",
+      "regulatory_summary_pt": "Gonadotrofina com indicações médicas específicas; produto e registro local devem ser checados.",
+      "sources": [
+        {
+          "type": "clinical_primary",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/3372679/",
+          "pmid": "3372679",
+          "study_design": "Estudo humano de hCG",
+          "population_or_model": "22 homens com hipogonadismo hipogonadotrófico isolado",
+          "primary_finding": "14/22 produziram espermatozoides durante tratamento; variação conforme volume testicular inicial."
+        }
+      ],
+      "dose_evidence": [],
+      "risks_and_limitations_pt": "Risco de ginecomastia, aumento de estradiol, edema, tromboembolismo e outros eventos dependendo da formulação/indicação.",
+      "research_gaps": [
+        "Biológico proteico, não pequeno peptídeo; não inserir alegação de restauração garantida da fertilidade."
+      ],
+      "source_catalogs": [
+        "Arcana Labs"
+      ],
+      "last_review": "2026-10-23"
+    },
+    {
+      "arcana_index": 49,
+      "id": "somatropin",
+      "name": "HGH (Somatropina)",
+      "entity_type": "peptide_or_biologic",
+      "import_recommendation": "IMPORTAR_APOS_VALIDACOES_DE_SCHEMA",
+      "summary_pt": "Somatropina é biológico aprovado nos EUA para indicações endocrinológicas e pediátricas específicas; não é protocolo de performance.",
+      "mechanism_pt": "Hormônio de crescimento humano recombinante de 191 aa atuando por GHR e IGF-1.",
+      "evidence_tier": "E1_BULA_BIOLOGICO",
+      "regulatory_summary_pt": "FDA aprovada para indicações da bula; autorização por indicação, país e produto deve ser diferenciada.",
+      "sources": [
+        {
+          "type": "official_label",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ffebf88b-d257-4542-9808-74d9b7167765",
+          "pmid": null,
+          "study_design": "Bula FDA Genotropin revisada 2026",
+          "population_or_model": "indicações pediátricas e deficiência de GH adulta",
+          "primary_finding": "Inclui deficiência de GH e outras condições pediátricas selecionadas."
+        }
+      ],
+      "dose_evidence": [],
+      "risks_and_limitations_pt": "Riscos incluem hiperglicemia/diabetes, edema, hipertensão intracraniana, complicações em Prader-Willi, neoplasias e problemas musculoesqueléticos.",
+      "research_gaps": [
+        "Biológico proteico; doses dependem de diagnóstico, peso, idade e formulação, não extrapolar de vials de pesquisa."
+      ],
+      "source_catalogs": [
+        "Arcana Labs"
+      ],
+      "last_review": "2026-10-23"
+    },
+    {
+      "arcana_index": 51,
+      "id": "menotropin-hmg",
+      "name": "HMG",
+      "entity_type": "peptide_or_biologic",
+      "import_recommendation": "IMPORTAR_APOS_VALIDACOES_DE_SCHEMA",
+      "summary_pt": "Gonadotrofina com uso médico supervisionado em fertilidade, particularmente associada a hCG em pacientes selecionados.",
+      "mechanism_pt": "Mistura de gonadotrofinas com atividades FSH e LH utilizada em reprodução assistida e hipogonadismo hipogonadotrófico selecionado.",
+      "evidence_tier": "E2_CLINICA_REPRODUTIVA",
+      "regulatory_summary_pt": "Existem apresentações regulamentadas de menotropinas; registro por marca e jurisdição não verificado nesta rodada.",
+      "sources": [
+        {
+          "type": "clinical_primary",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/3928676/",
+          "pmid": "3928676",
+          "study_design": "Estudo clínico de hCG/hMG",
+          "population_or_model": "13 homens com hipogonadismo hipogonadotrófico",
+          "primary_finding": "Associação de hMG após hCG para induzir espermatogênese em homens selecionados."
+        }
+      ],
+      "dose_evidence": [],
+      "risks_and_limitations_pt": "Superestimulação ovariana e gestações múltiplas em contextos reprodutivos; riscos e contraindicações dependem da bula e paciente.",
+      "research_gaps": [
+        "Não confundir mistura comercial hMG com uma sequência peptídica única."
+      ],
+      "source_catalogs": [
+        "Arcana Labs"
+      ],
+      "last_review": "2026-10-23"
+    },
+    {
+      "arcana_index": 64,
+      "id": "palmitoyl-pentapeptide-4",
+      "name": "Matrixyl (Palmitoyl Pentapeptide-4)",
+      "entity_type": "peptide_or_biologic",
+      "import_recommendation": "IMPORTAR_APOS_VALIDACOES_DE_SCHEMA",
+      "summary_pt": "Um pequeno ensaio duplo-cego em 21 participantes investigou formulação tópica para pés de galinha, não eficácia sistêmica.",
+      "mechanism_pt": "Peptídeo cosmético tópico Palmitoyl pentapeptide-4 (Matrixyl); sinalização dérmica.",
+      "evidence_tier": "E2_RCT_PEQUENO_COSMETICO",
+      "regulatory_summary_pt": "Ingrediente cosmético; não categorizar como medicamento injetável.",
+      "sources": [
+        {
+          "type": "clinical_primary",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36909866/",
+          "pmid": "36909866",
+          "study_design": "RCT duplo-cego cosmético, 8 semanas",
+          "population_or_model": "21 mulheres na Indonésia",
+          "primary_finding": "Melhoras cosméticas observadas; amostra pequena e dependência da formulação."
+        }
+      ],
+      "dose_evidence": [],
+      "risks_and_limitations_pt": "Segurança tópica de formulação não se estende a injeção; risco de irritação e alergia local.",
+      "research_gaps": [
+        "Verificar estrutura, CAS e sinônimos em base química",
+        "Pesquisar novas fontes primárias antes de publicar posologia não aprovada"
+      ],
+      "source_catalogs": [
+        "Arcana Labs"
+      ],
+      "last_review": "2026-10-23"
+    },
+    {
+      "arcana_index": 84,
+      "id": "p021-cntf-analog-review",
+      "name": "P21",
+      "entity_type": "peptide_or_biologic",
+      "import_recommendation": "RETIDO_IDENTIDADE_NAO_CONFIRMADA",
+      "summary_pt": "Um estudo de P021 em camundongos sugere efeito neurotrófico; é preciso provar que o P21 do fornecedor é a mesma molécula.",
+      "mechanism_pt": "Possível P021 derivado de CNTF; o nome de catálogo P21 carece de correspondência química inequívoca.",
+      "evidence_tier": "E3_PRECLINICO_IDENTIDADE_PENDENTE",
+      "regulatory_summary_pt": "Investigacional.",
+      "sources": [
+        {
+          "type": "experimental_primary",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32854771/",
+          "pmid": "32854771",
+          "study_design": "Estudo em camundongos 3xTg-AD",
+          "population_or_model": "modelo transgênico de Alzheimer",
+          "primary_finding": "Alterações comportamentais e neuropatológicas após exposição experimental a P021."
+        }
+      ],
+      "dose_evidence": [],
+      "risks_and_limitations_pt": "Identidade produto versus composto publicado não confirmada; ausência de evidência de eficácia e segurança em humanos.",
+      "research_gaps": [
+        "BLOQUEAR IMPORTAÇÃO ATÉ RECONCILIAR P21 vs P021, sequência, sal e modificações."
+      ],
+      "source_catalogs": [
+        "Arcana Labs"
+      ],
+      "last_review": "2026-10-23"
+    },
+    {
+      "arcana_index": 86,
+      "id": "pe-22-28",
+      "name": "PE-22-28",
+      "entity_type": "peptide_or_biologic",
+      "import_recommendation": "IMPORTAR_APOS_VALIDACOES_DE_SCHEMA",
+      "summary_pt": "Estudos de canais e modelos animais descrevem atividade antidepressiva experimental; eficácia clínica não estabelecida.",
+      "mechanism_pt": "Peptídeo curto derivado de spadin que antagoniza canal TREK-1; investigado em modelos de comportamento depressivo.",
+      "evidence_tier": "E3_PRECLINICO",
+      "regulatory_summary_pt": "Investigacional.",
+      "sources": [
+        {
+          "type": "experimental_primary",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28955242/",
+          "pmid": "28955242",
+          "study_design": "Modelos celulares e pré-clínicos",
+          "population_or_model": "receptor TREK-1/animais",
+          "primary_finding": "Maior afinidade funcional por TREK-1 em modelos experimentais do que spadin."
+        }
+      ],
+      "dose_evidence": [],
+      "risks_and_limitations_pt": "Sem dados suficientes de segurança humana, farmacocinética e efeitos neuropsiquiátricos.",
+      "research_gaps": [
+        "Verificar estrutura, CAS e sinônimos em base química",
+        "Pesquisar novas fontes primárias antes de publicar posologia não aprovada"
+      ],
+      "source_catalogs": [
+        "Arcana Labs"
+      ],
+      "last_review": "2026-10-23"
+    },
+    {
+      "arcana_index": 93,
+      "id": "ptd-dbm",
+      "name": "PTD-DBM",
+      "entity_type": "peptide_or_biologic",
+      "import_recommendation": "IMPORTAR_APOS_VALIDACOES_DE_SCHEMA",
+      "summary_pt": "Pesquisa experimental demonstrou crescimento capilar em camundongos e sinalização em células da papila dérmica.",
+      "mechanism_pt": "Peptídeo competidor da interação CXXC5–Dishevelled, modulador da via Wnt/beta-catenina.",
+      "evidence_tier": "E3_PRECLINICO",
+      "regulatory_summary_pt": "Investigacional e experimental, sem posologia humana validada.",
+      "sources": [
+        {
+          "type": "experimental_primary",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28595998/",
+          "pmid": "28595998",
+          "study_design": "Células humanas + modelo animal",
+          "population_or_model": "folículo humano ex vivo/animais",
+          "primary_finding": "Bloqueio CXXC5-Dvl acelerou regeneração capilar em modelos experimentais."
+        }
+      ],
+      "dose_evidence": [],
+      "risks_and_limitations_pt": "Sem ensaio clínico comprovando eficácia em pessoas com alopecia; riscos da via Wnt precisam avaliação.",
+      "research_gaps": [
+        "Verificar estrutura, CAS e sinônimos em base química",
+        "Pesquisar novas fontes primárias antes de publicar posologia não aprovada"
+      ],
+      "source_catalogs": [
+        "Arcana Labs"
+      ],
+      "last_review": "2026-10-23"
+    },
+    {
+      "arcana_index": 118,
+      "id": "triptorelin",
+      "name": "Triptorelin",
+      "entity_type": "peptide_or_biologic",
+      "import_recommendation": "IMPORTAR_APOS_VALIDACOES_DE_SCHEMA",
+      "summary_pt": "Triptorelina é usada em condições oncológicas/endócrinas específicas; ação farmacológica diferente de GnRH pulsátil.",
+      "mechanism_pt": "Agonista GnRH que causa ativação transitória seguida de supressão gonadal quando administrado continuamente em formulações depot.",
+      "evidence_tier": "E1_BULA_APROVADA",
+      "regulatory_summary_pt": "FDA aprovado para câncer de próstata avançado sob marca Trelstar; variações de marca podem ter outras indicações.",
+      "sources": [
+        {
+          "type": "official_label",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=b1b84d62-a369-a4b7-5c41-dd1f553a18f3",
+          "pmid": null,
+          "study_design": "FDA TRELSTAR, versão 2026",
+          "population_or_model": "câncer de próstata avançado",
+          "primary_finding": "Indicação FDA específica e apresentações depot de 4, 12 ou 24 semanas."
+        }
+      ],
+      "dose_evidence": [
+        {
+          "origin": "approved_label",
+          "description": "TRELSTAR depot: 3,75 mg IM a cada 4 semanas OU 11,25 mg a cada 12 semanas OU 22,5 mg a cada 24 semanas, conforme apresentação oficial e indicação; não intercambiáveis.",
+          "source_url": "https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=b1b84d62-a369-a4b7-5c41-dd1f553a18f3",
+          "indication": "câncer de próstata avançado",
+          "context": null,
+          "not_individualized_advice": true
+        }
+      ],
+      "risks_and_limitations_pt": "Pode causar flare hormonal inicial, hipogonadismo, perda óssea, eventos metabólicos e cardiovasculares; uso sob acompanhamento.",
+      "research_gaps": [
+        "Verificar estrutura, CAS e sinônimos em base química",
+        "Pesquisar novas fontes primárias antes de publicar posologia não aprovada"
+      ],
+      "source_catalogs": [
+        "Arcana Labs"
+      ],
+      "last_review": "2026-10-23"
+    },
+    {
+      "arcana_index": 20,
+      "id": "cbl-514",
+      "name": "CBL-514",
+      "entity_type": "non_peptide_adjacent",
+      "import_recommendation": "CATALOGO_ADJACENTE_SE_EXISTIR",
+      "summary_pt": "Há RCTs fase II/IIb de lipólise localizada; deve ficar em seção de moléculas não peptídicas, nunca misturado com peptídeos.",
+      "mechanism_pt": "Molécula pequena lipolítica experimental que induz apoptose adipocitária local; não é peptídeo.",
+      "evidence_tier": "E2_RCT_FASEII_FORA_ESCOPO",
+      "regulatory_summary_pt": "Investigacional. NÃO É PEPTÍDEO.",
+      "sources": [
+        {
+          "type": "clinical_primary",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40037659/",
+          "pmid": "40037659",
+          "study_design": "RCT fase II placebo-controlado",
+          "population_or_model": "76 adultos com adiposidade abdominal",
+          "primary_finding": "69,6% atingiram redução ≥150 mL 8 semanas após tratamento versus 0% placebo."
+        },
+        {
+          "type": "clinical_primary",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42159040/",
+          "pmid": "42159040",
+          "study_design": "RCT fase IIb placebo-controlado",
+          "population_or_model": "108 adultos randomizados",
+          "primary_finding": "Sinais de benefício em escore de gordura abdominal e RM; análise requer cuidado com denominadores."
+        }
+      ],
+      "dose_evidence": [],
+      "risks_and_limitations_pt": "Reações locais e segurança de uso não supervisionado; medicamento investigacional, não produto para autoadministração.",
+      "research_gaps": [
+        "Verificar estrutura, CAS e sinônimos em base química",
+        "Pesquisar novas fontes primárias antes de publicar posologia não aprovada"
+      ],
+      "source_catalogs": [
+        "Arcana Labs"
+      ],
+      "last_review": "2026-10-23"
+    }
+  ]
+}

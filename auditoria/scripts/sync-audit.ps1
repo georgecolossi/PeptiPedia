@@ -135,7 +135,7 @@ try {
     $LogDir       = Join-Path $RepoRoot "auditoria\testes\$VersionUpper\logs"
 
     # Snapshots historicos de etapas anteriores sao estritamente imutaveis
-    $PriorHistoricalVersions = @("P2G2", "P2G21", "P2G22", "P2G23", "P2G24")
+    $PriorHistoricalVersions = @("P2G2", "P2G21", "P2G22", "P2G23", "P2G24", "P2G25")
     if ($PriorHistoricalVersions -contains $VersionUpper) {
         Write-Failure "A versao '$VersionUpper' e um snapshot historico anterior imutavel. Qualquer modificacao e TERMINANTEMENTE PROIBIDA."
         exit 1
@@ -175,12 +175,18 @@ try {
 
             # Origem dos arquivos: se VerifyOnly usa repo, se DryRun usa workspace
             $SourceApp = if ($VerifyOnly) { $SnapshotDest } else { $WorkspaceDir }
-            $SourceTest = if ($VerifyOnly) { $TestDest } else { $WorkspaceDir }
+            $CandidateWsTest = Join-Path $WorkspaceDir "auditoria\testes\$VersionUpper"
+            $SourceTest = if ($VerifyOnly) { $TestDest } elseif (Test-Path $CandidateWsTest) { $CandidateWsTest } else { $WorkspaceDir }
 
             Copy-Item -Path (Join-Path $SourceApp "index.html") -Destination (Join-Path $TempSnap "index.html") -Force
             if (Test-Path (Join-Path $SourceApp "css")) { Copy-Item -Path (Join-Path $SourceApp "css") -Destination (Join-Path $TempSnap "css") -Recurse -Force }
             if (Test-Path (Join-Path $SourceApp "js")) { Copy-Item -Path (Join-Path $SourceApp "js") -Destination (Join-Path $TempSnap "js") -Recurse -Force }
 
+            if (Test-Path $CandidateWsTest) {
+                Get-ChildItem -Path $CandidateWsTest -File | ForEach-Object {
+                    Copy-Item -Path $_.FullName -Destination (Join-Path $TempTest $_.Name) -Force
+                }
+            }
             Get-ChildItem -Path $SourceTest -Filter "*$VersionLower*" -File | ForEach-Object {
                 Copy-Item -Path $_.FullName -Destination (Join-Path $TempTest $_.Name) -Force
             }
@@ -283,24 +289,36 @@ try {
 
     # Sincronizar testes e scripts
     New-Item -ItemType Directory -Path $TestDest -Force | Out-Null
-    Get-ChildItem -Path $WorkspaceDir -Filter "*test*" -File | ForEach-Object {
-        Copy-Item -Path $_.FullName -Destination (Join-Path $TestDest $_.Name) -Force
-    }
-    Get-ChildItem -Path $WorkspaceDir -Filter "*run*" -File | ForEach-Object {
-        Copy-Item -Path $_.FullName -Destination (Join-Path $TestDest $_.Name) -Force
-    }
-    Get-ChildItem -Path $WorkspaceDir -Filter "*generate*" -File | ForEach-Object {
-        Copy-Item -Path $_.FullName -Destination (Join-Path $TestDest $_.Name) -Force
+    $WorkspaceTest = Join-Path $WorkspaceDir "auditoria\testes\$VersionUpper"
+    if (Test-Path $WorkspaceTest) {
+        Copy-Item -Path (Join-Path $WorkspaceTest "*") -Destination $TestDest -Recurse -Force
+    } else {
+        Get-ChildItem -Path $WorkspaceDir -Filter "*test*" -File | ForEach-Object {
+            Copy-Item -Path $_.FullName -Destination (Join-Path $TestDest $_.Name) -Force
+        }
+        Get-ChildItem -Path $WorkspaceDir -Filter "*run*" -File | ForEach-Object {
+            Copy-Item -Path $_.FullName -Destination (Join-Path $TestDest $_.Name) -Force
+        }
+        Get-ChildItem -Path $WorkspaceDir -Filter "*generate*" -File | ForEach-Object {
+            Copy-Item -Path $_.FullName -Destination (Join-Path $TestDest $_.Name) -Force
+        }
     }
 
     # Sincronizar relatorios da versao
     $WorkspaceReports = Join-Path $WorkspaceDir "auditoria\relatorios\$VersionUpper"
     if (Test-Path $WorkspaceReports) {
         New-Item -ItemType Directory -Path $ReportsDir -Force | Out-Null
-        Get-ChildItem -Path $WorkspaceReports -File | ForEach-Object {
-            Copy-Item -Path $_.FullName -Destination (Join-Path $ReportsDir $_.Name) -Force
-        }
+        Copy-Item -Path (Join-Path $WorkspaceReports "*") -Destination $ReportsDir -Recurse -Force
         Write-Success "Relatorios sincronizados em: $ReportsDir"
+    }
+
+    # Sincronizar entradas da versao se existirem
+    $WorkspaceEntradas = Join-Path $WorkspaceDir "auditoria\entradas\$VersionUpper"
+    $EntradasDest = Join-Path $RepoRoot "auditoria\entradas\$VersionUpper"
+    if (Test-Path $WorkspaceEntradas) {
+        New-Item -ItemType Directory -Path $EntradasDest -Force | Out-Null
+        Copy-Item -Path (Join-Path $WorkspaceEntradas "*") -Destination $EntradasDest -Recurse -Force
+        Write-Success "Entradas sincronizadas em: $EntradasDest"
     }
 
     Write-Success "Testes e relatorios sincronizados em: $TestDest"
@@ -398,6 +416,7 @@ try {
     Add-ScriptStaged "auditoria/snapshots/$VersionUpper"
     Add-ScriptStaged "auditoria/relatorios/$VersionUpper"
     Add-ScriptStaged "auditoria/testes/$VersionUpper"
+    Add-ScriptStaged "auditoria/entradas/$VersionUpper"
     
     # Forcar inclusao de logs de testes que possam ser capturados por *.log no .gitignore
     $VersionLogsDir = "auditoria/testes/$VersionUpper/logs"
@@ -424,12 +443,14 @@ try {
         "auditoria/snapshots/$VersionUpper/", "auditoria\snapshots\$VersionUpper\",
         "auditoria/relatorios/$VersionUpper/", "auditoria\relatorios\$VersionUpper\",
         "auditoria/testes/$VersionUpper/", "auditoria\testes\$VersionUpper\",
+        "auditoria/entradas/$VersionUpper/", "auditoria\entradas\$VersionUpper\",
         "auditoria/scripts/sync-audit.ps1", "auditoria\scripts\sync-audit.ps1"
     )
     foreach ($stagedFile in $StagedDiff) {
+        $cleanStaged = $stagedFile.Trim('"')
         $isAllowed = $false
         foreach ($prefix in $AllowedPrefixes) {
-            if ($stagedFile.StartsWith($prefix)) { $isAllowed = $true; break }
+            if ($cleanStaged.StartsWith($prefix)) { $isAllowed = $true; break }
         }
         if (-not $isAllowed) {
             Write-Failure "Arquivo fora do escopo da versao $VersionUpper detectado no staging: '$stagedFile'. Abortando!"

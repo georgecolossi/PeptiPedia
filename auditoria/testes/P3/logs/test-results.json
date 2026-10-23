@@ -1,0 +1,43 @@
+{
+  "generatedAt": "2026-10-23T06:24:23.303085+00:00",
+  "version": "P3",
+  "baseCommitReference": "ba1d74a58c21633e79e263da3877917f0291c849",
+  "environment": {
+    "pythonVersion": "3.14.5",
+    "playwrightVersion": "1.x",
+    "osPlatform": "Windows-11-10.0.26200-SP0",
+    "chromePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "chromeVersion": "Google Chrome 141 (V8 Engine)",
+    "baseGitTreeHash": "d3b69210e78bec4ee74d0f1fd0522fba987c0961",
+    "testedGitTreeHash": "d3b69210e78bec4ee74d0f1fd0522fba987c0961",
+    "testedSnapshotTreeSha": "675c33cfb0a1577a6a452b2ba14c5ed42aa90c49"
+  },
+  "scientificSuite": {
+    "runner": "run_p3_final.py",
+    "status": "PASSED",
+    "exitCode": 0,
+    "assertionsRun": 71,
+    "assertionsPassed": 71,
+    "assertionsFailed": 0,
+    "expectedAssertions": 71,
+    "startTime": "2026-10-23T06:24:09.926912+00:00",
+    "endTime": "2026-10-23T06:24:11.924972+00:00",
+    "durationSeconds": null
+  },
+  "e2eSuite": {
+    "runner": "test_e2e_playwright_p3.py",
+    "status": "PASSED",
+    "exitCode": 0,
+    "checksRun": 21,
+    "checksPassed": 21,
+    "checksFailed": 0,
+    "expectedChecks": 21,
+    "screenshotsSaved": 9,
+    "expectedScreenshots": 9,
+    "startTime": "2026-10-23T06:24:13.269430+00:00",
+    "endTime": "2026-10-23T06:24:21.790304+00:00",
+    "durationSeconds": null
+  },
+  "overallStatus": "PASSED",
+  "summary": "Homologação P3 concluída com 100% de aprovação. 71/71 asserções científicas e 21/21 verificações E2E aprovadas sem falhas. 9 screenshots dinâmicas geradas com sucesso."
+}

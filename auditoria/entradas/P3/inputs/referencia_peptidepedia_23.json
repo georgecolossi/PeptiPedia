@@ -1,0 +1,30 @@
+{
+  "source": "https://peptidepedia.org/all-peptides",
+  "names": [
+    "BPC-157",
+    "Semaglutide",
+    "Tirzepatide",
+    "TB-500",
+    "Retatrutide",
+    "GHK-Cu",
+    "Ipamorelin",
+    "CJC-1295",
+    "Sermorelin",
+    "PT-141",
+    "Melanotan II",
+    "AOD-9604",
+    "Tesamorelin",
+    "Liraglutide",
+    "Epithalon",
+    "Thymosin Alpha 1",
+    "Selank",
+    "Semax",
+    "GHRP-2",
+    "GHRP-6",
+    "SS-31",
+    "KPV",
+    "Survodutide"
+  ],
+  "all_have_existing_equivalent": true,
+  "note": "CJC-1295 exige distinção DAC versus não-DAC; Melanotan II já consta; identidade conferida por correspondência de nomes, não validação de todos os dados das fichas"
+}
