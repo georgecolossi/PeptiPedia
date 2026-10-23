@@ -1,0 +1,49 @@
+======================================================================
+SUÍTE E2E PLAYWRIGHT P2G.2.5 — REPRODUTIBILIDADE TOTAL
+Origem da Aplicação: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\snapshots\P2G25
+Diretório de Logs:   C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P2G25\logs
+Screenshots:         C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P2G25\screenshots
+======================================================================
+Servidor HTTP temporário ativo em http://127.0.0.1:49737/
+Validação HTTP 200 concluída com sucesso em todos os recursos essenciais (Porta: 49737)
+  [PASS] Grade renderiza exatamente 57 cards de compostos (obtido: 57)
+  [SCREENSHOT] Capturada: 01_catalog_overview.png
+  [PASS] Busca por 'Setmelanotida' filtra o card com sucesso
+  [SCREENSHOT] Capturada: 02_filter_and_search.png
+  [PASS] Semax: modal renderizado com sucesso
+  [PASS] Semax: apresentação nasal identificada
+  [PASS] Semax: liofilizado com botão 30 mg
+  [SCREENSHOT] Capturada: 03_semax_modal_multiformulation.png
+  [PASS] Liraglutida: modal renderizado
+  [PASS] Liraglutida: caneta pronta Victoza/Saxenda
+  [PASS] Liraglutida: NEGATIVE CHECK - sem menção a via nasal
+  [PASS] Liraglutida: liofilizado de pesquisa 10 mg
+  [SCREENSHOT] Capturada: 04_liraglutide_modal.png
+  [PASS] Teduglutida: modal renderizado
+  [PASS] Teduglutida: Gattex kit oficial isolado
+  [PASS] Teduglutida: liofilizado de pesquisa 5 mg
+  [SCREENSHOT] Capturada: 05_teduglutide_modal.png
+  [PASS] Setmelanotida: modal renderizado
+  [PASS] Setmelanotida: Imcivree multidose pronta
+  [PASS] Setmelanotida: liofilizado pesquisa 10 mg
+  [PASS] Setmelanotida: rótulo dinâmico de pó de bancada
+  [PASS] Setmelanotida: rótulo dinâmico de estabilidade em solução
+  [PASS] Setmelanotida: NEGATIVE CHECK - rótulo estático antigo ausente
+  [PASS] Setmelanotida: modal reflete autorização EMA 2026
+  [PASS] Setmelanotida: modal reflete diretrizes da RDC Anvisa nº 81/2008 para uso próprio sob prescrição
+  [PASS] Setmelanotida: NEGATIVE CHECK P2G.2.3/P2G.2.4/P2G.2.5 - Nenhuma referência à RDC 660/2022 (norma de Cannabis)
+  [SCREENSHOT] Capturada: 06_setmelanotide_modal_regulatory_updated.png
+  [PASS] Toast bloqueia prefill da solução pronta Imcivree com sucesso
+  [SCREENSHOT] Capturada: 07_setmelanotide_toast_blocking.png
+  [PASS] Cálculo validado: 10 mg / 2 mL para dose 500 mcg -> 10 UI (obtido: '10.0 UI')
+  [PASS] Concentração calculada correta: 5 mg/mL (obtido: '5.00 mg/mL (5000 mcg/mL)')
+  [PASS] Total de doses calculado correto: 20 doses (obtido: '20 doses')
+  [SCREENSHOT] Capturada: 08_calculator_reconstitution_valid.png
+  [PASS] Navegador executou sem erros JavaScript não esperados (Erros: [])
+
+======================================================================
+RESUMO E2E P2G.2.5: 26 VERIFICAÇÕES APROVADAS | 0 FALHAS
+======================================================================
+
+[SUCESSO ABSOLUTO]: Todas as 26 verificações E2E foram aprovadas com 100% de sucesso!
+Servidor HTTP e navegador encerrados com segurança.

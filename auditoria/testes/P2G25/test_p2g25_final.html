@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>PeptiPedia — Suíte de Homologação Final P2G.2.5</title>
+  <script>
+    window.addEventListener('error', (e) => {
+      const out = document.getElementById('output');
+      if (out) out.textContent += '[JS ERROR IN PAGE]: ' + e.message + ' at ' + e.filename + ':' + e.lineno + '\n';
+    });
+    window.lucide = {
+      createIcons: () => {}
+    };
+  </script>
+  <script src="js/peptides-data.js"></script>
+  <script src="js/stacks-data.js"></script>
+  <script src="js/studies-data.js"></script>
+  <script src="js/glossary-data.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/stability-data.js"></script>
+  <script src="js/stability.js"></script>
+</head>
+<body style="background:#0f172a;color:#f8fafc;font-family:monospace;padding:20px;">
+  <h1>PeptiPedia — Suíte de Homologação Final P2G.2.5 (V8 Engine)</h1>
+  <div id="status">Executando homologação final P2G.2.5...</div>
+  <pre id="output" style="background:#1e293b;padding:15px;border-radius:8px;border:1px solid #334155;white-space:pre-wrap;"></pre>
+
+  <!-- Container de Toasts -->
+  <div id="toast-container"></div>
+
+  <!-- Modal de Detalhes do Peptídeo -->
+  <div id="detail-modal" class="hidden">
+    <div id="detail-modal-content"></div>
+    <div id="modal-footer">
+      <button id="close-modal-btn">Fechar</button>
+      <button id="modal-fav-btn">Favorito</button>
+      <button id="modal-stack-toggle-btn">Stack</button>
+      <button id="modal-calc-btn">Calcular Reconstituição</button>
+      <button id="modal-view-studies-link">Ver Estudos</button>
+    </div>
+  </div>
+
+  <!-- Seção da Calculadora -->
+  <div id="calculator-section">
+    <input id="calc-vial-mg" type="number" />
+    <input id="calc-water-ml" type="number" />
+    <input id="calc-dose-input" type="number" />
+    <button id="calc-unit-mcg-btn">mcg</button>
+    <button id="calc-unit-mg-btn">mg</button>
+    <span id="calc-dose-unit-label">mcg</span>
+    <select id="calc-syringe-type">
+      <option value="u100">U-100 (1,0 mL / 100 UI)</option>
+      <option value="u50">U-50 (0,5 mL / 50 UI)</option>
+      <option value="u30">U-30 (0,3 mL / 30 UI)</option>
+    </select>
+    <input id="calc-vial-cost" type="number" />
+    <input id="calc-frequency" type="number" value="7" />
+
+    <div id="calc-res-units">—</div>
+    <div id="calc-res-volume">—</div>
+    <div id="calc-res-conc">—</div>
+    <div id="calc-res-unit-val">—</div>
+    <div id="calc-res-doses">—</div>
+    <div id="calc-res-days">—</div>
+    <div id="calc-res-cost">—</div>
+    <div id="calc-warning-box" class="hidden"></div>
+  </div>
+
+  <!-- Script da Aplicação -->
+  <script src="js/app.js"></script>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const out = document.getElementById('output');
+      let passed = 0;
+      let failed = 0;
+      const results = [];
+
+      function log(msg) {
+        out.textContent += msg + '\n';
+      }
+
+      function assert(condition, testName) {
+        if (condition) {
+          passed++;
+          log(`[PASS] ${testName}`);
+          results.push({ test: testName, pass: true });
+        } else {
+          failed++;
+          log(`[FAIL] ${testName}`);
+          results.push({ test: testName, pass: false });
+        }
+      }
+
+      try {
+        log("======================================================================");
+        log("INICIANDO SUÍTE DE HOMOLOGAÇÃO P2G.2.5 NO MOTOR V8 DO GOOGLE CHROME");
+        log("======================================================================\n");
+
+        // ---------------------------------------------------------------------
+        // GRUPO 1: SANEAMENTO FASE A (TEDUGLUTIDA E CALCULADORA) — 15 ASSERÇÕES
+        // ---------------------------------------------------------------------
+        log("--- GRUPO 1: Saneamento Fase A (Teduglutida e Calculadora) ---");
+        const tedu = PEPTIDES_DATABASE.find(p => p.id === 'teduglutide');
+        assert(!!tedu, "1.1 Teduglutida presente no banco de dados");
+        assert(tedu.contraindications.some(c => c.includes("FDA") && c.includes("Nenhuma contraindicação formal")), "1.2 Teduglutida: FDA Gattex registra formalmente contraindicações como None / Nenhuma");
+        assert(tedu.contraindications.some(c => c.includes("EMA") && c.includes("Malignidade")), "1.3 Teduglutida: EMA Revestive contraindica formalmente neoplasias");
+        assert(tedu.researchProtocols.administrationGuide.includes("eGFR < 60 mL/min/1,73 m²"), "1.4 Teduglutida: ajuste renal formalmente estabelecido como eGFR < 60 mL/min/1,73 m²");
+
+        const gutStudyDB = CLINICAL_STUDIES_DATABASE.find(s => s.id === 'study-teduglutide-gut');
+        assert(gutStudyDB.primaryEndpoint.includes("Graded Response Score") || gutStudyDB.primaryEndpoint.includes("GRS"), "1.5 Gut 2011: desfecho primário é Graded Response Score (GRS)");
+        assert(!gutStudyDB.keyFindings.toLowerCase().includes("saturação de receptores"), "1.6 Gut 2011: removida especulação sobre saturação de receptores");
+        assert(gutStudyDB.keyFindings.includes("p = 0,007") && gutStudyDB.keyFindings.includes("p = 0,161"), "1.7 Gut 2011: valores de p diferenciados (0,05 mg/kg p=0,007; 0,10 mg/kg p=0,161)");
+
+        assert(tedu.formulations && tedu.formulations.length === 2, "1.8 Teduglutida possui 2 formulações estruturadas");
+        const gattex = tedu.formulations[0];
+        assert(gattex.isOfficialMedicineKit === true && gattex.isReconstitutionVial === false, "1.9 Gattex isolado como kit oficial de bula sem seringa genérica");
+        assert(gattex.recoverableVolumeMl === 0.38 && gattex.recoverableDoseMg === 3.8, "1.10 Gattex 0,38 mL e 3,8 mg recuperáveis da solução 10 mg/mL");
+
+        // Calculadora
+        const calc = new PeptideCalculator();
+        calc.reset();
+        calc.setValues({ vialMg: 5, waterMl: 1, desiredDoseMcg: 6000, syringeType: 'u100' });
+        assert(!calc.calculate().isValid, "1.11 Rejeita dose em mcg maior que o total do frasco (6000 mcg > 5000 mcg)");
+
+        calc.reset();
+        calc.setValues({ vialMg: 1, waterMl: 1, desiredDoseMcg: 1000, syringeType: 'u50' });
+        assert(!calc.calculate().isValid, "1.12 Rejeita volume da dose excedendo a capacidade da seringa U-50 (1,0 mL > 0,5 mL)");
+
+        calc.reset();
+        calc.setValues({ vialMg: Infinity, waterMl: 1, desiredDoseMcg: 500, syringeType: 'u100' });
+        assert(calc.vialMg === null, "1.13 Rejeita entrada Infinity no frasco");
+
+        calc.reset();
+        calc.setValues({ vialMg: -5, waterMl: 1, desiredDoseMcg: 500, syringeType: 'u100' });
+        assert(calc.vialMg === null, "1.14 Rejeita massa negativa no frasco");
+
+        calc.reset();
+        calc.setValues({ vialMg: 10, waterMl: 2.0, desiredDoseMcg: 1000, syringeType: 'u100' });
+        const validCalc = calc.calculate();
+        assert(validCalc.isValid && (parseFloat(validCalc.unitsOnSyringe) === 20 || validCalc.exactUnitsNumber === 20), "1.15 Cálculo válido U-100: 10 mg / 2 mL, dose 1000 mcg -> 20 UI");
+
+        // ---------------------------------------------------------------------
+        // GRUPO 2: SETMELANOTIDA IDENTIDADE E FORMULAÇÃO IMCIVREE — 14 ASSERÇÕES
+        // ---------------------------------------------------------------------
+        log("\n--- GRUPO 2: Setmelanotida Identidade Química e Formulação Pronta ---");
+        const setm = PEPTIDES_DATABASE.find(p => p.id === 'setmelanotide');
+        assert(!!setm, "2.1 Setmelanotida presente no banco de dados");
+        assert(setm.molecularFormula === "C49H68N18O9S2", "2.2 Fórmula molecular canônica C49H68N18O9S2");
+        assert(setm.molecularWeight.includes("1117.3 Da") || setm.molecularWeight.includes("1117,3"), "2.3 Peso molecular ~1117,3 Da");
+        assert(setm.structure.includes("CID 11993702") && setm.structure.includes("base anidra"), "2.4 Base anidra associada ao PubChem CID 11993702");
+        assert(setm.structure.includes("CID 155491122") && setm.structure.includes("acetato"), "2.5 Sal acetato medicinal associado ao PubChem CID 155491122");
+        assert(setm.structure.includes("ponte dissulfeto") && setm.structure.includes("Cys2 e Cys8"), "2.6 Estrutura química documenta ponte dissulfeto entre Cys2 e Cys8");
+        assert(setm.sequence === "Ac-Arg-c[Cys-D-Ala-His-D-Phe-Arg-Trp-Cys]-NH2", "2.7 Sequência peptídica canônica documentada");
+
+        const imcivree = setm.formulations[0];
+        assert(imcivree.id === "setmelanotide-ready-imcivree-10mg", "2.8 ID Imcivree correto");
+        assert(imcivree.formType === "multidose_vial" && imcivree.isReconstitutionVial === false, "2.9 Imcivree é multidose_vial pronta sem reconstituição");
+        assert(imcivree.nominalVialMg === 10 && imcivree.recoverableVolumeMl === 1.0, "2.10 Imcivree contém 10 mg em 1,0 mL (10 mg/mL)");
+        assert(imcivree.excipientsPreservatives.includes("Álcool benzílico (10 mg/mL)") && imcivree.excipientsPreservatives.includes("fenol (5 mg/mL)"), "2.11 Conservantes oficiais são álcool benzílico (10 mg/mL) e fenol (5 mg/mL)");
+        assert(imcivree.excipientsPreservatives.includes("carboximetilcelulose") && imcivree.excipientsPreservatives.includes("edetato") && imcivree.excipientsPreservatives.includes("manitol") && imcivree.excipientsPreservatives.includes("mPEG-DSPE"), "2.12 Excipientes incluem CMC sódica, EDTA dissódico, manitol e derivado mPEG-DSPE");
+        assert(imcivree.inUseStability.includes("30 dias") && imcivree.inUseStability.includes("25°C"), "2.13 Estabilidade após abertura é de até 30 dias (2-25°C)");
+        assert(imcivree.unopenedStability.includes("2°C e 8°C"), "2.14 Estabilidade fechada oficial entre 2°C e 8°C na embalagem original");
+
+        // ---------------------------------------------------------------------
+        // GRUPO 3: SETMELANOTIDA MARCO REGULATÓRIO VIGENTE (FDA, EMA 2026, ANVISA) — 10 ASSERÇÕES
+        // ---------------------------------------------------------------------
+        log("\n--- GRUPO 3: Setmelanotida Marco Regulatório Vigente (FDA, EMA 2026, Anvisa) ---");
+        assert(setm.protocolEvidenceNote.includes("abril de 2026") && setm.protocolEvidenceNote.includes("NDA 213793"), "3.1 FDA 2026: documenta aprovação formal de abril de 2026 (NDA 213793)");
+        assert(setm.protocolEvidenceNote.includes("FDA (EUA)") && setm.protocolEvidenceNote.includes("Obesidade Hipotalâmica Adquirida (AHO) a partir de 4 anos"), "3.2 FDA 2026: aprovação formal para Obesidade Hipotalâmica Adquirida a partir de 4 anos");
+        assert(setm.protocolEvidenceNote.includes("EMA (União Europeia)") && setm.protocolEvidenceNote.includes("Obesidade Hipotalâmica Adquirida") && setm.protocolEvidenceNote.includes("4 anos"), "3.3 EMA 2026: autorização formal ampliada para Obesidade Hipotalâmica Adquirida a partir de 4 anos (Decisão C(2026) 3032)");
+        assert(setm.protocolEvidenceNote.includes("Síndrome de Bardet-Biedl (BBS) a partir de 2 anos"), "3.4 BBS aprovada a partir de 2 anos tanto na FDA quanto na EMA");
+        assert(setm.protocolEvidenceNote.includes("POMC") && setm.protocolEvidenceNote.includes("2 anos"), "3.5 POMC/PCSK1/LEPR aprovado a partir de 2 anos tanto na FDA quanto na EMA");
+        assert(setm.protocolEvidenceNote.includes("Anvisa") && setm.protocolEvidenceNote.includes("sem registro comercial deferido"), "3.6 Anvisa: confirmação oficial de ausência de registro sanitário comercial deferido no sistema de medicamentos");
+        assert(setm.protocolEvidenceNote.includes("RDC Anvisa nº 81/2008") && setm.protocolEvidenceNote.includes("prescrição médica"), "3.7 Anvisa: importação por pessoa física regida pela RDC Anvisa nº 81/2008 sob prescrição médica para uso próprio");
+        assert(setm.protocolEvidenceNote.includes("Portaria SVS/MS nº 344/98") || setm.protocolEvidenceNote.includes("Portaria 344/98"), "3.8 Anvisa: ausência de exigência de controle especial (Portaria 344/98)");
+        assert(setm.protocolEvidenceNote.includes("22/10/2026") && setm.protocolEvidenceNote.includes("Consulta de Medicamentos da Anvisa"), "3.9 Anvisa P2G.2.4: consulta oficial com data documentada (22/10/2026) e termos de busca especificados");
+        assert((setm.protocolEvidenceNote.includes("cadeia de frio") || setm.protocolEvidenceNote.includes("2°C a 8°C")) && (setm.protocolEvidenceNote.includes("Correios") || setm.protocolEvidenceNote.includes("postal")) && (setm.protocolEvidenceNote.includes("courier") || setm.protocolEvidenceNote.includes("remessa expressa")) && (setm.protocolEvidenceNote.includes("Licença de Importação") || setm.protocolEvidenceNote.includes("LPCO")), "3.10 Anvisa P2G.2.5: exigência estrita de cadeia de frio (2°C a 8°C), inelegibilidade postal convencional sem controle térmico e distinção entre courier qualificado e LI/LPCO Siscomex");
+
+        // ---------------------------------------------------------------------
+        // GRUPO 4: SEGURANÇA CLÍNICA, ALERTAS E POSOLOGIA — 16 ASSERÇÕES
+        // ---------------------------------------------------------------------
+        log("\n--- GRUPO 4: Segurança Clínica, Alertas e Posologia ---");
+        assert(setm.contraindications.length === 1 && setm.contraindications[0].includes("Hipersensibilidade"), "4.1 Contraindicação formal restrita a hipersensibilidade à setmelanotida ou excipientes");
+        assert(setm.unapprovedIndicationsNotice && setm.unapprovedIndicationsNotice.includes("não são contraindicações farmacológicas formais"), "4.2 Obesidade comum classificada tecnicamente como limitação de uso / indicação não aprovada");
+        assert(setm.criticalAlert.includes("álcool benzílico") && setm.criticalAlert.includes("gasping syndrome"), "4.3 Alerta toxicológico sobre álcool benzílico em neonatos (gasping syndrome)");
+        assert(setm.criticalAlert.includes("INSUFICIÊNCIA ADRENAL AGUDA") && setm.criticalAlert.includes("OBESIDADE HIPOTALÂMICA ADQUIRIDA"), "4.4 Alerta sobre insuficiência adrenal aguda em Obesidade Hipotalâmica Adquirida");
+        assert(setm.criticalAlert.includes("DESEQUILÍBRIO DE SÓDIO") && setm.criticalAlert.includes("DIABETES INSIPIDUS CENTRAL"), "4.5 Alerta sobre desequilíbrio de sódio em AHO com diabetes insipidus central");
+        assert(setm.criticalAlert.includes("priapismo") && setm.criticalAlert.includes("4 horas"), "4.6 Alerta sobre ereções prolongadas (> 4 horas) e priapismo");
+        assert(setm.criticalAlert.includes("TRANSTORNOS PSIQUIÁTRICOS") && setm.criticalAlert.includes("depressão"), "4.7 Alerta clínico sobre depressão e risco de ideação suicida");
+
+        const adminGuide = setm.researchProtocols.administrationGuide;
+        assert(adminGuide.includes("0,5 mg (0,05 mL) 1x/dia por 2 semanas") && adminGuide.includes("Obesidade Hipotalâmica Adquirida"), "4.8 AHO: dose inicial oficial é 0,5 mg/dia (0,05 mL) para ≥4 anos");
+        assert(adminGuide.includes("dose inicial de 2,0 mg (0,2 mL) 1x/dia por 2 semanas") && adminGuide.includes("≥12 anos"), "4.9 BBS/POMC: dose inicial oficial para ≥12 anos é 2,0 mg/dia (0,2 mL)");
+        assert(adminGuide.toLowerCase().includes("crianças de 6 a <12 anos") && adminGuide.includes("1,0 mg (0,1 mL)"), "4.10 BBS/POMC: dose inicial para 6 a <12 anos é 1,0 mg/dia (0,1 mL)");
+        assert(adminGuide.toLowerCase().includes("crianças de 2 a <6 anos") && adminGuide.includes("0,5 mg (0,05 mL)"), "4.11 BBS/POMC: dose inicial para 2 a <6 anos é 0,5 mg/dia (0,05 mL)");
+        assert(adminGuide.includes("leve (eGFR 60-89") && adminGuide.includes("moderado (eGFR 30-59") && adminGuide.includes("nenhuma alteração posológica é necessária"), "4.12 Ajuste Renal: Comprometimento leve e moderado NÃO requer alteração posológica");
+        assert(adminGuide.includes("grave (eGFR 15-29") && adminGuide.includes("NÃO é recomendado em AHO"), "4.13 Ajuste Renal: Insuficiência grave NÃO recomendada em AHO");
+        assert(adminGuide.includes("1,5 mg/dia (≥12 anos)") && adminGuide.includes("1,0 mg/dia (6 a <12 anos"), "4.14 Ajuste Renal: Em BBS/POMC grave, dose de manutenção é 1,5 mg/dia (≥12a) ou 1,0 mg/dia (6 a <12a)");
+        assert(adminGuide.includes("terminal (eGFR <15") && adminGuide.includes("NÃO é recomendado"), "4.15 Ajuste Renal: Doença renal terminal (<15) NÃO recomendada");
+        assert(adminGuide.includes("<5%") && adminGuide.includes("12-16 semanas"), "4.16 Critério de interrupção se perda de peso <5% às 12-16 semanas");
+
+        // ---------------------------------------------------------------------
+        // GRUPO 5: LIOFILIZADO DE BANCADA E RÓTULOS DINÂMICOS — 7 ASSERÇÕES
+        // ---------------------------------------------------------------------
+        log("\n--- GRUPO 5: Liofilizado de Bancada e Rótulos Dinâmicos ---");
+        const setmResearch = setm.formulations[1];
+        assert(setmResearch.id === "setmelanotide-lyophilized-research" && setmResearch.formType === "lyophilized_vial", "5.1 Liofilizado identificado separadamente como insumo de bancada");
+        assert(setmResearch.compatibilityNotes.includes("Nenhum diluente específico") && setmResearch.compatibilityNotes.includes("validação farmacotécnica oficial"), "5.2 Liofilizado não afirma obrigatoriedade de diluente BAC 0,9%");
+        assert(setmResearch.compatibilityNotes.includes("Não possui testes de esterilidade farmacopeica"), "5.3 Liofilizado não presume esterilidade farmacopeica");
+        assert(setmResearch.compatibilityNotes.includes("conversões matemáticas teóricas"), "5.4 Calculadora do PeptiPedia restrita a conversões teóricas");
+        assert(setm.reconstitution?.storageUnmixedLabel === "Armazenamento do Pó (Liofilizado de Pesquisa):", "5.5 storageUnmixedLabel configurado para isolar liofilizado de bancada");
+        assert(setm.reconstitution?.storageMixedLabel === "Estabilidade em Uso / Solução:", "5.6 storageMixedLabel configurado para isolar estabilidade de solução");
+        assert(setm.reconstitution?.storageUnmixed.includes("-20°C") && setm.reconstitution?.storageUnmixed.includes("Não confundir com a solução comercial pronta Imcivree"), "5.7 storageUnmixed explicita -20°C para pesquisa e rejeita confusão com Imcivree");
+
+        // ---------------------------------------------------------------------
+        // GRUPO 6: ENSAIOS CLÍNICOS PIVOTAIS (HAQQ 2022 E CLÉMENT 2020) — 21 ASSERÇÕES
+        // ---------------------------------------------------------------------
+        log("\n--- GRUPO 6: Ensaios Clínicos Pivatais ---");
+        const studyBbs = CLINICAL_STUDIES_DATABASE.find(s => s.id === 'study-setmelanotide-bbs');
+        assert(!!studyBbs, "6.1 Estudo study-setmelanotide-bbs presente em CLINICAL_STUDIES_DATABASE");
+        assert(studyBbs.pmid === "36356613", "6.2 Estudo BBS possui PMID 36356613 (Haqq et al. Lancet 2022)");
+        assert(studyBbs.doi === "10.1016/S2213-8587(22)00277-7", "6.3 Estudo BBS possui DOI 10.1016/S2213-8587(22)00277-7");
+        assert(studyBbs.studyDesign.includes("12 centros clínicos de 5 países"), "6.4 Estudo BBS realizado em 12 centros clínicos de 5 países");
+        assert(studyBbs.studyDesign.includes("Estados Unidos, Canadá, Reino Unido, França e Espanha"), "6.5 Países corretos documentados (EUA, Canadá, Reino Unido, França, Espanha)");
+        assert(studyBbs.sampleSize.includes("A população FAS pivotal elegível"), "6.6 População FAS primária elegível descrita com rigor");
+        assert(studyBbs.sampleSize.includes("A população FAS pivotal elegível para o desfecho primário (≥12 anos) compreendeu 31 participantes (28 BBS e 3 Alström)"), "6.7 FAS primário ≥12 anos é de exatamente 31 pacientes (28 BBS e 3 Alström)");
+        assert(studyBbs.sampleSize.includes("38 pacientes randomizados 1:1 (32 com Síndrome de Bardet-Biedl e 6 com Síndrome de Alström"), "6.8 Coorte pivotal de 38 pacientes randomizados (32 BBS e 6 Alström)");
+        assert(studyBbs.sampleSize.includes("Coorte suplementar com 14 pacientes adicionais (12 BBS e 2 Alström)"), "6.9 Coorte suplementar com 14 pacientes: 12 BBS e 2 Alström");
+        assert(studyBbs.sampleSize.includes("52 pacientes incluídos no ensaio ampliado (44 BBS e 8 Alström)"), "6.10 Ensaio ampliado total de 52 pacientes (44 BBS e 8 Alström)");
+        assert(studyBbs.studyDesign.includes("14 semanas") && studyBbs.studyDesign.includes("extensão aberta"), "6.11 Desenho com 14 semanas duplo-cegas e extensão aberta");
+        assert(studyBbs.keyFindings.includes("32,3%") && studyBbs.keyFindings.includes("p = 0,0006") && studyBbs.keyFindings.includes("imputação múltipla"), "6.12 Desfecho primário FAS ≥12 anos é 32,3% sob regra de Rubin");
+        assert(studyBbs.keyFindings.includes("10 respondedores observados") && studyBbs.keyFindings.includes("todos os quais eram pacientes com BBS"), "6.13 Todos os 10 respondedores observados eram BBS");
+        assert(studyBbs.keyFindings.includes("-2,4% vs -0,3%"), "6.14 Semana 14 duplo-cega: perda ponderal -2,4% vs -0,3%");
+        assert(studyBbs.keyFindings.includes("71,4% vs 20,2%"), "6.15 Redução de fome semana 14: 71,4% vs 20,2% estimado por modelo");
+        assert(studyBbs.keyFindings.includes("nenhum dos 3 pacientes da população FAS primária") && studyBbs.keyFindings.includes("0 de 6 pacientes da coorte pivotal total randomizada"), "6.16 Alström estratificado (0 de 3 FAS e 0 de 6 pivotal) classificado como inconclusivo");
+
+        const studyPomc = CLINICAL_STUDIES_DATABASE.find(s => s.id === 'study-setmelanotide-pomc-lepr');
+        assert(!!studyPomc, "6.17 Estudo study-setmelanotide-pomc-lepr presente em CLINICAL_STUDIES_DATABASE");
+        assert(studyPomc.pmid === "33137293", "6.18 Estudo POMC/LEPR possui PMID 33137293");
+        assert(studyPomc.doi === "10.1016/S2213-8587(20)30364-8", "6.19 Estudo POMC/LEPR possui DOI 10.1016/S2213-8587(20)30364-8");
+        assert(studyPomc.studyDesign.toLowerCase().includes("retirada"), "6.20 Estudo POMC/LEPR esclarece desenho com período de retirada");
+        assert(studyPomc.keyFindings.includes("80%") && studyPomc.keyFindings.includes("45%"), "6.21 Estudo POMC/LEPR documenta resposta de 80% POMC e 45% LEPR");
+
+        // ---------------------------------------------------------------------
+        // GRUPO 7: NEGATIVE CHECKS ESTRITOS (P2G.2, P2G.2.1, P2G.2.2, P2G.2.3, P2G.2.4, P2G.2.5) — 25 ASSERÇÕES
+        // ---------------------------------------------------------------------
+        log("\n--- GRUPO 7: Negative Checks Estritos ---");
+        // P2G.2 negative checks
+        assert(!JSON.stringify(setm).includes("56841936"), "7.1 NEGATIVE CHECK: Dossiê NÃO possui CID 56841936");
+        assert(!JSON.stringify(studyBbs).includes("56841936"), "7.2 NEGATIVE CHECK: Estudo BBS NÃO possui CID 56841936");
+        assert(studyBbs.pmid !== "35468323", "7.3 NEGATIVE CHECK: study-setmelanotide-bbs NÃO possui PMID 35468323");
+        assert(!JSON.stringify(setm).includes("35468323"), "7.4 NEGATIVE CHECK: Dossiê peptides-data.js NÃO possui PMID 35468323");
+        assert(!studyBbs.sampleSize.includes("66 pacientes com idade ≥6 anos"), "7.5 NEGATIVE CHECK: Amostra NÃO é descrita genericamente como 66 pacientes");
+        assert(!studyBbs.keyFindings.includes("0 de 12 respondedores"), "7.6 NEGATIVE CHECK: Alström pivotal NÃO é descrito como 0 de 12");
+        assert(!studyBbs.keyFindings.includes("comprovou ausência biológica"), "7.7 NEGATIVE CHECK: Ensaio NÃO alega ter comprovado ineficácia biológica");
+        assert(setm.molecularFormula !== "C49H71N19O9S2" && !JSON.stringify(setm).includes("C49H71N19O9S2"), "7.8 NEGATIVE CHECK: Setmelanotida NÃO contém fórmula C49H71N19O9S2");
+        assert(!JSON.stringify(imcivree).toLowerCase().includes("cresol"), "7.9 NEGATIVE CHECK: Imcivree NÃO cita m-cresol");
+        assert(!JSON.stringify(setm).toLowerCase().includes("cresol"), "7.10 NEGATIVE CHECK: Dossiê global NÃO cita m-cresol");
+        assert(!adminGuide.includes("Dose inicial em Obesidade Hipotalâmica Adquirida (AHO): 1,0 mg") && !adminGuide.includes("Dose inicial em Obesidade Hipotalâmica Adquirida (AHO): 2,0 mg"), "7.11 NEGATIVE CHECK: AHO NÃO inicia com 1,0 mg ou 2,0 mg");
+        assert(!studyBbs.keyFindings.includes("versus 0% placebo") && !studyBbs.keyFindings.includes("vs 0% (0 de 34) no grupo controle"), "7.12 NEGATIVE CHECK: BBS NÃO descreve placebo paralelo de 52 semanas");
+        assert(!adminGuide.includes("reduzir dose em insuficiência renal leve") && !adminGuide.includes("reduzir dose em insuficiência renal moderada"), "7.13 NEGATIVE CHECK: Comprometimento renal leve/moderado NÃO sofre redução");
+
+        // P2G.2.1 negative checks
+        assert(!studyBbs.sampleSize.includes("37 pacientes") && !studyBbs.sampleSize.includes("31 BBS + 6 Alström = 37"), "7.14 NEGATIVE CHECK P2G.2.1: Rejeita soma errônea de 37 no FAS primário");
+        assert(!JSON.stringify(setm).includes("37 pacientes"), "7.15 NEGATIVE CHECK P2G.2.1: Dossiê NÃO contém '37 pacientes'");
+        assert(!studyBbs.studyDesign.includes("14 centros") && !studyBbs.studyDesign.includes("7 países"), "7.16 NEGATIVE CHECK P2G.2.1: Rejeita 14 centros ou 7 países");
+        assert(!studyBbs.studyDesign.includes("Alemanha") && !studyBbs.studyDesign.includes("Holanda"), "7.17 NEGATIVE CHECK P2G.2.1: Rejeita menção a centros na Alemanha ou Holanda");
+        assert(!studyBbs.keyFindings.includes("(2/10)"), "7.18 NEGATIVE CHECK P2G.2.1: Rejeita fração artificial (2/10)");
+        assert(!JSON.stringify(setm.clinicalStudies).includes("(2/10)"), "7.19 NEGATIVE CHECK P2G.2.1: Dossiê clínico NÃO contém fração (2/10)");
+
+        // P2G.2.2 & P2G.2.3 regulatory negative checks
+        assert(!setm.protocolEvidenceNote.includes("Na EMA e Anvisa, a indicação pediátrica iniciou historicamente aos 6 anos"), "7.20 NEGATIVE CHECK P2G.2.2: Rejeita afirmação obsoleta de que EMA é restrita a 6 anos");
+        assert(!setm.protocolEvidenceNote.includes("permanecendo não aprovadas / não verificadas na EMA"), "7.21 NEGATIVE CHECK P2G.2.2: Rejeita afirmação de que AHO não é aprovada na EMA");
+        assert(!setm.protocolEvidenceNote.includes("Anvisa 2024") && !setm.protocolEvidenceNote.includes("aprovado na Anvisa"), "7.22 NEGATIVE CHECK P2G.2.2: Rejeita registro comercial ativo ou aprovado pela Anvisa");
+        assert(!setm.protocolEvidenceNote.includes("autorização prévia da agência sanitária") && !setm.protocolEvidenceNote.includes("exige universalmente autorização prévia"), "7.23 NEGATIVE CHECK P2G.2.3: Rejeita afirmação de exigência universal de autorização prévia individual na Anvisa para importação por pessoa física");
+        assert(!JSON.stringify(setm).includes("660/2022") && !JSON.stringify(setm).toLowerCase().includes("cannabis"), "7.24 NEGATIVE CHECK P2G.2.3: Rejeita integralmente qualquer menção ou aplicação da RDC 660/2022 (norma de Cannabis) no dossiê de setmelanotida");
+
+        // P2G.2.4 regulatory negative checks
+        assert(!setm.protocolEvidenceNote.includes("seguem um único procedimento") && !setm.protocolEvidenceNote.includes("todas as modalidades seguem") && !setm.protocolEvidenceNote.includes("elegível para via postal comum sem refrigeração"), "7.25 NEGATIVE CHECK P2G.2.5: Rejeita alegação de que todas as modalidades seguem um único procedimento ou que via postal comum sem refrigeração é elegível");
+
+        // ---------------------------------------------------------------------
+        // GRUPO 8: MULTIFORMULAÇÕES ESTRUTURADAS E CATÁLOGO — 8 ASSERÇÕES
+        // ---------------------------------------------------------------------
+        log("\n--- GRUPO 8: Multiformulações Estruturadas (Semax, Selank, Lira, Tedu, Setm) ---");
+        const multiFormCompounds = PEPTIDES_DATABASE.filter(p => Array.isArray(p.formulations) && p.formulations.length > 1);
+        const multiIds = multiFormCompounds.map(p => p.id).sort();
+        const expectedMultiIds = ['liraglutide', 'selank', 'semax', 'setmelanotide', 'teduglutide'].sort();
+
+        assert(multiFormCompounds.length === 5, "8.1 Total de compostos multiformulação é exatamente 5");
+        assert(JSON.stringify(multiIds) === JSON.stringify(expectedMultiIds), "8.2 Os 5 multiformulação são rigorosamente Semax, Selank, Liraglutida, Teduglutida e Setmelanotida");
+
+        const semaglutide = PEPTIDES_DATABASE.find(p => p.id === 'semaglutide');
+        const tirzepatide = PEPTIDES_DATABASE.find(p => p.id === 'tirzepatide');
+        const retatrutide = PEPTIDES_DATABASE.find(p => p.id === 'retatrutide');
+        assert(!semaglutide.formulations && !tirzepatide.formulations && !retatrutide.formulations, "8.3 NEGATIVE CHECK: Semaglutida, Tirzepatida e Retatrutida NÃO possuem array formulations (são monofórmula)");
+
+        const semaxP = PEPTIDES_DATABASE.find(p => p.id === 'semax');
+        const selankP = PEPTIDES_DATABASE.find(p => p.id === 'selank');
+        const liraP = PEPTIDES_DATABASE.find(p => p.id === 'liraglutide');
+        const teduP = PEPTIDES_DATABASE.find(p => p.id === 'teduglutide');
+        const setmP = PEPTIDES_DATABASE.find(p => p.id === 'setmelanotide');
+
+        assert(semaxP.formulations.length === 3, "8.4 Semax possui exatamente 3 apresentações (liofilizado, gotas 0,1%, gotas 1,0%)");
+        assert(selankP.formulations.length === 2, "8.5 Selank possui exatamente 2 apresentações (liofilizado, gotas 0,15%)");
+        assert(liraP.formulations.length === 3, "8.6 Liraglutida possui exatamente 3 apresentações (liofilizado, Victoza, Saxenda)");
+        assert(teduP.formulations.length === 2, "8.7 Teduglutida possui exatamente 2 apresentações (Gattex kit, liofilizado)");
+        assert(setmP.formulations.length === 2, "8.8 Setmelanotida possui exatamente 2 apresentações (Imcivree solução pronta, liofilizado), totalizando 12 no catálogo");
+
+        // ---------------------------------------------------------------------
+        // GRUPO 9: INTERFACE REAL, MODAIS E PREFILL — 14 ASSERÇÕES
+        // ---------------------------------------------------------------------
+        log("\n--- GRUPO 9: Interface Real e Modais ---");
+        const modalEl = document.getElementById('detail-modal');
+        const modalContent = document.getElementById('detail-modal-content');
+        const toastContainer = document.getElementById('toast-container');
+
+        // Modal Semax
+        window.openPeptideModal('semax');
+        assert(!modalEl.classList.contains('hidden'), "9.1 Modal Semax aberto com sucesso");
+        assert(modalContent.innerHTML.includes("Carregar massa (30 mg) na calculadora"), "9.2 Semax liofilizado exibe botão calculadora");
+
+        // Modal Selank
+        window.openPeptideModal('selank');
+        assert(modalContent.innerHTML.includes("Carregar massa (10 mg) na calculadora"), "9.3 Selank liofilizado exibe botão calculadora");
+
+        // Modal Liraglutida
+        window.openPeptideModal('liraglutide');
+        assert(modalContent.innerHTML.includes("Caneta subcutânea pronta para uso (sem reconstituição)"), "9.4 Victoza/Saxenda exibem caneta pronta");
+        assert(!modalContent.innerHTML.includes("Solução nasal pronta"), "9.5 Liraglutida não exibe texto de solução nasal");
+
+        // Modal Teduglutida
+        window.openPeptideModal('teduglutide');
+        assert(modalContent.innerHTML.includes("Kit oficial de bula (0,38 mL recuperável / seringa do fabricante)"), "9.6 Gattex exibe badge de kit oficial de bula");
+
+        // Modal Setmelanotida
+        window.openPeptideModal('setmelanotide');
+        assert(!modalEl.classList.contains('hidden'), "9.7 Modal Setmelanotida aberto com sucesso");
+        assert(modalContent.innerHTML.includes("Setmelanotida"), "9.8 Modal contém título Setmelanotida");
+        assert(modalContent.innerHTML.includes("Solução injetável pronta para uso (multidose / sem reconstituição)"), "9.9 Imcivree exibe badge de solução pronta multidose");
+        assert(modalContent.innerHTML.includes("Carregar massa (10 mg) na calculadora"), "9.10 Setmelanotida frasco pesquisa exibe botão calculadora 10 mg");
+
+        // Rótulos dinâmicos de armazenamento
+        assert(modalContent.innerHTML.includes("Armazenamento do Pó (Liofilizado de Pesquisa):"), "9.11 Modal exibe rótulo dinâmico 'Armazenamento do Pó (Liofilizado de Pesquisa):'");
+        assert(modalContent.innerHTML.includes("Estabilidade em Uso / Solução:"), "9.12 Modal exibe rótulo dinâmico 'Estabilidade em Uso / Solução:'");
+        assert(!modalContent.innerHTML.includes(">Armazenamento Liofilizado:"), "9.13 NEGATIVE CHECK: Modal NÃO exibe rótulo estático antigo genérico");
+
+        // Bloqueio de prefill para Imcivree
+        const currentModalCalcBtn = document.getElementById('modal-calc-btn');
+        if (currentModalCalcBtn) currentModalCalcBtn.click();
+        assert(toastContainer.innerText.includes("não requer reconstituição"), "9.14 Bloqueio de prefill Imcivree pronta gera toast explicativo");
+
+        // ---------------------------------------------------------------------
+        // RESUMO FINAL
+        // ---------------------------------------------------------------------
+        log("\n======================================================================");
+        log(`RESUMO DA EXECUÇÃO: TOTAL ${passed + failed} ASSERÇÕES | ${passed} APROVADAS | ${failed} FALHAS`);
+        log("======================================================================");
+
+        document.getElementById('status').innerText = failed === 0 
+          ? `STATUS: 100% APROVADO (${passed}/${passed} asserções). 0 FALHOU.`
+          : `STATUS: FALHA (${failed} asserções reprovadas de ${passed + failed}).`;
+
+      } catch (err) {
+        log(`[ERRO CRÍTICO NA EXECUÇÃO]: ${err.message}\n${err.stack}`);
+        document.getElementById('status').innerText = `ERRO CRÍTICO: ${err.message}`;
+      }
+    });
+  </script>
+</body>
+</html>

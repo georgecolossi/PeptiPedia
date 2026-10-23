@@ -1,11 +1,11 @@
 # ==============================================================================
 # PeptiPedia - Script Permanente de Sincronizacao de Auditoria (sync-audit.ps1)
-# Versao 2.2 (Microetapa P2G.2.4 — Encerramento de Rastreabilidade e Checkout Limpo)
+# Versao 2.3 (Microetapa P2G.2.5 — Encerramento de Rastreabilidade e Checkout Limpo)
 # ==============================================================================
 # Uso:
-#   .\auditoria\scripts\sync-audit.ps1 -Version "P2G24" -Description "encerramento auditoria rastreabilidade e checkout limpo"
-#   .\auditoria\scripts\sync-audit.ps1 -Version "P2G24" -DryRun
-#   .\auditoria\scripts\sync-audit.ps1 -Version "P2G24" -VerifyOnly
+#   .\auditoria\scripts\sync-audit.ps1 -Version "P2G25" -Description "encerramento auditoria rastreabilidade e checkout limpo"
+#   .\auditoria\scripts\sync-audit.ps1 -Version "P2G25" -DryRun
+#   .\auditoria\scripts\sync-audit.ps1 -Version "P2G25" -VerifyOnly
 # ==============================================================================
 
 [CmdletBinding()]
@@ -78,7 +78,7 @@ if (-not $WorkspaceDir) {
 Write-Host "  Workspace Ativo:    $WorkspaceDir"
 
 if (-not $Version) {
-    Write-Failure "Parametro -Version obrigatorio (ex.: -Version P2G24)"
+    Write-Failure "Parametro -Version obrigatorio (ex.: -Version P2G25)"
     exit 1
 }
 $VersionUpper = $Version.ToUpper()
@@ -224,7 +224,7 @@ try {
             Write-Failure "Violacao de nao-destrutibilidade: Branch foi modificada de $PreGitBranch para $PostGitBranch!"
             exit 1
         }
-        if ($PostGitStatus -ne $PreGitStatus) {
+        if (($PostGitStatus -join "`n") -ne ($PreGitStatus -join "`n")) {
             Write-Failure "Violacao de nao-destrutibilidade: Estado do indice ou working tree Git foi modificado durante o modo seguro!"
             Write-Host "Diff de status:"
             Write-Host $PostGitStatus
@@ -263,6 +263,7 @@ try {
         $srcFolder = Join-Path $WorkspaceDir $f
         if (Test-Path $srcFolder) {
             $dstFolder = Join-Path $SnapshotDest $f
+            if (Test-Path $dstFolder) { Remove-Item -Path $dstFolder -Recurse -Force }
             Copy-Item -Path $srcFolder -Destination $dstFolder -Recurse -Force
         }
     }
@@ -284,7 +285,7 @@ try {
     $WorkspaceReports = Join-Path $WorkspaceDir "auditoria\relatorios\$VersionUpper"
     if (Test-Path $WorkspaceReports) {
         New-Item -ItemType Directory -Path $ReportsDir -Force | Out-Null
-        Get-ChildItem -Path $WorkspaceReports -Filter "*.md" | ForEach-Object {
+        Get-ChildItem -Path $WorkspaceReports -File | ForEach-Object {
             Copy-Item -Path $_.FullName -Destination (Join-Path $ReportsDir $_.Name) -Force
         }
         Write-Success "Relatorios sincronizados em: $ReportsDir"
@@ -352,15 +353,21 @@ try {
 
     # Gerar test-results.json dinamico
     $genScript = Join-Path $TestDest "generate_test_results_json.py"
-    if (Test-Path $genScript) {
-        Push-Location $TestDest
-        try {
-            & python $genScript $LogDir
-        } finally {
-            Pop-Location
-        }
-        Write-Success "Manifesto test-results.json dinamico gerado em: $LogDir"
+    if (-not (Test-Path $genScript)) {
+        Write-Failure "Script generate_test_results_json.py obrigatorio nao encontrado em $TestDest! Bloqueio fail-closed!"
+        exit 1
     }
+    Push-Location $TestDest
+    try {
+        & python $genScript $LogDir
+        if ($LASTEXITCODE -ne 0) {
+            Write-Failure "Falha na geracao do manifesto test-results.json! Codigo de saida: $LASTEXITCODE. Publicacao abortada!"
+            exit 1
+        }
+    } finally {
+        Pop-Location
+    }
+    Write-Success "Manifesto test-results.json dinamico gerado em: $LogDir" 
 
     # --------------------------------------------------------------------------
     # 6. STAGING ISOLADO E COMMIT CANDIDATO
@@ -449,17 +456,42 @@ try {
     # --------------------------------------------------------------------------
     Write-Step "7. Executando teste genuino de checkout limpo via git archive no commit candidato..."
     $CleanCheckoutScript = Join-Path $TestDest "test_clean_checkout_reproducibility.py"
-    if (Test-Path $CleanCheckoutScript) {
-        & python $CleanCheckoutScript HEAD
-        if ($LASTEXITCODE -ne 0) {
-            Write-Failure "Teste de checkout limpo reprovado! Revertendo commit candidato e abortando push."
-            git reset HEAD~1
-            exit 1
-        }
-        Write-Success "Teste genuino de checkout limpo APROVADO com 100% de sucesso!"
-    } else {
-        Write-WarningMsg "Script test_clean_checkout_reproducibility.py nao localizado em $TestDest"
+    if (-not (Test-Path $CleanCheckoutScript)) {
+        Write-Failure "Script test_clean_checkout_reproducibility.py obrigatorio nao localizado em $TestDest! Bloqueio absoluto acionado."
+        exit 1
     }
+
+    Write-Host "  -> Executando verificacao reproduzivel de checkout limpo..."
+    & python $CleanCheckoutScript --repo-dir $RepoRoot --commit HEAD --version $VersionUpper
+    if ($LASTEXITCODE -ne 0) {
+        Write-Failure "Teste de checkout limpo reprovado! Codigo de saida: $LASTEXITCODE. Commit candidato preservado localmente em HEAD para auditoria e pericia. Push BLOQUEADO."
+        Write-Host "  Instrucoes de recuperacao manual:"
+        Write-Host "    1. Auditar commit candidato: git show HEAD"
+        Write-Host "    2. Verificar arquivos:       git status"
+        Write-Host "    3. Reverter manualmente se necessario: git reset HEAD~1"
+        exit 1
+    }
+    Write-Success "Teste genuino de checkout limpo APROVADO com 100% de sucesso!"
+
+    # 7.1. Validacao Criptografica Rigorosa do Tree SHA do Snapshot
+    Write-Step "7.1. Validando consistencia criptografica do Tree SHA do Snapshot..."
+    $CandidateSnapTree = (git rev-parse "HEAD:auditoria/snapshots/$VersionUpper").Trim()
+    $TestResultsFile = Join-Path $LogDir "test-results.json"
+    if (-not (Test-Path $TestResultsFile)) {
+        Write-Failure "Manifesto test-results.json obrigatorio nao encontrado em $LogDir! Abortando push."
+        exit 1
+    }
+    $ManifestContent = Get-Content -Raw $TestResultsFile | ConvertFrom-Json
+    $RecordedSnapSha = $ManifestContent.environment.testedSnapshotTreeSha
+    if (-not $RecordedSnapSha) {
+        Write-Failure "CRITICO: testedSnapshotTreeSha em test-results.json e nulo ou vazio! Abortando push por integridade criptografica."
+        exit 1
+    }
+    if ($RecordedSnapSha -ne $CandidateSnapTree) {
+        Write-Failure "Divergencia Criptografica Detectada! Tree do Snapshot no Commit Candidato ($CandidateSnapTree) != testedSnapshotTreeSha ($RecordedSnapSha). Push BLOQUEADO!"
+        exit 1
+    }
+    Write-Success "Consistencia Criptografica Confirmada: testedSnapshotTreeSha ($RecordedSnapSha) coincide 100% com o commit candidato." 
 
     # --------------------------------------------------------------------------
     # 8. SINCRONIZACAO COM O GITHUB (PUSH CONTROLADO FAST-FORWARD)

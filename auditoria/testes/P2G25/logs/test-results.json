@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-10-23T03:48:26.250229+00:00",
+  "version": "P2G25",
+  "baseCommitReference": "4d69c6e344cf239b062c72b0fbe5c243f8436dfc",
+  "environment": {
+    "pythonVersion": "3.14.5",
+    "playwrightVersion": "1.x",
+    "osPlatform": "Windows-11-10.0.26200-SP0",
+    "chromePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "chromeVersion": "Google Chrome 141 (V8 Engine)",
+    "testedGitTreeHash": "ff8e8ddebf170a3acd4c2dcb05bdae3e82ff12c0",
+    "testedSnapshotTreeSha": "7feb3d84a941693a4ecc99afaa242d0e21f316ae"
+  },
+  "scientificSuite": {
+    "runner": "run_p2g25_final.py",
+    "status": "PASSED",
+    "exitCode": 0,
+    "assertionsRun": 130,
+    "assertionsPassed": 130,
+    "assertionsFailed": 0,
+    "expectedAssertions": 130,
+    "startTime": "2026-10-23T03:48:09.475762+00:00",
+    "endTime": "2026-10-23T03:48:11.022189+00:00",
+    "durationSeconds": 1.546
+  },
+  "e2eSuite": {
+    "runner": "test_e2e_playwright_p2g25.py",
+    "status": "PASSED",
+    "exitCode": 0,
+    "checksRun": 26,
+    "checksPassed": 26,
+    "checksFailed": 0,
+    "expectedChecks": 26,
+    "screenshotsSaved": 8,
+    "expectedScreenshots": 8,
+    "startTime": "2026-10-23T03:48:12.402649+00:00",
+    "endTime": "2026-10-23T03:48:24.812328+00:00",
+    "durationSeconds": 12.41
+  },
+  "overallStatus": "PASSED",
+  "summary": "Homologação P2G25 concluída com 100% de aprovação. 130/130 asserções científicas e 26/26 verificações E2E aprovadas sem falhas. 8 screenshots dinâmicas geradas com sucesso."
+}

@@ -1,0 +1,14 @@
+{
+  "runner": "test_e2e_playwright_p2g25.py",
+  "startTime": "2026-10-23T03:48:12.402649+00:00",
+  "endTime": "2026-10-23T03:48:24.812328+00:00",
+  "durationSeconds": 12.41,
+  "exitCode": 0,
+  "status": "PASSED",
+  "checksRun": 26,
+  "checksPassed": 26,
+  "checksFailed": 0,
+  "expectedChecks": 26,
+  "screenshotsSaved": 8,
+  "error": null
+}
