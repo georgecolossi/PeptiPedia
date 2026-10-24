@@ -1,0 +1,36 @@
+======================================================================
+INICIANDO TESTES END-TO-END (E2E) PLAYWRIGHT P4.2
+Raiz da Aplicação: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\snapshots\P42
+Diretório de Logs: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P42\logs
+Diretório de Screenshots: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P42\screenshots
+Início (UTC):      2026-10-24T03:55:03.525126+00:00
+======================================================================
+
+[OK] Servidor HTTP E2E rodando em http://127.0.0.1:57175
+[OK] Carregando http://127.0.0.1:57175/index.html com disclaimer aceito
+[CHECK PASS] (1/1) Grid exibe exatamente 91 cards de compostos (encontrados: 91)
+[CHECK PASS] (2/2) Contador de resultados reflete 91 peptídeos ('91 peptídeos encontrados')
+[CHECK PASS] (3/3) Busca por 'HGH Fragment 176-191' filtra exatamente 1 card (encontrados: 1)
+[CHECK PASS] (4/4) Modal HGH Frag 176-191 aberto com sucesso: HGH Fragment 176-191
+[CHECK PASS] (5/5) Modal exibe massa molecular reconciliada ~1799.1 g/mol
+[CHECK PASS] (6/6) Modal documenta diferenciação tripartite entre 176-191 (16 aa), 177-191 (15 aa) e AOD-9604
+[CHECK PASS] (7/7) HGH Fragment bloqueia fail-closed na calculadora com toast ('HGH Fragment 176-191: composto em fase investigacional sem dose humana validada. Calculadora indisponível.')
+[CHECK PASS] (8/8) Busca por 'Orexina B' filtra exatamente 1 card (encontrados: 1)
+[CHECK PASS] (9/9) Modal Orexina B aberto: Orexina B
+[CHECK PASS] (10/10) Modal exibe massa molecular reconciliada de 2899.4 g/mol
+[CHECK PASS] (11/11) Modal documenta preferência funcional e seletividade por OX2R
+[CHECK PASS] (12/12) Busca por 'Bronchogen' filtra exatamente 1 card (encontrados: 1)
+[CHECK PASS] (13/13) Modal Bronchogen aberto: Bronchogen
+[CHECK PASS] (14/14) Modal exibe status IDENTIDADE_PENDENTE e documenta divergência de sequência isomérica AEDL vs ADEL
+[CHECK PASS] (15/15) Busca por 'Crystagen' retorna 0 cards no catálogo ativo (quarentena confirmada: 0)
+[CHECK PASS] (16/16) Timulina exibe 858.9 g/mol para o apo-peptídeo livre e rejeita 916.2 g/mol
+[CHECK PASS] (17/17) Timulina documenta complexo ativo com Zn(II) estequiométrico [C33H52N12O15Zn]
+[CHECK PASS] (18/18) Busca por 'MGF E-Peptide' filtra exatamente 1 card (encontrados: 1)
+[CHECK PASS] (19/19) MGF exibe fórmula recalculada C121H194N40O40 e massa de 2849.1 g/mol
+[CHECK PASS] (20/20) MGF adverte sobre a ausência de replicação independente de proliferação celular muscular
+[CHECK PASS] (21/21) Aba de estudos exibe exatamente 66 estudos clínicos (encontrados: 66)
+[CHECK PASS] (22/22) Busca na aba de estudos localiza novo ensaio de Orexina A (PMID 24406723)
+[CHECK PASS] (23/23) Aba de Stacks exibe exatamente 18 protocolos preservados (encontrados: 18)
+[CHECK PASS] (24/24) Zero erros JavaScript detectados durante a sessão E2E (erros: [])
+[CHECK PASS] (25/25) Exatamente 9 screenshots geradas com sucesso (total: 9)
+[PASS] Todos os 25 checks E2E aprovados com 100% de sucesso!

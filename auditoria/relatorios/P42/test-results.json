@@ -1,0 +1,43 @@
+{
+  "generatedAt": "2026-10-24T03:42:37.851069+00:00",
+  "version": "P42",
+  "baseCommitReference": "b9be0fde221c5855e3115e14fae721d802f405b7",
+  "environment": {
+    "pythonVersion": "3.14.5",
+    "playwrightVersion": "1.x",
+    "osPlatform": "Windows-11-10.0.26200-SP0",
+    "chromePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "chromeVersion": "Google Chrome 141 (V8 Engine)",
+    "baseGitTreeHash": "6e9103d23a5d051103ad9b714f71e0a0a16ae0be",
+    "testedGitTreeHash": "6e9103d23a5d051103ad9b714f71e0a0a16ae0be",
+    "testedSnapshotTreeSha": "29834ae359d59430c7a4e8870dc81ac567aab5b9"
+  },
+  "scientificSuite": {
+    "runner": "run_p42_final.py",
+    "status": "PASSED",
+    "exitCode": 0,
+    "assertionsRun": 262,
+    "assertionsPassed": 262,
+    "assertionsFailed": 0,
+    "expectedAssertions": 262,
+    "startTime": "2026-10-24T03:37:08.306243+00:00",
+    "endTime": "2026-10-24T03:37:11.418172+00:00",
+    "durationSeconds": null
+  },
+  "e2eSuite": {
+    "runner": "test_e2e_playwright_p42.py",
+    "status": "PASSED",
+    "exitCode": 0,
+    "checksRun": 25,
+    "checksPassed": 25,
+    "checksFailed": 0,
+    "expectedChecks": 25,
+    "screenshotsSaved": 9,
+    "expectedScreenshots": 9,
+    "startTime": "2026-10-24T03:40:52.304914+00:00",
+    "endTime": "2026-10-24T03:41:02.842855+00:00",
+    "durationSeconds": null
+  },
+  "overallStatus": "PASSED",
+  "summary": "Homologação P42 concluída com 100% de aprovação. 262/262 asserções científicas e 25/25 verificações E2E aprovadas sem falhas. 9 screenshots dinâmicas geradas com sucesso."
+}

@@ -1,0 +1,50 @@
+{
+  "suite": "test_failure_modes_p42.py",
+  "totalSimulations": 6,
+  "passedSimulations": 6,
+  "failedSimulations": 0,
+  "simulations": [
+    {
+      "id": "SIM-01-SWAPPED-CID",
+      "description": "Deteccao de CID trocado/adulterado no verificador quimico",
+      "expectedResult": "REJEITADO / BLOQUEADO",
+      "actualExitCode": 1,
+      "status": "PASSED"
+    },
+    {
+      "id": "SIM-02-TAMPERED-FORMULA",
+      "description": "Deteccao de formula quimica estequiometricamente inconsistente",
+      "expectedResult": "REJEITADO / BLOQUEADO",
+      "actualExitCode": 1,
+      "status": "PASSED"
+    },
+    {
+      "id": "SIM-03-INCONSISTENT-MASS",
+      "description": "Deteccao de divergencia entre massa declarada e calculada estequiometricamente",
+      "expectedResult": "REJEITADO / BLOQUEADO",
+      "actualExitCode": 1,
+      "status": "PASSED"
+    },
+    {
+      "id": "SIM-04-CALCULATOR-LOCK",
+      "description": "Bloqueio fail-closed de rotinas de calculo para compostos com status IDENTIDADE_PENDENTE",
+      "expectedResult": "CALCULATOR_BLOCKED",
+      "actualExitCode": 0,
+      "status": "PASSED"
+    },
+    {
+      "id": "SIM-05-QUARANTINE-LOCK",
+      "description": "Isolamento estrito de composto sob quarentena fora do catalogo ativo",
+      "expectedResult": "ZERO CARDS / AUSENTE",
+      "actualExitCode": 0,
+      "status": "PASSED"
+    },
+    {
+      "id": "SIM-06-LEGACY-INTEGRITY",
+      "description": "Deteccao criptografica por SHA-256 de qualquer alteracao nos 57 compostos legados",
+      "expectedResult": "REJEITADO / BLOQUEADO",
+      "actualExitCode": 1,
+      "status": "PASSED"
+    }
+  ]
+}

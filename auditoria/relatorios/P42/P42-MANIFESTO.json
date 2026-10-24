@@ -1,0 +1,29 @@
+{
+  "version": "P42",
+  "generatedAt": "2026-10-24T03:54:05.021706+00:00",
+  "totalFiles": 22,
+  "files": {
+    "auditoria/snapshots/P42/.gitignore": "8aa39e9e9f563ece3e1c0d8b9ea88f1b9e0e81424d343fe41e0f975d83ea5677",
+    "auditoria/snapshots/P42/index.html": "81b738ce090959465e9ef1f3e53903148603d7a951cc4d7a34c543c5e42e6a90",
+    "auditoria/snapshots/P42/README.md": "8c2ceeda090d5df814883a3615eb42d3c0576e672fb677d362a1d1e325738b72",
+    "auditoria/snapshots/P42/css/style.css": "e0131ed1764fc1199a6755ba822b4c81e465ed953929691be5f9465377c43ed6",
+    "auditoria/snapshots/P42/js/app.js": "4248e49633b457ef0ee2c972f15f1071ce825146aa757c3a9b1442f29a194740",
+    "auditoria/snapshots/P42/js/calculator.js": "09b2f3e9b5f8fc1331248b7be46cfbce575953e4678bce168ee3c466c63bc67d",
+    "auditoria/snapshots/P42/js/glossary-data.js": "1966c5c5e954e7640f7894991a057609ff59c3c5cd913247b466ada96259a533",
+    "auditoria/snapshots/P42/js/peptides-data.js": "d51c118cace035651171a4cede92ab77b8c4d7f681aeb7d11be689a53a49dc64",
+    "auditoria/snapshots/P42/js/stability-data.js": "b80f563c823add5a61c66c3435e4eadad7379d59ec0bbddec4409c070cbcb53c",
+    "auditoria/snapshots/P42/js/stability.js": "559e87aa8eae579bbcb46daf4cb7c85478aeb28e9878e8f279e1f9e4136293d9",
+    "auditoria/snapshots/P42/js/stacks-data.js": "6369e4420dbf5cab5ba775f415ed4de2b20cc75cb928133966163dfba7763871",
+    "auditoria/snapshots/P42/js/studies-data.js": "b8cdfd3cf4033cbd57f4f04eda32fe1dad13df5c2cdb27d00005b6bb5677d2e4",
+    "auditoria/snapshots/P42/logs/failure-simulation-report.json": "ec255277679e2a08ef905835c56456cd9880edbe1b88675181e18730ff64b0c4",
+    "auditoria/relatorios/P42/failure-simulation-report.json": "fc381aa50d120f12df057473169d9c242e4c6e56a7dc5095d6e27f0ee20e67c3",
+    "auditoria/relatorios/P42/P42-AUDITORIA-QUIMICA.csv": "fd5d2d77644cecae1d72ddbbdf9c77a86dd70e49338d3a27682225c47f8c8677",
+    "auditoria/relatorios/P42/P42-ESTUDOS-INDEXADOS.csv": "d4fe70f2f6df1aca1134c4d0ed079712cff3094afab98ba3a098cf0a7ca726ea",
+    "auditoria/relatorios/P42/P42-FECHAMENTO-QUIMICO.md": "a9d238bb20bbbf2902a301201f4297ff7b459cc364b4c34d75f4440f539a4f73",
+    "auditoria/relatorios/P42/P42-MANIFESTO.json": "85a587edb1bddf5be876d38cbdaf5166f81503fd00bbee1c1ff0633e73ce70b9",
+    "auditoria/relatorios/P42/P42-MATRIZ-33.md": "499da584bef9b524f67f6081d94c95e0158d0f13113ce4de31e684870b894bf6",
+    "auditoria/relatorios/P42/P42-TESTES.md": "84587741db4dc2236bb22d467c3f47564f1f35db2d0a2c9aca82f191a122f59f",
+    "auditoria/relatorios/P42/STATUS.md": "bfe43824bb3dd987f8ede537f00781505224b34c84ba6f9c87e23a3d98156014",
+    "auditoria/relatorios/P42/test-results.json": "7ac12b68124f02665c9454838ccd958ad02a24d5b9461bc67b8e774c1fdd7bc2"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "version": "P42",
+  "suite": "e2e_playwright_test",
+  "status": "PASSED",
+  "exitCode": 0,
+  "startTimeUtc": "2026-10-24T03:55:03.525126+00:00",
+  "endTimeUtc": "2026-10-24T03:55:12.247041+00:00",
+  "expectedChecks": 25,
+  "totalChecks": 25,
+  "checksPassed": 25,
+  "passedChecks": 25,
+  "checksFailed": 0,
+  "failedChecks": 0,
+  "screenshotsCount": 9,
+  "screenshots": [
+    "01_home_catalog_91_p42.png",
+    "02_p42_modal_hgh_frag_176_191.png",
+    "03_p42_modal_orexin_b_ox2r_selectivity.png",
+    "04_p42_modal_bronchogen_isomer_divergence.png",
+    "05_p42_search_crystagen_quarantine_0_cards.png",
+    "06_p42_modal_thymulin_apo_zn.png",
+    "07_p42_modal_mgf_formula_and_alerts.png",
+    "08_p42_studies_tab_66_studies.png",
+    "09_p42_stacks_tab_18_stacks.png"
+  ],
+  "pageErrorsCount": 0,
+  "executionError": null
+}

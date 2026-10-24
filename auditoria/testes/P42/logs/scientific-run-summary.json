@@ -1,0 +1,18 @@
+{
+  "version": "P42",
+  "suite": "scientific_v8_homologation",
+  "status": "PASSED",
+  "exitCode": 0,
+  "startTimeUtc": "2026-10-24T03:54:59.899489+00:00",
+  "endTimeUtc": "2026-10-24T03:55:02.097116+00:00",
+  "expectedAsserts": 262,
+  "expectedAssertions": 262,
+  "totalAsserts": 262,
+  "assertionsRun": 262,
+  "passedAsserts": 262,
+  "assertionsPassed": 262,
+  "failedAsserts": 0,
+  "assertionsFailed": 0,
+  "pageErrorsCount": 0,
+  "executionError": null
+}

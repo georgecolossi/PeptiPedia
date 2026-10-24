@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>PeptiPedia — Suíte de Homologação Científica P4.2 (Motor V8)</title>
+  <script>
+    window.addEventListener('error', (e) => {
+      const out = document.getElementById('output');
+      if (out) out.textContent += '[JS ERROR IN PAGE]: ' + e.message + ' at ' + e.filename + ':' + e.lineno + '\n';
+    });
+    window.lucide = {
+      createIcons: () => {}
+    };
+  </script>
+  <script src="js/peptides-data.js"></script>
+  <script src="js/stacks-data.js"></script>
+  <script src="js/studies-data.js"></script>
+  <script src="js/glossary-data.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/stability-data.js"></script>
+  <script src="js/stability.js"></script>
+</head>
+<body style="background:#0f172a;color:#f8fafc;font-family:monospace;padding:20px;">
+  <h1>PeptiPedia — Suíte de Homologação Científica P4.2 (Motor V8 Chrome)</h1>
+  <div id="status">Executando homologação científica consolidada P4.2...</div>
+  <pre id="output" style="background:#1e293b;padding:15px;border-radius:8px;border:1px solid #334155;white-space:pre-wrap;"></pre>
+
+  <!-- Container de Toasts -->
+  <div id="toast-container"></div>
+
+  <!-- Modal de Detalhes do Peptídeo -->
+  <div id="detail-modal" class="hidden">
+    <div id="detail-modal-content"></div>
+    <div id="modal-footer">
+      <button id="close-modal-btn">Fechar</button>
+      <button id="modal-fav-btn">Favorito</button>
+      <button id="modal-stack-toggle-btn">Stack</button>
+      <button id="modal-calc-btn">Calcular Reconstituição</button>
+      <button id="modal-view-studies-link">Ver Estudos</button>
+    </div>
+  </div>
+
+  <!-- Seção da Calculadora -->
+  <div id="calculator-section">
+    <input id="calc-vial-mg" type="number" />
+    <input id="calc-water-ml" type="number" />
+    <input id="calc-dose-input" type="number" />
+    <button id="calc-unit-mcg-btn">mcg</button>
+    <button id="calc-unit-mg-btn">mg</button>
+    <span id="calc-dose-unit-label">mcg</span>
+    <select id="calc-syringe-type">
+      <option value="u100">U-100 (1,0 mL / 100 UI)</option>
+      <option value="u50">U-50 (0,5 mL / 50 UI)</option>
+      <option value="u30">U-30 (0,3 mL / 30 UI)</option>
+    </select>
+    <input id="calc-vial-cost" type="number" />
+    <input id="calc-frequency" type="number" value="7" />
+
+    <div id="calc-res-units">—</div>
+    <div id="calc-res-volume">—</div>
+    <div id="calc-res-conc">—</div>
+    <div id="calc-res-unit-val">—</div>
+    <div id="calc-res-doses">—</div>
+    <div id="calc-res-days">—</div>
+    <div id="calc-res-cost">—</div>
+    <div id="calc-warning-box" class="hidden"></div>
+  </div>
+
+  <!-- Script da Aplicação -->
+  <script src="js/app.js"></script>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const output = document.getElementById('output');
+      function log(msg) {
+        output.textContent += msg + '\n';
+      }
+
+      let passed = 0;
+      let failed = 0;
+      const results = [];
+
+      function assert(cond, msg) {
+        if (cond) {
+          passed++;
+          results.push({ pass: true, msg });
+          log(`[PASS] ${msg}`);
+        } else {
+          failed++;
+          results.push({ pass: false, msg });
+          log(`[FAIL] ${msg}`);
+        }
+      }
+
+      try {
+        log("======================================================================");
+        log("INICIANDO SUÍTE DE ASSERÇÕES CIENTÍFICAS E MOLECULARES — ETAPA P4.2");
+        log("======================================================================\n");
+
+        // ---------------------------------------------------------------------
+        // BLOCO 1: INTEGRIDADE DO CATÁLOGO EXPANDIDO E DIMENSÕES
+        // ---------------------------------------------------------------------
+        log("--- BLOCO 1: DIMENSÕES E INTEGRIDADE GLOBAL ---");
+        assert(typeof PEPTIDES_DATABASE !== 'undefined', "1.1 PEPTIDES_DATABASE definido");
+        assert(Array.isArray(PEPTIDES_DATABASE), "1.2 PEPTIDES_DATABASE é um Array");
+        assert(PEPTIDES_DATABASE.length === 91, `1.3 Exatamente 91 compostos no catálogo ativo (encontrado: ${PEPTIDES_DATABASE.length})`);
+
+        assert(typeof CLINICAL_STUDIES_DATABASE !== 'undefined', "1.4 CLINICAL_STUDIES_DATABASE definido");
+        assert(Array.isArray(CLINICAL_STUDIES_DATABASE), "1.5 CLINICAL_STUDIES_DATABASE é um Array");
+        assert(CLINICAL_STUDIES_DATABASE.length === 66, `1.6 Exatamente 66 ensaios clínicos indexados (encontrado: ${CLINICAL_STUDIES_DATABASE.length})`);
+
+        const p4IdsExpected = [
+          "acth-1-39", "adipotide", "bronchogen", "cardiogen", "chonluten",
+          "cortagen", "dermorphin", "hgh-fragment-176-191", "livagen", "mgf-e-peptide",
+          "orexin-a", "orexin-b", "pancragen", "pnc-27", "prostamax",
+          "thymogen", "thymulin", "vesugen", "vilon"
+        ];
+        p4IdsExpected.forEach((id, idx) => {
+          const found = PEPTIDES_DATABASE.some(p => p.id === id);
+          assert(found, `1.7.${idx+1} Composto P4.2 ativo presente: ${id}`);
+        });
+
+        // ---------------------------------------------------------------------
+        // BLOCO 2: ISOLAMENTO RIGOROSO DE QUARENTENA E EXCLUSÕES
+        // ---------------------------------------------------------------------
+        log("--- BLOCO 2: ISOLAMENTO DE QUARENTENA E EXCLUSÕES ---");
+        const quarantinedIds = [
+          "adamax", "cartalax", "crystagen", "melatonin-peptide", "neuroxelin",
+          "oligopeptide-10", "ovagen", "ra-260", "testagen", "vesilute"
+        ];
+        quarantinedIds.forEach((qid, idx) => {
+          const found = PEPTIDES_DATABASE.some(p => p.id === qid);
+          assert(!found, `2.1.${idx+1} Quarentena estrita: ${qid} ausente de PEPTIDES_DATABASE`);
+        });
+
+        const excludedSubstances = ["aicar", "hyaluronic-acid", "botulinum-toxin-a", "gdf-8-myostatin"];
+        excludedSubstances.forEach((eid, idx) => {
+          const found = PEPTIDES_DATABASE.some(p => p.id === eid);
+          assert(!found, `2.2.${idx+1} Exclusão permanente: ${eid} ausente de PEPTIDES_DATABASE`);
+        });
+
+        // ---------------------------------------------------------------------
+        // BLOCO 3: RECONCILIAÇÃO MOLECULAR P4.2 (CORREÇÕES ESPECÍFICAS)
+        // ---------------------------------------------------------------------
+        log("--- BLOCO 3: RECONCILIAÇÃO MOLECULAR ESPECÍFICA P4.2 ---");
+
+        // 3.1 MGF E-Peptide
+        const mgf = PEPTIDES_DATABASE.find(p => p.id === 'mgf-e-peptide');
+        assert(mgf && mgf.molecularFormula === "C121H194N40O40", "3.1.1 MGF E-Peptide fórmula recalculada estrita: C121H194N40O40");
+        assert(mgf && mgf.molecularWeight === "2849.1 g/mol", "3.1.2 MGF E-Peptide PM verificado: 2849.1 g/mol");
+        assert(mgf && mgf.monoisotopicMass === "2847.44 Da", "3.1.3 MGF E-Peptide massa monoisotópica verificada: 2847.44 Da");
+        assert(mgf && mgf.pubchemCid === null, "3.1.4 MGF E-Peptide CID 137700201 formalmente removido (pubchemCid: null)");
+        assert(mgf && mgf.sequenceOneLetter === "YQPPSTNKNTKSQRRKGSTFEEHK", "3.1.5 MGF E-Peptide sequenceOneLetter em código de 1 letra (24 aa)");
+
+        // 3.2 Timulina (Apo vs Complexo Zn(II))
+        const thymulin = PEPTIDES_DATABASE.find(p => p.id === 'thymulin');
+        assert(thymulin && thymulin.molecularFormula === "C33H54N12O15", "3.2.1 Timulina apo-peptídeo livre fórmula estrita: C33H54N12O15");
+        assert(thymulin && thymulin.molecularWeight === "858.9 g/mol", "3.2.2 Timulina apo-peptídeo livre PM verificado: 858.9 g/mol");
+        assert(thymulin && thymulin.monoisotopicMass === "858.38 Da", "3.2.3 Timulina apo-peptídeo massa monoisotópica: 858.38 Da");
+        assert(thymulin && thymulin.pubchemCid === 71300623, "3.2.4 Timulina PubChem CID oficial do apo-peptídeo FTS: 71300623");
+        assert(thymulin && thymulin.sequenceOneLetter === "Pyr-AKSQGGSN", "3.2.5 Timulina sequenceOneLetter com piroglutamato e 8 aa");
+        assert(thymulin && !thymulin.molecularWeight.includes("916.2"), "3.2.6 Timulina rejeita formalmente a massa inconsistente de 916.2 g/mol");
+        assert(thymulin && thymulin.protocolEvidenceNote.includes("C33H52N12O15Zn") && thymulin.protocolEvidenceNote.includes("922,2"), "3.2.7 Timulina documenta estequiometria do complexo Zn(II) ativo [C33H52N12O15Zn] de 922.2 g/mol");
+
+        // 3.3 PNC-27
+        const pnc27 = PEPTIDES_DATABASE.find(p => p.id === 'pnc-27');
+        assert(pnc27 && pnc27.molecularFormula === "C188H293N53O44S", "3.3.1 PNC-27 fórmula molecular verificada: C188H293N53O44S");
+        assert(pnc27 && pnc27.monoisotopicMass === "4029.20 Da", "3.3.2 PNC-27 massa monoisotópica corrigida estrita: 4029.20 Da (resolvendo divergência)");
+        assert(pnc27 && pnc27.molecularWeight === "4031.8 g/mol", "3.3.3 PNC-27 peso molecular verificado: 4031.8 g/mol");
+        assert(pnc27 && pnc27.pubchemCid === 16201774, "3.3.4 PNC-27 PubChem CID verificado: 16201774 (CID 137700204 ceramide removido)");
+        assert(pnc27 && pnc27.sequenceOneLetter === "PPLSQETFSDLWKLLKKWKMRRNQFWVKVQRG", "3.3.5 PNC-27 sequenceOneLetter código de 1 letra verificado (32 aa)");
+
+        // 3.4 Orexina B
+        const orexinB = PEPTIDES_DATABASE.find(p => p.id === 'orexin-b');
+        assert(orexinB && orexinB.casNumber === "205640-91-1", "3.4.1 Orexina B humana CAS Registry Number verificado: 205640-91-1 (corrigindo murino 202801-92-1)");
+        assert(orexinB && orexinB.pubchemCid === 44404987, "3.4.2 Orexina B PubChem CID verificado: 44404987");
+        assert(orexinB && orexinB.guideToPharmId === 1699, "3.4.3 Orexina B Guide to Pharmacology Ligand ID: 1699");
+        assert(orexinB && orexinB.sequenceOneLetter === "RSGPPGLQGRLQRLLQASGNHAAGILTM-NH2", "3.4.4 Orexina B sequenceOneLetter código de 1 letra com amidação (28 aa)");
+        assert(orexinB && orexinB.mechanism.includes("preferência por OX2R") || orexinB.mechanism.includes("seletividade funcional e preferência por OX2R"), "3.4.5 Orexina B mecanismo documenta preferência funcional por OX2R");
+        assert(orexinB && orexinB.protocolEvidenceNote.includes("evitando-se a alegação errônea de equipotência universal"), "3.4.6 Orexina B veta explicitamente a alegação de equipotência universal OX1R/OX2R");
+
+        // 3.5 Bronchogen
+        const bronch = PEPTIDES_DATABASE.find(p => p.id === 'bronchogen');
+        assert(bronch && bronch.identityStatus === "IDENTIDADE_PENDENTE", "3.5.1 Bronchogen mantido sob status IDENTIDADE_PENDENTE");
+        assert(bronch && bronch.sequenceOneLetter === "AEDL", "3.5.2 Bronchogen sequenceOneLetter: AEDL");
+        assert(bronch && bronch.sequenceThreeLetter === "Ala-Glu-Asp-Leu", "3.5.3 Bronchogen sequenceThreeLetter: Ala-Glu-Asp-Leu");
+        assert(bronch && bronch.molecularFormula === "C18H30N4O9", "3.5.4 Bronchogen fórmula molecular: C18H30N4O9");
+        assert(bronch && bronch.molecularWeight === "446.5 g/mol", "3.5.5 Bronchogen PM: 446.5 g/mol");
+        assert(bronch && (bronch.structure.includes("isômeros") || bronch.structure.includes("isômero")), "3.5.6 Bronchogen documenta que AEDL e ADEL são isômeros de idêntica massa e fórmula");
+        assert(typeof prefillCalculatorWithPeptide === 'function' && prefillCalculatorWithPeptide(bronch) === false, "3.5.7 Bronchogen bloqueado fail-closed na calculadora de reconstituição");
+
+        // 3.6 Prostamax
+        const prost = PEPTIDES_DATABASE.find(p => p.id === 'prostamax');
+        assert(prost && prost.molecularFormula === "C20H33N5O9", "3.6.1 Prostamax fórmula recalculada estrita: C20H33N5O9");
+        assert(prost && prost.molecularWeight === "487.5 g/mol", "3.6.2 Prostamax PM corrigido estrito: 487.5 g/mol");
+        assert(prost && prost.monoisotopicMass === "487.23 Da", "3.6.3 Prostamax massa monoisotópica: 487.23 Da");
+        assert(prost && prost.pubchemCid === 9848296, "3.6.4 Prostamax PubChem CID verificado: 9848296");
+        assert(prost && prost.sequenceOneLetter === "KEDP", "3.6.5 Prostamax sequenceOneLetter: KEDP");
+
+        // 3.7 Pancragen
+        const panc = PEPTIDES_DATABASE.find(p => p.id === 'pancragen');
+        assert(panc && panc.molecularFormula === "C26H37N7O8", "3.7.1 Pancragen fórmula recalculada estrita: C26H37N7O8");
+        assert(panc && panc.molecularWeight === "575.6 g/mol", "3.7.2 Pancragen PM corrigido estrito: 575.6 g/mol");
+        assert(panc && panc.monoisotopicMass === "575.27 Da", "3.7.3 Pancragen massa monoisotópica: 575.27 Da");
+        assert(panc && panc.pubchemCid === null, "3.7.4 Pancragen CID 11954310 indevido removido (pubchemCid: null)");
+        assert(panc && panc.sequenceOneLetter === "KEDW-NH2", "3.7.5 Pancragen sequenceOneLetter: KEDW-NH2");
+
+        // 3.8 Dermorfina e Orexina A
+        const derm = PEPTIDES_DATABASE.find(p => p.id === 'dermorphin');
+        assert(derm && derm.pubchemCid === 5485199, "3.8.1 Dermorfina PubChem CID oficial: 5485199");
+        assert(derm && derm.sequenceOneLetter === "Y-d(A)-FGYPS-NH2", "3.8.2 Dermorfina sequenceOneLetter estruturada");
+        const orexA = PEPTIDES_DATABASE.find(p => p.id === 'orexin-a');
+        assert(orexA && orexA.pubchemCid === 56842143, "3.8.3 Orexina A PubChem CID oficial: 56842143");
+        assert(orexA && orexA.sequenceOneLetter === "Pyr-PLPDCCRQKTCSCRLYELLHGAGNHAAGILTL-NH2", "3.8.4 Orexina A sequenceOneLetter estruturada (33 aa)");
+
+        // 3.9 Demais Peptídeos Curtos e sequenceOneLetter
+        const cardiog = PEPTIDES_DATABASE.find(p => p.id === 'cardiogen');
+        assert(cardiog && cardiog.sequenceOneLetter === "AEDR", "3.9.1 Cardiogen sequenceOneLetter: AEDR");
+        assert(cardiog && cardiog.pubchemCid === 11583989, "3.9.2 Cardiogen PubChem CID: 11583989");
+
+        const chonlut = PEPTIDES_DATABASE.find(p => p.id === 'chonluten');
+        assert(chonlut && chonlut.sequenceOneLetter === "EDG", "3.9.3 Chonluten sequenceOneLetter: EDG");
+        assert(chonlut && chonlut.pubchemCid === null, "3.9.4 Chonluten CID indevido removido");
+
+        const cortag = PEPTIDES_DATABASE.find(p => p.id === 'cortagen');
+        assert(cortag && cortag.sequenceOneLetter === "AEDP", "3.9.5 Cortagen sequenceOneLetter: AEDP");
+        assert(cortag && cortag.pubchemCid === 18439621, "3.9.6 Cortagen PubChem CID: 18439621");
+
+        const livag = PEPTIDES_DATABASE.find(p => p.id === 'livagen');
+        assert(livag && livag.sequenceOneLetter === "KEDA", "3.9.7 Livagen sequenceOneLetter: KEDA");
+        assert(livag && livag.pubchemCid === 87919683, "3.9.8 Livagen PubChem CID: 87919683");
+
+        const thymog = PEPTIDES_DATABASE.find(p => p.id === 'thymogen');
+        assert(thymog && thymog.sequenceOneLetter === "EW", "3.9.9 Thymogen sequenceOneLetter: EW");
+        assert(thymog && thymog.pubchemCid === 100094, "3.9.10 Thymogen PubChem CID: 100094");
+
+        const vesug = PEPTIDES_DATABASE.find(p => p.id === 'vesugen');
+        assert(vesug && vesug.sequenceOneLetter === "KED", "3.9.11 Vesugen sequenceOneLetter: KED");
+        assert(vesug && vesug.pubchemCid === null, "3.9.12 Vesugen CID indevido removido");
+
+        const vil = PEPTIDES_DATABASE.find(p => p.id === 'vilon');
+        assert(vil && vil.sequenceOneLetter === "KE", "3.9.13 Vilon sequenceOneLetter: KE");
+        assert(vil && vil.pubchemCid === 7010502, "3.9.14 Vilon PubChem CID: 7010502");
+
+        const acth = PEPTIDES_DATABASE.find(p => p.id === 'acth-1-39');
+        assert(acth && acth.sequenceOneLetter === "SYSMEHFRWGKPVGKKRRPVKVYPNGAEDESAEAFPLEF", "3.9.15 ACTH 1-39 sequenceOneLetter (39 aa)");
+        assert(acth && acth.pubchemCid === 16132265, "3.9.16 ACTH 1-39 PubChem CID: 16132265");
+
+        const adip = PEPTIDES_DATABASE.find(p => p.id === 'adipotide');
+        assert(adip && adip.sequenceOneLetter === "CKGGRAKDCGG-d(KLAKLAK)2", "3.9.17 Adipotide sequenceOneLetter (25 aa)");
+        assert(adip && adip.molecularFormula === "C111H204N36O28S2", "3.9.18 Adipotide fórmula ajustada com ponte dissulfeto Cys1-Cys9");
+
+        const hghFrag = PEPTIDES_DATABASE.find(p => p.id === 'hgh-fragment-176-191');
+        assert(hghFrag && hghFrag.sequenceOneLetter === "FLRIVQCRSVEGSCGF", "3.9.19 HGH Fragment 176-191 sequenceOneLetter (16 aa)");
+        assert(hghFrag && hghFrag.pubchemCid === 16131230, "3.9.20 HGH Fragment 176-191 PubChem CID: 16131230");
+
+        // ---------------------------------------------------------------------
+        // BLOCO 4: GUARDRAILS CIENTÍFICOS DOS 19 NOVOS COMPOSTOS P4.2
+        // ---------------------------------------------------------------------
+        log("--- BLOCO 4: GUARDRAILS CIENTÍFICOS DOS 19 NOVOS COMPOSTOS P4.2 ---");
+        p4IdsExpected.forEach((id, idx) => {
+          const comp = PEPTIDES_DATABASE.find(p => p.id === id);
+          assert(comp && comp.protocolEvidenceType === 'investigational_no_dose', `4.1.${idx+1} ${id}: protocolEvidenceType === 'investigational_no_dose'`);
+          assert(comp && comp.researchProtocols && comp.researchProtocols.typicalDose.includes("Não há dose humana validada"), `4.2.${idx+1} ${id}: typicalDose declara ausência de dose validada`);
+          assert(comp && comp.researchProtocols && comp.researchProtocols.defaultDoseNumber === null, `4.3.${idx+1} ${id}: defaultDoseNumber === null`);
+          assert(typeof prefillCalculatorWithPeptide === 'function' && prefillCalculatorWithPeptide(comp) === false, `4.4.${idx+1} ${id}: prefillCalculatorWithPeptide recusa fail-closed na calculadora`);
+          assert(comp && typeof comp.sequenceOneLetter === 'string' && comp.sequenceOneLetter.length > 0, `4.5.${idx+1} ${id}: sequenceOneLetter presente`);
+          assert(comp && typeof comp.sequenceThreeLetter === 'string' && comp.sequenceThreeLetter.length > 0, `4.6.${idx+1} ${id}: sequenceThreeLetter presente`);
+          assert(comp && typeof comp.residueCount === 'number' && comp.residueCount > 0, `4.7.${idx+1} ${id}: residueCount numérico válido`);
+          assert(comp && typeof comp.molecularFormula === 'string' && comp.molecularFormula.length > 0, `4.8.${idx+1} ${id}: molecularFormula presente`);
+        });
+
+        // ---------------------------------------------------------------------
+        // BLOCO 5: ESTUDOS CLÍNICOS E PRESERVAÇÃO HISTÓRICA
+        // ---------------------------------------------------------------------
+        log("--- BLOCO 5: ESTUDOS CLÍNICOS E PRESERVAÇÃO HISTÓRICA ---");
+        const orexinStudy = CLINICAL_STUDIES_DATABASE.find(s => s.id === "study-orexin-a-narcolepsy");
+        assert(orexinStudy !== undefined, "5.1 Estudo study-orexin-a-narcolepsy indexado");
+        assert(orexinStudy && orexinStudy.pmid === "24406723", "5.2 Estudo Orexina-A PMID 24406723");
+        assert(orexinStudy && orexinStudy.title === "The effect of intranasal orexin-A (hypocretin-1) on sleep, wakefulness and attention in narcolepsy with cataplexy", "5.3 Estudo Orexina-A título oficial verbatim");
+
+        assert(typeof RESEARCH_STACKS !== 'undefined' && RESEARCH_STACKS.length === 18, "5.4 Exatamente 18 stacks preservados");
+        assert(typeof GLOSSARY_DATABASE !== 'undefined' && GLOSSARY_DATABASE.length === 37, "5.5 Exatamente 37 verbetes do glossário preservados");
+
+        const multiformPeptides = PEPTIDES_DATABASE.filter(p => p.formulations && p.formulations.length > 0);
+        assert(multiformPeptides.length === 5, "5.6 Exatamente 5 compostos multiformulação preservados");
+        const totalFormulations = multiformPeptides.reduce((acc, p) => acc + p.formulations.length, 0);
+        assert(totalFormulations === 12, "5.7 Exatamente 12 apresentações multiformulação preservadas");
+
+        // ---------------------------------------------------------------------
+        // RESUMO FINAL
+        // ---------------------------------------------------------------------
+        log("\n======================================================================");
+        log(`HOMOLOGAÇÃO P4.2 CONCLUÍDA: ${passed} asserções aprovadas, ${failed} falhas.`);
+        log("======================================================================");
+
+        const statusEl = document.getElementById('status');
+        if (failed === 0) {
+          statusEl.textContent = `APROVADO: ${passed}/${passed} asserções científicas homologadas com sucesso.`;
+          statusEl.style.color = '#34d399';
+        } else {
+          statusEl.textContent = `REPROVADO: ${failed} asserções falharam.`;
+          statusEl.style.color = '#f87171';
+        }
+
+        window.__TEST_RESULTS__ = {
+          total: passed + failed,
+          passed: passed,
+          failed: failed,
+          results: results
+        };
+
+      } catch (err) {
+        log(`[FATAL ERROR]: ${err.message}\n${err.stack}`);
+        failed++;
+        const statusEl = document.getElementById('status');
+        statusEl.textContent = `ERRO FATAL: ${err.message}`;
+        statusEl.style.color = '#f87171';
+        window.__TEST_RESULTS__ = {
+          total: passed + failed,
+          passed: passed,
+          failed: failed,
+          error: err.message,
+          results: results
+        };
+      }
+    });
+  </script>
+</body>
+</html>

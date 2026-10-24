@@ -1,0 +1,294 @@
+======================================================================
+INICIANDO RUNNER DA HOMOLOGAÇÃO CIENTÍFICA V8 P4.2
+Raiz da Aplicação: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\snapshots\P42
+Arquivo de Teste:  C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P42\test_p42_final.html
+Início (UTC):      2026-10-24T03:54:59.899489+00:00
+======================================================================
+
+[OK] Sandbox V8 inicializado em: C:\Users\georg\AppData\Local\Temp\peptipedia_v8_p42_g3wgl1df
+[OK] Servidor HTTP ativo em http://127.0.0.1:50341
+[OK] Pré-flight HTTP 200 concluído com sucesso para todos os recursos estáticos
+[OK] Utilizando Google Chrome V8 nativo: C:\Program Files\Google\Chrome\Application\chrome.exe
+[OK] Navegando para http://127.0.0.1:50341/test_p42_final.html
+
+--- SAÍDA DO MOTOR V8 ---
+======================================================================
+INICIANDO SUÍTE DE ASSERÇÕES CIENTÍFICAS E MOLECULARES — ETAPA P4.2
+======================================================================
+
+--- BLOCO 1: DIMENSÕES E INTEGRIDADE GLOBAL ---
+[PASS] 1.1 PEPTIDES_DATABASE definido
+[PASS] 1.2 PEPTIDES_DATABASE é um Array
+[PASS] 1.3 Exatamente 91 compostos no catálogo ativo (encontrado: 91)
+[PASS] 1.4 CLINICAL_STUDIES_DATABASE definido
+[PASS] 1.5 CLINICAL_STUDIES_DATABASE é um Array
+[PASS] 1.6 Exatamente 66 ensaios clínicos indexados (encontrado: 66)
+[PASS] 1.7.1 Composto P4.2 ativo presente: acth-1-39
+[PASS] 1.7.2 Composto P4.2 ativo presente: adipotide
+[PASS] 1.7.3 Composto P4.2 ativo presente: bronchogen
+[PASS] 1.7.4 Composto P4.2 ativo presente: cardiogen
+[PASS] 1.7.5 Composto P4.2 ativo presente: chonluten
+[PASS] 1.7.6 Composto P4.2 ativo presente: cortagen
+[PASS] 1.7.7 Composto P4.2 ativo presente: dermorphin
+[PASS] 1.7.8 Composto P4.2 ativo presente: hgh-fragment-176-191
+[PASS] 1.7.9 Composto P4.2 ativo presente: livagen
+[PASS] 1.7.10 Composto P4.2 ativo presente: mgf-e-peptide
+[PASS] 1.7.11 Composto P4.2 ativo presente: orexin-a
+[PASS] 1.7.12 Composto P4.2 ativo presente: orexin-b
+[PASS] 1.7.13 Composto P4.2 ativo presente: pancragen
+[PASS] 1.7.14 Composto P4.2 ativo presente: pnc-27
+[PASS] 1.7.15 Composto P4.2 ativo presente: prostamax
+[PASS] 1.7.16 Composto P4.2 ativo presente: thymogen
+[PASS] 1.7.17 Composto P4.2 ativo presente: thymulin
+[PASS] 1.7.18 Composto P4.2 ativo presente: vesugen
+[PASS] 1.7.19 Composto P4.2 ativo presente: vilon
+--- BLOCO 2: ISOLAMENTO DE QUARENTENA E EXCLUSÕES ---
+[PASS] 2.1.1 Quarentena estrita: adamax ausente de PEPTIDES_DATABASE
+[PASS] 2.1.2 Quarentena estrita: cartalax ausente de PEPTIDES_DATABASE
+[PASS] 2.1.3 Quarentena estrita: crystagen ausente de PEPTIDES_DATABASE
+[PASS] 2.1.4 Quarentena estrita: melatonin-peptide ausente de PEPTIDES_DATABASE
+[PASS] 2.1.5 Quarentena estrita: neuroxelin ausente de PEPTIDES_DATABASE
+[PASS] 2.1.6 Quarentena estrita: oligopeptide-10 ausente de PEPTIDES_DATABASE
+[PASS] 2.1.7 Quarentena estrita: ovagen ausente de PEPTIDES_DATABASE
+[PASS] 2.1.8 Quarentena estrita: ra-260 ausente de PEPTIDES_DATABASE
+[PASS] 2.1.9 Quarentena estrita: testagen ausente de PEPTIDES_DATABASE
+[PASS] 2.1.10 Quarentena estrita: vesilute ausente de PEPTIDES_DATABASE
+[PASS] 2.2.1 Exclusão permanente: aicar ausente de PEPTIDES_DATABASE
+[PASS] 2.2.2 Exclusão permanente: hyaluronic-acid ausente de PEPTIDES_DATABASE
+[PASS] 2.2.3 Exclusão permanente: botulinum-toxin-a ausente de PEPTIDES_DATABASE
+[PASS] 2.2.4 Exclusão permanente: gdf-8-myostatin ausente de PEPTIDES_DATABASE
+--- BLOCO 3: RECONCILIAÇÃO MOLECULAR ESPECÍFICA P4.2 ---
+[PASS] 3.1.1 MGF E-Peptide fórmula recalculada estrita: C121H194N40O40
+[PASS] 3.1.2 MGF E-Peptide PM verificado: 2849.1 g/mol
+[PASS] 3.1.3 MGF E-Peptide massa monoisotópica verificada: 2847.44 Da
+[PASS] 3.1.4 MGF E-Peptide CID 137700201 formalmente removido (pubchemCid: null)
+[PASS] 3.1.5 MGF E-Peptide sequenceOneLetter em código de 1 letra (24 aa)
+[PASS] 3.2.1 Timulina apo-peptídeo livre fórmula estrita: C33H54N12O15
+[PASS] 3.2.2 Timulina apo-peptídeo livre PM verificado: 858.9 g/mol
+[PASS] 3.2.3 Timulina apo-peptídeo massa monoisotópica: 858.38 Da
+[PASS] 3.2.4 Timulina PubChem CID oficial do apo-peptídeo FTS: 71300623
+[PASS] 3.2.5 Timulina sequenceOneLetter com piroglutamato e 8 aa
+[PASS] 3.2.6 Timulina rejeita formalmente a massa inconsistente de 916.2 g/mol
+[PASS] 3.2.7 Timulina documenta estequiometria do complexo Zn(II) ativo [C33H52N12O15Zn] de 922.2 g/mol
+[PASS] 3.3.1 PNC-27 fórmula molecular verificada: C188H293N53O44S
+[PASS] 3.3.2 PNC-27 massa monoisotópica corrigida estrita: 4029.20 Da (resolvendo divergência)
+[PASS] 3.3.3 PNC-27 peso molecular verificado: 4031.8 g/mol
+[PASS] 3.3.4 PNC-27 PubChem CID verificado: 16201774 (CID 137700204 ceramide removido)
+[PASS] 3.3.5 PNC-27 sequenceOneLetter código de 1 letra verificado (32 aa)
+[PASS] 3.4.1 Orexina B humana CAS Registry Number verificado: 205640-91-1 (corrigindo murino 202801-92-1)
+[PASS] 3.4.2 Orexina B PubChem CID verificado: 44404987
+[PASS] 3.4.3 Orexina B Guide to Pharmacology Ligand ID: 1699
+[PASS] 3.4.4 Orexina B sequenceOneLetter código de 1 letra com amidação (28 aa)
+[PASS] 3.4.5 Orexina B mecanismo documenta preferência funcional por OX2R
+[PASS] 3.4.6 Orexina B veta explicitamente a alegação de equipotência universal OX1R/OX2R
+[PASS] 3.5.1 Bronchogen mantido sob status IDENTIDADE_PENDENTE
+[PASS] 3.5.2 Bronchogen sequenceOneLetter: AEDL
+[PASS] 3.5.3 Bronchogen sequenceThreeLetter: Ala-Glu-Asp-Leu
+[PASS] 3.5.4 Bronchogen fórmula molecular: C18H30N4O9
+[PASS] 3.5.5 Bronchogen PM: 446.5 g/mol
+[PASS] 3.5.6 Bronchogen documenta que AEDL e ADEL são isômeros de idêntica massa e fórmula
+[PASS] 3.5.7 Bronchogen bloqueado fail-closed na calculadora de reconstituição
+[PASS] 3.6.1 Prostamax fórmula recalculada estrita: C20H33N5O9
+[PASS] 3.6.2 Prostamax PM corrigido estrito: 487.5 g/mol
+[PASS] 3.6.3 Prostamax massa monoisotópica: 487.23 Da
+[PASS] 3.6.4 Prostamax PubChem CID verificado: 9848296
+[PASS] 3.6.5 Prostamax sequenceOneLetter: KEDP
+[PASS] 3.7.1 Pancragen fórmula recalculada estrita: C26H37N7O8
+[PASS] 3.7.2 Pancragen PM corrigido estrito: 575.6 g/mol
+[PASS] 3.7.3 Pancragen massa monoisotópica: 575.27 Da
+[PASS] 3.7.4 Pancragen CID 11954310 indevido removido (pubchemCid: null)
+[PASS] 3.7.5 Pancragen sequenceOneLetter: KEDW-NH2
+[PASS] 3.8.1 Dermorfina PubChem CID oficial: 5485199
+[PASS] 3.8.2 Dermorfina sequenceOneLetter estruturada
+[PASS] 3.8.3 Orexina A PubChem CID oficial: 56842143
+[PASS] 3.8.4 Orexina A sequenceOneLetter estruturada (33 aa)
+[PASS] 3.9.1 Cardiogen sequenceOneLetter: AEDR
+[PASS] 3.9.2 Cardiogen PubChem CID: 11583989
+[PASS] 3.9.3 Chonluten sequenceOneLetter: EDG
+[PASS] 3.9.4 Chonluten CID indevido removido
+[PASS] 3.9.5 Cortagen sequenceOneLetter: AEDP
+[PASS] 3.9.6 Cortagen PubChem CID: 18439621
+[PASS] 3.9.7 Livagen sequenceOneLetter: KEDA
+[PASS] 3.9.8 Livagen PubChem CID: 87919683
+[PASS] 3.9.9 Thymogen sequenceOneLetter: EW
+[PASS] 3.9.10 Thymogen PubChem CID: 100094
+[PASS] 3.9.11 Vesugen sequenceOneLetter: KED
+[PASS] 3.9.12 Vesugen CID indevido removido
+[PASS] 3.9.13 Vilon sequenceOneLetter: KE
+[PASS] 3.9.14 Vilon PubChem CID: 7010502
+[PASS] 3.9.15 ACTH 1-39 sequenceOneLetter (39 aa)
+[PASS] 3.9.16 ACTH 1-39 PubChem CID: 16132265
+[PASS] 3.9.17 Adipotide sequenceOneLetter (25 aa)
+[PASS] 3.9.18 Adipotide fórmula ajustada com ponte dissulfeto Cys1-Cys9
+[PASS] 3.9.19 HGH Fragment 176-191 sequenceOneLetter (16 aa)
+[PASS] 3.9.20 HGH Fragment 176-191 PubChem CID: 16131230
+--- BLOCO 4: GUARDRAILS CIENTÍFICOS DOS 19 NOVOS COMPOSTOS P4.2 ---
+[PASS] 4.1.1 acth-1-39: protocolEvidenceType === 'investigational_no_dose'
+[PASS] 4.2.1 acth-1-39: typicalDose declara ausência de dose validada
+[PASS] 4.3.1 acth-1-39: defaultDoseNumber === null
+[PASS] 4.4.1 acth-1-39: prefillCalculatorWithPeptide recusa fail-closed na calculadora
+[PASS] 4.5.1 acth-1-39: sequenceOneLetter presente
+[PASS] 4.6.1 acth-1-39: sequenceThreeLetter presente
+[PASS] 4.7.1 acth-1-39: residueCount numérico válido
+[PASS] 4.8.1 acth-1-39: molecularFormula presente
+[PASS] 4.1.2 adipotide: protocolEvidenceType === 'investigational_no_dose'
+[PASS] 4.2.2 adipotide: typicalDose declara ausência de dose validada
+[PASS] 4.3.2 adipotide: defaultDoseNumber === null
+[PASS] 4.4.2 adipotide: prefillCalculatorWithPeptide recusa fail-closed na calculadora
+[PASS] 4.5.2 adipotide: sequenceOneLetter presente
+[PASS] 4.6.2 adipotide: sequenceThreeLetter presente
+[PASS] 4.7.2 adipotide: residueCount numérico válido
+[PASS] 4.8.2 adipotide: molecularFormula presente
+[PASS] 4.1.3 bronchogen: protocolEvidenceType === 'investigational_no_dose'
+[PASS] 4.2.3 bronchogen: typicalDose declara ausência de dose validada
+[PASS] 4.3.3 bronchogen: defaultDoseNumber === null
+[PASS] 4.4.3 bronchogen: prefillCalculatorWithPeptide recusa fail-closed na calculadora
+[PASS] 4.5.3 bronchogen: sequenceOneLetter presente
+[PASS] 4.6.3 bronchogen: sequenceThreeLetter presente
+[PASS] 4.7.3 bronchogen: residueCount numérico válido
+[PASS] 4.8.3 bronchogen: molecularFormula presente
+[PASS] 4.1.4 cardiogen: protocolEvidenceType === 'investigational_no_dose'
+[PASS] 4.2.4 cardiogen: typicalDose declara ausência de dose validada
+[PASS] 4.3.4 cardiogen: defaultDoseNumber === null
+[PASS] 4.4.4 cardiogen: prefillCalculatorWithPeptide recusa fail-closed na calculadora
+[PASS] 4.5.4 cardiogen: sequenceOneLetter presente
+[PASS] 4.6.4 cardiogen: sequenceThreeLetter presente
+[PASS] 4.7.4 cardiogen: residueCount numérico válido
+[PASS] 4.8.4 cardiogen: molecularFormula presente
+[PASS] 4.1.5 chonluten: protocolEvidenceType === 'investigational_no_dose'
+[PASS] 4.2.5 chonluten: typicalDose declara ausência de dose validada
+[PASS] 4.3.5 chonluten: defaultDoseNumber === null
+[PASS] 4.4.5 chonluten: prefillCalculatorWithPeptide recusa fail-closed na calculadora
+[PASS] 4.5.5 chonluten: sequenceOneLetter presente
+[PASS] 4.6.5 chonluten: sequenceThreeLetter presente
+[PASS] 4.7.5 chonluten: residueCount numérico válido
+[PASS] 4.8.5 chonluten: molecularFormula presente
+[PASS] 4.1.6 cortagen: protocolEvidenceType === 'investigational_no_dose'
+[PASS] 4.2.6 cortagen: typicalDose declara ausência de dose validada
+[PASS] 4.3.6 cortagen: defaultDoseNumber === null
+[PASS] 4.4.6 cortagen: prefillCalculatorWithPeptide recusa fail-closed na calculadora
+[PASS] 4.5.6 cortagen: sequenceOneLetter presente
+[PASS] 4.6.6 cortagen: sequenceThreeLetter presente
+[PASS] 4.7.6 cortagen: residueCount numérico válido
+[PASS] 4.8.6 cortagen: molecularFormula presente
+[PASS] 4.1.7 dermorphin: protocolEvidenceType === 'investigational_no_dose'
+[PASS] 4.2.7 dermorphin: typicalDose declara ausência de dose validada
+[PASS] 4.3.7 dermorphin: defaultDoseNumber === null
+[PASS] 4.4.7 dermorphin: prefillCalculatorWithPeptide recusa fail-closed na calculadora
+[PASS] 4.5.7 dermorphin: sequenceOneLetter presente
+[PASS] 4.6.7 dermorphin: sequenceThreeLetter presente
+[PASS] 4.7.7 dermorphin: residueCount numérico válido
+[PASS] 4.8.7 dermorphin: molecularFormula presente
+[PASS] 4.1.8 hgh-fragment-176-191: protocolEvidenceType === 'investigational_no_dose'
+[PASS] 4.2.8 hgh-fragment-176-191: typicalDose declara ausência de dose validada
+[PASS] 4.3.8 hgh-fragment-176-191: defaultDoseNumber === null
+[PASS] 4.4.8 hgh-fragment-176-191: prefillCalculatorWithPeptide recusa fail-closed na calculadora
+[PASS] 4.5.8 hgh-fragment-176-191: sequenceOneLetter presente
+[PASS] 4.6.8 hgh-fragment-176-191: sequenceThreeLetter presente
+[PASS] 4.7.8 hgh-fragment-176-191: residueCount numérico válido
+[PASS] 4.8.8 hgh-fragment-176-191: molecularFormula presente
+[PASS] 4.1.9 livagen: protocolEvidenceType === 'investigational_no_dose'
+[PASS] 4.2.9 livagen: typicalDose declara ausência de dose validada
+[PASS] 4.3.9 livagen: defaultDoseNumber === null
+[PASS] 4.4.9 livagen: prefillCalculatorWithPeptide recusa fail-closed na calculadora
+[PASS] 4.5.9 livagen: sequenceOneLetter presente
+[PASS] 4.6.9 livagen: sequenceThreeLetter presente
+[PASS] 4.7.9 livagen: residueCount numérico válido
+[PASS] 4.8.9 livagen: molecularFormula presente
+[PASS] 4.1.10 mgf-e-peptide: protocolEvidenceType === 'investigational_no_dose'
+[PASS] 4.2.10 mgf-e-peptide: typicalDose declara ausência de dose validada
+[PASS] 4.3.10 mgf-e-peptide: defaultDoseNumber === null
+[PASS] 4.4.10 mgf-e-peptide: prefillCalculatorWithPeptide recusa fail-closed na calculadora
+[PASS] 4.5.10 mgf-e-peptide: sequenceOneLetter presente
+[PASS] 4.6.10 mgf-e-peptide: sequenceThreeLetter presente
+[PASS] 4.7.10 mgf-e-peptide: residueCount numérico válido
+[PASS] 4.8.10 mgf-e-peptide: molecularFormula presente
+[PASS] 4.1.11 orexin-a: protocolEvidenceType === 'investigational_no_dose'
+[PASS] 4.2.11 orexin-a: typicalDose declara ausência de dose validada
+[PASS] 4.3.11 orexin-a: defaultDoseNumber === null
+[PASS] 4.4.11 orexin-a: prefillCalculatorWithPeptide recusa fail-closed na calculadora
+[PASS] 4.5.11 orexin-a: sequenceOneLetter presente
+[PASS] 4.6.11 orexin-a: sequenceThreeLetter presente
+[PASS] 4.7.11 orexin-a: residueCount numérico válido
+[PASS] 4.8.11 orexin-a: molecularFormula presente
+[PASS] 4.1.12 orexin-b: protocolEvidenceType === 'investigational_no_dose'
+[PASS] 4.2.12 orexin-b: typicalDose declara ausência de dose validada
+[PASS] 4.3.12 orexin-b: defaultDoseNumber === null
+[PASS] 4.4.12 orexin-b: prefillCalculatorWithPeptide recusa fail-closed na calculadora
+[PASS] 4.5.12 orexin-b: sequenceOneLetter presente
+[PASS] 4.6.12 orexin-b: sequenceThreeLetter presente
+[PASS] 4.7.12 orexin-b: residueCount numérico válido
+[PASS] 4.8.12 orexin-b: molecularFormula presente
+[PASS] 4.1.13 pancragen: protocolEvidenceType === 'investigational_no_dose'
+[PASS] 4.2.13 pancragen: typicalDose declara ausência de dose validada
+[PASS] 4.3.13 pancragen: defaultDoseNumber === null
+[PASS] 4.4.13 pancragen: prefillCalculatorWithPeptide recusa fail-closed na calculadora
+[PASS] 4.5.13 pancragen: sequenceOneLetter presente
+[PASS] 4.6.13 pancragen: sequenceThreeLetter presente
+[PASS] 4.7.13 pancragen: residueCount numérico válido
+[PASS] 4.8.13 pancragen: molecularFormula presente
+[PASS] 4.1.14 pnc-27: protocolEvidenceType === 'investigational_no_dose'
+[PASS] 4.2.14 pnc-27: typicalDose declara ausência de dose validada
+[PASS] 4.3.14 pnc-27: defaultDoseNumber === null
+[PASS] 4.4.14 pnc-27: prefillCalculatorWithPeptide recusa fail-closed na calculadora
+[PASS] 4.5.14 pnc-27: sequenceOneLetter presente
+[PASS] 4.6.14 pnc-27: sequenceThreeLetter presente
+[PASS] 4.7.14 pnc-27: residueCount numérico válido
+[PASS] 4.8.14 pnc-27: molecularFormula presente
+[PASS] 4.1.15 prostamax: protocolEvidenceType === 'investigational_no_dose'
+[PASS] 4.2.15 prostamax: typicalDose declara ausência de dose validada
+[PASS] 4.3.15 prostamax: defaultDoseNumber === null
+[PASS] 4.4.15 prostamax: prefillCalculatorWithPeptide recusa fail-closed na calculadora
+[PASS] 4.5.15 prostamax: sequenceOneLetter presente
+[PASS] 4.6.15 prostamax: sequenceThreeLetter presente
+[PASS] 4.7.15 prostamax: residueCount numérico válido
+[PASS] 4.8.15 prostamax: molecularFormula presente
+[PASS] 4.1.16 thymogen: protocolEvidenceType === 'investigational_no_dose'
+[PASS] 4.2.16 thymogen: typicalDose declara ausência de dose validada
+[PASS] 4.3.16 thymogen: defaultDoseNumber === null
+[PASS] 4.4.16 thymogen: prefillCalculatorWithPeptide recusa fail-closed na calculadora
+[PASS] 4.5.16 thymogen: sequenceOneLetter presente
+[PASS] 4.6.16 thymogen: sequenceThreeLetter presente
+[PASS] 4.7.16 thymogen: residueCount numérico válido
+[PASS] 4.8.16 thymogen: molecularFormula presente
+[PASS] 4.1.17 thymulin: protocolEvidenceType === 'investigational_no_dose'
+[PASS] 4.2.17 thymulin: typicalDose declara ausência de dose validada
+[PASS] 4.3.17 thymulin: defaultDoseNumber === null
+[PASS] 4.4.17 thymulin: prefillCalculatorWithPeptide recusa fail-closed na calculadora
+[PASS] 4.5.17 thymulin: sequenceOneLetter presente
+[PASS] 4.6.17 thymulin: sequenceThreeLetter presente
+[PASS] 4.7.17 thymulin: residueCount numérico válido
+[PASS] 4.8.17 thymulin: molecularFormula presente
+[PASS] 4.1.18 vesugen: protocolEvidenceType === 'investigational_no_dose'
+[PASS] 4.2.18 vesugen: typicalDose declara ausência de dose validada
+[PASS] 4.3.18 vesugen: defaultDoseNumber === null
+[PASS] 4.4.18 vesugen: prefillCalculatorWithPeptide recusa fail-closed na calculadora
+[PASS] 4.5.18 vesugen: sequenceOneLetter presente
+[PASS] 4.6.18 vesugen: sequenceThreeLetter presente
+[PASS] 4.7.18 vesugen: residueCount numérico válido
+[PASS] 4.8.18 vesugen: molecularFormula presente
+[PASS] 4.1.19 vilon: protocolEvidenceType === 'investigational_no_dose'
+[PASS] 4.2.19 vilon: typicalDose declara ausência de dose validada
+[PASS] 4.3.19 vilon: defaultDoseNumber === null
+[PASS] 4.4.19 vilon: prefillCalculatorWithPeptide recusa fail-closed na calculadora
+[PASS] 4.5.19 vilon: sequenceOneLetter presente
+[PASS] 4.6.19 vilon: sequenceThreeLetter presente
+[PASS] 4.7.19 vilon: residueCount numérico válido
+[PASS] 4.8.19 vilon: molecularFormula presente
+--- BLOCO 5: ESTUDOS CLÍNICOS E PRESERVAÇÃO HISTÓRICA ---
+[PASS] 5.1 Estudo study-orexin-a-narcolepsy indexado
+[PASS] 5.2 Estudo Orexina-A PMID 24406723
+[PASS] 5.3 Estudo Orexina-A título oficial verbatim
+[PASS] 5.4 Exatamente 18 stacks preservados
+[PASS] 5.5 Exatamente 37 verbetes do glossário preservados
+[PASS] 5.6 Exatamente 5 compostos multiformulação preservados
+[PASS] 5.7 Exatamente 12 apresentações multiformulação preservadas
+
+======================================================================
+HOMOLOGAÇÃO P4.2 CONCLUÍDA: 262 asserções aprovadas, 0 falhas.
+======================================================================
+
+--- FIM DA SAÍDA V8 ---
+
+Resultado: 262 aprovados, 0 falhas de 262 asserções
+[PASS] Homologação P4.2 V8 100% APROVADA (262/262 asserções)!

@@ -135,7 +135,7 @@ try {
     $LogDir       = Join-Path $RepoRoot "auditoria\testes\$VersionUpper\logs"
 
     # Snapshots historicos de etapas anteriores sao estritamente imutaveis
-    $PriorHistoricalVersions = @("P2G2", "P2G21", "P2G22", "P2G23", "P2G24", "P2G25", "P3", "P31", "P4")
+    $PriorHistoricalVersions = @("P2G2", "P2G21", "P2G22", "P2G23", "P2G24", "P2G25", "P3", "P31", "P4", "P41")
     if ($PriorHistoricalVersions -contains $VersionUpper) {
         Write-Failure "A versao '$VersionUpper' e um snapshot historico anterior imutavel. Qualquer modificacao e TERMINANTEMENTE PROIBIDA."
         exit 1
@@ -198,8 +198,12 @@ try {
             $TempRunners = @()
             $v8 = Join-Path $TempTest "run_${VersionLower}_final.py"
             $pw = Join-Path $TempTest "test_e2e_playwright_${VersionLower}.py"
+            $chem = Join-Path $TempTest "verify_chemical_integrity.py"
+            $fail = Join-Path $TempTest "test_failure_modes_${VersionLower}.py"
             if (Test-Path $v8) { $TempRunners += $v8 }
             if (Test-Path $pw) { $TempRunners += $pw }
+            if (Test-Path $chem) { $TempRunners += $chem }
+            if (Test-Path $fail) { $TempRunners += $fail }
 
             if ($TempRunners.Count -lt 2) {
                 Write-Failure "Menos de 2 runners encontrados no sandbox temporario para $VersionUpper. Abortando!"
@@ -339,8 +343,12 @@ try {
     $RunnersFound = @()
     $v8Path = Join-Path $TestDest "run_${VersionLower}_final.py"
     $pwPath = Join-Path $TestDest "test_e2e_playwright_${VersionLower}.py"
+    $chemPath = Join-Path $TestDest "verify_chemical_integrity.py"
+    $failPath = Join-Path $TestDest "test_failure_modes_${VersionLower}.py"
     if (Test-Path $v8Path) { $RunnersFound += $v8Path }
     if (Test-Path $pwPath) { $RunnersFound += $pwPath }
+    if (Test-Path $chemPath) { $RunnersFound += $chemPath }
+    if (Test-Path $failPath) { $RunnersFound += $failPath }
 
     if ($RunnersFound.Count -lt 2) {
         Write-Failure "Menos de 2 scripts runners obrigatorios encontrados para $VersionUpper. Abortando!"
