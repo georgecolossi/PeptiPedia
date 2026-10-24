@@ -1,0 +1,146 @@
+{
+  "gerado_em": "2026-10-24",
+  "baseline_commit": "a2ed377345d33eba65bf01eeb48dbbceeeea211a",
+  "conteudo": {
+    "GUIA_P5.md": {
+      "sha256": "5f3f38b9a3cfa8d8296df1a2b25dc4fbcdbf162787aaf05758c9a3ce4536d477",
+      "bytes": 3426
+    },
+    "implementacao/PROMPT_MESTRE_ANTIGRAVITY_P5.md": {
+      "sha256": "2654b2e1121c55ab241bfd520c13cb58378f5c1074b653c7e59d179dbc19bb0d",
+      "bytes": 6513
+    },
+    "entradas/P5-MATRIZ-CANDIDATOS-23.csv": {
+      "sha256": "cdc774297b280989bc175c1fe110f2dc342d2067a5bec9552451252fbd86b9ec",
+      "bytes": 14165
+    },
+    "entradas/P5-MATRIZ-CANDIDATOS-23.json": {
+      "sha256": "badbc6fc1253e84a9aaf020ad291cf0573ddfcddcd6cf68717c70c58a085eb93",
+      "bytes": 29251
+    },
+    "entradas/P5-RESERVA-CANDIDATOS-8.json": {
+      "sha256": "0681cc07439315f1bebe517039794bbb3719c0ab83a3b91d32c2aebd7ee455c7",
+      "bytes": 1337
+    },
+    "entradas/P42-IDS-REAIS-91.json": {
+      "sha256": "3b00ddc141f53dbf2560373a84629e321ad2f50c7c5d787bceefe56e0571ce05",
+      "bytes": 1701
+    },
+    "erratas/P42-ERRATAS-CONSOLIDADAS.md": {
+      "sha256": "0ebc6b8b5a27f3f16512adca0bb195ca097ad80d682c646b79f58c81afad8c33",
+      "bytes": 3527
+    },
+    "validacao/P5-CRITERIOS-QA.md": {
+      "sha256": "739d9374b1b34e7fec6d0fcd2b7bcf9976163ea4eb4e7941152854749e7028d2",
+      "bytes": 2949
+    },
+    "validacao/validar_p5.py": {
+      "sha256": "5ca509c86ff7d0b4358c9e142e833463ce25f6fcbdca0133f242b57efc03e614",
+      "bytes": 1197
+    },
+    "referencias/P5-ALIAS-ZENAGAMTIDA.md": {
+      "sha256": "e189b5e02cbd303c87fcc156cb1da169e3c0f465d1c57e39c8f63a8ee171af70",
+      "bytes": 908
+    },
+    "referencias/P5-ESTUDOS-PRIMARIOS-4.json": {
+      "sha256": "3342b1b9f97cbf723044579745c3d4f41990008e429b1af77e235d6bc5dbd9a1",
+      "bytes": 1268
+    },
+    "referencias/P5-FONTES-PRIMARIAS.csv": {
+      "sha256": "143e9957cef8a54c6264aeb86fb373d47fad755e65e52a47f831f4e766b7ec8e",
+      "bytes": 2882
+    },
+    "pesquisa/dossies/apraglutide.md": {
+      "sha256": "2c56f5238972ea1db4d16cfe25e682b4ab21f9f83f1aebfb74ca30008b7fda2e",
+      "bytes": 2869
+    },
+    "pesquisa/dossies/octreotide.md": {
+      "sha256": "141ba854f715d5d5c18172593b0ec87bea4dac8842955f276178b293fb61f609",
+      "bytes": 2986
+    },
+    "pesquisa/dossies/plecanatide.md": {
+      "sha256": "774d622eeecdfce308a104eb33969edbfe44ed8ed24b25cccb20535a2c6d34a9",
+      "bytes": 2885
+    },
+    "pesquisa/dossies/degarelix.md": {
+      "sha256": "dcbec3107a0a8c89f57a54bf2384abfb63ea3aeabd31040012a16b4b9833b9d5",
+      "bytes": 2833
+    },
+    "pesquisa/dossies/cetrorelix.md": {
+      "sha256": "382456a815fe8df2ad4d76f07bd780d0714d0c8242e8a04a462ee5a456e37519",
+      "bytes": 2818
+    },
+    "pesquisa/dossies/enfuvirtide.md": {
+      "sha256": "676b027ceb627be6cd05aa57d0d7317ef672ca0fcf74639555cbd83dff228377",
+      "bytes": 2847
+    },
+    "pesquisa/dossies/exenatide.md": {
+      "sha256": "e98630ddf105ab3851c62f698ffdfbc30b12506e20c372b7c65c1b5310c4fad0",
+      "bytes": 2893
+    },
+    "pesquisa/dossies/atosiban.md": {
+      "sha256": "94e00b18d8af51966d141b412a0fe592f1ca20b805aeeea85229440e6f6fac1b",
+      "bytes": 2839
+    },
+    "pesquisa/dossies/glucagon.md": {
+      "sha256": "d2e94314a0721aafd1d869cec11609fb802c370b238d65d2a33be716faf526be",
+      "bytes": 2852
+    },
+    "pesquisa/dossies/leuprorelin.md": {
+      "sha256": "fcac36184cc2314c8d021a6bd9c554264a1c19e221f7584895dc395858e4c934",
+      "bytes": 2919
+    },
+    "pesquisa/dossies/pasireotide.md": {
+      "sha256": "27ba2c75d01b291e09ac45d80df610522d4d5743883680930b85d96fbc8b38da",
+      "bytes": 2839
+    },
+    "pesquisa/dossies/pramlintide.md": {
+      "sha256": "af9c5cdc7e0bcb65ec3d63ea9ad8f7d7aa0b76dfc37a9069f8fbe5115d1c1e73",
+      "bytes": 2921
+    },
+    "pesquisa/dossies/ganirelix.md": {
+      "sha256": "01436173df2297797b39a6cb04ecc23324d38ef52696c07c97a21d95ce27c129",
+      "bytes": 2842
+    },
+    "pesquisa/dossies/lixisenatide.md": {
+      "sha256": "bd55cc727aa49f463cb4be9ea100bd10573ab87126b916309590d1c20972059e",
+      "bytes": 2892
+    },
+    "pesquisa/dossies/linaclotide.md": {
+      "sha256": "5b405f20e0379c50ea27d2e8faadd68f9bb851b9c5636b2fe02813e9011f2923",
+      "bytes": 2834
+    },
+    "pesquisa/dossies/palopegteriparatide.md": {
+      "sha256": "8903c2d9fb7b8694acde234132cb385bf601c8052c3e15e27622e6d1901cbeed",
+      "bytes": 2929
+    },
+    "pesquisa/dossies/ziconotide.md": {
+      "sha256": "5dbe1b52b51ac5aada3d418e0dc882d272a0ed50ff8e9511fd11112118a55319",
+      "bytes": 2798
+    },
+    "pesquisa/dossies/lanreotide.md": {
+      "sha256": "7330a2718b02455fafd6bd22f79741607a13b3d30c61584448d7b09dcbb1de03",
+      "bytes": 2894
+    },
+    "pesquisa/dossies/goserelin.md": {
+      "sha256": "2f34aa70ffbe1ca8e33360789db08301cffffdde0f235d7a42f4fd74b57ccd27",
+      "bytes": 2884
+    },
+    "pesquisa/dossies/desmopressin.md": {
+      "sha256": "ab210e2b9eb53bf8c686df92d4056c155b1617f59e183d3d961ec255b3b5e29b",
+      "bytes": 2936
+    },
+    "pesquisa/dossies/zenagamtide.md": {
+      "sha256": "c47e56d77fef439747ffb58205e6eae13425712201bc9d134d51d5cd2e38b530",
+      "bytes": 3209
+    },
+    "pesquisa/dossies/teriparatide.md": {
+      "sha256": "769de651f8ae2ea9307a7011c9d6edfd70e9a81b7320e47df8c2b0752f67b8f4",
+      "bytes": 2805
+    },
+    "pesquisa/dossies/dasiglucagon.md": {
+      "sha256": "fcecbe0e453950cfb8e935d9c1538e15f02c69a7bfc1303dade1985a3279412a",
+      "bytes": 2849
+    }
+  }
+}

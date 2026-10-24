@@ -1,0 +1,31 @@
+{
+  "version": "P5",
+  "timestamp_start": "2026-10-24T22:28:22.466466+00:00",
+  "timestamp_end": "2026-10-24T22:28:31.061665+00:00",
+  "status": "PASSED",
+  "total_checks": 28,
+  "checks_passed": 28,
+  "checks_failed": 0,
+  "checksPassed": 28,
+  "checksFailed": 0,
+  "checksRun": 28,
+  "expected_checks_min": 28,
+  "expectedChecks": 28,
+  "screenshotsCount": 9,
+  "page_errors_count": 0,
+  "page_errors": [],
+  "captured_screenshots": [
+    "01_home_catalog_114_p5.png",
+    "02_p5_modal_teriparatide.png",
+    "03_p5_modal_apraglutide.png",
+    "04_p5_modal_zenagamtide.png",
+    "05_p5_modal_ziconotide.png",
+    "06_p5_modal_orexin_b_er01.png",
+    "07_p5_search_quarantined_0_cards.png",
+    "08_p5_studies_tab_70_studies.png",
+    "09_p5_stacks_tab_18_stacks.png"
+  ],
+  "exit_code": 0,
+  "exitCode": 0,
+  "execution_error": null
+}

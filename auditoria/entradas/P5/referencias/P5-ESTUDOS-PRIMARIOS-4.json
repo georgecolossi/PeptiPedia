@@ -1,0 +1,42 @@
+[
+  {
+    "id_candidato": "apraglutide",
+    "pmid": "42692160",
+    "doi": "10.1016/j.cgh.2026.08.026",
+    "tipo": "RCT fase 3",
+    "ano": 2026,
+    "n": 163,
+    "fonte": "https://pubmed.ncbi.nlm.nih.gov/42692160/",
+    "observacao": "Estudo STARS, suporte parenteral em intestino curto; n=163 tratados/randomizados conforme abstract"
+  },
+  {
+    "id_candidato": "zenagamtide",
+    "pmid": "40550231",
+    "doi": "10.1016/S0140-6736(25)01185-7",
+    "tipo": "RCT fase 1b/2a SC",
+    "ano": 2025,
+    "n": 125,
+    "fonte": "https://pubmed.ncbi.nlm.nih.gov/40550231/",
+    "observacao": "Denominação anterior amycretin; endpoint e braços separados"
+  },
+  {
+    "id_candidato": "zenagamtide",
+    "pmid": "42532080",
+    "doi": "10.1016/S0140-6736(26)01248-1",
+    "tipo": "RCT fase 2 SC",
+    "ano": 2026,
+    "n": 262,
+    "fonte": "https://pubmed.ncbi.nlm.nih.gov/42532080/",
+    "observacao": "N=262 randomizados, 225 ativos e 37 placebo; DM2"
+  },
+  {
+    "id_candidato": "zenagamtide",
+    "pmid": "42532079",
+    "doi": "10.1016/S0140-6736(26)01247-X",
+    "tipo": "RCT fase 2 oral",
+    "ano": 2026,
+    "n": 186,
+    "fonte": "https://pubmed.ncbi.nlm.nih.gov/42532079/",
+    "observacao": "N=186 randomizados; comparar formulações com cautela"
+  }
+]

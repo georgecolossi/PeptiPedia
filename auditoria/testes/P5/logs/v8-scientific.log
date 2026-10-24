@@ -1,0 +1,238 @@
+======================================================================
+INICIANDO RUNNER DA HOMOLOGAÇÃO CIENTÍFICA V8 P5
+Raiz da Aplicação: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\snapshots\P5
+Arquivo de Teste:  C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P5\test_p5_final.html
+Início (UTC):      2026-10-24T22:28:19.046302+00:00
+======================================================================
+
+[OK] Sandbox V8 inicializado em: C:\Users\georg\AppData\Local\Temp\peptipedia_v8_p5_16p3jehu
+[OK] Servidor HTTP ativo em http://127.0.0.1:62637
+[OK] Pré-flight HTTP 200 concluído com sucesso para todos os recursos estáticos
+[OK] Utilizando Google Chrome V8 nativo: C:\Program Files\Google\Chrome\Application\chrome.exe
+[OK] Navegando para http://127.0.0.1:62637/test_p5_final.html
+
+--- SAÍDA DO MOTOR V8 ---
+=== INICIANDO SUÍTE DE HOMOLOGAÇÃO CIENTÍFICA P5 ===
+
+--- BLOCO 1: INTEGRIDADE DO CATÁLOGO E DIMENSIONALIDADE ---
+[PASS] 1.1 Array PEPTIDES_DATABASE carregado com sucesso
+[PASS] 1.2 Total de compostos ativos no catálogo é exatamente 114 (57 legados + 15 P3 + 19 P4 + 23 P5)
+[PASS] 1.3 Array CLINICAL_STUDIES_DATABASE carregado com sucesso
+[PASS] 1.4 Total de estudos clínicos é exatamente 70 (57 legados + 8 P3 + 1 P4 + 4 P5)
+[PASS] 1.5.1 Composto quarentenado "adamax" rigorosamente ausente do catálogo ativo
+[PASS] 1.5.2 Composto quarentenado "cartalax" rigorosamente ausente do catálogo ativo
+[PASS] 1.5.3 Composto quarentenado "crystagen" rigorosamente ausente do catálogo ativo
+[PASS] 1.5.4 Composto quarentenado "melatonin-peptide" rigorosamente ausente do catálogo ativo
+[PASS] 1.5.5 Composto quarentenado "neuroxelin" rigorosamente ausente do catálogo ativo
+[PASS] 1.5.6 Composto quarentenado "oligopeptide-10" rigorosamente ausente do catálogo ativo
+[PASS] 1.5.7 Composto quarentenado "ovagen" rigorosamente ausente do catálogo ativo
+[PASS] 1.5.8 Composto quarentenado "ra-260" rigorosamente ausente do catálogo ativo
+[PASS] 1.5.9 Composto quarentenado "testagen" rigorosamente ausente do catálogo ativo
+[PASS] 1.5.10 Composto quarentenado "vesilute" rigorosamente ausente do catálogo ativo
+[PASS] 1.6.1 Substância de alto risco "aicar" rigorosamente ausente do catálogo
+[PASS] 1.6.2 Substância de alto risco "hyaluronic-acid" rigorosamente ausente do catálogo
+[PASS] 1.6.3 Substância de alto risco "botulinum-toxin-a" rigorosamente ausente do catálogo
+[PASS] 1.6.4 Substância de alto risco "gdf-8-myostatin" rigorosamente ausente do catálogo
+
+--- BLOCO 2: ERRATAS P4.2 HERDADAS ---
+[PASS] 2.1 ER-01: Orexina B pubchemCid é estritamente null (reversão C->N rejeitada)
+[PASS] 2.2 ER-01: Orexina B mantém CAS 205640-91-1 humano verificado
+[PASS] 2.3 ER-01: Orexina B mantém Guide to Pharmacology Ligand ID 1699
+[PASS] 2.4 ER-01: Orexina B documenta formalmente o motivo da desvinculação
+[PASS] 2.5 ER-03: Gonadorelina scientificReferences[0] corrigida para autor Skarin G, Ahlgren M
+[PASS] 2.6 ER-03: Gonadorelina referência Braat DD removida com sucesso
+
+--- BLOCO 3: HOMOLOGAÇÃO DOS 23 NOVOS COMPOSTOS P5 ---
+[PASS] 3.1.1 Composto "teriparatide" encontrado no catálogo
+[PASS] 3.1.2 teriparatide fórmula estequiométrica: C181H291N55O51S2
+[PASS] 3.1.3 teriparatide peso molecular: 4117.7 g/mol
+[PASS] 3.1.4 teriparatide PubChem CID: 16133850
+[PASS] 3.1.5 teriparatide CAS: 52232-67-4
+[PASS] 3.1.6 teriparatide categoryId: regeneration
+[PASS] 3.1.7 teriparatide calculadora bloqueada fail-closed
+[PASS] 3.2.1 Composto "palopegteriparatide" encontrado no catálogo
+[PASS] 3.2.2 palopegteriparatide fórmula estequiométrica: Polimero conjugado mPEG-teriparatida (mPEG ~40 kDa + C181H291N55O51S2)
+[PASS] 3.2.3 palopegteriparatide peso molecular: ~44 kDa
+[PASS] 3.2.4 palopegteriparatide PubChem CID: null
+[PASS] 3.2.5 palopegteriparatide CAS: 2222514-07-8
+[PASS] 3.2.6 palopegteriparatide categoryId: regeneration
+[PASS] 3.2.7 palopegteriparatide calculadora bloqueada fail-closed
+[PASS] 3.3.1 Composto "octreotide" encontrado no catálogo
+[PASS] 3.3.2 octreotide fórmula estequiométrica: C49H66N10O10S2
+[PASS] 3.3.3 octreotide peso molecular: 1019.2 g/mol
+[PASS] 3.3.4 octreotide PubChem CID: 448601
+[PASS] 3.3.5 octreotide CAS: 83150-76-9
+[PASS] 3.3.6 octreotide categoryId: metabolism
+[PASS] 3.3.7 octreotide calculadora bloqueada fail-closed
+[PASS] 3.4.1 Composto "lanreotide" encontrado no catálogo
+[PASS] 3.4.2 lanreotide fórmula estequiométrica: C54H69N11O10S2
+[PASS] 3.4.3 lanreotide peso molecular: 1096.3 g/mol
+[PASS] 3.4.4 lanreotide PubChem CID: 6918011
+[PASS] 3.4.5 lanreotide CAS: 108736-35-2
+[PASS] 3.4.6 lanreotide categoryId: metabolism
+[PASS] 3.4.7 lanreotide calculadora bloqueada fail-closed
+[PASS] 3.5.1 Composto "pasireotide" encontrado no catálogo
+[PASS] 3.5.2 pasireotide fórmula estequiométrica: C58H66N10O9
+[PASS] 3.5.3 pasireotide peso molecular: 1047.2 g/mol
+[PASS] 3.5.4 pasireotide PubChem CID: 9941444
+[PASS] 3.5.5 pasireotide CAS: 396091-73-9
+[PASS] 3.5.6 pasireotide categoryId: metabolism
+[PASS] 3.5.7 pasireotide calculadora bloqueada fail-closed
+[PASS] 3.6.1 Composto "ziconotide" encontrado no catálogo
+[PASS] 3.6.2 ziconotide fórmula estequiométrica: C102H172N36O32S7
+[PASS] 3.6.3 ziconotide peso molecular: 2639.1 g/mol
+[PASS] 3.6.4 ziconotide PubChem CID: 16135415
+[PASS] 3.6.5 ziconotide CAS: 107452-89-1
+[PASS] 3.6.6 ziconotide categoryId: cognition
+[PASS] 3.6.7 ziconotide calculadora bloqueada fail-closed
+[PASS] 3.7.1 Composto "degarelix" encontrado no catálogo
+[PASS] 3.7.2 degarelix fórmula estequiométrica: C82H103ClN18O16
+[PASS] 3.7.3 degarelix peso molecular: 1632.3 g/mol
+[PASS] 3.7.4 degarelix PubChem CID: 16136245
+[PASS] 3.7.5 degarelix CAS: 214766-78-6
+[PASS] 3.7.6 degarelix categoryId: libido
+[PASS] 3.7.7 degarelix calculadora bloqueada fail-closed
+[PASS] 3.8.1 Composto "ganirelix" encontrado no catálogo
+[PASS] 3.8.2 ganirelix fórmula estequiométrica: C80H113ClN18O13
+[PASS] 3.8.3 ganirelix peso molecular: 1570.3 g/mol
+[PASS] 3.8.4 ganirelix PubChem CID: 16130957
+[PASS] 3.8.5 ganirelix CAS: 124904-08-1
+[PASS] 3.8.6 ganirelix categoryId: libido
+[PASS] 3.8.7 ganirelix calculadora bloqueada fail-closed
+[PASS] 3.9.1 Composto "cetrorelix" encontrado no catálogo
+[PASS] 3.9.2 cetrorelix fórmula estequiométrica: C70H92ClN17O14
+[PASS] 3.9.3 cetrorelix peso molecular: 1431.1 g/mol
+[PASS] 3.9.4 cetrorelix PubChem CID: 25074887
+[PASS] 3.9.5 cetrorelix CAS: 120287-85-6
+[PASS] 3.9.6 cetrorelix categoryId: libido
+[PASS] 3.9.7 cetrorelix calculadora bloqueada fail-closed
+[PASS] 3.10.1 Composto "leuprorelin" encontrado no catálogo
+[PASS] 3.10.2 leuprorelin fórmula estequiométrica: C59H84N16O12
+[PASS] 3.10.3 leuprorelin peso molecular: 1209.4 g/mol
+[PASS] 3.10.4 leuprorelin PubChem CID: 3911
+[PASS] 3.10.5 leuprorelin CAS: 53714-56-0
+[PASS] 3.10.6 leuprorelin categoryId: libido
+[PASS] 3.10.7 leuprorelin calculadora bloqueada fail-closed
+[PASS] 3.11.1 Composto "goserelin" encontrado no catálogo
+[PASS] 3.11.2 goserelin fórmula estequiométrica: C59H84N18O14
+[PASS] 3.11.3 goserelin peso molecular: 1269.4 g/mol
+[PASS] 3.11.4 goserelin PubChem CID: 5311128
+[PASS] 3.11.5 goserelin CAS: 65807-02-5
+[PASS] 3.11.6 goserelin categoryId: libido
+[PASS] 3.11.7 goserelin calculadora bloqueada fail-closed
+[PASS] 3.12.1 Composto "atosiban" encontrado no catálogo
+[PASS] 3.12.2 atosiban fórmula estequiométrica: C43H67N11O12S2
+[PASS] 3.12.3 atosiban peso molecular: 994.2 g/mol
+[PASS] 3.12.4 atosiban PubChem CID: 5311010
+[PASS] 3.12.5 atosiban CAS: 90779-69-4
+[PASS] 3.12.6 atosiban categoryId: libido
+[PASS] 3.12.7 atosiban calculadora bloqueada fail-closed
+[PASS] 3.13.1 Composto "linaclotide" encontrado no catálogo
+[PASS] 3.13.2 linaclotide fórmula estequiométrica: C59H79N15O21S6
+[PASS] 3.13.3 linaclotide peso molecular: 1526.7 g/mol
+[PASS] 3.13.4 linaclotide PubChem CID: 16158208
+[PASS] 3.13.5 linaclotide CAS: 851199-59-2
+[PASS] 3.13.6 linaclotide categoryId: regeneration
+[PASS] 3.13.7 linaclotide calculadora bloqueada fail-closed
+[PASS] 3.14.1 Composto "plecanatide" encontrado no catálogo
+[PASS] 3.14.2 plecanatide fórmula estequiométrica: C65H104N18O26S4
+[PASS] 3.14.3 plecanatide peso molecular: 1681.9 g/mol
+[PASS] 3.14.4 plecanatide PubChem CID: 70693500
+[PASS] 3.14.5 plecanatide CAS: 467426-54-6
+[PASS] 3.14.6 plecanatide categoryId: regeneration
+[PASS] 3.14.7 plecanatide calculadora bloqueada fail-closed
+[PASS] 3.15.1 Composto "dasiglucagon" encontrado no catálogo
+[PASS] 3.15.2 dasiglucagon fórmula estequiométrica: C152H222N38O50
+[PASS] 3.15.3 dasiglucagon peso molecular: 3381.7 g/mol
+[PASS] 3.15.4 dasiglucagon PubChem CID: 126961379
+[PASS] 3.15.5 dasiglucagon CAS: 1836139-24-2
+[PASS] 3.15.6 dasiglucagon categoryId: metabolism
+[PASS] 3.15.7 dasiglucagon calculadora bloqueada fail-closed
+[PASS] 3.16.1 Composto "glucagon" encontrado no catálogo
+[PASS] 3.16.2 glucagon fórmula estequiométrica: C153H225N43O49S
+[PASS] 3.16.3 glucagon peso molecular: 3482.8 g/mol
+[PASS] 3.16.4 glucagon PubChem CID: 16132283
+[PASS] 3.16.5 glucagon CAS: 16941-32-5
+[PASS] 3.16.6 glucagon categoryId: metabolism
+[PASS] 3.16.7 glucagon calculadora bloqueada fail-closed
+[PASS] 3.17.1 Composto "desmopressin" encontrado no catálogo
+[PASS] 3.17.2 desmopressin fórmula estequiométrica: C46H64N14O12S2
+[PASS] 3.17.3 desmopressin peso molecular: 1069.2 g/mol
+[PASS] 3.17.4 desmopressin PubChem CID: 5311065
+[PASS] 3.17.5 desmopressin CAS: 16679-58-6
+[PASS] 3.17.6 desmopressin categoryId: metabolism
+[PASS] 3.17.7 desmopressin calculadora bloqueada fail-closed
+[PASS] 3.18.1 Composto "pramlintide" encontrado no catálogo
+[PASS] 3.18.2 pramlintide fórmula estequiométrica: C171H267N51O53S2
+[PASS] 3.18.3 pramlintide peso molecular: 3949.4 g/mol
+[PASS] 3.18.4 pramlintide PubChem CID: 70691388
+[PASS] 3.18.5 pramlintide CAS: 151126-32-8
+[PASS] 3.18.6 pramlintide categoryId: metabolism
+[PASS] 3.18.7 pramlintide calculadora bloqueada fail-closed
+[PASS] 3.19.1 Composto "enfuvirtide" encontrado no catálogo
+[PASS] 3.19.2 enfuvirtide fórmula estequiométrica: C204H301N51O64
+[PASS] 3.19.3 enfuvirtide peso molecular: 4492.0 g/mol
+[PASS] 3.19.4 enfuvirtide PubChem CID: 16130199
+[PASS] 3.19.5 enfuvirtide CAS: 159519-65-0
+[PASS] 3.19.6 enfuvirtide categoryId: immunity
+[PASS] 3.19.7 enfuvirtide calculadora bloqueada fail-closed
+[PASS] 3.20.1 Composto "exenatide" encontrado no catálogo
+[PASS] 3.20.2 exenatide fórmula estequiométrica: C184H282N50O60S
+[PASS] 3.20.3 exenatide peso molecular: 4186.6 g/mol
+[PASS] 3.20.4 exenatide PubChem CID: 45588096
+[PASS] 3.20.5 exenatide CAS: 141732-76-5
+[PASS] 3.20.6 exenatide categoryId: metabolism
+[PASS] 3.20.7 exenatide calculadora bloqueada fail-closed
+[PASS] 3.21.1 Composto "lixisenatide" encontrado no catálogo
+[PASS] 3.21.2 lixisenatide fórmula estequiométrica: C215H347N61O65S
+[PASS] 3.21.3 lixisenatide peso molecular: 4858.5 g/mol
+[PASS] 3.21.4 lixisenatide PubChem CID: 90472060
+[PASS] 3.21.5 lixisenatide CAS: 320367-13-3
+[PASS] 3.21.6 lixisenatide categoryId: metabolism
+[PASS] 3.21.7 lixisenatide calculadora bloqueada fail-closed
+[PASS] 3.22.1 Composto "apraglutide" encontrado no catálogo
+[PASS] 3.22.2 apraglutide fórmula estequiométrica: C172H263N43O52
+[PASS] 3.22.3 apraglutide peso molecular: 3765.2 g/mol
+[PASS] 3.22.4 apraglutide PubChem CID: 155559189
+[PASS] 3.22.5 apraglutide CAS: 1295353-98-8
+[PASS] 3.22.6 apraglutide categoryId: regeneration
+[PASS] 3.22.7 apraglutide calculadora bloqueada fail-closed
+[PASS] 3.23.1 Composto "zenagamtide" encontrado no catálogo
+[PASS] 3.23.2 zenagamtide fórmula estequiométrica: C350H551N87O107S
+[PASS] 3.23.3 zenagamtide peso molecular: ~7847 Da
+[PASS] 3.23.4 zenagamtide PubChem CID: null
+[PASS] 3.23.6 zenagamtide categoryId: metabolism
+[PASS] 3.23.7 zenagamtide calculadora bloqueada fail-closed
+
+--- BLOCO 4: HOMOLOGAÇÃO DOS 4 ESTUDOS CLÍNICOS PRIMÁRIOS ---
+[PASS] 4.1 Estudo STARS Apraglutida PMID verificado: 42692160
+[PASS] 4.2 Estudo STARS Apraglutida DOI verificado: 10.1016/j.cgh.2026.08.026
+[PASS] 4.3 Estudo STARS Apraglutida título oficial PubMed sem paráfrases
+[PASS] 4.4 Estudo Zenagamtida Fase 1b/2a SC PMID: 40550231
+[PASS] 4.5 Estudo Zenagamtida Fase 1b/2a SC DOI: 10.1016/S0140-6736(25)01185-7
+[PASS] 4.6 Estudo Zenagamtida Fase 2 SC Lancet PMID: 42532080
+[PASS] 4.7 Estudo Zenagamtida Fase 2 SC Lancet DOI: 10.1016/S0140-6736(26)01248-1
+[PASS] 4.8 Estudo Zenagamtida Fase 2 Oral Lancet PMID: 42532079
+[PASS] 4.9 Estudo Zenagamtida Fase 2 Oral Lancet DOI: 10.1016/S0140-6736(26)01247-X
+
+--- BLOCO 5: COMPORTAMENTO FAIL-CLOSED DA CALCULADORA ---
+[PASS] 5.1 Função prefillCalculatorWithPeptide disponível no escopo
+[PASS] 5.2.1 prefillCalculatorWithPeptide(teriparatide) retorna FALSE estrito (bloqueio fail-closed)
+[PASS] 5.2.2 prefillCalculatorWithPeptide(apraglutide) retorna FALSE estrito (bloqueio fail-closed)
+[PASS] 5.2.3 prefillCalculatorWithPeptide(zenagamtide) retorna FALSE estrito (bloqueio fail-closed)
+[PASS] 5.2.4 prefillCalculatorWithPeptide(octreotide) retorna FALSE estrito (bloqueio fail-closed)
+[PASS] 5.2.5 prefillCalculatorWithPeptide(ziconotide) retorna FALSE estrito (bloqueio fail-closed)
+[PASS] 5.2.6 prefillCalculatorWithPeptide(degarelix) retorna FALSE estrito (bloqueio fail-closed)
+
+======================================================================
+RESUMO DOS RESULTADOS:
+Total de Testes: 200
+Aprovados:       200
+Falhas:          0
+======================================================================
+
+--- FIM DA SAÍDA V8 ---
+
+Resultado: 200 aprovados, 0 falhas de 200 asserções
+TOTAL 200 ASSERÇÕES | 200 APROVADAS | 0 FALHAS
+[PASS] Homologação P5 V8 100% APROVADA (200/200 asserções)!

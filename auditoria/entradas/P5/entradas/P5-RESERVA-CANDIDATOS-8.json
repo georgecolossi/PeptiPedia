@@ -1,0 +1,42 @@
+[
+  {
+    "id": "buserelin",
+    "motivo_pendente": "Verificar status por produto/jurisdição e equivalência de sequências",
+    "status": "NAO_IMPORTAR_NESTE_LOTE"
+  },
+  {
+    "id": "nafarelin",
+    "motivo_pendente": "Revisar produtos históricos e datas/condições de comercialização",
+    "status": "NAO_IMPORTAR_NESTE_LOTE"
+  },
+  {
+    "id": "histrelin",
+    "motivo_pendente": "Distinguir implantes por indicação e registros atualmente comercializados",
+    "status": "NAO_IMPORTAR_NESTE_LOTE"
+  },
+  {
+    "id": "carbetocin",
+    "motivo_pendente": "Verificar aprovações nacionais e produto específico, inclusive estabilidade",
+    "status": "NAO_IMPORTAR_NESTE_LOTE"
+  },
+  {
+    "id": "eptifibatide",
+    "motivo_pendente": "Conferir FDA/EMA e o derivado cíclico com ligação específica",
+    "status": "NAO_IMPORTAR_NESTE_LOTE"
+  },
+  {
+    "id": "bivalirudin",
+    "motivo_pendente": "Verificar status atual dos produtos e indicações em cardiologia",
+    "status": "NAO_IMPORTAR_NESTE_LOTE"
+  },
+  {
+    "id": "pemvidutide",
+    "motivo_pendente": "Confirmar estudos primários e estágio atual",
+    "status": "NAO_IMPORTAR_NESTE_LOTE"
+  },
+  {
+    "id": "VK2735",
+    "motivo_pendente": "Diferenciar forma oral e SC, composição estrutural e ensaios atuais",
+    "status": "NAO_IMPORTAR_NESTE_LOTE"
+  }
+]

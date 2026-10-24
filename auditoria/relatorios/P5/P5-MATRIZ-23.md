@@ -1,0 +1,31 @@
+# PEPTIPEDIA — ETAPA P5 | MATRIZ DE TRIAGEM DOS 23 CANDIDATOS
+
+Classificação consolidada após auditoria científica independente e verificação química estequiométrica:
+
+| Nº | ID Composto | Nome Oficial | Tipo / Classe Química | Classificação P5 | Motivo / Justificativa Científica |
+|---:|---|---|---|:---:|---|
+| 1 | `teriparatide` | Teriparatida | Fragmento nativo rhPTH(1-34) | **CATÁLOGO ATIVO** | Fórm. C181H291N55O51S2, 4117.7 g/mol (CID 16133850, CAS 52232-67-4). Box de alerta osteossarcoma (FDA). Calculadora bloqueada fail-closed. |
+| 2 | `palopegteriparatide` | Palopegteriparatida | Pró-fármaco conjugado mPEG-teriparatida | **CATÁLOGO ATIVO** | Polímero conjugado ~44 kDa (CAS 2222514-07-8, EMA Yorvipath). Não igualar a teriparatida convencional. Calculadora bloqueada. |
+| 3 | `octreotide` | Octreotida | Análogo sintético de somatostatina (8 aa) | **CATÁLOGO ATIVO** | Fórm. C49H66N10O10S2, 1019.2 g/mol (CID 448601, CAS 83150-76-9). Alerta de colelitíase e arritmias. Calculadora bloqueada. |
+| 4 | `lanreotide` | Lanreotida | Octapeptídeo cíclico análogo de SST | **CATÁLOGO ATIVO** | Fórm. C54H69N11O10S2, 1096.3 g/mol (CID 6918011, CAS 108736-35-2). Seringa pré-preenchida depot de liberação prolongada. Calculadora bloqueada. |
+| 5 | `pasireotide` | Pasireotida | Ciclo-hexapeptídeo análogo de SST | **CATÁLOGO ATIVO** | Fórm. C58H66N10O9, 1047.2 g/mol (CID 9941444, CAS 396091-73-9). Alerta severo de hiperglicemia e cetoacidose. Calculadora bloqueada. |
+| 6 | `ziconotide` | Ziconotida | Peptídeo neuroativo (omega-conotoxina MVIIA, 25 aa) | **CATÁLOGO ATIVO** | Fórm. C102H172N36O32S7, 2639.1 g/mol (CID 16135415, CAS 107452-89-1). 3 pontes dissulfeto. Exclusivamente intratecal; SC/IM fatal. Calculadora bloqueada. |
+| 7 | `degarelix` | Degarelix | Antagonista peptídico de GnRH (10 aa) | **CATÁLOGO ATIVO** | Fórm. C82H103ClN18O16, 1632.3 g/mol (CID 16136245, CAS 214766-78-6). Supressão imediata de testosterona sem flare. Calculadora bloqueada. |
+| 8 | `ganirelix` | Ganirrelix | Antagonista peptídico de GnRH (10 aa) | **CATÁLOGO ATIVO** | Fórm. C80H113ClN18O13, 1570.3 g/mol (CID 16130957, CAS 124904-08-1). Protocolos de reprodução assistida. Calculadora bloqueada. |
+| 9 | `cetrorelix` | Cetrorrelix | Antagonista peptídico de GnRH (10 aa) | **CATÁLOGO ATIVO** | Fórm. C70H92ClN17O14, 1431.1 g/mol (CID 25074887, CAS 120287-85-6). Não transferir dados posológicos de ganirrelix. Calculadora bloqueada. |
+| 10 | `leuprorelin` | Leuprorrelina | Agonista potente do receptor GnRH (9 aa) | **CATÁLOGO ATIVO** | Fórm. C59H84N16O12, 1209.4 g/mol (CID 3911, CAS 53714-56-0). Alerta de flare inicial de gonadotrofinas. Calculadora bloqueada. |
+| 11 | `goserelin` | Goserrelina | Agonista potente de GnRH (9 aa) | **CATÁLOGO ATIVO** | Fórm. C59H84N18O14, 1269.4 g/mol (CID 5311128, CAS 65807-02-5). Implante subcutâneo cilíndrico pré-carregado. Calculadora bloqueada. |
+| 12 | `atosiban` | Atosibana | Antagonista combinado oxitocina/V1a (9 aa) | **CATÁLOGO ATIVO** | Fórm. C43H67N11O12S2, 994.2 g/mol (CID 5311010, CAS 90779-69-4). Tocolítico hospitalar IV. Não usar em trabalho de parto avançado. Calculadora bloqueada. |
+| 13 | `linaclotide` | Linaclotida | Agonista de guanilato ciclase-C (14 aa) | **CATÁLOGO ATIVO** | Fórm. C59H79N15O21S6, 1526.7 g/mol (CID 16158208, CAS 851199-59-2). 3 pontes dissulfeto. Ação exclusivamente luminal entérica. Calculadora bloqueada. |
+| 14 | `plecanatide` | Plecanatida | Análogo de uroguanilina agonista GC-C (16 aa) | **CATÁLOGO ATIVO** | Fórm. C65H104N18O26S4, 1681.9 g/mol (CID 70693500, CAS 467426-54-6). 2 pontes dissulfeto. Alerta de desidratação pediátrica severa. Calculadora bloqueada. |
+| 15 | `dasiglucagon` | Dasiglucagon | Análogo estável de glucagon (29 aa) | **CATÁLOGO ATIVO** | Fórm. C152H222N38O50, 3381.7 g/mol (CID 126961379, CAS 1836139-24-2). Formulação líquida pronta para hipoglicemia severa. Calculadora bloqueada. |
+| 16 | `glucagon` | Glucagon | Hormônio polipeptídico nativo (29 aa) | **CATÁLOGO ATIVO** | Fórm. C153H225N43O49S, 3482.8 g/mol (CID 16132283, CAS 16941-32-5). Reconstituição instável (uso emergencial imediato). Calculadora bloqueada. |
+| 17 | `desmopressin` | Desmopressina | Análogo sintético de vasopressina (9 aa) | **CATÁLOGO ATIVO** | Fórm. C46H64N14O12S2, 1069.2 g/mol (CID 5311065, CAS 16679-58-6). Seletividade V2. Alerta crítico de hiponatremia dilucional fatal. Calculadora bloqueada. |
+| 18 | `pramlintide` | Pramlintida | Análogo sintético de amilina (37 aa) | **CATÁLOGO ATIVO** | Fórm. C171H267N51O53S2, 3949.4 g/mol (CID 70691388, CAS 151126-32-8). Alerta de hipoglicemia severa induzida por insulina. Calculadora bloqueada. |
+| 19 | `enfuvirtide` | Enfuvirtida | Inibidor de fusão peptídico biomimético de gp41 (36 aa) | **CATÁLOGO ATIVO** | Fórm. C204H301N51O64, 4492.0 g/mol (CID 16130199, CAS 159519-65-0). Alta frequência de nódulos cutâneos locais. Calculadora bloqueada. |
+| 20 | `exenatide` | Exenatida | Agonista do receptor de GLP-1 (exendina-4, 39 aa) | **CATÁLOGO ATIVO** | Fórm. C184H282N50O60S, 4186.6 g/mol (CID 45588096, CAS 141732-76-5). Alerta de pancreatite aguda e carcinoma medular de tireoide. Calculadora bloqueada. |
+| 21 | `lixisenatide` | Lixisenatida | Agonista do receptor de GLP-1 derivado de exendina-4 (44 aa) | **CATÁLOGO ATIVO** | Fórm. C215H347N61O65S, 4858.5 g/mol (CID 90472060, CAS 320367-13-3). Cauda C-terminal com 6 resíduos de lisina. Calculadora bloqueada. |
+| 22 | `apraglutide` | Apraglutida | Análogo sintético de GLP-2 de ação prolongada (33 aa) | **CATÁLOGO ATIVO** | Fórm. C172H263N43O52, 3765.2 g/mol (CID 155559189, CAS 1295353-98-8). Ensaio STARS Fase 3 indexado (PMID 42692160). Calculadora bloqueada. |
+| 23 | `zenagamtide` | Zenagamtida | Coagonista unimolecular GLP-1/amilina (68 aa) | **CATÁLOGO ATIVO** | Fórm. C350H551N87O107S, ~7847 Da. 3 ensaios clínicos The Lancet indexados (PMIDs 40550231, 42532080, 42532079). Calculadora bloqueada. |
+
+**Totalização P5:** 23 Novos Compostos Aprovados e Integrados | 10 Quarentenados Preservados | 4 Excluídos Preservados

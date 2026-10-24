@@ -1,0 +1,45 @@
+======================================================================
+INICIANDO TESTES END-TO-END (E2E) PLAYWRIGHT P5
+Raiz da Aplicação: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\snapshots\P5
+Diretório de Logs: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P5\logs
+Diretório de Screenshots: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P5\screenshots
+Início (UTC):      2026-10-24T22:28:22.466466+00:00
+======================================================================
+
+[OK] Servidor HTTP E2E rodando em http://127.0.0.1:51030
+[OK] Carregando http://127.0.0.1:51030/index.html com disclaimer aceito
+[CHECK PASS] (1/1) Grid exibe exatamente 114 cards de compostos (encontrados: 114)
+[CHECK PASS] (2/2) Contador de resultados reflete 114 peptídeos ('114 peptídeos encontrados')
+[CHECK PASS] (3/3) Busca por 'Teriparatida' localiza cards correspondentes (encontrados: 2)
+[CHECK PASS] (4/4) Modal Teriparatida aberto: Teriparatida
+[CHECK PASS] (5/5) Modal Teriparatida exibe massa molecular reconciliada 4117.7 g/mol
+[CHECK PASS] (6/6) Modal Teriparatida exibe fórmula molecular estequiométrica C181H291N55O51S2
+[CHECK PASS] (7/7) Teriparatida aciona bloqueio fail-closed na calculadora ('Teriparatida: calculadora bloqueada fail-closed.')
+[CHECK PASS] (8/8) Busca por 'Apraglutida' filtra exatamente 1 card (encontrados: 1)
+[CHECK PASS] (9/9) Modal Apraglutida aberto: Apraglutida
+[CHECK PASS] (10/10) Modal Apraglutida exibe massa de 3765.2 g/mol
+[CHECK PASS] (11/11) Modal Apraglutida exibe fórmula C172H263N43O52
+[CHECK PASS] (12/12) Busca por 'Zenagamtida' filtra exatamente 1 card (encontrados: 1)
+[CHECK PASS] (13/13) Modal Zenagamtida aberto: Zenagamtida
+[CHECK PASS] (14/14) Modal Zenagamtida exibe massa molecular (~7847 Da)
+[CHECK PASS] (15/15) Modal Zenagamtida exibe coagonismo unimolecular GLP-1/amilina
+[CHECK PASS] (16/16) Busca por 'Ziconotida' filtra exatamente 1 card (encontrados: 1)
+[CHECK PASS] (17/17) Modal Ziconotida aberto: Ziconotida
+[CHECK PASS] (18/18) Modal Ziconotida exibe massa de 2639.1 g/mol
+[CHECK PASS] (19/19) Modal Ziconotida exibe fórmula C102H172N36O32S7 com 7 pontes de enxofre
+[CHECK PASS] (20/20) Modal Orexina B exibe CAS 205640-91-1 humano verificado
+[CHECK PASS] (21/21) Modal Orexina B documenta formalmente a desvinculação do CID 44404987 (ER-01)
+[CHECK PASS] (22/22) Busca por 'Adamax' retorna 0 cards no catálogo ativo (quarentena confirmada: 0)
+[CHECK PASS] (23/23) Aba de estudos exibe exatamente 70 estudos clínicos (encontrados: 70)
+[CHECK PASS] (24/24) Busca na aba de estudos localiza ensaio STARS de Apraglutida (PMID 42692160)
+[CHECK PASS] (25/25) Busca na aba de estudos localiza os 3 ensaios Lancet de Zenagamtida (encontrados: 3)
+[CHECK PASS] (26/26) Aba de Stacks exibe exatamente 18 protocolos preservados (encontrados: 18)
+[CHECK PASS] (27/27) Zero erros JavaScript detectados durante a sessão E2E (erros: [])
+[CHECK PASS] (28/28) Exatamente 9 screenshots geradas com sucesso (total: 9)
+[PASS] Todos os 28 checks E2E aprovados com 100% de sucesso!
+[OK] Servidor HTTP E2E na porta 51030 encerrado.
+
+Finalizado (UTC): 2026-10-24T22:28:31.061665+00:00
+Status Final:     PASSED
+Total de Checks:  28 (Passados: 28, Falhas: 0)
+RESUMO E2E P5: 28 VERIFICAÇÕES APROVADAS | 0 FALHAS
