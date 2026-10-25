@@ -2224,35 +2224,58 @@ document.addEventListener('DOMContentLoaded', () => {
     const peptideSelect = document.getElementById('stab-peptide-select');
     const solventSelect = document.getElementById('stab-solvent-select');
     const dateInput = document.getElementById('stab-date-input');
+    const scenarioSelect = document.getElementById('stab-scenario-select');
+    const horizonBtns = document.querySelectorAll('.stab-horizon-btn');
+    const customKSlider = document.getElementById('stab-custom-k-slider');
+    const customKWrapper = document.getElementById('stab-custom-k-wrapper');
+    const customKVal = document.getElementById('stab-custom-k-val');
+    const thermalSlider = document.getElementById('stab-thermal-factor-slider');
+    const thermalVal = document.getElementById('stab-thermal-factor-val');
     const recalcBtn = document.getElementById('stab-recalc-btn');
 
     if (!peptideSelect || !solventSelect || !dateInput) return;
 
-    // 1. Preencher Select de Peptídeos agrupando por disponibilidade de bula regulatória
-    const regulatoryLabelKeys = ["semaglutide", "tirzepatide", "tesamorelin"];
-    let optionsHtml = `<optgroup label="Compostos com Orientações de Armazenamento em Bula Oficial">`;
-    regulatoryLabelKeys.forEach(id => {
-      const p = STABILITY_PEPTIDES_DB[id];
-      if (p) {
-        optionsHtml += `<option value="${id}">${p.name} (Bula Oficial Registrada)</option>`;
-      }
-    });
-    optionsHtml += `</optgroup><optgroup label="Demais Compostos do Catálogo (Sem dados de estabilidade analítica)">`;
+    // 1. Preencher Select com TODOS os 114 Peptídeos agrupados em 3 Categorias de Evidência
+    // Apraglutida reclassificada estritamente como investigacional (removida de labelRefIds)
+    const labelRefIds = ["semaglutide", "tirzepatide", "teriparatide", "tesamorelin", "liraglutide", "octreotide", "ziconotide"];
+    const expIds = ["mots-c"];
+
+    let optLabelHtml = '';
+    let optExpHtml = '';
+    let optSimHtml = '';
+
     if (typeof PEPTIDES_DATABASE !== 'undefined') {
       PEPTIDES_DATABASE.forEach(p => {
-        if (!regulatoryLabelKeys.includes(p.id)) {
-          optionsHtml += `<option value="${p.id}">${p.name} (${p.category}) — Dados não disponíveis</option>`;
+        const isLabel = labelRefIds.includes(p.id) || (typeof STABILITY_KNOWN_PROFILES !== 'undefined' && STABILITY_KNOWN_PROFILES[p.id]?.compoundStatus?.id === "registered_label");
+        const isExp = expIds.includes(p.id) || (typeof STABILITY_KNOWN_PROFILES !== 'undefined' && STABILITY_KNOWN_PROFILES[p.id]?.compoundStatus?.id === "third_party_report");
+
+        if (isLabel) {
+          optLabelHtml += `<option value="${p.id}">${p.name} (Bula Oficial / Medicamento Registrado)</option>`;
+        } else if (isExp) {
+          optExpHtml += `<option value="${p.id}">${p.name} (Relatório de Terceiros / Triagem)</option>`;
+        } else {
+          optSimHtml += `<option value="${p.id}">${p.name} (${p.category}) — Simulação Exploratória</option>`;
         }
       });
     }
-    optionsHtml += `</optgroup>`;
-    peptideSelect.innerHTML = optionsHtml;
-    peptideSelect.value = "semaglutide";
 
-    // 2. Preencher Select de Solventes
+    peptideSelect.innerHTML = `
+      <optgroup label="1. Diretriz de Bula de Medicamento Registrado (FDA / EMA / ANVISA)">
+        ${optLabelHtml}
+      </optgroup>
+      <optgroup label="2. Relatório Analítico de Terceiros / Triagem">
+        ${optExpHtml}
+      </optgroup>
+      <optgroup label="3. Compostos Investigacionais e de Pesquisa (Simulação de 1ª Ordem)">
+        ${optSimHtml}
+      </optgroup>
+    `;
+    peptideSelect.value = "tirzepatide";
+
+    // 2. Preencher Select de Solventes (fatores neutros 1.0 sem multiplicadores cinéticos arbitrários)
     if (typeof STABILITY_SOLVENTS !== 'undefined') {
       solventSelect.innerHTML = STABILITY_SOLVENTS.map(s => `
-        <option value="${s.id}" ${s.isReference ? 'selected' : ''}>${s.name} (Fator x${s.factor})</option>
+        <option value="${s.id}" ${s.isReference ? 'selected' : ''}>${s.name}</option>
       `).join('');
     }
 
@@ -2285,6 +2308,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `).join('');
     }
 
+    // 5. Função Principal de Atualização da View
     function updateStabilityView() {
       if (typeof peptideStabilityClock === 'undefined') return;
 
@@ -2292,35 +2316,158 @@ document.addEventListener('DOMContentLoaded', () => {
       peptideStabilityClock.setSolvent(solventSelect.value);
       peptideStabilityClock.setDate(dateInput.value);
 
+      const scenVal = scenarioSelect ? scenarioSelect.value : "moderate";
+      peptideStabilityClock.setScenario(scenVal);
+
+      if (scenVal === "custom" && customKSlider) {
+        if (customKWrapper) customKWrapper.classList.remove('hidden');
+        if (thermalSlider && typeof peptideStabilityClock.setThermalFactor === 'function') {
+          peptideStabilityClock.setThermalFactor(parseFloat(thermalSlider.value));
+          if (thermalVal) thermalVal.textContent = `${parseFloat(thermalSlider.value).toFixed(1)}x (Hipótese)`;
+        }
+        peptideStabilityClock.setCustomK(parseFloat(customKSlider.value));
+        if (customKVal) customKVal.textContent = `${parseFloat(customKSlider.value).toFixed(4)}/dia`;
+      } else {
+        if (customKWrapper) customKWrapper.classList.add('hidden');
+        peptideStabilityClock.setCustomK(null);
+      }
+
       const res = peptideStabilityClock.calculate();
 
-      // Nota do Peptídeo e Bloco de Bula Regulamentada Isolado
+      // Badge de Status do Composto
+      const catBadge = document.getElementById('stab-pep-cat-badge');
+      if (catBadge) {
+        const statusObj = res.peptide.compoundStatus || res.peptide.stabilityCategory;
+        catBadge.textContent = statusObj.badgeText;
+        catBadge.className = `text-[10px] font-mono px-2 py-0.5 rounded border ${statusObj.badgeClass}`;
+      }
+
+      // Box de Notas do Peptídeo
       const noteBox = document.getElementById('stab-pep-note-box');
       if (noteBox) {
         let regulatoryHtml = '';
-        if (res.peptide.regulatoryStorageNotice) {
+        if (res.peptide.regulatoryNotice) {
           regulatoryHtml = `
-            <div class="mt-3 p-3.5 rounded-xl bg-blue-950/40 border border-blue-800/60 text-xs text-blue-200">
-              <div class="font-bold flex items-center gap-1.5 text-blue-300 uppercase tracking-wide text-[11px] mb-1">
-                Diretrizes de Armazenamento em Bula Registrada (Medicamento Industrial)
+            <div class="mt-2.5 p-3 rounded-xl bg-blue-950/40 border border-blue-800/60 text-xs text-blue-200 space-y-1">
+              <div class="font-bold flex items-center gap-1.5 text-blue-300 uppercase tracking-wide text-[10px] font-mono">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                <span>Diretrizes Regulatórias e Informações de Bula</span>
               </div>
-              <p class="leading-relaxed text-slate-200">${res.peptide.regulatoryStorageNotice}</p>
-              <p class="mt-1.5 text-[11px] text-blue-400 italic">Nota Técnica: Este prazo regulatório provém da documentação do medicamento comercial de referência (com conservante e tampão específico) e NÃO constitui curva percentual contínua de degradação nem valida soluções extemporâneas preparadas a partir de frascos liofilizados de bancada.</p>
+              <p class="leading-relaxed whitespace-pre-line text-slate-200 text-xs">${res.peptide.regulatoryNotice}</p>
+              <p class="text-[10px] text-blue-400 italic pt-0.5">Nota Técnica: Aplicabilidade estrita à formulação industrial do fabricante; NUNCA valida ou extrapola estabilidade para frascos liofilizados de bancada reconstituídos extemporaneamente.</p>
             </div>
           `;
         }
 
-        noteBox.innerHTML = `
-          <strong class="text-emerald-400 block mb-1 font-mono">${res.peptide.name} — ${res.peptide.stabilityClass}:</strong>
-          <p class="text-slate-300 leading-relaxed">${res.peptide.description}</p>
-          ${regulatoryHtml}
+        let experimentalHtml = '';
+        if (res.peptide.experimentalSummary) {
+          experimentalHtml = `
+            <div class="mt-2.5 p-3 rounded-xl bg-emerald-950/40 border border-emerald-800/60 text-xs text-emerald-200 space-y-1">
+              <div class="font-bold flex items-center gap-1.5 text-emerald-300 uppercase tracking-wide text-[10px] font-mono">
+                <i data-lucide="flask-conical" class="w-3.5 h-3.5"></i>
+                <span>Evidência Analítica Experimental / Estrutural</span>
+              </div>
+              <p class="leading-relaxed text-slate-200 text-xs">${res.peptide.experimentalSummary}</p>
+            </div>
+          `;
+        }
+
+        let simulationNotice = `
+          <div class="mt-2 p-2.5 rounded-xl bg-amber-950/30 border border-amber-800/50 text-[11px] text-amber-200/90 leading-relaxed font-sans">
+            <strong>Simulação Matemática Exploratória:</strong> Curvas cinéticas geradas a partir do modelo teórico de 1ª ordem R(t) = 100 * exp(-k * t). Inexistem constantes cinéticas abertas do fabricante para preparações extemporâneas; a simulação não substitui ensaios analíticos laboratoriais do lote.
+          </div>
         `;
+
+        noteBox.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between mb-0.5">
+              <strong class="text-emerald-400 font-mono text-sm">${res.peptide.name}</strong>
+              <span class="text-[10px] font-mono text-slate-400">${res.peptide.categoryName}</span>
+            </div>
+            <p class="text-[11px] text-slate-400 font-mono">${res.peptide.fullName}</p>
+          </div>
+          ${regulatoryHtml}
+          ${experimentalHtml}
+          ${simulationNotice}
+        `;
+      }
+
+      // Painel de Alertas Estruturais Potenciais (substitui scores arbitrários de risco)
+      const vulnContainer = document.getElementById('stab-vulnerability-container');
+      if (vulnContainer && res.peptide.vulnerabilities) {
+        const v = res.peptide.vulnerabilities;
+        if (v.isConfidentialOrIncomplete) {
+          vulnContainer.innerHTML = `
+            <div class="sm:col-span-2 p-3.5 rounded-xl bg-purple-950/30 border border-purple-800/60 text-xs text-purple-200 space-y-1.5">
+              <div class="font-bold text-purple-300 font-mono text-xs flex items-center gap-1.5">
+                <i data-lucide="lock" class="w-4 h-4"></i>
+                <span>Análise Estrutural Incompleta / Estrutura sob Sigilo Industrial</span>
+              </div>
+              <p class="text-[11px] text-slate-300 leading-relaxed">
+                ${v.summary}
+              </p>
+              <p class="text-[10px] text-purple-400/90 italic border-t border-purple-900/40 pt-1">
+                ℹ️ ${v.disclaimer}
+              </p>
+            </div>
+          `;
+        } else {
+          vulnContainer.innerHTML = `
+            <!-- 1. Oxidação -->
+            <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800/90 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-xs text-white font-mono flex items-center gap-1">
+                  <i data-lucide="flame" class="w-3.5 h-3.5 text-amber-400"></i> Oxidação
+                </span>
+                <span class="text-[9px] font-mono px-1.5 py-0.5 rounded border ${v.oxidation.badgeClass}">${v.oxidation.badge}</span>
+              </div>
+              <p class="text-[11px] text-slate-300 leading-snug">${v.oxidation.desc}</p>
+            </div>
+
+            <!-- 2. Desamidação -->
+            <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800/90 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-xs text-white font-mono flex items-center gap-1">
+                  <i data-lucide="split" class="w-3.5 h-3.5 text-amber-400"></i> Desamidação
+                </span>
+                <span class="text-[9px] font-mono px-1.5 py-0.5 rounded border ${v.deamidation.badgeClass}">${v.deamidation.badge}</span>
+              </div>
+              <p class="text-[11px] text-slate-300 leading-snug">${v.deamidation.desc}</p>
+            </div>
+
+            <!-- 3. Hidrólise / Clivagem -->
+            <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800/90 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-xs text-white font-mono flex items-center gap-1">
+                  <i data-lucide="scissors" class="w-3.5 h-3.5 text-cyan-400"></i> Hidrólise
+                </span>
+                <span class="text-[9px] font-mono px-1.5 py-0.5 rounded border ${v.hydrolysis.badgeClass}">${v.hydrolysis.badge}</span>
+              </div>
+              <p class="text-[11px] text-slate-300 leading-snug">${v.hydrolysis.desc}</p>
+            </div>
+
+            <!-- 4. Agregação e Fibrilação -->
+            <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800/90 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-xs text-white font-mono flex items-center gap-1">
+                  <i data-lucide="layers" class="w-3.5 h-3.5 text-purple-400"></i> Agregação
+                </span>
+                <span class="text-[9px] font-mono px-1.5 py-0.5 rounded border ${v.aggregation.badgeClass}">${v.aggregation.badge}</span>
+              </div>
+              <p class="text-[11px] text-slate-300 leading-snug">${v.aggregation.desc}</p>
+            </div>
+
+            <div class="sm:col-span-2 text-[10px] text-slate-400 italic pt-1 border-t border-slate-800/60">
+              ℹ️ ${v.disclaimer}
+            </div>
+          `;
+        }
       }
 
       // Descrição do Solvente
       const solvDesc = document.getElementById('stab-solvent-desc');
       if (solvDesc) {
-        solvDesc.textContent = res.solvent.description;
+        solvDesc.textContent = `${res.solvent.description} [Risco microbiológico: ${res.solvent.microbialRisk}]`;
       }
 
       // Badge de Dias
@@ -2328,92 +2475,126 @@ document.addEventListener('DOMContentLoaded', () => {
       if (daysBadge) {
         daysBadge.textContent = res.daysElapsed === 0 
           ? "Dia 0 (Reconstituição Hoje)" 
-          : `Dia ${res.daysElapsed} após reconstituição`;
+          : `Dia ${res.daysElapsed} pós-reconstituição (${res.reconstitutionDate})`;
       }
 
-      // Card Geladeira
+      // Card Geladeira (2-8°C)
       const potFridge = document.getElementById('stab-pot-fridge');
       const statusFridge = document.getElementById('stab-status-fridge');
       const rateFridge = document.getElementById('stab-rate-fridge');
       const tagFridge = document.getElementById('stab-tag-fridge');
       const cardFridge = document.getElementById('stab-card-fridge');
 
-      if (potFridge) potFridge.textContent = res.hasStabilityData ? `${res.fridge.potency}%` : res.fridge.potencyText;
+      if (potFridge) potFridge.textContent = `${res.fridge.potency}%`;
       if (statusFridge) statusFridge.textContent = res.fridge.status;
-      if (rateFridge) rateFridge.textContent = res.hasStabilityData ? res.fridge.rateText : res.fridge.rateText;
+      if (rateFridge) rateFridge.textContent = `k = ${res.fridge.kRate.toFixed(4)}/dia`;
       if (tagFridge) {
-        if (!res.hasStabilityData) tagFridge.textContent = "SEM DADOS ANALÍTICOS";
-        else if (res.peptide.isClinicalLabel) tagFridge.textContent = "BULA OFICIAL (FDA)";
-        else tagFridge.textContent = "DADOS EXPERIMENTAIS";
+        tagFridge.textContent = "SIMULAÇÃO 1ª ORDEM";
       }
       if (cardFridge) {
         cardFridge.className = `p-4 rounded-xl border flex flex-col justify-between transition-all ${res.fridge.colorClass}`;
       }
 
-      // Card Ambiente
+      // Card Ambiente (20-25°C)
       const potRoom = document.getElementById('stab-pot-room');
       const statusRoom = document.getElementById('stab-status-room');
       const rateRoom = document.getElementById('stab-rate-room');
       const tagRoom = document.getElementById('stab-tag-room');
       const cardRoom = document.getElementById('stab-card-room');
 
-      if (potRoom) potRoom.textContent = res.hasStabilityData ? `${res.room.potency}%` : res.room.potencyText;
+      if (potRoom) potRoom.textContent = `${res.room.potency}%`;
       if (statusRoom) statusRoom.textContent = res.room.status;
-      if (rateRoom) rateRoom.textContent = res.hasStabilityData ? res.room.rateText : res.room.rateText;
+      if (rateRoom) rateRoom.textContent = `k = ${res.room.kRate.toFixed(4)}/dia`;
       if (tagRoom) {
-        if (!res.hasStabilityData) tagRoom.textContent = "SEM DADOS ANALÍTICOS";
-        else if (res.peptide.isClinicalLabel) tagRoom.textContent = "BULA OFICIAL (FDA)";
-        else tagRoom.textContent = "DADOS EXPERIMENTAIS";
+        tagRoom.textContent = "HIPÓTESE DE SENSIBILIDADE";
       }
       if (cardRoom) {
         cardRoom.className = `p-4 rounded-xl border flex flex-col justify-between transition-all ${res.room.colorClass}`;
       }
 
+      // Card Freezer (-20°C) - Avaliação Contextualizada
+      const freezerTitle = document.getElementById('stab-freezer-title');
+      const freezerDesc = document.getElementById('stab-freezer-desc');
+      if (freezerTitle && freezerDesc) {
+        if (res.solvent.id === 'bac_water') {
+          freezerTitle.textContent = "Congelamento Doméstico Desaconselhado";
+          freezerDesc.textContent = "A presença de álcool benzílico provoca crioconcentração severa e desestabilização fisicoquímica sob congelamento doméstico lento (Jain et al., 2021).";
+        } else if (res.solvent.id === 'sterile_water') {
+          freezerTitle.textContent = "Sensível a Freeze-Thaw";
+          freezerDesc.textContent = "Pó liofilizado sob dessecante a vácuo mantém estabilidade a -20°C. Soluções aquosas sem conservante podem tolerar congelamento rápido a -80°C, mas ciclos repetidos fragmentam a cadeia.";
+        } else {
+          freezerTitle.textContent = "Avaliação Físico-Química";
+          freezerDesc.textContent = res.freezer.summary;
+        }
+      }
+
       // Metadados Rodapé
       const classLabel = document.getElementById('stab-class-label');
-      const sourceLabel = document.getElementById('stab-source-label');
-      if (classLabel) classLabel.textContent = res.peptide.stabilityClass;
-      if (sourceLabel) sourceLabel.textContent = res.peptide.dataSource;
+      const halfLifeLabel = document.getElementById('stab-halflife-label');
+      if (classLabel) classLabel.textContent = "Simulação Matemática Exploratória (ICH Q1A/Q5C)";
+      if (halfLifeLabel) halfLifeLabel.textContent = typeof res.scenario.halfLifeDays === 'number'
+        ? `~${res.scenario.halfLifeDays} dias (${res.scenario.name})`
+        : `${res.scenario.halfLifeDays} (${res.scenario.name})`;
 
       // Renderizar Gráfico SVG
       const chartContainer = document.getElementById('stab-chart-container');
       if (chartContainer) {
-        chartContainer.innerHTML = peptideStabilityClock.renderDecayChartSvg(res.timeline, res.daysElapsed, res.hasStabilityData, res.peptide.name);
+        chartContainer.innerHTML = peptideStabilityClock.renderDecayChartSvg(res);
       }
 
-      // Renderizar Tabela da Linha do Tempo
+      // Renderizar Tabela Comparativa de Cenários
       const timelineBody = document.getElementById('stab-timeline-body');
       if (timelineBody) {
         timelineBody.innerHTML = res.timeline.map(row => `
           <tr class="hover:bg-slate-900/60 transition-colors">
             <td class="p-2.5 font-bold text-white">Dia ${row.day}</td>
-            <td class="p-2.5 ${row.fridge === '—' ? 'text-slate-400' : (row.fridge >= 80 ? 'text-emerald-400 font-bold' : (row.fridge >= 60 ? 'text-amber-400' : 'text-rose-400'))}">${row.fridge === '—' ? '— (Dados não disponíveis)' : `${row.fridge}%`}</td>
-            <td class="p-2.5 ${row.room === '—' ? 'text-slate-400' : (row.room >= 80 ? 'text-emerald-400 font-bold' : (row.room >= 60 ? 'text-amber-400' : 'text-rose-400'))}">${row.room === '—' ? '— (Dados não disponíveis)' : `${row.room}%`}</td>
-            <td class="p-2.5 text-purple-400 text-[11px]">${row.freezer}</td>
+            <td class="p-2.5 text-emerald-400">${row.slowFridge}%</td>
+            <td class="p-2.5 text-amber-400 font-bold">${row.moderateFridge}%</td>
+            <td class="p-2.5 text-rose-400">${row.fastFridge}%</td>
+            <td class="p-2.5 text-purple-300 font-mono text-[11px]">${row.activeRoom}%</td>
           </tr>
         `).join('');
       }
 
       const statusEl = document.getElementById('stab-calc-status');
       if (statusEl) {
-        statusEl.textContent = res.hasStabilityData
-          ? `Calculado para ${res.peptide.name} em ${res.solvent.name}`
-          : `Dados de estabilidade não disponíveis para ${res.peptide.name}`;
+        statusEl.textContent = `Projeção calculada para ${res.peptide.name} (${res.timeHorizonDays}d)`;
+      }
+
+      // Atualizar ícones Lucide nos novos elementos injetados
+      if (window.lucide && typeof window.lucide.createIcons === 'function') {
+        window.lucide.createIcons();
       }
     }
 
+    // 6. Listeners de Eventos
     peptideSelect.addEventListener('change', updateStabilityView);
     solventSelect.addEventListener('change', updateStabilityView);
     dateInput.addEventListener('input', updateStabilityView);
     dateInput.addEventListener('change', updateStabilityView);
-    recalcBtn?.addEventListener('click', () => {
-      updateStabilityView();
-      showToast('Estabilidade molecular recalculada!');
+    scenarioSelect?.addEventListener('change', updateStabilityView);
+    customKSlider?.addEventListener('input', updateStabilityView);
+    thermalSlider?.addEventListener('input', updateStabilityView);
+
+    horizonBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        horizonBtns.forEach(b => {
+          b.className = 'stab-horizon-btn py-1.5 px-2 rounded-lg border border-slate-800 bg-slate-950 text-slate-300 hover:text-white hover:border-slate-700 text-center cursor-pointer';
+        });
+        btn.className = 'stab-horizon-btn py-1.5 px-2 rounded-lg border border-emerald-600 bg-emerald-950/40 text-emerald-300 font-bold text-center cursor-pointer';
+        peptideStabilityClock.setTimeHorizon(btn.dataset.horizon);
+        updateStabilityView();
+      });
     });
 
+    recalcBtn?.addEventListener('click', () => {
+      updateStabilityView();
+      showToast('Cenário cinético de estabilidade recalculado!');
+    });
+
+    // Inicialização da View
     updateStabilityView();
   }
-
   // ----------------------------------------------------
   // Navegação por Abas Principais
   // ----------------------------------------------------

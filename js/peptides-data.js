@@ -9544,7 +9544,7 @@ const PEPTIDES_DATABASE = [
     "sequence": "Mpr-Y-F-Q-N-C-P-d(R)-G-NH2",
     "sequenceOneLetter": "Mpr-Y-F-Q-N-C-P-d(R)-G-NH2",
     "sequenceThreeLetter": "Mpr-Tyr-Phe-Gln-Asn-Cys-Pro-D-Arg-Gly-NH2",
-    "residueCount": 8,
+    "residueCount": 9,
     "molecularFormula": "C46H64N14O12S2",
     "molecularWeight": "1069.2 g/mol",
     "monoisotopicMass": "1068.42 Da",
