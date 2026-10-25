@@ -1,6 +1,6 @@
 {
   "version": "P5",
-  "generatedAt": "2026-10-25T01:26:41.387209+00:00",
+  "generatedAt": "2026-10-25T01:30:28.408097+00:00",
   "totalFiles": 23,
   "files": {
     "auditoria/snapshots/P5/.gitignore": "8aa39e9e9f563ece3e1c0d8b9ea88f1b9e0e81424d343fe41e0f975d83ea5677",
@@ -25,6 +25,6 @@
     "auditoria/relatorios/P5/P5-MATRIZ-RESULTADOS.csv": "cdc774297b280989bc175c1fe110f2dc342d2067a5bec9552451252fbd86b9ec",
     "auditoria/relatorios/P5/P5-TESTES.md": "f3edbe157c774d899ded60a9a4328e429ad5ecfe8c2bdaeb0d1aa47d666ec0af",
     "auditoria/relatorios/P5/STATUS.md": "e2ec995bce3e20b4be330a5d99ed77a95e782707c3f6ba1f8f1ad52de29f4de8",
-    "auditoria/relatorios/P5/test-results.json": "1428c4888f81b2c4617b4860f739614e871ecca40e888a57d680eb5f36a106c5"
+    "auditoria/relatorios/P5/test-results.json": "e6fbdba42784fe9ba70da21cea6fffacd821cccba2d0cb3de2eaecfbe56d6495"
   }
 }
