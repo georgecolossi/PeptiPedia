@@ -1,5 +1,6 @@
 /**
- * Motor Interativo do Relógio de Estabilidade Molecular
+ * Motor Científico Interativo do Relógio de Estabilidade Molecular
+ * Implementação P5 - Versão 1.0 (Cinética de 1ª Ordem & Perfis Farmacopeicos)
  * Peptipedia - 2026
  */
 
@@ -7,16 +8,39 @@ class PeptideStabilityClock {
   constructor() {
     this.selectedPeptideId = "tirzepatide";
     this.selectedSolventId = "bac_water";
-    this.reconstitutionDate = new Date().toISOString().split('T')[0]; // hoje em YYYY-MM-DD
+    this.selectedScenarioId = "moderate"; // "slow", "moderate", "fast", "custom"
+    this.timeHorizonDays = 60; // 30, 60, 90, 120
+    this.customK = null; // Taxa k personalizada (dia^-1)
+    this.reconstitutionDate = new Date().toISOString().split('T')[0];
     this.daysElapsed = 0;
   }
 
   setPeptide(id) {
-    this.selectedPeptideId = id;
+    if (id) this.selectedPeptideId = id;
   }
 
   setSolvent(id) {
-    this.selectedSolventId = id;
+    if (id) this.selectedSolventId = id;
+  }
+
+  setScenario(scenarioId) {
+    if (scenarioId) this.selectedScenarioId = scenarioId;
+  }
+
+  setTimeHorizon(days) {
+    const d = parseInt(days, 10);
+    if (!isNaN(d) && d > 0) {
+      this.timeHorizonDays = d;
+    }
+  }
+
+  setCustomK(kVal) {
+    if (kVal !== null && kVal !== undefined && !isNaN(kVal) && kVal > 0) {
+      this.customK = parseFloat(kVal);
+      this.selectedScenarioId = "custom";
+    } else {
+      this.customK = null;
+    }
   }
 
   setDate(dateStr) {
@@ -30,307 +54,299 @@ class PeptideStabilityClock {
   }
 
   getPeptideConfig() {
-    // Busca em STABILITY_PEPTIDES_DB
-    if (STABILITY_PEPTIDES_DB[this.selectedPeptideId]) {
-      const cfg = STABILITY_PEPTIDES_DB[this.selectedPeptideId];
-      if (cfg.hasStabilityData) {
-        return cfg;
-      }
-      return {
-        ...cfg,
-        hasStabilityData: false,
-        stabilityClass: "Dados Não Disponíveis",
-        dataSource: "Sem estudo analítico específico publicado",
-        dataSourceType: "no_data",
-        rFridge: null,
-        rRoom: null,
-        isMeasured: false,
-        timeline: null
-      };
+    const id = this.selectedPeptideId;
+    let basePeptide = null;
+    if (typeof PEPTIDES_DATABASE !== 'undefined') {
+      basePeptide = PEPTIDES_DATABASE.find(p => p.id === id);
     }
 
-    const catPep = typeof PEPTIDES_DATABASE !== 'undefined' 
-      ? PEPTIDES_DATABASE.find(p => p.id === this.selectedPeptideId) 
+    const knownProfile = (typeof STABILITY_KNOWN_PROFILES !== 'undefined' && STABILITY_KNOWN_PROFILES[id])
+      ? STABILITY_KNOWN_PROFILES[id]
       : null;
 
+    let category = STABILITY_CATEGORIES.EXPLORATORY_SIMULATION;
+    if (knownProfile) {
+      if (knownProfile.categoryType === "experimental") {
+        category = STABILITY_CATEGORIES.EXPERIMENTAL;
+      } else if (knownProfile.categoryType === "label_reference") {
+        category = STABILITY_CATEGORIES.LABEL_REFERENCE;
+      }
+    }
+
+    const name = basePeptide ? basePeptide.name : (knownProfile ? knownProfile.name : id);
+    const fullName = basePeptide ? basePeptide.fullName : name;
+    const categoryName = basePeptide ? basePeptide.category : "Geral";
+
+    let vulnerabilities = null;
+    if (typeof analyzeMolecularVulnerabilities === 'function' && basePeptide) {
+      vulnerabilities = analyzeMolecularVulnerabilities(basePeptide);
+    }
+
     return {
-      name: catPep ? catPep.name : this.selectedPeptideId,
-      description: "Dados de estabilidade analítica molecular não disponíveis para este composto sob as condições e solventes selecionados. As diretrizes ICH Q1A(R2) e ICH Q5C definem protocolos de desenho de estudos e estresse térmico/fotoquímico, mas não estabelecem constantes matemáticas universais de degradação. O prazo microbiológico de até 28 dias para frascos multidose com água bacteriostática (USP <797>) refere-se estritamente à eficácia conservante contra contaminação microbiológica, e não à integridade molecular ou percentual de potência química do peptídeo.",
-      stabilityClass: "Dados Não Disponíveis",
-      dataSource: "Sem ensaio analítico validado publicado",
-      dataSourceType: "no_data",
-      hasStabilityData: false,
-      rFridge: null,
-      rRoom: null,
-      isMeasured: false,
-      timeline: null,
-      freezerWarning: "Não congelar a solução líquida reconstituída."
+      id: id,
+      name: name,
+      fullName: fullName,
+      categoryName: categoryName,
+      stabilityCategory: category,
+      knownProfile: knownProfile,
+      vulnerabilities: vulnerabilities,
+      basePeptide: basePeptide,
+      regulatoryNotice: knownProfile ? knownProfile.regulatoryStorageNotice : null,
+      experimentalSummary: knownProfile ? knownProfile.experimentalSummary : null,
+      freezerAssessment: knownProfile ? knownProfile.freezerAssessment : null
     };
   }
 
   getSolventConfig() {
-    return STABILITY_SOLVENTS.find(s => s.id === this.selectedSolventId) || STABILITY_SOLVENTS[0];
+    if (typeof STABILITY_SOLVENTS !== 'undefined') {
+      return STABILITY_SOLVENTS.find(s => s.id === this.selectedSolventId) || STABILITY_SOLVENTS[0];
+    }
+    return {
+      id: "bac_water",
+      name: "Água bacteriostática (BAC 0,9%)",
+      factor: 1.0,
+      description: "Veículo padrão com conservante antimicrobiano."
+    };
   }
 
-  calculatePotencyAtDay(day, rate, solventFactor, customTimelineArray = null) {
-    if (day <= 0) return 100;
-    
-    // Se temos dados medidos com solvente de referência (fator 1.0)
-    if (customTimelineArray && solventFactor === 1.0) {
-      const days = [0, 15, 30, 60, 90, 120];
-      for (let i = 0; i < days.length - 1; i++) {
-        if (day >= days[i] && day <= days[i + 1]) {
-          const t = (day - days[i]) / (days[i + 1] - days[i]);
-          const val = customTimelineArray[i] + t * (customTimelineArray[i + 1] - customTimelineArray[i]);
-          return Math.max(0, Math.min(100, Math.round(val)));
-        }
-      }
-      if (day > 120) {
-        const lastVal = customTimelineArray[customTimelineArray.length - 1];
-        const extraDays = day - 120;
-        return Math.max(0, Math.round(lastVal * Math.pow(1 - rate, extraDays)));
-      }
-    }
+  /**
+   * Calcula a Fração Molecular Intacta teórica R(t) = 100 * exp(-k * factor * t)
+   */
+  calculatePotencyAtDay(day, kRate, solventFactor = 1.0) {
+    if (day <= 0) return 100.0;
+    const effectiveK = Math.max(0.0001, kRate * solventFactor);
+    const val = 100.0 * Math.exp(-effectiveK * day);
+    return Math.max(0.0, Math.min(100.0, val));
+  }
 
-    // Modelo cinético de primeira ordem: P(t) = 100 * (1 - (r * factor))^t
-    const effectiveR = Math.min(0.99, rate * solventFactor);
-    const pot = 100 * Math.pow(1 - effectiveR, day);
-    return Math.max(0, Math.min(100, Math.round(pot)));
+  calculateHalfLife(kRate, solventFactor = 1.0) {
+    const effectiveK = Math.max(0.0001, kRate * solventFactor);
+    return Math.round(Math.LN2 / effectiveK);
   }
 
   calculate() {
     const pep = this.getPeptideConfig();
     const solv = this.getSolventConfig();
+    const scenarios = STABILITY_SCENARIOS;
 
-    if (!pep.hasStabilityData) {
-      return {
-        daysElapsed: this.daysElapsed,
-        reconstitutionDate: this.reconstitutionDate,
-        peptide: pep,
-        solvent: solv,
-        hasStabilityData: false,
-        fridge: {
-          potency: null,
-          potencyText: "Dados não disponíveis",
-          rate: null,
-          rateText: "Não aplicável",
-          isMeasured: false,
-          status: "Sem ensaio analítico para esta formulação",
-          colorClass: "text-slate-400 bg-slate-900/40 border-slate-800"
-        },
-        room: {
-          potency: null,
-          potencyText: "Dados não disponíveis",
-          rate: null,
-          rateText: "Não aplicável",
-          isMeasured: false,
-          status: "Sem ensaio analítico para esta formulação",
-          colorClass: "text-slate-400 bg-slate-900/40 border-slate-800"
-        },
-        freezer: {
-          status: "Não congelar",
-          warning: pep.freezerWarning || "Não congelar a solução líquida reconstituída."
-        },
-        timeline: [0, 15, 30, 60, 90, 120].map(d => ({
-          day: d,
-          fridge: "—",
-          room: "—",
-          freezer: "Não congelar"
-        }))
-      };
+    // Determinar taxas para o cenário ativo
+    let currentKFridge = scenarios.moderate.kFridge;
+    let currentKRoom = scenarios.moderate.kRoom;
+    let scenarioName = scenarios.moderate.name;
+
+    if (this.selectedScenarioId === "slow") {
+      currentKFridge = scenarios.slow.kFridge;
+      currentKRoom = scenarios.slow.kRoom;
+      scenarioName = scenarios.slow.name;
+    } else if (this.selectedScenarioId === "fast") {
+      currentKFridge = scenarios.fast.kFridge;
+      currentKRoom = scenarios.fast.kRoom;
+      scenarioName = scenarios.fast.name;
+    } else if (this.selectedScenarioId === "custom" && this.customK) {
+      currentKFridge = this.customK;
+      currentKRoom = this.customK * 3.0; // Fator empírico típico de temperatura ambiente (~3x)
+      scenarioName = `Personalizado (k = ${this.customK.toFixed(4)}/dia)`;
     }
 
-    const currentPotFridge = this.calculatePotencyAtDay(
-      this.daysElapsed, 
-      pep.rFridge, 
-      solv.factor, 
-      pep.isMeasured ? pep.timeline.fridge : null
-    );
+    const potFridgeActive = this.calculatePotencyAtDay(this.daysElapsed, currentKFridge, solv.factor);
+    const potRoomActive = this.calculatePotencyAtDay(this.daysElapsed, currentKRoom, solv.factor);
+    const halfLifeFridge = this.calculateHalfLife(currentKFridge, solv.factor);
 
-    const currentPotRoom = this.calculatePotencyAtDay(
-      this.daysElapsed, 
-      pep.rRoom, 
-      solv.factor, 
-      pep.isMeasured ? pep.timeline.room : null
-    );
+    // Calcular horizontes e pontos da tabela
+    const stepDays = [0, 7, 14, 21, 28, 45, 60, 90, 120].filter(d => d <= this.timeHorizonDays);
+    if (!stepDays.includes(this.timeHorizonDays)) {
+      stepDays.push(this.timeHorizonDays);
+    }
+    stepDays.sort((a, b) => a - b);
 
-    // Calcular tabela da linha do tempo
-    const timelineRows = [0, 15, 30, 60, 90, 120].map((d, idx) => {
-      const potF = this.calculatePotencyAtDay(
-        d, 
-        pep.rFridge, 
-        solv.factor, 
-        pep.isMeasured ? pep.timeline.fridge : null
-      );
-      const potR = this.calculatePotencyAtDay(
-        d, 
-        pep.rRoom, 
-        solv.factor, 
-        pep.isMeasured ? pep.timeline.room : null
-      );
+    const timeline = stepDays.map(d => {
+      const slowF = this.calculatePotencyAtDay(d, scenarios.slow.kFridge, solv.factor);
+      const modF = this.calculatePotencyAtDay(d, scenarios.moderate.kFridge, solv.factor);
+      const fastF = this.calculatePotencyAtDay(d, scenarios.fast.kFridge, solv.factor);
+      const activeF = this.calculatePotencyAtDay(d, currentKFridge, solv.factor);
+      const activeR = this.calculatePotencyAtDay(d, currentKRoom, solv.factor);
+
       return {
         day: d,
-        fridge: potF,
-        room: potR,
-        freezer: "— (Não congelar)"
+        slowFridge: Math.round(slowF * 10) / 10,
+        moderateFridge: Math.round(modF * 10) / 10,
+        fastFridge: Math.round(fastF * 10) / 10,
+        activeFridge: Math.round(activeF * 10) / 10,
+        activeRoom: Math.round(activeR * 10) / 10,
+        freezerNote: "Condicional (ver avaliação técnica)"
       };
     });
 
     return {
       daysElapsed: this.daysElapsed,
       reconstitutionDate: this.reconstitutionDate,
+      timeHorizonDays: this.timeHorizonDays,
       peptide: pep,
       solvent: solv,
-      hasStabilityData: true,
+      scenario: {
+        id: this.selectedScenarioId,
+        name: scenarioName,
+        kFridge: currentKFridge,
+        kRoom: currentKRoom,
+        halfLifeDays: halfLifeFridge
+      },
       fridge: {
-        potency: currentPotFridge,
-        potencyText: `${currentPotFridge}%`,
-        rate: pep.rFridge,
-        rateText: `r = ${(pep.rFridge * solv.factor).toFixed(5)}/dia`,
-        isMeasured: pep.isMeasured,
-        status: this.getStatusLabel(currentPotFridge),
-        colorClass: this.getColorClass(currentPotFridge)
+        potency: Math.round(potFridgeActive * 10) / 10,
+        kRate: currentKFridge * solv.factor,
+        status: this.getStatusLabel(potFridgeActive),
+        colorClass: this.getColorClass(potFridgeActive)
       },
       room: {
-        potency: currentPotRoom,
-        potencyText: `${currentPotRoom}%`,
-        rate: pep.rRoom,
-        rateText: `r = ${(pep.rRoom * solv.factor).toFixed(5)}/dia`,
-        isMeasured: pep.isMeasured,
-        status: this.getStatusLabel(currentPotRoom),
-        colorClass: this.getColorClass(currentPotRoom)
+        potency: Math.round(potRoomActive * 10) / 10,
+        kRate: currentKRoom * solv.factor,
+        status: this.getStatusLabel(potRoomActive),
+        colorClass: this.getColorClass(potRoomActive)
       },
       freezer: {
-        status: "Não congelar",
-        warning: pep.freezerWarning
+        status: "Avaliação Físico-Química",
+        summary: pep.freezerAssessment || "O congelamento da solução líquida com bacteriostático é desaconselhado devido à crioconcentração."
       },
-      timeline: timelineRows
+      timeline: timeline
     };
   }
 
   getStatusLabel(potency) {
-    if (potency >= 94) return "Excelente (94–100%)";
-    if (potency >= 80) return "Boa (80–93%)";
-    if (potency >= 60) return "Atenção (60–79%)";
-    if (potency > 0) return "Baixa (<60%)";
-    return "0% — Molécula inativada";
+    if (potency >= 95) return "Excelente (≥95%)";
+    if (potency >= 85) return "Boa (85–94%)";
+    if (potency >= 70) return "Moderada (70–84%)";
+    if (potency >= 50) return "Atenção (50–69%)";
+    return "Baixa (<50%) — Decaimento significativo";
   }
 
   getColorClass(potency) {
-    if (potency >= 80) return "text-emerald-400 bg-emerald-950/40 border-emerald-800/60";
-    if (potency >= 60) return "text-amber-400 bg-amber-950/40 border-amber-800/60";
+    if (potency >= 85) return "text-emerald-400 bg-emerald-950/40 border-emerald-800/60";
+    if (potency >= 70) return "text-amber-400 bg-amber-950/40 border-amber-800/60";
     return "text-rose-400 bg-rose-950/40 border-rose-800/60";
   }
 
-  renderDecayChartSvg(timeline, daysElapsed, hasStabilityData = true, peptideName = '') {
-    const width = 640;
-    const height = 260;
-
-    if (!hasStabilityData || !timeline || timeline.length === 0 || timeline[0].fridge === "—") {
-      return `
-        <svg viewBox="0 0 ${width} ${height}" class="w-full h-auto select-none overflow-visible">
-          <rect x="20" y="20" width="${width - 40}" height="${height - 40}" rx="12" fill="rgba(15, 23, 42, 0.6)" stroke="#334155" stroke-width="1.5" stroke-dasharray="4,4" />
-          <g transform="translate(${width / 2}, ${height / 2 - 30})">
-            <circle cx="0" cy="0" r="22" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" />
-            <path d="M 0 -10 L 0 3 M 0 9 L 0 11" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" />
-            <text x="0" y="42" text-anchor="middle" font-size="13" font-weight="bold" fill="#f8fafc" font-family="monospace">Dados de Estabilidade Não Disponíveis</text>
-            <text x="0" y="62" text-anchor="middle" font-size="11" fill="#94a3b8" font-family="sans-serif">Sem ensaio analítico de degradação laboratorial (HPLC / UV-Vis) validado para ${peptideName || 'este composto'}.</text>
-            <text x="0" y="80" text-anchor="middle" font-size="9.5" fill="#64748b" font-family="sans-serif">Diretrizes ICH Q1A/Q5C não fornecem constantes universais; simulações matemáticas sem suporte analítico foram desativadas.</text>
-          </g>
-        </svg>
-      `;
-    }
-
-    // Dimensões do SVG
-    const padLeft = 45;
-    const padRight = 30;
-    const padTop = 30;
-    const padBottom = 40;
+  /**
+   * Renderiza o Gráfico SVG de Decaimento com Curvas Multi-Cenário Pontilhadas/Tracejadas
+   * e Banner Permanente de Simulação Matemática Exploratória
+   */
+  renderDecayChartSvg(res) {
+    const width = 680;
+    const height = 290;
+    const padLeft = 50;
+    const padRight = 35;
+    const padTop = 52;
+    const padBottom = 45;
 
     const chartW = width - padLeft - padRight;
     const chartH = height - padTop - padBottom;
+    const maxDays = this.timeHorizonDays;
 
-    const maxDays = 120;
-    const getX = (d) => padLeft + (Math.min(maxDays, d) / maxDays) * chartW;
-    const getY = (p) => padTop + (1 - p / 100) * chartH;
+    const getX = (d) => padLeft + (Math.min(maxDays, Math.max(0, d)) / maxDays) * chartW;
+    const getY = (p) => padTop + (1.0 - Math.min(100, Math.max(0, p)) / 100.0) * chartH;
 
-    // Gerar caminhos de linhas
-    let pathFridge = "";
-    let pathRoom = "";
+    const scenarios = STABILITY_SCENARIOS;
+    const solvFactor = res.solvent.factor;
 
-    timeline.forEach((pt, idx) => {
-      const x = getX(pt.day);
-      const yF = getY(pt.fridge);
-      const yR = getY(pt.room);
+    // Gerar pontos contínuos a cada 1 ou 2 dias para curvas suaves
+    const numPoints = 40;
+    const step = maxDays / numPoints;
+    const pointsSlow = [];
+    const pointsMod = [];
+    const pointsFast = [];
+    const pointsActive = [];
 
-      if (idx === 0) {
-        pathFridge += `M ${x} ${yF}`;
-        pathRoom += `M ${x} ${yR}`;
-      } else {
-        pathFridge += ` L ${x} ${yF}`;
-        pathRoom += ` L ${x} ${yR}`;
+    for (let i = 0; i <= numPoints; i++) {
+      const d = i * step;
+      pointsSlow.push({ x: getX(d), y: getY(this.calculatePotencyAtDay(d, scenarios.slow.kFridge, solvFactor)) });
+      pointsMod.push({ x: getX(d), y: getY(this.calculatePotencyAtDay(d, scenarios.moderate.kFridge, solvFactor)) });
+      pointsFast.push({ x: getX(d), y: getY(this.calculatePotencyAtDay(d, scenarios.fast.kFridge, solvFactor)) });
+      if (this.selectedScenarioId === "custom" && this.customK) {
+        pointsActive.push({ x: getX(d), y: getY(this.calculatePotencyAtDay(d, this.customK, solvFactor)) });
       }
-    });
+    }
 
-    // Marcadores circulares
-    const dotsFridge = timeline.map(pt => `
-      <circle cx="${getX(pt.day)}" cy="${getY(pt.fridge)}" r="4.5" class="fill-slate-950 stroke-emerald-400 stroke-2" />
-      <text x="${getX(pt.day)}" y="${getY(pt.fridge) - 8}" text-anchor="middle" font-size="9" fill="#34d399" font-family="monospace" font-weight="bold">${pt.fridge}%</text>
-    `).join('');
+    const pathToSvg = (pts) => pts.map((p, idx) => `${idx === 0 ? 'M' : 'L'} ${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' ');
 
-    const dotsRoom = timeline.map(pt => `
-      <circle cx="${getX(pt.day)}" cy="${getY(pt.room)}" r="4" class="fill-slate-950 stroke-amber-400 stroke-2" />
-      <text x="${getX(pt.day)}" y="${getY(pt.room) + 14}" text-anchor="middle" font-size="9" fill="#fbbf24" font-family="monospace">${pt.room}%</text>
-    `).join('');
+    const pathSlow = pathToSvg(pointsSlow);
+    const pathMod = pathToSvg(pointsMod);
+    const pathFast = pathToSvg(pointsFast);
+    const pathCustom = pointsActive.length > 0 ? pathToSvg(pointsActive) : null;
 
-    // Linha vertical do dia atual se dentro de 120 dias
-    let currentMarker = "";
-    if (daysElapsed >= 0 && daysElapsed <= maxDays) {
-      const curX = getX(daysElapsed);
-      currentMarker = `
+    // Marcador do Dia Atual
+    let markerHtml = "";
+    if (res.daysElapsed >= 0 && res.daysElapsed <= maxDays) {
+      const curX = getX(res.daysElapsed);
+      const curY = getY(res.fridge.potency);
+      markerHtml = `
         <line x1="${curX}" y1="${padTop}" x2="${curX}" y2="${padTop + chartH}" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="3,3" />
-        <rect x="${curX - 25}" y="${padTop - 18}" width="50" height="15" rx="3" fill="#0369a1" />
-        <text x="${curX}" y="${padTop - 7}" text-anchor="middle" font-size="8.5" fill="#ffffff" font-family="monospace" font-weight="bold">Hoje: D+${daysElapsed}</text>
+        <circle cx="${curX}" cy="${curY}" r="5.5" fill="#0284c7" stroke="#ffffff" stroke-width="2" />
+        <rect x="${Math.max(padLeft, Math.min(width - padRight - 85, curX - 42))}" y="${padTop - 24}" width="84" height="18" rx="4" fill="#0369a1" />
+        <text x="${Math.max(padLeft + 42, Math.min(width - padRight - 43, curX))}" y="${padTop - 11}" text-anchor="middle" font-size="9" fill="#ffffff" font-family="monospace" font-weight="bold">Hoje: D+${res.daysElapsed} (${res.fridge.potency}%)</text>
       `;
     }
 
+    // Grid e Eixo X (5 divisões)
+    const xIntervals = [0, Math.round(maxDays * 0.25), Math.round(maxDays * 0.5), Math.round(maxDays * 0.75), maxDays];
+    const uniqueX = [...new Set(xIntervals)];
+
     return `
       <svg viewBox="0 0 ${width} ${height}" class="w-full h-auto select-none overflow-visible">
-        <!-- Linhas de Grade de Fundo -->
-        <line x1="${padLeft}" y1="${getY(100)}" x2="${padLeft + chartW}" y2="${getY(100)}" stroke="#334155" stroke-dasharray="2,2" opacity="0.4" />
-        <text x="${padLeft - 8}" y="${getY(100) + 3}" text-anchor="end" font-size="9" fill="#64748b" font-family="monospace">100%</text>
+        <!-- Banner Superior Permanente de Aviso Científico -->
+        <g transform="translate(${width / 2}, 18)">
+          <rect x="-240" y="-12" width="480" height="22" rx="5" fill="rgba(15, 23, 42, 0.9)" stroke="#d97706" stroke-width="1.2" stroke-dasharray="4,3" />
+          <text x="0" y="3" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#fcd34d" font-family="monospace">
+            SIMULAÇÃO MATEMÁTICA EXPLORATÓRIA — NÃO REPRESENTA ESTABILIDADE EXPERIMENTAL COMPROVADA
+          </text>
+        </g>
 
-        <line x1="${padLeft}" y1="${getY(50)}" x2="${padLeft + chartW}" y2="${getY(50)}" stroke="#334155" stroke-dasharray="2,2" opacity="0.3" />
-        <text x="${padLeft - 8}" y="${getY(50) + 3}" text-anchor="end" font-size="9" fill="#64748b" font-family="monospace">50%</text>
+        <!-- Legenda das Curvas de Cenários -->
+        <g transform="translate(${padLeft}, 38)" font-size="9" font-family="monospace">
+          <line x1="0" y1="0" x2="20" y2="0" stroke="#10b981" stroke-width="2" stroke-dasharray="3,3" />
+          <text x="25" y="3" fill="#34d399">Lenta (k=0.003)</text>
 
-        <line x1="${padLeft}" y1="${getY(0)}" x2="${padLeft + chartW}" y2="${getY(0)}" stroke="#475569" opacity="0.7" />
-        <text x="${padLeft - 8}" y="${getY(0) + 3}" text-anchor="end" font-size="9" fill="#64748b" font-family="monospace">0%</text>
+          <line x1="140" y1="0" x2="160" y2="0" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="6,4" />
+          <text x="165" y="3" fill="#fbbf24">Intermediária (k=0.012)</text>
 
-        <!-- Eixo X Marcadores de Dias -->
-        ${[0, 15, 30, 60, 90, 120].map(d => `
-          <line x1="${getX(d)}" y1="${padTop + chartH}" x2="${getX(d)}" y2="${padTop + chartH + 5}" stroke="#475569" />
+          <line x1="315" y1="0" x2="335" y2="0" stroke="#f43f5e" stroke-width="2" stroke-dasharray="2,2" />
+          <text x="340" y="3" fill="#f87171">Rápida (k=0.035)</text>
+
+          ${pathCustom ? `
+            <line x1="470" y1="0" x2="490" y2="0" stroke="#38bdf8" stroke-width="2.5" />
+            <text x="495" y="3" fill="#38bdf8">Personalizada</text>
+          ` : ''}
+        </g>
+
+        <!-- Linhas de Grade de Y (0%, 25%, 50%, 75%, 100%) -->
+        ${[100, 75, 50, 25, 0].map(p => `
+          <line x1="${padLeft}" y1="${getY(p)}" x2="${padLeft + chartW}" y2="${getY(p)}" stroke="#334155" stroke-dasharray="${p === 100 || p === 0 ? '0' : '2,2'}" stroke-width="${p === 0 ? '1.5' : '1'}" opacity="${p === 0 ? '0.8' : '0.4'}" />
+          <text x="${padLeft - 8}" y="${getY(p) + 3}" text-anchor="end" font-size="8.5" fill="#94a3b8" font-family="monospace">${p}%</text>
+        `).join('')}
+
+        <!-- Eixo X (Marcadores de Tempo) -->
+        ${uniqueX.map(d => `
+          <line x1="${getX(d)}" y1="${padTop + chartH}" x2="${getX(d)}" y2="${padTop + chartH + 5}" stroke="#475569" stroke-width="1.2" />
           <text x="${getX(d)}" y="${padTop + chartH + 18}" text-anchor="middle" font-size="9" fill="#94a3b8" font-family="monospace">${d}d</text>
         `).join('')}
 
-        <!-- Linha do Freezer (Alerta / Destruição) -->
-        <line x1="${padLeft}" y1="${getY(0) - 2}" x2="${padLeft + chartW}" y2="${getY(0) - 2}" stroke="#a855f7" stroke-dasharray="4,4" stroke-width="1.5" opacity="0.6" />
+        <!-- Curva Cenário Rápido (Carmim Pontilhada) -->
+        <path d="${pathFast}" fill="none" stroke="#f43f5e" stroke-width="2" stroke-dasharray="2,2" stroke-linecap="round" opacity="${this.selectedScenarioId === 'fast' ? '1.0' : '0.6'}" />
 
-        <!-- Curva Geladeira (Verde) -->
-        <path d="${pathFridge}" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-        
-        <!-- Curva Ambiente (Laranja) -->
-        <path d="${pathRoom}" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="4,3" stroke-linecap="round" stroke-linejoin="round" />
+        <!-- Curva Cenário Intermediário (Âmbar Tracejada) -->
+        <path d="${pathMod}" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="6,4" stroke-linecap="round" opacity="${this.selectedScenarioId === 'moderate' ? '1.0' : '0.7'}" />
 
-        <!-- Marcador do Dia Atual -->
-        ${currentMarker}
+        <!-- Curva Cenário Lento (Esmeralda Pontilhada) -->
+        <path d="${pathSlow}" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="3,3" stroke-linecap="round" opacity="${this.selectedScenarioId === 'slow' ? '1.0' : '0.6'}" />
 
-        <!-- Pontos Medidos -->
-        ${dotsFridge}
-        ${dotsRoom}
+        <!-- Curva Personalizada se Ativa -->
+        ${pathCustom ? `
+          <path d="${pathCustom}" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" />
+        ` : ''}
+
+        <!-- Marcador do Dia Atual com Badge -->
+        ${markerHtml}
       </svg>
     `;
   }
 }
 
-// Instância Global
+// Instância Global do Relógio
 const peptideStabilityClock = new PeptideStabilityClock();
