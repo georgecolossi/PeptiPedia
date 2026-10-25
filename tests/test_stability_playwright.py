@@ -239,6 +239,17 @@ def run_e2e_tests():
 
         # 15. Capturar Screenshot da Seção de Estabilidade
         print("[TEST 14] Retorno para a aba de Estabilidade e captura de evidência visual...")
+        # 15. Verificação dos Links das Referências Oficiais no DOM
+        print("[TEST 15] Verificação dos links das referências oficiais (DailyMed, ICH, FDA, etc.)...")
+        sources_box = page.locator("#stab-sources-container")
+        assert sources_box.count() > 0, "Container de fontes (#stab-sources-container) deve existir"
+        links = sources_box.locator("a")
+        assert links.count() >= 11, f"Devem existir ao menos 11 links de referências, obtido: {links.count()}"
+        
+        prialt_link = sources_box.locator('a[href*="57376a5b-4530-9018-e063-6394a90a9afe"]')
+        assert prialt_link.count() > 0, "Link oficial do DailyMed para Prialt (UUID 57376a5b-4530-9018-e063-6394a90a9afe) deve estar renderizado"
+        prialt_href = prialt_link.first.get_attribute("href")
+        assert prialt_href == "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=57376a5b-4530-9018-e063-6394a90a9afe"
         stab_nav_btn = page.locator("button[data-tab='stability']")
         if stab_nav_btn.count() > 0:
             stab_nav_btn.first.click()

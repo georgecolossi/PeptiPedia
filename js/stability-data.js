@@ -1103,7 +1103,7 @@ const STABILITY_SOURCES = [
         num: 10,
         title: "FDA / DailyMed (NDA 021060). PRIALT (ziconotide) solution for intrathecal infusion. Bomba SynchroMed II: 14 dias 1º enchimento; reenchimento não diluído 84 dias; diluído 40 dias a 31°C (vs EMA SmPC: 14/60 dias a 37°C).",
         linkText: "dailymed.nlm.nih.gov",
-        url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fda-prialt-021060"
+        url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=57376a5b-4530-9018-e063-6394a90a9afe"
       },
       {
         num: 11,

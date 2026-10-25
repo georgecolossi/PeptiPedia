@@ -247,6 +247,10 @@ class TestStabilityV1Remediation(unittest.TestCase):
         self.assertTrue("DailyMed" in stab_data or "NDA 021060" in stab_data)
         self.assertIn("SmPC", stab_data)
 
+        # Prialt DailyMed com setid oficial UUID
+        self.assertIn("57376a5b-4530-9018-e063-6394a90a9afe", stab_data)
+        self.assertNotIn("fda-prialt-021060", stab_data)
+
         # Soro fisiológico sem descarte universal genérico de 24h
         self.assertNotIn("Ausência de conservante exige descarte em até 24h", stab_data)
         self.assertIn("Inexiste regra de descarte universal em 24 horas", stab_data)

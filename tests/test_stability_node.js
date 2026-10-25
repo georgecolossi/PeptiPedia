@@ -16,7 +16,7 @@ pepCode += '; global.PEPTIDES_DATABASE = PEPTIDES_DATABASE;';
 eval(pepCode);
 
 let stabDataCode = fs.readFileSync(path.join(ROOT, 'js/stability-data.js'), 'utf8');
-stabDataCode += '; global.STABILITY_SCENARIOS = STABILITY_SCENARIOS; global.STABILITY_SOLVENTS = STABILITY_SOLVENTS; global.STABILITY_KNOWN_PROFILES = STABILITY_KNOWN_PROFILES; global.COMPOUND_EVIDENCE_STATUS = COMPOUND_EVIDENCE_STATUS; global.CHART_DATA_ORIGIN = CHART_DATA_ORIGIN; global.normalizeSequence = normalizeSequence; global.analyzeMolecularVulnerabilities = analyzeMolecularVulnerabilities;';
+stabDataCode += '; global.STABILITY_SCENARIOS = STABILITY_SCENARIOS; global.STABILITY_SOLVENTS = STABILITY_SOLVENTS; global.STABILITY_KNOWN_PROFILES = STABILITY_KNOWN_PROFILES; global.COMPOUND_EVIDENCE_STATUS = COMPOUND_EVIDENCE_STATUS; global.CHART_DATA_ORIGIN = CHART_DATA_ORIGIN; global.normalizeSequence = normalizeSequence; global.analyzeMolecularVulnerabilities = analyzeMolecularVulnerabilities; global.STABILITY_SOURCES = STABILITY_SOURCES;';
 eval(stabDataCode);
 
 let stabClockCode = fs.readFileSync(path.join(ROOT, 'js/stability.js'), 'utf8');
@@ -202,6 +202,36 @@ assert(saline.description.includes('depende estritamente do produto, da apresent
 assert(bacWater.description.includes('potência biológica'), 'bac_water deve citar potência biológica');
 assert(sterileWater.description.includes('Estabilidade química, esterilidade microbiológica e potência biológica são grandezas farmacêuticas completamente distintas e independentes'), 'sterile_water deve enfatizar distinção conceitual');
 console.log('PASS: Informações microbiológicas saneadas e tecnicamente acuradas (sem regras genéricas de 24h em WFI ou Soro).');
+
+console.log('=== 8. TESTE DE LINKS DAS REFERÊNCIAS OFICIAIS (DAILYMED / ICH / FDA / PUBMED) ===');
+assert(Array.isArray(global.STABILITY_SOURCES), 'STABILITY_SOURCES deve ser um array');
+let totalLinksChecked = 0;
+let prialtDailyMedFound = false;
+
+for (const cat of global.STABILITY_SOURCES) {
+  assert(cat.category, 'Categoria deve ter nome');
+  for (const item of cat.items) {
+    assert(item.num, 'Item deve ter número');
+    assert(item.title, 'Item deve ter título');
+    assert(item.url, `Item ${item.num} deve ter URL`);
+    assert(item.url.startsWith('https://'), `URL do item ${item.num} deve ser HTTPS: ${item.url}`);
+    assert(item.linkText, `Item ${item.num} deve ter linkText`);
+    totalLinksChecked++;
+
+    if (item.num === 10) {
+      assert.strictEqual(
+        item.url,
+        'https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=57376a5b-4530-9018-e063-6394a90a9afe',
+        'Item 10 (Prialt) deve apontar para o setid oficial UUID do DailyMed'
+      );
+      prialtDailyMedFound = true;
+    }
+  }
+}
+
+assert(prialtDailyMedFound, 'Link oficial do Prialt DailyMed deve ser validado');
+assert(totalLinksChecked >= 11, `Devem existir ao menos 11 links de referências oficiais checados (obtido: ${totalLinksChecked})`);
+console.log(`PASS: ${totalLinksChecked} links de referências oficiais validados com sucesso (incluindo DailyMed UUID do Prialt).`);
 
 console.log('\n========================================');
 console.log('TODOS OS TESTES EM NODE.JS PASSARAM COM SUCESSO (100% OK)');
