@@ -30,30 +30,41 @@ class PeptideStabilityClock {
   }
 
   getPeptideConfig() {
-    // Busca em STABILITY_PEPTIDES_DB ou cria fallback a partir do PEPTIDES_DATABASE
+    // Busca em STABILITY_PEPTIDES_DB
     if (STABILITY_PEPTIDES_DB[this.selectedPeptideId]) {
-      return STABILITY_PEPTIDES_DB[this.selectedPeptideId];
+      const cfg = STABILITY_PEPTIDES_DB[this.selectedPeptideId];
+      if (cfg.hasStabilityData) {
+        return cfg;
+      }
+      return {
+        ...cfg,
+        hasStabilityData: false,
+        stabilityClass: "Dados Não Disponíveis",
+        dataSource: "Sem estudo analítico específico publicado",
+        dataSourceType: "no_data",
+        rFridge: null,
+        rRoom: null,
+        isMeasured: false,
+        timeline: null
+      };
     }
+
     const catPep = typeof PEPTIDES_DATABASE !== 'undefined' 
       ? PEPTIDES_DATABASE.find(p => p.id === this.selectedPeptideId) 
       : null;
 
     return {
       name: catPep ? catPep.name : this.selectedPeptideId,
-      description: "Modelo cinético de primeira ordem conforme enquadramento ICH Q1A(R2) e ICH Q5C para peptídeos em solução aquosa. Recomenda-se estritamente uso refrigerado.",
-      stabilityClass: "Standard",
-      dataSource: "Modelo Estimado (ICH Q1A/Q5C)",
-      dataSourceType: "model_estimate",
-      rFridge: 0.00330,
-      rRoom: 0.01500,
+      description: "Dados de estabilidade analítica molecular não disponíveis para este composto sob as condições e solventes selecionados. As diretrizes ICH Q1A(R2) e ICH Q5C definem protocolos de desenho de estudos e estresse térmico/fotoquímico, mas não estabelecem constantes matemáticas universais de degradação. O prazo microbiológico de até 28 dias para frascos multidose com água bacteriostática (USP <797>) refere-se estritamente à eficácia conservante contra contaminação microbiológica, e não à integridade molecular ou percentual de potência química do peptídeo.",
+      stabilityClass: "Dados Não Disponíveis",
+      dataSource: "Sem ensaio analítico validado publicado",
+      dataSourceType: "no_data",
+      hasStabilityData: false,
+      rFridge: null,
+      rRoom: null,
       isMeasured: false,
-      timeline: {
-        days: [0, 15, 30, 60, 90, 120],
-        fridge: [100, 95, 90, 82, 74, 67],
-        room: [100, 79, 63, 40, 25, 16],
-        freezerStatus: "Não congelar"
-      },
-      freezerWarning: "Não congelar — O processo de congelamento/descongelamento quebra ligações e causa agregação molecular (Jain et al., 2021)."
+      timeline: null,
+      freezerWarning: "Não congelar a solução líquida reconstituída."
     };
   }
 
@@ -90,6 +101,44 @@ class PeptideStabilityClock {
   calculate() {
     const pep = this.getPeptideConfig();
     const solv = this.getSolventConfig();
+
+    if (!pep.hasStabilityData) {
+      return {
+        daysElapsed: this.daysElapsed,
+        reconstitutionDate: this.reconstitutionDate,
+        peptide: pep,
+        solvent: solv,
+        hasStabilityData: false,
+        fridge: {
+          potency: null,
+          potencyText: "Dados não disponíveis",
+          rate: null,
+          rateText: "Não aplicável",
+          isMeasured: false,
+          status: "Sem ensaio analítico para esta formulação",
+          colorClass: "text-slate-400 bg-slate-900/40 border-slate-800"
+        },
+        room: {
+          potency: null,
+          potencyText: "Dados não disponíveis",
+          rate: null,
+          rateText: "Não aplicável",
+          isMeasured: false,
+          status: "Sem ensaio analítico para esta formulação",
+          colorClass: "text-slate-400 bg-slate-900/40 border-slate-800"
+        },
+        freezer: {
+          status: "Não congelar",
+          warning: pep.freezerWarning || "Não congelar a solução líquida reconstituída."
+        },
+        timeline: [0, 15, 30, 60, 90, 120].map(d => ({
+          day: d,
+          fridge: "—",
+          room: "—",
+          freezer: "Não congelar"
+        }))
+      };
+    }
 
     const currentPotFridge = this.calculatePotencyAtDay(
       this.daysElapsed, 
@@ -132,16 +181,21 @@ class PeptideStabilityClock {
       reconstitutionDate: this.reconstitutionDate,
       peptide: pep,
       solvent: solv,
+      hasStabilityData: true,
       fridge: {
         potency: currentPotFridge,
+        potencyText: `${currentPotFridge}%`,
         rate: pep.rFridge,
+        rateText: `r = ${(pep.rFridge * solv.factor).toFixed(5)}/dia`,
         isMeasured: pep.isMeasured,
         status: this.getStatusLabel(currentPotFridge),
         colorClass: this.getColorClass(currentPotFridge)
       },
       room: {
         potency: currentPotRoom,
+        potencyText: `${currentPotRoom}%`,
         rate: pep.rRoom,
+        rateText: `r = ${(pep.rRoom * solv.factor).toFixed(5)}/dia`,
         isMeasured: pep.isMeasured,
         status: this.getStatusLabel(currentPotRoom),
         colorClass: this.getColorClass(currentPotRoom)
@@ -168,10 +222,26 @@ class PeptideStabilityClock {
     return "text-rose-400 bg-rose-950/40 border-rose-800/60";
   }
 
-  renderDecayChartSvg(timeline, daysElapsed) {
-    // Dimensões do SVG
+  renderDecayChartSvg(timeline, daysElapsed, hasStabilityData = true, peptideName = '') {
     const width = 640;
     const height = 260;
+
+    if (!hasStabilityData || !timeline || timeline.length === 0 || timeline[0].fridge === "—") {
+      return `
+        <svg viewBox="0 0 ${width} ${height}" class="w-full h-auto select-none overflow-visible">
+          <rect x="20" y="20" width="${width - 40}" height="${height - 40}" rx="12" fill="rgba(15, 23, 42, 0.6)" stroke="#334155" stroke-width="1.5" stroke-dasharray="4,4" />
+          <g transform="translate(${width / 2}, ${height / 2 - 30})">
+            <circle cx="0" cy="0" r="22" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" />
+            <path d="M 0 -10 L 0 3 M 0 9 L 0 11" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" />
+            <text x="0" y="42" text-anchor="middle" font-size="13" font-weight="bold" fill="#f8fafc" font-family="monospace">Dados de Estabilidade Não Disponíveis</text>
+            <text x="0" y="62" text-anchor="middle" font-size="11" fill="#94a3b8" font-family="sans-serif">Sem ensaio analítico de degradação laboratorial (HPLC / UV-Vis) validado para ${peptideName || 'este composto'}.</text>
+            <text x="0" y="80" text-anchor="middle" font-size="9.5" fill="#64748b" font-family="sans-serif">Diretrizes ICH Q1A/Q5C não fornecem constantes universais; simulações matemáticas sem suporte analítico foram desativadas.</text>
+          </g>
+        </svg>
+      `;
+    }
+
+    // Dimensões do SVG
     const padLeft = 45;
     const padRight = 30;
     const padTop = 30;

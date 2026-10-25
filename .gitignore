@@ -3,6 +3,7 @@ node_modules/
 .DS_Store
 Thumbs.db
 *.log
+!auditoria/**/logs/*.log
 __pycache__/
 *.pyc
 

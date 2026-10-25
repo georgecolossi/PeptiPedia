@@ -45,6 +45,25 @@ document.addEventListener('DOMContentLoaded', () => {
       .replace(/[\u0300-\u036f]/g, '');
   }
 
+  // Sinônimos opcionais de busca. Não modificam o conteúdo das fichas.
+  const PEPTIDE_SEARCH_ALIASES = Object.freeze({
+    'semaglutide': ['Ozempic', 'Wegovy', 'Rybelsus'],
+    'tirzepatide': ['Mounjaro', 'Zepbound'],
+    'epitalon': ['Epithalon', 'Epithalone'],
+    'cjc-1295-no-dac': ['Mod GRF 1-29', 'Modified GRF 1-29', 'CJC sem DAC'],
+    'cjc-1295-dac': ['CJC com DAC'],
+    'pt-141': ['Bremelanotida', 'Bremelanotide', 'Vyleesi'],
+    'ss-31': ['Elamipretide'],
+    'melanotan-2': ['MT-2', 'MT2']
+  });
+
+  // Link DOI quando o identificador possui formato seguro para a URL.
+  function getStudyDoiUrl(doi) {
+    const value = typeof doi === 'string' ? doi.trim() : '';
+    return /^10\.\d{4,9}\/[-._;()/:a-zA-Z0-9]+$/.test(value)
+      ? `https://doi.org/${value}` : null;
+  }
+
   // Função auxiliar de normalização de itens do planejador (evita campos 'undefined')
   function normalizePlannerItem(item) {
     const orig = PEPTIDES_DATABASE.find(p => p.id === item.id);
@@ -228,13 +247,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (state.searchQuery.trim()) {
         const q = normalizeText(state.searchQuery.trim());
         const matchesName = normalizeText(peptide.name).includes(q);
+        const matchesAlias = (PEPTIDE_SEARCH_ALIASES[peptide.id] || []).some(alias => normalizeText(alias).includes(q));
         const matchesFullName = normalizeText(peptide.fullName).includes(q);
         const matchesSummary = normalizeText(peptide.summary).includes(q);
         const matchesMechanism = normalizeText(peptide.mechanism).includes(q);
         const matchesFocus = normalizeText(peptide.researchProtocols?.researchFocus || '').includes(q);
         const matchesCategory = normalizeText(peptide.category).includes(q);
         const matchesTargets = peptide.therapeuticTargets && peptide.therapeuticTargets.some(t => normalizeText(t).includes(q));
-        if (!matchesName && !matchesFullName && !matchesSummary && !matchesMechanism && !matchesFocus && !matchesCategory && !matchesTargets) {
+        if (!matchesName && !matchesAlias && !matchesFullName && !matchesSummary && !matchesMechanism && !matchesFocus && !matchesCategory && !matchesTargets) {
           return false;
         }
       }
@@ -271,7 +291,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function getEvidenceBadgeHtml(evidenceType) {
-    if (evidenceType === 'clinical_proven') {
+    if (evidenceType === 'approved_label') {
+      return `<span class="badge-approved-label text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm bg-emerald-950/80 text-emerald-300 border border-emerald-700/60"><i data-lucide="award" class="w-3 h-3"></i>Bula Aprovada</span>`;
+    } else if (evidenceType === 'clinical_trial_only') {
+      return `<span class="badge-trial-only text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm bg-indigo-950/80 text-indigo-300 border border-indigo-700/60"><i data-lucide="flask-conical" class="w-3 h-3"></i>Braço de Ensaio</span>`;
+    } else if (evidenceType === 'investigational_no_dose') {
+      return `<span class="badge-no-dose text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm bg-amber-950/80 text-amber-300 border border-amber-700/60"><i data-lucide="alert-octagon" class="w-3 h-3"></i>Investigacional (Sem Dose Humana)</span>`;
+    } else if (evidenceType === 'clinical_proven') {
       return `<span class="badge-clinical-proven text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="check-circle-2" class="w-3 h-3"></i>Ensaio Clínico em Humanos</span>`;
     } else if (evidenceType === 'clinical_pilot') {
       return `<span class="badge-clinical-pilot text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="microscope" class="w-3 h-3"></i>Estudo Piloto Humano</span>`;
@@ -319,6 +345,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const isInStack = state.customStack.some(p => p.id === peptide.id);
       const statusBadge = getStatusBadgeHtml(peptide.statusType, peptide.status);
       const evidenceBadge = getEvidenceBadgeHtml(peptide.protocolEvidenceType);
+      const biologicBadge = (peptide.isBiologicProtein || peptide.entityType === 'biologic_protein')
+        ? `<span class="badge-biologic text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm bg-purple-950/80 text-purple-300 border border-purple-700/60"><i data-lucide="dna" class="w-3 h-3"></i>Biológico / Proteína</span>`
+        : '';
 
       cardsHtml += `
         <div class="peptide-card bg-slate-900/80 border border-slate-800/80 hover:border-cyan-500/50 rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 relative group overflow-hidden">
@@ -344,6 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="flex flex-wrap items-center gap-1.5 mb-3">
               ${statusBadge}
               ${evidenceBadge}
+              ${biologicBadge}
               <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
                 Score: ${peptide.evidenceScore}/100
               </span>
@@ -467,9 +497,8 @@ document.addEventListener('DOMContentLoaded', () => {
         e.stopPropagation();
         const peptide = PEPTIDES_DATABASE.find(p => p.id === btn.dataset.quickCalcId);
         if (peptide) {
-          prefillCalculatorWithPeptide(peptide);
-          switchTab('calculator');
-          showToast(`Configuração de ${peptide.name} carregada na calculadora!`);
+          const ok = prefillCalculatorWithPeptide(peptide);
+          if (ok) switchTab('calculator');
         }
       });
     });
@@ -520,7 +549,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const peptideStudiesCount = CLINICAL_STUDIES_DATABASE.filter(s => s.peptideId === peptide.id).length;
 
     let evidenceBoxHtml = '';
-    if (peptide.protocolEvidenceType === 'clinical_proven') {
+    if (peptide.protocolEvidenceType === 'approved_label') {
+      evidenceBoxHtml = `
+        <div class="p-3.5 rounded-xl bg-emerald-950/30 border border-emerald-800/50 text-emerald-200 text-xs flex items-start gap-2.5">
+          <i data-lucide="award" class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5"></i>
+          <div>
+            <strong class="text-emerald-300 block mb-0.5">POSOLOGIA OFICIAL DE BULA APROVADA:</strong>
+            ${peptide.protocolEvidenceNote}
+          </div>
+        </div>
+      `;
+    } else if (peptide.protocolEvidenceType === 'clinical_trial_only') {
+      evidenceBoxHtml = `
+        <div class="p-3.5 rounded-xl bg-indigo-950/30 border border-indigo-800/50 text-indigo-200 text-xs flex items-start gap-2.5">
+          <i data-lucide="flask-conical" class="w-5 h-5 text-indigo-400 flex-shrink-0 mt-0.5"></i>
+          <div>
+            <strong class="text-indigo-300 block mb-0.5">POSOLOGIA RESTRITA A BRAÇO DE ENSAIO CLÍNICO:</strong>
+            ${peptide.protocolEvidenceNote}
+          </div>
+        </div>
+      `;
+    } else if (peptide.protocolEvidenceType === 'investigational_no_dose') {
+      evidenceBoxHtml = `
+        <div class="p-3.5 rounded-xl bg-amber-950/30 border border-amber-800/50 text-amber-200 text-xs flex items-start gap-2.5">
+          <i data-lucide="alert-octagon" class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5"></i>
+          <div>
+            <strong class="text-amber-300 block mb-0.5">INVESTIGACIONAL — SEM DOSE HUMANA VALIDADA:</strong>
+            ${peptide.protocolEvidenceNote || 'Não há dose humana validada nesta base de evidências. Composto restrito a investigações laboratoriais e pré-clínicas.'}
+          </div>
+        </div>
+      `;
+    } else if (peptide.protocolEvidenceType === 'clinical_proven') {
       evidenceBoxHtml = `
         <div class="p-3.5 rounded-xl bg-emerald-950/30 border border-emerald-800/50 text-emerald-200 text-xs flex items-start gap-2.5">
           <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5"></i>
@@ -552,6 +611,10 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
     }
 
+    const modalBiologicBadge = (peptide.isBiologicProtein || peptide.entityType === 'biologic_protein')
+      ? `<span class="badge-biologic text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm bg-purple-950/80 text-purple-300 border border-purple-700/60"><i data-lucide="dna" class="w-3 h-3"></i>Biológico / Proteína</span>`
+      : '';
+
     elements.detailModalContent.innerHTML = `
       <div class="p-6 sm:p-8 space-y-6">
         <!-- Topo: Título, Status e Isenção -->
@@ -561,6 +624,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="text-xs font-mono uppercase tracking-wider text-cyan-400 font-bold">${peptide.category}</span>
               ${getStatusBadgeHtml(peptide.statusType, peptide.status)}
               ${getEvidenceBadgeHtml(peptide.protocolEvidenceType)}
+              ${modalBiologicBadge}
             </div>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-white font-mono">${peptide.name}</h2>
             <p class="text-xs sm:text-sm text-slate-400 font-mono mt-0.5">${peptide.fullName}</p>
@@ -659,6 +723,148 @@ document.addEventListener('DOMContentLoaded', () => {
           </p>
         </div>
 
+        <!-- Apresentações e formulações (Piloto Multiformulação) -->
+        ${(peptide.formulations && peptide.formulations.length > 0) ? `
+          <div class="space-y-3 pt-2">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+              <h4 class="text-sm font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
+                <i data-lucide="layers" class="w-4 h-4 text-cyan-400"></i>
+                Apresentações e formulações
+              </h4>
+              <span class="text-[11px] font-mono text-cyan-400 bg-cyan-950/60 border border-cyan-800/40 px-2 py-0.5 rounded-full">
+                ${peptide.formulations.length} apresentações documentadas
+              </span>
+            </div>
+            
+            <p class="text-xs text-slate-400 leading-relaxed">
+              O PeptiPedia documenta de forma segregada a formulação primária liofilizada para fins de pesquisa e as soluções industriais prontas regulamentadas, preservando a não transferibilidade de dados de estabilidade, veículos e posologia.
+            </p>
+
+            <div class="grid grid-cols-1 gap-3">
+              ${peptide.formulations.map(f => `
+                <div class="p-4 rounded-xl border ${f.regulatoryStatus === 'approved_medicine' ? 'bg-emerald-950/20 border-emerald-800/40' : 'bg-slate-950/70 border-slate-800'} space-y-2.5 text-xs">
+                  <div class="flex flex-wrap items-center justify-between gap-2">
+                    <div class="flex items-center gap-2">
+                      <span class="px-2 py-0.5 rounded-md font-mono text-[10px] font-bold ${f.formType === 'lyophilized_vial' ? 'bg-cyan-950 text-cyan-300 border border-cyan-800/50' : (f.formType === 'prefilled_pen' ? 'bg-indigo-950 text-indigo-300 border border-indigo-800/50' : 'bg-emerald-950 text-emerald-300 border border-emerald-800/50')}">
+                        ${f.formType === 'lyophilized_vial' ? (f.regulatoryStatus === 'approved_medicine' ? 'LIOFILIZADO CLÍNICO OFICIAL' : 'LIOFILIZADO DE PESQUISA') : (f.formType === 'prefilled_pen' ? 'CANETA PRÉ-PREENCHIDA' : (f.formType === 'nasal_drops' ? 'SOLUÇÃO NASAL PRONTA' : (f.formType && f.formType.includes('oral') ? 'FORMA ORAL' : 'SOLUÇÃO PRONTA')))}
+                      </span>
+                      <strong class="text-white text-sm font-mono">${f.commercialName}</strong>
+                    </div>
+                    <span class="text-[11px] font-mono px-2 py-0.5 rounded-full ${f.regulatoryStatus === 'approved_medicine' ? 'bg-emerald-900/40 text-emerald-300 border border-emerald-700/50' : 'bg-amber-900/30 text-amber-300 border border-amber-700/40'}">
+                      ${f.regulatoryStatus === 'approved_medicine' ? 'Aprovado em Bula Oficial' : 'Insumo de Pesquisa / Empírico'}
+                    </span>
+                  </div>
+
+                  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 text-[11px] text-slate-300 pt-1">
+                    <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800/60">
+                      <span class="text-slate-400 block text-[10px] uppercase font-mono">Concentração / Dose:</span>
+                      <span class="text-slate-200 font-medium">${f.strengthConcentration}</span>
+                    </div>
+                    <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800/60">
+                      <span class="text-slate-400 block text-[10px] uppercase font-mono">Via de Administração:</span>
+                      <span class="text-cyan-300 font-mono font-medium">${f.route}</span>
+                    </div>
+                    <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800/60">
+                      <span class="text-slate-400 block text-[10px] uppercase font-mono">Veículo & Conservante:</span>
+                      <span class="text-slate-200">${f.excipientsPreservatives}</span>
+                    </div>
+                    <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800/60">
+                      <span class="text-slate-400 block text-[10px] uppercase font-mono">Estabilidade Aberto:</span>
+                      <span class="text-amber-300 font-mono font-medium">${f.inUseStability}</span>
+                    </div>
+                  </div>
+
+                  <div class="text-[11px] text-slate-400 bg-slate-950/40 p-2.5 rounded-lg border border-slate-800/40 space-y-1">
+                    <div><strong class="text-slate-300 font-mono">Estabilidade Fechado:</strong> ${f.unopenedStability}</div>
+                    <div><strong class="text-slate-300 font-mono">Armazenamento:</strong> ${f.storageConditions}</div>
+                    <div><strong class="text-slate-300 font-mono">Compatibilidade / Alertas:</strong> ${f.compatibilityNotes}</div>
+                    <div class="pt-1 text-[10px] text-slate-400 flex items-center justify-between gap-1 flex-wrap border-t border-slate-800/60 mt-1">
+                      <div><strong class="text-slate-400">Fonte Documental:</strong> <span>${f.referenceSource}</span></div>
+                      ${(() => {
+                        const formType = (f.formType || '').toLowerCase();
+                        const route = (f.route || '').toLowerCase();
+                        const name = (f.commercialName || '').toLowerCase();
+
+                        if (f.isOfficialMedicineKit) {
+                          return `
+                            <span class="text-[10px] font-mono text-amber-300 px-2 py-0.5 rounded bg-amber-950/80 border border-amber-800/50 flex items-center gap-1" title="0,38 mL recuperável / seringa do kit">
+                              <i data-lucide="shield-alert" class="w-3 h-3 text-amber-400"></i>
+                              <span>Kit oficial de bula (0,38 mL recuperável / seringa do fabricante)</span>
+                            </span>
+                          `;
+                        }
+
+                        if (f.isReconstitutionVial && (formType === 'lyophilized_vial' || f.formType === 'lyophilized_vial')) {
+                          if (f.nominalVialMg) {
+                            return `
+                              <button class="calc-formulation-btn px-2 py-0.5 rounded bg-cyan-950 hover:bg-cyan-900 text-cyan-300 border border-cyan-800/50 font-mono text-[10px] flex items-center gap-1 transition-colors" data-form-id="${f.id}">
+                                <i data-lucide="calculator" class="w-3 h-3"></i>
+                                <span>Carregar massa (${f.nominalVialMg} mg) na calculadora</span>
+                              </button>
+                            `;
+                          }
+                          return `
+                            <span class="text-[10px] font-mono text-cyan-300 px-2 py-0.5 rounded bg-cyan-950/80 border border-cyan-800/50">Liofilizado para reconstituição</span>
+                          `;
+                        }
+
+                        if (formType === 'nasal_drops' || route.includes('nasal')) {
+                          return `
+                            <span class="text-[10px] font-mono text-slate-300 px-2 py-0.5 rounded bg-slate-900/80 border border-slate-700/60 flex items-center gap-1">
+                              <i data-lucide="droplet" class="w-3 h-3 text-cyan-400"></i>
+                              <span>Solução nasal pronta para uso (dispensa seringa e diluente)</span>
+                            </span>
+                          `;
+                        }
+
+                        if (formType === 'prefilled_pen' || formType.includes('pen') || name.includes('caneta')) {
+                          return `
+                            <span class="text-[10px] font-mono text-emerald-300 px-2 py-0.5 rounded bg-emerald-950/80 border border-emerald-800/50 flex items-center gap-1">
+                              <i data-lucide="check-circle" class="w-3 h-3 text-emerald-400"></i>
+                              <span>Caneta subcutânea pronta para uso (sem reconstituição)</span>
+                            </span>
+                          `;
+                        }
+
+                        if (formType === 'multidose_vial' || formType === 'ready_liquid' || name.includes('multidose')) {
+                          return `
+                            <span class="text-[10px] font-mono text-emerald-300 px-2 py-0.5 rounded bg-emerald-950/80 border border-emerald-800/50 flex items-center gap-1">
+                              <i data-lucide="check-circle" class="w-3 h-3 text-emerald-400"></i>
+                              <span>Solução injetável pronta para uso (multidose / sem reconstituição)</span>
+                            </span>
+                          `;
+                        }
+
+                        if (formType.includes('oral') || route.includes('oral')) {
+                          return `
+                            <span class="text-[10px] font-mono text-amber-300 px-2 py-0.5 rounded bg-amber-950/80 border border-amber-800/50 flex items-center gap-1">
+                              <i data-lucide="pill" class="w-3 h-3 text-amber-400"></i>
+                              <span>Administração oral direta (não injetável)</span>
+                            </span>
+                          `;
+                        }
+
+                        if (formType.includes('topical') || route.includes('tópica') || route.includes('topica')) {
+                          return `
+                            <span class="text-[10px] font-mono text-indigo-300 px-2 py-0.5 rounded bg-indigo-950/80 border border-indigo-800/50 flex items-center gap-1">
+                              <i data-lucide="sparkles" class="w-3 h-3 text-indigo-400"></i>
+                              <span>Uso tópico direto</span>
+                            </span>
+                          `;
+                        }
+
+                        return `
+                          <span class="text-[10px] font-mono text-slate-400 px-2 py-0.5 rounded bg-slate-900/80 border border-slate-800">Apresentação pronta para uso</span>
+                        `;
+                      })()}
+                    </div>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
+
         <!-- Artigos Completos com Links Diretos para PubMed / PMC / PDF -->
         <div class="space-y-3">
           <div class="flex items-center justify-between">
@@ -736,11 +942,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span>Frasco de ${peptide.reconstitution?.vialSize || '5 mg'} com ${peptide.reconstitution?.recommendedBacWater || '2.0 mL'} (${peptide.reconstitution?.resultingConcentration || ''}).</span>
               </div>
               <div>
-                <span class="text-amber-300 font-semibold block text-xs">Estabilidade Refrigerado:</span>
+                <span class="text-amber-300 font-semibold block text-xs">${peptide.reconstitution?.storageMixedLabel || 'Estabilidade Refrigerado:'}</span>
                 <span>${peptide.reconstitution?.storageMixed || '2°C a 8°C (geladeira)'}</span>
               </div>
               <div>
-                <span class="text-amber-300 font-semibold block text-xs">Armazenamento Liofilizado:</span>
+                <span class="text-amber-300 font-semibold block text-xs">${peptide.reconstitution?.storageUnmixedLabel || 'Armazenamento Liofilizado:'}</span>
                 <span>${peptide.reconstitution?.storageUnmixed || '-20°C ou 2°C a 8°C (ao abrigo da luz)'}</span>
               </div>
             </div>
@@ -784,11 +990,17 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="p-4 bg-slate-950/60 border border-slate-800 rounded-xl space-y-2">
             <h5 class="font-bold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
               <i data-lucide="shield-alert" class="w-4 h-4 text-slate-400"></i>
-              Contraindicações & Precauções
+              Contraindicações Formais de Bula
             </h5>
             <ul class="list-disc list-inside space-y-1 text-slate-400">
               ${peptide.contraindications.map(ci => `<li>${ci}</li>`).join('')}
             </ul>
+            ${peptide.pregnancyNotice ? `
+              <div class="mt-2.5 pt-2.5 border-t border-slate-800/80 text-[11px] text-amber-300/90 leading-relaxed bg-amber-950/20 p-2 rounded-lg border border-amber-900/40">
+                <strong class="text-amber-400 font-mono block mb-1">Orientações de Gravidez e Lactação (FDA 2025):</strong>
+                ${peptide.pregnancyNotice}
+              </div>
+            ` : ''}
           </div>
         </div>
 
@@ -801,10 +1013,17 @@ document.addEventListener('DOMContentLoaded', () => {
             <span>${isInStack ? 'No seu Planejador' : 'Adicionar ao Planejador'}</span>
           </button>
           
-          <button id="modal-calc-btn" class="px-5 py-2.5 bg-cyan-500 hover:bg-cyan-400 text-slate-950 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 shadow-lg shadow-cyan-500/20">
-            <i data-lucide="calculator" class="w-4 h-4"></i>
-            <span>Calcular Diluição Deste Peptídeo</span>
-          </button>
+          ${(peptide.protocolEvidenceType === 'investigational_no_dose' || peptide.calculatorBlocked) ? `
+            <button id="modal-calc-btn" class="px-5 py-2.5 bg-slate-800 text-slate-400 cursor-not-allowed rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 border border-slate-700" title="Não há dose humana validada nesta base de evidências">
+              <i data-lucide="alert-octagon" class="w-4 h-4 text-amber-400"></i>
+              <span>Sem Cálculo (Investigacional)</span>
+            </button>
+          ` : `
+            <button id="modal-calc-btn" class="px-5 py-2.5 bg-cyan-500 hover:bg-cyan-400 text-slate-950 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 shadow-lg shadow-cyan-500/20">
+              <i data-lucide="calculator" class="w-4 h-4"></i>
+              <span>Calcular Diluição Deste Peptídeo</span>
+            </button>
+          `}
         </div>
       </div>
     `;
@@ -839,11 +1058,25 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleCustomStackItem(peptide.id);
       openPeptideModal(peptide.id);
     });
-    document.getElementById('modal-calc-btn')?.addEventListener('click', () => {
-      prefillCalculatorWithPeptide(peptide);
-      closePeptideModal();
-      switchTab('calculator');
-      showToast(`Parâmetros de ${peptide.name} transferidos para a calculadora!`);
+    const modalCalcBtn = document.getElementById('modal-calc-btn');
+    if (modalCalcBtn) {
+      modalCalcBtn.onclick = () => {
+        const targetPeptide = state.activePeptideModal || peptide;
+        const ok = prefillCalculatorWithPeptide(targetPeptide);
+        if (ok !== false) {
+          closePeptideModal();
+          switchTab('calculator');
+        }
+      };
+    }
+    document.querySelectorAll('.calc-formulation-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const ok = prefillCalculatorWithPeptide(peptide, btn.dataset.formId);
+        if (ok !== false) {
+          closePeptideModal();
+          switchTab('calculator');
+        }
+      });
     });
     document.getElementById('modal-view-studies-link')?.addEventListener('click', () => {
       closePeptideModal();
@@ -865,6 +1098,12 @@ document.addEventListener('DOMContentLoaded', () => {
       } catch (e) {}
     }
   }
+
+  window.openPeptideModal = openPeptideModal;
+  window.closePeptideModal = closePeptideModal;
+  window.prefillCalculatorWithPeptide = prefillCalculatorWithPeptide;
+  window.getEvidenceBadgeHtml = getEvidenceBadgeHtml;
+  window.getStatusBadgeHtml = getStatusBadgeHtml;
 
   // ----------------------------------------------------
   // Planejador de Protocolo Personalizável & Exportador Preciso
@@ -1496,6 +1735,11 @@ document.addEventListener('DOMContentLoaded', () => {
               <span>PMID: ${study.pmid}</span>
               <i data-lucide="external-link" class="w-3 h-3"></i>
             </a>
+            ${getStudyDoiUrl(study.doi) ? `
+              <a href="${getStudyDoiUrl(study.doi)}" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center gap-1 text-xs font-mono text-cyan-300 hover:text-white px-2 py-1 rounded-lg border border-slate-700/70 hover:border-cyan-500/50"
+                 title="Abrir artigo pelo DOI">DOI <i data-lucide="external-link" class="w-3 h-3"></i></a>
+            ` : ''}
           </div>
 
           <h3 class="text-base sm:text-lg font-bold text-white mb-2 leading-snug">
@@ -1767,6 +2011,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const res = peptideCalculator.calculate();
 
+      if (!res.isValid) {
+        document.getElementById('calc-res-units').textContent = "—";
+        document.getElementById('calc-res-volume').textContent = "—";
+        document.getElementById('calc-res-conc').textContent = "Aguardando dados";
+        document.getElementById('calc-res-unit-val').textContent = "—";
+        document.getElementById('calc-res-doses').textContent = "—";
+        document.getElementById('calc-res-days').textContent = "—";
+
+        const costEl = document.getElementById('calc-res-cost');
+        if (costEl) costEl.textContent = "—";
+
+        const warningEl = document.getElementById('calc-warning-box');
+        if (warningEl) {
+          warningEl.textContent = res.errorMessage || "Preencha a quantidade do frasco (mg), o volume de diluente (mL) e a dose desejada para calcular.";
+          warningEl.className = "text-xs text-cyan-300 bg-cyan-950/40 border border-cyan-800/60 p-3 rounded-xl mb-4";
+          warningEl.classList.remove('hidden');
+        }
+
+        if (syringeVisualContainer) {
+          syringeVisualContainer.innerHTML = peptideCalculator.renderSyringeSvg(
+            0,
+            res.maxSyringeUnits
+          );
+        }
+        return;
+      }
+
       document.getElementById('calc-res-units').textContent = `${res.unitsOnSyringe} UI`;
       document.getElementById('calc-res-volume').textContent = `${res.volumePerDoseMl} mL`;
       document.getElementById('calc-res-conc').textContent = `${res.concentrationMgPerMl} mg/mL (${res.concentrationMcgPerMl} mcg/mL)`;
@@ -1783,6 +2054,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (warningEl) {
         if (res.warning) {
           warningEl.textContent = res.warning;
+          warningEl.className = `text-xs ${res.warningLevel === 'danger' ? 'text-rose-300 bg-rose-950/40 border border-rose-900/50' : (res.warningLevel === 'warning' ? 'text-amber-300 bg-amber-950/40 border border-amber-900/50' : 'text-cyan-300 bg-cyan-950/40 border border-cyan-800/60')} p-3 rounded-xl mb-4`;
           warningEl.classList.remove('hidden');
         } else {
           warningEl.classList.add('hidden');
@@ -1813,7 +2085,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Renderização dinâmica dos 19 presets populares com adaptação de mcg e mg
+    // Renderização dinâmica dos presets populares com adaptação de mcg e mg
     const presetsContainer = document.getElementById('calc-popular-presets-container');
     if (presetsContainer && peptideCalculator.popularPresets) {
       presetsContainer.innerHTML = peptideCalculator.popularPresets.map((p, pIndex) => `
@@ -1852,31 +2124,97 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCalc();
   }
 
-  function prefillCalculatorWithPeptide(peptide) {
+  function prefillCalculatorWithPeptide(peptide, formulationId = null) {
     const vialInput = document.getElementById('calc-vial-mg');
     const waterInput = document.getElementById('calc-water-ml');
     const doseInput = document.getElementById('calc-dose-input') || document.getElementById('calc-dose-mcg');
 
-    if (!peptide || !peptide.reconstitution) return;
+    if (!peptide) return false;
 
-    const vialNumMatch = peptide.reconstitution.vialSize.match(/(\d+(\.\d+)?)/);
-    const waterNumMatch = peptide.reconstitution.recommendedBacWater.match(/(\d+(\.\d+)?)/);
-    const doseNumMatch = peptide.researchProtocols.typicalDose.match(/(\d+(\.\d+)?)/);
+    // Bloqueio rigoroso de compostos com calculadora bloqueada fail-closed ou investigacionais sem dose humana validada
+    if (peptide.calculatorBlocked || peptide.protocolEvidenceType === 'investigational_no_dose' || (peptide.researchProtocols?.typicalDose && (peptide.researchProtocols.typicalDose.includes('Não há dose humana validada') || peptide.researchProtocols.typicalDose.includes('bloqueada')))) {
+      showToast(`${peptide.name}: calculadora bloqueada fail-closed.`);
+      return false;
+    }
+
+    // 1. Dossiês com formulations[] estruturado (arquitetura genérica e extensível)
+    if (peptide.formulations && Array.isArray(peptide.formulations) && peptide.formulations.length > 0) {
+      let targetForm = null;
+      if (formulationId) {
+        targetForm = peptide.formulations.find(f => f.id === formulationId);
+      } else if (peptide.primaryFormulationId) {
+        targetForm = peptide.formulations.find(f => f.id === peptide.primaryFormulationId);
+      } else {
+        targetForm = peptide.formulations.find(f => f.isReconstitutionVial || f.formType === 'lyophilized_vial') || peptide.formulations[0];
+      }
+
+      // Bloqueio rigoroso de apresentações incompatíveis (kits oficiais com diluente fixo/seringa própria, soluções prontas, sprays nasais, canetas preenchidas, orais ou tópicas)
+      if (!targetForm || !targetForm.isReconstitutionVial || targetForm.formType !== 'lyophilized_vial' || typeof targetForm.nominalVialMg !== 'number' || targetForm.nominalVialMg <= 0) {
+        if (targetForm && targetForm.isOfficialMedicineKit) {
+          showToast(`${peptide.name} — ${targetForm.commercialName}: preparação via kit oficial de bula (0,38 mL recuperável / seringa própria do fabricante). Não preenche calculadora U-100 genérica.`);
+        } else {
+          const desc = targetForm ? `${targetForm.commercialName} (${targetForm.formType})` : 'Apresentação pronta';
+          showToast(`${peptide.name} — ${desc}: não requer reconstituição nem seringas de injeção.`);
+        }
+        return false;
+      }
+
+      // Limpar campos de diluente e dose anteriores para impedir reutilização silenciosa
+      if (waterInput) waterInput.value = '';
+      if (doseInput) doseInput.value = '';
+
+      // Consumo direto do campo numérico estruturado nominalVialMg sem checar nome de molécula ou usar regex
+      const vialMg = targetForm.nominalVialMg;
+      if (vialInput) {
+        vialInput.value = vialMg;
+      }
+
+      const event = new Event('input', { bubbles: true });
+      vialInput?.dispatchEvent(event);
+
+      showToast(`${peptide.name}: massa nominal do frasco (${vialMg} mg) carregada. Informe o volume de diluente e a dose desejada.`);
+      return true;
+    }
+
+    // 2. Dossiês legados (52 compostos)
+    // Verificar se é cápsula oral sólida (ex: Orforglipron)
+    const isSolidOral = peptide.reconstitution && (
+      (peptide.reconstitution.vialSize && peptide.reconstitution.vialSize.toLowerCase().includes('cápsula')) ||
+      (peptide.reconstitution.recommendedDiluent && peptide.reconstitution.recommendedDiluent.toLowerCase().includes('não se aplica'))
+    );
+
+    if (isSolidOral) {
+      showToast(`${peptide.name}: apresentação oral sólida (cápsula/comprimido). Não requer reconstituição líquida em seringa.`);
+      return false;
+    }
+
+    if (!peptide.reconstitution) {
+      showToast(`${peptide.name}: sem parâmetros de reconstituição definidos. Utilize a calculadora manual.`);
+      return false;
+    }
+
+    // Limpar campos prévios de diluente e dose para impedir persistência indevida
+    if (waterInput) waterInput.value = '';
+    if (doseInput) doseInput.value = '';
+
+    // Extração de massa do frasco e diluente para injetáveis legados
+    const vialNumMatch = peptide.reconstitution.vialSize ? peptide.reconstitution.vialSize.match(/^(\d+(\.\d+)?)/) : null;
+    const waterNumMatch = peptide.reconstitution.recommendedBacWater ? peptide.reconstitution.recommendedBacWater.match(/^(\d+(\.\d+)?)/) : null;
 
     if (vialInput && vialNumMatch) vialInput.value = vialNumMatch[0];
     if (waterInput && waterNumMatch) waterInput.value = waterNumMatch[0];
 
-    if (doseInput && doseNumMatch) {
-      const isMg = peptide.researchProtocols.typicalDose.toLowerCase().includes('mg');
-      if (typeof window.__peptipediaSetDoseUnit === 'function') {
-        window.__peptipediaSetDoseUnit(isMg ? 'mg' : 'mcg', false);
-      }
-      doseInput.value = doseNumMatch[0];
-    }
+    // Preservar compatibilidade: doses empíricas NÃO são preenchidas automaticamente como recomendação
+    if (doseInput) doseInput.value = '';
 
     const event = new Event('input', { bubbles: true });
     vialInput?.dispatchEvent(event);
+
+    showToast(`${peptide.name}: massa do frasco carregada. Preencha a dose desejada (protocolos empíricos não são preenchidos automaticamente).`);
+    return true;
   }
+
+  window.prefillCalculatorWithPeptide = prefillCalculatorWithPeptide;
 
   // ----------------------------------------------------
   // Relógio de Estabilidade Molecular - Interface e Eventos
@@ -1888,26 +2226,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const dateInput = document.getElementById('stab-date-input');
     const recalcBtn = document.getElementById('stab-recalc-btn');
 
-    if (!peptideSelect || !solventSelect) return;
+    if (!peptideSelect || !solventSelect || !dateInput) return;
 
-    // 1. Preencher Select de Peptídeos
-    const measuredIds = typeof STABILITY_PEPTIDES_DB !== 'undefined' ? Object.keys(STABILITY_PEPTIDES_DB) : [];
-    let optionsHtml = `<optgroup label="Dados Medidos em Laboratório / Bula">`;
-    measuredIds.forEach(id => {
+    // 1. Preencher Select de Peptídeos agrupando por disponibilidade de bula regulatória
+    const regulatoryLabelKeys = ["semaglutide", "tirzepatide", "tesamorelin"];
+    let optionsHtml = `<optgroup label="Compostos com Orientações de Armazenamento em Bula Oficial">`;
+    regulatoryLabelKeys.forEach(id => {
       const p = STABILITY_PEPTIDES_DB[id];
-      optionsHtml += `<option value="${id}">${p.name} ${p.isMeasured ? '(Medido UV-Vis/HPLC)' : '(Modelo ICH)'}</option>`;
+      if (p) {
+        optionsHtml += `<option value="${id}">${p.name} (Bula Oficial Registrada)</option>`;
+      }
     });
-    optionsHtml += `</optgroup><optgroup label="Outros Peptídeos do Catálogo">`;
+    optionsHtml += `</optgroup><optgroup label="Demais Compostos do Catálogo (Sem dados de estabilidade analítica)">`;
     if (typeof PEPTIDES_DATABASE !== 'undefined') {
       PEPTIDES_DATABASE.forEach(p => {
-        if (!measuredIds.includes(p.id)) {
-          optionsHtml += `<option value="${p.id}">${p.name} (${p.category})</option>`;
+        if (!regulatoryLabelKeys.includes(p.id)) {
+          optionsHtml += `<option value="${p.id}">${p.name} (${p.category}) — Dados não disponíveis</option>`;
         }
       });
     }
     optionsHtml += `</optgroup>`;
     peptideSelect.innerHTML = optionsHtml;
-    peptideSelect.value = "tirzepatide";
+    peptideSelect.value = "semaglutide";
 
     // 2. Preencher Select de Solventes
     if (typeof STABILITY_SOLVENTS !== 'undefined') {
@@ -1954,12 +2294,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const res = peptideStabilityClock.calculate();
 
-      // Nota do Peptídeo
+      // Nota do Peptídeo e Bloco de Bula Regulamentada Isolado
       const noteBox = document.getElementById('stab-pep-note-box');
       if (noteBox) {
+        let regulatoryHtml = '';
+        if (res.peptide.regulatoryStorageNotice) {
+          regulatoryHtml = `
+            <div class="mt-3 p-3.5 rounded-xl bg-blue-950/40 border border-blue-800/60 text-xs text-blue-200">
+              <div class="font-bold flex items-center gap-1.5 text-blue-300 uppercase tracking-wide text-[11px] mb-1">
+                Diretrizes de Armazenamento em Bula Registrada (Medicamento Industrial)
+              </div>
+              <p class="leading-relaxed text-slate-200">${res.peptide.regulatoryStorageNotice}</p>
+              <p class="mt-1.5 text-[11px] text-blue-400 italic">Nota Técnica: Este prazo regulatório provém da documentação do medicamento comercial de referência (com conservante e tampão específico) e NÃO constitui curva percentual contínua de degradação nem valida soluções extemporâneas preparadas a partir de frascos liofilizados de bancada.</p>
+            </div>
+          `;
+        }
+
         noteBox.innerHTML = `
           <strong class="text-emerald-400 block mb-1 font-mono">${res.peptide.name} — ${res.peptide.stabilityClass}:</strong>
           <p class="text-slate-300 leading-relaxed">${res.peptide.description}</p>
+          ${regulatoryHtml}
         `;
       }
 
@@ -1984,10 +2338,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const tagFridge = document.getElementById('stab-tag-fridge');
       const cardFridge = document.getElementById('stab-card-fridge');
 
-      if (potFridge) potFridge.textContent = `${res.fridge.potency}%`;
+      if (potFridge) potFridge.textContent = res.hasStabilityData ? `${res.fridge.potency}%` : res.fridge.potencyText;
       if (statusFridge) statusFridge.textContent = res.fridge.status;
-      if (rateFridge) rateFridge.textContent = `r = ${(res.fridge.rate * res.solvent.factor).toFixed(5)}/dia`;
-      if (tagFridge) tagFridge.textContent = res.peptide.isMeasured ? "MEDIDO" : "ESTIMADO";
+      if (rateFridge) rateFridge.textContent = res.hasStabilityData ? res.fridge.rateText : res.fridge.rateText;
+      if (tagFridge) {
+        if (!res.hasStabilityData) tagFridge.textContent = "SEM DADOS ANALÍTICOS";
+        else if (res.peptide.isClinicalLabel) tagFridge.textContent = "BULA OFICIAL (FDA)";
+        else tagFridge.textContent = "DADOS EXPERIMENTAIS";
+      }
       if (cardFridge) {
         cardFridge.className = `p-4 rounded-xl border flex flex-col justify-between transition-all ${res.fridge.colorClass}`;
       }
@@ -1999,10 +2357,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const tagRoom = document.getElementById('stab-tag-room');
       const cardRoom = document.getElementById('stab-card-room');
 
-      if (potRoom) potRoom.textContent = `${res.room.potency}%`;
+      if (potRoom) potRoom.textContent = res.hasStabilityData ? `${res.room.potency}%` : res.room.potencyText;
       if (statusRoom) statusRoom.textContent = res.room.status;
-      if (rateRoom) rateRoom.textContent = `r = ${(res.room.rate * res.solvent.factor).toFixed(5)}/dia`;
-      if (tagRoom) tagRoom.textContent = res.peptide.isMeasured ? "MEDIDO" : "ESTIMADO";
+      if (rateRoom) rateRoom.textContent = res.hasStabilityData ? res.room.rateText : res.room.rateText;
+      if (tagRoom) {
+        if (!res.hasStabilityData) tagRoom.textContent = "SEM DADOS ANALÍTICOS";
+        else if (res.peptide.isClinicalLabel) tagRoom.textContent = "BULA OFICIAL (FDA)";
+        else tagRoom.textContent = "DADOS EXPERIMENTAIS";
+      }
       if (cardRoom) {
         cardRoom.className = `p-4 rounded-xl border flex flex-col justify-between transition-all ${res.room.colorClass}`;
       }
@@ -2016,7 +2378,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Renderizar Gráfico SVG
       const chartContainer = document.getElementById('stab-chart-container');
       if (chartContainer) {
-        chartContainer.innerHTML = peptideStabilityClock.renderDecayChartSvg(res.timeline, res.daysElapsed);
+        chartContainer.innerHTML = peptideStabilityClock.renderDecayChartSvg(res.timeline, res.daysElapsed, res.hasStabilityData, res.peptide.name);
       }
 
       // Renderizar Tabela da Linha do Tempo
@@ -2025,8 +2387,8 @@ document.addEventListener('DOMContentLoaded', () => {
         timelineBody.innerHTML = res.timeline.map(row => `
           <tr class="hover:bg-slate-900/60 transition-colors">
             <td class="p-2.5 font-bold text-white">Dia ${row.day}</td>
-            <td class="p-2.5 ${row.fridge >= 80 ? 'text-emerald-400 font-bold' : (row.fridge >= 60 ? 'text-amber-400' : 'text-rose-400')}">${row.fridge}%</td>
-            <td class="p-2.5 ${row.room >= 80 ? 'text-emerald-400 font-bold' : (row.room >= 60 ? 'text-amber-400' : 'text-rose-400')}">${row.room}%</td>
+            <td class="p-2.5 ${row.fridge === '—' ? 'text-slate-400' : (row.fridge >= 80 ? 'text-emerald-400 font-bold' : (row.fridge >= 60 ? 'text-amber-400' : 'text-rose-400'))}">${row.fridge === '—' ? '— (Dados não disponíveis)' : `${row.fridge}%`}</td>
+            <td class="p-2.5 ${row.room === '—' ? 'text-slate-400' : (row.room >= 80 ? 'text-emerald-400 font-bold' : (row.room >= 60 ? 'text-amber-400' : 'text-rose-400'))}">${row.room === '—' ? '— (Dados não disponíveis)' : `${row.room}%`}</td>
             <td class="p-2.5 text-purple-400 text-[11px]">${row.freezer}</td>
           </tr>
         `).join('');
@@ -2034,7 +2396,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const statusEl = document.getElementById('stab-calc-status');
       if (statusEl) {
-        statusEl.textContent = `Calculado para ${res.peptide.name} em ${res.solvent.name}`;
+        statusEl.textContent = res.hasStabilityData
+          ? `Calculado para ${res.peptide.name} em ${res.solvent.name}`
+          : `Dados de estabilidade não disponíveis para ${res.peptide.name}`;
       }
     }
 
