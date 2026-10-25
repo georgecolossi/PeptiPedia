@@ -24,7 +24,6 @@ if hasattr(sys.stdout, 'reconfigure'):
 def sha256_data(data_bytes):
     return hashlib.sha256(data_bytes).hexdigest()
 
-
 def locate_app_root(current_dir):
     candidates = [
         os.path.abspath(os.path.join(current_dir, "..", "..", "snapshots", "P5")),
@@ -41,6 +40,7 @@ def locate_app_root(current_dir):
 
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 APP_ROOT = locate_app_root(CURRENT_DIR)
+WORKSPACE_DIR = APP_ROOT
 PEPTIDES_FILE = os.path.join(APP_ROOT, "js", "peptides-data.js")
 STUDIES_FILE = os.path.join(APP_ROOT, "js", "studies-data.js")
 
@@ -87,6 +87,7 @@ for i, ch in enumerate(clean_pep):
 
 print(f"1. Total de compostos de nível superior em peptides-data.js: {len(all_pep_ids)}")
 assert len(all_pep_ids) == 114, f"Esperado exatamente 114 compostos, encontrado: {len(all_pep_ids)}"
+assert len(set(all_pep_ids)) == 114, "IDs duplicados encontrados no catálogo!"
 
 # 2. Ler studies-data.js
 with open(STUDIES_FILE, "r", encoding="utf-8") as f:
@@ -95,11 +96,12 @@ with open(STUDIES_FILE, "r", encoding="utf-8") as f:
 clean_std = re.sub(r'//.*', '', std_text)
 s_start = clean_std.find("[")
 s_end = clean_std.rfind("]") + 1
-clean_std_json = re.sub(r',\s*([\]}])', r'\1', clean_std[s_start:s_end])
+clean_std_json = re.sub(r',\s*([\]\}])', r'\1', clean_std[s_start:s_end])
 studies = json.loads(clean_std_json)
 
 print(f"2. Total de estudos clínicos em studies-data.js: {len(studies)}")
 assert len(studies) == 70, f"Esperado exatamente 70 estudos, encontrado: {len(studies)}"
+assert len(set(s["id"] for s in studies)) == 70, "IDs duplicados encontrados no banco de estudos!"
 
 # 3. Conferir ausência dos 10 compostos quarentenados
 quarantined_10 = [
@@ -181,7 +183,20 @@ p5_study_checks = [
 ]
 for s_id, s_pmid, s_doi, s_title_sub in p5_study_checks:
     assert any(s["id"] == s_id and s["pmid"] == s_pmid and s["doi"] == s_doi and s_title_sub in s["title"] for s in studies), f"Estudo {s_id} inválido!"
-print("7. [OK] 4 novos estudos clínicos P5 conferidos com títulos oficiais PubMed, PMIDs, DOIs e tags.")
+
+# Verificações específicas do saneamento clínico
+st_apra = next(s for s in studies if s["id"] == "study-apraglutide-stars-phase3")
+assert "semana 24" in st_apra["primaryEndpoint"], "Desfecho primário de Apraglutida deve focar na semana 24!"
+assert "-25,5%" in st_apra["keyFindings"] and "43,0%" in st_apra["keyFindings"], "Resultados numéricos STARS divergentes!"
+
+st_z_sc = next(s for s in studies if s["id"] == "study-zenagamtide-phase2-sc")
+assert "36 semanas" in st_z_sc["intervention"] or "semana 36" in st_z_sc["primaryEndpoint"], "Duração de Zenagamtida SC deve ser 36 semanas!"
+assert "-1,71" in st_z_sc["keyFindings"], "Redução de HbA1c de Zenagamtida SC deve ser -1,71 pontos percentuais!"
+
+st_z_oral = next(s for s in studies if s["id"] == "study-zenagamtide-phase2-oral")
+assert "36 semanas" in st_z_oral["intervention"] or "semana 36" in st_z_oral["primaryEndpoint"], "Duração de Zenagamtida Oral deve ser 36 semanas!"
+assert "-1,09%" in st_z_oral["keyFindings"], "ETD de HbA1c de Zenagamtida Oral deve ser -1,09%!"
+print("7. [OK] 4 novos estudos clínicos P5 conferidos com dados primários (36 semanas, HbA1c exato, STARS semana 24).")
 
 # 8. Validação dos 23 novos compostos P5
 p5_compounds_data = {
@@ -190,7 +205,7 @@ p5_compounds_data = {
     "octreotide": {"formula": "C49H66N10O10S2", "mw": "1019.2 g/mol", "cid": 448601, "cas": "83150-76-9"},
     "lanreotide": {"formula": "C54H69N11O10S2", "mw": "1096.3 g/mol", "cid": 6918011, "cas": "108736-35-2"},
     "pasireotide": {"formula": "C58H66N10O9", "mw": "1047.2 g/mol", "cid": 9941444, "cas": "396091-73-9"},
-    "ziconotide": {"formula": "C102H172N36O32S7", "mw": "2639.1 g/mol", "cid": 16135415, "cas": "107452-89-1"},
+    "ziconotide": {"formula": "C102H172N36O32S7", "mw": "2639.1 g/mol", "cid": 16135415, "cas": "107452-89-1", "mono": "2637.0983 Da"},
     "degarelix": {"formula": "C82H103ClN18O16", "mw": "1632.3 g/mol", "cid": 16136245, "cas": "214766-78-6"},
     "ganirelix": {"formula": "C80H113ClN18O13", "mw": "1570.3 g/mol", "cid": 16130957, "cas": "124904-08-1"},
     "cetrorelix": {"formula": "C70H92ClN17O14", "mw": "1431.1 g/mol", "cid": 25074887, "cas": "120287-85-6"},
@@ -206,8 +221,8 @@ p5_compounds_data = {
     "enfuvirtide": {"formula": "C204H301N51O64", "mw": "4492.0 g/mol", "cid": 16130199, "cas": "159519-65-0"},
     "exenatide": {"formula": "C184H282N50O60S", "mw": "4186.6 g/mol", "cid": 45588096, "cas": "141732-76-5"},
     "lixisenatide": {"formula": "C215H347N61O65S", "mw": "4858.5 g/mol", "cid": 90472060, "cas": "320367-13-3"},
-    "apraglutide": {"formula": "C172H263N43O52", "mw": "3765.2 g/mol", "cid": 155559189, "cas": "1295353-98-8"},
-    "zenagamtide": {"formula": "C350H551N87O107S", "mw": "~7847 Da", "cid": None, "cas": None}
+    "apraglutide": {"formula": "C172H263N43O52", "mw": "3765.2 g/mol", "cid": 155559189, "cas": "1295353-98-8", "mono": "3762.93 Da"},
+    "zenagamtide": {"formula": "PENDENTE", "mw": "~7,8 kDa", "cid": None, "cas": None, "identityStatus": "IDENTIDADE_PENDENTE"}
 }
 
 for cid, data in p5_compounds_data.items():
@@ -223,9 +238,19 @@ for cid, data in p5_compounds_data.items():
         assert '"pubchemCid": null' in c_str, f"CID de {cid} deveria ser null!"
     if data["cas"]:
         assert data["cas"] in c_str, f"CAS de {cid} divergente!"
+    if "mono" in data:
+        assert data["mono"] in c_str, f"Massa monoisotópica de {cid} divergente!"
+    if "identityStatus" in data:
+        assert data["identityStatus"] in c_str, f"identityStatus de {cid} divergente!"
     assert '"calculatorBlocked": true' in c_str, f"Calculadora de {cid} não está bloqueada fail-closed!"
 
-print("8. [OK] Todos os 23 compostos P5 validados com ground truth químico, estereoquímica N->C e calculadora bloqueada fail-closed.")
+# Verificação estrutural explícita de Apraglutida
+m_apra = re.search(r'\{\s*"id":\s*"apraglutide"[\s\S]*?\n  \},?', pep_text).group(0)
+assert "[Nle10]" in m_apra or "Nle" in m_apra, "Norleucina na posição 10 ausente na Apraglutida!"
+assert "D-Phe11" in m_apra or "d-Phe" in m_apra, "D-Fenilalanina na posição 11 ausente na Apraglutida!"
+assert "-NH2" in m_apra, "Amidação C-terminal ausente na Apraglutida!"
+
+print("8. [OK] Todos os 23 compostos P5 validados (Ziconotida 2637.0983 Da, Apraglutida Nle10/D-Phe11, Zenagamtida status IDENTIDADE_PENDENTE).")
 
 print("\n======================================================================")
 print("TODAS AS 8 ETAPAS DE VERIFICAÇÃO DO CATÁLOGO P5 FORAM APROVADAS!")

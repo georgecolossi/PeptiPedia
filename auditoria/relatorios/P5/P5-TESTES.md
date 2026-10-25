@@ -5,7 +5,7 @@
 | Suíte de Teste | Arquivo / Runner | Asserções / Verificações | Falhas | Status |
 |---|---|---:|---:|:---:|
 | **Verificação Dimensional do Catálogo** | `verify_p5_catalog.py` | 8 etapas | 0 | **APROVADO (Exit Code 0)** |
-| **Verificador Químico Independente (First Principles)** | `verify_p5_chemical_integrity.py` | 23 compostos (138 checagens) | 0 | **APROVADO (Exit Code 0)** |
+| **Verificador Químico Independente (First Principles)** | `verify_p5_chemical_integrity.py` | 10 cálculos First Principles + 22 monografias + 1 pendente | 0 | **APROVADO (Exit Code 0)** |
 | **Simulação de Modos de Falha Negativa** | `test_failure_modes_p5.py` | 6 cenários fail-closed | 0 | **APROVADO (Exit Code 0)** |
 | **Homologação Motor V8 (Google Chrome)** | `run_p5_final.py` / `test_p5_final.html` | 200 asserções | 0 | **APROVADO (Exit Code 0)** |
 | **Homologação E2E (Playwright Chromium)** | `test_e2e_playwright_p5.py` | 28 verificações (9 screenshots) | 0 | **APROVADO (Exit Code 0)** |
