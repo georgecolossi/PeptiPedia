@@ -1673,11 +1673,11 @@ const CLINICAL_STUDIES_DATABASE = [
     "doi": "10.1016/S0140-6736(25)01185-7",
     "pmid": "40550231",
     "studyDesign": "Ensaio Clínico Randomizado, Duplo-Cego, Controlado por Placebo, Fase 1b/2a",
-    "sampleSize": "Adultos com sobrepeso ou obesidade (IMC ≥27 kg/m²)",
+    "sampleSize": "125 participantes adultos com sobrepeso ou obesidade randomizados (101 tratados com intervenção ativa e 24 controles com placebo)",
     "intervention": "Zenagamtida (sob denominação investigacional amycretin) subcutânea semanal em doses escalonadas vs. placebo, avaliada em coortes com acompanhamento de até 36 semanas",
-    "primaryEndpoint": "Incidência de eventos adversos, tolerabilidade e variação percentual de peso corporal desde a linha de base",
-    "keyFindings": "Zenagamtida semanal produziu reduções robustas e dose-dependentes de peso corporal atingindo até 24,3% de perda ponderal às 36 semanas nas coortes de doses mais altas, com perfil de segurança consistente com a classe dos agonistas de GLP-1 e amilina.",
-    "clinicalSignificance": "Primeiro ensaio clínico em humanos a confirmar a atividade sinérgica e potente eficácia ponderal do coagonismo unimolecular GLP-1R e receptores de amilina com acompanhamento de até 36 semanas.",
+    "primaryEndpoint": "Incidência, gravidade e perfil de eventos adversos emergentes do tratamento (desfecho primário de segurança e tolerabilidade clínica)",
+    "keyFindings": "O perfil de segurança primário foi consistente com a classe dos coagonistas de GLP-1 e amilina, sem eventos adversos graves inesperados e com predomínio de sintomas gastrointestinais leves a moderados. Como desfecho secundário de eficácia, a redução ponderal foi dose-dependente, atingindo -24,3% de perda de peso corporal às 36 semanas na coorte específica avaliada na dose de manutenção mais elevada (versus placebo).",
+    "clinicalSignificance": "Primeiro ensaio clínico em humanos a demonstrar a segurança e tolerabilidade primária do coagonismo unimolecular GLP-1/amilina subcutâneo, reportando secundariamente potente redução ponderal de até -24,3% às 36 semanas na coorte de dose máxima.",
     "tags": [
       "The Lancet",
       "Zenagamtide",
@@ -1703,7 +1703,7 @@ const CLINICAL_STUDIES_DATABASE = [
     "sampleSize": "262 pacientes adultos com diabetes tipo 2 (225 ativos e 37 placebo)",
     "intervention": "Zenagamtida semanal por via subcutânea em múltiplas coortes de dose escalonada (até 40 mg) vs. placebo durante 36 semanas",
     "primaryEndpoint": "Variação na hemoglobina glicada (HbA1c) da linha de base à semana 36",
-    "keyFindings": "Na semana 36, a redução de HbA1c foi de -1,71 pontos percentuais na dose de 40 mg (diferença estimada de tratamento [ETD] vs. placebo de -1,56 pontos percentuais, IC 95% -1,87 a -1,25, P < 0,0001). A perda ponderal média na semana 36 atingiu 14,6% com zenagamtida 40 mg vs. 2,1% no placebo (ETD -12,4%, P < 0,0001).",
+    "keyFindings": "Na semana 36, a redução de HbA1c foi de -1,71 pontos percentuais na dose de 40 mg (diferença estimada de tratamento [ETD] vs. placebo de -1,56 pontos percentuais, IC 95% -2,05 a -1,07, P < 0,0001). A perda ponderal média na semana 36 atingiu 14,6% com zenagamtida 40 mg vs. 2,1% no placebo (ETD -12,4%, P < 0,0001).",
     "clinicalSignificance": "Ensaio de Fase 2 de 36 semanas demonstrando controle glicêmico e metabólico superior em DM2 via coagonismo duplo unimolecular GLP-1/amilina subcutâneo semanal.",
     "tags": [
       "The Lancet",
@@ -1730,7 +1730,7 @@ const CLINICAL_STUDIES_DATABASE = [
     "sampleSize": "186 pacientes adultos com diabetes tipo 2",
     "intervention": "Zenagamtida oral uma vez ao dia em comprimidos (doses escalonadas de 6 mg a 50 mg formuladas com transportador de absorção gástrica) vs. placebo ao longo de 36 semanas",
     "primaryEndpoint": "Alteração na hemoglobina glicada (HbA1c) da linha de base até a semana 36",
-    "keyFindings": "Na semana 36, a administração oral diária de zenagamtida promoveu alterações na HbA1c de -0,9% (6 mg) a -1,3% (25 mg), alcançando diferença estimada de tratamento vs. placebo de -1,09% na dose de 50 mg (IC 95% -1,45 a -0,74, P < 0,0001). A perda de peso corporal na semana 36 atingiu até 10,1% com zenagamtida 50 mg vs. 1,6% no placebo.",
+    "keyFindings": "Na semana 36, a administração oral diária de zenagamtida promoveu alterações na HbA1c de -0,9% (6 mg) a -1,3% (25 mg), alcançando diferença estimada de tratamento vs. placebo de -1,09% na dose de 50 mg (IC 95% -1,59 a -0,59, P < 0,0001). A perda de peso corporal na semana 36 atingiu até 10,1% com zenagamtida 50 mg vs. 1,6% no placebo.",
     "clinicalSignificance": "Prova de conceito e eficácia clínica em 36 semanas de formulação oral do agonista duplo GLP-1/amilina, estabelecendo biodisponibilidade clínica e melhora glicêmica sem injeções parenterais.",
     "tags": [
       "The Lancet",

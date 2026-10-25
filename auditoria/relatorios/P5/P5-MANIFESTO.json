@@ -1,6 +1,6 @@
 {
   "version": "P5",
-  "generatedAt": "2026-10-25T01:30:28.408097+00:00",
+  "generatedAt": "2026-10-25T02:02:31.504320+00:00",
   "totalFiles": 23,
   "files": {
     "auditoria/snapshots/P5/.gitignore": "8aa39e9e9f563ece3e1c0d8b9ea88f1b9e0e81424d343fe41e0f975d83ea5677",
@@ -10,21 +10,21 @@
     "auditoria/snapshots/P5/js/app.js": "81b27570b9c3b4f5355a965a815ca9bc81384a1dfd75c61302f612438b71fcb0",
     "auditoria/snapshots/P5/js/calculator.js": "09b2f3e9b5f8fc1331248b7be46cfbce575953e4678bce168ee3c466c63bc67d",
     "auditoria/snapshots/P5/js/glossary-data.js": "1966c5c5e954e7640f7894991a057609ff59c3c5cd913247b466ada96259a533",
-    "auditoria/snapshots/P5/js/peptides-data.js": "0421575b4cb860a40912a5bf5c613b052691d94ff7d4a761a44140e2cbc7bc51",
+    "auditoria/snapshots/P5/js/peptides-data.js": "9e8cd13538d7b54c48aca9d027df4e37a815d9fe7d3fc0b208ac880b3f3d271d",
     "auditoria/snapshots/P5/js/stability-data.js": "b80f563c823add5a61c66c3435e4eadad7379d59ec0bbddec4409c070cbcb53c",
     "auditoria/snapshots/P5/js/stability.js": "559e87aa8eae579bbcb46daf4cb7c85478aeb28e9878e8f279e1f9e4136293d9",
     "auditoria/snapshots/P5/js/stacks-data.js": "6369e4420dbf5cab5ba775f415ed4de2b20cc75cb928133966163dfba7763871",
-    "auditoria/snapshots/P5/js/studies-data.js": "fc26af2f665b7ff12b512577e4956627c3468c3fb4382d1100106663b6cd038b",
+    "auditoria/snapshots/P5/js/studies-data.js": "98d5bfaf0a4985478d1595628e974252235e44c609d06bb2940d66b2c2dd6aef",
     "auditoria/relatorios/P5/clean-checkout-report.json": "cbb03752ff1405dc394d1acc6f20b6c8edb42c1614c808de0cf2c80b533b262d",
     "auditoria/relatorios/P5/failure-simulation-report.json": "fc381aa50d120f12df057473169d9c242e4c6e56a7dc5095d6e27f0ee20e67c3",
-    "auditoria/relatorios/P5/P5-AUDITORIA-QUIMICA.csv": "ebc48b7db109198fe9d4ae7a6013e935094a4405073bb30e886e886bc21b0588",
-    "auditoria/relatorios/P5/P5-ERRATAS.md": "23c3ed449c0cc3dbfbf907f320cfa14563189ca0809aedd9354cfb8f90eaac0f",
-    "auditoria/relatorios/P5/P5-ESTUDOS-INDEXADOS.csv": "576042f57bd6ea0a11416f8f8c83f487d03625d1490dfcb3e18a5bc1cac0b0f6",
-    "auditoria/relatorios/P5/P5-EXPANSAO-CIENTIFICA.md": "6625bea777ff58252dcd2980cf6654272613276d91de0374ed0b3d62842b71b1",
-    "auditoria/relatorios/P5/P5-MATRIZ-23.md": "c34c6895fa0f2b51e5120fa7c535b7eb67be94e7ccc3de0d8f2f522bb0be5967",
+    "auditoria/relatorios/P5/P5-AUDITORIA-QUIMICA.csv": "e3fc961c85ece46c55eafed010606ac7d12e22d22c9506af37a5431ea4f9e9c2",
+    "auditoria/relatorios/P5/P5-ERRATAS.md": "8f8fcd12ecab8058cf02625f318299de4259e585fc6687f5d82752650b2d2b4a",
+    "auditoria/relatorios/P5/P5-ESTUDOS-INDEXADOS.csv": "615dff20acaa4185084faecbc9715dc66b84ca736cccd2b5719c7b65170df056",
+    "auditoria/relatorios/P5/P5-EXPANSAO-CIENTIFICA.md": "682ac3db0e892d570cb4415dd07f9ca3e595d0eda0062c0cdbec21fcbf74dc14",
+    "auditoria/relatorios/P5/P5-MATRIZ-23.md": "5c9ef7662c91c7de8b8185afdf954a11a6e587762a3cfffc1e3b4ac2ce58f5de",
     "auditoria/relatorios/P5/P5-MATRIZ-RESULTADOS.csv": "cdc774297b280989bc175c1fe110f2dc342d2067a5bec9552451252fbd86b9ec",
-    "auditoria/relatorios/P5/P5-TESTES.md": "f3edbe157c774d899ded60a9a4328e429ad5ecfe8c2bdaeb0d1aa47d666ec0af",
-    "auditoria/relatorios/P5/STATUS.md": "e2ec995bce3e20b4be330a5d99ed77a95e782707c3f6ba1f8f1ad52de29f4de8",
-    "auditoria/relatorios/P5/test-results.json": "e6fbdba42784fe9ba70da21cea6fffacd821cccba2d0cb3de2eaecfbe56d6495"
+    "auditoria/relatorios/P5/P5-TESTES.md": "3b0c1a70ebc9d7a6faef77c40ef4fdad89582619b27ba05565d9ebbc7069b6cc",
+    "auditoria/relatorios/P5/STATUS.md": "594de451cc6a3f540a0d3fa5f5bfac42b5e60043eb3eb0a82e6ba6cbddce39aa",
+    "auditoria/relatorios/P5/test-results.json": "f5a1854b4d1ca2c878af41d358807e78b4e06032959c5971f31c9ee0864aac3d"
   }
 }

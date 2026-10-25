@@ -2,7 +2,7 @@
 
 **Classificação Oficial:** `PENDENTE DE AUDITORIA CIENTÍFICA EXTERNA` (Destinatário: ChatGPT)
 **Ambiente de Governança:** Branch `audit/evidence-sync` (Branch `main` 100% preservada e intacta)
-**Commit Base:** `a2ed377345d33eba65bf01eeb48dbbceeeea211a`
+**Commit Base:** `69c26151e3c8f21bb836ecdb8b6723c14a63cc37`
 
 ---
 
@@ -17,27 +17,23 @@
 - **Asserções Científicas Motor V8:** 200/200 aprovadas (0 falhas)
 - **Verificações E2E Playwright:** 28/28 aprovadas (9 screenshots geradas)
 - **Modos de Falha Negativa:** 6/6 bloqueios aprovados
-- **Verificação Química First Principles:** 10 estequiométricos puros + 22 monografias + 1 pendente (0 falhas)
+- **Verificação Química First Principles:** 10 estequiométricos puros + 12 monografias documentais + 1 pendente (0 falhas)
 - **Teste de Checkout Limpo:** Aprovado via git archive
 
 ---
 
-## 2. Síntese das Ações Executadas na Etapa P5
+## 2. Síntese das Ações Executadas no Fechamento da P5
 
-1. **Incorporação dos 23 Compostos Candidatos:**
-   - Teriparatida, Palopegteriparatida, Octreotida, Lanreotida, Pasireotida, Ziconotida, Degarelix, Ganirrelix, Cetrorrelix, Leuprorrelina, Goserrelina, Atosibana, Linaclotida, Plecanatida, Dasiglucagon, Glucagon, Desmopressina, Pramlintida, Enfuvirtida, Exenatida, Lixisenatida, Apraglutida, Zenagamtida.
-   - Todos conferidos com ground truth químico (fórmula, peso molecular, massa monoisotópica, CIDs, CAS e estereoquímica N->C).
-   - Zenagamtida mantida com status `IDENTIDADE_PENDENTE` e aviso de inconsistência estequiométrica da fórmula teórica.
-   - Ziconotida com massa monoisotópica exata de 2637.0983 Da.
-   - Apraglutida com sequência exata Nle10, D-Phe11 e amidação C-terminal (3762.93 Da).
-2. **Indexação dos 4 Estudos Clínicos Primários:**
-   - Apraglutida STARS Fase 3 (PMID 42692160, DOI 10.1016/j.cgh.2026.08.026, 24 semanas desfecho primário).
-   - Zenagamtida Fase 1b/2a SC (PMID 40550231, DOI 10.1016/S0140-6736(25)01185-7, até 36 semanas).
-   - Zenagamtida Fase 2 SC Semanal (PMID 42532080, DOI 10.1016/S0140-6736(26)01248-1, 36 semanas, HbA1c -1,71 pontos percentuais).
-   - Zenagamtida Fase 2 Oral Diária (PMID 42532079, DOI 10.1016/S0140-6736(26)01247-X, 36 semanas, ETD HbA1c -1,09%).
-3. **Resolução das Erratas Herdadas da P4.2:**
-   - ER-01: Orexina B mantida com `pubchemCid: null` (reversão C->N rejeitada).
-   - ER-02: Homologação no diretório real do snapshot.
-   - ER-03: Gonadorelina referência corrigida para `Skarin G, Ahlgren M` (PMID 8042461).
+1. **Reconciliação Exata dos Intervalos de Confiança nos Estudos Clínicos:**
+   - PMID 42532080 (Zenagamtida SC 40 mg): ETD de HbA1c -1,56 pontos percentuais vs placebo; IC 95% exato: **-2,05 a -1,07**.
+   - PMID 42532079 (Zenagamtida Oral 50 mg): ETD de HbA1c -1,09 pontos percentuais vs placebo; IC 95% exato: **-1,59 a -0,59**.
+   - PMID 40550231 (Zenagamtida Fase 1b/2a SC): Amostra restaurada para **125 participantes (101 ativos, 24 controles)**; desfecho primário restrito a eventos adversos (segurança e tolerabilidade); perda de peso de até -24,3% às 36 semanas restrita à coorte de maior dose.
+   - Validados contra tabela de referência clínica independente e versionada (`VERSIONED_CLINICAL_GROUND_TRUTH`).
+2. **Rastreabilidade Estrutural e Reconciliação de Zenagamtida:**
+   - Contagem de 68 resíduos não apresentada como estrutura confirmada (`residueCount: null` no catálogo e CSV), pois `AmylinMoiety` permanece confidencial.
+   - Fórmula empírica teórica C350H551N87O107S rejeitada formalmente (incompatível com ~7847 Da).
+   - Status mantido formalmente como `IDENTIDADE_PENDENTE`.
+3. **Validação Documental de Monografias:**
+   - Os 12 compostos não derivados por First-Principles foram descritos e auditados como verificações documentais estáticas de monografias regulatórias oficiais (FDA NDA, EMA EPAR, ChEBI e PubChem), e não como consultas remotas automatizadas.
 4. **Calculadora Fail-Closed:**
    - 100% dos 23 compostos P5 com calculadora bloqueada e blindagem contra cálculo acidental sem dose protocolar humana validada.

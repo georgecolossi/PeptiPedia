@@ -4,7 +4,7 @@
 
 - **Repositório:** `georgecolossi/PeptiPedia`
 - **Branch Exclusiva:** `audit/evidence-sync`
-- **Commit Base:** `a2ed377345d33eba65bf01eeb48dbbceeeea211a`
+- **Commit Base:** `69c26151e3c8f21bb836ecdb8b6723c14a63cc37`
 - **Branch `main`:** 100% intacta e preservada (`5bcac5c...`). Nenhum merge, PR ou deploy executado.
 - **Snapshots Históricos Preservados:** P2G2, P2G21, P2G22, P2G23, P2G24, P2G25, P3, P31, P4, P41, P42.
 
@@ -33,21 +33,22 @@
    - *Título Oficial:* Amycretin, a novel, unimolecular GLP-1 and amylin receptor agonist administered subcutaneously: results from a phase 1b/2a randomised controlled study.
    - *Periódico:* The Lancet (2025).
    - *Identificadores:* PMID `40550231` | DOI `10.1016/S0140-6736(25)01185-7`.
-   - *Amostra e Desenho:* Adultos com sobrepeso ou obesidade (IMC ≥27 kg/m²), Ensaio Clínico Randomizado Duplo-Cego Fase 1b/2a avaliado em coortes de até 36 semanas. Reduções de peso corporal substanciais de até 24,3% às 36 semanas.
+   - *Amostra e Desenho:* **125 participantes randomizados (101 ativos, 24 controles placebo)**. Adultos com sobrepeso ou obesidade (IMC ≥27 kg/m²), Ensaio Clínico Randomizado Duplo-Cego Fase 1b/2a avaliado em coortes de até 36 semanas.
+   - *Desfechos:* Desfecho primário de eventos adversos (segurança e tolerabilidade / TEAEs); desfecho secundário com redução do peso corporal de até -24,3% às 36 semanas restrita à coorte de maior dose de manutenção.
 
 3. **Zenagamtida (Fase 2 SC Semanal):**
    - *Título Oficial:* Efficacy and safety of once-weekly subcutaneous zenagamtide, a novel unimolecular GLP-1 and amylin receptor agonist, in type 2 diabetes: a multicentre, randomised, parallel, double-blind, placebo-controlled, dose-finding, phase 2 trial.
    - *Periódico:* The Lancet (2026).
    - *Identificadores:* PMID `42532080` | DOI `10.1016/S0140-6736(26)01248-1`.
    - *Amostra e Duração:* n=262 pacientes com diabetes tipo 2, **36 semanas** de tratamento.
-   - *Resultados:* Redução de HbA1c de até -1,71 pontos percentuais na dose de 40 mg (ETD vs placebo: -1,56 pontos percentuais, P < 0,0001); perda de peso corporal de 14,6% vs 2,1% (ETD -12,4%, P < 0,0001).
+   - *Resultados:* Redução de HbA1c à semana 36 de até -1,71 pontos percentuais na dose de 40 mg (ETD vs placebo: **-1,56 pontos percentuais, IC 95% -2,05 a -1,07, P < 0,0001**); perda de peso corporal de 14,6% vs 2,1% (ETD -12,4%, P < 0,0001).
 
 4. **Zenagamtida (Fase 2 Oral Diária):**
    - *Título Oficial:* Efficacy and safety of once-daily oral zenagamtide, a novel unimolecular GLP-1 and amylin receptor agonist, in adults with type 2 diabetes: a multicentre, randomised, parallel, double-blind, placebo-controlled, dose-finding, phase 2 trial.
    - *Periódico:* The Lancet (2026).
    - *Identificadores:* PMID `42532079` | DOI `10.1016/S0140-6736(26)01247-X`.
    - *Amostra e Duração:* n=186 pacientes com diabetes tipo 2, **36 semanas** de tratamento.
-   - *Resultados:* Reduções de HbA1c de -0,9% (6 mg) a -1,3% (25 mg), atingindo ETD vs placebo de -1,09% na dose de 50 mg (P < 0,0001); perda ponderal de até 10,1% vs 1,6%.
+   - *Resultados:* Reduções de HbA1c de -0,9% (6 mg) a -1,3% (25 mg), atingindo ETD vs placebo de **-1,09 pontos percentuais na dose de 50 mg (IC 95% -1,59 a -0,59, P < 0,0001)**; perda ponderal de até 10,1% vs 1,6%.
 
 ---
 

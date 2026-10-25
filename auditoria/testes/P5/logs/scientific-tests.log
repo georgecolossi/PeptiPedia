@@ -2,14 +2,14 @@
 INICIANDO RUNNER DA HOMOLOGAÇÃO CIENTÍFICA V8 P5
 Raiz da Aplicação: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\snapshots\P5
 Arquivo de Teste:  C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P5\test_p5_final.html
-Início (UTC):      2026-10-25T01:30:38.284230+00:00
+Início (UTC):      2026-10-25T02:04:13.879233+00:00
 ======================================================================
 
-[OK] Sandbox V8 inicializado em: C:\Users\georg\AppData\Local\Temp\peptipedia_v8_p5_vjtfierx
-[OK] Servidor HTTP ativo em http://127.0.0.1:54808
+[OK] Sandbox V8 inicializado em: C:\Users\georg\AppData\Local\Temp\peptipedia_v8_p5_pj_utgdh
+[OK] Servidor HTTP ativo em http://127.0.0.1:61779
 [OK] Pré-flight HTTP 200 concluído com sucesso para todos os recursos estáticos
 [OK] Utilizando Google Chrome V8 nativo: C:\Program Files\Google\Chrome\Application\chrome.exe
-[OK] Navegando para http://127.0.0.1:54808/test_p5_final.html
+[OK] Navegando para http://127.0.0.1:61779/test_p5_final.html
 
 --- SAÍDA DO MOTOR V8 ---
 === INICIANDO SUÍTE DE HOMOLOGAÇÃO CIENTÍFICA P5 ===

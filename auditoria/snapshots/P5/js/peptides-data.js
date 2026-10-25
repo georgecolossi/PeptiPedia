@@ -10042,11 +10042,11 @@ const PEPTIDES_DATABASE = [
     "protocolEvidenceNote": "STATUS CIENTÍFICO E REGULATÓRIO: Coagonista unimolecular investigacional de GLP-1R e receptores de amilina (anteriormente denominado sob o codinome amycretin / amicretina). Ensaios clínicos randomizados de Fase 2 publicados no The Lancet em 2026 avaliando formas subcutânea (n=262, 36 semanas, PMID 42532080) e oral (n=186, 36 semanas, PMID 42532079), com Fase 3 em andamento. Não possui registro comercial nem aprovação da ANVISA ou FDA. Calculadora bloqueada fail-closed.",
     "entityType": "synthetic_peptide",
     "isBiologicProtein": false,
-    "structure": "Peptídeo unimolecular sintético complexo híbrido que incorpora domínios agonistas dos receptores de GLP-1 e amilina com cadeia carreadora lipídica para prolongamento de meia-vida plasmática. Estrutura química e conectividade covalente exata mantidas sob sigilo investigacional/patente pelo desenvolvedor (Novo Nordisk). A fórmula hipotética previamente veiculada (C350H551N87O107S) resulta em massa estequiométrica calculada de ~7.721,8 g/mol, divergente da massa experimental estimada de ~7.847 Da relatada; identidade molecular, fórmula e estrutura permanecem em status PENDENTE de divulgação oficial em bases públicas.",
+    "structure": "Peptídeo unimolecular sintético complexo híbrido que incorpora domínios agonistas dos receptores de GLP-1 e amilina com cadeia carreadora lipídica para prolongamento de meia-vida plasmática. Estrutura química e conectividade covalente exata mantidas sob sigilo investigacional/patente pelo desenvolvedor (Novo Nordisk). A contagem prévia de 68 resíduos é preliminar e não confirmada enquanto a porção AmylinMoiety e o ligante lipídico permanecerem indefinidos em bases abertas. A fórmula hipotética previamente veiculada (C350H551N87O107S) resulta em massa estequiométrica calculada de ~7.721,8 g/mol, divergente da massa experimental estimada de ~7.847 Da relatada; identidade molecular, resíduos, fórmula e estrutura permanecem em status PENDENTE de divulgação oficial em bases públicas.",
     "sequence": "H-Aib-EGTFTSDVSSYLEEQAAREFIAWLVRGR-K(AEEA-AEEA-gammaGlu-C18diacid)-GGGG-EASELSTA-AmylinMoiety-NH2",
     "sequenceOneLetter": "H-Aib-EGTFTSDVSSYLEEQAAREFIAWLVRGR-K(AEEA-AEEA-gammaGlu-C18diacid)-GGGG-EASELSTA-AmylinMoiety-NH2",
     "sequenceThreeLetter": "His-Aib-Glu-Gly-Thr-Phe-Thr-Ser-Asp-Val-Ser-Ser-Tyr-Leu-Glu-Glu-Gln-Ala-Ala-Arg-Glu-Phe-Ile-Ala-Trp-Leu-Val-Arg-Gly-Arg-Lys(Lipid)-AmylinMoiety-NH2",
-    "residueCount": 68,
+    "residueCount": null,
     "molecularFormula": "PENDENTE (estrutura confidencial sob patente)",
     "molecularWeight": "~7,8 kDa (estimativa preliminar)",
     "monoisotopicMass": "PENDENTE",
@@ -10135,7 +10135,7 @@ const PEPTIDES_DATABASE = [
         "doi": "10.1016/S0140-6736(26)01248-1",
         "phase": "Ensaio Clínico Randomizado, Duplo-Cego, Fase 2 (n=262, 36 semanas)",
         "participants": "262 pacientes adultos com diabetes tipo 2 (225 ativos e 37 placebo)",
-        "keyFindings": "Na semana 36, doses de zenagamtida SC semanal reduziram a HbA1c em até -1,71 pontos percentuais na dose de 40 mg (ETD vs placebo: -1,56 pontos percentuais, P < 0,0001) e o peso corporal em 14,6% vs 2,1% no placebo (ETD -12,4%, P < 0,0001)."
+        "keyFindings": "Na semana 36, doses de zenagamtida SC semanal reduziram a HbA1c em até -1,71 pontos percentuais na dose de 40 mg (ETD vs placebo: -1,56 pontos percentuais, IC 95% -2,05 a -1,07, P < 0,0001) e o peso corporal em 14,6% vs 2,1% no placebo (ETD -12,4%, P < 0,0001)."
       },
       {
         "title": "Efficacy and safety of once-daily oral zenagamtide in adults with type 2 diabetes",
@@ -10145,7 +10145,7 @@ const PEPTIDES_DATABASE = [
         "doi": "10.1016/S0140-6736(26)01247-X",
         "phase": "Ensaio Clínico Randomizado, Duplo-Cego, Fase 2 (n=186, 36 semanas)",
         "participants": "186 pacientes adultos com diabetes tipo 2",
-        "keyFindings": "Na semana 36, a formulação oral diária reduziu HbA1c de -0,9% (6 mg) a -1,3% (25 mg), atingindo ETD vs placebo de -1,09% na dose de 50 mg (P < 0,0001) e perda de peso de até 10,1% vs 1,6% no placebo."
+        "keyFindings": "Na semana 36, a formulação oral diária reduziu HbA1c de -0,9% (6 mg) a -1,3% (25 mg), atingindo ETD vs placebo de -1,09% na dose de 50 mg (IC 95% -1,59 a -0,59, P < 0,0001) e perda de peso de até 10,1% vs 1,6% no placebo."
       }
     ],
     "popularityScore": 85,

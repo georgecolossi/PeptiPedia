@@ -3,11 +3,11 @@ INICIANDO TESTES END-TO-END (E2E) PLAYWRIGHT P5
 Raiz da Aplicação: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\snapshots\P5
 Diretório de Logs: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P5\logs
 Diretório de Screenshots: C:\Users\georg\Documents\PeptiPedia\repo\auditoria\testes\P5\screenshots
-Início (UTC):      2026-10-25T01:30:42.427374+00:00
+Início (UTC):      2026-10-25T02:04:18.108432+00:00
 ======================================================================
 
-[OK] Servidor HTTP E2E rodando em http://127.0.0.1:65133
-[OK] Carregando http://127.0.0.1:65133/index.html com disclaimer aceito
+[OK] Servidor HTTP E2E rodando em http://127.0.0.1:65020
+[OK] Carregando http://127.0.0.1:65020/index.html com disclaimer aceito
 [CHECK PASS] (1/1) Grid exibe exatamente 114 cards de compostos (encontrados: 114)
 [CHECK PASS] (2/2) Contador de resultados reflete 114 peptídeos ('114 peptídeos encontrados')
 [CHECK PASS] (3/3) Busca por 'Teriparatida' localiza cards correspondentes (encontrados: 2)
@@ -37,9 +37,9 @@ Início (UTC):      2026-10-25T01:30:42.427374+00:00
 [CHECK PASS] (27/27) Zero erros JavaScript detectados durante a sessão E2E (erros: [])
 [CHECK PASS] (28/28) Exatamente 9 screenshots geradas com sucesso (total: 9)
 [PASS] Todos os 28 checks E2E aprovados com 100% de sucesso!
-[OK] Servidor HTTP E2E na porta 65133 encerrado.
+[OK] Servidor HTTP E2E na porta 65020 encerrado.
 
-Finalizado (UTC): 2026-10-25T01:30:52.988659+00:00
+Finalizado (UTC): 2026-10-25T02:04:28.296557+00:00
 Status Final:     PASSED
 Total de Checks:  28 (Passados: 28, Falhas: 0)
 RESUMO E2E P5: 28 VERIFICAÇÕES APROVADAS | 0 FALHAS

@@ -8,8 +8,9 @@ Verificador de integridade química, dimensional e de regressão para Etapa P5:
 - 4 compostos não-peptídicos/alto risco rigorosamente ausentes
 - Preservação byte a byte dos 57 compostos legados e 57 estudos legados
 - Validação das erratas herdadas P4.2 (ER-01 Orexina B CID null e ER-03 Gonadorelina Skarin G)
-- Validação dos 4 novos estudos clínicos primários com títulos oficiais PubMed
-- Validação de primeira instância IUPAC 2021 de fórmulas, massas e sequências dos 23 compostos P5
+- Validação dos 4 novos estudos clínicos primários com títulos oficiais PubMed e ICs 95% exatos
+- Validação contra tabela de referência clínica independente e versionada
+- Validação estequiométrica e de integridade dos 23 compostos P5
 """
 
 import hashlib
@@ -174,29 +175,75 @@ assert 'Skarin G, Ahlgren M' in gonad_str, "ER-03 falhou: autor Skarin G não en
 assert 'Braat DD' not in gonad_str, "ER-03 falhou: Braat DD ainda presente!"
 print("   [OK] ER-03 (Gonadorelina referência Skarin G, Ahlgren M) validada.")
 
-# 7. Validação dos 4 novos estudos clínicos P5
-p5_study_checks = [
-    ("study-apraglutide-stars-phase3", "42692160", "10.1016/j.cgh.2026.08.026", "STARS Phase 3 Trial: Once-Weekly Apraglutide"),
-    ("study-zenagamtide-phase1b-2a", "40550231", "10.1016/S0140-6736(25)01185-7", "Amycretin, a novel, unimolecular GLP-1 and amylin receptor agonist"),
-    ("study-zenagamtide-phase2-sc", "42532080", "10.1016/S0140-6736(26)01248-1", "Efficacy and safety of once-weekly subcutaneous zenagamtide"),
-    ("study-zenagamtide-phase2-oral", "42532079", "10.1016/S0140-6736(26)01247-X", "Efficacy and safety of once-daily oral zenagamtide")
-]
-for s_id, s_pmid, s_doi, s_title_sub in p5_study_checks:
-    assert any(s["id"] == s_id and s["pmid"] == s_pmid and s["doi"] == s_doi and s_title_sub in s["title"] for s in studies), f"Estudo {s_id} inválido!"
+# 7. Validação dos 4 novos estudos clínicos P5 contra referência independente e versionada
+VERSIONED_CLINICAL_GROUND_TRUTH = {
+    "study-apraglutide-stars-phase3": {
+        "pmid": "42692160",
+        "doi": "10.1016/j.cgh.2026.08.026",
+        "sampleSize": "163 pacientes adultos com síndrome do intestino curto e falência intestinal dependentes de suporte parenteral (80 com estoma / anatomia tipo 1 ou 2, e 83 com cólon em continuidade / anatomia tipo 3)",
+        "week": "semana 24",
+        "deltaActive": "-25,5%",
+        "deltaPlacebo": "-12,5%",
+        "diff": "-13,0%",
+        "ci95": "-20,6% a -5,4%",
+        "pValue": "P = 0,001",
+        "daysOffActive": "43,0%",
+        "daysOffPlacebo": "27,5%"
+    },
+    "study-zenagamtide-phase1b-2a": {
+        "pmid": "40550231",
+        "doi": "10.1016/S0140-6736(25)01185-7",
+        "sampleTotal": "125 participantes adultos com sobrepeso ou obesidade randomizados (101 tratados com intervenção ativa e 24 controles com placebo)",
+        "primaryFocus": "eventos adversos",
+        "secondaryMaxLoss": "-24,3%",
+        "secondaryWeek": "36 semanas"
+    },
+    "study-zenagamtide-phase2-sc": {
+        "pmid": "42532080",
+        "doi": "10.1016/S0140-6736(26)01248-1",
+        "duration": "36 semanas",
+        "sampleSize": "262",
+        "hba1cReduction": "-1,71",
+        "etd": "-1,56",
+        "ci95": "-2,05 a -1,07",
+        "weightLoss": "14,6%"
+    },
+    "study-zenagamtide-phase2-oral": {
+        "pmid": "42532079",
+        "doi": "10.1016/S0140-6736(26)01247-X",
+        "duration": "36 semanas",
+        "sampleSize": "186",
+        "etd": "-1,09%",
+        "ci95": "-1,59 a -0,59",
+        "weightLoss": "10,1%"
+    }
+}
 
-# Verificações específicas do saneamento clínico
-st_apra = next(s for s in studies if s["id"] == "study-apraglutide-stars-phase3")
-assert "semana 24" in st_apra["primaryEndpoint"], "Desfecho primário de Apraglutida deve focar na semana 24!"
-assert "-25,5%" in st_apra["keyFindings"] and "43,0%" in st_apra["keyFindings"], "Resultados numéricos STARS divergentes!"
+for s_id, ref in VERSIONED_CLINICAL_GROUND_TRUTH.items():
+    st = next((s for s in studies if s["id"] == s_id), None)
+    assert st is not None, f"Estudo {s_id} ausente de studies-data.js!"
+    assert st["pmid"] == ref["pmid"], f"PMID de {s_id} diverge da referência versionada!"
+    assert st["doi"] == ref["doi"], f"DOI de {s_id} diverge da referência versionada!"
 
-st_z_sc = next(s for s in studies if s["id"] == "study-zenagamtide-phase2-sc")
-assert "36 semanas" in st_z_sc["intervention"] or "semana 36" in st_z_sc["primaryEndpoint"], "Duração de Zenagamtida SC deve ser 36 semanas!"
-assert "-1,71" in st_z_sc["keyFindings"], "Redução de HbA1c de Zenagamtida SC deve ser -1,71 pontos percentuais!"
+    if s_id == "study-apraglutide-stars-phase3":
+        assert ref["week"] in st["primaryEndpoint"], "Desfecho primário de Apraglutida deve focar na semana 24!"
+        assert ref["deltaActive"] in st["keyFindings"] and ref["deltaPlacebo"] in st["keyFindings"], "Reduções de PS divergentes!"
+        assert ref["ci95"] in st["keyFindings"], "IC 95% de Apraglutida STARS divergente!"
+        assert ref["daysOffActive"] in st["keyFindings"] and ref["daysOffPlacebo"] in st["keyFindings"], "Dias livres de infusão divergentes!"
+    elif s_id == "study-zenagamtide-phase1b-2a":
+        assert "125" in st["sampleSize"] and "101" in st["sampleSize"] and "24" in st["sampleSize"], "Amostra 125 (101 ativos, 24 controles) divergente!"
+        assert ref["primaryFocus"] in st["primaryEndpoint"], "Desfecho primário deve focar em eventos adversos / segurança!"
+        assert ref["secondaryMaxLoss"] in st["keyFindings"] and ref["secondaryWeek"] in st["keyFindings"], "Perda de -24,3% às 36 semanas divergente!"
+    elif s_id == "study-zenagamtide-phase2-sc":
+        assert ref["duration"] in st["intervention"] or ref["duration"] in st["studyDesign"], "Duração de Zenagamtida SC deve ser 36 semanas!"
+        assert ref["hba1cReduction"] in st["keyFindings"], "Redução de HbA1c divergente!"
+        assert ref["ci95"] in st["keyFindings"], f"IC 95% correto ({ref['ci95']}) ausente de Zenagamtida SC!"
+    elif s_id == "study-zenagamtide-phase2-oral":
+        assert ref["duration"] in st["intervention"] or ref["duration"] in st["studyDesign"], "Duração de Zenagamtida Oral deve ser 36 semanas!"
+        assert ref["etd"] in st["keyFindings"], "ETD de HbA1c divergente!"
+        assert ref["ci95"] in st["keyFindings"], f"IC 95% correto ({ref['ci95']}) ausente de Zenagamtida Oral!"
 
-st_z_oral = next(s for s in studies if s["id"] == "study-zenagamtide-phase2-oral")
-assert "36 semanas" in st_z_oral["intervention"] or "semana 36" in st_z_oral["primaryEndpoint"], "Duração de Zenagamtida Oral deve ser 36 semanas!"
-assert "-1,09%" in st_z_oral["keyFindings"], "ETD de HbA1c de Zenagamtida Oral deve ser -1,09%!"
-print("7. [OK] 4 novos estudos clínicos P5 conferidos com dados primários (36 semanas, HbA1c exato, STARS semana 24).")
+print("7. [OK] 4 estudos clínicos validados com referência versionada: Zenagamtida SC (IC -2,05 a -1,07), Oral (IC -1,59 a -0,59), 1b/2a (125 part: 101/24) e STARS (semana 24).")
 
 # 8. Validação dos 23 novos compostos P5
 p5_compounds_data = {
@@ -222,7 +269,7 @@ p5_compounds_data = {
     "exenatide": {"formula": "C184H282N50O60S", "mw": "4186.6 g/mol", "cid": 45588096, "cas": "141732-76-5"},
     "lixisenatide": {"formula": "C215H347N61O65S", "mw": "4858.5 g/mol", "cid": 90472060, "cas": "320367-13-3"},
     "apraglutide": {"formula": "C172H263N43O52", "mw": "3765.2 g/mol", "cid": 155559189, "cas": "1295353-98-8", "mono": "3762.93 Da"},
-    "zenagamtide": {"formula": "PENDENTE", "mw": "~7,8 kDa", "cid": None, "cas": None, "identityStatus": "IDENTIDADE_PENDENTE"}
+    "zenagamtide": {"formula": "PENDENTE", "mw": "~7,8 kDa", "cid": None, "cas": None, "identityStatus": "IDENTIDADE_PENDENTE", "residueCount": None}
 }
 
 for cid, data in p5_compounds_data.items():
@@ -242,6 +289,8 @@ for cid, data in p5_compounds_data.items():
         assert data["mono"] in c_str, f"Massa monoisotópica de {cid} divergente!"
     if "identityStatus" in data:
         assert data["identityStatus"] in c_str, f"identityStatus de {cid} divergente!"
+    if "residueCount" in data and data["residueCount"] is None:
+        assert '"residueCount": null' in c_str, f"residueCount de {cid} não deve ser apresentado como confirmado!"
     assert '"calculatorBlocked": true' in c_str, f"Calculadora de {cid} não está bloqueada fail-closed!"
 
 # Verificação estrutural explícita de Apraglutida
@@ -250,7 +299,7 @@ assert "[Nle10]" in m_apra or "Nle" in m_apra, "Norleucina na posição 10 ausen
 assert "D-Phe11" in m_apra or "d-Phe" in m_apra, "D-Fenilalanina na posição 11 ausente na Apraglutida!"
 assert "-NH2" in m_apra, "Amidação C-terminal ausente na Apraglutida!"
 
-print("8. [OK] Todos os 23 compostos P5 validados (Ziconotida 2637.0983 Da, Apraglutida Nle10/D-Phe11, Zenagamtida status IDENTIDADE_PENDENTE).")
+print("8. [OK] Todos os 23 compostos P5 validados (Ziconotida 2637.0983 Da, Apraglutida Nle10/D-Phe11, Zenagamtida status IDENTIDADE_PENDENTE e residueCount: null).")
 
 print("\n======================================================================")
 print("TODAS AS 8 ETAPAS DE VERIFICAÇÃO DO CATÁLOGO P5 FORAM APROVADAS!")

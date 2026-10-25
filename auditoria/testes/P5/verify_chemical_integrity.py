@@ -6,15 +6,19 @@ Verificador Químico Independente de Primeira Instância (First Principles) para
 Diferencia com rigor metodológico:
 1. Cálculos Estequiométricos de Primeira Instância (First Principles):
    - Derivação direta a partir das fórmulas de resíduos e terminais
-   - 10 compostos com estruturas lineares/cíclicas completamente resolvidas
+   - 10 compostos com estruturas completamente resolvidas
    - Apraglutida (incorporando Nle10 e D-Phe11, -NH2) e Ziconotida (25 aa, 3 dissulfetos, mono 2637.0983 Da)
-2. Validação Estrutural e de Monografia Regulatórias (FDA/EMA/ChEBI/PubChem):
+2. Validação Documental Estruturada contra Monografias Regulatórias Oficiais:
    - 12 compostos peptídicos contendo modificações sintéticas heterocíclicas não canônicas
-   - Comparação documental estrutural remota rigorosa (CID, CAS, sequência N->C, isomeria D/L, terminais)
+   - Conferência documental estática contra monografias oficiais de órgãos regulatórios (FDA NDA / EMA EPAR / ChEBI / PubChem)
+   - Nota metodológica: verificação documental independente estática, NÃO dependente de consultas remotas de rede em tempo de teste
 3. Tratamento de Estruturas Investigacionais Pendentes:
    - Zenagamtida: a fórmula preliminar teórica C350H551N87O107S resulta em ~7721.82 g/mol, incompatível com ~7847 Da
-   - Status formally mantido como IDENTIDADE_PENDENTE até publicação da conectividade covalente oficial
+   - Status formalmente mantido como IDENTIDADE_PENDENTE; residueCount mantido como null (AmylinMoiety não resolvido)
    - Não declarada confirmada; campos não verificáveis mantidos como pendentes
+4. Validação de Evidências Clínicas contra Referência Versionada:
+   - Conferência dos 4 estudos clínicos (Zenagamtida SC com IC 95% -2,05 a -1,07; Oral com IC 95% -1,59 a -0,59;
+     Fase 1b/2a com 125 participantes [101 ativos, 24 controles]; STARS semana 24)
 """
 
 import json
@@ -95,7 +99,9 @@ def verify_all(peptides_file):
         ("apraglutide", ['H','G','D','G','S','F','S','D','E','Nle','D-Phe','T','I','L','D','L','L','A','A','R','D','F','I','N','W','L','I','Q','T','K','I','T','D'], 0, "NH2", "H", "C172H263N43O52", 3765.24, 3762.9257)
     ]
 
+    first_principles_ids = set()
     for cid, seq, disulf, c_term, n_term, exp_f, exp_mw, exp_mono in calcs:
+        first_principles_ids.add(cid)
         c = {'C': 0, 'H': 0, 'N': 0, 'O': 0, 'S': 0}
         if n_term == "H" and c_term == "OH":
             c['H'] += 2
@@ -122,35 +128,36 @@ def verify_all(peptides_file):
         else:
             print(f"[OK] Cálculo First-Principles {cid:15}: {calc_f} | MW: {calc_mw:.2f} g/mol | Mono: {calc_mono:.4f} Da")
 
-    # 2. AUDITORIA QUÍMICA E VALIDAÇÃO DE IDENTIDADE DOS 23 COMPOSTOS NO CATÁLOGO
-    print("\n--- 2. Auditoria e Governança Estrutural no Catálogo peptides-data.js ---")
+    # 2. AUDITORIA DOCUMENTAL E ESTRUTURAL DOS 23 COMPOSTOS NO CATÁLOGO
+    print("\n--- 2. Auditoria Estrutural e Validação Documental de Monografias ---")
     p5_ground_truth = {
-        "teriparatide": {"formula": "C181H291N55O51S2", "mw": "4117.7 g/mol", "cid": 16133850, "cas": "52232-67-4", "status": "CONFIRMADA"},
-        "palopegteriparatide": {"formula": "Polimero conjugado mPEG-teriparatida (mPEG ~40 kDa + C181H291N55O51S2)", "mw": "~44 kDa", "cid": None, "cas": "2222514-07-8", "status": "CONFIRMADA"},
-        "octreotide": {"formula": "C49H66N10O10S2", "mw": "1019.2 g/mol", "cid": 448601, "cas": "83150-76-9", "status": "CONFIRMADA"},
-        "lanreotide": {"formula": "C54H69N11O10S2", "mw": "1096.3 g/mol", "cid": 6918011, "cas": "108736-35-2", "status": "CONFIRMADA"},
-        "pasireotide": {"formula": "C58H66N10O9", "mw": "1047.2 g/mol", "cid": 9941444, "cas": "396091-73-9", "status": "CONFIRMADA"},
-        "ziconotide": {"formula": "C102H172N36O32S7", "mw": "2639.1 g/mol", "cid": 16135415, "cas": "107452-89-1", "mono": "2637.0983 Da", "status": "CONFIRMADA"},
-        "degarelix": {"formula": "C82H103ClN18O16", "mw": "1632.3 g/mol", "cid": 16136245, "cas": "214766-78-6", "status": "CONFIRMADA"},
-        "ganirelix": {"formula": "C80H113ClN18O13", "mw": "1570.3 g/mol", "cid": 16130957, "cas": "124904-08-1", "status": "CONFIRMADA"},
-        "cetrorelix": {"formula": "C70H92ClN17O14", "mw": "1431.1 g/mol", "cid": 25074887, "cas": "120287-85-6", "status": "CONFIRMADA"},
-        "leuprorelin": {"formula": "C59H84N16O12", "mw": "1209.4 g/mol", "cid": 3911, "cas": "53714-56-0", "status": "CONFIRMADA"},
-        "goserelin": {"formula": "C59H84N18O14", "mw": "1269.4 g/mol", "cid": 5311128, "cas": "65807-02-5", "status": "CONFIRMADA"},
-        "atosiban": {"formula": "C43H67N11O12S2", "mw": "994.2 g/mol", "cid": 5311010, "cas": "90779-69-4", "status": "CONFIRMADA"},
-        "linaclotide": {"formula": "C59H79N15O21S6", "mw": "1526.7 g/mol", "cid": 16158208, "cas": "851199-59-2", "status": "CONFIRMADA"},
-        "plecanatide": {"formula": "C65H104N18O26S4", "mw": "1681.9 g/mol", "cid": 70693500, "cas": "467426-54-6", "status": "CONFIRMADA"},
-        "dasiglucagon": {"formula": "C152H222N38O50", "mw": "3381.7 g/mol", "cid": 126961379, "cas": "1836139-24-2", "status": "CONFIRMADA"},
-        "glucagon": {"formula": "C153H225N43O49S", "mw": "3482.8 g/mol", "cid": 16132283, "cas": "16941-32-5", "status": "CONFIRMADA"},
-        "desmopressin": {"formula": "C46H64N14O12S2", "mw": "1069.2 g/mol", "cid": 5311065, "cas": "16679-58-6", "status": "CONFIRMADA"},
-        "pramlintide": {"formula": "C171H267N51O53S2", "mw": "3949.4 g/mol", "cid": 70691388, "cas": "151126-32-8", "status": "CONFIRMADA"},
-        "enfuvirtide": {"formula": "C204H301N51O64", "mw": "4492.0 g/mol", "cid": 16130199, "cas": "159519-65-0", "status": "CONFIRMADA"},
-        "exenatide": {"formula": "C184H282N50O60S", "mw": "4186.6 g/mol", "cid": 45588096, "cas": "141732-76-5", "status": "CONFIRMADA"},
-        "lixisenatide": {"formula": "C215H347N61O65S", "mw": "4858.5 g/mol", "cid": 90472060, "cas": "320367-13-3", "status": "CONFIRMADA"},
-        "apraglutide": {"formula": "C172H263N43O52", "mw": "3765.2 g/mol", "cid": 155559189, "cas": "1295353-98-8", "mono": "3762.93 Da", "status": "CONFIRMADA"},
-        "zenagamtide": {"formula": "PENDENTE", "mw": "~7,8 kDa", "cid": None, "cas": None, "identityStatus": "IDENTIDADE_PENDENTE", "status": "IDENTIDADE_PENDENTE"}
+        "teriparatide": {"formula": "C181H291N55O51S2", "mw": "4117.7 g/mol", "cid": 16133850, "cas": "52232-67-4", "status": "CONFIRMADA", "type": "First-Principles"},
+        "palopegteriparatide": {"formula": "Polimero conjugado mPEG-teriparatida (mPEG ~40 kDa + C181H291N55O51S2)", "mw": "~44 kDa", "cid": None, "cas": "2222514-07-8", "status": "CONFIRMADA", "type": "Monografia Documental"},
+        "octreotide": {"formula": "C49H66N10O10S2", "mw": "1019.2 g/mol", "cid": 448601, "cas": "83150-76-9", "status": "CONFIRMADA", "type": "Monografia Documental"},
+        "lanreotide": {"formula": "C54H69N11O10S2", "mw": "1096.3 g/mol", "cid": 6918011, "cas": "108736-35-2", "status": "CONFIRMADA", "type": "Monografia Documental"},
+        "pasireotide": {"formula": "C58H66N10O9", "mw": "1047.2 g/mol", "cid": 9941444, "cas": "396091-73-9", "status": "CONFIRMADA", "type": "Monografia Documental"},
+        "ziconotide": {"formula": "C102H172N36O32S7", "mw": "2639.1 g/mol", "cid": 16135415, "cas": "107452-89-1", "mono": "2637.0983 Da", "status": "CONFIRMADA", "type": "First-Principles"},
+        "degarelix": {"formula": "C82H103ClN18O16", "mw": "1632.3 g/mol", "cid": 16136245, "cas": "214766-78-6", "status": "CONFIRMADA", "type": "Monografia Documental"},
+        "ganirelix": {"formula": "C80H113ClN18O13", "mw": "1570.3 g/mol", "cid": 16130957, "cas": "124904-08-1", "status": "CONFIRMADA", "type": "Monografia Documental"},
+        "cetrorelix": {"formula": "C70H92ClN17O14", "mw": "1431.1 g/mol", "cid": 25074887, "cas": "120287-85-6", "status": "CONFIRMADA", "type": "Monografia Documental"},
+        "leuprorelin": {"formula": "C59H84N16O12", "mw": "1209.4 g/mol", "cid": 3911, "cas": "53714-56-0", "status": "CONFIRMADA", "type": "Monografia Documental"},
+        "goserelin": {"formula": "C59H84N18O14", "mw": "1269.4 g/mol", "cid": 5311128, "cas": "65807-02-5", "status": "CONFIRMADA", "type": "Monografia Documental"},
+        "atosiban": {"formula": "C43H67N11O12S2", "mw": "994.2 g/mol", "cid": 5311010, "cas": "90779-69-4", "status": "CONFIRMADA", "type": "Monografia Documental"},
+        "linaclotide": {"formula": "C59H79N15O21S6", "mw": "1526.7 g/mol", "cid": 16158208, "cas": "851199-59-2", "status": "CONFIRMADA", "type": "First-Principles"},
+        "plecanatide": {"formula": "C65H104N18O26S4", "mw": "1681.9 g/mol", "cid": 70693500, "cas": "467426-54-6", "status": "CONFIRMADA", "type": "First-Principles"},
+        "dasiglucagon": {"formula": "C152H222N38O50", "mw": "3381.7 g/mol", "cid": 126961379, "cas": "1836139-24-2", "status": "CONFIRMADA", "type": "Monografia Documental"},
+        "glucagon": {"formula": "C153H225N43O49S", "mw": "3482.8 g/mol", "cid": 16132283, "cas": "16941-32-5", "status": "CONFIRMADA", "type": "First-Principles"},
+        "desmopressin": {"formula": "C46H64N14O12S2", "mw": "1069.2 g/mol", "cid": 5311065, "cas": "16679-58-6", "status": "CONFIRMADA", "type": "Monografia Documental"},
+        "pramlintide": {"formula": "C171H267N51O53S2", "mw": "3949.4 g/mol", "cid": 70691388, "cas": "151126-32-8", "status": "CONFIRMADA", "type": "First-Principles"},
+        "enfuvirtide": {"formula": "C204H301N51O64", "mw": "4492.0 g/mol", "cid": 16130199, "cas": "159519-65-0", "status": "CONFIRMADA", "type": "First-Principles"},
+        "exenatide": {"formula": "C184H282N50O60S", "mw": "4186.6 g/mol", "cid": 45588096, "cas": "141732-76-5", "status": "CONFIRMADA", "type": "First-Principles"},
+        "lixisenatide": {"formula": "C215H347N61O65S", "mw": "4858.5 g/mol", "cid": 90472060, "cas": "320367-13-3", "status": "CONFIRMADA", "type": "First-Principles"},
+        "apraglutide": {"formula": "C172H263N43O52", "mw": "3765.2 g/mol", "cid": 155559189, "cas": "1295353-98-8", "mono": "3762.93 Da", "status": "CONFIRMADA", "type": "First-Principles"},
+        "zenagamtide": {"formula": "PENDENTE", "mw": "~7,8 kDa", "cid": None, "cas": None, "identityStatus": "IDENTIDADE_PENDENTE", "status": "IDENTIDADE_PENDENTE", "type": "Investigacional Pendente"}
     }
 
-    confirmed_count = 0
+    first_prin_count = 0
+    doc_monograph_count = 0
     pending_count = 0
 
     for cid, data in p5_ground_truth.items():
@@ -182,19 +189,30 @@ def verify_all(peptides_file):
             if f'"identityStatus": "{data["identityStatus"]}"' not in c_str:
                 failures.append(f"{cid}: identityStatus divergente (esperado '{data['identityStatus']}')!")
 
+        if cid == "zenagamtide":
+            if '"residueCount": null' not in c_str:
+                failures.append("Zenagamtida: residueCount deve ser null (não apresentar contagem confirmada enquanto AmylinMoiety for indefinida)!")
+
         if '"calculatorBlocked": true' not in c_str:
             failures.append(f"{cid}: calculatorBlocked não está true!")
 
-        if data["status"] == "CONFIRMADA":
-            confirmed_count += 1
-            print(f"[OK] Estrutura Confirmada {cid:20}: Formula={data['formula'][:25]:25} | CID={str(data['cid']):10} | Monografia/First-Principles OK")
+        if data["type"] == "First-Principles":
+            first_prin_count += 1
+            print(f"[OK] First-Principles Calculado   {cid:18}: Formula={data['formula'][:25]:25} | CID={str(data['cid']):10} | Derivação estequiométrica")
+        elif data["type"] == "Monografia Documental":
+            doc_monograph_count += 1
+            print(f"[OK] Monografia Documental       {cid:18}: Formula={data['formula'][:25]:25} | CID={str(data['cid']):10} | Verificação documental estática")
         else:
             pending_count += 1
-            print(f"[OK] Identidade Pendente {cid:20}: Formula={data['formula'][:25]:25} | CID=null | Status=IDENTIDADE_PENDENTE (documentada)")
+            print(f"[OK] Identidade Pendente         {cid:18}: Formula={data['formula'][:25]:25} | CID=null | Status=IDENTIDADE_PENDENTE (resíduos/fórmula pendentes)")
 
-    print(f"\nResumo da Auditoria Estrutural: {confirmed_count} estruturas confirmadas, {pending_count} com identidade pendente.")
-    assert confirmed_count == 22, f"Esperado 22 estruturas confirmadas, obtido {confirmed_count}"
-    assert pending_count == 1, f"Esperado 1 estrutura com identidade pendente (Zenagamtida), obtido {pending_count}"
+    print(f"\nResumo da Governança Química:")
+    print(f"  -> {first_prin_count} compostos com cálculo First-Principles completo a partir da sequência.")
+    print(f"  -> {doc_monograph_count} compostos validados por verificação documental de monografias regulatórias oficiais.")
+    print(f"  -> {pending_count} composto com identidade estrutural formalmente PENDENTE (Zenagamtida).")
+    assert first_prin_count == 10, f"Esperado 10 First-Principles, obtido {first_prin_count}"
+    assert doc_monograph_count == 12, f"Esperado 12 monografias documentais, obtido {doc_monograph_count}"
+    assert pending_count == 1, f"Esperado 1 identidade pendente, obtido {pending_count}"
 
     # 3. VERIFICAÇÃO DE INCOMPATIBILIDADE DA ZENAGAMTIDA (C350H551N87O107S)
     print("\n--- 3. Verificação Formal de Incompatibilidade Estequiométrica da Zenagamtida ---")
@@ -203,11 +221,10 @@ def verify_all(peptides_file):
     print(f"Fórmula teórica hipotética C350H551N87O107S resulta em MW: {z_mw:.2f} g/mol")
     print(f"Massa experimental declarada em ensaios/relatórios: ~7847 Da (delta = ~{7847 - z_mw:.1f} Da)")
     assert abs(z_mw - 7721.82) < 0.5, "Cálculo da fórmula teórica de Zenagamtida divergiu!"
-    if "C350H551N87O107S" in re.search(r'\{\s*"id":\s*"zenagamtide"[\s\S]*?\n  \},?', text).group(0):
-        # A fórmula pode constar na justificativa do texto, mas NÃO no campo molecularFormula
-        m_z = re.search(r'\{\s*"id":\s*"zenagamtide"[\s\S]*?\n  \},?', text).group(0)
-        assert '"molecularFormula": "PENDENTE' in m_z, "Campo molecularFormula de Zenagamtida não deve conter fórmula hipotética não confirmada!"
-        print("[OK] Rejeição formal da fórmula não confirmada validada; status IDENTIDADE_PENDENTE e advertência mantidos.")
+    m_z = re.search(r'\{\s*"id":\s*"zenagamtide"[\s\S]*?\n  \},?', text).group(0)
+    assert '"molecularFormula": "PENDENTE' in m_z, "Campo molecularFormula de Zenagamtida não deve conter fórmula hipotética não confirmada!"
+    assert '"residueCount": null' in m_z, "Campo residueCount de Zenagamtida deve ser null!"
+    print("[OK] Rejeição formal da fórmula não confirmada validada; status IDENTIDADE_PENDENTE e residueCount: null mantidos.")
 
     # 4. TESTE DE DETECÇÃO DE REVERSÃO E CIDS INVÁLIDOS (ER-01 Orexina B e legados)
     print("\n--- 4. Teste de Detecção de CIDs Inválidos & Inversão de Sequência ---")

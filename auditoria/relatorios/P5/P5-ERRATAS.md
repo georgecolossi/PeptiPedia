@@ -34,26 +34,29 @@ Todas as divergências materiais identificadas nas auditorias externa e interna 
 
 ---
 
-### ER-04: Saneamento dos Estudos Clínicos Primários P5
+### ER-04: Saneamento e Intervalos de Confiança nos Estudos Clínicos Primários P5
 
-- **Problema Identificado:** Divergências entre dados preliminares e os artigos originais publicados no PubMed/The Lancet:
-  1. Zenagamtida Fase 2 SC e Oral foram descritos preliminarmente com 26 semanas em vez de 36 semanas, e números de HbA1c divergentes (-2,3% e -1,8%).
-  2. Apraglutida STARS Fase 3 misturou desfecho primário de 24 semanas com dados de extensão.
+- **Problema Identificado:** Necessidade de alinhamento estrito e sem arredondamentos contra as publicações primárias no PubMed e The Lancet:
+  1. No ensaio de zenagamtida subcutânea (PMID 42532080), o IC 95% do desfecho primário de HbA1c (-1,56 pontos percentuais) constava preliminarmente como -1,87 a -1,25 em vez de **-2,05 a -1,07**.
+  2. No ensaio de zenagamtida oral (PMID 42532079), o IC 95% do desfecho primário de HbA1c (-1,09 pontos percentuais) constava preliminarmente como -1,45 a -0,74 em vez de **-1,59 a -0,59**.
+  3. No estudo de fase 1b/2a (PMID 40550231), a população total de 125 participantes (101 sob tratamento ativo e 24 controles placebo) precisava ser explicitamente restaurada, separando o desfecho primário de segurança/eventos adversos dos desfechos secundários (perda de peso de até -24,3% restrita à coorte de maior dose na semana 36).
 - **Ação Executada:**
-  - **PMID 42692160 (Apraglutida STARS):** 163 pacientes adultos (80 estoma, 83 CIC). Desfecho primário estritamente na semana 24: redução relativa média no volume semanal de PS de -25,5% vs -12,5% placebo (diferença média estimada -13,0%, IC 95% -20,6% a -5,4%, P = 0,001); 43,0% com ganho de ≥1 dia livre de PS por semana vs 27,5% no placebo (P = 0,040).
-  - **PMID 40550231 (Zenagamtida Fase 1b/2a SC):** Dahl et al., The Lancet 2025. Coortes avaliadas com acompanhamento de até 36 semanas; reduções de peso corporal substanciais e dose-dependentes de até 24,3% às 36 semanas.
-  - **PMID 42532080 (Zenagamtida Fase 2 SC):** Mora et al., The Lancet 2026. Duração de **36 semanas** (n=262). Desfecho primário: variação na HbA1c à semana 36 de até -1,71 pontos percentuais na dose de 40 mg (ETD vs placebo: -1,56 pontos percentuais, IC 95% -1,87 a -1,25, P < 0,0001). Perda de peso de 14,6% vs 2,1% (ETD -12,4%, P < 0,0001).
-  - **PMID 42532079 (Zenagamtida Fase 2 Oral):** Mora et al., The Lancet 2026. Duração de **36 semanas** (n=186). Desfecho primário: alteração na HbA1c à semana 36 de -0,9% (6 mg), -1,3% (25 mg), ETD vs placebo de -1,09% na dose de 50 mg (IC 95% -1,45 a -0,74, P < 0,0001). Redução ponderal de até 10,1% vs 1,6%.
+  - **PMID 42532080 (Zenagamtida Fase 2 SC 40 mg):** Mora et al., The Lancet 2026. Duração de **36 semanas** (n=262). Desfecho primário: ETD vs placebo na HbA1c à semana 36 de **-1,56 pontos percentuais (IC 95% -2,05 a -1,07; P < 0,0001)**. Redução ponderal de 14,6% vs 2,1% (ETD -12,4%, P < 0,0001).
+  - **PMID 42532079 (Zenagamtida Fase 2 Oral 50 mg):** Mora et al., The Lancet 2026. Duração de **36 semanas** (n=186). Desfecho primário: ETD vs placebo na HbA1c à semana 36 de **-1,09 pontos percentuais (IC 95% -1,59 a -0,59; P < 0,0001)**. Perda de peso de até 10,1% vs 1,6%.
+  - **PMID 40550231 (Zenagamtida Fase 1b/2a SC):** Dahl et al., The Lancet 2025. Amostra rigorosamente restaurada: **125 participantes randomizados (101 tratados sob doses ativas, 24 controles placebo)**. Desfecho primário rigorosamente isolado: incidência de eventos adversos emergentes do tratamento (TEAEs), segurança e tolerabilidade. Desfecho secundário: perda ponderal de até **-24,3% na semana 36** documentada especificamente para a coorte pertinente de maior dose de manutenção, sem generalização indevida para todos os regimes posológicos.
+  - **PMID 42692160 (Apraglutida STARS Fase 3):** n=163 pacientes adultos (80 estoma, 83 CIC). Desfecho primário estritamente na semana 24: redução relativa no volume semanal de PS de -25,5% vs -12,5% placebo (ETD -13,0%, IC 95% -20,6% a -5,4%, P = 0,001); 43,0% com ganho de ≥1 dia livre de PS por semana vs 27,5% placebo (P = 0,040).
 
 ---
 
-### ER-05: Reconciliação Estequiométrica da Zenagamtida
+### ER-05: Reconciliação Estequiométrica e Rastreabilidade Estrutural de Zenagamtida
 
-- **Problema Identificado:** A fórmula molecular empírica preliminarmente veiculada `C350H551N87O107S` resulta em massa molar calculada de ~7.721,82 g/mol, incompatível com a estimativa experimental de ~7.847 Da relatada na literatura investigacional (diferença de ~125 Da).
+- **Problema Identificado:**
+  1. A fórmula teórica empírica preliminarmente veiculada `C350H551N87O107S` calcula ~7.721,82 g/mol, divergindo em ~125 Da da massa relatada (~7.847 Da).
+  2. Apresentar contagem fixa de 68 resíduos enquanto `AmylinMoiety` e a junção covalente com o linker lipídico permanecerem confidenciais sob sigilo de patente implicaria falsa atribuição de certeza estrutural.
 - **Ação Executada:**
-  - Retirada a classificação de estrutura CONFIRMADA. Reclassificada formally como `IDENTIDADE_PENDENTE`.
-  - Campos `molecularFormula: "PENDENTE (estrutura confidencial sob patente)"`, `molecularWeight: "~7,8 kDa (estimativa preliminar)"`, `monoisotopicMass: "PENDENTE"`, `pubchemCid: null`, `casNumber: null`.
-  - Inserida nota técnica explicativa sobre a retenção da conectividade covalente exata sob sigilo de patente do desenvolvedor (Novo Nordisk).
+  - Status mantido formally como `IDENTIDADE_PENDENTE`.
+  - Contagem de resíduos reclassificada como `residueCount: null` (tanto em `peptides-data.js` quanto no CSV `P5-AUDITORIA-QUIMICA.csv`), destacando que os 68 resíduos são putativos e pendentes de elucidação analítica oficial.
+  - Rejeição formal da fórmula não confirmada, mantendo `molecularFormula: "PENDENTE (estrutura confidencial sob patente)"`, `molecularWeight: "~7,8 kDa (estimativa preliminar)"`, `monoisotopicMass: "PENDENTE"`, `pubchemCid: null`, `casNumber: null`.
 
 ---
 
@@ -71,10 +74,18 @@ Todas as divergências materiais identificadas nas auditorias externa e interna 
 
 ---
 
-### ER-08: Rastreabilidade dos Verificadores e Manifesto Não Autorreferencial
+### ER-08: Distinção de Metodologia de Verificação Química (First-Principles vs Monografias Documentais)
 
-- **Problema Identificado:** `verify_p5_catalog.py` apresentava referência à variável `WORKSPACE_DIR` não definida. `verify_p5_chemical_integrity.py` misturava First-Principles com checagens fixas e declarava 23/23 estruturas confirmadas. O gerador do manifesto continha loop autorreferencial ao hashear a si próprio.
+- **Problema Identificado:** Não declarar genericamente 23/23 compostos como derivados por First-Principles ou validados por chamadas de rede em tempo real.
 - **Ação Executada:**
-  - `WORKSPACE_DIR = APP_ROOT` corrigida em `verify_p5_catalog.py`.
-  - `verify_p5_chemical_integrity.py` reestruturado para distinguir formalmente 10 cálculos de First Principles (incluindo Apraglutida e Ziconotida), 12 validações de monografia regulatória e 1 status pendente (Zenagamtida).
-  - `P5-MANIFESTO.json` exclui estritamente a si próprio da lista de hashes SHA-256.
+  - **10 compostos** canônicos derivados diretamente via estequiometria pura (First Principles) a partir de suas sequências de aminoácidos: Teriparatida, Glucagon, Linaclotida, Plecanatida, Exenatida, Lixisenatida, Pramlintida, Enfuvirtida, Ziconotida e Apraglutida.
+  - **12 compostos** com aminoácidos não canônicos, modificações heterocíclicas ou polímeros (Palopegteriparatida, Octreotida, Lanreotida, Pasireotida, Degarelix, Ganirrelix, Cetrorrelix, Leuprorrelina, Goserrelina, Atosibana, Dasiglucagon, Desmopressina) foram validados através de **verificação documental estática de monografias regulatórias oficiais** (FDA NDA, EMA EPAR, ChEBI, PubChem), e NÃO como consultas dinâmicas de rede em tempo de teste.
+  - **1 composto** (Zenagamtida) formalmente mantido sob status `IDENTIDADE_PENDENTE`.
+
+---
+
+### ER-09: Verificação Clínica contra Tabela de Referência Independente e Versionada
+
+- **Problema Identificado:** Garantir que os dados clínicos primários (amostras, durações, desfechos e ICs 95%) sejam continuamente checados contra um ground truth independente.
+- **Ação Executada:**
+  - Criada e integrada ao `verify_p5_catalog.py` a estrutura `VERSIONED_CLINICAL_GROUND_TRUTH`, validando de forma imutável os ICs 95% exatos (-2,05 a -1,07 e -1,59 a -0,59), a coorte de 125 participantes (101/24) e a semana 24 de Apraglutida STARS.
