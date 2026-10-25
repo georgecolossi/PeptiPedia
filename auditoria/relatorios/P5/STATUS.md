@@ -8,6 +8,8 @@
 
 ## 1. Métricas Consolidadas
 
+- **Snapshot Tree SHA Testado e Homologado:** `7c86103886b6e39b4a66c8a05bfb2ed5839b9e61` (100% de correspondência)
+
 - **Compostos Ativos no Catálogo:** **114** (57 legados + 15 P3 + 19 P4 + 23 P5)
 - **Compostos em Quarentena:** **10** (incluindo Crystagen)
 - **Substâncias Excluídas:** **4** (não-peptídicas / alto risco)

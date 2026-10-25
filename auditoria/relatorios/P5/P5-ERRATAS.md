@@ -89,3 +89,18 @@ Todas as divergências materiais identificadas nas auditorias externa e interna 
 - **Problema Identificado:** Garantir que os dados clínicos primários (amostras, durações, desfechos e ICs 95%) sejam continuamente checados contra um ground truth independente.
 - **Ação Executada:**
   - Criada e integrada ao `verify_p5_catalog.py` a estrutura `VERSIONED_CLINICAL_GROUND_TRUTH`, validando de forma imutável os ICs 95% exatos (-2,05 a -1,07 e -1,59 a -0,59), a coorte de 125 participantes (101/24) e a semana 24 de Apraglutida STARS.
+
+---
+
+### ER-10: Rastreabilidade Técnica do Manifesto Criptográfico e testedSnapshotTreeSha
+
+- **Problema Identificado:**
+  1. A cópia de `test-results.json` em `auditoria/relatorios/P5/` continha a referência `testedSnapshotTreeSha` preliminar (`9d69a2e9a55f2a97d0acff37240cce08b321e85f`) gerada em execução local anterior, divergindo do valor definitivo gravado em `auditoria/testes/P5/logs/test-results.json` (`7c86103886b6e39b4a66c8a05bfb2ed5839b9e61`), que corresponde 100% à árvore Git real do snapshot testado e publicado.
+  2. O manifesto `P5-MANIFESTO.json` continha hash divergente para `clean-checkout-report.json` (`cbb03752...`), pois esse relatório foi gerado e incorporado ao commit candidato durante a etapa de teste genuíno de checkout limpo via `git archive`, sem atualização subsequente do manifesto.
+  3. Necessidade de explicitar formalmente as terminações de linha para permitir validação criptográfica transparente tanto em ambientes Linux/POSIX/git archive (terminações LF canônicas) quanto em ambiente de desenvolvimento Windows (CRLF).
+- **Ação Executada:**
+  - `auditoria/relatorios/P5/test-results.json` alinhado ao registro de execução com `testedSnapshotTreeSha = 7c86103886b6e39b4a66c8a05bfb2ed5839b9e61`.
+  - `P5-MANIFESTO.json` atualizado com os hashes finais reais de todos os 23 arquivos, especialmente `clean-checkout-report.json` (`fb3eb957...` para CRLF Windows e `60abccb6...` para LF canônico).
+  - O manifesto registra formalmente o mapeamento canônico `files` (LF) e o mapeamento Windows `files_crlf_windows` (CRLF), garantindo verificação estrita em qualquer plataforma.
+  - Ausência de autorreferência mantida (o próprio `P5-MANIFESTO.json` permanece excluído do conjunto hasheado).
+  - O snapshot `auditoria/snapshots/P5/` permaneceu 100% intocado, preservando sua árvore Git imutável (`7c86103886b6e39b4a66c8a05bfb2ed5839b9e61`).

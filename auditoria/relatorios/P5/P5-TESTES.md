@@ -15,6 +15,8 @@
 
 ## 2. Rastreabilidade Criptográfica
 
+- **Snapshot Tree SHA (Git Tree):** `7c86103886b6e39b4a66c8a05bfb2ed5839b9e61` (100% consistente com test-results.json e clean-checkout-report.json)
+
 - **57 Compostos Legados (SHA-256):** `003169b3089ce210a62fbe7cdc4081db756ec6dc47f4e49ffe7f9dd56767049f` (100% íntegro)
 - **57 Estudos Legados (SHA-256):** `8f5b962ca8ae234a2550219f23dbc31c9a4f8c9f691a57a7c1c5925a7b0aa56b` (100% íntegro)
 - **Erros JavaScript de Página (pageerror):** 0

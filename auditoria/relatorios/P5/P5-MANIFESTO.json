@@ -1,11 +1,47 @@
 {
   "version": "P5",
-  "generatedAt": "2026-10-25T02:02:31.504320+00:00",
+  "generatedAt": "2026-10-25T02:41:14.465613+00:00",
   "totalFiles": 23,
+  "lineEndingsPolicy": {
+    "description": "O campo 'files' provê os hashes SHA-256 canônicos de repositório Git / checkout limpo com terminações LF (\\n), compatíveis com ambientes Linux/CI e extrações git archive. O campo 'files_crlf_windows' provê os hashes dos arquivos em disco no ambiente de desenvolvimento Windows com terminações CRLF (\\r\\n).",
+    "cleanCheckoutReport": {
+      "lf_canonical": "60abccb6b4f32a2ad1c19ce3605441ec966cb4d842df08e31cdb4a9f89e5c6b5",
+      "crlf_windows": "fb3eb95763afc2151b13561addd24ced7f073be828d48d1797f9ec49e1ec8b24"
+    },
+    "testResults": {
+      "lf_canonical": "51996f357e6850406648e67a95e107df6732420cbd756f2f607a9cca67a74de9",
+      "crlf_windows": "aedee28b46c9e507d5b6f9c98f79ca0e91d59dce514007b3332c0f6c898fe1a0"
+    }
+  },
   "files": {
     "auditoria/snapshots/P5/.gitignore": "8aa39e9e9f563ece3e1c0d8b9ea88f1b9e0e81424d343fe41e0f975d83ea5677",
-    "auditoria/snapshots/P5/index.html": "81b738ce090959465e9ef1f3e53903148603d7a951cc4d7a34c543c5e42e6a90",
     "auditoria/snapshots/P5/README.md": "8c2ceeda090d5df814883a3615eb42d3c0576e672fb677d362a1d1e325738b72",
+    "auditoria/snapshots/P5/index.html": "81b738ce090959465e9ef1f3e53903148603d7a951cc4d7a34c543c5e42e6a90",
+    "auditoria/snapshots/P5/css/style.css": "e0131ed1764fc1199a6755ba822b4c81e465ed953929691be5f9465377c43ed6",
+    "auditoria/snapshots/P5/js/app.js": "5fcc24aced4243d3b3fde1147359d15dbea40b28b0f4eb1df183f3d7a6959509",
+    "auditoria/snapshots/P5/js/calculator.js": "09b2f3e9b5f8fc1331248b7be46cfbce575953e4678bce168ee3c466c63bc67d",
+    "auditoria/snapshots/P5/js/glossary-data.js": "006488ab507a19c4f6dee94167f72b3cba855aca7d192236c84fc2e383b9b88a",
+    "auditoria/snapshots/P5/js/peptides-data.js": "aae256089cdf8a8dfc5abfc716073198757367788d638ebe299de9c621fcbde3",
+    "auditoria/snapshots/P5/js/stability-data.js": "b80f563c823add5a61c66c3435e4eadad7379d59ec0bbddec4409c070cbcb53c",
+    "auditoria/snapshots/P5/js/stability.js": "559e87aa8eae579bbcb46daf4cb7c85478aeb28e9878e8f279e1f9e4136293d9",
+    "auditoria/snapshots/P5/js/stacks-data.js": "415d9e97f9e2cb44df9a0eea5c621644f9a8e44030bef7b2645540bdda8297b7",
+    "auditoria/snapshots/P5/js/studies-data.js": "3a52ade5bd688c246988223e924805efbefa0219a91c34c9fce1df7b6c16d6f5",
+    "auditoria/relatorios/P5/P5-AUDITORIA-QUIMICA.csv": "d59e64338899e9d575972d1a06b8785e4c89da97c7b09e4bb354159df92480a9",
+    "auditoria/relatorios/P5/P5-ERRATAS.md": "f59970e54866e416dcf7f866673e38888bb0dc33d6d4368b68ab1efca1f6c084",
+    "auditoria/relatorios/P5/P5-ESTUDOS-INDEXADOS.csv": "ba0beb5a4dca248767eae484da64b4abc0cc7ab97212a142a8698a5f731a57da",
+    "auditoria/relatorios/P5/P5-EXPANSAO-CIENTIFICA.md": "44ec1002aa6d6b49ba8273a79a6d11f35bf2e85624208c3fc8b08f2b204fe130",
+    "auditoria/relatorios/P5/P5-MATRIZ-23.md": "8baa1e63546790aed7b050eb717c84fd49c6701d7b1abb63ab6d45a93683b284",
+    "auditoria/relatorios/P5/P5-MATRIZ-RESULTADOS.csv": "2b3d334c1977aaeeaa47f54959017efec8ddde66ff4f03ecccb1d3777a580775",
+    "auditoria/relatorios/P5/P5-TESTES.md": "8dcb026da1d8865069a995857077482bb69700cad3c34d6e5ccf3592f0067b0b",
+    "auditoria/relatorios/P5/STATUS.md": "f2d21334c403b08946d612a998fd9c341cb4916441bf801634d4968231d74e7a",
+    "auditoria/relatorios/P5/clean-checkout-report.json": "60abccb6b4f32a2ad1c19ce3605441ec966cb4d842df08e31cdb4a9f89e5c6b5",
+    "auditoria/relatorios/P5/failure-simulation-report.json": "cb4dfbdea1adb660b2b9cdce30521ada36fc27ad5c46e797eb234f91015e6b1a",
+    "auditoria/relatorios/P5/test-results.json": "51996f357e6850406648e67a95e107df6732420cbd756f2f607a9cca67a74de9"
+  },
+  "files_crlf_windows": {
+    "auditoria/snapshots/P5/.gitignore": "8aa39e9e9f563ece3e1c0d8b9ea88f1b9e0e81424d343fe41e0f975d83ea5677",
+    "auditoria/snapshots/P5/README.md": "8c2ceeda090d5df814883a3615eb42d3c0576e672fb677d362a1d1e325738b72",
+    "auditoria/snapshots/P5/index.html": "81b738ce090959465e9ef1f3e53903148603d7a951cc4d7a34c543c5e42e6a90",
     "auditoria/snapshots/P5/css/style.css": "e0131ed1764fc1199a6755ba822b4c81e465ed953929691be5f9465377c43ed6",
     "auditoria/snapshots/P5/js/app.js": "81b27570b9c3b4f5355a965a815ca9bc81384a1dfd75c61302f612438b71fcb0",
     "auditoria/snapshots/P5/js/calculator.js": "09b2f3e9b5f8fc1331248b7be46cfbce575953e4678bce168ee3c466c63bc67d",
@@ -15,16 +51,16 @@
     "auditoria/snapshots/P5/js/stability.js": "559e87aa8eae579bbcb46daf4cb7c85478aeb28e9878e8f279e1f9e4136293d9",
     "auditoria/snapshots/P5/js/stacks-data.js": "6369e4420dbf5cab5ba775f415ed4de2b20cc75cb928133966163dfba7763871",
     "auditoria/snapshots/P5/js/studies-data.js": "98d5bfaf0a4985478d1595628e974252235e44c609d06bb2940d66b2c2dd6aef",
-    "auditoria/relatorios/P5/clean-checkout-report.json": "cbb03752ff1405dc394d1acc6f20b6c8edb42c1614c808de0cf2c80b533b262d",
-    "auditoria/relatorios/P5/failure-simulation-report.json": "fc381aa50d120f12df057473169d9c242e4c6e56a7dc5095d6e27f0ee20e67c3",
     "auditoria/relatorios/P5/P5-AUDITORIA-QUIMICA.csv": "e3fc961c85ece46c55eafed010606ac7d12e22d22c9506af37a5431ea4f9e9c2",
-    "auditoria/relatorios/P5/P5-ERRATAS.md": "8f8fcd12ecab8058cf02625f318299de4259e585fc6687f5d82752650b2d2b4a",
+    "auditoria/relatorios/P5/P5-ERRATAS.md": "8c89df06d6e987876aa2781062bcf36f72276bbc96500647bb46491f008b3205",
     "auditoria/relatorios/P5/P5-ESTUDOS-INDEXADOS.csv": "615dff20acaa4185084faecbc9715dc66b84ca736cccd2b5719c7b65170df056",
     "auditoria/relatorios/P5/P5-EXPANSAO-CIENTIFICA.md": "682ac3db0e892d570cb4415dd07f9ca3e595d0eda0062c0cdbec21fcbf74dc14",
     "auditoria/relatorios/P5/P5-MATRIZ-23.md": "5c9ef7662c91c7de8b8185afdf954a11a6e587762a3cfffc1e3b4ac2ce58f5de",
     "auditoria/relatorios/P5/P5-MATRIZ-RESULTADOS.csv": "cdc774297b280989bc175c1fe110f2dc342d2067a5bec9552451252fbd86b9ec",
-    "auditoria/relatorios/P5/P5-TESTES.md": "3b0c1a70ebc9d7a6faef77c40ef4fdad89582619b27ba05565d9ebbc7069b6cc",
-    "auditoria/relatorios/P5/STATUS.md": "594de451cc6a3f540a0d3fa5f5bfac42b5e60043eb3eb0a82e6ba6cbddce39aa",
-    "auditoria/relatorios/P5/test-results.json": "f5a1854b4d1ca2c878af41d358807e78b4e06032959c5971f31c9ee0864aac3d"
+    "auditoria/relatorios/P5/P5-TESTES.md": "93b0d8989f97b41bcc0de3552fc417112636213732f2c07c486e6e6a3ec2b064",
+    "auditoria/relatorios/P5/STATUS.md": "446fc4b29b7a6491e1b03d75c0b52a1cd9568ba1d3130c4282fd8905a20d8013",
+    "auditoria/relatorios/P5/clean-checkout-report.json": "fb3eb95763afc2151b13561addd24ced7f073be828d48d1797f9ec49e1ec8b24",
+    "auditoria/relatorios/P5/failure-simulation-report.json": "fc381aa50d120f12df057473169d9c242e4c6e56a7dc5095d6e27f0ee20e67c3",
+    "auditoria/relatorios/P5/test-results.json": "aedee28b46c9e507d5b6f9c98f79ca0e91d59dce514007b3332c0f6c898fe1a0"
   }
 }
