@@ -1,6 +1,6 @@
 /**
  * Motor Científico Interativo do Relógio de Estabilidade Molecular
- * Implementação P5 - Versão 1.0 (Cinética de 1ª Ordem & Perfis Farmacopeicos)
+ * Implementação P5 - Versão Saneada (ICH Q1A/Q5C, 1ª Ordem, Nomenclatura Neutra)
  * Peptipedia - 2026
  */
 
@@ -16,41 +16,57 @@ class PeptideStabilityClock {
   }
 
   setPeptide(id) {
-    if (id) this.selectedPeptideId = id;
+    if (id && typeof id === 'string') {
+      this.selectedPeptideId = id.trim();
+    }
   }
 
   setSolvent(id) {
-    if (id) this.selectedSolventId = id;
+    if (id && typeof id === 'string') {
+      this.selectedSolventId = id.trim();
+    }
   }
 
   setScenario(scenarioId) {
-    if (scenarioId) this.selectedScenarioId = scenarioId;
+    if (scenarioId && typeof scenarioId === 'string') {
+      this.selectedScenarioId = scenarioId.trim();
+    }
   }
 
   setTimeHorizon(days) {
     const d = parseInt(days, 10);
-    if (!isNaN(d) && d > 0) {
+    if (!isNaN(d) && isFinite(d) && d > 0) {
       this.timeHorizonDays = d;
+    } else {
+      this.timeHorizonDays = 60;
     }
   }
 
   setCustomK(kVal) {
-    if (kVal !== null && kVal !== undefined && !isNaN(kVal) && kVal > 0) {
-      this.customK = parseFloat(kVal);
-      this.selectedScenarioId = "custom";
-    } else {
-      this.customK = null;
+    if (kVal !== null && kVal !== undefined) {
+      const k = parseFloat(kVal);
+      if (!isNaN(k) && isFinite(k) && k >= 0 && k <= 1.0) {
+        this.customK = k;
+        this.selectedScenarioId = "custom";
+        return;
+      }
     }
+    this.customK = null;
   }
 
   setDate(dateStr) {
-    if (!dateStr) return;
+    if (!dateStr || typeof dateStr !== 'string' || isNaN(Date.parse(dateStr))) {
+      this.reconstitutionDate = new Date().toISOString().split('T')[0];
+      this.daysElapsed = 0;
+      return;
+    }
     this.reconstitutionDate = dateStr;
     const recDate = new Date(dateStr + "T00:00:00");
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     const diffTime = today.getTime() - recDate.getTime();
-    this.daysElapsed = Math.max(0, Math.floor(diffTime / (1000 * 60 * 60 * 24)));
+    const days = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    this.daysElapsed = (isNaN(days) || !isFinite(days) || days < 0) ? 0 : days;
   }
 
   getPeptideConfig() {
@@ -64,13 +80,25 @@ class PeptideStabilityClock {
       ? STABILITY_KNOWN_PROFILES[id]
       : null;
 
-    let category = STABILITY_CATEGORIES.EXPLORATORY_SIMULATION;
-    if (knownProfile) {
-      if (knownProfile.categoryType === "experimental") {
-        category = STABILITY_CATEGORIES.EXPERIMENTAL;
-      } else if (knownProfile.categoryType === "label_reference") {
-        category = STABILITY_CATEGORIES.LABEL_REFERENCE;
+    // Duas dimensões separadas:
+    // 1. Status de evidência do composto
+    let compoundStatus = null;
+    if (typeof COMPOUND_EVIDENCE_STATUS !== 'undefined') {
+      if (knownProfile && knownProfile.compoundStatus) {
+        compoundStatus = knownProfile.compoundStatus;
+      } else if (basePeptide && basePeptide.statusType === 'investigational') {
+        compoundStatus = COMPOUND_EVIDENCE_STATUS.INVESTIGATIONAL;
+      } else {
+        compoundStatus = COMPOUND_EVIDENCE_STATUS.RESEARCH_PRECLINICAL;
       }
+    }
+
+    // 2. Origem dos dados da curva do gráfico (sempre Simulação Exploratória para curvas hipotéticas)
+    let chartOrigin = null;
+    if (typeof CHART_DATA_ORIGIN !== 'undefined') {
+      chartOrigin = (knownProfile && knownProfile.chartOrigin)
+        ? knownProfile.chartOrigin
+        : CHART_DATA_ORIGIN.EXPLORATORY_SIMULATION;
     }
 
     const name = basePeptide ? basePeptide.name : (knownProfile ? knownProfile.name : id);
@@ -87,7 +115,10 @@ class PeptideStabilityClock {
       name: name,
       fullName: fullName,
       categoryName: categoryName,
-      stabilityCategory: category,
+      compoundStatus: compoundStatus,
+      chartOrigin: chartOrigin,
+      // Retrocompatibilidade
+      stabilityCategory: compoundStatus,
       knownProfile: knownProfile,
       vulnerabilities: vulnerabilities,
       basePeptide: basePeptide,
@@ -105,23 +136,34 @@ class PeptideStabilityClock {
       id: "bac_water",
       name: "Água bacteriostática (BAC 0,9%)",
       factor: 1.0,
-      description: "Veículo padrão com conservante antimicrobiano."
+      description: "Veículo de conservação com álcool benzílico para contenção microbiológica sob USP <797>."
     };
   }
 
   /**
-   * Calcula a Fração Molecular Intacta teórica R(t) = 100 * exp(-k * factor * t)
+   * Calcula o Índice Teórico de Retenção do Modelo R(t) = 100 * exp(-k * t)
+   * Sem multiplicadores arbitrários de solvente.
+   * Validação estrita de limites: k=0 -> 100.0%, rejeição de NaN / Infinity / negativo.
    */
-  calculatePotencyAtDay(day, kRate, solventFactor = 1.0) {
-    if (day <= 0) return 100.0;
-    const effectiveK = Math.max(0.0001, kRate * solventFactor);
-    const val = 100.0 * Math.exp(-effectiveK * day);
+  calculatePotencyAtDay(day, kRate) {
+    if (day <= 0 || isNaN(day) || !isFinite(day)) return 100.0;
+    if (isNaN(kRate) || !isFinite(kRate) || kRate < 0) kRate = 0.0;
+    if (kRate === 0.0) return 100.0;
+
+    const val = 100.0 * Math.exp(-kRate * day);
+    if (isNaN(val) || !isFinite(val)) return 100.0;
     return Math.max(0.0, Math.min(100.0, val));
   }
 
-  calculateHalfLife(kRate, solventFactor = 1.0) {
-    const effectiveK = Math.max(0.0001, kRate * solventFactor);
-    return Math.round(Math.LN2 / effectiveK);
+  /**
+   * Calcula Meia-Vida Teórica t_1/2 = ln(2) / k
+   * Para k = 0: Meia-vida indefinida / infinita.
+   */
+  calculateHalfLife(kRate) {
+    if (isNaN(kRate) || !isFinite(kRate) || kRate <= 0) {
+      return "Infinita / Indefinida";
+    }
+    return Math.round(Math.LN2 / kRate);
   }
 
   calculate() {
@@ -129,7 +171,7 @@ class PeptideStabilityClock {
     const solv = this.getSolventConfig();
     const scenarios = STABILITY_SCENARIOS;
 
-    // Determinar taxas para o cenário ativo
+    // Determinar taxas para o cenário selecionado
     let currentKFridge = scenarios.moderate.kFridge;
     let currentKRoom = scenarios.moderate.kRoom;
     let scenarioName = scenarios.moderate.name;
@@ -142,17 +184,18 @@ class PeptideStabilityClock {
       currentKFridge = scenarios.fast.kFridge;
       currentKRoom = scenarios.fast.kRoom;
       scenarioName = scenarios.fast.name;
-    } else if (this.selectedScenarioId === "custom" && this.customK) {
+    } else if (this.selectedScenarioId === "custom" && this.customK !== null) {
       currentKFridge = this.customK;
-      currentKRoom = this.customK * 3.0; // Fator empírico típico de temperatura ambiente (~3x)
+      // Hipótese ajustável de estresse térmico para fins didáticos
+      currentKRoom = this.customK > 0 ? this.customK * 3.0 : 0.0;
       scenarioName = `Personalizado (k = ${this.customK.toFixed(4)}/dia)`;
     }
 
-    const potFridgeActive = this.calculatePotencyAtDay(this.daysElapsed, currentKFridge, solv.factor);
-    const potRoomActive = this.calculatePotencyAtDay(this.daysElapsed, currentKRoom, solv.factor);
-    const halfLifeFridge = this.calculateHalfLife(currentKFridge, solv.factor);
+    const potFridgeActive = this.calculatePotencyAtDay(this.daysElapsed, currentKFridge);
+    const potRoomActive = this.calculatePotencyAtDay(this.daysElapsed, currentKRoom);
+    const halfLifeFridge = this.calculateHalfLife(currentKFridge);
 
-    // Calcular horizontes e pontos da tabela
+    // Determinar passos da tabela de horizonte temporal
     const stepDays = [0, 7, 14, 21, 28, 45, 60, 90, 120].filter(d => d <= this.timeHorizonDays);
     if (!stepDays.includes(this.timeHorizonDays)) {
       stepDays.push(this.timeHorizonDays);
@@ -160,11 +203,11 @@ class PeptideStabilityClock {
     stepDays.sort((a, b) => a - b);
 
     const timeline = stepDays.map(d => {
-      const slowF = this.calculatePotencyAtDay(d, scenarios.slow.kFridge, solv.factor);
-      const modF = this.calculatePotencyAtDay(d, scenarios.moderate.kFridge, solv.factor);
-      const fastF = this.calculatePotencyAtDay(d, scenarios.fast.kFridge, solv.factor);
-      const activeF = this.calculatePotencyAtDay(d, currentKFridge, solv.factor);
-      const activeR = this.calculatePotencyAtDay(d, currentKRoom, solv.factor);
+      const slowF = this.calculatePotencyAtDay(d, scenarios.slow.kFridge);
+      const modF = this.calculatePotencyAtDay(d, scenarios.moderate.kFridge);
+      const fastF = this.calculatePotencyAtDay(d, scenarios.fast.kFridge);
+      const activeF = this.calculatePotencyAtDay(d, currentKFridge);
+      const activeR = this.calculatePotencyAtDay(d, currentKRoom);
 
       return {
         day: d,
@@ -173,7 +216,7 @@ class PeptideStabilityClock {
         fastFridge: Math.round(fastF * 10) / 10,
         activeFridge: Math.round(activeF * 10) / 10,
         activeRoom: Math.round(activeR * 10) / 10,
-        freezerNote: "Condicional (ver avaliação técnica)"
+        freezerNote: "Avaliação físico-química"
       };
     });
 
@@ -192,30 +235,34 @@ class PeptideStabilityClock {
       },
       fridge: {
         potency: Math.round(potFridgeActive * 10) / 10,
-        kRate: currentKFridge * solv.factor,
+        kRate: currentKFridge,
         status: this.getStatusLabel(potFridgeActive),
         colorClass: this.getColorClass(potFridgeActive)
       },
       room: {
         potency: Math.round(potRoomActive * 10) / 10,
-        kRate: currentKRoom * solv.factor,
+        kRate: currentKRoom,
         status: this.getStatusLabel(potRoomActive),
         colorClass: this.getColorClass(potRoomActive)
       },
       freezer: {
         status: "Avaliação Físico-Química",
-        summary: pep.freezerAssessment || "O congelamento da solução líquida com bacteriostático é desaconselhado devido à crioconcentração."
+        summary: pep.freezerAssessment || "O congelamento caseiro de soluções líquidas com bacteriostático é desaconselhado devido à crioconcentração."
       },
       timeline: timeline
     };
   }
 
+  /**
+   * Nomenclatura Neutra: Intervalos teóricos do modelo matemático
+   * Substitui "qualidade excelente", "boa estabilidade", "potência restante".
+   */
   getStatusLabel(potency) {
-    if (potency >= 95) return "Excelente (≥95%)";
-    if (potency >= 85) return "Boa (85–94%)";
-    if (potency >= 70) return "Moderada (70–84%)";
-    if (potency >= 50) return "Atenção (50–69%)";
-    return "Baixa (<50%) — Decaimento significativo";
+    if (potency >= 95) return "Retenção teórica ≥95% no modelo";
+    if (potency >= 85) return "Retenção teórica 85–94% no modelo";
+    if (potency >= 70) return "Retenção teórica 70–84% no modelo";
+    if (potency >= 50) return "Retenção teórica 50–69% no modelo";
+    return "Retenção teórica <50% no modelo";
   }
 
   getColorClass(potency) {
@@ -226,7 +273,8 @@ class PeptideStabilityClock {
 
   /**
    * Renderiza o Gráfico SVG de Decaimento com Curvas Multi-Cenário Pontilhadas/Tracejadas
-   * e Banner Permanente de Simulação Matemática Exploratória
+   * e Banner Permanente de Simulação Matemática Exploratória.
+   * JAMAIS exibe "dados experimentais" em curvas geradas por modelo teórico.
    */
   renderDecayChartSvg(res) {
     const width = 680;
@@ -244,9 +292,8 @@ class PeptideStabilityClock {
     const getY = (p) => padTop + (1.0 - Math.min(100, Math.max(0, p)) / 100.0) * chartH;
 
     const scenarios = STABILITY_SCENARIOS;
-    const solvFactor = res.solvent.factor;
 
-    // Gerar pontos contínuos a cada 1 ou 2 dias para curvas suaves
+    // Gerar pontos contínuos a cada fração de dia para suavidade visual
     const numPoints = 40;
     const step = maxDays / numPoints;
     const pointsSlow = [];
@@ -256,11 +303,11 @@ class PeptideStabilityClock {
 
     for (let i = 0; i <= numPoints; i++) {
       const d = i * step;
-      pointsSlow.push({ x: getX(d), y: getY(this.calculatePotencyAtDay(d, scenarios.slow.kFridge, solvFactor)) });
-      pointsMod.push({ x: getX(d), y: getY(this.calculatePotencyAtDay(d, scenarios.moderate.kFridge, solvFactor)) });
-      pointsFast.push({ x: getX(d), y: getY(this.calculatePotencyAtDay(d, scenarios.fast.kFridge, solvFactor)) });
-      if (this.selectedScenarioId === "custom" && this.customK) {
-        pointsActive.push({ x: getX(d), y: getY(this.calculatePotencyAtDay(d, this.customK, solvFactor)) });
+      pointsSlow.push({ x: getX(d), y: getY(this.calculatePotencyAtDay(d, scenarios.slow.kFridge)) });
+      pointsMod.push({ x: getX(d), y: getY(this.calculatePotencyAtDay(d, scenarios.moderate.kFridge)) });
+      pointsFast.push({ x: getX(d), y: getY(this.calculatePotencyAtDay(d, scenarios.fast.kFridge)) });
+      if (this.selectedScenarioId === "custom" && this.customK !== null) {
+        pointsActive.push({ x: getX(d), y: getY(this.calculatePotencyAtDay(d, this.customK)) });
       }
     }
 
@@ -279,8 +326,8 @@ class PeptideStabilityClock {
       markerHtml = `
         <line x1="${curX}" y1="${padTop}" x2="${curX}" y2="${padTop + chartH}" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="3,3" />
         <circle cx="${curX}" cy="${curY}" r="5.5" fill="#0284c7" stroke="#ffffff" stroke-width="2" />
-        <rect x="${Math.max(padLeft, Math.min(width - padRight - 85, curX - 42))}" y="${padTop - 24}" width="84" height="18" rx="4" fill="#0369a1" />
-        <text x="${Math.max(padLeft + 42, Math.min(width - padRight - 43, curX))}" y="${padTop - 11}" text-anchor="middle" font-size="9" fill="#ffffff" font-family="monospace" font-weight="bold">Hoje: D+${res.daysElapsed} (${res.fridge.potency}%)</text>
+        <rect x="${Math.max(padLeft, Math.min(width - padRight - 105, curX - 52))}" y="${padTop - 24}" width="104" height="18" rx="4" fill="#0369a1" />
+        <text x="${Math.max(padLeft + 52, Math.min(width - padRight - 53, curX))}" y="${padTop - 11}" text-anchor="middle" font-size="8.5" fill="#ffffff" font-family="monospace" font-weight="bold">Hoje: D+${res.daysElapsed} (Índice: ${res.fridge.potency}%)</text>
       `;
     }
 
@@ -290,24 +337,24 @@ class PeptideStabilityClock {
 
     return `
       <svg viewBox="0 0 ${width} ${height}" class="w-full h-auto select-none overflow-visible">
-        <!-- Banner Superior Permanente de Aviso Científico -->
+        <!-- Banner Superior Permanente de Aviso Científico Obrigatório -->
         <g transform="translate(${width / 2}, 18)">
-          <rect x="-240" y="-12" width="480" height="22" rx="5" fill="rgba(15, 23, 42, 0.9)" stroke="#d97706" stroke-width="1.2" stroke-dasharray="4,3" />
+          <rect x="-245" y="-12" width="490" height="22" rx="5" fill="rgba(15, 23, 42, 0.95)" stroke="#d97706" stroke-width="1.2" stroke-dasharray="4,3" />
           <text x="0" y="3" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#fcd34d" font-family="monospace">
-            SIMULAÇÃO MATEMÁTICA EXPLORATÓRIA — NÃO REPRESENTA ESTABILIDADE EXPERIMENTAL COMPROVADA
+            SIMULAÇÃO MATEMÁTICA EXPLORATÓRIA — NÃO CONSTITUI DADOS EXPERIMENTAIS VALIDADOS
           </text>
         </g>
 
-        <!-- Legenda das Curvas de Cenários -->
+        <!-- Legenda das Curvas de Hipóteses Cinéticas -->
         <g transform="translate(${padLeft}, 38)" font-size="9" font-family="monospace">
           <line x1="0" y1="0" x2="20" y2="0" stroke="#10b981" stroke-width="2" stroke-dasharray="3,3" />
-          <text x="25" y="3" fill="#34d399">Lenta (k=0.003)</text>
+          <text x="25" y="3" fill="#34d399">Lenta (k=0,003)</text>
 
           <line x1="140" y1="0" x2="160" y2="0" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="6,4" />
-          <text x="165" y="3" fill="#fbbf24">Intermediária (k=0.012)</text>
+          <text x="165" y="3" fill="#fbbf24">Intermediária (k=0,012)</text>
 
           <line x1="315" y1="0" x2="335" y2="0" stroke="#f43f5e" stroke-width="2" stroke-dasharray="2,2" />
-          <text x="340" y="3" fill="#f87171">Rápida (k=0.035)</text>
+          <text x="340" y="3" fill="#f87171">Rápida (k=0,035)</text>
 
           ${pathCustom ? `
             <line x1="470" y1="0" x2="490" y2="0" stroke="#38bdf8" stroke-width="2.5" />

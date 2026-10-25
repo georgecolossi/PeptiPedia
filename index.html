@@ -980,7 +980,7 @@
         <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 space-y-4">
           <div class="flex items-center justify-between flex-wrap gap-2">
             <div>
-              <h4 class="text-xs uppercase tracking-wider font-bold text-slate-300 font-mono">Fração Molecular Intacta Estimada — R(t)</h4>
+              <h4 class="text-xs uppercase tracking-wider font-bold text-slate-300 font-mono">Índice Teórico de Retenção do Modelo — R(t)</h4>
               <p class="text-[11px] text-slate-400">Proporção teórica restante no modelo cinético para o tempo decorrido.</p>
             </div>
             <span id="stab-days-badge" class="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-800">Dia 0 da Reconstituição</span>
@@ -1000,7 +1000,7 @@
                 <div id="stab-pot-fridge" class="text-3xl font-black font-mono my-1 tracking-tight">100%</div>
               </div>
               <div class="text-[10px] space-y-0.5">
-                <span id="stab-status-fridge" class="block font-medium">Excelente · ≥95%</span>
+                <span id="stab-status-fridge" class="block font-medium">Retenção teórica ≥95% no modelo</span>
                 <span id="stab-rate-fridge" class="block text-slate-400 font-mono">k = 0,012/dia</span>
               </div>
             </div>
@@ -1012,12 +1012,12 @@
                   <span class="text-xs font-bold text-amber-400">Ambiente</span>
                   <span class="text-[9px] font-mono px-1.5 py-0.2 rounded bg-amber-950 text-amber-300 border border-amber-800">20–25 °C</span>
                 </div>
-                <span id="stab-tag-room" class="text-[9px] font-mono uppercase px-1.5 py-0.2 rounded bg-amber-900/50 text-amber-300">ACELERAÇÃO TÉRMICA</span>
+                <span id="stab-tag-room" class="text-[9px] font-mono uppercase px-1.5 py-0.2 rounded bg-amber-900/50 text-amber-300">HIPÓTESE DE SENSIBILIDADE</span>
                 <div id="stab-pot-room" class="text-3xl font-black font-mono my-1 tracking-tight">100%</div>
               </div>
               <div class="text-[10px] space-y-0.5">
-                <span id="stab-status-room" class="block font-medium">Excelente · ≥95%</span>
-                <span id="stab-rate-room" class="block text-slate-400 font-mono">k = 0,036/dia (~3x)</span>
+                <span id="stab-status-room" class="block font-medium">Retenção teórica ≥95% no modelo</span>
+                <span id="stab-rate-room" class="block text-slate-400 font-mono">k = 0,036/dia (hipótese de estresse)</span>
               </div>
             </div>
 
@@ -1054,12 +1054,12 @@
           <div class="flex items-center justify-between">
             <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300 font-mono flex items-center gap-1.5">
               <i data-lucide="dna" class="w-4 h-4 text-cyan-400"></i>
-              <span>Perfil de Vulnerabilidade Molecular Estrutural</span>
+              <span>Alertas Estruturais Potenciais (Análise de Sequência)</span>
             </h4>
             <span class="text-[10px] text-slate-500 font-mono">Análise de Sequência</span>
           </div>
           <p class="text-xs text-slate-400 leading-relaxed">
-            Riscos intrínsecos de degradação mapeados a partir da estrutura primária do peptídeo (oxidação de resíduos lábeis, desamidação, hidrólise de ligações específicas e propensão à fibrilação):
+            Mapeamento descritivo de potenciais motivos e resíduos lábeis conhecidos (oxidação, desamidação, hidrólise específica e densidade hidrofóbica). A ausência de alertas não comprova estabilidade física ou química:
           </p>
 
           <!-- 4 Quadrantes de Vulnerabilidade -->
@@ -1096,7 +1096,7 @@
                   <th class="p-2.5 text-emerald-400">Lento (k=0,003)</th>
                   <th class="p-2.5 text-amber-400">Intermediário (k=0,012)</th>
                   <th class="p-2.5 text-rose-400">Rápido (k=0,035)</th>
-                  <th class="p-2.5 text-purple-400">Ambiente (20-25°C)</th>
+                  <th class="p-2.5 text-purple-400">Ambiente (Sensibilidade)</th>
                 </tr>
               </thead>
               <tbody id="stab-timeline-body" class="divide-y divide-slate-800/60 font-mono">
@@ -1122,7 +1122,7 @@
         <div class="p-4 rounded-xl bg-slate-950/80 border border-cyan-900/40 space-y-1.5">
           <div class="flex items-center gap-2 text-cyan-300 font-bold font-mono">
             <i data-lucide="calculator" class="w-4 h-4"></i>
-            <span>1. Fração Intacta (R(t))</span>
+            <span>1. Índice Teórico de Retenção do Modelo (R(t))</span>
           </div>
           <p class="text-slate-300 leading-relaxed text-[11px]">
             Percentual teórico da molécula íntegra sem clivagem de ligações covalentes, desamidação ou oxidação segundo o modelo cinético de 1ª ordem. Trata-se de uma aproximação teórica matemática.
@@ -1201,8 +1201,8 @@
               Diferente de crenças populares simplificadas, o congelamento <strong>não destrói universalmente todas as moléculas peptídicas</strong>. A estabilidade depende do estado físico e do veículo:
             </p>
             <ul class="list-disc pl-5 space-y-1 text-xs text-slate-400 mt-1">
-              <li><strong>Pó Liofilizado:</strong> Em frasco lacrado sob vácuo e com dessecante, o congelamento a -20°C ou -80°C imobiliza as moléculas e preserva a estabilidade por anos.</li>
-              <li><strong>Soluções com Álcool Benzílico:</strong> A água congela primeiro em cristais puros, expulsando o álcool benzílico e o peptídeo para uma camada líquida intersticial concentrada (crioconcentração), o que induz estresse conformacional severo e agregação irreversível (Jain et al., 2021).</li>
+              <li><strong>Pó Liofilizado:</strong> Em frasco lacrado sob alto vácuo com dessecante a -20°C ou -80°C, a ausência de água livre desacelera substancialmente as reações de hidrólise, embora a validade formal requeira estudos em tempo real sob ICH Q1A/Q5C.</li>
+              <li><strong>Soluções com Álcool Benzílico:</strong> A água congela primeiro em cristais de gelo puro, concentrando o álcool benzílico, sais e peptídeo na fase líquida residual (crioconcentração), gerando estresse conformacional severo e agregação coloidal (Jain et al., 2021).</li>
               <li><strong>Ciclos de Congelamento/Descongelamento:</strong> Repetidos ciclos freeze-thaw geram forças de cisalhamento nos limites de fase sólido-líquido que fragmentam ou polimerizam proteínas.</li>
             </ul>
           </div>

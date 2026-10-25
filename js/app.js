@@ -2234,7 +2234,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!peptideSelect || !solventSelect || !dateInput) return;
 
     // 1. Preencher Select com TODOS os 114 Peptídeos agrupados em 3 Categorias de Evidência
-    const labelRefIds = ["semaglutide", "tirzepatide", "teriparatide", "tesamorelin", "liraglutide", "octreotide", "ziconotide", "apraglutide"];
+    // Apraglutida reclassificada estritamente como investigacional (removida de labelRefIds)
+    const labelRefIds = ["semaglutide", "tirzepatide", "teriparatide", "tesamorelin", "liraglutide", "octreotide", "ziconotide"];
     const expIds = ["mots-c"];
 
     let optLabelHtml = '';
@@ -2243,13 +2244,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (typeof PEPTIDES_DATABASE !== 'undefined') {
       PEPTIDES_DATABASE.forEach(p => {
-        const isLabel = labelRefIds.includes(p.id) || (typeof STABILITY_KNOWN_PROFILES !== 'undefined' && STABILITY_KNOWN_PROFILES[p.id]?.categoryType === "label_reference");
-        const isExp = expIds.includes(p.id) || (typeof STABILITY_KNOWN_PROFILES !== 'undefined' && STABILITY_KNOWN_PROFILES[p.id]?.categoryType === "experimental");
+        const isLabel = labelRefIds.includes(p.id) || (typeof STABILITY_KNOWN_PROFILES !== 'undefined' && STABILITY_KNOWN_PROFILES[p.id]?.compoundStatus?.id === "registered_label");
+        const isExp = expIds.includes(p.id) || (typeof STABILITY_KNOWN_PROFILES !== 'undefined' && STABILITY_KNOWN_PROFILES[p.id]?.compoundStatus?.id === "third_party_report");
 
         if (isLabel) {
           optLabelHtml += `<option value="${p.id}">${p.name} (Bula Oficial / Medicamento Registrado)</option>`;
         } else if (isExp) {
-          optExpHtml += `<option value="${p.id}">${p.name} (Dados Analíticos Experimentais)</option>`;
+          optExpHtml += `<option value="${p.id}">${p.name} (Relatório de Terceiros / Triagem)</option>`;
         } else {
           optSimHtml += `<option value="${p.id}">${p.name} (${p.category}) — Simulação Exploratória</option>`;
         }
@@ -2260,19 +2261,19 @@ document.addEventListener('DOMContentLoaded', () => {
       <optgroup label="1. Diretriz de Bula de Medicamento Registrado (FDA / EMA / ANVISA)">
         ${optLabelHtml}
       </optgroup>
-      <optgroup label="2. Dados Analíticos Experimentais Específicos">
+      <optgroup label="2. Relatório Analítico de Terceiros / Triagem">
         ${optExpHtml}
       </optgroup>
-      <optgroup label="3. Demais Compostos do Catálogo (Simulação Cinética de 1ª Ordem)">
+      <optgroup label="3. Compostos Investigacionais e de Pesquisa (Simulação de 1ª Ordem)">
         ${optSimHtml}
       </optgroup>
     `;
     peptideSelect.value = "tirzepatide";
 
-    // 2. Preencher Select de Solventes
+    // 2. Preencher Select de Solventes (fatores neutros 1.0 sem multiplicadores cinéticos arbitrários)
     if (typeof STABILITY_SOLVENTS !== 'undefined') {
       solventSelect.innerHTML = STABILITY_SOLVENTS.map(s => `
-        <option value="${s.id}" ${s.isReference ? 'selected' : ''}>${s.name} (Fator x${s.factor})</option>
+        <option value="${s.id}" ${s.isReference ? 'selected' : ''}>${s.name}</option>
       `).join('');
     }
 
@@ -2327,11 +2328,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const res = peptideStabilityClock.calculate();
 
-      // Badge de Categoria de Evidência
+      // Badge de Status do Composto
       const catBadge = document.getElementById('stab-pep-cat-badge');
       if (catBadge) {
-        catBadge.textContent = res.peptide.stabilityCategory.badgeText;
-        catBadge.className = `text-[10px] font-mono px-2 py-0.5 rounded border ${res.peptide.stabilityCategory.badgeClass}`;
+        const statusObj = res.peptide.compoundStatus || res.peptide.stabilityCategory;
+        catBadge.textContent = statusObj.badgeText;
+        catBadge.className = `text-[10px] font-mono px-2 py-0.5 rounded border ${statusObj.badgeClass}`;
       }
 
       // Box de Notas do Peptídeo
@@ -2343,7 +2345,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="mt-2.5 p-3 rounded-xl bg-blue-950/40 border border-blue-800/60 text-xs text-blue-200 space-y-1">
               <div class="font-bold flex items-center gap-1.5 text-blue-300 uppercase tracking-wide text-[10px] font-mono">
                 <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
-                <span>Diretrizes de Bula Registrada (Medicamento Industrial Lacrado)</span>
+                <span>Diretrizes Regulatórias e Informações de Bula</span>
               </div>
               <p class="leading-relaxed whitespace-pre-line text-slate-200 text-xs">${res.peptide.regulatoryNotice}</p>
               <p class="text-[10px] text-blue-400 italic pt-0.5">Nota Técnica: Aplicabilidade estrita à formulação industrial do fabricante; NUNCA valida ou extrapola estabilidade para frascos liofilizados de bancada reconstituídos extemporaneamente.</p>
@@ -2364,14 +2366,11 @@ document.addEventListener('DOMContentLoaded', () => {
           `;
         }
 
-        let simulationNotice = '';
-        if (res.peptide.stabilityCategory.id === "exploratory_simulation") {
-          simulationNotice = `
-            <div class="mt-2 p-2.5 rounded-xl bg-amber-950/30 border border-amber-800/50 text-[11px] text-amber-200/90 leading-relaxed font-sans">
-              <strong>Simulação Matemática Exploratória:</strong> Parâmetros gerados a partir do modelo cinético R(t) = 100 * exp(-k * t). Inexistem ensaios analíticos cromatográficos validados para este lote ou solvente específico.
-            </div>
-          `;
-        }
+        let simulationNotice = `
+          <div class="mt-2 p-2.5 rounded-xl bg-amber-950/30 border border-amber-800/50 text-[11px] text-amber-200/90 leading-relaxed font-sans">
+            <strong>Simulação Matemática Exploratória:</strong> Curvas cinéticas geradas a partir do modelo teórico de 1ª ordem R(t) = 100 * exp(-k * t). Inexistem constantes cinéticas abertas do fabricante para preparações extemporâneas; a simulação não substitui ensaios analíticos laboratoriais do lote.
+          </div>
+        `;
 
         noteBox.innerHTML = `
           <div>
@@ -2387,19 +2386,22 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
       }
 
-      // Painel de Vulnerabilidades Moleculares Estruturais (4 Quadrantes)
+      // Painel de Alertas Estruturais Potenciais (substitui scores arbitrários de risco)
       const vulnContainer = document.getElementById('stab-vulnerability-container');
       if (vulnContainer && res.peptide.vulnerabilities) {
         const v = res.peptide.vulnerabilities;
-        if (v.isConfidential) {
+        if (v.isConfidentialOrIncomplete) {
           vulnContainer.innerHTML = `
-            <div class="sm:col-span-2 p-3.5 rounded-xl bg-purple-950/30 border border-purple-800/60 text-xs text-purple-200 space-y-1">
+            <div class="sm:col-span-2 p-3.5 rounded-xl bg-purple-950/30 border border-purple-800/60 text-xs text-purple-200 space-y-1.5">
               <div class="font-bold text-purple-300 font-mono text-xs flex items-center gap-1.5">
                 <i data-lucide="lock" class="w-4 h-4"></i>
-                <span>Estrutura Primária Confidencial / Segredo Industrial</span>
+                <span>Análise Estrutural Incompleta / Estrutura sob Sigilo Industrial</span>
               </div>
               <p class="text-[11px] text-slate-300 leading-relaxed">
                 ${v.summary}
+              </p>
+              <p class="text-[10px] text-purple-400/90 italic border-t border-purple-900/40 pt-1">
+                ℹ️ ${v.disclaimer}
               </p>
             </div>
           `;
@@ -2411,7 +2413,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="font-bold text-xs text-white font-mono flex items-center gap-1">
                   <i data-lucide="flame" class="w-3.5 h-3.5 text-amber-400"></i> Oxidação
                 </span>
-                <span class="text-[9px] font-mono px-1.5 py-0.2 rounded border ${v.oxidation.badgeClass}">${v.oxidation.badge}</span>
+                <span class="text-[9px] font-mono px-1.5 py-0.5 rounded border ${v.oxidation.badgeClass}">${v.oxidation.badge}</span>
               </div>
               <p class="text-[11px] text-slate-300 leading-snug">${v.oxidation.desc}</p>
             </div>
@@ -2420,9 +2422,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800/90 space-y-1">
               <div class="flex items-center justify-between">
                 <span class="font-bold text-xs text-white font-mono flex items-center gap-1">
-                  <i data-lucide="split" class="w-3.5 h-3.5 text-rose-400"></i> Desamidação
+                  <i data-lucide="split" class="w-3.5 h-3.5 text-amber-400"></i> Desamidação
                 </span>
-                <span class="text-[9px] font-mono px-1.5 py-0.2 rounded border ${v.deamidation.badgeClass}">${v.deamidation.badge}</span>
+                <span class="text-[9px] font-mono px-1.5 py-0.5 rounded border ${v.deamidation.badgeClass}">${v.deamidation.badge}</span>
               </div>
               <p class="text-[11px] text-slate-300 leading-snug">${v.deamidation.desc}</p>
             </div>
@@ -2433,7 +2435,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="font-bold text-xs text-white font-mono flex items-center gap-1">
                   <i data-lucide="scissors" class="w-3.5 h-3.5 text-cyan-400"></i> Hidrólise
                 </span>
-                <span class="text-[9px] font-mono px-1.5 py-0.2 rounded border ${v.hydrolysis.badgeClass}">${v.hydrolysis.badge}</span>
+                <span class="text-[9px] font-mono px-1.5 py-0.5 rounded border ${v.hydrolysis.badgeClass}">${v.hydrolysis.badge}</span>
               </div>
               <p class="text-[11px] text-slate-300 leading-snug">${v.hydrolysis.desc}</p>
             </div>
@@ -2444,9 +2446,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="font-bold text-xs text-white font-mono flex items-center gap-1">
                   <i data-lucide="layers" class="w-3.5 h-3.5 text-purple-400"></i> Agregação
                 </span>
-                <span class="text-[9px] font-mono px-1.5 py-0.2 rounded border ${v.aggregation.badgeClass}">${v.aggregation.badge}</span>
+                <span class="text-[9px] font-mono px-1.5 py-0.5 rounded border ${v.aggregation.badgeClass}">${v.aggregation.badge}</span>
               </div>
               <p class="text-[11px] text-slate-300 leading-snug">${v.aggregation.desc}</p>
+            </div>
+
+            <div class="sm:col-span-2 text-[10px] text-slate-400 italic pt-1 border-t border-slate-800/60">
+              ℹ️ ${v.disclaimer}
             </div>
           `;
         }
@@ -2477,7 +2483,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (statusFridge) statusFridge.textContent = res.fridge.status;
       if (rateFridge) rateFridge.textContent = `k = ${res.fridge.kRate.toFixed(4)}/dia`;
       if (tagFridge) {
-        tagFridge.textContent = res.peptide.stabilityCategory.badgeText;
+        tagFridge.textContent = "SIMULAÇÃO 1ª ORDEM";
       }
       if (cardFridge) {
         cardFridge.className = `p-4 rounded-xl border flex flex-col justify-between transition-all ${res.fridge.colorClass}`;
@@ -2492,9 +2498,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (potRoom) potRoom.textContent = `${res.room.potency}%`;
       if (statusRoom) statusRoom.textContent = res.room.status;
-      if (rateRoom) rateRoom.textContent = `k = ${res.room.kRate.toFixed(4)}/dia (~3x)`;
+      if (rateRoom) rateRoom.textContent = `k = ${res.room.kRate.toFixed(4)}/dia`;
       if (tagRoom) {
-        tagRoom.textContent = "ACELERAÇÃO TÉRMICA";
+        tagRoom.textContent = "HIPÓTESE DE SENSIBILIDADE";
       }
       if (cardRoom) {
         cardRoom.className = `p-4 rounded-xl border flex flex-col justify-between transition-all ${res.room.colorClass}`;
@@ -2505,11 +2511,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const freezerDesc = document.getElementById('stab-freezer-desc');
       if (freezerTitle && freezerDesc) {
         if (res.solvent.id === 'bac_water') {
-          freezerTitle.textContent = "Congelamento Desaconselhado";
-          freezerDesc.textContent = "A presença de álcool benzílico provoca crioconcentração severa e desnaturação de micelas durante o congelamento doméstico (Jain et al., 2021).";
+          freezerTitle.textContent = "Congelamento Doméstico Desaconselhado";
+          freezerDesc.textContent = "A presença de álcool benzílico provoca crioconcentração severa e desestabilização fisicoquímica sob congelamento doméstico lento (Jain et al., 2021).";
         } else if (res.solvent.id === 'sterile_water') {
-          freezerTitle.textContent = "Condicional (Alíquota Única)";
-          freezerDesc.textContent = "Pó liofilizado é estável a -20°C. Soluções aquosas sem conservante podem tolerar congelamento ultrarrápido (-80°C), mas repetidos ciclos de freeze-thaw fragmentam a cadeia.";
+          freezerTitle.textContent = "Sensível a Freeze-Thaw";
+          freezerDesc.textContent = "Pó liofilizado sob dessecante a vácuo mantém estabilidade a -20°C. Soluções aquosas sem conservante podem tolerar congelamento rápido a -80°C, mas ciclos repetidos fragmentam a cadeia.";
         } else {
           freezerTitle.textContent = "Avaliação Físico-Química";
           freezerDesc.textContent = res.freezer.summary;
@@ -2519,8 +2525,10 @@ document.addEventListener('DOMContentLoaded', () => {
       // Metadados Rodapé
       const classLabel = document.getElementById('stab-class-label');
       const halfLifeLabel = document.getElementById('stab-halflife-label');
-      if (classLabel) classLabel.textContent = res.peptide.stabilityCategory.name;
-      if (halfLifeLabel) halfLifeLabel.textContent = `~${res.scenario.halfLifeDays} dias (${res.scenario.name})`;
+      if (classLabel) classLabel.textContent = "Simulação Matemática Exploratória (ICH Q1A/Q5C)";
+      if (halfLifeLabel) halfLifeLabel.textContent = typeof res.scenario.halfLifeDays === 'number'
+        ? `~${res.scenario.halfLifeDays} dias (${res.scenario.name})`
+        : `${res.scenario.halfLifeDays} (${res.scenario.name})`;
 
       // Renderizar Gráfico SVG
       const chartContainer = document.getElementById('stab-chart-container');
