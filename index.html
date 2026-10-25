@@ -937,16 +937,32 @@
               </p>
             </div>
 
-            <!-- Controle Deslizante de Taxa k Personalizada -->
-            <div id="stab-custom-k-wrapper" class="hidden p-3 rounded-xl bg-slate-950/70 border border-slate-800 space-y-2">
-              <div class="flex items-center justify-between text-xs font-mono">
-                <span class="text-slate-400">Taxa k Personalizada:</span>
-                <span id="stab-custom-k-val" class="text-cyan-400 font-bold">0,0120/dia</span>
+            <!-- Controle Deslizante de Taxa k Personalizada e Sensibilidade Térmica -->
+            <div id="stab-custom-k-wrapper" class="hidden p-3 rounded-xl bg-slate-950/70 border border-slate-800 space-y-3">
+              <div>
+                <div class="flex items-center justify-between text-xs font-mono mb-1">
+                  <span class="text-slate-400">Taxa k Geladeira (2–8°C):</span>
+                  <span id="stab-custom-k-val" class="text-cyan-400 font-bold">0,0120/dia</span>
+                </div>
+                <input type="range" id="stab-custom-k-slider" min="0.001" max="0.080" step="0.001" value="0.012" class="w-full accent-cyan-400 cursor-pointer">
+                <div class="flex justify-between text-[10px] text-slate-500 font-mono">
+                  <span>0,001 (Mais Estável)</span>
+                  <span>0,080 (Degradação Rápida)</span>
+                </div>
               </div>
-              <input type="range" id="stab-custom-k-slider" min="0.001" max="0.080" step="0.001" value="0.012" class="w-full accent-cyan-400 cursor-pointer">
-              <div class="flex justify-between text-[10px] text-slate-500 font-mono">
-                <span>0,001 (Mais Estável)</span>
-                <span>0,080 (Degradação Acelerada)</span>
+              <div class="pt-2 border-t border-slate-800/80">
+                <div class="flex items-center justify-between text-xs font-mono mb-1">
+                  <span class="text-slate-400">Sensibilidade Térmica Ambiente:</span>
+                  <span id="stab-thermal-factor-val" class="text-amber-400 font-bold">3,0x (Hipótese)</span>
+                </div>
+                <input type="range" id="stab-thermal-factor-slider" min="1.0" max="6.0" step="0.5" value="3.0" class="w-full accent-amber-400 cursor-pointer">
+                <div class="flex justify-between text-[10px] text-slate-500 font-mono">
+                  <span>1,0x (Insensível)</span>
+                  <span>6,0x (Alta Sensibilidade)</span>
+                </div>
+                <p class="text-[10px] text-slate-400 italic mt-1 font-sans">
+                  Hipótese exploratória ajustável de estresse térmico em temperatura ambiente (20–25°C). Não constitui aceleração universal de 3x.
+                </p>
               </div>
             </div>
 

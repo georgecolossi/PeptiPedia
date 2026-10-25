@@ -10,7 +10,9 @@ class PeptideStabilityClock {
     this.selectedSolventId = "bac_water";
     this.selectedScenarioId = "moderate"; // "slow", "moderate", "fast", "custom"
     this.timeHorizonDays = 60; // 30, 60, 90, 120
-    this.customK = null; // Taxa k personalizada (dia^-1)
+    this.customK = null; // Taxa k refrigerada personalizada (dia^-1)
+    this.customKRoom = null; // Taxa k ambiente independente (opcional)
+    this.thermalFactor = 3.0; // Hipótese ajustável de aceleração térmica (padrão demonstrativo 3.0x)
     this.reconstitutionDate = new Date().toISOString().split('T')[0];
     this.daysElapsed = 0;
   }
@@ -42,16 +44,44 @@ class PeptideStabilityClock {
     }
   }
 
-  setCustomK(kVal) {
+  setCustomK(kVal, kRoomVal = null) {
     if (kVal !== null && kVal !== undefined) {
       const k = parseFloat(kVal);
       if (!isNaN(k) && isFinite(k) && k >= 0 && k <= 1.0) {
         this.customK = k;
         this.selectedScenarioId = "custom";
+        if (kRoomVal !== null && kRoomVal !== undefined) {
+          const kr = parseFloat(kRoomVal);
+          if (!isNaN(kr) && isFinite(kr) && kr >= 0 && kr <= 1.0) {
+            this.customKRoom = kr;
+            return;
+          }
+        }
         return;
       }
     }
     this.customK = null;
+    this.customKRoom = null;
+  }
+
+  setCustomKRoom(kVal) {
+    if (kVal !== null && kVal !== undefined) {
+      const k = parseFloat(kVal);
+      if (!isNaN(k) && isFinite(k) && k >= 0 && k <= 1.0) {
+        this.customKRoom = k;
+        return;
+      }
+    }
+    this.customKRoom = null;
+  }
+
+  setThermalFactor(factor) {
+    const f = parseFloat(factor);
+    if (!isNaN(f) && isFinite(f) && f >= 1.0 && f <= 20.0) {
+      this.thermalFactor = f;
+    } else {
+      this.thermalFactor = 3.0;
+    }
   }
 
   setDate(dateStr) {
@@ -186,8 +216,14 @@ class PeptideStabilityClock {
       scenarioName = scenarios.fast.name;
     } else if (this.selectedScenarioId === "custom" && this.customK !== null) {
       currentKFridge = this.customK;
-      // Hipótese ajustável de estresse térmico para fins didáticos
-      currentKRoom = this.customK > 0 ? this.customK * 3.0 : 0.0;
+      if (this.customKRoom !== null && this.customKRoom !== undefined) {
+        currentKRoom = this.customKRoom;
+      } else {
+        const factor = (this.thermalFactor && isFinite(this.thermalFactor) && this.thermalFactor >= 1.0)
+          ? this.thermalFactor
+          : 3.0;
+        currentKRoom = this.customK > 0 ? this.customK * factor : 0.0;
+      }
       scenarioName = `Personalizado (k = ${this.customK.toFixed(4)}/dia)`;
     }
 

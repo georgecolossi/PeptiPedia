@@ -2229,6 +2229,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const customKSlider = document.getElementById('stab-custom-k-slider');
     const customKWrapper = document.getElementById('stab-custom-k-wrapper');
     const customKVal = document.getElementById('stab-custom-k-val');
+    const thermalSlider = document.getElementById('stab-thermal-factor-slider');
+    const thermalVal = document.getElementById('stab-thermal-factor-val');
     const recalcBtn = document.getElementById('stab-recalc-btn');
 
     if (!peptideSelect || !solventSelect || !dateInput) return;
@@ -2319,6 +2321,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (scenVal === "custom" && customKSlider) {
         if (customKWrapper) customKWrapper.classList.remove('hidden');
+        if (thermalSlider && typeof peptideStabilityClock.setThermalFactor === 'function') {
+          peptideStabilityClock.setThermalFactor(parseFloat(thermalSlider.value));
+          if (thermalVal) thermalVal.textContent = `${parseFloat(thermalSlider.value).toFixed(1)}x (Hipótese)`;
+        }
         peptideStabilityClock.setCustomK(parseFloat(customKSlider.value));
         if (customKVal) customKVal.textContent = `${parseFloat(customKSlider.value).toFixed(4)}/dia`;
       } else {
@@ -2568,6 +2574,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dateInput.addEventListener('change', updateStabilityView);
     scenarioSelect?.addEventListener('change', updateStabilityView);
     customKSlider?.addEventListener('input', updateStabilityView);
+    thermalSlider?.addEventListener('input', updateStabilityView);
 
     horizonBtns.forEach(btn => {
       btn.addEventListener('click', () => {

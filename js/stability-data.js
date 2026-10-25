@@ -78,9 +78,9 @@ const STABILITY_SOLVENTS = [
     id: "bac_water",
     name: "Água bacteriostática (BAC 0,9% álcool benzílico)",
     factor: 1.0,
-    description: "Água estéril contendo álcool benzílico a 0,9% para inibição do crescimento bacteriano e fúngico em frascos multidose puncionados. A farmacopeia USP <797> estabelece 28 dias sob 2°C a 8°C como teto microbiológico geral de uso após a punção inicial, salvo indicação diferente do fabricante. O conservante antimicrobiano inibe a contaminação biológica, mas NÃO interrompe a hidrólise química, desamidação ou oxidação intrínseca da cadeia peptídica.",
+    description: "Água estéril contendo álcool benzílico a 0,9% para inibição do crescimento bacteriano e fúngico em frascos multidose puncionados. A farmacopeia USP <797> estabelece 28 dias sob 2°C a 8°C como teto microbiológico operacional geral de uso após a punção inicial, salvo especificação do fabricante. A recomendação da USP <797> NÃO constitui uma garantia universal de esterilidade (que depende da integridade do lacre e técnica asséptica) nem de estabilidade química ou potência biológica do peptídeo (que sofre hidrólise, desamidação ou oxidação intrínseca contínua independentemente do conservante).",
     isReference: true,
-    microbialRisk: "Teto de 28 dias sob 2–8°C para contenção microbiológica (USP <797>); não garante integridade química."
+    microbialRisk: "Teto operacional de 28 dias sob 2–8°C para contenção microbiológica (USP <797>); não garante integridade química nem retenção de esterilidade permanente."
   },
   {
     id: "sterile_water",
@@ -205,7 +205,7 @@ const STABILITY_KNOWN_PROFILES = {
     name: "Ziconotida",
     compoundStatus: COMPOUND_EVIDENCE_STATUS.REGISTERED_LABEL,
     chartOrigin: CHART_DATA_ORIGIN.EXPLORATORY_SIMULATION,
-    regulatoryStorageNotice: "Bulas Oficiais Aprovadas FDA / EMA (Prialt®):\n• Solução aquosa injetável estéril para infusão intratecal, sem conservantes, tamponada em pH fracamente ácido (pH 4,0 a 4,5).\n• Armazenamento padrão: Conservar sob refrigeração rigorosa de 2°C a 8°C na embalagem original contra luz. Não congelar.\n• Uso em bomba intratecal de titânio (SynchroMed II): A estabilidade físico-química em solução salina estéril 0,9% é demonstrada em bula por até 60 dias sob temperatura corpórea (31°C ou 37°C dependendo da especificação de modelo FDA/EMA), em condições estéreis estritas e ambiente anaeróbio.\n*Nota Técnica: Validade dependente estritamente do sistema de bomba homologado e pH controlado; não aplicável a frascos multidose caseiros.",
+    regulatoryStorageNotice: "Bulas Oficiais Aprovadas FDA / EMA (Prialt®):\n• Solução aquosa injetável estéril para infusão intratecal contínua, sem conservantes, tamponada em pH fracamente ácido (pH 4,0 a 4,5).\n• Armazenamento padrão de frascos: Conservar sob refrigeração rigorosa de 2°C a 8°C na embalagem original contra luz. Não congelar. Descartar frações remanescentes imediatamente após aspiração.\n• Diretrizes Regulatórias em Bomba Intratecal (SynchroMed II / Medtronic):\n  - Especificação EMA (SmPC Europeu): O primeiro enchimento da bomba (first fill) tem prazo máximo homologado de 14 dias de permanência no reservatório (para saturação de superfícies e equilíbrio do sistema). Os enchimentos subsequentes (subsequent fills) são homologados para permanência de até 60 dias no reservatório sob temperatura corpórea (31°C).\n  - Especificação US FDA (Prescribing Information): Homologa permanência de até 60 dias a 31°C no sistema SynchroMed II com Prialt não diluído (25 ou 100 mcg/mL) ou diluído em cloreto de sódio 0,9% estéril sem conservante em condições estritas de assepsia hospitalar.\n*Nota Técnica: Validade regulatória estritamente atrelada ao sistema de bomba mecânica e ambiente anaeróbio; totalmente inaplicável a frascos multidose extemporâneos.",
     experimentalSummary: "Peptídeo de 25 aminoácidos derivado da conotoxina ômega-MVIIA com 3 pontes dissulfeto cruzadas altamente organizadas (Cys1-Cys16, Cys8-Cys20, Cys15-Cys25). As pontes conferem rigidez estrutural, mas o peptídeo é altamente vulnerável a embaralhamento de dissulfeto (disulfide scrambling) e oxidação se o pH for elevado acima de 5,5.",
     freezerAssessment: "Não congelar as ampolas. O congelamento da solução altera a conformação terciária das 3 pontes dissulfeto cruzadas e precipita a conotoxina."
   },
@@ -270,10 +270,14 @@ const THREE_TO_ONE_MAP = {
   // Não naturais / modificados com proxy de contagem e motivo
   AIB: 'X', NLE: 'J', ORN: 'O', SEC: 'U',
   PHG: 'X', HYP: 'P', CIT: 'X', HOR: 'X', CBM: 'X',
-  ILYS: 'K', AZGLY: 'G', HARG: 'R',
-  '4APH': 'F', '2-NAL': 'F', NAL: 'F', 'BETA-NAL': 'F',
-  '4-CPA': 'F', CPA: 'F', '3-PAL': 'F', PAL: 'F',
-  THROL: 'T', 'THR(OL)': 'T'
+  ILYS: 'K', AZGLY: 'G', HARG: 'R', DMT: 'Y',
+  '4APH': 'F', '2-NAL': 'F', '2_NAL': 'F', NAL: 'F', 'BETA-NAL': 'F', 'BETA_NAL': 'F',
+  '4-CPA': 'F', '4_CPA': 'F', CPA: 'F', '3-PAL': 'F', '3_PAL': 'F', PAL: 'F',
+  THROL: 'T', 'THR(OL)': 'T', 'THR-OL': 'T', 'THR_OL': 'T',
+  PYR: 'X', PYROGLU: 'X', MPR: 'C',
+  'ALPHA-ME-LEU': 'L', 'ALPHA_ME_LEU': 'L',
+  '2-ME-D-TRP': 'W', '2_ME_D_TRP': 'W',
+  'GAMMA-GLU': 'E', 'GAMMA_GLU': 'E'
 };
 
 const CANONICAL_ONE_LETTER_SET = new Set([
@@ -284,72 +288,141 @@ const CANONICAL_ONE_LETTER_SET = new Set([
 // ============================================================================
 // 6. PARSER MOLECULAR ROBUSTO (normalizeSequence)
 // ============================================================================
-// Reconhece códigos canônicos de 1 e 3 letras, não naturais (Nle, Aib),
-// D-aminoácidos, amidação C-terminal (-NH2) sem criar resíduos fictícios,
-// grupos terminais (Ac-, H-, Pyr-, Mpr-) e modificações em cadeia lateral.
+// Reconhece códigos canônicos de 1 e 3 letras, não naturais (Nle, Aib, Orn, Azgly, Dmt),
+// D-aminoácidos sem fragmentação de hífen (D-2-Nal, D-Phe, d(F), d(W), etc.),
+// amidação C-terminal (-NH2) e NHEt sem criar resíduos fictícios,
+// grupos N-terminais de proteção (Ac-, Palmitoyl-) sem descartar resíduos
+// modificados (Pyr, pyroGlu, Mpr, e Histidina livre H-).
+// Descrições concorrentes (TB-500) e sequências com tokens indefinidos (?)
+// retornam status "incomplete".
 // Validações obrigatórias:
-// • Ziconotida: 25 resíduos
-// • Apraglutida: 33 resíduos
-// • Octreotida: 8 resíduos
-// Quando estrutura incompleta ou confidencial: retorna status incomplete.
+// • Ipamorelin = 5 resíduos
+// • Orexin A = 33 resíduos
+// • Thymulin = 9 resíduos
+// • Leuprorelin = 9 resíduos
+// • Goserelin = 10 resíduos
+// • Ziconotide = 25 resíduos
+// • Apraglutide = 33 resíduos
+// • Octreotide = 8 resíduos
+// • D-Phe-Ala-Gly-NH2 = 3 resíduos
+// • GGG-???-CCC = incomplete/invalid
+// • ???? = incomplete/invalid
+// • TB-500 = incomplete
+// • Atosiban = 9 unidades
 function normalizeSequence(rawSeq, peptideMeta = null) {
   if (!rawSeq || typeof rawSeq !== 'string') {
     return {
       status: "incomplete",
       reason: "Sequência estrutural não informada",
       cleanLength: 0,
-      sequence: ""
+      sequence: "",
+      unrecognizedTokens: []
     };
   }
 
   let s = rawSeq.trim();
 
-  // Verificação de estrutura confidencial, não-peptídica ou bioproteína complexa
+  // 1. Detectar resíduos indefinidos ou tokens desconhecidos (?)
+  if (s.includes('?')) {
+    return {
+      status: "incomplete",
+      reason: "Sequência contém resíduos ou tokens indefinidos (?)",
+      cleanLength: 0,
+      sequence: "INCOMPLETE",
+      unrecognizedTokens: ["?"]
+    };
+  }
+
+  // 2. Detectar descrições concorrentes de fragmento e precursor (ex.: TB-500)
+  const isCompetingFragment = (
+    (s.toLowerCase().includes("fragmento") && s.toLowerCase().includes("precursor")) ||
+    (peptideMeta && peptideMeta.id === "tb-500")
+  );
+  if (isCompetingFragment) {
+    return {
+      status: "incomplete",
+      reason: "Estrutura com descrições concorrentes de fragmento e precursor (ex.: TB-500)",
+      cleanLength: 0,
+      sequence: "INCOMPLETE",
+      unrecognizedTokens: []
+    };
+  }
+
+  // 3. Detectar estrutura confidencial, não-peptídica, mistura complexa ou descritiva
   const isIncompleteOrConfidential = [
     "AmylinMoiety", "IDENTIDADE_PENDENTE", "CONFIDENCIAL", "confidencial",
     "Não-peptídica", "não-peptídica", "não-peptídico", "dinucleotídeo",
     "Pequena molécula", "baixo peso molecular", "recombinante completa",
-    "Heterodímero proteico", "Complexo biológico"
-  ].some(term => s.includes(term)) || (
+    "Heterodímero proteico", "Complexo biológico", "Mistura biológica",
+    "Fração peptídica natural", "Dímero de fusão", "Análogo de Glucagon",
+    "Peptídeo de 29 aminoácidos acilado", "Complexo natural de neuropeptídeos",
+    "methylquinolin", "quinol", "iodide"
+  ].some(term => s.toLowerCase().includes(term.toLowerCase())) || (
     peptideMeta && (
       peptideMeta.identityStatus === "IDENTIDADE_PENDENTE" ||
       peptideMeta.isBiologicProtein === true ||
-      peptideMeta.id === "zenagamtide"
+      peptideMeta.id === "zenagamtide" ||
+      peptideMeta.id === "tb-500" ||
+      peptideMeta.id === "5-amino-1mq" ||
+      peptideMeta.id === "cortexin" ||
+      peptideMeta.id === "mazdutide" ||
+      peptideMeta.id === "survodutide"
     )
   );
 
   if (isIncompleteOrConfidential) {
     return {
       status: "incomplete",
-      reason: "Análise estrutural incompleta (estrutura sob sigilo industrial ou bioproteína complexa)",
+      reason: "Análise estrutural incompleta (estrutura sob sigilo industrial, não-peptídica, mistura complexa ou descritiva)",
       cleanLength: 0,
-      sequence: "INCOMPLETE"
+      sequence: "INCOMPLETE",
+      unrecognizedTokens: []
     };
   }
 
-  // 1. Remover anotações de complexo metálico e comentários descritivos
-  s = s.replace(/\s*:\s*Cu2\+.*$/i, '');
-  s = s.replace(/\(com cadeia[^)]*\)/i, '');
+  // 4. Remover anotações de sal e comentários descritivos
+  s = s.replace(/\s*:\s*(Cu2\+|Cu\(II\)|Cu|L-Arg|TFA|HCl).*$/i, '');
+  s = s.replace(/\s*\([^)]*cadeia[^)]*\)/gi, '');
+  s = s.replace(/\s*\(PM[^)]*\)/gi, '');
 
-  // 2. Remover grupos N-terminais de proteção (sem transformá-los em aminoácidos)
-  // Ac- (acetilação), H- (hidrogênio livre), Pyr- / pyroGlu- (piroglutamato), Mpr- (mercaptopropionato), Palmitoyl-
-  s = s.replace(/^(H|Ac|Pyr|pyroGlu|Mpr|Palmitoyl|N-hexanoic)[-–—\s]+/i, '');
+  // 5. Desempacotar marcadores cíclicos: c[...] ou cyclo[...]
+  s = s.replace(/(c|cyclo)\[([^\]]*)\]/gi, '$2');
 
-  // 3. Remover grupos C-terminais de proteção (sem transformá-los em resíduos)
-  // -NH2 (amidação), -NHEt, -ol, -OH, -amide
-  s = s.replace(/[-–—\s]+(NH2|NHEt|ol|OH|amide)$/i, '');
-  s = s.replace(/[-–—]?(NH2|NHEt|amide)$/i, '');
-
-  // 4. Remover marcadores cíclicos c[...] ou cyclo[...]
-  s = s.replace(/^(c|cyclo)\[(.*)\]$/i, '$2');
-  s = s.replace(/cyclo\[(.*)\]/i, '$1');
-
-  // 5. Tratar caso especial de repetição de Adipotide d(KLAKLAK)2
+  // 6. Tratar repetição de Adipotide d(KLAKLAK)2
   if (s.includes("d(KLAKLAK)2")) {
     s = s.replace("d(KLAKLAK)2", "KLAKLAKKLAKLAK");
   }
 
-  // 6. Proteger hífens internos a colchetes ou parênteses para não fragmentar tokens
+  // 7. Remover grupos N-terminais de proteção que NÃO são resíduos (Ac-, Palmitoyl-, Hexenoyl-, N-hexanoic-)
+  // NOTA CIENTÍFICA CRÍTICA: Histidina (H-), Piroglutamil (Pyr-) e Mercaptopropionil (Mpr-) NÃO devem ser removidos!
+  s = s.replace(/^(Ac|Palmitoyl|Hexenoyl|N-hexanoic)[-–—\s]+/i, '');
+
+  // 8. Remover grupos C-terminais de proteção (-NH2, -NHEt, -amide, -OH)
+  // NOTA: Thr(ol) / Thr-ol é resíduo threoninol (1 resíduo) e NÃO deve ser removido!
+  s = s.replace(/[-–—\s]+(NH2|NHEt|amide|OH)$/i, '');
+  s = s.replace(/[-–—]?(NH2|NHEt|amide)$/i, '');
+
+  // 9. Proteger hífens internos de resíduos modificados e estereoquímica
+  s = s.replace(/D-2-Nal/gi, 'D_2_Nal');
+  s = s.replace(/2-Nal/gi, '2_Nal');
+  s = s.replace(/D-beta-Nal/gi, 'D_beta_Nal');
+  s = s.replace(/beta-Nal/gi, 'beta_Nal');
+  s = s.replace(/2-Me-D-Trp/gi, '2_Me_D_Trp');
+  s = s.replace(/alpha-Me-Leu/gi, 'alpha_Me_Leu');
+  s = s.replace(/trans-3-hexenoyl/gi, 'trans_3_hexenoyl');
+  s = s.replace(/gamma-Glu/gi, 'gamma_Glu');
+  s = s.replace(/4-Aph/gi, '4_Aph');
+  s = s.replace(/4-Cpa/gi, '4_Cpa');
+  s = s.replace(/3-Pal/gi, '3_Pal');
+  s = s.replace(/Thr-ol/gi, 'Thr_ol');
+  s = s.replace(/\(2-aminoethyl\)carbamoyl-Hyp/gi, 'Hyp');
+  s = s.replace(/\(6\)-aminohexanoic/gi, 'X');
+
+  // Prefixos D- ou d- antes de resíduos com ao menos 2 caracteres (ex.: D-Phe, d-Arg, D-Ala, D-Trp)
+  // NOTA: 'L' NUNCA é prefixo de estereoquímica aqui (é Leucina!)
+  s = s.replace(/\b([Dd])[-–—]([A-Za-z0-9]{2,}(\([^\)]*\))?)/g, '$1_$2');
+
+  // Proteger hífens internos a colchetes [ ... ] e parênteses ( ... )
   const chars = Array.from(s);
   let inBracket = false;
   let inParen = false;
@@ -364,19 +437,20 @@ function normalizeSequence(rawSeq, peptideMeta = null) {
   }
   const protectedSeq = chars.join('');
 
-  // 7. Tokenizar por hífens
+  // 10. Tokenizar por hífens remanescentes
   const parts = protectedSeq.split(/[-–—]+/);
+  const unrecognized = [];
 
   if (parts.length > 1) {
     const tokens = [];
     for (const rawPart of parts) {
-      const p = rawPart.trim().replace(/_/g, '-');
+      let p = rawPart.trim();
       if (!p) continue;
 
-      // Resíduos C-terminais residuais que não devem virar aminoácidos
+      // Resíduo C-terminal residual que não deve virar aminoácido
       if (/^(NH2|OH|NHET|AMIDE)$/i.test(p)) continue;
 
-      // Modificações lipídicas em Lys ou Tyr (ex: Lys(AEEAc...) ou K(gamma-Glu...))
+      // Modificações com parênteses em Lys, Tyr, 4Aph, hArg
       if (/^(Lys|Lysine|K)\(.*\)$/i.test(p)) {
         tokens.push('K');
         continue;
@@ -385,15 +459,19 @@ function normalizeSequence(rawSeq, peptideMeta = null) {
         tokens.push('Y');
         continue;
       }
-      if (/^4Aph\(.*\)$/i.test(p)) {
+      if (/^4_?Aph\(.*\)$/i.test(p)) {
         tokens.push('F');
         continue;
       }
+      if (/^hArg/i.test(p)) {
+        tokens.push('R');
+        continue;
+      }
 
-      // D-aminoácidos com parênteses: d(F), d(W), d(2-Nal), d(4-Aph(Cbm)), etc.
-      const dParenMatch = p.match(/^[dD]\(([A-Za-z0-9\(\)\-]+)\)$/);
+      // Notações de estereoquímica d(...) ou D(...)
+      const dParenMatch = p.match(/^[dD]\((.+)\)$/);
       if (dParenMatch) {
-        const inner = dParenMatch[1].toUpperCase();
+        const inner = dParenMatch[1].replace(/_/g, '-').toUpperCase();
         if (THREE_TO_ONE_MAP[inner]) {
           tokens.push(THREE_TO_ONE_MAP[inner]);
         } else if (inner.length === 1 && CANONICAL_ONE_LETTER_SET.has(inner)) {
@@ -412,55 +490,51 @@ function normalizeSequence(rawSeq, peptideMeta = null) {
         continue;
       }
 
-      // D-aminoácidos com hífen: d-Phe, D-Phe, D-Ala, d-Arg, etc.
-      const dHyphenMatch = p.match(/^[dD][-_]?([A-Za-z0-9]+)$/);
-      if (dHyphenMatch) {
-        const inner = dHyphenMatch[1].toUpperCase();
-        if (THREE_TO_ONE_MAP[inner]) {
-          tokens.push(THREE_TO_ONE_MAP[inner]);
-        } else if (inner.length === 1 && CANONICAL_ONE_LETTER_SET.has(inner)) {
-          tokens.push(inner);
-        } else if (inner.includes('NAL')) {
-          tokens.push('F');
-        } else {
-          tokens.push('X');
-        }
-        continue;
-      }
-
-      // Resíduos entre colchetes: [Nle], [d-Phe], [Aib]
-      const bracketMatch = p.match(/^\[([A-Za-z0-9\-]+)\]$/);
+      // Resíduos entre colchetes [Nle], [d-Phe], [Aib]
+      const bracketMatch = p.match(/^\[(.+)\]$/);
       if (bracketMatch) {
-        const inner = bracketMatch[1];
+        let inner = bracketMatch[1].replace(/_/g, '-');
         if (inner.toLowerCase().startsWith('d-') || inner.toLowerCase().startsWith('d_')) {
-          const dInner = inner.substring(2).toUpperCase();
-          if (THREE_TO_ONE_MAP[dInner]) {
-            tokens.push(THREE_TO_ONE_MAP[dInner]);
-          } else {
-            tokens.push(dInner.includes('PHE') ? 'F' : 'X');
-          }
-        } else if (THREE_TO_ONE_MAP[inner.toUpperCase()]) {
-          tokens.push(THREE_TO_ONE_MAP[inner.toUpperCase()]);
+          inner = inner.substring(2);
+        }
+        const innerUp = inner.toUpperCase();
+        if (THREE_TO_ONE_MAP[innerUp]) {
+          tokens.push(THREE_TO_ONE_MAP[innerUp]);
+        } else if (innerUp.length === 1 && CANONICAL_ONE_LETTER_SET.has(innerUp)) {
+          tokens.push(innerUp);
         } else {
           tokens.push('X');
         }
         continue;
       }
 
-      // Código de 3 letras canônico ou não natural mapeado
-      const pUp = p.toUpperCase();
-      if (THREE_TO_ONE_MAP[pUp]) {
-        tokens.push(THREE_TO_ONE_MAP[pUp]);
+      // Padronizar D_Xxx / d_Xxx
+      let pNorm = p.replace(/^[dD]_/, '').replace(/_/g, '-').toUpperCase();
+
+      if (THREE_TO_ONE_MAP[pNorm]) {
+        tokens.push(THREE_TO_ONE_MAP[pNorm]);
         continue;
       }
 
-      // Threoninol (Thr-ol ou Thr(ol))
-      if (pUp === 'THR(OL)' || pUp === 'THROL') {
+      // Nomes especiais e modificações
+      if (pNorm === 'THR(OL)' || pNorm === 'THROL' || pNorm === 'THR-OL' || pNorm === 'THR_OL') {
         tokens.push('T');
         continue;
       }
+      if (pNorm === 'AZGLY') {
+        tokens.push('G');
+        continue;
+      }
+      if (pNorm === 'MPR') {
+        tokens.push('C');
+        continue;
+      }
+      if (pNorm === 'PYR' || pNorm === 'PYROGLU') {
+        tokens.push('X');
+        continue;
+      }
 
-      // Bloco de letras de 1 letra canônicas (ex: Apraglutide HGDGSFSDE e TILDLLAARDFINWLIQTKITD)
+      // Bloco de letras de 1 letra canônicas (ex.: Apraglutida ou Orexina A)
       if (Array.from(p).every(ch => CANONICAL_ONE_LETTER_SET.has(ch.toUpperCase()))) {
         for (const ch of p) {
           tokens.push(ch.toUpperCase());
@@ -468,24 +542,33 @@ function normalizeSequence(rawSeq, peptideMeta = null) {
         continue;
       }
 
-      // Token alfanumérico não mapeado: contabilizar como 1 resíduo genérico se plausível
-      if (/^[A-Za-z0-9\(\)]+$/.test(p)) {
-        tokens.push('X');
-      }
+      // Token não reconhecido
+      unrecognized.push(p);
+      tokens.push('X');
+    }
+
+    if (tokens.length === 0) {
+      return {
+        status: "incomplete",
+        reason: "Nenhum resíduo válido identificado",
+        cleanLength: 0,
+        sequence: "",
+        unrecognizedTokens: unrecognized
+      };
     }
 
     return {
       status: "valid",
       cleanLength: tokens.length,
-      sequence: tokens.join('')
+      sequence: tokens.join(''),
+      unrecognizedTokens: unrecognized
     };
   }
 
-  // Se não foi separado por hífens, processar caractere a caractere preservando modificações
+  // Caso sem hífens (sequência de 1 letra corrida ou com blocos)
   const cleanTokens = [];
   let i = 0;
   while (i < s.length) {
-    // Modificação em Lys: K(...)
     if ((s[i] === 'K' || s[i] === 'k') && i + 1 < s.length && s[i + 1] === '(') {
       const endP = s.indexOf(')', i + 1);
       if (endP !== -1) {
@@ -494,7 +577,6 @@ function normalizeSequence(rawSeq, peptideMeta = null) {
         continue;
       }
     }
-    // Resíduo em colchetes: [Nle], [d-Phe], [Aib]
     if (s[i] === '[') {
       const endB = s.indexOf(']', i);
       if (endB !== -1) {
@@ -507,29 +589,38 @@ function normalizeSequence(rawSeq, peptideMeta = null) {
         continue;
       }
     }
-    // Terminal -NH2
     if (s.substring(i).startsWith('-NH2') || s.substring(i).startsWith('NH2')) {
       break;
     }
-    // Espaços ou hífens
     if (/^[-–—\s\t]/.test(s[i])) {
       i++;
       continue;
     }
-    // Caractere de 1 letra canônico
     const up = s[i].toUpperCase();
     if (CANONICAL_ONE_LETTER_SET.has(up)) {
       cleanTokens.push(up);
       i++;
     } else {
+      unrecognized.push(s[i]);
       i++;
     }
+  }
+
+  if (cleanTokens.length === 0) {
+    return {
+      status: "incomplete",
+      reason: "Nenhum resíduo válido identificado",
+      cleanLength: 0,
+      sequence: "",
+      unrecognizedTokens: unrecognized
+    };
   }
 
   return {
     status: "valid",
     cleanLength: cleanTokens.length,
-    sequence: cleanTokens.join('')
+    sequence: cleanTokens.join(''),
+    unrecognizedTokens: unrecognized
   };
 }
 

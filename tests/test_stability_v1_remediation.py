@@ -55,8 +55,8 @@ class TestStabilityV1Remediation(unittest.TestCase):
                 depth_st -= 1
         self.assertEqual(stacks_count, 18, f"Esperado 18 stacks, obtido {stacks_count}")
 
-        gloss_matches = re.findall(r'term:\s*["\']([^"\']+)["\']', glossary_text)
-        self.assertEqual(len(gloss_matches), 27, f"Esperado 27 verbetes do glossário histórico/P5, obtido {len(gloss_matches)}")
+        gloss_matches = re.findall(r'["\']?term["\']?\s*:\s*["\']([^"\']+)["\']', glossary_text)
+        self.assertEqual(len(gloss_matches), 37, f"Esperado 37 verbetes do glossário histórico/P5, obtido {len(gloss_matches)}")
 
     def test_solvents_factors_unity(self):
         stab_data = load_file("js/stability-data.js")
@@ -95,19 +95,45 @@ class TestStabilityV1Remediation(unittest.TestCase):
         self.assertIn("CHART_DATA_ORIGIN.EXPLORATORY_SIMULATION", motsc_block)
 
     def test_mandatory_peptide_sequence_lengths(self):
-        ziconotide_raw = "CKGKGAKCSRLMYDCCTGSCRSGKC-NH2"
-        z_clean = re.sub(r'[-–—]?(NH2|NHEt|amide)$', '', ziconotide_raw)
-        self.assertEqual(len(z_clean), 25, f"Ziconotida deve ter exatamente 25 aminoácidos, obtido {len(z_clean)}")
-        self.assertNotIn("NH", z_clean, "Ziconotida não pode ter -NH2 convertido em resíduos N e H")
+        # Validação direta via execução do normalizeSequence() real em V8 / Node.js
+        import subprocess
 
-        apra_raw = "HGDGSFSDE-[Nle]-[d-Phe]-TILDLLAARDFINWLIQTKITD-NH2"
-        self.assertTrue(apra_raw.startswith("HGDGSFSDE"))
-        self.assertTrue("[Nle]" in apra_raw and "[d-Phe]" in apra_raw)
-        self.assertTrue(apra_raw.endswith("-NH2"))
+        node_path = r"C:\Users\georg\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\driver\node.exe"
+        script = """
+        const fs = require('fs');
+        const stabCode = fs.readFileSync('js/stability-data.js', 'utf8');
+        eval(stabCode);
 
-        oct_raw = "d(F)-C-F-d(W)-K-T-C-Thr(ol)"
-        oct_parts = oct_raw.split("-")
-        self.assertEqual(len(oct_parts), 8, f"Octreotida deve possuir exatamente 8 posições/resíduos, obtido {len(oct_parts)}")
+        const cases = [
+          { id: 'ipamorelin', expected: 5, seq: 'Aib-His-D-2-Nal-D-Phe-Lys-NH2' },
+          { id: 'orexin-a', expected: 33, seq: 'Pyr-PLPDCCRQKTCSCRLYELLHGAGNHAAGILTL-NH2' },
+          { id: 'thymulin', expected: 9, seq: 'Pyr-AKSQGGSN' },
+          { id: 'leuprorelin', expected: 9, seq: 'Pyr-H-W-S-Y-d(L)-L-R-P-NHEt' },
+          { id: 'goserelin', expected: 10, seq: 'Pyr-H-W-S-Y-d(S(tBu))-L-R-P-Azgly-NH2' },
+          { id: 'ziconotide', expected: 25, seq: 'CKGKGAKCSRLMYDCCTGSCRSGKC-NH2' },
+          { id: 'apraglutide', expected: 33, seq: 'HGDGSFSDE-[Nle]-[d-Phe]-TILDLLAARDFINWLIQTKITD-NH2' },
+          { id: 'octreotide', expected: 8, seq: 'd(F)-C-F-d(W)-K-T-C-Thr(ol)' },
+          { id: 'd-phe-ala-gly', expected: 3, seq: 'D-Phe-Ala-Gly-NH2' },
+          { id: 'unknown-1', expected: 'incomplete', seq: 'GGG-???-CCC' },
+          { id: 'unknown-2', expected: 'incomplete', seq: '????' },
+          { id: 'tb-500', expected: 'incomplete', seq: 'Ac-Leu-Lys-Lys-Thr-Glu-Thr-Gln (Fragmento 17-23, PM 889,0 g/mol). Precursor completo Timosina Beta-4 (43 aa, PM 4963,5 g/mol): Ac-Ser-Asp-Lys-Pro-Asp-Met-Ala-Glu-Ile-Glu-Lys-Phe-Asp-Lys-Ser-Lys-Leu-Lys-Lys-Thr-Glu-Thr-Gln-Glu-Lys-Asn-Pro-Leu-Pro-Ser-Lys-Glu-Thr-Ile-Glu-Gln-Glu-Lys-Gln-Ala-Gly-Glu-Ser', meta: { id: 'tb-500' } },
+          { id: 'atosiban', expected: 9, seq: 'Mpr-d(Y(Et))-I-T-N-C-P-Orn-G-NH2' },
+          { id: 'desmopressin', expected: 9, seq: 'Mpr-Y-F-Q-N-C-P-d(R)-G-NH2' }
+        ];
+
+        const results = cases.map(c => {
+          const res = normalizeSequence(c.seq, c.meta);
+          const ok = (c.expected === 'incomplete') ? (res.status === 'incomplete') : (res.cleanLength === c.expected);
+          return { id: c.id, expected: c.expected, actualLen: res.cleanLength, status: res.status, ok };
+        });
+
+        console.log(JSON.stringify(results));
+        """
+
+        res = subprocess.run([node_path, "-e", script], cwd=REPO_ROOT, capture_output=True, text=True, check=True)
+        results = json.loads(res.stdout)
+        for r in results:
+            self.assertTrue(r["ok"], f"Falha na validação de {r['id']}: esperado {r['expected']}, obtido {r['actualLen']} (status: {r['status']})")
 
     def test_mathematical_model_edge_cases(self):
         stab_js = load_file("js/stability.js")
