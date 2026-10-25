@@ -94,9 +94,9 @@ const STABILITY_SOLVENTS = [
     id: "saline_09",
     name: "Cloreto de Sódio 0,9% (Soro Fisiológico Estéril)",
     factor: 1.0,
-    description: "Veículo isotônico isento de agentes antimicrobianos. A força iônica dos íons Na+ e Cl- modula a camada de solvatação e o potencial eletrostático superficial, podendo influenciar a solubilidade de sequências com cargas concentradas. Não possui multiplicador cinético geral demonstrado para todos os peptídeos. Ausência de conservante exige descarte em até 24h.",
+    description: "Veículo isotônico isento de agentes antimicrobianos. A força iônica dos íons Na+ e Cl- modula a camada de solvatação e o potencial eletrostático superficial, podendo influenciar a solubilidade de sequências com cargas concentradas. Não possui multiplicador cinético geral demonstrado para todos os peptídeos. Inexiste regra de descarte universal em 24 horas para qualquer preparação; a validade microbiológica pós-abertura ou reconstituição depende estritamente do produto, da apresentação (monodose vs sistema fechado/bomba), das condições assépticas de manipulação e das especificações da rotulagem aplicável.",
     isReference: false,
-    microbialRisk: "Crítico após abertura: veículo sem conservante; requer uso imediato ou descarte em 24h."
+    microbialRisk: "Veículo sem conservante antimicrobiano: validade microbiológica pós-abertura depende do produto, apresentação, técnica asséptica e rotulagem aplicável (sem descarte genérico de 24h)."
   },
   {
     id: "acetic_acid",
@@ -205,7 +205,7 @@ const STABILITY_KNOWN_PROFILES = {
     name: "Ziconotida",
     compoundStatus: COMPOUND_EVIDENCE_STATUS.REGISTERED_LABEL,
     chartOrigin: CHART_DATA_ORIGIN.EXPLORATORY_SIMULATION,
-    regulatoryStorageNotice: "Bulas Oficiais Aprovadas FDA (DailyMed / NDA 021060 atualizada 2026) & EMA (SmPC Prialt®):\n• Solução aquosa injetável estéril para infusão intratecal contínua, isenta de conservantes, tamponada em pH fracamente ácido (pH 4,0 a 4,5).\n• Armazenamento padrão de frascos/ampolas: Conservar sob refrigeração de 2°C a 8°C na embalagem original protegida da luz. Proibido congelar. Descartar frações remanescentes imediatamente após aspiração hospitalar.\n• Diretrizes Regulatórias em Bomba Intratecal Mecânica (SynchroMed® II / Medtronic):\n  - Bula Americana FDA / DailyMed (NDA 021060, revisada 2026):\n    * Primeiro Enchimento (Initial pump fill): Deve ser substituído obrigatoriamente após 14 dias na condição indicada (devido à adsorção inicial de superfície ao reservatório virgem de titânio).\n    * Reenchimento Não Diluído (Undiluted refill - Prialt 100 mcg/mL): Estabilidade físico-química homologada por até 84 dias a 31°C no reservatório da bomba.\n    * Reenchimento Diluído (Diluted refill com Cloreto de Sódio 0,9% estéril sem conservante): Homologado por até 40 dias a 31°C.\n    * Não existe regra única de 60 dias pela FDA; os prazos dependem da diluição e da concentração no sistema mecânico.\n  - Especificação Europeia EMA (SmPC Prialt):\n    * Primeiro enchimento da bomba: Limite de 14 dias no reservatório.\n    * Enchimentos subsequentes: Homologados para permanência de até 60 dias no reservatório a 31°C sob as condições documentadas na SmPC.\n*Nota Técnica: Validade regulatória estritamente atrelada a bomba mecânica dedicada sob assepsia cirúrgica; inaplicável a frascos multidose.",
+    regulatoryStorageNotice: "Bulas Oficiais Aprovadas FDA (DailyMed / NDA 021060 atualizada 2026) & EMA (SmPC Prialt®):\n• Solução aquosa injetável estéril para infusão intratecal contínua, isenta de conservantes, tamponada em pH fracamente ácido (pH 4,0 a 4,5).\n• Armazenamento padrão de frascos/ampolas: Conservar sob refrigeração de 2°C a 8°C na embalagem original protegida da luz. Proibido congelar. Descartar frações remanescentes imediatamente após aspiração hospitalar.\n• Diretrizes Regulatórias em Bomba Intratecal Mecânica (SynchroMed® II / Medtronic):\n  - Bula Americana FDA / DailyMed (NDA 021060, revisada 2026):\n    * Primeiro Enchimento (Initial pump fill): Deve ser substituído obrigatoriamente após 14 dias na condição indicada (devido à adsorção inicial de superfície ao reservatório virgem de titânio).\n    * Reenchimento Não Diluído (Undiluted refill - Prialt 100 mcg/mL): Estabilidade físico-química homologada por até 84 dias a 31°C no reservatório da bomba.\n    * Reenchimento Diluído (Diluted refill com Cloreto de Sódio 0,9% estéril sem conservante): Homologado por até 40 dias a 31°C.\n    * Não existe regra única de 60 dias pela FDA; os prazos dependem da diluição e da concentração no sistema mecânico.\n  - Especificação Europeia EMA (SmPC Prialt):\n    * Primeiro enchimento da bomba: Limite de 14 dias no reservatório.\n    * Enchimentos subsequentes: Homologados para permanência de até 60 dias no reservatório a 37°C sob as condições documentadas na SmPC.\n*Nota Técnica: Validade regulatória estritamente atrelada a bomba mecânica dedicada sob assepsia cirúrgica; inaplicável a frascos multidose.",
     experimentalSummary: "Peptídeo de 25 aminoácidos derivado da conotoxina ômega-MVIIA com 3 pontes dissulfeto cruzadas altamente organizadas (Cys1-Cys16, Cys8-Cys20, Cys15-Cys25). As pontes conferem rigidez estrutural, mas o peptídeo é altamente vulnerável a embaralhamento de dissulfeto (disulfide scrambling) e oxidação se o pH for elevado acima de 5,5.",
     freezerAssessment: "Não congelar as ampolas. O congelamento da solução altera a conformação terciária das 3 pontes dissulfeto cruzadas e precipita a conotoxina."
   },
@@ -309,6 +309,96 @@ const CANONICAL_ONE_LETTER_SET = new Set([
 // • ???? = incomplete/invalid
 // • TB-500 = incomplete
 // • Atosiban = 9 unidades
+
+// Helpers de validação fail-closed para modificações e estereoquímica
+function isRecognizedLysModification(modStr) {
+  if (!modStr) return false;
+  const m = modStr.replace(/_/g, '-').trim();
+  return /^(AEEAc[-_]?AEEAc[-_]?gamma[-_]?Glu[-_]?(17[-_]?carboxyheptadecanoyl|diacid[-_]?C\d+)|AEEA[-_]?AEEA[-_]?gammaGlu[-_]?C\d+diacid|DAC|gamma[-_]?Glu[-_]?(palmitoyl|palmitate)|(palmitoyl|myristoyl|stearoyl|lauroyl|octanoyl|hexanoyl|acetyl|Ac|biotin|PEG\d*|Ahx|diacid[-_]?C\d+))$/i.test(m);
+}
+
+function isRecognizedTyrModification(modStr) {
+  if (!modStr) return false;
+  const m = modStr.replace(/_/g, '-').trim();
+  return /^(Bzl|Et|Me|tBu|t-Bu|NO2|3-I)$/i.test(m);
+}
+
+function isRecognized4AphModification(modStr) {
+  if (!modStr) return false;
+  const m = modStr.replace(/_/g, '-').trim();
+  return /^(Hor|Cbm)$/i.test(m);
+}
+
+function isRecognizedHArgModification(modStr) {
+  if (!modStr) return false;
+  const m = modStr.replace(/_/g, '-').trim();
+  return /^(Et|Et2|\(Et\)2|Me)$/i.test(m);
+}
+
+function resolveBracketToken(innerStr) {
+  if (!innerStr) return null;
+  let clean = innerStr.replace(/_/g, '-').trim();
+  if (clean.toLowerCase().startsWith('d-') || clean.toLowerCase().startsWith('d_')) {
+    clean = clean.substring(2);
+  }
+  const up = clean.toUpperCase();
+  if (THREE_TO_ONE_MAP[up]) {
+    return THREE_TO_ONE_MAP[up];
+  }
+  if (up.length === 1 && CANONICAL_ONE_LETTER_SET.has(up)) {
+    return up;
+  }
+  if (up === 'NLE') return 'J';
+  if (up === 'AIB') return 'X';
+  if (up === 'PHE') return 'F';
+  return null;
+}
+
+function resolveDParenToken(innerStr) {
+  if (!innerStr) return null;
+  const raw = innerStr.replace(/_/g, '-').trim();
+  const up = raw.toUpperCase();
+
+  if (raw.length === 1 && CANONICAL_ONE_LETTER_SET.has(up)) {
+    return up;
+  }
+  if (THREE_TO_ONE_MAP[up]) {
+    return THREE_TO_ONE_MAP[up];
+  }
+  if (/^2[-_]?NAL$/i.test(raw) || /^BETA[-_]?NAL$/i.test(raw)) return 'F';
+  if (/^4[-_]?CPA$/i.test(raw) || /^3[-_]?PAL$/i.test(raw)) return 'F';
+  if (/^CIT$/i.test(raw)) return 'X';
+
+  const serParen = raw.match(/^(S|SER)\((.+)\)$/i);
+  if (serParen) {
+    if (/^(tBu|t-Bu|Bzl|PO3H2|P|Ac)$/i.test(serParen[2])) return 'S';
+    return null;
+  }
+
+  const tyrParen = raw.match(/^(Y|TYR)\((.+)\)$/i);
+  if (tyrParen) {
+    if (isRecognizedTyrModification(tyrParen[2])) return 'Y';
+    return null;
+  }
+
+  const aphParen = raw.match(/^4[-_]?APH\((.+)\)$/i);
+  if (aphParen) {
+    if (isRecognized4AphModification(aphParen[1])) return 'F';
+    return null;
+  }
+
+  const hargParen = raw.match(/^HARG\((.+)\)(2)?$/i);
+  if (hargParen) {
+    if (isRecognizedHArgModification(hargParen[1])) return 'R';
+    return null;
+  }
+  if (/^HARG$/i.test(raw)) return 'R';
+
+  if (/^KLAKLAK$/i.test(raw)) return 'KLAKLAK';
+
+  return null;
+}
+
 function normalizeSequence(rawSeq, peptideMeta = null) {
   if (!rawSeq || typeof rawSeq !== 'string') {
     return {
@@ -481,19 +571,45 @@ function normalizeSequence(rawSeq, peptideMeta = null) {
       if (/^(NH2|OH|NHET|AMIDE)$/i.test(p)) continue;
 
       // Modificações com parênteses em Lys, Tyr, 4Aph, hArg
-      if (/^(Lys|Lysine|K)\(.*\)$/i.test(p)) {
-        tokens.push('K');
+      const lysMatch = p.match(/^(Lys|Lysine|K)\((.+)\)$/i);
+      if (lysMatch) {
+        if (isRecognizedLysModification(lysMatch[2])) {
+          tokens.push('K');
+        } else {
+          unrecognized.push(p);
+        }
         continue;
       }
-      if (/^(Tyr|Y)\(.*\)$/i.test(p)) {
-        tokens.push('Y');
+
+      const tyrMatch = p.match(/^(Tyr|Y)\((.+)\)$/i);
+      if (tyrMatch) {
+        if (isRecognizedTyrModification(tyrMatch[2])) {
+          tokens.push('Y');
+        } else {
+          unrecognized.push(p);
+        }
         continue;
       }
-      if (/^4_?Aph\(.*\)$/i.test(p)) {
-        tokens.push('F');
+
+      const aphMatch = p.match(/^4_?Aph\((.+)\)$/i);
+      if (aphMatch) {
+        if (isRecognized4AphModification(aphMatch[1])) {
+          tokens.push('F');
+        } else {
+          unrecognized.push(p);
+        }
         continue;
       }
-      if (/^hArg/i.test(p)) {
+
+      const hargMatch = p.match(/^hArg\((.+)\)(2)?$/i);
+      if (hargMatch) {
+        if (isRecognizedHArgModification(hargMatch[1])) {
+          tokens.push('R');
+        } else {
+          unrecognized.push(p);
+        }
+        continue;
+      } else if (/^hArg$/i.test(p)) {
         tokens.push('R');
         continue;
       }
@@ -501,21 +617,15 @@ function normalizeSequence(rawSeq, peptideMeta = null) {
       // Notações de estereoquímica d(...) ou D(...)
       const dParenMatch = p.match(/^[dD]\((.+)\)$/);
       if (dParenMatch) {
-        const inner = dParenMatch[1].replace(/_/g, '-').toUpperCase();
-        if (THREE_TO_ONE_MAP[inner]) {
-          tokens.push(THREE_TO_ONE_MAP[inner]);
-        } else if (inner.length === 1 && CANONICAL_ONE_LETTER_SET.has(inner)) {
-          tokens.push(inner);
-        } else if (inner.includes('NAL') || inner.includes('CPA') || inner.includes('PAL') || inner.includes('APH')) {
-          tokens.push('F');
-        } else if (inner.includes('HARG')) {
-          tokens.push('R');
-        } else if (inner.startsWith('Y(')) {
-          tokens.push('Y');
-        } else if (inner.startsWith('S(')) {
-          tokens.push('S');
+        const resolved = resolveDParenToken(dParenMatch[1]);
+        if (resolved) {
+          if (resolved === 'KLAKLAK') {
+            for (const ch of 'KLAKLAK') tokens.push(ch);
+          } else {
+            tokens.push(resolved);
+          }
         } else {
-          tokens.push('X');
+          unrecognized.push(p);
         }
         continue;
       }
@@ -523,17 +633,11 @@ function normalizeSequence(rawSeq, peptideMeta = null) {
       // Resíduos entre colchetes [Nle], [d-Phe], [Aib]
       const bracketMatch = p.match(/^\[(.+)\]$/);
       if (bracketMatch) {
-        let inner = bracketMatch[1].replace(/_/g, '-');
-        if (inner.toLowerCase().startsWith('d-') || inner.toLowerCase().startsWith('d_')) {
-          inner = inner.substring(2);
-        }
-        const innerUp = inner.toUpperCase();
-        if (THREE_TO_ONE_MAP[innerUp]) {
-          tokens.push(THREE_TO_ONE_MAP[innerUp]);
-        } else if (innerUp.length === 1 && CANONICAL_ONE_LETTER_SET.has(innerUp)) {
-          tokens.push(innerUp);
+        const resolved = resolveBracketToken(bracketMatch[1]);
+        if (resolved) {
+          tokens.push(resolved);
         } else {
-          tokens.push('X');
+          unrecognized.push(p);
         }
         continue;
       }
@@ -611,7 +715,30 @@ function normalizeSequence(rawSeq, peptideMeta = null) {
     if ((s[i] === 'K' || s[i] === 'k') && i + 1 < s.length && s[i + 1] === '(') {
       const endP = s.indexOf(')', i + 1);
       if (endP !== -1) {
-        cleanTokens.push('K');
+        const mod = s.substring(i + 2, endP);
+        if (isRecognizedLysModification(mod)) {
+          cleanTokens.push('K');
+        } else {
+          unrecognized.push(s.substring(i, endP + 1));
+        }
+        i = endP + 1;
+        continue;
+      }
+    }
+    if ((s[i] === 'd' || s[i] === 'D') && i + 1 < s.length && s[i + 1] === '(') {
+      const endP = s.indexOf(')', i + 1);
+      if (endP !== -1) {
+        const inner = s.substring(i + 2, endP);
+        const resolved = resolveDParenToken(inner);
+        if (resolved) {
+          if (resolved === 'KLAKLAK') {
+            for (const ch of 'KLAKLAK') cleanTokens.push(ch);
+          } else {
+            cleanTokens.push(resolved);
+          }
+        } else {
+          unrecognized.push(s.substring(i, endP + 1));
+        }
         i = endP + 1;
         continue;
       }
@@ -619,11 +746,13 @@ function normalizeSequence(rawSeq, peptideMeta = null) {
     if (s[i] === '[') {
       const endB = s.indexOf(']', i);
       if (endB !== -1) {
-        const content = s.substring(i + 1, endB).toUpperCase();
-        if (content.includes('NLE')) cleanTokens.push('J');
-        else if (content.includes('PHE')) cleanTokens.push('F');
-        else if (content.includes('AIB')) cleanTokens.push('X');
-        else cleanTokens.push('X');
+        const inner = s.substring(i + 1, endB);
+        const resolved = resolveBracketToken(inner);
+        if (resolved) {
+          cleanTokens.push(resolved);
+        } else {
+          unrecognized.push(s.substring(i, endB + 1));
+        }
         i = endB + 1;
         continue;
       }
@@ -972,7 +1101,7 @@ const STABILITY_SOURCES = [
       },
       {
         num: 10,
-        title: "FDA / DailyMed (NDA 021060). PRIALT (ziconotide) solution for intrathecal infusion. Bomba SynchroMed II: 14 dias 1º enchimento; reenchimento não diluído 84 dias; diluído 40 dias (vs EMA SmPC: 14/60 dias).",
+        title: "FDA / DailyMed (NDA 021060). PRIALT (ziconotide) solution for intrathecal infusion. Bomba SynchroMed II: 14 dias 1º enchimento; reenchimento não diluído 84 dias; diluído 40 dias a 31°C (vs EMA SmPC: 14/60 dias a 37°C).",
         linkText: "dailymed.nlm.nih.gov",
         url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fda-prialt-021060"
       },

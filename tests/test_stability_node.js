@@ -46,7 +46,15 @@ const mandatoryCases = [
   // Novos casos obrigatórios da auditoria final:
   { id: 'foobar-test', expected: 'incomplete', seq: 'Ala-Gly-Foobar-Lys' },
   { id: 'unbalanced-delim', expected: 'incomplete', seq: 'Ala-Gly-[Nle' },
-  { id: 'abcz-test', expected: 'incomplete', seq: 'ABCZ' }
+  { id: 'abcz-test', expected: 'incomplete', seq: 'ABCZ' },
+  // Casos obrigatórios do Hotfix Final:
+  { id: 'bracket-foobar', expected: 'incomplete', seq: 'Ala-[Foobar]-Gly' },
+  { id: 'd-paren-foobar', expected: 'incomplete', seq: 'd(Foobar)-Ala-Gly' },
+  { id: 'lys-bogus', expected: 'incomplete', seq: 'Ala-Lys(Bogus)-Gly' },
+  { id: 'bracket-nle-valid', expected: 3, seq: 'Ala-[Nle]-Gly' },
+  { id: 'bracket-aib-valid', expected: 3, seq: 'Ala-[Aib]-Gly' },
+  { id: 'd-f-valid', expected: 3, seq: 'd(F)-Ala-Gly' },
+  { id: 'd-w-valid', expected: 3, seq: 'd(W)-Ala-Gly' }
 ];
 
 for (const c of mandatoryCases) {
@@ -154,21 +162,28 @@ const zicoProfile = global.STABILITY_KNOWN_PROFILES['ziconotide'];
 assert(zicoProfile, 'Perfil de ziconotide deve existir em STABILITY_KNOWN_PROFILES');
 const notice = zicoProfile.regulatoryStorageNotice;
 
-// FDA DailyMed 2026: 14 dias primeiro enchimento, 84 dias reenchimento não diluído, 40 dias reenchimento diluído
+// FDA DailyMed 2026: 14 dias primeiro enchimento, 84 dias reenchimento não diluído, 40 dias reenchimento diluído a 31°C
 assert(notice.includes('14 dias'), 'Prialt notice deve citar 14 dias para primeiro enchimento');
 assert(notice.includes('84 dias'), 'Prialt notice deve citar 84 dias para reenchimento não diluído (FDA DailyMed)');
 assert(notice.includes('40 dias'), 'Prialt notice deve citar 40 dias para reenchimento diluído (FDA DailyMed)');
+assert(notice.includes('31°C') || notice.includes('31 °C'), 'Prialt notice deve citar 31°C para FDA DailyMed');
+
+// EMA SmPC: 14 dias primeiro enchimento, até 60 dias reenchimentos subsequentes a 37°C
 assert(notice.includes('60 dias'), 'Prialt notice deve citar até 60 dias (EMA SmPC)');
+assert(notice.includes('37°C') || notice.includes('37 °C'), 'Prialt notice deve citar 37°C para EMA SmPC');
+
 assert(notice.includes('DailyMed') || notice.includes('FDA NDA 021060'), 'Prialt notice deve citar DailyMed/FDA');
 assert(notice.includes('SmPC') || notice.includes('EMA'), 'Prialt notice deve citar EMA SmPC');
-console.log('PASS: Prialt / Ziconotida atende integralmente às especificações FDA DailyMed e EMA SmPC.');
+console.log('PASS: Prialt / Ziconotida atende integralmente às especificações FDA DailyMed (31°C) e EMA SmPC (37°C).');
 
 console.log('=== 7. TESTE DE INFORMAÇÕES MICROBIOLÓGICAS E SOLVENTES ===');
 const bacWater = global.STABILITY_SOLVENTS.find(s => s.id === 'bac_water');
 const sterileWater = global.STABILITY_SOLVENTS.find(s => s.id === 'sterile_water');
+const saline = global.STABILITY_SOLVENTS.find(s => s.id === 'saline_09');
 
 assert(bacWater, 'bac_water deve existir');
 assert(sterileWater, 'sterile_water deve existir');
+assert(saline, 'saline_09 deve existir');
 
 // Não deve generalizar refrigeração a 2-8°C para todos os frascos multidose
 assert(!bacWater.description.includes('28 dias sob 2°C a 8°C como teto'), 'Não deve conter a regra antiga generalizada de 28 dias a 2-8°C como regra geral da USP 797');
@@ -177,10 +192,16 @@ assert(bacWater.description.includes('não são universalmente restritas a 2–8
 // Não deve declarar prazo genérico universal de 24h para água estéril
 assert(!sterileWater.description.includes('recomendam uso imediato ou descarte em até 24 horas'), 'Não deve conter descarte genérico em 24h para WFI');
 assert(sterileWater.description.includes('inexiste prazo genérico universal de armazenamento de 24 horas'), 'Deve esclarecer inexistência de prazo genérico de 24h');
+
+// Soro fisiológico não deve ter descarte universal de 24h
+assert(!saline.description.includes('exige descarte em até 24h'), 'Soro fisiológico não deve ter descarte universal de 24h');
+assert(saline.description.includes('Inexiste regra de descarte universal em 24 horas'), 'Soro fisiológico deve esclarecer ausência de descarte universal em 24h');
+assert(saline.description.includes('depende estritamente do produto, da apresentação'), 'Soro fisiológico deve declarar dependência do produto e apresentação');
+
 // Deve afirmar que estabilidade química, esterilidade microbiológica e potência biológica são grandezas distintas
 assert(bacWater.description.includes('potência biológica'), 'bac_water deve citar potência biológica');
 assert(sterileWater.description.includes('Estabilidade química, esterilidade microbiológica e potência biológica são grandezas farmacêuticas completamente distintas e independentes'), 'sterile_water deve enfatizar distinção conceitual');
-console.log('PASS: Informações microbiológicas saneadas e tecnicamente acuradas.');
+console.log('PASS: Informações microbiológicas saneadas e tecnicamente acuradas (sem regras genéricas de 24h em WFI ou Soro).');
 
 console.log('\n========================================');
 console.log('TODOS OS TESTES EM NODE.JS PASSARAM COM SUCESSO (100% OK)');

@@ -121,7 +121,14 @@ class TestStabilityV1Remediation(unittest.TestCase):
           { id: 'desmopressin', expected: 9, seq: 'Mpr-Y-F-Q-N-C-P-d(R)-G-NH2' },
           { id: 'foobar-test', expected: 'incomplete', seq: 'Ala-Gly-Foobar-Lys' },
           { id: 'unbalanced-delim', expected: 'incomplete', seq: 'Ala-Gly-[Nle' },
-          { id: 'abcz-test', expected: 'incomplete', seq: 'ABCZ' }
+          { id: 'abcz-test', expected: 'incomplete', seq: 'ABCZ' },
+          { id: 'bracket-foobar', expected: 'incomplete', seq: 'Ala-[Foobar]-Gly' },
+          { id: 'd-paren-foobar', expected: 'incomplete', seq: 'd(Foobar)-Ala-Gly' },
+          { id: 'lys-bogus', expected: 'incomplete', seq: 'Ala-Lys(Bogus)-Gly' },
+          { id: 'bracket-nle-valid', expected: 3, seq: 'Ala-[Nle]-Gly' },
+          { id: 'bracket-aib-valid', expected: 3, seq: 'Ala-[Aib]-Gly' },
+          { id: 'd-f-valid', expected: 3, seq: 'd(F)-Ala-Gly' },
+          { id: 'd-w-valid', expected: 3, seq: 'd(W)-Ala-Gly' }
         ];
 
         const results = cases.map(c => {
@@ -235,8 +242,14 @@ class TestStabilityV1Remediation(unittest.TestCase):
         self.assertIn("84 dias", stab_data)
         self.assertIn("40 dias", stab_data)
         self.assertIn("60 dias", stab_data)
+        self.assertIn("31°C", stab_data)
+        self.assertIn("37°C", stab_data)
         self.assertTrue("DailyMed" in stab_data or "NDA 021060" in stab_data)
         self.assertIn("SmPC", stab_data)
+
+        # Soro fisiológico sem descarte universal genérico de 24h
+        self.assertNotIn("Ausência de conservante exige descarte em até 24h", stab_data)
+        self.assertIn("Inexiste regra de descarte universal em 24 horas", stab_data)
 
 if __name__ == "__main__":
     unittest.main()
