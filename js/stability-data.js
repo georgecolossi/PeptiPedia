@@ -78,17 +78,17 @@ const STABILITY_SOLVENTS = [
     id: "bac_water",
     name: "Água bacteriostática (BAC 0,9% álcool benzílico)",
     factor: 1.0,
-    description: "Água estéril contendo álcool benzílico a 0,9% para inibição do crescimento bacteriano e fúngico em frascos multidose puncionados. A farmacopeia USP <797> estabelece 28 dias sob 2°C a 8°C como teto microbiológico operacional geral de uso após a punção inicial, salvo especificação do fabricante. A recomendação da USP <797> NÃO constitui uma garantia universal de esterilidade (que depende da integridade do lacre e técnica asséptica) nem de estabilidade química ou potência biológica do peptídeo (que sofre hidrólise, desamidação ou oxidação intrínseca contínua independentemente do conservante).",
+    description: "Água estéril contendo álcool benzílico a 0,9% para inibição de crescimento microbiano em recipientes multidose puncionados. A farmacopeia USP <797> estabelece 28 dias como prazo limite padrão de uso (Beyond-Use Date - BUD) pós-punção para frascos multidose, a menos que especificado de forma diferente pelo fabricante em rotulagem oficial (as condições térmicas de conservação dependem da formulação individual e não são universalmente restritas a 2–8°C para todos os medicamentos). A contenção antimicrobiana conferida pelo bacteriostático NÃO constitui garantia de esterilidade permanente e NÃO assegura integridade química nem potência biológica da molécula — conceitos farmacêuticos distintos que sofrem degradação intrínseca contínua independentemente da barreira microbiológica.",
     isReference: true,
-    microbialRisk: "Teto operacional de 28 dias sob 2–8°C para contenção microbiológica (USP <797>); não garante integridade química nem retenção de esterilidade permanente."
+    microbialRisk: "BUD padrão de 28 dias pós-punção (USP <797>) salvo especificação do fabricante; não garante integridade química, esterilidade permanente nem potência biológica."
   },
   {
     id: "sterile_water",
     name: "Água estéril para injeção (WFI / sem conservante)",
     factor: 1.0,
-    description: "Veículo estéril isento de qualquer agente antimicrobiano. Não possui barreira contra proliferação microbiana pós-punção. Diretrizes farmacopeicas recomendam uso imediato ou descarte em até 24 horas sob refrigeração rigorosa. A cinética química intrínseca da molécula permanece governed pelas ligações peptídicas, mas o risco microbiológico decai criticamente em curto prazo.",
+    description: "Veículo estéril isento de qualquer agente antimicrobiano ou conservante. Uma vez puncionado ou reconstituído fora de ambiente asséptico controlado (ISO Classe 5), não possui barreira contra proliferação microbiana. Diretrizes farmacopeicas recomendam uso imediato; inexiste prazo genérico universal de armazenamento de 24 horas para qualquer preparação, devendo-se seguir a validação específica de cada bula homologada (desde descarte imediato até períodos estritamente delimitados sob refrigeração). Estabilidade química, esterilidade microbiológica e potência biológica são grandezas farmacêuticas completamente distintas e independentes.",
     isReference: false,
-    microbialRisk: "Crítico após abertura: risco de contaminação microbiológica exponencial; recomendação farmacopeica de descarte em até 24h."
+    microbialRisk: "Crítico após abertura: veículo sem conservante; requer uso imediato ou conforme especificação de bula validada (não há prazo genérico de 24h)."
   },
   {
     id: "saline_09",
@@ -205,7 +205,7 @@ const STABILITY_KNOWN_PROFILES = {
     name: "Ziconotida",
     compoundStatus: COMPOUND_EVIDENCE_STATUS.REGISTERED_LABEL,
     chartOrigin: CHART_DATA_ORIGIN.EXPLORATORY_SIMULATION,
-    regulatoryStorageNotice: "Bulas Oficiais Aprovadas FDA / EMA (Prialt®):\n• Solução aquosa injetável estéril para infusão intratecal contínua, sem conservantes, tamponada em pH fracamente ácido (pH 4,0 a 4,5).\n• Armazenamento padrão de frascos: Conservar sob refrigeração rigorosa de 2°C a 8°C na embalagem original contra luz. Não congelar. Descartar frações remanescentes imediatamente após aspiração.\n• Diretrizes Regulatórias em Bomba Intratecal (SynchroMed II / Medtronic):\n  - Especificação EMA (SmPC Europeu): O primeiro enchimento da bomba (first fill) tem prazo máximo homologado de 14 dias de permanência no reservatório (para saturação de superfícies e equilíbrio do sistema). Os enchimentos subsequentes (subsequent fills) são homologados para permanência de até 60 dias no reservatório sob temperatura corpórea (31°C).\n  - Especificação US FDA (Prescribing Information): Homologa permanência de até 60 dias a 31°C no sistema SynchroMed II com Prialt não diluído (25 ou 100 mcg/mL) ou diluído em cloreto de sódio 0,9% estéril sem conservante em condições estritas de assepsia hospitalar.\n*Nota Técnica: Validade regulatória estritamente atrelada ao sistema de bomba mecânica e ambiente anaeróbio; totalmente inaplicável a frascos multidose extemporâneos.",
+    regulatoryStorageNotice: "Bulas Oficiais Aprovadas FDA (DailyMed / NDA 021060 atualizada 2026) & EMA (SmPC Prialt®):\n• Solução aquosa injetável estéril para infusão intratecal contínua, isenta de conservantes, tamponada em pH fracamente ácido (pH 4,0 a 4,5).\n• Armazenamento padrão de frascos/ampolas: Conservar sob refrigeração de 2°C a 8°C na embalagem original protegida da luz. Proibido congelar. Descartar frações remanescentes imediatamente após aspiração hospitalar.\n• Diretrizes Regulatórias em Bomba Intratecal Mecânica (SynchroMed® II / Medtronic):\n  - Bula Americana FDA / DailyMed (NDA 021060, revisada 2026):\n    * Primeiro Enchimento (Initial pump fill): Deve ser substituído obrigatoriamente após 14 dias na condição indicada (devido à adsorção inicial de superfície ao reservatório virgem de titânio).\n    * Reenchimento Não Diluído (Undiluted refill - Prialt 100 mcg/mL): Estabilidade físico-química homologada por até 84 dias a 31°C no reservatório da bomba.\n    * Reenchimento Diluído (Diluted refill com Cloreto de Sódio 0,9% estéril sem conservante): Homologado por até 40 dias a 31°C.\n    * Não existe regra única de 60 dias pela FDA; os prazos dependem da diluição e da concentração no sistema mecânico.\n  - Especificação Europeia EMA (SmPC Prialt):\n    * Primeiro enchimento da bomba: Limite de 14 dias no reservatório.\n    * Enchimentos subsequentes: Homologados para permanência de até 60 dias no reservatório a 31°C sob as condições documentadas na SmPC.\n*Nota Técnica: Validade regulatória estritamente atrelada a bomba mecânica dedicada sob assepsia cirúrgica; inaplicável a frascos multidose.",
     experimentalSummary: "Peptídeo de 25 aminoácidos derivado da conotoxina ômega-MVIIA com 3 pontes dissulfeto cruzadas altamente organizadas (Cys1-Cys16, Cys8-Cys20, Cys15-Cys25). As pontes conferem rigidez estrutural, mas o peptídeo é altamente vulnerável a embaralhamento de dissulfeto (disulfide scrambling) e oxidação se o pH for elevado acima de 5,5.",
     freezerAssessment: "Não congelar as ampolas. O congelamento da solução altera a conformação terciária das 3 pontes dissulfeto cruzadas e precipita a conotoxina."
   },
@@ -274,7 +274,7 @@ const THREE_TO_ONE_MAP = {
   '4APH': 'F', '2-NAL': 'F', '2_NAL': 'F', NAL: 'F', 'BETA-NAL': 'F', 'BETA_NAL': 'F',
   '4-CPA': 'F', '4_CPA': 'F', CPA: 'F', '3-PAL': 'F', '3_PAL': 'F', PAL: 'F',
   THROL: 'T', 'THR(OL)': 'T', 'THR-OL': 'T', 'THR_OL': 'T',
-  PYR: 'X', PYROGLU: 'X', MPR: 'C',
+  PYR: 'X', PYROGLU: 'X', MPR: 'c',
   'ALPHA-ME-LEU': 'L', 'ALPHA_ME_LEU': 'L',
   '2-ME-D-TRP': 'W', '2_ME_D_TRP': 'W',
   'GAMMA-GLU': 'E', 'GAMMA_GLU': 'E'
@@ -282,7 +282,7 @@ const THREE_TO_ONE_MAP = {
 
 const CANONICAL_ONE_LETTER_SET = new Set([
   'A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y',
-  'X', 'J', 'O', 'U'
+  'X', 'J', 'O', 'U', 'c'
 ]);
 
 // ============================================================================
@@ -322,7 +322,37 @@ function normalizeSequence(rawSeq, peptideMeta = null) {
 
   let s = rawSeq.trim();
 
-  // 1. Detectar resíduos indefinidos ou tokens desconhecidos (?)
+  // 1. Verificação de delimitadores desbalanceados ([ ], ( ))
+  let bracketCount = 0;
+  let parenCount = 0;
+  let hasUnbalancedDelimiters = false;
+  for (let idx = 0; idx < s.length; idx++) {
+    const ch = s[idx];
+    if (ch === '[') bracketCount++;
+    else if (ch === ']') {
+      bracketCount--;
+      if (bracketCount < 0) hasUnbalancedDelimiters = true;
+    } else if (ch === '(') parenCount++;
+    else if (ch === ')') {
+      parenCount--;
+      if (parenCount < 0) hasUnbalancedDelimiters = true;
+    }
+  }
+  if (bracketCount !== 0 || parenCount !== 0) {
+    hasUnbalancedDelimiters = true;
+  }
+
+  if (hasUnbalancedDelimiters) {
+    return {
+      status: "incomplete",
+      reason: "Sequência com delimitadores estruturais desbalanceados (colchetes ou parênteses)",
+      cleanLength: 0,
+      sequence: "INCOMPLETE",
+      unrecognizedTokens: ["[desbalanceado]"]
+    };
+  }
+
+  // 2. Detectar resíduos indefinidos ou tokens desconhecidos (?)
   if (s.includes('?')) {
     return {
       status: "incomplete",
@@ -526,7 +556,7 @@ function normalizeSequence(rawSeq, peptideMeta = null) {
         continue;
       }
       if (pNorm === 'MPR') {
-        tokens.push('C');
+        tokens.push('c');
         continue;
       }
       if (pNorm === 'PYR' || pNorm === 'PYROGLU') {
@@ -535,16 +565,25 @@ function normalizeSequence(rawSeq, peptideMeta = null) {
       }
 
       // Bloco de letras de 1 letra canônicas (ex.: Apraglutida ou Orexina A)
-      if (Array.from(p).every(ch => CANONICAL_ONE_LETTER_SET.has(ch.toUpperCase()))) {
+      if (Array.from(p).every(ch => CANONICAL_ONE_LETTER_SET.has(ch))) {
         for (const ch of p) {
-          tokens.push(ch.toUpperCase());
+          tokens.push(ch);
         }
         continue;
       }
 
-      // Token não reconhecido
+      // Token não reconhecido: NUNCA ignorar nem aprovar como válido
       unrecognized.push(p);
-      tokens.push('X');
+    }
+
+    if (unrecognized.length > 0) {
+      return {
+        status: "incomplete",
+        reason: `Sequência com resíduos ou tokens não reconhecidos: ${unrecognized.join(', ')}`,
+        cleanLength: 0,
+        sequence: "INCOMPLETE",
+        unrecognizedTokens: unrecognized
+      };
     }
 
     if (tokens.length === 0) {
@@ -553,7 +592,7 @@ function normalizeSequence(rawSeq, peptideMeta = null) {
         reason: "Nenhum resíduo válido identificado",
         cleanLength: 0,
         sequence: "",
-        unrecognizedTokens: unrecognized
+        unrecognizedTokens: []
       };
     }
 
@@ -561,7 +600,7 @@ function normalizeSequence(rawSeq, peptideMeta = null) {
       status: "valid",
       cleanLength: tokens.length,
       sequence: tokens.join(''),
-      unrecognizedTokens: unrecognized
+      unrecognizedTokens: []
     };
   }
 
@@ -596,14 +635,27 @@ function normalizeSequence(rawSeq, peptideMeta = null) {
       i++;
       continue;
     }
-    const up = s[i].toUpperCase();
-    if (CANONICAL_ONE_LETTER_SET.has(up)) {
-      cleanTokens.push(up);
+    const ch = s[i];
+    if (CANONICAL_ONE_LETTER_SET.has(ch)) {
+      cleanTokens.push(ch);
+      i++;
+    } else if (CANONICAL_ONE_LETTER_SET.has(ch.toUpperCase())) {
+      cleanTokens.push(ch.toUpperCase());
       i++;
     } else {
-      unrecognized.push(s[i]);
+      unrecognized.push(ch);
       i++;
     }
+  }
+
+  if (unrecognized.length > 0) {
+    return {
+      status: "incomplete",
+      reason: `Sequência com resíduos ou tokens não reconhecidos: ${unrecognized.join(', ')}`,
+      cleanLength: 0,
+      sequence: "INCOMPLETE",
+      unrecognizedTokens: unrecognized
+    };
   }
 
   if (cleanTokens.length === 0) {
@@ -612,7 +664,7 @@ function normalizeSequence(rawSeq, peptideMeta = null) {
       reason: "Nenhum resíduo válido identificado",
       cleanLength: 0,
       sequence: "",
-      unrecognizedTokens: unrecognized
+      unrecognizedTokens: []
     };
   }
 
@@ -620,7 +672,7 @@ function normalizeSequence(rawSeq, peptideMeta = null) {
     status: "valid",
     cleanLength: cleanTokens.length,
     sequence: cleanTokens.join(''),
-    unrecognizedTokens: unrecognized
+    unrecognizedTokens: []
   };
 }
 
@@ -668,19 +720,21 @@ function analyzeMolecularVulnerabilities(peptide) {
 
   const normSeq = normResult.sequence;
 
-  // 1. Oxidação Potencial (Met, Cys, Trp, His)
+  // 1. Oxidação Potencial (Met, Cys, Mpr, Trp, His)
   const metCount = (normSeq.match(/M/g) || []).length;
   const cysCount = (normSeq.match(/C/g) || []).length;
+  const mprCount = (normSeq.match(/c/g) || []).length;
   const trpCount = (normSeq.match(/W/g) || []).length;
   const hisCount = (normSeq.match(/H/g) || []).length;
 
   let oxDetails = [];
   if (metCount > 0) oxDetails.push(`${metCount}x Met (oxidação a sulfóxido de metionina)`);
-  if (cysCount > 0) oxDetails.push(`${cysCount}x Cys (pontes dissulfeto ou troca de dissulfeto)`);
+  if (cysCount > 0) oxDetails.push(`${cysCount}x Cys (cisteína com grupo alfa-amino; tiol em ponte dissulfeto ou troca)`);
+  if (mprCount > 0) oxDetails.push(`${mprCount}x Mpr (resíduo 3-mercaptopropionil / deamino-Cys com tiol em ponte dissulfeto)`);
   if (trpCount > 0) oxDetails.push(`${trpCount}x Trp (sensibilidade a foto-oxidação)`);
   if (hisCount > 0) oxDetails.push(`${hisCount}x His (oxidação mediada por oxigênio singleto/metais)`);
 
-  const hasOxAlert = (metCount > 0 || cysCount > 0 || trpCount > 0 || hisCount > 0);
+  const hasOxAlert = (metCount > 0 || cysCount > 0 || mprCount > 0 || trpCount > 0 || hisCount > 0);
   const oxBadge = hasOxAlert ? "ALERTA ESTRUTURAL POTENCIAL" : "SEM ALERTA CRÍTICO MAPEADO";
   const oxClass = hasOxAlert
     ? "text-amber-300 bg-amber-950/60 border-amber-800/80"
@@ -744,7 +798,7 @@ function analyzeMolecularVulnerabilities(peptide) {
     oxDetails = ["Íon Cu(II) quelado pode sofrer redução e catalisar oxidação de histidina adjacente; sensível a agentes redutores."];
     aggDetails = ["Risco de precipitação de hidróxido de cobre em meio básico (pH > 7,5)."];
   } else if (peptide.id === "ziconotide") {
-    oxDetails = ["3 pontes dissulfeto cruzadas (Cys1-Cys16, Cys8-Cys20, Cys15-Cys25); vulnerável a troca intramolecular de dissulfeto (scrambling) em pH > 5,5."];
+    oxDetails = ["6x Cys em 3 pontes dissulfeto cruzadas (Cys1-Cys16, Cys8-Cys20, Cys15-Cys25); vulnerável a troca intramolecular de dissulfeto (scrambling) em pH > 5,5."];
   } else if (peptide.id === "teriparatide") {
     oxDetails = ["Oxidação de Met8 e Met18 a sulfóxidos extingue afinidade biológica pelo receptor PTH1R."];
   }
@@ -918,9 +972,9 @@ const STABILITY_SOURCES = [
       },
       {
         num: 10,
-        title: "FDA. PRIALT (ziconotide) solution for intrathecal infusion — Prescribing Information. Armazenamento 2°C a 8°C; bomba até 60 dias.",
-        linkText: "accessdata.fda.gov",
-        url: "https://www.accessdata.fda.gov/drugsatfda_docs/label/2018/021060s018lbl.pdf"
+        title: "FDA / DailyMed (NDA 021060). PRIALT (ziconotide) solution for intrathecal infusion. Bomba SynchroMed II: 14 dias 1º enchimento; reenchimento não diluído 84 dias; diluído 40 dias (vs EMA SmPC: 14/60 dias).",
+        linkText: "dailymed.nlm.nih.gov",
+        url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fda-prialt-021060"
       },
       {
         num: 11,

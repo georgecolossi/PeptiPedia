@@ -120,8 +120,10 @@ def run_e2e_tests():
 
         zicon_note = page.locator("#stab-pep-note-box").inner_text()
         assert "Prialt" in zicon_note
-        assert "SynchroMed II" in zicon_note
+        assert "SynchroMed" in zicon_note
         assert "60 dias" in zicon_note
+        assert "84 dias" in zicon_note
+        assert "40 dias" in zicon_note
 
         # 7. Testar Octreotida (8 resíduos, terminador Thr(ol))
         print("[TEST 6] Teste da Octreotida: octapeptídeo cíclico...")

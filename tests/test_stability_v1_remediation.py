@@ -118,7 +118,10 @@ class TestStabilityV1Remediation(unittest.TestCase):
           { id: 'unknown-2', expected: 'incomplete', seq: '????' },
           { id: 'tb-500', expected: 'incomplete', seq: 'Ac-Leu-Lys-Lys-Thr-Glu-Thr-Gln (Fragmento 17-23, PM 889,0 g/mol). Precursor completo Timosina Beta-4 (43 aa, PM 4963,5 g/mol): Ac-Ser-Asp-Lys-Pro-Asp-Met-Ala-Glu-Ile-Glu-Lys-Phe-Asp-Lys-Ser-Lys-Leu-Lys-Lys-Thr-Glu-Thr-Gln-Glu-Lys-Asn-Pro-Leu-Pro-Ser-Lys-Glu-Thr-Ile-Glu-Gln-Glu-Lys-Gln-Ala-Gly-Glu-Ser', meta: { id: 'tb-500' } },
           { id: 'atosiban', expected: 9, seq: 'Mpr-d(Y(Et))-I-T-N-C-P-Orn-G-NH2' },
-          { id: 'desmopressin', expected: 9, seq: 'Mpr-Y-F-Q-N-C-P-d(R)-G-NH2' }
+          { id: 'desmopressin', expected: 9, seq: 'Mpr-Y-F-Q-N-C-P-d(R)-G-NH2' },
+          { id: 'foobar-test', expected: 'incomplete', seq: 'Ala-Gly-Foobar-Lys' },
+          { id: 'unbalanced-delim', expected: 'incomplete', seq: 'Ala-Gly-[Nle' },
+          { id: 'abcz-test', expected: 'incomplete', seq: 'ABCZ' }
         ];
 
         const results = cases.map(c => {
@@ -228,7 +231,12 @@ class TestStabilityV1Remediation(unittest.TestCase):
 
         self.assertIn("Prialt", stab_data)
         self.assertIn("SynchroMed II", stab_data)
+        self.assertIn("14 dias", stab_data)
+        self.assertIn("84 dias", stab_data)
+        self.assertIn("40 dias", stab_data)
         self.assertIn("60 dias", stab_data)
+        self.assertTrue("DailyMed" in stab_data or "NDA 021060" in stab_data)
+        self.assertIn("SmPC", stab_data)
 
 if __name__ == "__main__":
     unittest.main()

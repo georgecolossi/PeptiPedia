@@ -16,7 +16,7 @@ pepCode += '; global.PEPTIDES_DATABASE = PEPTIDES_DATABASE;';
 eval(pepCode);
 
 let stabDataCode = fs.readFileSync(path.join(ROOT, 'js/stability-data.js'), 'utf8');
-stabDataCode += '; global.STABILITY_SCENARIOS = STABILITY_SCENARIOS; global.STABILITY_SOLVENTS = STABILITY_SOLVENTS; global.STABILITY_KNOWN_PROFILES = STABILITY_KNOWN_PROFILES; global.COMPOUND_EVIDENCE_STATUS = COMPOUND_EVIDENCE_STATUS; global.CHART_DATA_ORIGIN = CHART_DATA_ORIGIN; global.normalizeSequence = normalizeSequence;';
+stabDataCode += '; global.STABILITY_SCENARIOS = STABILITY_SCENARIOS; global.STABILITY_SOLVENTS = STABILITY_SOLVENTS; global.STABILITY_KNOWN_PROFILES = STABILITY_KNOWN_PROFILES; global.COMPOUND_EVIDENCE_STATUS = COMPOUND_EVIDENCE_STATUS; global.CHART_DATA_ORIGIN = CHART_DATA_ORIGIN; global.normalizeSequence = normalizeSequence; global.analyzeMolecularVulnerabilities = analyzeMolecularVulnerabilities;';
 eval(stabDataCode);
 
 let stabClockCode = fs.readFileSync(path.join(ROOT, 'js/stability.js'), 'utf8');
@@ -42,7 +42,11 @@ const mandatoryCases = [
   { id: 'unknown-2', expected: 'incomplete', seq: '????' },
   { id: 'tb-500', expected: 'incomplete', seq: 'Ac-Leu-Lys-Lys-Thr-Glu-Thr-Gln (Fragmento 17-23, PM 889,0 g/mol). Precursor completo Timosina Beta-4 (43 aa, PM 4963,5 g/mol): Ac-Ser-Asp-Lys-Pro-Asp-Met-Ala-Glu-Ile-Glu-Lys-Phe-Asp-Lys-Ser-Lys-Leu-Lys-Lys-Thr-Glu-Thr-Gln-Glu-Lys-Asn-Pro-Leu-Pro-Ser-Lys-Glu-Thr-Ile-Glu-Gln-Glu-Lys-Gln-Ala-Gly-Glu-Ser', meta: { id: 'tb-500' } },
   { id: 'atosiban', expected: 9, seq: 'Mpr-d(Y(Et))-I-T-N-C-P-Orn-G-NH2' },
-  { id: 'desmopressin', expected: 9, seq: 'Mpr-Y-F-Q-N-C-P-d(R)-G-NH2' }
+  { id: 'desmopressin', expected: 9, seq: 'Mpr-Y-F-Q-N-C-P-d(R)-G-NH2' },
+  // Novos casos obrigatórios da auditoria final:
+  { id: 'foobar-test', expected: 'incomplete', seq: 'Ala-Gly-Foobar-Lys' },
+  { id: 'unbalanced-delim', expected: 'incomplete', seq: 'Ala-Gly-[Nle' },
+  { id: 'abcz-test', expected: 'incomplete', seq: 'ABCZ' }
 ];
 
 for (const c of mandatoryCases) {
@@ -50,10 +54,12 @@ for (const c of mandatoryCases) {
   if (c.expected === 'incomplete') {
     assert.strictEqual(r.status, 'incomplete', `Esperado status incomplete para ${c.id}`);
     assert.strictEqual(r.cleanLength, 0, `Comprimento limpo deve ser 0 para ${c.id}`);
+    assert(r.unrecognizedTokens.length > 0 || r.reason, `Deve reportar token desconhecido ou motivo para ${c.id}`);
     console.log(`PASS: ${c.id} -> incomplete detectado corretamente`);
   } else {
     assert.strictEqual(r.status, 'valid', `Esperado status valid para ${c.id}`);
     assert.strictEqual(r.cleanLength, c.expected, `Comprimento de ${c.id} deve ser ${c.expected}, obtido ${r.cleanLength}`);
+    assert.strictEqual(r.unrecognizedTokens.length, 0, `Nenhum token desconhecido permitido em ${c.id}`);
     console.log(`PASS: ${c.id} -> ${r.cleanLength} resíduos (esperado: ${c.expected})`);
   }
 }
@@ -106,6 +112,7 @@ for (const p of global.PEPTIDES_DATABASE) {
   if (r.status === 'valid') {
     validCount++;
     assert(r.cleanLength > 0, `Peptídeo válido ${p.id} deve ter cleanLength > 0`);
+    assert.strictEqual(r.unrecognizedTokens.length, 0, `Peptídeo válido ${p.id} não pode ter tokens desconhecidos`);
   } else {
     incompleteCount++;
     assert(r.cleanLength === 0, `Peptídeo incompleto ${p.id} deve ter cleanLength == 0`);
@@ -115,7 +122,65 @@ for (const p of global.PEPTIDES_DATABASE) {
 
 assert.strictEqual(validCount, 94, 'Devem existir exatamente 94 compostos com sequência válida');
 assert.strictEqual(incompleteCount, 20, 'Devem existir exatamente 20 compostos incompletos/confidenciais');
-console.log(`PASS: 114 compostos avaliados com precisão (94 válidos, 20 incompletos com justificativa científica).`);
+console.log(`PASS: 114 compostos avaliados com precisão (94 válidos com 0 tokens desconhecidos, 20 incompletos com justificativa científica).`);
+
+console.log('=== 5. TESTE DE DISTINÇÃO MPR VS CYS NAS VULNERABILIDADES ===');
+const atosibanPeptide = global.PEPTIDES_DATABASE.find(p => p.id === 'atosiban');
+const desmoPeptide = global.PEPTIDES_DATABASE.find(p => p.id === 'desmopressin');
+const zicoPeptide = global.PEPTIDES_DATABASE.find(p => p.id === 'ziconotide');
+
+const atosiVuln = analyzeMolecularVulnerabilities(atosibanPeptide);
+const desmoVuln = analyzeMolecularVulnerabilities(desmoPeptide);
+const zicoVuln = analyzeMolecularVulnerabilities(zicoPeptide);
+
+// Atosiban deve ter 1x Cys e 1x Mpr
+assert(atosiVuln.oxidation.desc.includes('1x Cys'), 'Atosiban deve conter 1x Cys');
+assert(atosiVuln.oxidation.desc.includes('1x Mpr'), 'Atosiban deve conter 1x Mpr');
+assert(atosiVuln.oxidation.desc.includes('3-mercaptopropionil'), 'Atosiban deve especificar 3-mercaptopropionil');
+console.log('PASS: Atosiban distingue 1x Cys de 1x Mpr.');
+
+// Desmopressina deve ter 1x Cys e 1x Mpr
+assert(desmoVuln.oxidation.desc.includes('1x Cys'), 'Desmopressina deve conter 1x Cys');
+assert(desmoVuln.oxidation.desc.includes('1x Mpr'), 'Desmopressina deve conter 1x Mpr');
+console.log('PASS: Desmopressina distingue 1x Cys de 1x Mpr.');
+
+// Ziconotida deve ter 6x Cys e 0x Mpr
+assert(zicoVuln.oxidation.desc.includes('6x Cys'), 'Ziconotida deve conter 6x Cys');
+assert(!zicoVuln.oxidation.desc.includes('Mpr'), 'Ziconotida não deve conter Mpr');
+console.log('PASS: Ziconotida mapeia 6x Cys sem confusão com Mpr.');
+
+console.log('=== 6. TESTE DE BULA REGULATÓRIA PRIALT / ZICONOTIDA (FDA / EMA) ===');
+const zicoProfile = global.STABILITY_KNOWN_PROFILES['ziconotide'];
+assert(zicoProfile, 'Perfil de ziconotide deve existir em STABILITY_KNOWN_PROFILES');
+const notice = zicoProfile.regulatoryStorageNotice;
+
+// FDA DailyMed 2026: 14 dias primeiro enchimento, 84 dias reenchimento não diluído, 40 dias reenchimento diluído
+assert(notice.includes('14 dias'), 'Prialt notice deve citar 14 dias para primeiro enchimento');
+assert(notice.includes('84 dias'), 'Prialt notice deve citar 84 dias para reenchimento não diluído (FDA DailyMed)');
+assert(notice.includes('40 dias'), 'Prialt notice deve citar 40 dias para reenchimento diluído (FDA DailyMed)');
+assert(notice.includes('60 dias'), 'Prialt notice deve citar até 60 dias (EMA SmPC)');
+assert(notice.includes('DailyMed') || notice.includes('FDA NDA 021060'), 'Prialt notice deve citar DailyMed/FDA');
+assert(notice.includes('SmPC') || notice.includes('EMA'), 'Prialt notice deve citar EMA SmPC');
+console.log('PASS: Prialt / Ziconotida atende integralmente às especificações FDA DailyMed e EMA SmPC.');
+
+console.log('=== 7. TESTE DE INFORMAÇÕES MICROBIOLÓGICAS E SOLVENTES ===');
+const bacWater = global.STABILITY_SOLVENTS.find(s => s.id === 'bac_water');
+const sterileWater = global.STABILITY_SOLVENTS.find(s => s.id === 'sterile_water');
+
+assert(bacWater, 'bac_water deve existir');
+assert(sterileWater, 'sterile_water deve existir');
+
+// Não deve generalizar refrigeração a 2-8°C para todos os frascos multidose
+assert(!bacWater.description.includes('28 dias sob 2°C a 8°C como teto'), 'Não deve conter a regra antiga generalizada de 28 dias a 2-8°C como regra geral da USP 797');
+assert(bacWater.description.includes('não são universalmente restritas a 2–8°C'), 'Deve esclarecer que conservação térmica não é universalmente restrita a 2-8°C');
+
+// Não deve declarar prazo genérico universal de 24h para água estéril
+assert(!sterileWater.description.includes('recomendam uso imediato ou descarte em até 24 horas'), 'Não deve conter descarte genérico em 24h para WFI');
+assert(sterileWater.description.includes('inexiste prazo genérico universal de armazenamento de 24 horas'), 'Deve esclarecer inexistência de prazo genérico de 24h');
+// Deve afirmar que estabilidade química, esterilidade microbiológica e potência biológica são grandezas distintas
+assert(bacWater.description.includes('potência biológica'), 'bac_water deve citar potência biológica');
+assert(sterileWater.description.includes('Estabilidade química, esterilidade microbiológica e potência biológica são grandezas farmacêuticas completamente distintas e independentes'), 'sterile_water deve enfatizar distinção conceitual');
+console.log('PASS: Informações microbiológicas saneadas e tecnicamente acuradas.');
 
 console.log('\n========================================');
 console.log('TODOS OS TESTES EM NODE.JS PASSARAM COM SUCESSO (100% OK)');
