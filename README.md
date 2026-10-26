@@ -10,7 +10,7 @@ Uma aplicação web científica, interativa e responsiva desenvolvida para catal
 - **Monografias Estruturadas**: Estrutura molecular, peso molecular, meia-vida, vias de administração, sequências de aminoácidos com parser molecular fail-closed, mecanismos bioquímicos e alertas de biossegurança.
 - **Categorias Especializadas**:
   - *Regeneração & Tecidos*: BPC-157 (Acetato e Arginato Oral), TB-500, GHK-Cu, KPV, ARA-290, Larazotida (AT-1001), SNAP-8, Argireline, entre outros.
-  - *Secretagogos de GH*: CJC-1295 (com e sem DAC), Ipamorelin, Sermorelin, Tesamorelin, GHRP-2, GHRP-6, Hexarelin, Macimorelin.
+  - *Secretagogos de GH*: CJC-1295 (com e sem DAC), Ipamorelin, Sermorelin, Tesamorelin, GHRP-2, GHRP-6, Hexarelin.
   - *Metabolismo, Incretinas & Emagrecimento*: Semaglutida, Tirzepatida, Retatrutida, Cagrilintida, Survodutide, Orforglipron, Mazdutida, Zenagamtida, Apraglutida, AOD-9604, 5-Amino-1MQ, SLU-PP-332, SLU-PP-915.
   - *Longevidade, Mitocôndria & Biorreguladores*: Epitalon, MOTS-c, SS-31 (Elamipretide), Humanina, Pinealon, Timalina, Glutationa, NAD+.
   - *Nootrópicos & Cognição*: Semax, Selank, Cerebrolysin, Cortexin, Dihexa, DSIP, Ocitocina.
