@@ -1,47 +1,54 @@
 # 🧬 Peptipedia — Plataforma Biomédica, Catálogo & Calculadora de Peptídeos
 
-Uma aplicação web científica, interativa e responsiva desenvolvida para catalogação, exploração de evidências clínicas de ensaios de alto impacto, protocolos posológicos documentados e cálculos de reconstituição com simulação gráfica de seringas de insulina e relógio de estabilidade molecular.
+Uma aplicação web científica, interativa e responsiva desenvolvida para catalogação, exploração de evidências clínicas de ensaios de alto impacto, protocolos posológicos documentados, cálculos de reconstituição com simulação gráfica de seringas de insulina e relógio de estabilidade molecular.
 
 ---
 
 ## 🌟 Principais Funcionalidades
 
-### 1. Catálogo Científico & Farmacotécnico (54 Peptídeos)
-- **Monografias Estruturadas**: Estrutura molecular, peso molecular, meia-vida, vias de administração, sequências de aminoácidos, mecanismos bioquímicos e alertas de biossegurança.
+### 1. Catálogo Científico & Farmacotécnico (114 Compostos)
+- **Monografias Estruturadas**: Estrutura molecular, peso molecular, meia-vida, vias de administração, sequências de aminoácidos com parser molecular fail-closed, mecanismos bioquímicos e alertas de biossegurança.
 - **Categorias Especializadas**:
-  - *Regeneração & Tecidos*: BPC-157 (Acetato e Arginato Oral), TB-500, GHK-Cu, KPV, ARA-290, Larazotida (AT-1001), SNAP-8, Argireline.
-  - *Secretagogos de GH*: CJC-1295 (com e sem DAC), Ipamorelin, Sermorelin, Tesamorelin, GHRP-2, GHRP-6, Hexarelin.
-  - *Metabolismo, Incretinas & Emagrecimento*: Semaglutida, Tirzepatida, Retatrutida, Cagrilintida, Survodutide, Orforglipron, Mazdutida, AOD-9604, 5-Amino-1MQ, SLU-PP-332, SLU-PP-915.
+  - *Regeneração & Tecidos*: BPC-157 (Acetato e Arginato Oral), TB-500, GHK-Cu, KPV, ARA-290, Larazotida (AT-1001), SNAP-8, Argireline, entre outros.
+  - *Secretagogos de GH*: CJC-1295 (com e sem DAC), Ipamorelin, Sermorelin, Tesamorelin, GHRP-2, GHRP-6, Hexarelin, Macimorelin.
+  - *Metabolismo, Incretinas & Emagrecimento*: Semaglutida, Tirzepatida, Retatrutida, Cagrilintida, Survodutide, Orforglipron, Mazdutida, Zenagamtida, Apraglutida, AOD-9604, 5-Amino-1MQ, SLU-PP-332, SLU-PP-915.
   - *Longevidade, Mitocôndria & Biorreguladores*: Epitalon, MOTS-c, SS-31 (Elamipretide), Humanina, Pinealon, Timalina, Glutationa, NAD+.
   - *Nootrópicos & Cognição*: Semax, Selank, Cerebrolysin, Cortexin, Dihexa, DSIP, Ocitocina.
   - *Imunidade & Defesa*: Timosina Alfa-1 (Zadaxin), LL-37, VIP.
   - *Libido, Melanocortinas & Eixo*: PT-141 (Bremelanotide), Melanotan I, Melanotan II, Kisspeptina-10.
   - *Anabolismo & Músculo*: IGF-1 LR3, IGF-1 DES (1-3), PEG-MGF, Folistatina-344.
+- **Salvaguardas de Catálogo**: 10 compostos mantidos em quarentena técnica e 4 substâncias de alto risco rigorosamente excluídas da aplicação.
 
-### 2. Dossiê Clínico & Estudos de Alto Impacto (51 Artigos)
+### 2. Dossiê Clínico & Estudos de Alto Impacto (70 Estudos)
 - Indexação direta com identificadores **PMID** e links diretos para o **PubMed / NCBI / PMC**.
-- Filtros por peptídeo, periódicos (*NEJM*, *Lancet*, *Cell Metabolism*, *Nature Communications*, etc.) e busca textual normalizada.
+- Filtros por peptídeo, periódicos (*NEJM*, *The Lancet*, *Cell Metabolism*, *Nature Communications*, *JCI*, etc.) e busca textual normalizada.
 - Destaques de intervenção, tamanho amostral, desenho do estudo e desfechos clínicos quantitativos.
 
-### 3. Relógio de Estabilidade Molecular (ICH Q1A / ICH Q5C)
-- Base fundamentada em dados medidos primários (cromatografia líquida HPLC, espectrofotometria UV-Vis e bulas aprovadas FDA) combinados a modelos cinéticos de degradação de primeira ordem.
-- Seleção de diluente: Água Bacteriostática (BAC), Água Estéril (WFI), Soro Fisiológico (0.9%) e Ácido Acético diluído (0.6%).
-- Gráficos SVG dinâmicos de curva de decaimento sob refrigeração (2°C–8°C) vs. temperatura ambiente (20°C–25°C).
+### 3. Stacks Famosos de Pesquisa (18 Stacks)
+- Combinações sinérgicas catalogadas na literatura biomédica para objetivos definidos de pesquisa (ex.: Cicatrização Tecidual, Longevidade Mitocondrial, Otimização Metabólica Incretínica, Eixo GH/IGF-1).
+- Carregamento direto no planejador de protocolos com visualização estruturada de dosagens de pesquisa.
 
-### 4. Calculadora Farmacotécnica de Reconstituição
+### 4. Glossário Farmacológico & Conceitual (37 Termos)
+- Base de verbetes científicos fundamentais cobrindo Farmacodinâmica, Farmacotécnica, Biologia Molecular e Regulação (ex.: Agonismo de Receptor, Clivagem Enzimática, Reconstituição Liofilizada, Fail-Closed, Half-Life).
+
+### 5. Relógio de Estabilidade Molecular v1 (ICH Q1A / ICH Q5C)
+- **Modelo Matemático Exploratório**: As curvas de retenção fundamentam-se no modelo cinético de pseudo-primeira ordem \(R(t) = 100 \times \exp(-k \times t)\) e nas diretrizes internacionais **ICH Q1A(R2)** e **ICH Q5C**.
+- **Aviso Científico Obrigatório**: Os gráficos são **simulações matemáticas exploratórias** de sensibilidade molecular e **não representam estabilidade experimental comprovada** na ausência de ensaio analítico específico (HPLC/UV-Vis) validado para o frasco, lote e diluente utilizados.
+- **Diferenciação Regulatória**: Classificação explícita entre Medicamentos Registrados com bula oficial (ex.: Mounjaro/Tirzepatida, Prialt/Ziconotida via DailyMed/FDA e EMA), compostos investigacionais (ex.: Apraglutida) e simulações conceituais.
+- **Taxas Independentes**: Fator de sensibilidade térmica ajustável (1.0x a 6.0x) e eliminação de multiplicadores arbitrários de solvente (fator estritamente neutro 1.0).
+
+### 6. Calculadora Farmacotécnica com Salvaguardas Fail-Closed
 - Conversão instantânea entre miligramas (**mg**) e microgramas (**mcg**).
-- Seleção de seringas de insulina calibradas: **U-100 (1.0 mL)**, **U-50 (0.5 mL)** e **U-30 (0.3 mL)**.
-- Renderização visual SVG interativa do corpo da seringa com posicionamento exato do êmbolo.
-- Presets rápidos para os compostos mais pesquisados.
+- Seleção de seringas calibradas: **U-100 (1.0 mL)**, **U-50 (0.5 mL)** e **U-30 (0.3 mL)** com renderização visual SVG dinâmica do corpo e êmbolo da seringa.
+- **Salvaguarda Fail-Closed**: Rejeição de valores não finitos ou menores/iguais a zero; bloqueio impeditivo para compostos investigacionais sem posologia humana estabelecida (ex.: Apraglutida).
 
-### 5. Planejador de Protocolos & Dossiê Parametrizado
+### 7. Planejador de Protocolos & Dossiê Parametrizado
 - Montagem de protocolos customizados com personalização de diluente, volume de água BAC, concentração resultante, posologia, frequência e cronograma.
-- Exportação e impressão dedicada em formato **Dossiê Clínico & Parametrizado** (estilização para impressão A4 sem cortes).
+- Exportação e impressão dedicada em formato **Dossiê Clínico & Parametrizado** (estilização otimizada para impressão A4 sem cortes).
 
-### 6. Guia Completo de Reconstituição & 7 Diluentes
-- Passo a passo de assepsia, injeção tangencial pelo vidro, equalização de vácuo e homogeneização suave.
-- Seção de troubleshooting (turvação, formação de espuma, vácuo acentuado e queimação).
-- Painel comparativo de 7 classes de diluentes (BAC, WFI, Soro, Ácido Acético, Sérum dérmico, Formas orais e Solventes lipofílicos como DMSO/PEG-400).
+### 8. Guia Completo de Reconstituição
+- Boas práticas de assepsia, injeção tangencial pelo vidro, equalização de pressão e homogeneização suave sem cisalhamento.
+- Seção de solução de problemas e painel comparativo de diluentes.
 
 ---
 
@@ -66,6 +73,22 @@ Em seguida, abra no navegador: `http://localhost:8080`
 
 ### Opção 2: Abertura Direta
 Abra o arquivo `index.html` em qualquer navegador moderno.
+
+---
+
+## 🧪 Suíte de Testes Automatizados
+
+A aplicação inclui suítes abrangentes de testes unitários, de integração e ponta a ponta (E2E):
+```bash
+# Teste de integridade de dados e parser molecular (Node.js)
+node tests/test_stability_node.js
+
+# Testes de regressão científica e fontes oficiais (Python)
+python -m unittest tests/test_stability_v1_remediation.py
+
+# Testes E2E de estabilidade e salvaguardas (Playwright)
+python tests/test_stability_playwright.py
+```
 
 ---
 
