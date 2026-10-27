@@ -5,19 +5,19 @@
 
 class PeptideCalculator {
   constructor() {
-    this.vialMg = 5.0; // mg
-    this.waterMl = 2.0; // mL
-    this.doseUnit = "mcg"; // "mcg" ou "mg"
-    this.doseValue = 250; // valor numérico exibido
-    this.desiredDoseMcg = 250; // valor normalizado em mcg
-    this.syringeType = "u100"; // u100 (1ml/100ui), u50 (0.5ml/50ui), u30 (0.3ml/30ui)
-    this.frequencyPerWeek = 7; // vezes por semana
-    this.vialCost = 0; // custo opcional em R$ para cálculo financeiro
+    this.vialMg = null;
+    this.waterMl = null;
+    this.doseUnit = "mcg";
+    this.doseValue = null;
+    this.desiredDoseMcg = null;
+    this.syringeType = "u100";
+    this.frequencyPerWeek = 7;
+    this.vialCost = 0;
     
     this.syringeConfigs = {
-      u100: { capacityMl: 1.0, units: 100, label: "U-100 (1.0 mL / 100 Unidades)", tickInterval: 10 },
-      u50: { capacityMl: 0.5, units: 50, label: "U-50 (0.5 mL / 50 Unidades)", tickInterval: 5 },
-      u30: { capacityMl: 0.3, units: 30, label: "U-30 (0.3 mL / 30 Unidades - Alta Precisão)", tickInterval: 5 }
+      u100: { capacityMl: 1.0, units: 100, label: "Seringa U-100 de 1,0 mL (capacidade: 100 unidades U-100)", tickInterval: 10 },
+      u50: { capacityMl: 0.5, units: 50, label: "Seringa U-100 de 0,5 mL (capacidade: 50 unidades U-100)", tickInterval: 5 },
+      u30: { capacityMl: 0.3, units: 30, label: "Seringa U-100 de 0,3 mL (capacidade: 30 unidades U-100 — Alta precisão)", tickInterval: 5 }
     };
 
     // Presets rápidos dos compostos mais comuns com suporte a mcg e mg
@@ -46,28 +46,145 @@ class PeptideCalculator {
     ];
   }
 
-  setValues({ vialMg, waterMl, doseValue, doseUnit, desiredDoseMcg, syringeType, frequencyPerWeek, vialCost }) {
-    if (vialMg !== undefined) this.vialMg = Math.max(0.1, parseFloat(vialMg) || 0.1);
-    if (waterMl !== undefined) this.waterMl = Math.max(0.1, parseFloat(waterMl) || 0.1);
+  reset() {
+    this.vialMg = null;
+    this.waterMl = null;
+    this.doseValue = null;
+    this.desiredDoseMcg = null;
+    this.vialCost = 0;
+  }
+
+  setValues(params = {}) {
+    const { vialMg, waterMl, doseValue, doseUnit, desiredDoseMcg, syringeType, frequencyPerWeek, vialCost } = params;
+
+    const parseStrictPositiveFinite = (val) => {
+      if (val === null || val === undefined || val === '') return null;
+      if (typeof val === 'string' && val.trim() === '') return null;
+      const num = Number(val);
+      return (typeof num === 'number' && Number.isFinite(num) && !isNaN(num) && num > 0) ? num : null;
+    };
+
+    if (vialMg !== undefined) {
+      this.vialMg = parseStrictPositiveFinite(vialMg);
+    }
+    if (waterMl !== undefined) {
+      this.waterMl = parseStrictPositiveFinite(waterMl);
+    }
     
     if (doseUnit) this.doseUnit = doseUnit === 'mg' ? 'mg' : 'mcg';
 
     if (doseValue !== undefined) {
-      this.doseValue = Math.max(0.001, parseFloat(doseValue) || 0.001);
-      this.desiredDoseMcg = this.doseUnit === 'mg' ? this.doseValue * 1000 : this.doseValue;
+      const parsed = parseStrictPositiveFinite(doseValue);
+      if (parsed !== null) {
+        this.doseValue = parsed;
+        const calcMcg = this.doseUnit === 'mg' ? parsed * 1000 : parsed;
+        this.desiredDoseMcg = Number.isFinite(calcMcg) && calcMcg > 0 ? calcMcg : null;
+      } else {
+        this.doseValue = null;
+        this.desiredDoseMcg = null;
+      }
     } else if (desiredDoseMcg !== undefined) {
-      this.desiredDoseMcg = Math.max(1, parseFloat(desiredDoseMcg) || 1);
-      this.doseValue = this.doseUnit === 'mg' ? +(this.desiredDoseMcg / 1000).toFixed(4) : this.desiredDoseMcg;
+      const parsed = parseStrictPositiveFinite(desiredDoseMcg);
+      if (parsed !== null) {
+        this.desiredDoseMcg = parsed;
+        const calcVal = this.doseUnit === 'mg' ? +(parsed / 1000).toFixed(4) : parsed;
+        this.doseValue = Number.isFinite(calcVal) && calcVal > 0 ? calcVal : null;
+      } else {
+        this.doseValue = null;
+        this.desiredDoseMcg = null;
+      }
     }
 
     if (syringeType && this.syringeConfigs[syringeType]) this.syringeType = syringeType;
-    if (frequencyPerWeek !== undefined) this.frequencyPerWeek = parseFloat(frequencyPerWeek) || 7;
-    if (vialCost !== undefined) this.vialCost = Math.max(0, parseFloat(vialCost) || 0);
+    if (frequencyPerWeek !== undefined) {
+      const parsedFreq = parseStrictPositiveFinite(frequencyPerWeek);
+      this.frequencyPerWeek = parsedFreq !== null ? parsedFreq : 7;
+    }
+    if (vialCost !== undefined) {
+      if (vialCost === null || vialCost === undefined || vialCost === '') {
+        this.vialCost = 0;
+      } else {
+        const parsedCost = Number(vialCost);
+        this.vialCost = (typeof parsedCost === 'number' && Number.isFinite(parsedCost) && !isNaN(parsedCost) && parsedCost >= 0) ? parsedCost : 0;
+      }
+    }
   }
 
   calculate() {
-    const config = this.syringeConfigs[this.syringeType];
+    const config = this.syringeConfigs[this.syringeType] || this.syringeConfigs.u100;
+
+    // Validação estrita: se qualquer entrada obrigatória estiver ausente ou não for número finito positivo (>0), não produzir resultado numérico
+    const hasVial = typeof this.vialMg === 'number' && Number.isFinite(this.vialMg) && this.vialMg > 0;
+    const hasWater = typeof this.waterMl === 'number' && Number.isFinite(this.waterMl) && this.waterMl > 0;
+    const hasDose = typeof this.desiredDoseMcg === 'number' && Number.isFinite(this.desiredDoseMcg) && this.desiredDoseMcg > 0;
+
+    if (!hasVial || !hasWater || !hasDose) {
+      const missing = [];
+      if (!hasVial) missing.push("quantidade do frasco (mg)");
+      if (!hasWater) missing.push("volume de diluente (mL)");
+      if (!hasDose) missing.push("dose desejada");
+
+      return {
+        isValid: false,
+        errorMessage: `Preencha os campos obrigatórios para calcular: ${missing.join(", ")}.`,
+        vialMg: this.vialMg,
+        waterMl: this.waterMl,
+        doseUnit: this.doseUnit,
+        doseValue: this.doseValue,
+        desiredDoseMcg: this.desiredDoseMcg,
+        syringeType: this.syringeType,
+        syringeLabel: config.label,
+        maxSyringeUnits: config.units,
+        concentrationMgPerMl: null,
+        concentrationMcgPerMl: null,
+        mcgPerUnit: null,
+        volumePerDoseMl: null,
+        unitsOnSyringe: null,
+        exactUnitsNumber: 0,
+        totalDosesInVial: null,
+        daysDuration: null,
+        costPerDose: null,
+        fillPercentage: 0,
+        warning: `Aguardando dados: informe ${missing.join(", ")}.`,
+        warningLevel: "info"
+      };
+    }
+
     const vialMcg = this.vialMg * 1000;
+    const pharmacotechnicalNotice = "Nota Farmacotécnica: O cálculo reflete estritamente conversão matemática volumétrica teórica conforme normas técnicas e padrões ICH. Não atesta solubilidade, esterilidade, estabilidade química ou compatibilidade biológica da formulação.";
+
+    // 1. Rejeição de massa impossível: dose desejada excede a massa total do frasco
+    if (this.desiredDoseMcg > vialMcg) {
+      const errMsg = `A dose solicitada (${this.desiredDoseMcg >= 1000 ? (this.desiredDoseMcg / 1000) + ' mg' : this.desiredDoseMcg + ' mcg'}) excede a quantidade total de peptídeo contida no frasco (${this.vialMg} mg = ${vialMcg} mcg). Cálculo impossível: dose maior que a massa total do frasco.`;
+      return {
+        isValid: false,
+        errorType: "excessive_mass",
+        errorMessage: errMsg,
+        calculationError: errMsg,
+        measurementPrecisionAlert: null,
+        vialMg: this.vialMg,
+        waterMl: this.waterMl,
+        doseUnit: this.doseUnit,
+        doseValue: this.doseValue,
+        desiredDoseMcg: this.desiredDoseMcg,
+        syringeType: this.syringeType,
+        syringeLabel: config.label,
+        maxSyringeUnits: config.units,
+        concentrationMgPerMl: null,
+        concentrationMcgPerMl: null,
+        mcgPerUnit: null,
+        volumePerDoseMl: null,
+        unitsOnSyringe: null,
+        exactUnitsNumber: 0,
+        totalDosesInVial: null,
+        daysDuration: null,
+        costPerDose: null,
+        fillPercentage: 0,
+        warning: `Erro de cálculo: a dose solicitada excede a massa total do frasco (${this.vialMg} mg).`,
+        warningLevel: "danger",
+        pharmacotechnicalNotice: pharmacotechnicalNotice
+      };
+    }
     
     // Concentrações
     const concentrationMgPerMl = this.vialMg / this.waterMl;
@@ -75,12 +192,111 @@ class PeptideCalculator {
     
     // Volume em mL por dose desejada
     const volumePerDoseMl = this.desiredDoseMcg / concentrationMcgPerMl;
+
+    // 2. Rejeição de volume impossível: volume da dose excede o volume total de diluente reconstituído
+    if (volumePerDoseMl > this.waterMl) {
+      const errMsg = `O volume calculado por dose (${volumePerDoseMl.toFixed(3)} mL) excede o volume total de líquido preparado no frasco (${this.waterMl} mL).`;
+      return {
+        isValid: false,
+        errorType: "excessive_volume",
+        errorMessage: errMsg,
+        calculationError: errMsg,
+        measurementPrecisionAlert: null,
+        vialMg: this.vialMg,
+        waterMl: this.waterMl,
+        doseUnit: this.doseUnit,
+        doseValue: this.doseValue,
+        desiredDoseMcg: this.desiredDoseMcg,
+        syringeType: this.syringeType,
+        syringeLabel: config.label,
+        maxSyringeUnits: config.units,
+        concentrationMgPerMl: null,
+        concentrationMcgPerMl: null,
+        mcgPerUnit: null,
+        volumePerDoseMl: null,
+        unitsOnSyringe: null,
+        exactUnitsNumber: 0,
+        totalDosesInVial: null,
+        daysDuration: null,
+        costPerDose: null,
+        fillPercentage: 0,
+        warning: `Erro de volume: volume da dose (${volumePerDoseMl.toFixed(3)} mL) superior ao total de diluente (${this.waterMl} mL).`,
+        warningLevel: "danger",
+        pharmacotechnicalNotice: pharmacotechnicalNotice
+      };
+    }
     
-    // Unidades na escala internacional U-100 (onde 1 mL = 100 UI, ou 0.01 mL = 1 UI)
+    // Unidades na escala internacional U-100 (onde 1,0 mL = 100 UI; 0,01 mL = 1 UI).
     const unitsOnSyringe = volumePerDoseMl * 100;
     
-    // mcg por cada 1 unidade na seringa
+    // mcg por cada 1 unidade U-100 na seringa
     const mcgPerUnit = concentrationMcgPerMl / 100;
+
+    // 3. Rejeição de valores não finitos ou impossíveis
+    if (!Number.isFinite(concentrationMgPerMl) || !Number.isFinite(volumePerDoseMl) || !Number.isFinite(unitsOnSyringe) || concentrationMgPerMl <= 0 || volumePerDoseMl <= 0 || unitsOnSyringe <= 0) {
+      const errMsg = "Valores numéricos resultantes inválidos, não finitos ou impossíveis.";
+      return {
+        isValid: false,
+        errorType: "non_finite_or_impossible",
+        errorMessage: errMsg,
+        calculationError: errMsg,
+        measurementPrecisionAlert: null,
+        vialMg: this.vialMg,
+        waterMl: this.waterMl,
+        doseUnit: this.doseUnit,
+        doseValue: this.doseValue,
+        desiredDoseMcg: this.desiredDoseMcg,
+        syringeType: this.syringeType,
+        syringeLabel: config.label,
+        maxSyringeUnits: config.units,
+        concentrationMgPerMl: null,
+        concentrationMcgPerMl: null,
+        mcgPerUnit: null,
+        volumePerDoseMl: null,
+        unitsOnSyringe: null,
+        exactUnitsNumber: 0,
+        totalDosesInVial: null,
+        daysDuration: null,
+        costPerDose: null,
+        fillPercentage: 0,
+        warning: "Valores numéricos inválidos detectados.",
+        warningLevel: "danger",
+        pharmacotechnicalNotice: pharmacotechnicalNotice
+      };
+    }
+
+    // 4. Rejeição de seringa excedida: o volume/unidades da dose excedem a capacidade máxima da seringa selecionada
+    if (unitsOnSyringe > config.units || volumePerDoseMl > config.capacityMl) {
+      const errMsg = `A dose calculada (${unitsOnSyringe.toFixed(1)} UI = ${volumePerDoseMl.toFixed(3)} mL) excede a capacidade volumétrica máxima da ${config.label} (${config.units} UI = ${config.capacityMl} mL). Selecione uma seringa de maior capacidade ou reduza a dose.`;
+      return {
+        isValid: false,
+        errorType: "syringe_capacity_exceeded",
+        errorMessage: errMsg,
+        calculationError: errMsg,
+        measurementPrecisionAlert: null,
+        vialMg: this.vialMg,
+        waterMl: this.waterMl,
+        doseUnit: this.doseUnit,
+        doseValue: this.doseValue,
+        desiredDoseMcg: this.desiredDoseMcg,
+        syringeType: this.syringeType,
+        syringeLabel: config.label,
+        maxSyringeUnits: config.units,
+        concentrationMgPerMl: concentrationMgPerMl.toFixed(2),
+        concentrationMcgPerMl: Math.round(concentrationMcgPerMl),
+        mcgPerUnit: mcgPerUnit.toFixed(1),
+        volumePerDoseMl: volumePerDoseMl.toFixed(3),
+        unitsOnSyringe: null,
+        exactUnitsNumber: 0,
+        totalDosesInVial: Math.floor(vialMcg / this.desiredDoseMcg),
+        daysDuration: null,
+        costPerDose: null,
+        fillPercentage: 100,
+        warning: `Capacidade excedida: a dose (${unitsOnSyringe.toFixed(1)} UI) excede o limite da seringa (${config.units} UI). Selecione seringa de maior capacidade.`,
+        warningLevel: "danger",
+        pharmacotechnicalNotice: pharmacotechnicalNotice
+      };
+    }
     
     // Doses totais no frasco
     const totalDosesInVial = vialMcg / this.desiredDoseMcg;
@@ -94,22 +310,25 @@ class PeptideCalculator {
     // Porcentagem de preenchimento para a animação visual da seringa
     const fillPercentage = Math.min(100, Math.max(0, (unitsOnSyringe / config.units) * 100));
     
-    // Alertas de precisão e segurança
+    // Alertas de precisão de medição física na seringa (sem recomendar alterar o diluente)
     let warning = null;
-    let warningLevel = "info"; // "info", "warning", "danger"
+    let warningLevel = "info";
 
-    if (unitsOnSyringe > config.units) {
-      warning = `ATENÇÃO CRÍTICA: A dose solicitada (${unitsOnSyringe.toFixed(1)} unidades) EXCEDEU a capacidade máxima desta seringa (${config.units} UI = ${config.capacityMl} mL). É mandatório utilizar uma seringa de maior volume ou reduzir o volume de água para concentrar a solução.`;
-      warningLevel = "danger";
-    } else if (unitsOnSyringe < 1) {
-      warning = `ALERTA DE IMPRECISÃO: O volume calculado (${unitsOnSyringe.toFixed(2)} UI) é excessivamente pequeno para leitura confiável a olho nu. Adicione mais água bacteriostática ao frasco para diluir a concentração.`;
+    if (unitsOnSyringe < 1) {
+      warning = `ALERTA DE PRECISÃO DE MEDIÇÃO: O volume calculado (${unitsOnSyringe.toFixed(2)} unidades U-100) é inferior a 1 UI, apresentando margem de erro volumétrico muito alta para alinhamento manual na seringa. Utilize instrumento de maior resolução volumétrica se necessário.`;
       warningLevel = "warning";
-    } else if (unitsOnSyringe < 4 && this.syringeType === "u100") {
-      warning = `DICA DE PRECISÃO: Para volumes baixos (${unitsOnSyringe.toFixed(1)} UI), a seringa U-30 (0.3 mL) com agulha fina é muito mais precisa e fácil de alinhar do que a U-100.`;
-      warningLevel = "info";
+    } else if (unitsOnSyringe < 5) {
+      warning = `ALERTA DE PRECISÃO DE MEDIÇÃO: Abaixo de 5 unidades (${unitsOnSyringe.toFixed(1)} UI), a leitura visual e o alinhamento do êmbolo na graduação da seringa exigem atenção redobrada devido à sensibilidade de alinhamento manual.`;
+      warningLevel = "warning";
     }
 
+    const measurementPrecisionAlert = (warningLevel === "warning") ? warning : null;
+
     return {
+      isValid: true,
+      errorMessage: null,
+      calculationError: null,
+      measurementPrecisionAlert: measurementPrecisionAlert,
       vialMg: this.vialMg,
       waterMl: this.waterMl,
       doseUnit: this.doseUnit,
@@ -126,10 +345,11 @@ class PeptideCalculator {
       exactUnitsNumber: unitsOnSyringe,
       totalDosesInVial: Math.floor(totalDosesInVial),
       daysDuration: Math.round(daysDuration),
-      costPerDose,
-      fillPercentage,
-      warning,
-      warningLevel
+      costPerDose: costPerDose,
+      fillPercentage: fillPercentage,
+      warning: warning,
+      warningLevel: warningLevel,
+      pharmacotechnicalNotice: pharmacotechnicalNotice
     };
   }
 
