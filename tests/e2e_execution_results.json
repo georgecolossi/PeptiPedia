@@ -1,0 +1,1758 @@
+{
+  "peptides": {
+    "bpc-157": {
+      "name": "BPC-157",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "bpc-157-arginate": {
+      "name": "BPC-157 Arginato",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "tb-500": {
+      "name": "TB-500",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "ghk-cu": {
+      "name": "GHK-Cu",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "ipamorelin": {
+      "name": "Ipamorelin",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "cjc-1295-no-dac": {
+      "name": "CJC-1295 (sem DAC / Mod GRF 1-29)",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "sermorelin": {
+      "name": "Sermorelin",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "tesamorelin": {
+      "name": "Tesamorelin",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "semaglutide": {
+      "name": "Semaglutida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "tirzepatide": {
+      "name": "Tirzepatida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "retatrutide": {
+      "name": "Retatrutida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "aod-9604": {
+      "name": "AOD-9604",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "epitalon": {
+      "name": "Epitalon",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "mots-c": {
+      "name": "MOTS-c",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "ss-31": {
+      "name": "SS-31 (Elamipretide)",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "semax": {
+      "name": "Semax",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "selank": {
+      "name": "Selank",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "cerebrolysin": {
+      "name": "Cerebrolysin",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "thymosin-alpha-1": {
+      "name": "Timosina Alfa-1",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "pt-141": {
+      "name": "PT-141 (Bremelanotide)",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "dsip": {
+      "name": "DSIP",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "igf-1-lr3": {
+      "name": "IGF-1 LR3",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "cagrilintide": {
+      "name": "Cagrilintida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "survodutide": {
+      "name": "Survodutida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "orforglipron": {
+      "name": "Orforglipron",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "ara-290": {
+      "name": "ARA-290",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "kpv": {
+      "name": "KPV",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "ll-37": {
+      "name": "LL-37",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "vip": {
+      "name": "VIP",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "humanin": {
+      "name": "Humanina",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "kisspeptin": {
+      "name": "Kisspeptina-10",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "glutathione": {
+      "name": "Glutationa",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "nad-plus": {
+      "name": "NAD+",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "oxytocin": {
+      "name": "Ocitocina",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "thymalin": {
+      "name": "Timalina",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "pinealon": {
+      "name": "Pinealon",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "dihexa": {
+      "name": "Dihexa",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "ghrp-2": {
+      "name": "GHRP-2",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "ghrp-6": {
+      "name": "GHRP-6",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "hexarelin": {
+      "name": "Hexarelina",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "peg-mgf": {
+      "name": "PEG-MGF",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "melanotan-1": {
+      "name": "Melanotan I",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "melanotan-2": {
+      "name": "Melanotan II",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "snap-8": {
+      "name": "SNAP-8",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "5-amino-1mq": {
+      "name": "5-Amino-1MQ",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "cjc-1295-dac": {
+      "name": "CJC-1295 (com DAC)",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "follistatin-344": {
+      "name": "Folistatina-344 (FS-344)",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "igf-1-des": {
+      "name": "IGF-1 DES (1-3)",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "argireline": {
+      "name": "Argireline",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "mazdutide": {
+      "name": "Mazdutida (IBI362)",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "cortexin": {
+      "name": "Cortexin",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "larazotide": {
+      "name": "Larazotida (AT-1001)",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "slu-pp-332": {
+      "name": "SLU-PP-332",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "slu-pp-915": {
+      "name": "SLU-PP-915",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "liraglutide": {
+      "name": "Liraglutida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "teduglutide": {
+      "name": "Teduglutida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "setmelanotide": {
+      "name": "Setmelanotida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "abaloparatide": {
+      "name": "Abaloparatida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "ace-031": {
+      "name": "ACE-031",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "ahk-cu": {
+      "name": "AHK-Cu",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "b7-33": {
+      "name": "B7-33",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "dulaglutide": {
+      "name": "Dulaglutida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "eloralintide": {
+      "name": "Eloralintida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "foxo4-dri": {
+      "name": "FOXO4-DRI",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "gonadorelin": {
+      "name": "Gonadorelina",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "hcg": {
+      "name": "HCG",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "somatropin": {
+      "name": "HGH (Somatropina)",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "menotropin-hmg": {
+      "name": "HMG (Menotropina)",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "palmitoyl-pentapeptide-4": {
+      "name": "Matrixyl (Palmitoyl Pentapeptide-4)",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "pe-22-28": {
+      "name": "PE-22-28",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "ptd-dbm": {
+      "name": "PTD-DBM",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "triptorelin": {
+      "name": "Triptorelina",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "acth-1-39": {
+      "name": "ACTH 1-39",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "adipotide": {
+      "name": "Adipotide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "bronchogen": {
+      "name": "Bronchogen",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "cardiogen": {
+      "name": "Cardiogen",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "chonluten": {
+      "name": "Chonluten",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "cortagen": {
+      "name": "Cortagen",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "dermorphin": {
+      "name": "Dermorfina",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "hgh-fragment-176-191": {
+      "name": "HGH Fragment 176-191",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "livagen": {
+      "name": "Livagen",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "mgf-e-peptide": {
+      "name": "MGF E-Peptide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "orexin-a": {
+      "name": "Orexina A",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "orexin-b": {
+      "name": "Orexina B",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "pancragen": {
+      "name": "Pancragen",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "pnc-27": {
+      "name": "PNC-27",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "prostamax": {
+      "name": "Prostamax",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "thymogen": {
+      "name": "Thymogen",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "thymulin": {
+      "name": "Timulina",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "vesugen": {
+      "name": "Vesugen",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "vilon": {
+      "name": "Vilon",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "teriparatide": {
+      "name": "Teriparatida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "palopegteriparatide": {
+      "name": "Palopegteriparatida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "octreotide": {
+      "name": "Octreotida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "lanreotide": {
+      "name": "Lanreotida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "pasireotide": {
+      "name": "Pasireotida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "ziconotide": {
+      "name": "Ziconotida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "degarelix": {
+      "name": "Degarelix",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "ganirelix": {
+      "name": "Ganirelix",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "cetrorelix": {
+      "name": "Cetrorelix",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "leuprorelin": {
+      "name": "Leuprorrelina",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "goserelin": {
+      "name": "Goserrelina",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "atosiban": {
+      "name": "Atosibana",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "linaclotide": {
+      "name": "Linaclotida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "plecanatide": {
+      "name": "Plecanatida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "dasiglucagon": {
+      "name": "Dasiglucagon",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "glucagon": {
+      "name": "Glucagon",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "desmopressin": {
+      "name": "Desmopressina",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "pramlintide": {
+      "name": "Pramlintida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "enfuvirtide": {
+      "name": "Enfuvirtida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "exenatide": {
+      "name": "Exenatida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "lixisenatide": {
+      "name": "Lixisenatida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "apraglutide": {
+      "name": "Apraglutida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    },
+    "zenagamtide": {
+      "name": "Zenagamtida",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "link_audit": "PASS",
+      "status": "PASS"
+    }
+  },
+  "studies": {
+    "study-semaglutide-step1": {
+      "title": "Once-Weekly Semaglutide in Adults with Overweight or Obesity (Ensaio STEP-1)",
+      "peptideId": "semaglutide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-semaglutide-select": {
+      "title": "Semaglutide and Cardiovascular Outcomes in Obesity without Diabetes (Ensaio SELECT)",
+      "peptideId": "semaglutide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-tirzepatide-surmount1": {
+      "title": "Tirzepatide Once Weekly for the Treatment of Obesity (Ensaio SURMOUNT-1)",
+      "peptideId": "tirzepatide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-tirzepatide-surmount-osa": {
+      "title": "Tirzepatide for the Treatment of Obstructive Sleep Apnea and Obesity (SURMOUNT-OSA)",
+      "peptideId": "tirzepatide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-retatrutide-phase2": {
+      "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+      "peptideId": "retatrutide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-cagrilintide-phase2": {
+      "title": "Efficacy and safety of cagrilintide with semaglutide in adults with overweight or obesity (REDEFINE 1 / Ensaio Fase 2)",
+      "peptideId": "cagrilintide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-mazdutide-phase2": {
+      "title": "Mazdutide in Chinese adults with overweight or obesity: a randomised, double-blind, placebo-controlled, phase 2 trial",
+      "peptideId": "mazdutide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-survodutide-mash": {
+      "title": "A Phase 2 Randomized Trial of Survodutide in MASH and Fibrosis",
+      "peptideId": "survodutide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-orforglipron-phase2": {
+      "title": "Daily Oral GLP-1 Receptor Agonist Orforglipron for Adults with Obesity",
+      "peptideId": "orforglipron",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-aod9604-lipolysis": {
+      "title": "Metabolic studies of the C-terminal growth hormone fragment AOD9604 in human adipose tissue",
+      "peptideId": "aod-9604",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-5amino1mq-nnmt": {
+      "title": "Selective small molecule inhibitor of NNMT promotes cellular NAD+ and reverses diet-induced obesity in mice",
+      "peptideId": "5-amino-1mq",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-bpc157-tendon": {
+      "title": "The Promoting Effect of Pentadecapeptide BPC 157 on Tendon Healing Involves Tendon Outgrowth, Cell Survival, and Cell Migration",
+      "peptideId": "bpc-157",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-bpc157-review-clinical": {
+      "title": "Stable Gastric Pentadecapeptide BPC 157 in Clinical Trials and Practical Medicine",
+      "peptideId": "bpc-157",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-tb500-nature": {
+      "title": "De novo cardiomyocytes from within the activated adult heart after injury",
+      "peptideId": "tb-500",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-tb500-cornea": {
+      "title": "Thymosin beta 4 ophthalmic solution for dry eye: a randomized, placebo-controlled, Phase II clinical trial conducted using the controlled adverse environment (CAE) model",
+      "peptideId": "tb-500",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-ghkcu-remodeling": {
+      "title": "The human tripeptide GHK and tissue remodeling: from the gene to the clinic",
+      "peptideId": "ghk-cu",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-ghkcu-human-skin": {
+      "title": "Facial Skin Rejuvenation with GHK-Cu Copper Tripeptide Formulation: A Controlled Human Study",
+      "peptideId": "ghk-cu",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-argireline-wrinkles": {
+      "title": "A synthetic hexapeptide (Argireline) with antiwrinkle activity",
+      "peptideId": "argireline",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-snap8-efficacy": {
+      "title": "In vivo anti-wrinkle efficacy of SNAP-8 topical octapeptide",
+      "peptideId": "snap-8",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-larazotide-celiac": {
+      "title": "Larazotide acetate for persistent symptoms in patients with celiac disease on a gluten-free diet: a randomized controlled trial",
+      "peptideId": "larazotide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-ara290-neuropathy": {
+      "title": "ARA 290, a peptide designed to activate the innate repair receptor, ameliorates mechanical allodynia and nerve fiber loss in type 2 diabetes",
+      "peptideId": "ara-290",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-kpv-colitis": {
+      "title": "The tripeptide KPV inhibits NF-kappaB activation and relieves gut inflammation in murine colitis",
+      "peptideId": "kpv",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-ll37-wound": {
+      "title": "Human antimicrobial peptide LL-37 accelerates re-epithelialization in skin wounds",
+      "peptideId": "ll-37",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-tesamorelin-vat": {
+      "title": "Effects of Tesamorelin, a Growth Hormone-Releasing Factor Analog, in Patients with Abdominal Fat Accumulation",
+      "peptideId": "tesamorelin",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-cjc-growth-hormone": {
+      "title": "Prolonged Stimulation of Growth Hormone (GH) and Insulin-Like Growth Factor I Secretion by CJC-1295 in Healthy Adults",
+      "peptideId": "cjc-1295-no-dac",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-cjc-dac-extended": {
+      "title": "Prolonged stimulation of growth hormone and insulin-like growth factor-I in human subjects by CJC-1295, a long-acting growth hormone-releasing factor",
+      "peptideId": "cjc-1295-dac",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-ipamorelin-selectivity": {
+      "title": "Ipamorelin, the first selective growth hormone secretagogue",
+      "peptideId": "ipamorelin",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-sermorelin-elderly": {
+      "title": "Effects of growth hormone-releasing hormone (GHRH 1-29) on body composition and IGF-1 in elderly humans",
+      "peptideId": "sermorelin",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-follistatin-primate": {
+      "title": "Follistatin gene therapy improves muscle function and muscle mass in dystrophic mice and non-human primates",
+      "peptideId": "follistatin-344",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-igf1lr3-catabolic": {
+      "title": "Greater potency of Long-R3-IGF-I compared with IGF-I in catabolic states and cell cultures",
+      "peptideId": "igf-1-lr3",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-epitalon-hayflick": {
+      "title": "Peptide promotes overcoming of the division limit in human somatic cell",
+      "peptideId": "epitalon",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-motsc-metabolism": {
+      "title": "The Mitochondrial-Derived Peptide MOTS-c Promotes Metabolic Homeostasis and Reduces Diet-Induced Obesity",
+      "peptideId": "mots-c",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-motsc-exercise": {
+      "title": "MOTS-c is an exercise-induced mitochondrial-encoded regulator of physical capacity and performance",
+      "peptideId": "mots-c",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-ss31-mitochondrial": {
+      "title": "Efficacy and Safety of Elamipretide in Individuals With Primary Mitochondrial Myopathy: The MMPOWER-3 Randomized Clinical Trial",
+      "peptideId": "ss-31",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-humanin-neuroprotection": {
+      "title": "Humanin: a harbinger of mitochondrial-derived peptides in aging and neurodegenerative disease",
+      "peptideId": "humanin",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-nad-mitochondria": {
+      "title": "Declining NAD+ induces a pseudohypoxic state disrupting nuclear-mitochondrial communication during aging",
+      "peptideId": "nad-plus",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-semax-bdnf": {
+      "title": "Semax, an ACTH(4-10) analogue with nootropic properties, activates BDNF expression and TrkB neurotrophic signalling in the rat hippocampus",
+      "peptideId": "semax",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-semax-stroke": {
+      "title": "Efficacy of Semax in the acute phase of ischemic stroke: a randomized controlled trial",
+      "peptideId": "semax",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-selank-anxiety": {
+      "title": "Efficacy of the heptapeptide Selank in patients with generalized anxiety disorder and neurasthenia",
+      "peptideId": "selank",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-cerebrolysin-cars": {
+      "title": "Cerebrolysin in Patients with Acute Ischemic Stroke (Ensaio Clínico CARS)",
+      "peptideId": "cerebrolysin",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-cortexin-stroke": {
+      "title": "Efficacy of Cortexin in the acute and early recovery periods of ischemic stroke: a multicenter randomized clinical trial",
+      "peptideId": "cortexin",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-dihexa-synaptogenesis": {
+      "title": "The novel angiotensin IV analog Dihexa promotes spinogenesis and facilitates synaptogenesis in hippocampal neurons",
+      "peptideId": "dihexa",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-pinealon-brain": {
+      "title": "Effect of the short peptide Pinealon on the structural and functional organization of the brain in aging and oxidative stress",
+      "peptideId": "pinealon",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-thymosin-sepsis": {
+      "title": "The efficacy of thymosin alpha 1 for severe sepsis (ETASS): a multicenter, single-blind, randomized and controlled trial",
+      "peptideId": "thymosin-alpha-1",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-thymosin-covid": {
+      "title": "Thymosin Alpha 1 Reduces the Mortality of Severe Coronavirus Disease 2019 by Restoration of Lymphocytopenia and Reversion of Exhausted T Cells",
+      "peptideId": "thymosin-alpha-1",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-pt141-reconnect": {
+      "title": "Bremelanotide for the Treatment of Hypoactive Sexual Desire Disorder: Two Randomized Phase 3 Trials (RECONNECT)",
+      "peptideId": "pt-141",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-kisspeptin-lh": {
+      "title": "Kisspeptin-10 rapidly stimulates pulsatile LH and FSH secretion in healthy men",
+      "peptideId": "kisspeptin",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-oxytocin-trust": {
+      "title": "Oxytocin increases trust in humans",
+      "peptideId": "oxytocin",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-dsip-sleep": {
+      "title": "Delta Sleep-Inducing Peptide (DSIP): an overview of physiological and clinical studies in human sleep",
+      "peptideId": "dsip",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-slupp332-metabolic": {
+      "title": "A Synthetic ERR Agonist Alleviates Metabolic Syndrome and Enhances Oxidative Muscle Capacity",
+      "peptideId": "slu-pp-332",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-slupp915-endurance": {
+      "title": "An Orally Active Estrogen Receptor-Related Receptor Agonist, SLU-PP-915, Enhances Aerobic Exercise Capacity",
+      "peptideId": "slu-pp-915",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-liraglutide-leader": {
+      "title": "Liraglutide and Cardiovascular Outcomes in Type 2 Diabetes (Ensaio LEADER)",
+      "peptideId": "liraglutide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-liraglutide-scale": {
+      "title": "A Randomized, Controlled Trial of 3.0 mg of Liraglutide in Weight Management (Ensaio SCALE Obesidade e Pré-Diabetes)",
+      "peptideId": "liraglutide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-teduglutide-steps": {
+      "title": "Teduglutide reduces need for parenteral support among patients with short bowel syndrome with intestinal failure (Ensaio STEPS)",
+      "peptideId": "teduglutide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-teduglutide-gut": {
+      "title": "Randomised placebo-controlled trial of teduglutide in reducing parenteral nutrition and/or intravenous fluid requirements in patients with short bowel syndrome",
+      "peptideId": "teduglutide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-setmelanotide-pomc-lepr": {
+      "title": "Efficacy and safety of the melanocortin-4 receptor agonist setmelanotide in POMC and LEPR deficiency obesity: a multicentre, open-label, phase 3 trial",
+      "peptideId": "setmelanotide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-setmelanotide-bbs": {
+      "title": "Efficacy and safety of setmelanotide in individuals with Bardet-Biedl syndrome or Alström syndrome: a phase 3, randomised, double-blind, placebo-controlled trial",
+      "peptideId": "setmelanotide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-abaloparatide-active": {
+      "title": "Effect of Abaloparatide vs Placebo on New Vertebral Fractures in Postmenopausal Women With Osteoporosis: A Randomized Clinical Trial",
+      "peptideId": "abaloparatide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-ace031-dmd": {
+      "title": "Myostatin inhibitor ACE-031 treatment of ambulatory boys with Duchenne muscular dystrophy: Results of a randomized, placebo-controlled clinical trial",
+      "peptideId": "ace-031",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-dulaglutide-rewind": {
+      "title": "Dulaglutide and cardiovascular outcomes in type 2 diabetes (REWIND): a double-blind, randomised placebo-controlled trial",
+      "peptideId": "dulaglutide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-eloralintide-phase2": {
+      "title": "Eloralintide, a selective amylin receptor agonist for the treatment of obesity: a 48-week phase 2, multicentre, double-blind, randomised, placebo-controlled trial",
+      "peptideId": "eloralintide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-gonadorelin-pulsatile": {
+      "title": "Pulsatile gonadotropin releasing hormone (GnRH)--treatment for hypothalamic amenorrhoea causing infertility",
+      "peptideId": "gonadorelin",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-hcg-hypogonadism": {
+      "title": "Gonadotropin therapy in men with isolated hypogonadotropic hypogonadism: the response to human chorionic gonadotropin is predicted by initial testicular size",
+      "peptideId": "hcg",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-hmg-spermatogenesis": {
+      "title": "Male hypogonadotropic hypogonadism: factors influencing response to human chorionic gonadotropin and human menopausal gonadotropin, including prior exogenous androgens",
+      "peptideId": "menotropin-hmg",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-palmitoyl-pentapeptide4-cosmetic": {
+      "title": "Double-blind, Randomized Trial on the Effectiveness of Acetylhexapeptide-3 Cream and Palmitoyl Pentapeptide-4 Cream for Crow's Feet",
+      "peptideId": "palmitoyl-pentapeptide-4",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-orexin-a-narcolepsy": {
+      "title": "The effect of intranasal orexin-A (hypocretin-1) on sleep, wakefulness and attention in narcolepsy with cataplexy",
+      "peptideId": "orexin-a",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-apraglutide-stars-phase3": {
+      "title": "STARS Phase 3 Trial: Once-Weekly Apraglutide Reduces Parenteral Support in Short Bowel Syndrome-Intestinal Failure.",
+      "peptideId": "apraglutide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-zenagamtide-phase1b-2a": {
+      "title": "Amycretin, a novel, unimolecular GLP-1 and amylin receptor agonist administered subcutaneously: results from a phase 1b/2a randomised controlled study.",
+      "peptideId": "zenagamtide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-zenagamtide-phase2-sc": {
+      "title": "Efficacy and safety of once-weekly subcutaneous zenagamtide, a novel unimolecular GLP-1 and amylin receptor agonist, in type 2 diabetes: a multicentre, randomised, parallel, double-blind, placebo-controlled, dose-finding, phase 2 trial.",
+      "peptideId": "zenagamtide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    },
+    "study-zenagamtide-phase2-oral": {
+      "title": "Efficacy and safety of once-daily oral zenagamtide, a novel unimolecular GLP-1 and amylin receptor agonist, in adults with type 2 diabetes: a multicentre, randomised, parallel, double-blind, placebo-controlled, dose-finding, phase 2 trial.",
+      "peptideId": "zenagamtide",
+      "desktop": "PASS",
+      "tablet": "PASS",
+      "mobile": "PASS",
+      "escape_close": "PASS",
+      "status": "PASS"
+    }
+  },
+  "relationships": {
+    "study-cagrilintide-phase2": {
+      "target_compound": "cagrilintide",
+      "nav_status": "PASS"
+    },
+    "study-mazdutide-phase2": {
+      "target_compound": "mazdutide",
+      "nav_status": "PASS"
+    },
+    "study-survodutide-mash": {
+      "target_compound": "survodutide",
+      "nav_status": "PASS"
+    },
+    "study-orforglipron-phase2": {
+      "target_compound": "orforglipron",
+      "nav_status": "PASS"
+    },
+    "study-5amino1mq-nnmt": {
+      "target_compound": "5-amino-1mq",
+      "nav_status": "PASS"
+    },
+    "study-argireline-wrinkles": {
+      "target_compound": "argireline",
+      "nav_status": "PASS"
+    },
+    "study-snap8-efficacy": {
+      "target_compound": "snap-8",
+      "nav_status": "PASS"
+    },
+    "study-larazotide-celiac": {
+      "target_compound": "larazotide",
+      "nav_status": "PASS"
+    },
+    "study-ara290-neuropathy": {
+      "target_compound": "ara-290",
+      "nav_status": "PASS"
+    },
+    "study-kpv-colitis": {
+      "target_compound": "kpv",
+      "nav_status": "PASS"
+    },
+    "study-ll37-wound": {
+      "target_compound": "ll-37",
+      "nav_status": "PASS"
+    },
+    "study-cjc-dac-extended": {
+      "target_compound": "cjc-1295-dac",
+      "nav_status": "PASS"
+    },
+    "study-follistatin-primate": {
+      "target_compound": "follistatin-344",
+      "nav_status": "PASS"
+    },
+    "study-humanin-neuroprotection": {
+      "target_compound": "humanin",
+      "nav_status": "PASS"
+    },
+    "study-nad-mitochondria": {
+      "target_compound": "nad-plus",
+      "nav_status": "PASS"
+    },
+    "study-cortexin-stroke": {
+      "target_compound": "cortexin",
+      "nav_status": "PASS"
+    },
+    "study-dihexa-synaptogenesis": {
+      "target_compound": "dihexa",
+      "nav_status": "PASS"
+    },
+    "study-pinealon-brain": {
+      "target_compound": "pinealon",
+      "nav_status": "PASS"
+    },
+    "study-kisspeptin-lh": {
+      "target_compound": "kisspeptin",
+      "nav_status": "PASS"
+    },
+    "study-oxytocin-trust": {
+      "target_compound": "oxytocin",
+      "nav_status": "PASS"
+    }
+  },
+  "summary": {
+    "peptides_total": 114,
+    "peptides_passed": 114,
+    "studies_total": 70,
+    "studies_passed": 70,
+    "relationships_tested": 20,
+    "relationships_passed": 20,
+    "http_served_directory": "public/",
+    "viewports_tested": [
+      "Desktop (1440x900)",
+      "Tablet (768x1024)",
+      "Mobile (390x844)"
+    ]
+  }
+}
