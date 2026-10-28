@@ -160,12 +160,38 @@ class PeptideStabilityClock {
 
   getSolventConfig() {
     if (typeof STABILITY_SOLVENTS !== 'undefined') {
-      return STABILITY_SOLVENTS.find(s => s.id === this.selectedSolventId) || STABILITY_SOLVENTS[0];
+      const solv = STABILITY_SOLVENTS.find(s => s.id === this.selectedSolventId) || STABILITY_SOLVENTS[0];
+      let evidenceLevel = solv.evidenceLevel || 'level_b';
+      let evidenceBadgeText = 'NÍVEL B — FARMACOTÉCNICA & MICROBIOLOGIA';
+      let evidenceBadgeClass = 'bg-cyan-950/80 text-cyan-300 border-cyan-800';
+
+      if (this.selectedPeptideId === 'igf-1-lr3' && this.selectedSolventId === 'acetic_acid') {
+        evidenceLevel = 'level_a_conditional';
+        evidenceBadgeText = 'NÍVEL A — PARÂMETRO EXPERIMENTAL ESPECÍFICO';
+        evidenceBadgeClass = 'bg-emerald-950/80 text-emerald-300 border-emerald-800';
+      }
+
+      return {
+        ...solv,
+        effectiveEvidenceLevel: evidenceLevel,
+        evidenceBadgeText: evidenceBadgeText,
+        evidenceBadgeClass: evidenceBadgeClass
+      };
     }
     return {
       id: "bac_water",
       name: "Água bacteriostática (BAC 0,9%)",
       factor: 1.0,
+      evidenceLevel: "level_b",
+      effectiveEvidenceLevel: "level_b",
+      evidenceBadgeText: "NÍVEL B — FARMACOTÉCNICA & MICROBIOLOGIA",
+      evidenceBadgeClass: "bg-cyan-950/80 text-cyan-300 border-cyan-800",
+      phRange: "4,5 – 7,0",
+      antimicrobialPreservative: "Álcool benzílico 0,9%",
+      ionicStrength: "Baixa / Não iônico",
+      budDays: 28,
+      budSummary: "USP <797> BUD: 28 dias",
+      chemicalKineticsNote: "Veículo multidose padrão. A presença de conservante protege contra patógenos oportunistas, sem alterar a taxa de hidrólise química intrínseca.",
       description: "Veículo de conservação com álcool benzílico para contenção microbiológica sob USP <797>."
     };
   }
