@@ -9,6 +9,16 @@ sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 artifact_dir = r"C:\Users\georg\.gemini\antigravity\brain\2021975b-e3dc-45cc-a517-348b7fbcc66b"
 
+# Load execution results
+e2e_results_file = os.path.join(repo_root, "tests", "e2e_execution_results.json")
+if os.path.exists(e2e_results_file):
+    with open(e2e_results_file, "r", encoding="utf-8") as f:
+        e2e_data = json.load(f)
+    print(f"Carregado e2e_execution_results.json com sucesso.")
+else:
+    print("AVISO: e2e_execution_results.json não encontrado. Marcando status como SKIPPED.")
+    e2e_data = {"peptides": {}, "studies": {}, "relationships": {}}
+
 # 1. Load Peptides
 pep_file = os.path.join(repo_root, "js", "peptides-data.js")
 with open(pep_file, "r", encoding="utf-8") as f:
@@ -39,7 +49,7 @@ target_30 = [
     'mazdutide', 'cortexin', 'larazotide'
 ]
 
-# Generate MATRIZ_H4_3_1_114_PEPTIDEOS_REAIS.csv
+# Generate MATRIZ_H4_3_2_114_PEPTIDEOS_REAIS.csv
 pep_rows = []
 for i, p in enumerate(peptides):
     pid = p["id"]
@@ -69,6 +79,14 @@ for i, p in enumerate(peptides):
     else:
         proto_status = "N/A"
         
+    e2e_pep = e2e_data.get("peptides", {}).get(pid, {})
+    desk_st = e2e_pep.get("desktop", "SKIPPED")
+    tab_st = e2e_pep.get("tablet", "SKIPPED")
+    mob_st = e2e_pep.get("mobile", "SKIPPED")
+    esc_st = e2e_pep.get("escape_close", "SKIPPED")
+    link_st = e2e_pep.get("link_audit", "SKIPPED")
+    glob_st = e2e_pep.get("status", "SKIPPED")
+        
     pep_rows.append({
         "numero": i + 1,
         "id": pid,
@@ -86,26 +104,32 @@ for i, p in enumerate(peptides):
         "status_protocolos": proto_status,
         "lacuna_declarada": gap_notice if gap_notice else "N/A",
         "revisao_pendente": pending_rev if pending_rev else "Concluída",
-        "status_e2e_modal": "PASS"
+        "e2e_desktop": desk_st,
+        "e2e_tablet": tab_st,
+        "e2e_mobile": mob_st,
+        "e2e_escape_close": esc_st,
+        "e2e_link_audit": link_st,
+        "status_e2e_global": glob_st
     })
 
 pep_csv_headers = [
     "numero", "id", "nome", "categoria_id", "categoria_nome", "tier",
     "tem_contraindicacoes", "qtd_contraindicacoes", "classificacao_seguranca", "titulo_header_seguranca",
     "tem_cycle_length", "cycle_length", "qtd_protocolos_estruturados", "status_protocolos",
-    "lacuna_declarada", "revisao_pendente", "status_e2e_modal"
+    "lacuna_declarada", "revisao_pendente",
+    "e2e_desktop", "e2e_tablet", "e2e_mobile", "e2e_escape_close", "e2e_link_audit", "status_e2e_global"
 ]
 
 # Write peptide CSVs
 for dest_dir in [artifact_dir, os.path.join(repo_root, "tests")]:
-    target_path = os.path.join(dest_dir, "MATRIZ_H4_3_1_114_PEPTIDEOS_REAIS.csv")
+    target_path = os.path.join(dest_dir, "MATRIZ_H4_3_2_114_PEPTIDEOS_REAIS.csv")
     with open(target_path, "w", encoding="utf-8-sig", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=pep_csv_headers)
         writer.writeheader()
         writer.writerows(pep_rows)
     print(f"Gerado: {target_path} ({len(pep_rows)} linhas)")
 
-# Generate MATRIZ_H4_3_1_70_ESTUDOS_REAIS.csv
+# Generate MATRIZ_H4_3_2_70_ESTUDOS_REAIS.csv
 study_rows = []
 affected_count = 0
 for i, s in enumerate(studies):
@@ -118,18 +142,25 @@ for i, s in enumerate(studies):
     doi = s.get("doi", "")
     if sid == "study-palmitoyl-pentapeptide4-cosmetic" and not doi:
         doi = "Sem DOI editorial (apenas PMCID PMC10005804)"
-    study_type = s.get("studyType", "")
-    phase = s.get("phase", "")
+    study_type = s.get("studyDesign") or s.get("studyType", "")
     sample = s.get("sampleSize", "")
+    duration = s.get("duration", "")
     
     is_affected = "Sim" if pid in target_30 else "Não"
     if is_affected == "Sim":
         affected_count += 1
         target_compound = pid
-        nav_status = "PASS"
     else:
         target_compound = "N/A"
-        nav_status = "N/A"
+        
+    e2e_stud = e2e_data.get("studies", {}).get(sid, {})
+    desk_st = e2e_stud.get("desktop", "SKIPPED")
+    tab_st = e2e_stud.get("tablet", "SKIPPED")
+    mob_st = e2e_stud.get("mobile", "SKIPPED")
+    esc_st = e2e_stud.get("escape_close", "SKIPPED")
+    glob_st = e2e_stud.get("status", "SKIPPED")
+    
+    nav_st = e2e_data.get("relationships", {}).get(sid, {}).get("nav_status", "N/A" if is_affected == "Não" else "SKIPPED")
         
     study_rows.append({
         "numero": i + 1,
@@ -141,26 +172,31 @@ for i, s in enumerate(studies):
         "pmcid": pmcid if pmcid else "N/A",
         "doi": doi if doi else "N/A",
         "tipo_estudo": study_type,
-        "fase_ou_nivel": phase,
         "amostra": sample,
+        "duracao": duration,
         "relacionamento_afetado_30": is_affected,
         "composto_alvo": target_compound,
-        "status_e2e_modal": "PASS",
-        "status_navegacao_dossie": nav_status
+        "e2e_desktop": desk_st,
+        "e2e_tablet": tab_st,
+        "e2e_mobile": mob_st,
+        "e2e_escape_close": esc_st,
+        "status_navegacao_dossie": nav_st,
+        "status_e2e_global": glob_st
     })
 
 study_csv_headers = [
     "numero", "id", "titulo", "peptideo_primario", "peptideos_relacionados",
-    "pmid", "pmcid", "doi", "tipo_estudo", "fase_ou_nivel", "amostra",
-    "relacionamento_afetado_30", "composto_alvo", "status_e2e_modal", "status_navegacao_dossie"
+    "pmid", "pmcid", "doi", "tipo_estudo", "amostra", "duracao",
+    "relacionamento_afetado_30", "composto_alvo",
+    "e2e_desktop", "e2e_tablet", "e2e_mobile", "e2e_escape_close", "status_navegacao_dossie", "status_e2e_global"
 ]
 
 for dest_dir in [artifact_dir, os.path.join(repo_root, "tests")]:
-    target_path = os.path.join(dest_dir, "MATRIZ_H4_3_1_70_ESTUDOS_REAIS.csv")
+    target_path = os.path.join(dest_dir, "MATRIZ_H4_3_2_70_ESTUDOS_REAIS.csv")
     with open(target_path, "w", encoding="utf-8-sig", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=study_csv_headers)
         writer.writeheader()
         writer.writerows(study_rows)
     print(f"Gerado: {target_path} ({len(study_rows)} linhas, {affected_count} afetados)")
 
-print("=== GERAÇÃO DE MATRIZES CSV CONCLUÍDA COM SUCESSO ===")
+print("=== GERAÇÃO DE MATRIZES CSV CONCLUÍDA A PARTIR DOS DADOS REAIS DE TESTE ===")

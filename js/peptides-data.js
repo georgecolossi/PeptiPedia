@@ -135,7 +135,7 @@ const PEPTIDES_DATABASE = [
             "administrationNotes": "Aplicação SC perilesional (próxima à articulação ou tendão) ou subcutânea abdominal."
           },
           {
-            "phaseName": "Fase 2: Protocolo Terapêutico Padrão",
+            "phaseName": "Fase 2: Parâmetros Descritivos de Pesquisa",
             "dose": "250 a 500 mcg",
             "doseUnit": "mcg",
             "frequency": "1 a 2x ao dia (manhã e noite)",
@@ -978,28 +978,29 @@ const PEPTIDES_DATABASE = [
       "Subcutânea (SC)"
     ],
     "primaryRoute": "Subcutânea (SC)",
-    "summary": "O mais potente análogo de GHRH aprovado pela FDA. Reduz dramaticamente a gordura visceral patológica (tecido adiposo intra-abdominal) e a esteatose hepática não-alcoólica sem causar resistência insulínica.",
+    "summary": "Análogo estabilizado de GHRH aprovado pelo FDA para redução de gordura visceral intra-abdominal (VAT) em lipodistrofia associada ao HIV. Possui três formulações históricas e vigentes: Egrifta WR (1,28 mg/dia SC), Egrifta SV (1,4 mg/dia SC) e a formulação original histórica (2,0 mg/dia SC).",
     "mechanism": "Ativa os receptores de GHRH na hipófise de forma altamente eficiente, gerando pulsos de GH que ativam a lipólise profunda nos adipócitos viscerais através da lipase hormônio-sensível (HSL).",
     "researchProtocols": {
-      "typicalDose": "1.0 mg a 2.0 mg uma vez ao dia",
-      "defaultDoseNumber": 2,
+      "typicalDose": "1,28 mg/dia (Egrifta WR) ou 1,4 mg/dia (Egrifta SV) ou 2,0 mg/dia (Egrifta original histórica)",
+      "defaultDoseNumber": 1.28,
       "defaultUnit": "mg",
       "frequency": "1 vez ao dia (à noite ao deitar)",
       "defaultFrequency": "1x ao dia (diário)",
-      "cycleLength": "12 a 26 semanas (ensaios clínicos de 6 meses)",
-      "defaultCycleWeeks": 12,
+      "cycleLength": "Tratamento contínuo sob indicação clínica (avaliação aos 6 meses)",
+      "defaultCycleWeeks": 26,
       "timing": "Subcutâneo no abdômen à noite antes de deitar.",
-      "titration": "Iniciar com 1.0 mg nos primeiros 7 dias e progredir para 2.0 mg.",
-      "researchFocus": "Redução de gordura visceral profunda (VAT), regressão de esteatose hepática gordurosa (NASH) e melhora de cognição em idosos."
+      "titration": "Conforme apresentação de bula (Egrifta WR: 1,28 mg/dia; Egrifta SV: 1,4 mg/dia; formulação histórica: 2,0 mg/dia). Não requer titulação prévia de escalonamento.",
+      "researchFocus": "Redução seletiva de tecido adiposo visceral patológico (VAT) e esteatose hepática.",
+      "administrationGuide": "FORMULAÇÕES OFICIAIS FDA: (1) Egrifta WR (Aprovação FDA 2024/2025): 1,28 mg/dia SC (administrado como 0,16 mL de solução reconstituída a 8 mg/mL a partir de frasco multidose semanal). (2) Egrifta SV (Aprovação FDA 2024): 1,4 mg/dia SC (administrado como 0,35 mL de solução reconstituída a 4 mg/mL a partir de frasco de dose única de 2 mg). (3) Formulação Original Histórica (Aprovada em 2010): 2,0 mg/dia SC (administrada como 2 mL de solução reconstituída a 1 mg/mL a partir de 2 frascos de 1 mg ou 1 frasco de 2 mg com diluente estéril WFI). As formulações diferem em volume, concentração e diluente e NÃO devem ser misturadas nem ter suas doses intercambiadas arbitrariamente."
     },
     "reconstitution": {
-      "vialSize": "2 mg ou 10 mg",
-      "recommendedDiluent": "Água Bacteriostática USP (0.9% Álcool Benzílico)",
-      "recommendedBacWater": "2.0 mL",
-      "resultingConcentration": "1.0 mg/mL",
-      "storageUnmixed": "2°C a 8°C (geladeira) protegido da luz",
-      "storageMixed": "2°C a 8°C, utilizar em até 14 dias após diluído",
-      "handlingNotes": "Não congelar após reconstituído."
+      "vialSize": "Egrifta WR: frasco multidose com liofilizado | Egrifta SV: frasco dose única 2 mg | Histórica: frascos de 1 mg ou 2 mg",
+      "recommendedDiluent": "Conforme a formulação de bula: Egrifta WR utiliza diluente bacteriostático próprio do kit; Egrifta SV e histórica utilizam água estéril para injeção (WFI) sem conservantes.",
+      "recommendedBacWater": "WR: volume específico do kit (resulta em 8 mg/mL) | SV: 0,35 mL (resulta em 4 mg/mL) | Histórica: 2,0 mL (resulta em 1 mg/mL)",
+      "resultingConcentration": "WR: 8 mg/mL | SV: 4 mg/mL | Histórica: 1 mg/mL",
+      "storageUnmixed": "2°C a 8°C protegido da luz",
+      "storageMixed": "Egrifta WR: refrigerado por até 7 dias | Egrifta SV e Histórica: uso imediato em dose única descartável.",
+      "handlingNotes": "Não congelar e não agitar vigorosamente. Seguir estritamente o manual da apresentação específica."
     },
     "synergies": [
       {
@@ -1047,34 +1048,68 @@ const PEPTIDES_DATABASE = [
     "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
     "structuredProtocols": [
       {
-        "objective": "Redução Específica de Gordura Visceral Abdominal & Definição",
-        "targetAudience": "Bula Oficial FDA (Egrifta®) & Ensaios Clínicos de Composição Corporal",
+        "objective": "Redução Específica de Gordura Visceral Abdominal — Egrifta WR (Bula FDA 2024/2025)",
+        "targetAudience": "Bula Oficial FDA Egrifta WR (NDA 022505/S-020)",
         "evidenceLevel": "Classe A (Bula Oficial Homologada pelo FDA)",
         "phases": [
           {
-            "phaseName": "Protocolo Homologado de Bula (Egrifta®)",
-            "dose": "2,0 mg (ou 1,4 mg na formulação concentrada)",
+            "phaseName": "Regime Terapêutico Homologado — Egrifta WR",
+            "dose": "1,28 mg/dia (0,16 mL de solução a 8 mg/mL)",
             "doseUnit": "mg",
-            "frequency": "1x ao dia",
-            "duration": "26 semanas consecutivas",
-            "administrationNotes": "Aplicação SC no abdômen antes de dormir. Redução seletiva de tecido adiposo visceral (VAT) demonstrada em estudos duplo-cegos."
+            "frequency": "1x ao dia (à noite ao deitar)",
+            "duration": "Conforme avaliação clínica médica (ensaios de 26 a 52 semanas)",
+            "administrationNotes": "Injeção SC diária no abdômen antes de dormir. Frasco semanal reconstituído estável sob refrigeração."
           }
         ],
         "sources": [
           {
-            "title": "Bula Oficial FDA Egrifta (tesamorelin for injection)",
-            "url": "https://accessdata.fda.gov",
+            "title": "Bula Oficial FDA Egrifta WR (tesamorelin for injection, 2025)",
+            "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/022505s020lbl.pdf",
             "type": "regulatory"
-          },
+          }
+        ]
+      },
+      {
+        "objective": "Redução Específica de Gordura Visceral Abdominal — Egrifta SV (Bula FDA 2024)",
+        "targetAudience": "Bula Oficial FDA Egrifta SV (NDA 022505/S-018)",
+        "evidenceLevel": "Classe A (Bula Oficial Homologada pelo FDA)",
+        "phases": [
+          {
+            "phaseName": "Regime Terapêutico Homologado — Egrifta SV",
+            "dose": "1,4 mg/dia (0,35 mL de solução a 4 mg/mL)",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia (à noite ao deitar)",
+            "duration": "Conforme prescrição médica (avaliação de VAT aos 6 meses)",
+            "administrationNotes": "Injeção SC diária de baixo volume (0,35 mL) com frasco de dose única descartável imediatamente após reconstituição."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial FDA Egrifta SV (tesamorelin for injection, 2024)",
+            "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/022505s018lbl.pdf",
+            "type": "regulatory"
+          }
+        ]
+      },
+      {
+        "objective": "Regime Original Histórico de Bula (Egrifta 2010)",
+        "targetAudience": "Bula Original Histórica FDA (2010)",
+        "evidenceLevel": "Classe A (Registro Histórico FDA)",
+        "phases": [
+          {
+            "phaseName": "Regime Original de Registro",
+            "dose": "2,0 mg/dia (2,0 mL de solução a 1 mg/mL)",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia (à noite ao deitar)",
+            "duration": "26 semanas (ensaios pivotais NEJM 2007)",
+            "administrationNotes": "Reconstituição de 2 frascos de 1 mg ou 1 frasco de 2 mg em 2 mL de água estéril para injeção. Injeção SC única ao deitar."
+          }
+        ],
+        "sources": [
           {
             "title": "Falutz et al. Metabolic effects of a growth hormone-releasing factor in HIV lipodystrophy (NEJM 2007, PMID 18056598)",
             "url": "https://pubmed.ncbi.nlm.nih.gov/18056598/",
             "type": "clinical_trial"
-          },
-          {
-            "title": "Arcana Labs Peptide Database — Tesamorelina",
-            "url": "https://www.arcana-labs.app/peptideos",
-            "type": "comparative"
           }
         ]
       }
@@ -1450,7 +1485,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Ensaios Clínicos Fase 2 Publicados no NEJM (2023)",
     "evidenceScore": 95,
     "protocolEvidenceType": "clinical_proven",
-    "protocolEvidenceNote": "ENSAIOS CLÍNICOS FASE 2: Dados clínicos publicados no NEJM em 2023 (ensaios TRIUMPH). Demonstrou perda de até 24.2% do peso corporal em 48 semanas, com ativação tripla inovadora incluindo o receptor de Glucagon.",
+    "protocolEvidenceNote": "ENSAIOS CLÍNICOS FASE 2: Dados clínicos publicados no NEJM em 2023 (Jastreboff et al., N Engl J Med 2023; 389:514-526; PMID: 37366315; DOI: 10.1056/NEJMoa2301972). Os participantes foram randomizados para grupos paralelos com esquemas próprios de escalonamento (coortes de 1 mg, 4 mg, 8 mg e 12 mg), demonstrando perda ponderal média de até 24,2% às 48 semanas na dose teto de 12 mg.",
     "structure": "Peptídeo de 39 aminoácidos modificado com cadeia diácida C20",
     "sequence": "Tyr-Aib-Gln-Gly-Thr-Phe-Thr-Ser-Asp-Tyr-Ser-Ile-alpha-Me-Leu-Asp-Lys-Lys-Ala-Gln-Ala-Aib-Glu-Phe-Ile-Glu-Trp-Leu-Leu-Ala-Gly-Gly-Pro-Ser-Ser-Gly-Ala-Pro-Pro-Pro-Ser",
     "molecularWeight": "4731.3 g/mol",
@@ -1504,7 +1539,7 @@ const PEPTIDES_DATABASE = [
       }
     ],
     "scientificReferences": [
-      "Jastreboff AM, et al. Retatrutide for Obesity. N Engl J Med. 2023. PMID: 37366315"
+      "Jastreboff AM, Kaplan LM, Frías JP, et al. Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial. N Engl J Med. 2023;389(6):514-526. PMID: 37366315. DOI: 10.1056/NEJMoa2301972"
     ],
     "clinicalStudies": [
       {
@@ -1522,66 +1557,138 @@ const PEPTIDES_DATABASE = [
     "safetyHeaderTitle": "Critérios de Exclusão & Restrições Clínicas Documentadas",
     "structuredProtocols": [
       {
-        "objective": "Perda Ponderal Avançada, Melhora Hepática (MASH) & Pesquisa Tri-Agonista",
-        "targetAudience": "Ensaios Clínicos Fase 2/3 (NEJM 2023 / Lilly Triumph)",
-        "evidenceLevel": "Classe B (Ensaios Clínicos Controlados)",
+        "objective": "Grupo Paralelo 12 mg — Dose Teto Investigacional (NEJM 2023)",
+        "targetAudience": "Ensaio Clínico Fase 2 (Jastreboff et al., PMID 37366315)",
+        "evidenceLevel": "Classe B (Ensaio Clínico Randomizado Controlado)",
         "phases": [
           {
-            "phaseName": "Passo Inicial de Titulação (Escalonamento)",
+            "phaseName": "Semana 1 a 4: Iniciação de Titulação",
             "dose": "2,0 mg",
             "doseUnit": "mg",
             "frequency": "1x por semana",
-            "duration": "Semanas 1 a 4",
-            "administrationNotes": "ATENÇÃO: A dose de 2 mg foi avaliada no ensaio NEJM 2023 unicamente como etapa inicial de tolerabilidade, NÃO como braço independente de manutenção."
+            "duration": "4 semanas",
+            "administrationNotes": "Dose inicial de escalonamento para mitigação de efeitos gastrointestinais e adaptação metabólica."
           },
           {
-            "phaseName": "Braço de Manutenção 1 (Dose Baixa)",
-            "dose": "1,0 mg",
-            "doseUnit": "mg",
-            "frequency": "1x por semana",
-            "duration": "Até 48 semanas",
-            "administrationNotes": "Braço de menor dose de manutenção contínua no ensaio Fase 2."
-          },
-          {
-            "phaseName": "Braço de Manutenção 2 (Dose Intermediária)",
+            "phaseName": "Semana 5 a 8: Escalonamento Intermediário 1",
             "dose": "4,0 mg",
             "doseUnit": "mg",
             "frequency": "1x por semana",
-            "duration": "Até 48 semanas",
-            "administrationNotes": "Primeiro degrau terapêutico de alta eficácia; perda ponderal de ~17,1% às 48 semanas."
+            "duration": "4 semanas",
+            "administrationNotes": "Segundo degrau de titulação do grupo paralelo de 12 mg."
           },
           {
-            "phaseName": "Braço de Manutenção 3 (Dose Alta)",
+            "phaseName": "Semana 9 a 12: Escalonamento Intermediário 2",
             "dose": "8,0 mg",
             "doseUnit": "mg",
             "frequency": "1x por semana",
-            "duration": "Até 48 semanas",
-            "administrationNotes": "Braço de alta resposta; perda ponderal de ~22,8% às 48 semanas."
+            "duration": "4 semanas",
+            "administrationNotes": "Terceiro degrau de titulação do grupo paralelo de 12 mg."
           },
           {
-            "phaseName": "Braço de Manutenção Máximo (Dose Teto Investigacional)",
+            "phaseName": "Semana 13 a 48: Manutenção Máxima (Dose Teto)",
             "dose": "12,0 mg",
             "doseUnit": "mg",
             "frequency": "1x por semana",
-            "duration": "Até 48 semanas",
-            "administrationNotes": "Dose teto avaliada no ensaio Fase 2; perda ponderal média de 24,2% (26,2 kg) com resolução substancial de esteatose hepática."
+            "duration": "36 semanas (até semana 48)",
+            "administrationNotes": "Dose de manutenção do grupo de 12 mg; perda ponderal média de 24,2% (26,2 kg) com resolução de 86% da esteatose hepática."
           }
         ],
         "sources": [
           {
-            "title": "Jastreboff et al. Triple-Hormone-Receptor Agonist Retatrutide for Obesity (NEJM 2023, PMID 37364315)",
-            "url": "https://pubmed.ncbi.nlm.nih.gov/37364315/",
+            "title": "Jastreboff AM, et al. Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial (NEJM 2023, PMID 37366315)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
             "type": "clinical_trial"
+          }
+        ]
+      },
+      {
+        "objective": "Grupo Paralelo 8 mg — Dose Alta Investigacional (NEJM 2023)",
+        "targetAudience": "Ensaio Clínico Fase 2 (Jastreboff et al., PMID 37366315)",
+        "evidenceLevel": "Classe B (Ensaio Clínico Randomizado Controlado)",
+        "phases": [
+          {
+            "phaseName": "Semana 1 a 4: Iniciação",
+            "dose": "2,0 mg (ou 4,0 mg na coorte de escalonamento rápido)",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "4 semanas",
+            "administrationNotes": "Coorte de 8 mg avaliou iniciação com 2 mg (com passo em 4 mg) ou iniciação direta com 4 mg."
           },
           {
-            "title": "Arcana Labs Peptide Database — Retatrutida",
-            "url": "https://www.arcana-labs.app/peptideos",
-            "type": "comparative"
+            "phaseName": "Semana 5 a 8: Escalonamento Intermediário (se iniciado em 2 mg)",
+            "dose": "4,0 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "4 semanas",
+            "administrationNotes": "Degrau intermediário para pacientes que iniciaram em 2 mg."
           },
           {
-            "title": "ClinicalTrials.gov — TRIUMPH Program",
-            "url": "https://clinicaltrials.gov",
-            "type": "regulatory"
+            "phaseName": "Semana 9 a 48: Manutenção de Alta Resposta",
+            "dose": "8,0 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "40 semanas (até semana 48)",
+            "administrationNotes": "Dose de manutenção do grupo de 8 mg; perda ponderal média de ~22,8% às 48 semanas."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Jastreboff AM, et al. Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial (NEJM 2023, PMID 37366315)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
+            "type": "clinical_trial"
+          }
+        ]
+      },
+      {
+        "objective": "Grupo Paralelo 4 mg — Dose Intermediária Investigacional (NEJM 2023)",
+        "targetAudience": "Ensaio Clínico Fase 2 (Jastreboff et al., PMID 37366315)",
+        "evidenceLevel": "Classe B (Ensaio Clínico Randomizado Controlado)",
+        "phases": [
+          {
+            "phaseName": "Semana 1 a 4: Iniciação Lenta (opcional)",
+            "dose": "2,0 mg (ou 4,0 mg na coorte direta)",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "4 semanas",
+            "administrationNotes": "Coorte paralela de 4 mg com iniciação em 2 mg ou dose fixa de 4 mg desde a semana 1."
+          },
+          {
+            "phaseName": "Semana 5 a 48: Manutenção Intermediária",
+            "dose": "4,0 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "44 semanas (até semana 48)",
+            "administrationNotes": "Dose de manutenção do grupo de 4 mg; perda ponderal média de ~17,1% às 48 semanas."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Jastreboff AM, et al. Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial (NEJM 2023, PMID 37366315)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
+            "type": "clinical_trial"
+          }
+        ]
+      },
+      {
+        "objective": "Grupo Paralelo 1 mg — Dose Fixa Baixa (NEJM 2023)",
+        "targetAudience": "Ensaio Clínico Fase 2 (Jastreboff et al., PMID 37366315)",
+        "evidenceLevel": "Classe B (Ensaio Clínico Randomizado Controlado)",
+        "phases": [
+          {
+            "phaseName": "Semana 1 a 48: Manutenção Fixa",
+            "dose": "1,0 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "48 semanas",
+            "administrationNotes": "Braço paralelo independente com dose fixa de 1 mg durante todo o ensaio (sem titulação prévia)."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Jastreboff AM, et al. Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial (NEJM 2023, PMID 37366315)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
+            "type": "clinical_trial"
           }
         ]
       }
@@ -2092,42 +2199,46 @@ const PEPTIDES_DATABASE = [
     "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
     "structuredProtocols": [
       {
-        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
-        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
-        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "objective": "Melhora da Força Muscular na Síndrome de Barth (Bula FDA Forzinity® — Aprovação Acelerada)",
+        "targetAudience": "Bula Oficial FDA Forzinity (Pacientes com Síndrome de Barth ≥30 kg)",
+        "evidenceLevel": "Classe A (Aprovação Acelerada FDA 2025)",
         "phases": [
           {
-            "phaseName": "Fase 1: Titulação / Adaptação",
-            "dose": "Iniciar com dose menor para avaliar tolerância local.",
+            "phaseName": "Regime Terapêutico Homologado — Forzinity®",
+            "dose": "40 mg/dia",
             "doseUnit": "mg",
-            "frequency": "1 vez ao dia durante ciclos de revitalização mitocondrial",
-            "duration": "Iniciação do protocolo",
-            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
-          },
-          {
-            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
-            "dose": "10 mg a 40 mg ao dia",
-            "doseUnit": "mg",
-            "frequency": "1 vez ao dia durante ciclos de revitalização mitocondrial",
-            "duration": "4 a 8 semanas",
-            "administrationNotes": "Subcutâneo pela manhã.. Dados clínicos preliminares sob investigação."
+            "frequency": "1x ao dia (subcutâneo)",
+            "duration": "Uso contínuo conforme prescrição médica",
+            "administrationNotes": "Injeção SC diária para pacientes com síndrome de Barth geneticamente confirmada e peso corporal ≥30 kg."
           }
         ],
         "sources": [
           {
-            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
-            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "title": "FDA Drug Trials Snapshots: Forzinity (elamipretide injection)",
+            "url": "https://www.fda.gov/drugs/drug-trials-snapshots/drug-trials-snapshots-forzinity",
+            "type": "regulatory"
+          }
+        ]
+      },
+      {
+        "objective": "Investigação Experimental em Disfunção Mitocondrial e Longevidade",
+        "targetAudience": "Protocolos Investigacionais e Ensaios Clínicos Preliminares",
+        "evidenceLevel": "Classe C/D (Hipóteses Experimentais — Desfechos Clínicos não Comprovados em Miopatia)",
+        "phases": [
+          {
+            "phaseName": "Esquema Experimental Investigado em Ensaios Clínicos",
+            "dose": "10 mg a 40 mg ao dia",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia",
+            "duration": "4 a 8 semanas (ciclos investigacionais)",
+            "administrationNotes": "RESSALVA CIENTÍFICA MANDATÓRIA: O ensaio clínico pivotal Fase 3 MMPOWER-3 (Karaa et al. Neurology 2023, PMID 37268435) em indivíduos com miopatia mitocondrial primária NÃO atingiu seus desfechos primários de melhora no teste de caminhada de 6 minutos ou fadiga em relação ao placebo. Hipóteses de rejuvenescimento mitocondrial e longevidade permanecem estritamente investigacionais sem validação clínica para extensão da expectativa de vida humana."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Karaa A, et al. Efficacy and Safety of Elamipretide in Primary Mitochondrial Myopathy: The MMPOWER-3 Randomized Clinical Trial. Neurology. 2023. PMID: 37268435",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37268435/",
             "type": "clinical_study"
-          },
-          {
-            "title": "Arcana Labs Peptide Database",
-            "url": "https://www.arcana-labs.app/peptideos",
-            "type": "comparative"
-          },
-          {
-            "title": "PeptidePedia",
-            "url": "https://peptidepedia.org/all-peptides",
-            "type": "comparative"
           }
         ]
       }
@@ -3479,12 +3590,12 @@ const PEPTIDES_DATABASE = [
       "emagrecimento",
       "diabetes"
     ],
-    "status": "Em Ensaios Clínicos (Fase 3)",
-    "statusType": "investigational",
-    "evidenceLevel": "Ensaios Clínicos de Fase 2 (NEJM)",
-    "evidenceScore": 92,
-    "protocolEvidenceType": "clinical_proven",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Ensaio clínico de fase 2 publicado no New England Journal of Medicine (NEJM; PMID: 37351564). Posologia oral diária de 12 mg a 45 mg em cápsula, sem necessidade de jejum ou restrição hídrica.",
+    "status": "Aprovado FDA (Foundayo - 01/04/2026)",
+    "statusType": "approved",
+    "evidenceLevel": "Aprovado pelo FDA (Foundayo - 01/04/2026) / Ensaios Clínicos Fase 3",
+    "evidenceScore": 98,
+    "protocolEvidenceType": "approved_label",
+    "protocolEvidenceNote": "APROVAÇÃO REGULATÓRIA FDA: Aprovado pelo FDA em 01/04/2026 sob o nome comercial Foundayo (Eli Lilly) através do National Priority Voucher Program, especificamente para o controle crônico de peso em adultos com obesidade ou sobrepeso com comorbidades associadas. ATENÇÃO: A aprovação inicial de bula é para controle crônico de peso; a indicação para diabetes tipo 2 foi investigada em ensaios clínicos paralelos mas segue cronograma regulatório específico e não deve ser considerada automaticamente aprovada nesta bula inicial.",
     "structure": "Pequena molécula não-peptídica biodisponível por via oral",
     "sequence": "Molécula sintética orgânica não-peptídica (C42H41N7O5)",
     "molecularWeight": "723.8 g/mol",
@@ -3493,19 +3604,19 @@ const PEPTIDES_DATABASE = [
       "Oral"
     ],
     "primaryRoute": "Oral",
-    "summary": "Primeiro agonista oral de GLP-1 de molécula pequena não-peptídica da Eli Lilly que não necessita de inibidores de absorção gástrica (como o SNAC do Rybelsus) nem de restrição hídrica/alimentar matinal.",
+    "summary": "Primeiro agonista oral de GLP-1 de molécula pequena não-peptídica aprovado pelo FDA (Foundayo - 01/04/2026) para controle crônico de peso. Não requer inibidores de absorção gástrica (como o SNAC do Rybelsus) nem jejum ou restrição hídrica matinal.",
     "mechanism": "Liga-se ao domínio de transmembrana do receptor de GLP-1 humano induzindo conformação ativa acoplada à proteína Gs, aumentando cAMP intracelular e promovendo secreção dependente de glicose de insulina e supressão de glucagon.",
     "researchProtocols": {
-      "typicalDose": "12 mg a 45 mg",
+      "typicalDose": "Conforme bula Foundayo: dose inicial de titulação oral diária escalonada mensalmente até dose terapêutica de manutenção",
       "defaultDoseNumber": 12,
       "defaultUnit": "mg",
-      "frequency": "1x ao dia (diário)",
+      "frequency": "1x ao dia (oral diário)",
       "defaultFrequency": "1x ao dia (diário)",
-      "cycleLength": "26 a 36 semanas consecutivas",
-      "defaultCycleWeeks": 26,
-      "timing": "Via oral diária pela manhã ou à noite, com ou sem alimentos.",
-      "titration": "Titulação gradual iniciando em 3 mg ou 12 mg diários até a dose alvo de 36 mg ou 45 mg.",
-      "researchFocus": "Tratamento oral da obesidade e diabetes sem injeções subcutâneas."
+      "cycleLength": "Tratamento contínuo para controle crônico de peso",
+      "defaultCycleWeeks": 52,
+      "timing": "Via oral diária a qualquer hora do dia, com ou sem alimentos.",
+      "titration": "Escalonamento gradual mensal conforme orientação médica para mitigação de efeitos adversos gastrointestinais.",
+      "researchFocus": "Controle crônico de peso em adultos com obesidade ou sobrepeso com comorbidades relacionadas ao peso."
     },
     "reconstitution": {
       "vialSize": "Cápsulas Orais",
@@ -3549,52 +3660,56 @@ const PEPTIDES_DATABASE = [
     ],
     "popularityScore": 89,
     "contraindications": [
-      "Hipersensibilidade conhecida ao orforglipron",
-      "Histórico de pancreatite aguda ou disfunção exócrina pancreática",
-      "Comprometimento hepático grave (farmacocinética em investigação)",
+      "Hipersensibilidade conhecida ao orforglipron ou a qualquer componente da fórmula",
+      "Histórico pessoal ou familiar de Carcinoma Medular de Tireoide (MTC)",
+      "Pacientes com Neoplasia Endócrina Múltipla tipo 2 (MEN 2)",
       "Gravidez e lactação"
     ],
     "criticalAlert": "ALERTA FARMACOLÓGICO: Agonista não-peptídico do receptor de GLP-1 para administração oral em Fase 3. Requer atenção à tolerabilidade gastrointestinal na fase de titulação posológica.",
-    "safetyClassification": "clinical_trial",
-    "safetyHeaderTitle": "Critérios de Exclusão & Restrições Clínicas Documentadas",
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Foundayo® — FDA)",
     "structuredProtocols": [
       {
-        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
-        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
-        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "objective": "Controle Crônico de Peso em Adultos (Bula Aprovada FDA — Foundayo®)",
+        "targetAudience": "Bula Oficial Homologada FDA (01/04/2026)",
+        "evidenceLevel": "Classe A (Bula Oficial Homologada pelo FDA)",
         "phases": [
           {
-            "phaseName": "Fase 1: Titulação / Adaptação",
-            "dose": "Titulação gradual iniciando em 3 mg ou 12 mg diários até a dose alvo de 36 mg ou 45 mg.",
+            "phaseName": "Regime Terapêutico de Bula — Controle Crônico de Peso",
+            "dose": "Dose oral diária conforme esquema de titulação de bula",
             "doseUnit": "mg",
-            "frequency": "1x ao dia (diário)",
-            "duration": "Iniciação do protocolo",
-            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
-          },
-          {
-            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
-            "dose": "12 mg a 45 mg",
-            "doseUnit": "mg",
-            "frequency": "1x ao dia (diário)",
-            "duration": "26 a 36 semanas consecutivas",
-            "administrationNotes": "Via oral diária pela manhã ou à noite, com ou sem alimentos.. Dados clínicos preliminares sob investigação."
+            "frequency": "1x ao dia (oral)",
+            "duration": "Uso contínuo sob acompanhamento médico",
+            "administrationNotes": "Administração oral uma vez ao dia com ou sem alimentos. Indicação exclusiva para controle ponderal crônico."
           }
         ],
         "sources": [
           {
-            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
-            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "title": "FDA Approves First New Molecular Entity Under National Priority Voucher Program (Foundayo, 01/04/2026)",
+            "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-new-molecular-entity-under-national-priority-voucher-program",
+            "type": "regulatory"
+          }
+        ]
+      },
+      {
+        "objective": "Esquemas Experimentais Históricos de Fase 2 (NEJM 2023)",
+        "targetAudience": "Pesquisa Clínica Preliminar (Wharton et al.)",
+        "evidenceLevel": "Classe B (Ensaios Clínicos Randomizados)",
+        "phases": [
+          {
+            "phaseName": "Braços de Dose Investigacional Fase 2",
+            "dose": "12 mg, 24 mg, 36 mg ou 45 mg ao dia",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia (oral)",
+            "duration": "26 a 36 semanas consecutivas",
+            "administrationNotes": "Ensaio Fase 2 avaliou doses de 12 a 45 mg em cápsula oral com titulação prévia iniciando em 3 mg ou 12 mg."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Wharton S, et al. Daily Oral GLP-1 Receptor Agonist Orforglipron for Adults with Obesity. N Engl J Med. 2023. PMID: 37351564",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37351564/",
             "type": "clinical_study"
-          },
-          {
-            "title": "Arcana Labs Peptide Database",
-            "url": "https://www.arcana-labs.app/peptideos",
-            "type": "comparative"
-          },
-          {
-            "title": "PeptidePedia",
-            "url": "https://peptidepedia.org/all-peptides",
-            "type": "comparative"
           }
         ]
       }
@@ -4498,7 +4613,7 @@ const PEPTIDES_DATABASE = [
         "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
         "phases": [
           {
-            "phaseName": "Regime Posológico de Bula",
+            "phaseName": "Parâmetros Documentados em Literatura",
             "dose": "200 mg a 600 mg",
             "doseUnit": "mg",
             "frequency": "1 a 2x por semana",
@@ -4630,7 +4745,7 @@ const PEPTIDES_DATABASE = [
         "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
         "phases": [
           {
-            "phaseName": "Regime Posológico de Bula",
+            "phaseName": "Parâmetros Documentados em Literatura",
             "dose": "50 mg a 100 mg",
             "doseUnit": "mg",
             "frequency": "1x ao dia (diário) ou 3x por semana",
@@ -5748,7 +5863,7 @@ const PEPTIDES_DATABASE = [
         "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
         "phases": [
           {
-            "phaseName": "Regime Posológico de Bula",
+            "phaseName": "Parâmetros Documentados em Literatura",
             "dose": "1.0 mg a 2.0 mg",
             "doseUnit": "mg",
             "frequency": "1x ao dia (durante fase de pigmentação) ou 2x por semana",
@@ -9101,46 +9216,69 @@ const PEPTIDES_DATABASE = [
     "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
     "structuredProtocols": [
       {
-        "objective": "Reposição Endocrinológica (DGH), Caquexia & Suporte Anabólico Estrutural",
-        "targetAudience": "Bula Oficial Aprovada FDA/EMA/Anvisa & Prática Esportiva Documentada",
-        "evidenceLevel": "Classe A (Bula Oficial / Farmacopeia)",
+        "objective": "Deficiência de Hormônio do Crescimento em Adultos (DGH / Bula Genotropin®)",
+        "targetAudience": "Bula Oficial Aprovada FDA/EMA/Anvisa — Adultos com Deficiência de GH",
+        "evidenceLevel": "Classe A (Bula Oficial Homologada pelo FDA/EMA/Anvisa)",
         "phases": [
           {
-            "phaseName": "Esquema Clínico 1: Deficiência de GH em Adultos (DGH / Genotropin®)",
+            "phaseName": "Regime Clínico de Reposição — DGH em Adultos",
             "dose": "0,15 a 0,30 mg/dia (~0,45 a 0,90 UI/dia)",
             "doseUnit": "mg",
             "frequency": "1x ao dia (à noite ao deitar)",
             "duration": "Tratamento contínuo prolongado",
-            "administrationNotes": "Aplicação SC antes de dormir. Titulação mensal com base nos níveis de IGF-1 sérico e glicemia de jejum. 1 mg = 3 UI biológicas."
-          },
-          {
-            "phaseName": "Esquema Clínico 2: Caquexia Associada ao HIV (Serostim®)",
-            "dose": "Até 6,0 mg/dia (~18 UI/dia para peso >55 kg)",
-            "doseUnit": "mg",
-            "frequency": "1x ao dia ao deitar",
-            "duration": "Ciclos de 12 semanas sob rigoroso controle",
-            "administrationNotes": "Dose de resgate ponderal aprovada pelo FDA em caquexia crônica grave."
-          },
-          {
-            "phaseName": "Esquema 3: Composição Corporal & Relatos Esportivos (Classe C / Não Homologado)",
-            "dose": "2 a 4 UI/dia (~0,66 a 1,33 mg/dia)",
-            "doseUnit": "UI",
-            "frequency": "1x ao dia ou dividida em 2x",
-            "duration": "12 a 24 semanas (prática comunitária descrita)",
-            "administrationNotes": "EVIDÊNCIA CIENTÍFICA: Revisões sistemáticas (Liu et al. 2008, Hermansen et al. 2017) comprovam que em adultos saudáveis o rhGH aumenta massa magra prioritariamente por retenção hídrica extracelular e síntese de matriz de colágeno, SEM gerar ganho significativo de força isométrica contrátil máxima isolada. Proibido pela WADA."
+            "administrationNotes": "Aplicação SC antes de dormir. Titulação mensal individualizada com base na normalização dos níveis de IGF-1 sérico e glicemia de jejum. 1 mg corresponde a aproximadamente 3 UI biológicas."
           }
         ],
         "sources": [
           {
             "title": "Bula Oficial FDA Genotropin (somatropin for injection)",
-            "url": "https://accessdata.fda.gov",
+            "url": "https://www.accessdata.fda.gov",
             "type": "regulatory"
           },
           {
+            "title": "Consensus guidelines for the diagnosis and treatment of adults with GH deficiency. Eur J Endocrinol. 2018.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "guideline"
+          }
+        ]
+      },
+      {
+        "objective": "Caquexia e Perda Ponderal Involuntária Associada ao HIV (Bula Serostim®)",
+        "targetAudience": "Bula Oficial Aprovada FDA — Pacientes com Caquexia pelo HIV",
+        "evidenceLevel": "Classe A (Bula Oficial Homologada pelo FDA)",
+        "phases": [
+          {
+            "phaseName": "Regime Terapêutico de Resgate — Caquexia do HIV",
+            "dose": "Até 6,0 mg/dia (~18 UI/dia para peso >55 kg)",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia ao deitar",
+            "duration": "Ciclos de 12 semanas sob monitoramento clínico rigoroso",
+            "administrationNotes": "Dose terapêutica de resgate ponderal e aumento de massa magra aprovada pela FDA em caquexia crônica grave sob terapia antirretroviral."
+          }
+        ],
+        "sources": [
+          {
             "title": "Bula Oficial FDA Serostim (somatropin in HIV-associated wasting)",
-            "url": "https://accessdata.fda.gov",
+            "url": "https://www.accessdata.fda.gov",
             "type": "regulatory"
-          },
+          }
+        ]
+      },
+      {
+        "objective": "Práticas Comunitárias e Relatos de Composição Corporal no Fisiculturismo",
+        "targetAudience": "Relatos Descritivos da Literatura Esportiva (Uso Não Homologado)",
+        "evidenceLevel": "Classe C / Empírico (Não Homologado — Substância Proibida pela WADA)",
+        "phases": [
+          {
+            "phaseName": "Protocolos Empíricos Relatados na Comunidade Esportiva",
+            "dose": "2 a 4 UI/dia (~0,66 a 1,33 mg/dia)",
+            "doseUnit": "UI",
+            "frequency": "1x ao dia ou dividida em 2x",
+            "duration": "12 a 24 semanas (prática comunitária empírica)",
+            "administrationNotes": "EVIDÊNCIA CIENTÍFICA: Revisões sistemáticas e meta-análises (Liu et al. Ann Intern Med 2008, PMID 18347346; Hermansen et al. Sports Med 2017, PMID 28168641) comprovam que em adultos saudáveis e eutróficos o rhGH eleva a massa magra prioritariamente por retenção hídrica extracelular e síntese de matriz de colágeno, SEM gerar ganho significativo de força isométrica contrátil máxima ou hipertrofia miofibrilar isolada. Uso para fins de melhoramento atlético é estritamente proibido pela WADA."
+          }
+        ],
+        "sources": [
           {
             "title": "Liu et al. Systematic review: the effects of growth hormone on athletic performance (Ann Intern Med 2008, PMID 18347346)",
             "url": "https://pubmed.ncbi.nlm.nih.gov/18347346/",
@@ -9150,11 +9288,6 @@ const PEPTIDES_DATABASE = [
             "title": "Hermansen et al. Growth hormone administration and exercise performance in healthy adults: a systematic review (Sports Med 2017, PMID 28168641)",
             "url": "https://pubmed.ncbi.nlm.nih.gov/28168641/",
             "type": "systematic_review"
-          },
-          {
-            "title": "Arcana Labs Peptide Database — Somatropina (HGH)",
-            "url": "https://www.arcana-labs.app/peptideos",
-            "type": "comparative"
           }
         ]
       }
@@ -15005,6 +15138,7 @@ const PEPTIDES_DATABASE = [
     "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   }
 ];
+;
 ;
 
 // Categorias com metadados e contadores dinâmicos

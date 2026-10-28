@@ -1593,6 +1593,7 @@ const CLINICAL_STUDIES_DATABASE = [
     "year": 2023,
     "doi": null,
     "pmid": "36909866",
+    "pmcid": "PMC10005804",
     "studyDesign": "Ensaio Clínico Randomizado, Duplo-Cego, em Grupos Paralelos Controlado por Placebo ",
     "sampleSize": "21 mulheres indonésias (idade entre 26 e 55 anos) com rugas periorbitárias (pés-de-galinha)",
     "duration": "8 semanas de aplicação tópica contínua",
