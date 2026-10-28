@@ -999,7 +999,7 @@ const PEPTIDES_DATABASE = [
       "recommendedBacWater": "WR: 1,3 mL (fornece 8 mg/mL) | SV: 0,5 mL (fornece 4 mg/mL) | Histórica: 2,0 mL (fornece 1 mg/mL)",
       "resultingConcentration": "WR: 8 mg/mL | SV: 4 mg/mL | Histórica: 1 mg/mL",
       "storageUnmixed": "2°C a 8°C protegido da luz",
-      "storageMixed": "Egrifta WR: estritamente a 2°C a 8°C, utilizar em até 7 dias | Egrifta SV e Histórica: uso imediato em dose única descartável após reconstituição.",
+      "storageMixed": "Egrifta WR: conservar a solução reconstituída em temperatura ambiente controlada entre 20°C e 25°C (68°F a 77°F) e descartar qualquer sobra após 7 dias, contendo exatamente 7 doses utilizáveis por frasco (conforme DailyMed / Bula FDA 2025). Egrifta SV e histórica: reconstituídas com água estéril para injeção (WFI) sem conservantes para uso imediato em dose única descartável.",
       "handlingNotes": "Não congelar e não agitar vigorosamente. Seguir estritamente o manual da apresentação específica."
     },
     "synergies": [
@@ -1058,7 +1058,7 @@ const PEPTIDES_DATABASE = [
             "doseUnit": "mg",
             "frequency": "1x ao dia (à noite ao deitar)",
             "duration": "Conforme avaliação clínica médica (ensaios de 26 a 52 semanas)",
-            "administrationNotes": "Injeção SC diária no abdômen antes de dormir. Frasco semanal de 11,6 mg reconstituído com 1,3 mL de diluente bacteriostático, estável sob refrigeração (2°C a 8°C) por até 7 dias. Indicação restrita a excesso de gordura visceral intra-abdominal no HIV; não indicado para emagrecimento geral."
+            "administrationNotes": "Injeção SC diária no abdômen antes de dormir. Frasco semanal de 11,6 mg reconstituído com 1,3 mL de diluente estéril bacteriostático fornecido pelo fabricante, fornecendo concentração nominal oficial de 8 mg/mL e exatamente 7 doses utilizáveis por frasco. Conservação em temperatura ambiente controlada (20°C a 25°C) por até 7 dias (DailyMed/FDA). Indicação restrita a excesso de gordura visceral intra-abdominal no HIV; não indicado para emagrecimento geral."
           }
         ],
         "sources": [
@@ -1539,7 +1539,8 @@ const PEPTIDES_DATABASE = [
       }
     ],
     "scientificReferences": [
-      "Jastreboff AM, Kaplan LM, Frías JP, et al. Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial. N Engl J Med. 2023;389(6):514-526. PMID: 37366315. DOI: 10.1056/NEJMoa2301972"
+      "Jastreboff AM, Kaplan LM, Frías JP, et al. Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial. N Engl J Med. 2023;389(6):514-526. PMID: 37366315. DOI: 10.1056/NEJMoa2301972",
+      "Sanyal AJ, Lopez P, Haupt A, et al. Retatrutide for Metabolic Dysfunction-Associated Steatohepatitis: A Phase 2 Sub-study. Nat Med. 2024. DOI: 10.1038/s41591-024-03018-2"
     ],
     "clinicalStudies": [
       {
@@ -1549,7 +1550,7 @@ const PEPTIDES_DATABASE = [
         "pmid": "37366315",
         "phase": "Ensaio Clínico Randomizado, Duplo-Cego, Controlado por Placebo (Fase 2)",
         "participants": "338 adultos com obesidade ou sobrepeso com comorbidades",
-        "keyFindings": "No ensaio NEJM 2023 (Jastreboff et al., PMID 37366315), a redução média de peso com Retatrutida atingiu -24,2% na dose mais alta (12 mg às 48 semanas), com 100% dos pacientes no grupo de 12 mg atingindo perda ≥5% e 26% atingindo perda ≥30%. Em subestudo paralelo de pacientes com MASLD publicado na Nature Medicine (Sanyal et al. 2024, DOI: 10.1038/s41591-024-03018-2), a retatrutida 12 mg promoveu redução relativa média da fração de gordura hepática por ressonância magnética (MRI-PDFF) de aproximadamente 86% (86,1%) às 48 semanas, o que não equivale a resolução clínica de esteatose em 86% dos participantes."
+        "keyFindings": "No ensaio NEJM 2023 (Jastreboff et al., PMID 37366315), a redução média de peso com Retatrutida atingiu -24,2% na dose mais alta (12 mg às 48 semanas), com 100% dos pacientes no grupo de 12 mg atingindo perda ≥5% e 26% atingindo perda ≥30%. Em subestudo paralelo de pacientes com MASLD publicado na Nature Medicine (Sanyal et al. 2024, DOI: 10.1038/s41591-024-03018-2), a retatrutida 12 mg promoveu redução relativa média de 86,0% da gordura hepática mensurada por MRI-PDFF às 48 semanas, o que não equivale a resolução clínica de esteatose em 86% dos participantes."
       }
     ],
     "popularityScore": 98,
@@ -1591,7 +1592,7 @@ const PEPTIDES_DATABASE = [
             "doseUnit": "mg",
             "frequency": "1x por semana",
             "duration": "36 semanas (até semana 48)",
-            "administrationNotes": "Dose de manutenção do grupo paralelo de 12 mg; perda ponderal média de 24,2% (26,2 kg) às 48 semanas no ensaio NEJM 2023. Em subestudo específico de MASLD (Nature Medicine 2024), a dose de 12 mg demonstrou redução relativa média do teor de gordura hepática por MRI-PDFF de aproximadamente 86%."
+            "administrationNotes": "Dose de manutenção do grupo paralelo de 12 mg; perda ponderal média de 24,2% (26,2 kg) às 48 semanas no ensaio NEJM 2023. Em subestudo específico de MASLD (Nature Medicine 2024), a dose de 12 mg demonstrou redução relativa média de 86,0% da gordura hepática por MRI-PDFF, ressalvando-se que redução relativa média do biomarcador não equivale à proporção de participantes com resolução clínica da esteatose."
           }
         ],
         "sources": [
@@ -3607,7 +3608,7 @@ const PEPTIDES_DATABASE = [
     "summary": "Primeiro agonista oral de GLP-1 de molécula pequena não-peptídica aprovado pelo FDA (Foundayo - 01/04/2026) para controle crônico de peso. Não requer inibidores de absorção gástrica (como o SNAC do Rybelsus) nem jejum ou restrição hídrica matinal.",
     "mechanism": "Liga-se ao domínio de transmembrana do receptor de GLP-1 humano induzindo conformação ativa acoplada à proteína Gs, aumentando cAMP intracelular e promovendo secreção dependente de glicose de insulina e supressão de glucagon.",
     "researchProtocols": {
-      "typicalDose": "0,8 mg oral diário inicialmente (semanas 1-4) -> 2,5 mg oral diário (semanas 5-8) -> 5,5 mg oral diário (manutenção padrão); elevações opcionais para 9 mg, 14,5 mg ou dose máxima de 17,2 mg ao dia",
+      "typicalDose": "0,8 mg oral diário inicialmente (semanas 1-4) -> 2,5 mg oral diário (semanas 5-8) -> 5,5 mg oral diário (manutenção padrão); elevações opcionais para 9 mg, 14,5 mg ou dose máxima de 17,2 mg ao dia (com limite de 9 mg/dia sob inibidores fortes de CYP3A4)",
       "defaultDoseNumber": 0.8,
       "defaultUnit": "mg",
       "frequency": "1x ao dia (oral diário)",
@@ -3615,9 +3616,9 @@ const PEPTIDES_DATABASE = [
       "cycleLength": "Tratamento contínuo para controle crônico de peso",
       "defaultCycleWeeks": 52,
       "timing": "Via oral diária a qualquer hora do dia, com ou sem alimentos.",
-      "titration": "Titulação obrigatória de bula: iniciar com 0,8 mg/dia por pelo menos 30 dias; progredir para 2,5 mg/dia por pelo menos 30 dias; progredir para o patamar padrão de 5,5 mg/dia. Se necessário e bem tolerado, incrementos opcionais de 9 mg, 14,5 mg até a dose máxima de 17,2 mg/dia, respeitando intervalos mínimos de 30 dias entre aumentos.",
+      "titration": "Titulação obrigatória de bula: iniciar com 0,8 mg/dia por pelo menos 30 dias; progredir para 2,5 mg/dia por pelo menos 30 dias; progredir para o patamar padrão de 5,5 mg/dia. Se necessário e bem tolerado, incrementos opcionais de 9 mg, 14,5 mg até a dose máxima de 17,2 mg/dia, respeitando intervalos mínimos de 30 dias entre aumentos. Restrição CYP3A4: Limite estrito de 9 mg/dia durante uso concomitante com inibidores fortes de CYP3A4.",
       "researchFocus": "Controle crônico de peso em adultos com obesidade ou sobrepeso com comorbidades relacionadas ao peso.",
-      "administrationGuide": "REGIME OFICIAL DE TITULAÇÃO DE BULA (FDA 2026 — NDA 220934/S-003): (1) Iniciação: 0,8 mg oral 1x/dia por pelo menos 30 dias. (2) Escalonamento 1: 2,5 mg oral 1x/dia por pelo menos 30 dias. (3) Manutenção Padrão: 5,5 mg oral 1x/dia. (4) Elevações Opcionais de Eficácia Adicional: Caso haja indicação clínica e adequada tolerabilidade gastrointestinal, a dose pode ser elevada para 9 mg, 14,5 mg e até a dose máxima homologada de 17,2 mg/dia, mantendo intervalo de pelo menos 30 dias em cada nível. A progressão além de 5,5 mg é opcional e não obrigatória. Advertências: Interações farmacocinéticas decorrentes do retardo no esvaziamento gástrico; monitoramento em pacientes sob uso de contraceptivos orais ou fármacos de janela terapêutica estreita. Indicação restrita a controle crônico de peso; diabetes tipo 2 não constitui indicação aprovada nesta bula."
+      "administrationGuide": "REGIME OFICIAL DE TITULAÇÃO DE BULA (FDA 2026 — NDA 220934/S-003): (1) Iniciação: 0,8 mg oral 1x/dia por pelo menos 30 dias. (2) Escalonamento 1: 2,5 mg oral 1x/dia por pelo menos 30 dias. (3) Manutenção Padrão: 5,5 mg oral 1x/dia para controle crônico de peso. (4) Elevações Opcionais de Eficácia Adicional: Se clinicamente indicado e com boa tolerabilidade, progressão opcional para 9 mg, 14,5 mg e no máximo 17,2 mg/dia com intervalos mínimos de 30 dias. RESTRIÇÃO POSOLÓGICA E INTERAÇÕES MEDICAMENTOSAS: Limite máximo diário de 9 mg/dia durante uso concomitante com inibidores fortes de CYP3A4 (ex.: cetoconazol, claritromicina, itraconazol), sendo contraindicado escalonar para 14,5 ou 17,2 mg. Monitorar fármacos de estreita margem terapêutica devido ao retardo no esvaziamento gástrico. Indicação restrita a controle crônico de peso; diabetes tipo 2 não constitui indicação aprovada nesta bula."
     },
     "reconstitution": {
       "vialSize": "Cápsulas Orais",
@@ -3705,7 +3706,7 @@ const PEPTIDES_DATABASE = [
             "doseUnit": "mg",
             "frequency": "1x ao dia (oral)",
             "duration": "Intervalos mínimos de pelo menos 30 dias entre cada incremento",
-            "administrationNotes": "Progressão opcional individualizada baseada em resposta ponderal e tolerabilidade clínica. Dose máxima diária aprovada: 17,2 mg/dia."
+            "administrationNotes": "Progressão opcional individualizada baseada em resposta ponderal e tolerabilidade clínica. RESTRIÇÃO CYP3A4 E INTERAÇÕES (Bula FDA 2026 NDA 220934/S-003): A progressão além de 5,5 mg é estritamente opcional. Em pacientes em uso concomitante com inibidores fortes de CYP3A4, a dose máxima diária é restrita a 9 mg/dia, sendo contraindicado escalonar para 14,5 mg ou 17,2 mg. Monitorar retardo no esvaziamento gástrico."
           }
         ],
         "sources": [
@@ -3723,7 +3724,7 @@ const PEPTIDES_DATABASE = [
       },
       {
         "objective": "Esquemas Experimentais Históricos de Fase 2 (NEJM 2023)",
-        "targetAudience": "Pesquisa Clínica Preliminar (Wharton et al.)",
+        "targetAudience": "Histórico de Pesquisa Translacional Fase 2 — NÃO constitui posologia recomendada ou aprovada em bula (Wharton et al.)",
         "evidenceLevel": "Classe B (Ensaios Clínicos Randomizados)",
         "phases": [
           {
@@ -3732,7 +3733,7 @@ const PEPTIDES_DATABASE = [
             "doseUnit": "mg",
             "frequency": "1x ao dia (oral)",
             "duration": "26 a 36 semanas consecutivas",
-            "administrationNotes": "Ensaio Fase 2 avaliou doses de 12 a 45 mg em cápsula oral com titulação prévia iniciando em 3 mg ou 12 mg."
+            "administrationNotes": "ATENÇÃO: Esquema puramente experimental histórico de ensaio de Fase 2. Não utilizar como orientação posológica prática. A posologia aprovada de bula para Foundayo inicia obrigatoriamente em 0,8 mg/dia e atinge no máximo 17,2 mg/dia."
           }
         ],
         "sources": [
@@ -15168,6 +15169,7 @@ const PEPTIDES_DATABASE = [
     "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   }
 ];
+;
 ;
 ;
 ;

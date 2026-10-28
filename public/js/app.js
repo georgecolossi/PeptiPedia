@@ -4547,7 +4547,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (el) {
 
-        el.addEventListener('input', updateCalc);
+        el.addEventListener('input', () => {
+          if (el === vialInput || el === waterInput) {
+            if (typeof peptideCalculator !== 'undefined' && typeof peptideCalculator.clearOfficialPresentation === 'function') {
+              peptideCalculator.clearOfficialPresentation();
+            }
+            if (presentationsContainer) {
+              presentationsContainer.querySelectorAll('.calc-pres-btn').forEach(b => {
+                b.className = 'calc-pres-btn px-2.5 py-1 rounded-lg text-[11px] font-mono border transition-all cursor-pointer bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700';
+              });
+            }
+            updateConcPreview(vialInput.value, waterInput.value);
+          }
+          updateCalc();
+        });
 
         el.addEventListener('change', updateCalc);
 
@@ -4765,7 +4778,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
               }
 
-              updateConcPreview(p.vialMg, p.waterMl);
+              if (typeof peptideCalculator.setOfficialPresentation === 'function') {
+                if (p.officialCommercial) {
+                  peptideCalculator.setOfficialPresentation(p);
+                } else {
+                  peptideCalculator.clearOfficialPresentation();
+                }
+              }
+              updateConcPreview(p.vialMg, p.waterMl, p);
 
               updateCalc();
 
@@ -4857,7 +4877,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
 
-        updateConcPreview(p0.vialMg, p0.waterMl);
+        if (typeof peptideCalculator.setOfficialPresentation === 'function') {
+          if (p0.officialCommercial) {
+            peptideCalculator.setOfficialPresentation(p0);
+          } else {
+            peptideCalculator.clearOfficialPresentation();
+          }
+        }
+        updateConcPreview(p0.vialMg, p0.waterMl, p0);
 
       }
 
@@ -4883,15 +4910,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    function updateConcPreview(vialMg, waterMl) {
+    function updateConcPreview(vialMg, waterMl, presObj = null) {
 
-      if (concPreview && vialMg && waterMl && waterMl > 0) {
+      if (!concPreview) return;
+
+      const activePres = presObj || (typeof peptideCalculator !== 'undefined' && peptideCalculator.activePresentation);
+
+      if (activePres && activePres.officialCommercial && activePres.nominalConcMgMl) {
+
+        concPreview.textContent = `Concentração Nominal de Bula: ${activePres.nominalConcMgMl.toFixed(1)} mg/mL (${activePres.nominalConcMgMl * 1000} mcg/mL)${activePres.usableDoses ? ' — ' + activePres.usableDoses + ' doses utilizáveis declaradas' : ''}`;
+
+      } else if (vialMg && waterMl && waterMl > 0) {
 
         const conc = (vialMg / waterMl).toFixed(2);
 
         const concMcg = Math.round((vialMg * 1000) / waterMl);
 
-        concPreview.textContent = `Concentração: ${conc} mg/mL (${concMcg} mcg/mL)`;
+        concPreview.textContent = `Concentração Teórica: ${conc} mg/mL (${concMcg} mcg/mL)`;
+
+      } else {
+
+        concPreview.textContent = 'Concentração: —';
 
       }
 

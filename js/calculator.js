@@ -13,8 +13,8 @@ class PeptideCalculator {
     this.syringeType = "u100";
     this.frequencyPerWeek = 7;
     this.vialCost = 0;
-    
-    this.syringeConfigs = {
+    this.activePresentation = null;
+this.syringeConfigs = {
       u100: { capacityMl: 1.0, units: 100, label: "Seringa U-100 de 1,0 mL (capacidade: 100 unidades U-100)", tickInterval: 10 },
       u50: { capacityMl: 0.5, units: 50, label: "Seringa U-100 de 0,5 mL (capacidade: 50 unidades U-100)", tickInterval: 5 },
       u30: { capacityMl: 0.3, units: 30, label: "Seringa U-100 de 0,3 mL (capacidade: 30 unidades U-100 — Alta precisão)", tickInterval: 5 }
@@ -192,9 +192,36 @@ class PeptideCalculator {
         defaultUnit: "mg",
         notice: "Medicamento aprovado pelo FDA (Egrifta®) exclusivamente para redução de excesso de gordura visceral intra-abdominal (VAT) em adultos com lipodistrofia associada ao HIV (não indicado para perda de peso geral). Formulações com dosagens distintas: Egrifta WR (11,6 mg / 1,3 mL -> 8 mg/mL nominais, dose diária de 1,28 mg = 0,16 mL), Egrifta SV (2 mg / 0,5 mL -> 4 mg/mL nominais, dose diária de 1,4 mg = 0,35 mL) e formulação histórica original (2,0 mg/dia em 2,0 mL WFI). Não intercambiar formulações nem diluentes.",
         presentations: [
-          { label: "Egrifta WR (Frasco semanal 11,6 mg / 1,3 mL -> 8 mg/mL nominais)", vialMg: 11.6, waterMl: 1.3, nominalConcMgMl: 8.0, suggestedSyringe: "u30" },
-          { label: "Egrifta SV (Frasco dose única 4 mg/mL)", vialMg: 2, waterMl: 0.5, suggestedSyringe: "u50" },
-          { label: "Formulação Histórica Original (1 mg/mL)", vialMg: 2, waterMl: 2.0, suggestedSyringe: "u100" }
+          {
+            label: "Egrifta WR (Frasco semanal 11,6 mg / 1,3 mL -> 8 mg/mL nominais)",
+            vialMg: 11.6,
+            waterMl: 1.3,
+            nominalConcMgMl: 8.0,
+            usableDoses: 7,
+            officialCommercial: true,
+            storageNotice: "Conservar a solução reconstituída em temperatura ambiente controlada de 20°C a 25°C e descartar após 7 dias (DailyMed/FDA)",
+            suggestedSyringe: "u30"
+          },
+          {
+            label: "Egrifta SV (Frasco dose única 2 mg / 0,5 mL -> 4 mg/mL)",
+            vialMg: 2,
+            waterMl: 0.5,
+            nominalConcMgMl: 4.0,
+            usableDoses: 1,
+            officialCommercial: true,
+            storageNotice: "Uso imediato de dose única descartável após reconstituição com WFI sem conservantes (Bula FDA 2024)",
+            suggestedSyringe: "u50"
+          },
+          {
+            label: "Formulação Histórica Original (2 mg / 2,0 mL -> 1 mg/mL)",
+            vialMg: 2,
+            waterMl: 2.0,
+            nominalConcMgMl: 1.0,
+            usableDoses: 1,
+            officialCommercial: true,
+            storageNotice: "Uso imediato de dose única descartável após reconstituição com WFI sem conservantes (Registro FDA 2010)",
+            suggestedSyringe: "u100"
+          }
         ],
         doses: [
           { label: "1,28 mg (Bula FDA Egrifta WR: 0,16 mL)", val: 1.28, unit: "mg", context: "Bula Oficial FDA 2025 (0,16 mL a 8 mg/mL nominais)", evidence: "Classe A (Bula FDA Egrifta WR)" },
@@ -241,12 +268,12 @@ class PeptideCalculator {
         defaultUnit: "mg",
         notice: "Peptídeo de 16 aminoácidos derivado do DNA mitocondrial. Ativador da via AMPK e modulador da sensibilidade insulínica. AVISO: Parâmetros numéricos configuram exclusivamente exemplos para cálculo volumétrico na escala de seringa, não constituindo recomendação médica ou posologia validada.",
         presentations: [
-          { label: "5 mg (2.0 mL)", vialMg: 5, waterMl: 2.0, suggestedSyringe: "u100" },
+          { label: "5 mg (1.0 mL)", vialMg: 5, waterMl: 1.0, suggestedSyringe: "u100" },
           { label: "10 mg (2.0 mL)", vialMg: 10, waterMl: 2.0, suggestedSyringe: "u100" }
         ],
         doses: [
-          { label: "5,0 mg (Dose Investigacional Padrão)", val: 5.0, unit: "mg", context: "1 a 3x por semana (estudos Lee et al.)", evidence: "Classe B (Ensaios Clínicos Lee et al.)" },
-          { label: "10,0 mg (Dose Investigacional Alta)", val: 10.0, unit: "mg", context: "Protocolo metabólico experimental", evidence: "Classe C (Pesquisa Pré-Clínica)" }
+          { label: "2,5 mg (Dose Investigacional Inicial)", val: 2.5, unit: "mg", context: "Adaptação metabólica (estudos Lee et al.)", evidence: "Classe B (Ensaios Clínicos Lee et al.)" },
+          { label: "5,0 mg (Dose Investigacional Padrão)", val: 5.0, unit: "mg", context: "1 a 3x por semana (estudos Lee et al.)", evidence: "Classe B (Ensaios Clínicos Lee et al.)" }
         ]
       },
       {
@@ -303,16 +330,43 @@ class PeptideCalculator {
     ];
   }
 
+  setOfficialPresentation(presentation) {
+    if (!presentation || typeof presentation !== 'object') {
+      this.clearOfficialPresentation();
+      return;
+    }
+    this.activePresentation = {
+      label: presentation.label || "",
+      vialMg: presentation.vialMg,
+      waterMl: presentation.waterMl,
+      nominalConcMgMl: presentation.nominalConcMgMl || null,
+      usableDoses: presentation.usableDoses || null,
+      officialCommercial: !!presentation.officialCommercial,
+      storageNotice: presentation.storageNotice || null,
+      suggestedSyringe: presentation.suggestedSyringe || null
+    };
+    if (typeof presentation.vialMg === 'number') this.vialMg = presentation.vialMg;
+    if (typeof presentation.waterMl === 'number') this.waterMl = presentation.waterMl;
+    if (presentation.suggestedSyringe && this.syringeConfigs[presentation.suggestedSyringe]) {
+      this.syringeType = presentation.suggestedSyringe;
+    }
+  }
+
+  clearOfficialPresentation() {
+    this.activePresentation = null;
+  }
+
   reset() {
     this.vialMg = null;
     this.waterMl = null;
     this.doseValue = null;
     this.desiredDoseMcg = null;
     this.vialCost = 0;
+    this.activePresentation = null;
   }
 
   setValues(params = {}) {
-    const { vialMg, waterMl, doseValue, doseUnit, desiredDoseMcg, syringeType, frequencyPerWeek, vialCost } = params;
+    const { vialMg, waterMl, doseValue, doseUnit, desiredDoseMcg, syringeType, frequencyPerWeek, vialCost, officialPresentation, clearOfficial } = params;
 
     const parseStrictPositiveFinite = (val) => {
       if (val === null || val === undefined || val === '') return null;
@@ -320,6 +374,26 @@ class PeptideCalculator {
       const num = Number(val);
       return (typeof num === 'number' && Number.isFinite(num) && !isNaN(num) && num > 0) ? num : null;
     };
+
+    if (officialPresentation !== undefined) {
+      if (officialPresentation) {
+        this.setOfficialPresentation(officialPresentation);
+      } else {
+        this.clearOfficialPresentation();
+      }
+    } else if (clearOfficial === true) {
+      this.clearOfficialPresentation();
+    } else if (this.activePresentation) {
+      // Quando o usuário alterar manualmente massa ou volume, invalidar concentração de bula que deixe de ser aplicável
+      if (vialMg !== undefined) {
+        const pV = parseStrictPositiveFinite(vialMg);
+        if (pV !== this.activePresentation.vialMg) this.clearOfficialPresentation();
+      }
+      if (waterMl !== undefined) {
+        const pW = parseStrictPositiveFinite(waterMl);
+        if (pW !== this.activePresentation.waterMl) this.clearOfficialPresentation();
+      }
+    }
 
     if (vialMg !== undefined) {
       this.vialMg = parseStrictPositiveFinite(vialMg);
@@ -465,9 +539,11 @@ class PeptideCalculator {
       };
     }
     
-    // Concentrações
-    const concentrationMgPerMl = this.vialMg / this.waterMl;
-    const concentrationMcgPerMl = vialMcg / this.waterMl;
+    // Concentrações: distinção entre formulação comercial oficial de bula vs cálculo genérico teórico
+    const isOfficial = !!(this.activePresentation && this.activePresentation.officialCommercial && typeof this.activePresentation.nominalConcMgMl === 'number' && this.activePresentation.nominalConcMgMl > 0);
+
+    const concentrationMgPerMl = isOfficial ? this.activePresentation.nominalConcMgMl : (this.vialMg / this.waterMl);
+    const concentrationMcgPerMl = isOfficial ? (this.activePresentation.nominalConcMgMl * 1000) : (vialMcg / this.waterMl);
     
     // Volume em mL por dose desejada
     const volumePerDoseMl = this.desiredDoseMcg / concentrationMcgPerMl;
@@ -577,8 +653,12 @@ class PeptideCalculator {
       };
     }
     
-    // Doses totais no frasco
-    const totalDosesInVial = vialMcg / this.desiredDoseMcg;
+    // Doses totais no frasco:
+    // Para apresentações comerciais homologadas (como Egrifta WR), o fabricante declara exatamente 7 doses utilizáveis por frasco (não 9 doses calculadas por divisão linear simples).
+    // Para cálculos genéricos, calcula-se pela divisão linear teórica.
+    const totalDosesInVial = (isOfficial && typeof this.activePresentation.usableDoses === 'number' && this.activePresentation.usableDoses > 0)
+      ? this.activePresentation.usableDoses
+      : (vialMcg / this.desiredDoseMcg);
     
     // Duração do frasco em dias
     const daysDuration = (totalDosesInVial / (this.frequencyPerWeek / 7));
@@ -605,6 +685,13 @@ class PeptideCalculator {
 
     return {
       isValid: true,
+      isOfficialCommercial: isOfficial,
+      officialPresentationLabel: isOfficial ? this.activePresentation.label : null,
+      concentrationType: isOfficial ? "official_nominal" : "generic_theoretical",
+      concentrationSource: isOfficial ? "Bula Oficial Homologada (FDA / DailyMed)" : "Cálculo volumétrico teórico (massa nominal / volume de diluente)",
+      nominalVialMg: this.vialMg,
+      diluentAddedMl: this.waterMl,
+      storageNotice: isOfficial ? this.activePresentation.storageNotice : null,
       errorMessage: null,
       calculationError: null,
       measurementPrecisionAlert: measurementPrecisionAlert,
@@ -623,12 +710,15 @@ class PeptideCalculator {
       unitsOnSyringe: unitsOnSyringe.toFixed(1),
       exactUnitsNumber: unitsOnSyringe,
       totalDosesInVial: Math.floor(totalDosesInVial),
+      usableDosesSource: (isOfficial && this.activePresentation.usableDoses) ? "Bula Oficial do Fabricante (7 doses utilizáveis)" : "Divisão linear teórica",
       daysDuration: Math.round(daysDuration),
       costPerDose: costPerDose,
       fillPercentage: fillPercentage,
       warning: warning,
       warningLevel: warningLevel,
-      pharmacotechnicalNotice: pharmacotechnicalNotice
+      pharmacotechnicalNotice: isOfficial
+        ? `Apresentação Comercial Homologada: Concentração nominal oficial de bula de ${concentrationMgPerMl} mg/mL e ${Math.floor(totalDosesInVial)} doses utilizáveis declaradas pelo fabricante (DailyMed/FDA). Diluente bacteriostático fornecido: ${this.waterMl} mL. Conservação: ${this.activePresentation.storageNotice || '20°C a 25°C por até 7 dias'}.`
+        : pharmacotechnicalNotice
     };
   }
 
