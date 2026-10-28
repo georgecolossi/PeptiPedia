@@ -83,11 +83,13 @@ const STABILITY_SOLVENTS = [
     antimicrobialPreservative: "Álcool benzílico 0,9% (conservante antimicrobiano de amplo espectro)",
     ionicStrength: "Baixa (não iônico / sem eletrólitos)",
     budDays: 28,
-    budSummary: "USP <797> BUD: 28 dias pós-punção",
+    budSummary: "USP <797> multidose: até 28 dias pós-punção",
+    postPunctureBUD: "Até 28 dias pós-punção inicial para recipientes multidose contendo agente antimicrobiano (álcool benzílico 0,9%), salvo especificação em contrário do fabricante (USP <797>).",
+    microbiologicalValidity: "O agente conservante inibe a proliferação bacteriana introduzida por punções repetidas. ATENÇÃO: Essa contenção microbiológica NÃO retarda a degradação química intrínseca (hidrólise, desamidação, oxidação) da molécula nem assegura a manutenção de sua potência biológica ao longo do tempo.",
     chemicalKineticsNote: "A taxa de degradação térmica intrínseca (hidrólise, desamidação, oxidação) é governada pela sequência primária e temperatura. O álcool benzílico protege contra patógenos oportunistas introduzidos por múltiplas punções (USP <797>), mas não altera a cinética química de degradação térmica intrínseca.",
-    description: "Água estéril contendo álcool benzílico a 0,9% para inibição de crescimento microbiano em recipientes multidose puncionados. A farmacopeia USP <797> estabelece 28 dias como prazo limite padrão de uso (Beyond-Use Date - BUD) pós-punção para frascos multidose, a menos que especificado de forma diferente pelo fabricante em rotulagem oficial (as condições térmicas de conservação dependem da formulação individual e não são universalmente restritas a 2–8°C para todos os medicamentos). A contenção antimicrobiana conferida pelo bacteriostático NÃO constitui garantia de esterilidade permanente e NÃO assegura integridade química nem potência biológica da molécula — conceitos farmacêuticos distintos que sofrem degradação intrínseca contínua independentemente da barreira microbiológica.",
+    description: "Água estéril contendo álcool benzílico a 0,9% para inibição de crescimento microbiano em recipientes multidose puncionados. A farmacopeia USP <797> estabelece até 28 dias como prazo limite padrão pós-punção para frascos multidose conservados, a menos que especificado de forma diferente pelo fabricante em rotulagem oficial. Contenção antimicrobiana NÃO constitui garantia de esterilidade permanente e NÃO assegura integridade química nem potência biológica da molécula — propriedades farmacêuticas completamente distintas.",
     isReference: true,
-    microbialRisk: "BUD padrão de 28 dias pós-punção (USP <797>) salvo especificação do fabricante; não garante integridade química, esterilidade permanente nem potência biológica."
+    microbialRisk: "BUD padrão de até 28 dias pós-punção (USP <797>) para frascos multidose conservados; não garante integridade química nem potência biológica contínua."
   },
   {
     id: "sterile_water",
@@ -97,10 +99,12 @@ const STABILITY_SOLVENTS = [
     phRange: "5,0 – 7,0",
     antimicrobialPreservative: "Nenhum (isento de conservantes / veículo puro)",
     ionicStrength: "Muito baixa (água ultrapura desionizada)",
-    budDays: 0,
-    budSummary: "Uso imediato / sem conservante",
+    budDays: null,
+    budSummary: "Sem conservante — preparo para uso imediato",
+    postPunctureBUD: "Uso imediato / descarte após abertura (veículo estéril sem agente antimicrobiano sob USP <797>).",
+    microbiologicalValidity: "Veículo estéril isento de agente antimicrobiano. Uma vez aberto fora de ambiente controlado ISO 5, não possui barreira protetora contra proliferação bacteriana.",
     chemicalKineticsNote: "Veículo puro sem eletrólitos. A ausência de conservante exige uso imediato ou técnica estritamente asséptica. A cinética química intrínseca de degradação térmica permanece inalterada em relação à água pura.",
-    description: "Veículo estéril isento de qualquer agente antimicrobiano ou conservante. Uma vez puncionado ou reconstituído fora de ambiente asséptico controlado (ISO Classe 5), não possui barreira contra proliferação microbiana. Diretrizes farmacopeicas recomendam uso imediato; inexiste prazo genérico universal de armazenamento de 24 horas para qualquer preparação, devendo-se seguir a validação específica de cada bula homologada (desde descarte imediato até períodos estritamente delimitados sob refrigeração). Estabilidade química, esterilidade microbiológica e potência biológica são grandezas farmacêuticas completamente distintas e independentes.",
+    description: "Veículo estéril isento de qualquer agente antimicrobiano ou conservante. Diretrizes farmacopeicas recomendam uso imediato; inexiste prazo genérico universal de armazenamento de 24 horas para qualquer preparação, devendo-se seguir a validação específica de cada bula homologada. Estabilidade química, esterilidade microbiológica e potência biológica são grandezas farmacêuticas completamente distintas e independentes.",
     isReference: false,
     microbialRisk: "Crítico após abertura: veículo sem conservante; requer uso imediato ou conforme especificação de bula validada (não há prazo genérico de 24h)."
   },
@@ -112,10 +116,12 @@ const STABILITY_SOLVENTS = [
     phRange: "4,5 – 7,0",
     antimicrobialPreservative: "Nenhum (isento de conservantes)",
     ionicStrength: "Alta (154 mM Na+, 154 mM Cl- / isotônico ~308 mOsm/L)",
-    budDays: 0,
-    budSummary: "Uso imediato / sem conservante",
+    budDays: null,
+    budSummary: "Sem conservante — preparo para uso imediato",
+    postPunctureBUD: "Uso imediato / descarte após abertura (solução salina sem conservante sob USP <797>).",
+    microbiologicalValidity: "Veículo isotônico isento de agentes antimicrobianos. A força iônica não confere proteção contra contaminação microbiológica pós-punção.",
     chemicalKineticsNote: "A força iônica dos íons Na+ e Cl- modula a camada de solvatação e o potencial zeta superficial, influenciando solubilidade e agregação conformacional, mas não altera a taxa de clivagem térmica intrínseca sem teste específico de HPLC.",
-    description: "Veículo isotônico isento de agentes antimicrobianos. A força iônica dos íons Na+ e Cl- modula a camada de solvatação e o potencial eletrostático superficial, podendo influenciar a solubilidade de sequências com cargas concentradas. Não possui multiplicador cinético geral demonstrado para todos os peptídeos. Inexiste regra de descarte universal em 24 horas para qualquer preparação; a validade microbiológica pós-abertura ou reconstituição depende estritamente do produto, da apresentação (monodose vs sistema fechado/bomba), das condições assépticas de manipulação e das especificações da rotulagem aplicável.",
+    description: "Veículo isotônico isento de agentes antimicrobianos. A força iônica dos íons Na+ e Cl- modula a camada de solvatação e o potencial eletrostático superficial, podendo influenciar a solubilidade de sequências com cargas concentradas. Não possui multiplicador cinético geral demonstrado para todos os peptídeos. Inexiste regra de descarte universal em 24 horas para qualquer preparação; a validade microbiológica pós-abertura depende do produto, apresentação, técnica asséptica e rotulagem aplicável.",
     isReference: false,
     microbialRisk: "Veículo sem conservante antimicrobiano: validade microbiológica pós-abertura depende do produto, apresentação, técnica asséptica e rotulagem aplicável (sem descarte genérico de 24h)."
   },
@@ -125,14 +131,16 @@ const STABILITY_SOLVENTS = [
     factor: 1.0,
     evidenceLevel: "level_b",
     phRange: "3,5 – 4,0",
-    antimicrobialPreservative: "pH ácido fraco (inibição bacteriana seletiva)",
+    antimicrobialPreservative: "Sem conservante farmacopeico (veículo acidificado de solubilização)",
     ionicStrength: "Baixa (ácido fraco fracamente ionizado)",
-    budDays: 28,
-    budSummary: "Protocolo de pesquisa especializado",
-    chemicalKineticsNote: "O pH ácido (~3,5 a 4,0) mantém resíduos básicos protonados, prevenindo agregação física imediata em sequências com pI elevado (ex.: IGF-1 LR3). Não retarda a hidrólise química universal e pode favorecer clivagem em sítios sensíveis a ácido (Asp-Pro).",
-    description: "Solvente de pH ácido fraco empregado em protocolos laboratoriais especializados para peptídeos com ponto isoelétrico próximo à neutralidade (ex.: IGF-1 LR3), mantendo a carga líquida positiva para mitigar agregação hidrofóbica prematura. Pode favorecer a clivagem química em ligações sensíveis a ácido (ex.: Asp-Pro). Não constitui garantia de estabilidade para outros peptídeos.",
+    budDays: null,
+    budSummary: "Sem conservante validado — preparo para uso imediato em pesquisa",
+    postPunctureBUD: "Não aplicável — veículo isento de agente antimicrobiano com eficácia testada (USP <51>). Não confere proteção microbiológica multidose de 28 dias sob USP <797>.",
+    microbiologicalValidity: "Preparo estéril manipulado para uso imediato em protocolos de pesquisa ou descarte após a sessão experimental, salvo manipulação em cabine de segurança biológica ISO 5 com controle de esterilidade validado.",
+    chemicalKineticsNote: "O pH ácido (~3,5 a 4,0) mantém resíduos básicos protonados, prevenindo agregação física imediata em sequências com pI elevado (ex.: IGF-1 LR3). Essa compatibilidade de solubilização NÃO retarda a hidrólise química universal nem altera a cinética térmica intrínseca sem cromatografia quantitativa associada.",
+    description: "Solvente de pH ácido fraco empregado em protocolos laboratoriais especializados para peptídeos com ponto isoelétrico próximo à neutralidade (ex.: IGF-1 LR3), mantendo a carga líquida positiva para mitigar agregação hidrofóbica prematura. Não contém agente antimicrobiano com eficácia validada sob USP <51>. A contenção antimicrobiana, a estabilidade físico-química e a potência biológica são propriedades farmacêuticas independentes: solubilizar o peptídeo não equivale a prolongar sua validade microbiológica ou integridade térmica.",
     isReference: false,
-    microbialRisk: "Moderado: pH ácido restringe crescimento de certas cepas, mas não assegura esterilidade em frasco multidose."
+    microbialRisk: "Crítico em frascos multidose: ausência de agente antimicrobiano conservante validado sob USP <51>; requer preparo para uso imediato em pesquisa."
   }
 ];
 

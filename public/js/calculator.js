@@ -29,7 +29,7 @@ class PeptideCalculator {
       { name: "Semaglutida (0.50 mg)", vialMg: 5, waterMl: 2.0, doseVal: 0.50, doseUnit: "mg", doseMcg: 500, syringe: "u100" },
       { name: "Tirzepatida (2.5 mg)", vialMg: 10, waterMl: 2.0, doseVal: 2.5, doseUnit: "mg", doseMcg: 2500, syringe: "u100" },
       { name: "Tirzepatida (5.0 mg)", vialMg: 10, waterMl: 2.0, doseVal: 5.0, doseUnit: "mg", doseMcg: 5000, syringe: "u100" },
-      { name: "Retatrutida (2.0 mg)", vialMg: 10, waterMl: 2.0, doseVal: 2.0, doseUnit: "mg", doseMcg: 2000, syringe: "u100" },
+      { name: "Retatrutida (4.0 mg - Manutenção)", vialMg: 10, waterMl: 2.0, doseVal: 4.0, doseUnit: "mg", doseMcg: 4000, syringe: "u100" },
       { name: "Ipamorelin (200 mcg)", vialMg: 5, waterMl: 2.5, doseVal: 200, doseUnit: "mcg", doseMcg: 200, syringe: "u50" },
       { name: "CJC-1295 No DAC (100 mcg)", vialMg: 2, waterMl: 2.0, doseVal: 100, doseUnit: "mcg", doseMcg: 100, syringe: "u30" },
       { name: "Tesamorelina (1.0 mg)", vialMg: 10, waterMl: 2.0, doseVal: 1.0, doseUnit: "mg", doseMcg: 1000, syringe: "u100" },
@@ -40,9 +40,7 @@ class PeptideCalculator {
       { name: "MOTS-c (5.0 mg)", vialMg: 10, waterMl: 2.0, doseVal: 5.0, doseUnit: "mg", doseMcg: 5000, syringe: "u100" },
       { name: "PT-141 (1.0 mg)", vialMg: 10, waterMl: 2.0, doseVal: 1.0, doseUnit: "mg", doseMcg: 1000, syringe: "u100" },
       { name: "AOD-9604 (300 mcg)", vialMg: 5, waterMl: 2.5, doseVal: 300, doseUnit: "mcg", doseMcg: 300, syringe: "u50" },
-      { name: "KPV (250 mcg)", vialMg: 5, waterMl: 2.0, doseVal: 250, doseUnit: "mcg", doseMcg: 250, syringe: "u100" },
-      { name: "SLU-PP-332 (15 mg)", vialMg: 50, waterMl: 2.0, doseVal: 15, doseUnit: "mg", doseMcg: 15000, syringe: "u100" },
-      { name: "SLU-PP-915 (10 mg)", vialMg: 50, waterMl: 2.0, doseVal: 10, doseUnit: "mg", doseMcg: 10000, syringe: "u100" }
+      { name: "KPV (250 mcg)", vialMg: 5, waterMl: 2.0, doseVal: 250, doseUnit: "mcg", doseMcg: 250, syringe: "u100" }
     ];
 
     // Arquitetura em 3 Camadas: 16 Compostos Populares Estruturados
@@ -96,18 +94,18 @@ class PeptideCalculator {
         category: "Agonista Triplo GIP / GLP-1 / Glucagon",
         synonyms: ["reta", "tri-agonist", "ly3437943"],
         defaultUnit: "mg",
-        notice: "Molécula investigacional tri-agonista. Doses referem-se estritamente aos braços do ensaio clínico Fase 2 (NEJM 2023).",
+        notice: "Molécula investigacional tri-agonista GIP/GLP-1/Glucagon. Doses de manutenção avaliadas no ensaio Fase 2 (NEJM 2023) foram 1, 4, 8 e 12 mg semanais; a dose de 2 mg foi utilizada exclusivamente como passo inicial de titulação nas primeiras 4 semanas.",
         presentations: [
           { label: "5 mg (2.0 mL)", vialMg: 5, waterMl: 2.0, suggestedSyringe: "u100" },
           { label: "10 mg (2.0 mL)", vialMg: 10, waterMl: 2.0, suggestedSyringe: "u100" },
           { label: "12 mg (2.4 mL)", vialMg: 12, waterMl: 2.4, suggestedSyringe: "u100" }
         ],
         doses: [
-          { label: "1,0 mg (Braço Inicial Fase 2)", val: 1.0, unit: "mg", context: "Braço de iniciação Fase 2", evidence: "Classe B (Ensaio Clínico Fase 2 NEJM)" },
-          { label: "2,0 mg (Braço Baixo Fase 2)", val: 2.0, unit: "mg", context: "Braço de dose baixa Fase 2", evidence: "Classe B (Ensaio Clínico Fase 2 NEJM)" },
-          { label: "4,0 mg (Braço Médio Fase 2)", val: 4.0, unit: "mg", context: "Braço de dose intermediária", evidence: "Classe B (Ensaio Clínico Fase 2 NEJM)" },
-          { label: "8,0 mg (Braço Alto Fase 2)", val: 8.0, unit: "mg", context: "Braço de dose alta", evidence: "Classe B (Ensaio Clínico Fase 2 NEJM)" },
-          { label: "12,0 mg (Braço Máximo Fase 2)", val: 12.0, unit: "mg", context: "Dose teto investigacional Fase 2", evidence: "Classe B (Ensaio Clínico Fase 2 NEJM)" }
+          { label: "1,0 mg (Braço de Manutenção 1)", val: 1.0, unit: "mg", context: "Braço independente de manutenção Fase 2 (NEJM 2023)", evidence: "Classe B (Ensaio Clínico Fase 2 NEJM)" },
+          { label: "2,0 mg (Passo Inicial de Titulação)", val: 2.0, unit: "mg", context: "Passo inicial de escalonamento Sem 1-4 para os braços de 4, 8 e 12 mg (não é braço de manutenção)", evidence: "Classe B (Ensaio Clínico Fase 2 NEJM)" },
+          { label: "4,0 mg (Braço de Manutenção 2)", val: 4.0, unit: "mg", context: "Braço de manutenção terapêutica intermediária (NEJM 2023)", evidence: "Classe B (Ensaio Clínico Fase 2 NEJM)" },
+          { label: "8,0 mg (Braço de Manutenção 3)", val: 8.0, unit: "mg", context: "Braço de manutenção de alta eficácia (NEJM 2023)", evidence: "Classe B (Ensaio Clínico Fase 2 NEJM)" },
+          { label: "12,0 mg (Braço de Manutenção Máximo)", val: 12.0, unit: "mg", context: "Dose teto de manutenção investigacional (NEJM 2023)", evidence: "Classe B (Ensaio Clínico Fase 2 NEJM)" }
         ]
       },
       {

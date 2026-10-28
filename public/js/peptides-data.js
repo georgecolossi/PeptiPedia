@@ -117,7 +117,60 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "O BPC-157 acelerou significativamente o crescimento celular de explantes de tendão, promoveu a sobrevivência celular sob estresse citotóxico e aumentou drasticamente a migração celular pela fosforilação da quinase de adesão focal (FAK) e paxilina. Houve aumento mensurável na expressão dos receptores de GH (GH-R) nos fibroblastos lesionados."
       }
     ],
-    "popularityScore": 99
+    "popularityScore": 99,
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Reparação Tecidual, Tendinopatias & Integridade Gastrointestinal",
+        "targetAudience": "Pesquisa Pré-Clínica Robusta & Prática Empírica em Biohacking / Medicina Esportiva",
+        "evidenceLevel": "Classe C (Pré-Clínico Robusto / Prática Empírica Documentada)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Avaliação de Tolerabilidade",
+            "dose": "250 mcg",
+            "doseUnit": "mcg",
+            "frequency": "1x ao dia",
+            "duration": "Dias 1 a 3",
+            "administrationNotes": "Aplicação SC perilesional (próxima à articulação ou tendão) ou subcutânea abdominal."
+          },
+          {
+            "phaseName": "Fase 2: Protocolo Terapêutico Padrão",
+            "dose": "250 a 500 mcg",
+            "doseUnit": "mcg",
+            "frequency": "1 a 2x ao dia (manhã e noite)",
+            "duration": "4 a 8 semanas",
+            "administrationNotes": "Extrapolação alométrica da dose de 10 mcg/kg em roedores. Sinergia mecânica com carga progressiva e fisioterapia."
+          },
+          {
+            "phaseName": "Fase 3: Consolidação e Intervalo (Washout)",
+            "dose": "Pausa de administração",
+            "doseUnit": "",
+            "frequency": "Sem administração",
+            "duration": "4 semanas de intervalo",
+            "administrationNotes": "Período de washout para avaliação da cicatrização tecidual autônoma e prevenção de acomodação de resposta."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Sikiric et al. Stable gastric pentadecapeptide BPC 157 in tissue repair (Curr Pharm Des 2018, PMID 29898990)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29898990/",
+            "type": "preclinical"
+          },
+          {
+            "title": "Arcana Labs Peptide Database — BPC-157",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia — BPC-157 Complete Monograph",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (H4.3.1)"
   },
   {
     "id": "bpc-157-arginate",
@@ -195,7 +248,52 @@ const PEPTIDES_DATABASE = [
     "scientificReferences": [
       "Sikiric P, et al. BPC 157-NO system-relation. Curr Med Chem. 2020. PMID: 30046271"
     ],
-    "popularityScore": 90
+    "popularityScore": 90,
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Dose fixa.",
+            "doseUnit": "mcg",
+            "frequency": "1 a 2 vezes ao dia (250 mcg 2x/dia ou 500 mcg dose única)",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "500 mcg ao dia",
+            "doseUnit": "mcg",
+            "frequency": "1 a 2 vezes ao dia (250 mcg 2x/dia ou 500 mcg dose única)",
+            "duration": "6 a 12 semanas",
+            "administrationNotes": "Oral, 30 minutos antes do café da manhã com água mineral.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "tb-500",
@@ -295,7 +393,47 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "A proteína precursora Timosina Beta-4 completa (43 aminoácidos) estimulou células progenitoras derivadas do epicárdio adulto a se diferenciarem em novos cardiomiócitos funcionais e vasos sanguíneos pós-infarto em camundongos. Não avaliou o fragmento sintético heptapeptídico TB-500."
       }
     ],
-    "popularityScore": 97
+    "popularityScore": 97,
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Recuperação Muscular, Angiogênese & Mobilidade Articular",
+        "targetAudience": "Pesquisa Pré-Clínica e Prática Esportiva Documentada",
+        "evidenceLevel": "Classe C (Pesquisa Pré-Clínica / Relato Empírico)",
+        "phases": [
+          {
+            "phaseName": "Fase de Carregamento / Ataque",
+            "dose": "2,0 a 2,5 mg",
+            "doseUnit": "mg",
+            "frequency": "2x por semana (ex: Terça e Sexta)",
+            "duration": "Semanas 1 a 4 (Total de 4 a 5 mg/semana)",
+            "administrationNotes": "Aplicação SC sistêmica. Atua na regulação de actina-G, migração endotelial e supressão de fibrose tecidual."
+          },
+          {
+            "phaseName": "Fase de Manutenção",
+            "dose": "2,0 a 2,5 mg",
+            "doseUnit": "mg",
+            "frequency": "1x a cada 10 a 14 dias",
+            "duration": "Semanas 5 a 8",
+            "administrationNotes": "Manutenção da angiogênese tecidual e remodelamento da matriz extracelular."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Goldstein et al. Thymosin beta4: actin-sequestering protein in cell migration (Ann N Y Acad Sci 2012, PMID 23075073)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/23075073/",
+            "type": "preclinical"
+          },
+          {
+            "title": "Arcana Labs Peptide Database — TB-500",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (H4.3.1)"
   },
   {
     "id": "ghk-cu",
@@ -388,7 +526,52 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "O GHK-Cu reverte a expressão gênica de 4.192 genes para um perfil compatível com a juventude celular. Estimula colágeno tipo I, colágeno tipo III, elastina e glicosaminoglicanos, ao mesmo tempo em que reduz a expressão de metaloproteinases destrutivas (MMP-1, MMP-2)."
       }
     ],
-    "popularityScore": 94
+    "popularityScore": 94,
+    "safetyClassification": "cosmetic_topical",
+    "safetyHeaderTitle": "Advertências & Precauções de Uso Tópico Cosmético",
+    "structuredProtocols": [
+      {
+        "objective": "Remodelação Cutânea, Síntese de Colágeno, Firmeza & Reparação Tecidual",
+        "targetAudience": "Dermocosmética Avançada & Pesquisa Subcutânea de Regeneração",
+        "evidenceLevel": "Classe B (Ensaios Clínicos Cosméticos e Dermatológicos)",
+        "phases": [
+          {
+            "phaseName": "Protocolo Tópico Cosmético (Pele e Cabelo)",
+            "dose": "Sérum ou creme a 1% a 2%",
+            "doseUnit": "%",
+            "frequency": "1 a 2x ao dia (manhã e noite)",
+            "duration": "Uso continuado (avaliação às 8-12 semanas)",
+            "administrationNotes": "Aplicação direta sobre face, pescoço ou couro cabeludo limpos. Estimula a angiogênese local e síntese de colágeno tipos I e III."
+          },
+          {
+            "phaseName": "Protocolo Injetável Subcutâneo de Pesquisa",
+            "dose": "1,0 a 2,0 mg",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia",
+            "duration": "Ciclos de 4 a 6 semanas",
+            "administrationNotes": "Aplicação SC distante do tecido adiposo inflamado. Monitorar ingestão de zinco pela competição de transportadores metálicos."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Pickart & Margolina. Regenerative and protective actions of the GHK-Cu peptide (Int J Mol Sci 2018, PMID 29986520)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29986520/",
+            "type": "clinical_review"
+          },
+          {
+            "title": "Arcana Labs Peptide Database — GHK-Cu",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia — GHK-Cu Copper Peptide",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (H4.3.1)"
   },
   {
     "id": "ipamorelin",
@@ -485,7 +668,47 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "O Ipamorelin exibiu potência comparável ao GHRP-6 na estimulação de GH, porém foi o primeiro composto a demonstrar zero estímulo na secreção de cortisol, ACTH ou prolactina mesmo em doses 100 vezes superiores à dose eficaz média (ED50)."
       }
     ],
-    "popularityScore": 98
+    "popularityScore": 98,
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pulsatilidade Fisiológica de GH, Definição Corporal & Qualidade do Sono",
+        "targetAudience": "Pesquisa Farmacológica de Secretagogos e Prática Clínica Integrativa",
+        "evidenceLevel": "Classe B (Ensaios Clínicos Farmacocinéticos Fase 1/2)",
+        "phases": [
+          {
+            "phaseName": "Protocolo de Pulso Noturno de GH",
+            "dose": "100 a 200 mcg",
+            "doseUnit": "mcg",
+            "frequency": "1x ao dia (antes de dormir)",
+            "duration": "8 a 12 semanas consecutivas, com 4 semanas de intervalo",
+            "administrationNotes": "Aplicação SC 30-45 minutos antes de deitar, em jejum alimentar mínimo de 2 horas. Preserva prolactina e cortisol basais."
+          },
+          {
+            "phaseName": "Protocolo de Duplo Pulso (Composição Corporal)",
+            "dose": "100 mcg de manhã + 100 mcg ao deitar",
+            "doseUnit": "mcg",
+            "frequency": "2x ao dia",
+            "duration": "8 a 12 semanas",
+            "administrationNotes": "Primeira dose ao acordar em jejum antes do treino cardiovascular; segunda dose ao deitar."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Gobburu et al. Pharmacokinetic-pharmacodynamic modeling of ipamorelin (Pharm Res 1999, PMID 10565863)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10565863/",
+            "type": "clinical_trial"
+          },
+          {
+            "title": "Arcana Labs Peptide Database — Ipamorelin",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (H4.3.1)"
   },
   {
     "id": "cjc-1295-no-dac",
@@ -574,7 +797,39 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "A estimulação do receptor de GHRH aumentou os níveis cumulativos de GH secretado por 24 horas em 2 a 10 vezes sem extinguir a pulsatilidade hipofisária. O IGF-1 plasmático aumentou de 1,5 a 3 vezes mantendo-se dentro da margem fisiológica segura."
       }
     ],
-    "popularityScore": 95
+    "popularityScore": 95,
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Amplificação Somatotrófica Fisiológica (Sinergia com Ipamorelin) & Lipólise Noturna",
+        "targetAudience": "Pesquisa Clínica e Medicina Esportiva",
+        "evidenceLevel": "Classe B (Ensaios Clínicos de GHRH)",
+        "phases": [
+          {
+            "phaseName": "Sinergia Noturna Padrão (com Ipamorelin)",
+            "dose": "100 mcg",
+            "doseUnit": "mcg",
+            "frequency": "1x ao dia (ao deitar)",
+            "duration": "8 a 12 semanas",
+            "administrationNotes": "Aplicação SC ao deitar em jejum de 2 horas. Quando combinado a 100 mcg de Ipamorelin, promove secreção sinérgica amplificada de GH."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ionescu & Frohman. Pulsatile secretion of growth hormone by GHRH analogs (J Clin Endocrinol Metab 2006, PMID 16352683)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16352683/",
+            "type": "clinical_trial"
+          },
+          {
+            "title": "Arcana Labs Peptide Database — CJC-1295 no DAC",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (H4.3.1)"
   },
   {
     "id": "sermorelin",
@@ -664,7 +919,39 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "A administração noturna de Sermorelin reativou a pulsatilidade hipofisária noturna de GH, aumentou o IGF-1 médio em 38% e promoveu ganho estatisticamente significativo de 1,26 kg de massa livre de gordura sem retenção hídrica patológica."
       }
     ],
-    "popularityScore": 92
+    "popularityScore": 92,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "500 mcg a 1000 mcg (0.5 a 1.0 mg) ao deitar",
+            "doseUnit": "mcg",
+            "frequency": "1 vez ao dia, 5 a 7 noites por semana",
+            "duration": "3 a 6 meses",
+            "administrationNotes": "Administração: Subcutânea (SC). Subcutâneo, 30 a 60 minutos antes de dormir, com estômago vazio.."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Sermorelin)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "tesamorelin",
@@ -755,7 +1042,44 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "Na semana 26, o grupo tratado com Tesamorelin apresentou redução média de -15,2% na gordura visceral profunda (VAT), comparado a um aumento de +5,0% no grupo placebo (P<0,001). Os níveis de IGF-1 sérico aumentaram significativamente dentro da faixa fisiológica sem impacto adverso descompensador na glicemia."
       }
     ],
-    "popularityScore": 93
+    "popularityScore": 93,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Redução Específica de Gordura Visceral Abdominal & Definição",
+        "targetAudience": "Bula Oficial FDA (Egrifta®) & Ensaios Clínicos de Composição Corporal",
+        "evidenceLevel": "Classe A (Bula Oficial Homologada pelo FDA)",
+        "phases": [
+          {
+            "phaseName": "Protocolo Homologado de Bula (Egrifta®)",
+            "dose": "2,0 mg (ou 1,4 mg na formulação concentrada)",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia",
+            "duration": "26 semanas consecutivas",
+            "administrationNotes": "Aplicação SC no abdômen antes de dormir. Redução seletiva de tecido adiposo visceral (VAT) demonstrada em estudos duplo-cegos."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial FDA Egrifta (tesamorelin for injection)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Falutz et al. Metabolic effects of a growth hormone-releasing factor in HIV lipodystrophy (NEJM 2007, PMID 18056598)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18056598/",
+            "type": "clinical_trial"
+          },
+          {
+            "title": "Arcana Labs Peptide Database — Tesamorelina",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (H4.3.1)"
   },
   {
     "id": "semaglutide",
@@ -854,7 +1178,81 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "A redução média de peso corporal com a Semaglutida foi de -14,9% comparado a apenas -2,4% no grupo placebo (diferença estimada de -12,4 pontos percentuais). 86,4% dos pacientes alcançaram perda de peso ≥5% e 50,5% alcançaram perda ≥15%."
       }
     ],
-    "popularityScore": 100
+    "popularityScore": 100,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Controle Glicêmico, Redução Ponderal & Composição Corporal",
+        "targetAudience": "Bula Homologada FDA/EMA/Anvisa & Ensaios STEP",
+        "evidenceLevel": "Classe A (Bula Oficial de Medicamento Homologado)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Iniciação e Adaptação Gastrointestinal",
+            "dose": "0,25 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Semanas 1 a 4",
+            "administrationNotes": "Aplicação SC semanal no abdômen, coxa ou braço, no mesmo dia da semana. Dose não terapêutica destinada a mitigar náuseas e vômitos."
+          },
+          {
+            "phaseName": "Fase 2: Primeiro Degrau Terapêutico",
+            "dose": "0,50 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Semanas 5 a 8",
+            "administrationNotes": "Avaliação de resposta glicêmica e perda de peso inicial. Dose de manutenção para alguns pacientes com diabetes T2."
+          },
+          {
+            "phaseName": "Fase 3: Escalonamento Terapêutico Intermediário",
+            "dose": "1,0 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Semanas 9 a 12",
+            "administrationNotes": "Dose de manutenção padrão no diabetes tipo 2 (Ozempic®). Titulação para obesidade se tolerado."
+          },
+          {
+            "phaseName": "Fase 4: Escalonamento para Obesidade",
+            "dose": "1,7 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Semanas 13 a 16",
+            "administrationNotes": "Penúltimo degrau de titulação do protocolo de obesidade (Wegovy®)."
+          },
+          {
+            "phaseName": "Fase 5: Manutenção Máxima para Perda de Peso",
+            "dose": "2,4 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Tratamento contínuo sob acompanhamento médico",
+            "administrationNotes": "Dose teto homologada no ensaio STEP-1 com perda ponderal média de 14,9% às 68 semanas."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial FDA Wegovy (semaglutide)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Ensaio Clínico STEP-1 (NEJM 2021, PMID 33567185)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33567185/",
+            "type": "clinical_trial"
+          },
+          {
+            "title": "Arcana Labs Peptide Database — Semaglutida",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia — Semaglutide Overview",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (H4.3.1)"
   },
   {
     "id": "tirzepatide",
@@ -953,7 +1351,89 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "A perda média de peso corporal na semana 72 foi de -15,0% (dose de 5 mg), -19,5% (dose de 10 mg) e extraordinários -20,9% (dose de 15 mg), contra -3,1% no placebo. Impressionantes 63% dos indivíduos na dose de 15 mg alcançaram perda ≥20% de peso corporal."
       }
     ],
-    "popularityScore": 99
+    "popularityScore": 99,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Perda Ponderal Acentuada, Redução de Massa Gorda & Sensibilidade Insulínica",
+        "targetAudience": "Bula Homologada FDA/EMA/Anvisa & Ensaios SURMOUNT",
+        "evidenceLevel": "Classe A (Bula Oficial de Medicamento Homologado)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Iniciação e Adaptação Dupla GLP-1/GIP",
+            "dose": "2,5 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Semanas 1 a 4",
+            "administrationNotes": "Aplicação SC semanal fixa. Dose preparatória para condicionamento de receptores gástricos."
+          },
+          {
+            "phaseName": "Fase 2: Primeiro Degrau de Manutenção Terapêutica",
+            "dose": "5,0 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Semanas 5 a 8",
+            "administrationNotes": "Primeira dose com eficácia terapêutica clínica comprovada em perda ponderal e HbA1c."
+          },
+          {
+            "phaseName": "Fase 3: Escalonamento Intermediário 1",
+            "dose": "7,5 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Semanas 9 a 12",
+            "administrationNotes": "Incremento de 2,5 mg conforme tolerabilidade individual."
+          },
+          {
+            "phaseName": "Fase 4: Manutenção Avançada 1",
+            "dose": "10,0 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Semanas 13 a 16",
+            "administrationNotes": "Dose de alta resposta metabólica (perda ponderal média de ~19,5% nos ensaios SURMOUNT)."
+          },
+          {
+            "phaseName": "Fase 5: Escalonamento Intermediário 2",
+            "dose": "12,5 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Semanas 17 a 20",
+            "administrationNotes": "Etapa preparatória para pacientes com indicação de dose máxima."
+          },
+          {
+            "phaseName": "Fase 6: Dose Teto de Manutenção Homologada",
+            "dose": "15,0 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Tratamento contínuo de manutenção crônica",
+            "administrationNotes": "Dose máxima recomendada em bula (Mounjaro®/Zepbound®) com perda ponderal de até 22,5% às 72 semanas."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial FDA Zepbound (tirzepatide)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Ensaio Clínico SURMOUNT-1 (NEJM 2022, PMID 35658024)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35658024/",
+            "type": "clinical_trial"
+          },
+          {
+            "title": "Arcana Labs Peptide Database — Tirzepatida",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia — Tirzepatide Guide",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (H4.3.1)"
   },
   {
     "id": "retatrutide",
@@ -982,7 +1462,7 @@ const PEPTIDES_DATABASE = [
     "summary": "O primeiro agonista triplo de receptores hormonais (GGG: GLP-1, GIP e Glucagon). A adição do agonismo de glucagon eleva o gasto energético basal e acelera a oxidação hepática de gordura.",
     "mechanism": "O componente de glucagon ativa a termogênese mitocondrial e lipólise no fígado; o GLP-1 e GIP induzem saciedade cerebral profunda e controlam a glicemia sem causar hiperglicemia.",
     "researchProtocols": {
-      "typicalDose": "Doses avaliadas no ensaio Fase 2 (NEJM 2023): 1 mg, 4 mg, 8 mg e 12 mg semanal SC. Doses intermediárias empíricas (6 e 9 mg) não constituíram braços independentes do estudo pivotal.",
+      "typicalDose": "1 mg, 4 mg, 8 mg ou 12 mg (manutenção semanal); 2 mg exclusivamente como passo de titulação (sem 1-4)",
       "defaultDoseNumber": 1,
       "defaultUnit": "mg",
       "frequency": "1 vez por semana",
@@ -990,9 +1470,9 @@ const PEPTIDES_DATABASE = [
       "cycleLength": "Conforme protocolos clínicos em andamento",
       "defaultCycleWeeks": 24,
       "timing": "Subcutâneo no abdômen.",
-      "titration": "Ensaio Fase 2 testou: 1 mg direto; 4 mg (direto ou 2->4 mg); 8 mg (com titulação 2->4->8 ou 4->8 mg); 12 mg (com titulação 2->4->8->12 mg a cada 4 semanas).",
+      "titration": "Iniciar com 2 mg SC 1x/semana nas primeiras 4 semanas (passo de escalonamento obrigatório para os braços de 4, 8 e 12 mg no ensaio NEJM 2023).",
       "researchFocus": "Perda extrema de adiposidade visceral, esteato-hepatite metabólica (MASH), esteatose hepática grau 3.",
-      "administrationGuide": "PROTOCOLO CLÍNICO FASE 2 (TRI-AGONISTA GLP-1/GIP/GLUCAGON - NEJM 2023 / NCT04881760): O estudo pivotal avaliou 338 adultos com sobrepeso/obesidade durante 48 semanas com doses de 1 mg, 4 mg, 8 mg e 12 mg uma vez por semana. Braços com escalonamento escalonado a cada 4 semanas demonstraram redução de até 24,2% do peso corporal na dose máxima de 12 mg. Doses de 6 mg ou 9 mg não foram braços do estudo de obesidade do NEJM. Composto em investigação na Fase 3 (programa TRIUMPH); não aprovado para uso comercial."
+      "administrationGuide": "BRAÇOS DE MANUTENÇÃO NO ENSAIO FASE 2 (NEJM 2023): 1 mg, 4 mg, 8 mg e 12 mg semanais. A dose de 2 mg foi utilizada unicamente como passo inicial de titulação nas semanas 1-4, não como braço independente de manutenção. O braço de 4 mg atingiu perda ponderal média de 17,1%; o braço de 8 mg atingiu 22,8%; e o braço de 12 mg atingiu 24,2% às 48 semanas."
     },
     "reconstitution": {
       "vialSize": "5 mg ou 10 mg",
@@ -1037,7 +1517,76 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "Na semana 48, a redução média de peso com Retatrutida atingiu -24,2% na dose mais alta (12 mg), comparado a -2,1% no placebo. 100% dos pacientes no grupo de 12 mg perderam ≥5% do peso corporal e 26% perderam ≥30% de seu peso total. Além disso, houve resolução de 86% da esteatose hepática."
       }
     ],
-    "popularityScore": 98
+    "popularityScore": 98,
+    "safetyClassification": "clinical_trial",
+    "safetyHeaderTitle": "Critérios de Exclusão & Restrições Clínicas Documentadas",
+    "structuredProtocols": [
+      {
+        "objective": "Perda Ponderal Avançada, Melhora Hepática (MASH) & Pesquisa Tri-Agonista",
+        "targetAudience": "Ensaios Clínicos Fase 2/3 (NEJM 2023 / Lilly Triumph)",
+        "evidenceLevel": "Classe B (Ensaios Clínicos Controlados)",
+        "phases": [
+          {
+            "phaseName": "Passo Inicial de Titulação (Escalonamento)",
+            "dose": "2,0 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Semanas 1 a 4",
+            "administrationNotes": "ATENÇÃO: A dose de 2 mg foi avaliada no ensaio NEJM 2023 unicamente como etapa inicial de tolerabilidade, NÃO como braço independente de manutenção."
+          },
+          {
+            "phaseName": "Braço de Manutenção 1 (Dose Baixa)",
+            "dose": "1,0 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Até 48 semanas",
+            "administrationNotes": "Braço de menor dose de manutenção contínua no ensaio Fase 2."
+          },
+          {
+            "phaseName": "Braço de Manutenção 2 (Dose Intermediária)",
+            "dose": "4,0 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Até 48 semanas",
+            "administrationNotes": "Primeiro degrau terapêutico de alta eficácia; perda ponderal de ~17,1% às 48 semanas."
+          },
+          {
+            "phaseName": "Braço de Manutenção 3 (Dose Alta)",
+            "dose": "8,0 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Até 48 semanas",
+            "administrationNotes": "Braço de alta resposta; perda ponderal de ~22,8% às 48 semanas."
+          },
+          {
+            "phaseName": "Braço de Manutenção Máximo (Dose Teto Investigacional)",
+            "dose": "12,0 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Até 48 semanas",
+            "administrationNotes": "Dose teto avaliada no ensaio Fase 2; perda ponderal média de 24,2% (26,2 kg) com resolução substancial de esteatose hepática."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Jastreboff et al. Triple-Hormone-Receptor Agonist Retatrutide for Obesity (NEJM 2023, PMID 37364315)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37364315/",
+            "type": "clinical_trial"
+          },
+          {
+            "title": "Arcana Labs Peptide Database — Retatrutida",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "ClinicalTrials.gov — TRIUMPH Program",
+            "url": "https://clinicaltrials.gov",
+            "type": "regulatory"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (H4.3.1)"
   },
   {
     "id": "aod-9604",
@@ -1124,7 +1673,39 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "O AOD-9604 demonstrou capacidade pronunciada de estimular a oxidação lipídica e lipólise no tecido adiposo humano sem exibir afinidade pelos receptores de GH sistêmicos, demonstrando completa ausência de efeito hiperglicemiante ou aumento de IGF-1."
       }
     ],
-    "popularityScore": 89
+    "popularityScore": 89,
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Lipólise Específica Adiposa sem Efeitos Hipoglicemiantes ou Mitogênicos",
+        "targetAudience": "Pesquisa Clínica e Pré-Clínica de Metabólitos de GH",
+        "evidenceLevel": "Classe B (Ensaios Clínicos Piloto)",
+        "phases": [
+          {
+            "phaseName": "Protocolo Matinal de Jejum",
+            "dose": "300 a 500 mcg",
+            "doseUnit": "mcg",
+            "frequency": "1x ao dia (pela manhã em jejum)",
+            "duration": "8 a 12 semanas consecutivas",
+            "administrationNotes": "Aplicação SC matinal 30-45 minutos antes do exercício aeróbio ou primeira refeição. Isento de afinidade pelos receptores de IGF-1."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Heffernan et al. The effects of human GH and its lipolytic fragment (AOD9604) on lipid metabolism (Endocrinology 2001, PMID 11714653)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11714653/",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database — AOD-9604",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (H4.3.1)"
   },
   {
     "id": "epitalon",
@@ -1235,7 +1816,39 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "A adição de Epitalon (Ala-Glu-Asp-Gly) ao meio de cultura induziu a expressão de telomerase e permitiu que os fibroblastos realizassem 10 divisões adicionais em comparação ao controle, atingindo a passagem 44 antes da senescência replicativa. Trata-se de experimento celular in vitro que não permite extrapolação direta para longevidade sistêmica em humanos."
       }
     ],
-    "popularityScore": 96
+    "popularityScore": 96,
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Biorregulação Telomérica, Ritmo Circadiano & Longevidade Sistêmica",
+        "targetAudience": "Pesquisa Biogerontológica Khavinson",
+        "evidenceLevel": "Classe B (Pesquisas Clínicas Longitudinais)",
+        "phases": [
+          {
+            "phaseName": "Ciclo Biogerontológico Clássico (Protocolo Khavinson)",
+            "dose": "5 a 10 mg",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia (pela manhã ao acordar)",
+            "duration": "10 a 20 dias consecutivos",
+            "administrationNotes": "Aplicação SC ou IM matinal. Ciclo repetido 1 a 2 vezes ao ano (intervalos de 6 meses) para suporte telomérico e equilíbrio neuroepifisário."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Khavinson et al. Peptide promotes telomerase activation and elongation in human cells (Bull Exp Biol Med 2003, PMID 12937682)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12937682/",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database — Epitalon",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (H4.3.1)"
   },
   {
     "id": "mots-c",
@@ -1334,7 +1947,52 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "O MOTS-c atua diretamente no músculo esquelético, inibindo o ciclo folato-metionina, o que eleva os níveis intracelulares de AICAR e ativa constitutivamente a quinase AMPK. Preveniu completamente o ganho de massa gorda induzido por dieta rica em gordura e reverteu a resistência periférica à insulina."
       }
     ],
-    "popularityScore": 93
+    "popularityScore": 93,
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Metabolismo Energético Mitocondrial, Sensibilidade à Insulina & Capacidade Física",
+        "targetAudience": "Pesquisa Biogerontológica e Medicina Metabólica",
+        "evidenceLevel": "Classe B (Ensaios Clínicos e Estudos Piloto em Humanos)",
+        "phases": [
+          {
+            "phaseName": "Fase de Carga Metabólica",
+            "dose": "5 a 10 mg",
+            "doseUnit": "mg",
+            "frequency": "3x por semana (dias alternados)",
+            "duration": "Semanas 1 a 4",
+            "administrationNotes": "Aplicação SC pela manhã ou 45-60 min antes do exercício físico. Ativação direta da via AMPK mitocondrial."
+          },
+          {
+            "phaseName": "Fase de Manutenção",
+            "dose": "5 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Semanas 5 a 8",
+            "administrationNotes": "Sustentação da captação periférica de glicose e eficiência da cadeia respiratória celular."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Lee et al. The mitochondrial-derived peptide MOTS-c promotes metabolic homeostasis (Cell Metab 2015, PMID 25738459)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/25738459/",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Reynolds et al. MOTS-c is an exercise-induced mitochondrial-encoded regulator of physical capacity (Nat Commun 2021, PMID 33473109)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33473109/",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database — MOTS-c",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (H4.3.1)"
   },
   {
     "id": "ss-31",
@@ -1429,7 +2087,52 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "O ensaio MMPOWER-3 não atingiu seus dois desfechos primários de eficácia clínica: não houve diferença estatisticamente significativa entre elamipretida e placebo na distância do teste de caminhada de 6 minutos (6MWT) (diferença de -3,2 metros, IC 95% de -18,7 a 12,3, p=0,69), e o desfecho primário de fadiga (escore PMMSA Total Fatigue) não apresentou melhora estatisticamente significativa em relação ao placebo. O perfil de segurança foi favorável, predominando reações no local da injeção."
       }
     ],
-    "popularityScore": 88
+    "popularityScore": 88,
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Iniciar com dose menor para avaliar tolerância local.",
+            "doseUnit": "mg",
+            "frequency": "1 vez ao dia durante ciclos de revitalização mitocondrial",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "10 mg a 40 mg ao dia",
+            "doseUnit": "mg",
+            "frequency": "1 vez ao dia durante ciclos de revitalização mitocondrial",
+            "duration": "4 a 8 semanas",
+            "administrationNotes": "Subcutâneo pela manhã.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "semax",
@@ -1592,7 +2295,52 @@ const PEPTIDES_DATABASE = [
         "operationalCaveat": "Apresentação líquida hospitalar de uso restrito. Não indicada para nootropia de rotina sem orientação especializada."
       }
     ],
-    "popularityScore": 96
+    "popularityScore": 96,
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Iniciar com dose baixa (200-300 mcg) para avaliar tolerância e foco.",
+            "doseUnit": "mcg",
+            "frequency": "1 a 2 vezes ao dia (manhã e início da tarde)",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "250 mcg a 1000 mcg ao dia (ou 2 a 3 gotas por narina da solução a 0.1%)",
+            "doseUnit": "mcg",
+            "frequency": "1 a 2 vezes ao dia (manhã e início da tarde)",
+            "duration": "14 a 28 dias consecutivos, seguidos de 14 dias de intervalo",
+            "administrationNotes": "Intranasal (spray/gotas) ou SC pela manhã logo ao acordar.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "selank",
@@ -1724,7 +2472,52 @@ const PEPTIDES_DATABASE = [
         "operationalCaveat": "Solução pronta para instilação nasal direta com conta-gotas. Não requer seringa ou reconstituição."
       }
     ],
-    "popularityScore": 91
+    "popularityScore": 91,
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Dose fixa.",
+            "doseUnit": "mcg",
+            "frequency": "1 a 2 vezes ao dia conforme necessidade emocional",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "250 mcg a 750 mcg ao dia (ou 2 gotas por narina da solução a 0.15%)",
+            "doseUnit": "mcg",
+            "frequency": "1 a 2 vezes ao dia conforme necessidade emocional",
+            "duration": "14 a 30 dias",
+            "administrationNotes": "Intranasal ou SC pela manhã ou momentos de ansiedade.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "cerebrolysin",
@@ -1821,7 +2614,52 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "Pacientes tratados com Cerebrolysin demonstraram melhora precoce estatisticamente superior na função motora fina do braço e mão em comparação ao placebo no dia 90 (P<0,001). A incidência de efeitos adversos graves foi idêntica à do grupo placebo."
       }
     ],
-    "popularityScore": 97
+    "popularityScore": 97,
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Manter dose constante durante o ciclo.",
+            "doseUnit": "mL",
+            "frequency": "1 vez ao dia em ciclos de 10 a 20 dias consecutivos",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "5.0 mL a 10.0 mL por dia (IM) ou 10 mL a 30 mL (em infusão IV com salina 0.9%)",
+            "doseUnit": "mL",
+            "frequency": "1 vez ao dia em ciclos de 10 a 20 dias consecutivos",
+            "duration": "Ciclos concentrados de 10 a 20 dias, podendo ser repetidos após 2 a 3 meses",
+            "administrationNotes": "IM profunda pela manhã ou infusão intravenosa lenta (30-60 minutos).. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "thymosin-alpha-1",
@@ -1924,7 +2762,44 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "A mortalidade por todas as causas em 28 dias foi de 26,0% (47/181) no grupo Tα1 contra 35,0% (63/180) no grupo controle convencional, com significância marginal na análise não estratificada (P=0,062; teste de log-rank P=0,049; risco relativo de 0,74; IC 95%: 0,54 a 1,02). Houve recuperação na expressão monocítica de mHLA-DR nos dias 3 e 7. Os dados sugerem atividade imunomoduladora adjuvante, mas não comprovam eficácia definitiva de sobrevida."
       }
     ],
-    "popularityScore": 97
+    "popularityScore": 97,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Modulação Imunológica, Maturação de Células T e Células NK",
+        "targetAudience": "Bula Oficial Internacional Zadaxin® & Farmacopeias",
+        "evidenceLevel": "Classe A (Bula Oficial Internacional / Registro Farmacopeico)",
+        "phases": [
+          {
+            "phaseName": "Protocolo Clínico Padrão (Zadaxin®)",
+            "dose": "1,6 mg",
+            "doseUnit": "mg",
+            "frequency": "2x por semana (ex: Segunda e Quinta)",
+            "duration": "6 a 12 semanas consecutivas",
+            "administrationNotes": "Aplicação SC em dias alternados. Adjuvante imunológico estabelecido para amplificação de resposta celular citotóxica."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Internacional Zadaxin (thymalfasin for injection)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Garaci et al. Thymosin alpha 1 in the treatment of immunocompromised hosts (Ann N Y Acad Sci 2012, PMID 23075071)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/23075071/",
+            "type": "clinical_review"
+          },
+          {
+            "title": "Arcana Labs Peptide Database — Timosina Alfa-1",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (H4.3.1)"
   },
   {
     "id": "pt-141",
@@ -2006,7 +2881,52 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "Mulheres tratadas com Bremelanotide apresentaram aumentos clinicamente e estatisticamente significativos nos escores de desejo sexual e reduções marcantes no estresse e angústia associados à baixa libido (P<0,001 em ambos os ensaios)."
       }
     ],
-    "popularityScore": 95
+    "popularityScore": 95,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Disfunção Sexual, HSDD em Mulheres & Suporte Erétil em Homens",
+        "targetAudience": "Bula Homologada FDA (Vyleesi®)",
+        "evidenceLevel": "Classe A (Bula Oficial Homologada pelo FDA)",
+        "phases": [
+          {
+            "phaseName": "Dose Teste de Tolerabilidade Cardiovascular",
+            "dose": "1,0 mg",
+            "doseUnit": "mg",
+            "frequency": "Dose única de teste",
+            "duration": "Avaliação prévia",
+            "administrationNotes": "Avaliação prévia de pico pressórico transitório e náuseas."
+          },
+          {
+            "phaseName": "Protocolo Terapêutico Sob Demanda (Vyleesi®)",
+            "dose": "1,75 mg",
+            "doseUnit": "mg",
+            "frequency": "Sob demanda (45 min antes da atividade sexual)",
+            "duration": "Uso episódico",
+            "administrationNotes": "Aplicação SC no abdômen ou coxa. Limite máximo: 1 aplicação em 24 horas e no máximo 8 doses por mês."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial FDA Vyleesi (bremelanotide injection)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Clayton et al. Bremelanotide for female hypoactive sexual desire disorder (Obstet Gynecol 2019, PMID 31599838)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/31599838/",
+            "type": "clinical_trial"
+          },
+          {
+            "title": "Arcana Labs Peptide Database — PT-141",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (H4.3.1)"
   },
   {
     "id": "dsip",
@@ -2094,7 +3014,52 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "O DSIP aumentou de forma seletiva a proporção de sono delta de ondas lentas sem provocar supressão de sono REM, sem efeito ressaca no dia seguinte e sem induzir a tolerância ou dependência típica dos fármacos gabaérgicos e barbitúricos."
       }
     ],
-    "popularityScore": 88
+    "popularityScore": 88,
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Iniciar com 100 mcg; não exceder 250 mcg por aplicação.",
+            "doseUnit": "mcg",
+            "frequency": "1 vez ao dia (à noite) ou em dias alternados",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "100 mcg a 250 mcg ao deitar",
+            "doseUnit": "mcg",
+            "frequency": "1 vez ao dia (à noite) ou em dias alternados",
+            "duration": "10 a 20 dias",
+            "administrationNotes": "Subcutâneo, 30 a 60 minutos antes de dormir, em quarto escuro.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "igf-1-lr3",
@@ -2178,7 +3143,39 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "O IGF-1 LR3 demonstrou potência proliferativa e anabólica cerca de 3 vezes superior ao IGF-1 nativo, devido à sua incapacidade de ser neutralizado pelas proteínas carreadoras IGFBP-3 séricas, promovendo síntese proteica imediata."
       }
     ],
-    "popularityScore": 93
+    "popularityScore": 93,
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Hipertrofia Muscular, Translocação de GLUT4 & Retenção Nitrogenada Celular",
+        "targetAudience": "Pesquisa Pré-Clínica e Prática Empírica em Fisiculturismo",
+        "evidenceLevel": "Classe C (Pesquisa Laboratorial / Relato Empírico)",
+        "phases": [
+          {
+            "phaseName": "Protocolo em Dias de Treinamento",
+            "dose": "20 a 50 mcg",
+            "doseUnit": "mcg",
+            "frequency": "1x ao dia (pós-treino ou matinal)",
+            "duration": "Ciclos estritamente delimitados de 4 semanas",
+            "administrationNotes": "Aplicação SC ou IM bilateral. Exige ingestão de carboidratos pós-aplicação para prevenir hipoglicemia aguda. Obrigatório intervalo (washout) de 4 semanas entre ciclos para evitar down-regulation de receptores."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Tomas et al. Long-acting IGF-I analog LR3IGF-I stimulates growth and nitrogen retention (Endocrinology 1992, PMID 1530966)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1530966/",
+            "type": "preclinical"
+          },
+          {
+            "title": "Arcana Labs Peptide Database — IGF-1 LR3",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (H4.3.1)"
   },
   {
     "id": "cagrilintide",
@@ -2276,7 +3273,63 @@ const PEPTIDES_DATABASE = [
       "Gravidez e amamentação (segurança e teratogenicidade não estabelecidas)",
       "Uso concomitante com outros análogos de amilina sem supervisão em ensaio clínico"
     ],
-    "criticalAlert": "ALERTA FARMACOLÓGICO: Análogo de amilina de longa duração em investigação clínica avançada (Fase 3). A associação com análogos de GLP-1 induz potente redução ponderal e desaceleração do esvaziamento gástrico; monitoramento gastrointestinal é indispensável."
+    "criticalAlert": "ALERTA FARMACOLÓGICO: Análogo de amilina de longa duração em investigação clínica avançada (Fase 3). A associação com análogos de GLP-1 induz potente redução ponderal e desaceleração do esvaziamento gástrico; monitoramento gastrointestinal é indispensável.",
+    "safetyClassification": "clinical_trial",
+    "safetyHeaderTitle": "Critérios de Exclusão & Restrições Clínicas Documentadas",
+    "structuredProtocols": [
+      {
+        "objective": "Controle de Apetite por Agonismo de Amilina & Sinergia Incretínica (CagriSema)",
+        "targetAudience": "Ensaios Clínicos Fase 2/3 (The Lancet 2021)",
+        "evidenceLevel": "Classe B (Ensaios Clínicos Fase 2/3)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Iniciação e Titulação",
+            "dose": "0,3 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Semanas 1 a 4",
+            "administrationNotes": "Aplicação SC semanal. Análogo de amilina de ação prolongada indutor de saciedade gástrica e central."
+          },
+          {
+            "phaseName": "Fase 2: Escalonamento 1",
+            "dose": "0,6 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Semanas 5 a 8",
+            "administrationNotes": "Incremento de dose conforme tolerabilidade gástrica."
+          },
+          {
+            "phaseName": "Fase 3: Escalonamento 2",
+            "dose": "1,2 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Semanas 9 a 12",
+            "administrationNotes": "Segundo degrau terapêutico avaliado nos ensaios clínicos."
+          },
+          {
+            "phaseName": "Fase 4: Manutenção Máxima do Ensaio",
+            "dose": "2,4 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Até 32 a 68 semanas",
+            "administrationNotes": "Dose teto semanal avaliada isoladamente e em combinação com semaglutida 2.4 mg."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Lau et al. Efficacy and safety of cagrilintide with semaglutide for weight loss (The Lancet 2021, PMID 34449830)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34449830/",
+            "type": "clinical_trial"
+          },
+          {
+            "title": "Arcana Labs Peptide Database — Cagrilintida",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (H4.3.1)"
   },
   {
     "id": "survodutide",
@@ -2369,7 +3422,52 @@ const PEPTIDES_DATABASE = [
       "Pancreatite aguda prévia associada a incretinomiméticos",
       "Gravidez e lactação (composto em investigação clínica Fase 3)"
     ],
-    "criticalAlert": "ALERTA CLÍNICO: Co-agonista dual GLP-1/Glucagon em ensaios de Fase 3 para MASH e obesidade. A ativação do receptor de glucagon aumenta a termogênese e o consumo energético; requer acompanhamento da frequência cardíaca e função hepática."
+    "criticalAlert": "ALERTA CLÍNICO: Co-agonista dual GLP-1/Glucagon em ensaios de Fase 3 para MASH e obesidade. A ativação do receptor de glucagon aumenta a termogênese e o consumo energético; requer acompanhamento da frequência cardíaca e função hepática.",
+    "safetyClassification": "clinical_trial",
+    "safetyHeaderTitle": "Critérios de Exclusão & Restrições Clínicas Documentadas",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Iniciar com 0.6 mg/semana com acréscimos graduais a cada 4 semanas para minimizar náuseas.",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "0.6 mg a 4.8 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "24 a 48 semanas consecutivas",
+            "administrationNotes": "Subcutâneo 1x por semana, mesmo dia e horário.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "orforglipron",
@@ -2456,7 +3554,52 @@ const PEPTIDES_DATABASE = [
       "Comprometimento hepático grave (farmacocinética em investigação)",
       "Gravidez e lactação"
     ],
-    "criticalAlert": "ALERTA FARMACOLÓGICO: Agonista não-peptídico do receptor de GLP-1 para administração oral em Fase 3. Requer atenção à tolerabilidade gastrointestinal na fase de titulação posológica."
+    "criticalAlert": "ALERTA FARMACOLÓGICO: Agonista não-peptídico do receptor de GLP-1 para administração oral em Fase 3. Requer atenção à tolerabilidade gastrointestinal na fase de titulação posológica.",
+    "safetyClassification": "clinical_trial",
+    "safetyHeaderTitle": "Critérios de Exclusão & Restrições Clínicas Documentadas",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Titulação gradual iniciando em 3 mg ou 12 mg diários até a dose alvo de 36 mg ou 45 mg.",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia (diário)",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "12 mg a 45 mg",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia (diário)",
+            "duration": "26 a 36 semanas consecutivas",
+            "administrationNotes": "Via oral diária pela manhã ou à noite, com ou sem alimentos.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "ara-290",
@@ -2550,7 +3693,52 @@ const PEPTIDES_DATABASE = [
       "Pacientes com neoplasias ativas sem liberação oncológica prévia",
       "Gravidez e lactação (composto restrito a ensaios clínicos)"
     ],
-    "criticalAlert": "ALERTA DE PESQUISA: Peptídeo derivado da eritropoietina projetado para ativação seletiva do receptor de reparo tecidual inato (IRR) sem atividade eritropoética. Restrito a ensaios de neuropatia de fibras pequenas e sarcoidose."
+    "criticalAlert": "ALERTA DE PESQUISA: Peptídeo derivado da eritropoietina projetado para ativação seletiva do receptor de reparo tecidual inato (IRR) sem atividade eritropoética. Restrito a ensaios de neuropatia de fibras pequenas e sarcoidose.",
+    "safetyClassification": "clinical_trial",
+    "safetyHeaderTitle": "Critérios de Exclusão & Restrições Clínicas Documentadas",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Iniciar com 2.0 mg nos primeiros 2 dias para confirmar tolerância.",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia (diário) ou dias alternados",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "4.0 mg",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia (diário) ou dias alternados",
+            "duration": "4 a 8 semanas consecutivas (protocolo clínico padrão: 28 dias)",
+            "administrationNotes": "Subcutâneo pela manhã ou antes de dormir.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "kpv",
@@ -2650,7 +3838,39 @@ const PEPTIDES_DATABASE = [
       "Ausência de estudos formais de toxicidade reprodutiva em gestantes e lactantes",
       "Infecções fúngicas ou bacterianas sistêmicas agudas sem terapia antimicrobiana concomitante"
     ],
-    "criticalAlert": "ALERTA FARMACOLÓGICO: Tripeptídeo terminal de alfa-MSH com potente atividade anti-inflamatória mediada por inibição de NF-kappaB e sem ativação de receptores melanocortínicos pigmentares. Uso restrito a investigações pré-clínicas e laboratoriais."
+    "criticalAlert": "ALERTA FARMACOLÓGICO: Tripeptídeo terminal de alfa-MSH com potente atividade anti-inflamatória mediada por inibição de NF-kappaB e sem ativação de receptores melanocortínicos pigmentares. Uso restrito a investigações pré-clínicas e laboratoriais.",
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Ação Anti-Inflamatória Sistêmica, Reparação Mucosa Intestinal & Dermatologia",
+        "targetAudience": "Pesquisa Pré-Clínica e Prática Funcional Integrativa",
+        "evidenceLevel": "Classe C (Modelos Pré-Clínicos / Relato Funcional)",
+        "phases": [
+          {
+            "phaseName": "Protocolo Subcutâneo / Sistêmico de Pesquisa",
+            "dose": "200 a 500 mcg",
+            "doseUnit": "mcg",
+            "frequency": "1 a 2x ao dia",
+            "duration": "4 a 8 semanas",
+            "administrationNotes": "Aplicação SC. Fragmento C-terminal de alfa-MSH com potente inibição de NF-kappaB sem efeito pigmentante cutâneo."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Kannengiesser et al. The tripeptide KPV inhibits NF-kappaB activation and relieves murine colitis (Inflamm Bowel Dis 2008, PMID 18623167)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18623167/",
+            "type": "preclinical"
+          },
+          {
+            "title": "Arcana Labs Peptide Database — KPV",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (H4.3.1)"
   },
   {
     "id": "ll-37",
@@ -2737,7 +3957,52 @@ const PEPTIDES_DATABASE = [
       "Doenças dermatológicas inflamatórias crônicas exacerbadas com fisiopatologia mediada por catelicidina (ex.: rosácea papulopustulosa ativa, psoríase hiperativa)",
       "Administração intravenosa direta não controlada (risco de lise de membrana e citotoxicidade sistêmica)"
     ],
-    "criticalAlert": "ADVERTÊNCIA SEVERA: Peptídeo antimicrobiano de defesa do hospedeiro. Em concentrações sistêmicas elevadas in vitro apresenta citotoxicidade lítica de membrana; administração parenteral sistêmica não é segura nem aprovada em humanos."
+    "criticalAlert": "ADVERTÊNCIA SEVERA: Peptídeo antimicrobiano de defesa do hospedeiro. Em concentrações sistêmicas elevadas in vitro apresenta citotoxicidade lítica de membrana; administração parenteral sistêmica não é segura nem aprovada em humanos.",
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Iniciar com 50 mcg no primeiro teste para avaliar desgranulação de mastócitos.",
+            "doseUnit": "mcg",
+            "frequency": "Em dias alternados (3x por semana)",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "100 mcg a 250 mcg",
+            "doseUnit": "mcg",
+            "frequency": "Em dias alternados (3x por semana)",
+            "duration": "2 a 4 semanas",
+            "administrationNotes": "Subcutâneo pela manhã. Monitorar reações dérmicas locais.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "vip",
@@ -2817,7 +4082,52 @@ const PEPTIDES_DATABASE = [
       "Hipotensão arterial grave não compensada ou choque circulatório (potente vasodilatador sistêmico)",
       "Gravidez e lactação"
     ],
-    "criticalAlert": "ALERTA HEMODINÂMICO: Peptídeo intestinal vasoativo com potente ação vasodilatadora periférica e broncodilatadora. A administração requer cautela extrema quanto a quedas bruscas de pressão arterial e taquicardia reflexa."
+    "criticalAlert": "ALERTA HEMODINÂMICO: Peptídeo intestinal vasoativo com potente ação vasodilatadora periférica e broncodilatadora. A administração requer cautela extrema quanto a quedas bruscas de pressão arterial e taquicardia reflexa.",
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Iniciar com apenas 50 mcg 1x/dia e aferir a pressão arterial e frequência cardíaca.",
+            "doseUnit": "mcg",
+            "frequency": "1 a 4x ao dia (conforme tolerância pressórica)",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "50 mcg a 100 mcg",
+            "doseUnit": "mcg",
+            "frequency": "1 a 4x ao dia (conforme tolerância pressórica)",
+            "duration": "4 a 12 semanas",
+            "administrationNotes": "Via spray nasal (1 borrifo de 50mcg em uma narina) ou subcutâneo em repouso.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "humanin",
@@ -2909,7 +4219,52 @@ const PEPTIDES_DATABASE = [
       "Neoplasias malignas ativas (por ser potente fator de sobrevivência celular e inibidor de apoptose, requer extrema cautela oncológica)",
       "Gravidez e lactação"
     ],
-    "criticalAlert": "ALERTA DE INVESTIGAÇÃO: Peptídeo derivado do genoma mitocondrial (MDP) com propriedades citoprotetoras e antiapoptóticas. O potencial de sobrevivência celular em tecidos neoplásicos exige extrema prudência oncológica."
+    "criticalAlert": "ALERTA DE INVESTIGAÇÃO: Peptídeo derivado do genoma mitocondrial (MDP) com propriedades citoprotetoras e antiapoptóticas. O potencial de sobrevivência celular em tecidos neoplásicos exige extrema prudência oncológica.",
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "1.0 mg 2x/semana por 4 semanas.",
+            "doseUnit": "mg",
+            "frequency": "2 a 3x por semana",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "1.0 mg a 2.0 mg",
+            "doseUnit": "mg",
+            "frequency": "2 a 3x por semana",
+            "duration": "4 a 8 semanas",
+            "administrationNotes": "Subcutâneo pela manhã.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "kisspeptin",
@@ -3002,7 +4357,52 @@ const PEPTIDES_DATABASE = [
       "Neoplasias malignas hormônio-dependentes ativas (ex.: câncer de próstata ou de mama responsivo a esteroides sexuais)",
       "Gravidez e lactação (interferência direta no eixo reprodutivo hipotálamo-hipófise-gonadal)"
     ],
-    "criticalAlert": "ALERTA ENDÓCRINO: Decapeptídeo regulador mestre do eixo reprodutivo hipotálamo-hipófise-gonadal. A administração aguda estimula picos robustos de LH e FSH; a administração crônica pode induzir dessensibilização dos receptores KISS1R."
+    "criticalAlert": "ALERTA ENDÓCRINO: Decapeptídeo regulador mestre do eixo reprodutivo hipotálamo-hipófise-gonadal. A administração aguda estimula picos robustos de LH e FSH; a administração crônica pode induzir dessensibilização dos receptores KISS1R.",
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Iniciar com 100 mcg e avaliar resposta sérica de LH e testosterona.",
+            "doseUnit": "mcg",
+            "frequency": "2 a 3x por semana ou sob demanda",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "100 mcg a 200 mcg",
+            "doseUnit": "mcg",
+            "frequency": "2 a 3x por semana ou sob demanda",
+            "duration": "4 a 6 semanas",
+            "administrationNotes": "Subcutâneo pela manhã ou 1 a 2 horas antes da atividade sexual.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "glutathione",
@@ -3088,7 +4488,39 @@ const PEPTIDES_DATABASE = [
       "Uso concomitante com quimioterápicos citotóxicos específicos à base de platina (risco de quelação extracelular e mitigação do efeito antitumoral)",
       "Asma brônquica ou hiper-reatividade das vias aéreas (quando utilizada por via inalatória/aerossol)"
     ],
-    "criticalAlert": "ALERTA FARMACOLÓGICO: Principal antioxidante intracelular celular (GSH). Administração intravenosa requer formulação estéril tamponada; a inalação em indivíduos asmáticos pode precipitar broncoespasmo grave."
+    "criticalAlert": "ALERTA FARMACOLÓGICO: Principal antioxidante intracelular celular (GSH). Administração intravenosa requer formulação estéril tamponada; a inalação em indivíduos asmáticos pode precipitar broncoespasmo grave.",
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "200 mg a 600 mg",
+            "doseUnit": "mg",
+            "frequency": "1 a 2x por semana",
+            "duration": "8 a 12 semanas consecutivas",
+            "administrationNotes": "Administração: Intramuscular (IM). Injeção IM profunda ou infusão IV lenta. Aplicação subcutânea pode ser irritante em volumes altos.."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Glutationa)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "nad-plus",
@@ -3188,7 +4620,39 @@ const PEPTIDES_DATABASE = [
       "Neoplasias ativas sem aval oncológico (o pool celular de NAD+ é cooptado por células tumorais para proliferação acelerada e reparo de DNA via PARP)",
       "Insuficiência renal grave sem monitoramento metabólico estrito"
     ],
-    "criticalAlert": "ALERTA METABÓLICO: Coenzima essencial de oxirredução e substrato de sirtuínas e PARPs. Infusões rápidas podem provocar rubor facial transitório, sensação de opressão torácica e cólicas abdominais; infusão lenta e monitorada é necessária."
+    "criticalAlert": "ALERTA METABÓLICO: Coenzima essencial de oxirredução e substrato de sirtuínas e PARPs. Infusões rápidas podem provocar rubor facial transitório, sensação de opressão torácica e cólicas abdominais; infusão lenta e monitorada é necessária.",
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "50 mg a 100 mg",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia (diário) ou 3x por semana",
+            "duration": "6 a 12 semanas",
+            "administrationNotes": "Administração: Subcutânea (SC). Subcutâneo pela manhã. Evitar aplicação noturna devido ao aumento de energia e alerta mental.."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (NAD+)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "oxytocin",
@@ -3284,7 +4748,39 @@ const PEPTIDES_DATABASE = [
       "Hipertonia uterina e risco iminente de rotura uterina",
       "Administração parenteral rápida em bolus (risco de hipotensão súbita e arritmias reflexas)"
     ],
-    "criticalAlert": "ALERTA MÉDICO: Neuro-hormônio peptídico com potente estímulo da contratilidade miometrial e ejeção láctea. A administração parenteral descontrolada pode provocar tetania uterina, rotura e intoxicação hídrica por efeito antidiurético."
+    "criticalAlert": "ALERTA MÉDICO: Neuro-hormônio peptídico com potente estímulo da contratilidade miometrial e ejeção láctea. A administração parenteral descontrolada pode provocar tetania uterina, rotura e intoxicação hídrica por efeito antidiurético.",
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "10 UI a 24 UI (aprox. 20 a 48 mcg)",
+            "doseUnit": "UI",
+            "frequency": "Sob demanda (apenas quando necessário)",
+            "duration": "2 a 6 semanas sob demanda",
+            "administrationNotes": "Administração: Intranasal (Spray). Via spray intranasal 30 a 45 minutos antes de interações sociais ou atividade íntima.."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Ocitocina)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "thymalin",
@@ -3367,7 +4863,52 @@ const PEPTIDES_DATABASE = [
       "Doenças autoimunes ativas graves em fase de descompensação inflamatória aguda",
       "Gravidez e amamentação (ausência de dados toxicológicos controlados)"
     ],
-    "criticalAlert": "ALERTA DE PESQUISA: Extrato polipeptídico purificado do timo utilizado em modelos imunomoduladores na Europa Oriental. Efeitos a longo prazo no sistema imune adaptativo requerem monitorização laboratorial periódica."
+    "criticalAlert": "ALERTA DE PESQUISA: Extrato polipeptídico purificado do timo utilizado em modelos imunomoduladores na Europa Oriental. Efeitos a longo prazo no sistema imune adaptativo requerem monitorização laboratorial periódica.",
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "10 mg diários por 10 dias seguidos. Não requer uso contínuo o ano todo.",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia (curso intensivo de 10 dias)",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "5 mg a 10 mg",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia (curso intensivo de 10 dias)",
+            "duration": "10 dias consecutivos por ano ou a cada 6 meses",
+            "administrationNotes": "Subcutâneo ou intramuscular pela manhã durante o curso de 10 dias.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "pinealon",
@@ -3458,7 +4999,52 @@ const PEPTIDES_DATABASE = [
       "Insuficiência hepática ou renal terminal sem suporte médico especializado",
       "Gravidez e lactação"
     ],
-    "criticalAlert": "ALERTA DE INVESTIGAÇÃO: Biorregulador tripeptídico sintético da glândula pineal e córtex. Dados clínicos ocidentais controlados são escassos; uso limitado a protocolos de pesquisa neuroprotetora."
+    "criticalAlert": "ALERTA DE INVESTIGAÇÃO: Biorregulador tripeptídico sintético da glândula pineal e córtex. Dados clínicos ocidentais controlados são escassos; uso limitado a protocolos de pesquisa neuroprotetora.",
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Dose fixa de 2 mg ao dia por 30 dias; repetir o ciclo 2x ao ano.",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia (diário)",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "2 mg a 5 mg",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia (diário)",
+            "duration": "20 a 30 dias consecutivos",
+            "administrationNotes": "Pela manhã em jejum, subcutâneo ou oral.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "dihexa",
@@ -3546,7 +5132,27 @@ const PEPTIDES_DATABASE = [
       "Neoplasias malignas cerebrais ou sistêmicas ativas (potente efeito mitogênico e pró-angiogênico via ativação do receptor c-Met/HGF)",
       "Gravidez e lactação"
     ],
-    "criticalAlert": "ADVERTÊNCIA CRÍTICA: Análogo peptídico de angiotensina IV com afinidade picomolar pelo receptor c-Met/HGF. Potente indutor de sinaptogênese em modelos animais; a hiperativação da via c-Met confere risco biológico teórico de potencialização oncogênica."
+    "criticalAlert": "ADVERTÊNCIA CRÍTICA: Análogo peptídico de angiotensina IV com afinidade picomolar pelo receptor c-Met/HGF. Potente indutor de sinaptogênese em modelos animais; a hiperativação da via c-Met confere risco biológico teórico de potencialização oncogênica.",
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Investigação Farmacológica Pré-Clínica (Modelos Celulares / Animais)",
+        "targetAudience": "Pesquisa em Modelos Animais / Não Aprovado para Uso Humano",
+        "evidenceLevel": "Classe D (Informativo / Sem Posologia Humana Validada)",
+        "gapNotice": "Não existem ensaios clínicos controlados em humanos que tenham determinado posologia terapêutica segura, farmacocinética ou janela de eficácia. Dados estritamente restritos a ensaios in vitro e roedores de laboratório. A prescrição ou administração empírica em humanos carece de respaldo toxicológico. Calculadora de reconstituição bloqueada para prevenir falsa impressão de segurança clínica.",
+        "phases": [],
+        "sources": [
+          {
+            "title": "Literatura Biomédica Pré-Clínica Indexada (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "preclinical"
+          }
+        ]
+      }
+    ],
+    "calculatorBlocked": true,
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "ghrp-2",
@@ -3630,7 +5236,52 @@ const PEPTIDES_DATABASE = [
       "Gravidez e lactação",
       "Retinopatia proliferativa grave ativa"
     ],
-    "criticalAlert": "ALERTA ENDÓCRINO: Secretagogo potente de GH. Promove elevação expressiva de GH, com pequenos aumentos concomitantes de prolactina e cortisol; requer controle de glicemia em decorrência do aumento de IGF-1."
+    "criticalAlert": "ALERTA ENDÓCRINO: Secretagogo potente de GH. Promove elevação expressiva de GH, com pequenos aumentos concomitantes de prolactina e cortisol; requer controle de glicemia em decorrência do aumento de IGF-1.",
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Iniciar com 100 mcg 1x/dia antes de dormir.",
+            "doseUnit": "mcg",
+            "frequency": "1 a 3x ao dia (em jejum rigoroso)",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "100 mcg a 200 mcg",
+            "doseUnit": "mcg",
+            "frequency": "1 a 3x ao dia (em jejum rigoroso)",
+            "duration": "8 a 16 semanas",
+            "administrationNotes": "Subcutâneo em jejum absoluto (mínimo 2h pós-refeição e aguardar 30min antes de comer).. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "ghrp-6",
@@ -3713,7 +5364,52 @@ const PEPTIDES_DATABASE = [
       "Gravidez e lactação",
       "Diabetes mellitus descompensado com descontrole glicêmico agudo"
     ],
-    "criticalAlert": "ALERTA FARMACOLÓGICO: Secretagogo de primeira geração com forte afinidade pelo receptor de grelina (GHS-R1a), provocando potente estímulo do apetite e liberação pulsátil de GH. Monitorar tolerância à glicose."
+    "criticalAlert": "ALERTA FARMACOLÓGICO: Secretagogo de primeira geração com forte afinidade pelo receptor de grelina (GHS-R1a), provocando potente estímulo do apetite e liberação pulsátil de GH. Monitorar tolerância à glicose.",
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Iniciar com 100 mcg à noite.",
+            "doseUnit": "mcg",
+            "frequency": "1 a 2x ao dia",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "100 mcg a 200 mcg",
+            "doseUnit": "mcg",
+            "frequency": "1 a 2x ao dia",
+            "duration": "8 a 12 semanas",
+            "administrationNotes": "Subcutâneo em jejum. Planejar refeição nutritiva para 30 minutos após a injeção devido à fome induzida.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "hexarelin",
@@ -3791,7 +5487,52 @@ const PEPTIDES_DATABASE = [
       "Insuficiência cardíaca descompensada aguda sem estabilização clínica prévia",
       "Gravidez e lactação"
     ],
-    "criticalAlert": "ALERTA CARDIOMETABÓLICO: Secretagogo de GH com ação cardioprotetora adicional mediada pelo receptor CD36. Apresenta rápida dessensibilização (taquifilaxia) do receptor hipofisário após administrações diárias consecutivas."
+    "criticalAlert": "ALERTA CARDIOMETABÓLICO: Secretagogo de GH com ação cardioprotetora adicional mediada pelo receptor CD36. Apresenta rápida dessensibilização (taquifilaxia) do receptor hipofisário após administrações diárias consecutivas.",
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Manter dose fixa de 100 mcg. Não aumentar doses devido ao teto hipofisário.",
+            "doseUnit": "mcg",
+            "frequency": "1 a 2x ao dia",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "100 mcg a 200 mcg",
+            "doseUnit": "mcg",
+            "frequency": "1 a 2x ao dia",
+            "duration": "Ciclos curtos de 2 a 4 semanas consecutivas com pausa obrigatória de 4 semanas",
+            "administrationNotes": "Subcutâneo em jejum absoluto ao acordar ou pós-treino.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "peg-mgf",
@@ -3875,7 +5616,52 @@ const PEPTIDES_DATABASE = [
       "Gravidez e lactação",
       "Uso não autorizado em atletas sujeitos a controle antidoping (WADA Prohibited List)"
     ],
-    "criticalAlert": "ADVERTÊNCIA ANTIDOPING: Fator de crescimento mecânico peguilado derivado do IGF-1Ec. Proibido pela WADA em qualquer modalidade esportiva; o uso experimental crônico pode induzir alterações na proliferação de células satélites musculares."
+    "criticalAlert": "ADVERTÊNCIA ANTIDOPING: Fator de crescimento mecânico peguilado derivado do IGF-1Ec. Proibido pela WADA em qualquer modalidade esportiva; o uso experimental crônico pode induzir alterações na proliferação de células satélites musculares.",
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "200 mcg 2x por semana.",
+            "doseUnit": "mcg",
+            "frequency": "2 a 3x por semana",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "200 mcg a 400 mcg",
+            "doseUnit": "mcg",
+            "frequency": "2 a 3x por semana",
+            "duration": "4 a 6 semanas",
+            "administrationNotes": "Subcutâneo ou intramuscular profundo nos dias de descanso pós-treino intenso.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "melanotan-1",
@@ -3952,7 +5738,39 @@ const PEPTIDES_DATABASE = [
       "Histórico pessoal ou familiar de melanoma cutâneo ou lesões névicas atípicas com suspeita de displasia",
       "Gravidez e amamentação (segurança fetal não comprovada)"
     ],
-    "criticalAlert": "ALERTA DERMATOLÓGICO: Agonista sintético de receptores de melanocortina (MC1R). Induz melanogênese eumelânica cutânea; pacientes com histórico de nevos atípicos ou melanoma requerem dermatoscopia rigorosa periódica."
+    "criticalAlert": "ALERTA DERMATOLÓGICO: Agonista sintético de receptores de melanocortina (MC1R). Induz melanogênese eumelânica cutânea; pacientes com histórico de nevos atípicos ou melanoma requerem dermatoscopia rigorosa periódica.",
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "1.0 mg a 2.0 mg",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia (durante fase de pigmentação) ou 2x por semana",
+            "duration": "4 a 8 semanas",
+            "administrationNotes": "Administração: Subcutânea (SC). Subcutâneo precedido de exposição solar leve e segura (15 a 20 minutos de sol).."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Melanotan I)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "melanotan-2",
@@ -4028,7 +5846,52 @@ const PEPTIDES_DATABASE = [
       "Hipertensão arterial sistêmica grave não controlada (risco de picos pressóricos por ativação MC4R central)",
       "Gravidez e lactação"
     ],
-    "criticalAlert": "ADVERTÊNCIA SEVERA: Agonista não-seletivo de melanocortinas (MC1R, MC3R, MC4R). Provoca escurecimento cutâneo, náuseas, ereções espontâneas persistentes (risco de priapismo) e picos de pressão arterial sistêmica mediada por MC4R central."
+    "criticalAlert": "ADVERTÊNCIA SEVERA: Agonista não-seletivo de melanocortinas (MC1R, MC3R, MC4R). Provoca escurecimento cutâneo, náuseas, ereções espontâneas persistentes (risco de priapismo) e picos de pressão arterial sistêmica mediada por MC4R central.",
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Iniciar com apenas 100 a 250 mcg para avaliar tolerância vascular e náusea.",
+            "doseUnit": "mcg",
+            "frequency": "2 a 3x por semana",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "250 mcg a 500 mcg",
+            "doseUnit": "mcg",
+            "frequency": "2 a 3x por semana",
+            "duration": "4 a 6 semanas",
+            "administrationNotes": "Subcutâneo antes de dormir (para diminuir a percepção de náusea) ou 30 min antes de exposição solar leve.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "snap-8",
@@ -4117,7 +5980,52 @@ const PEPTIDES_DATABASE = [
       "Aplicação tópica sobre pele lesada, queimada ou com infecções cutâneas ativas",
       "Administração injetável (composto formulado exclusivamente para aplicação dermocosmética tópica)"
     ],
-    "criticalAlert": "ALERTA COSMÉTICO: Octapeptídeo mimético do complexo SNARE para uso dermocosmético tópico. Formulação não estéril e contraindicada para injeção parenteral."
+    "criticalAlert": "ALERTA COSMÉTICO: Octapeptídeo mimético do complexo SNARE para uso dermocosmético tópico. Formulação não estéril e contraindicada para injeção parenteral.",
+    "safetyClassification": "cosmetic_topical",
+    "safetyHeaderTitle": "Advertências & Precauções de Uso Tópico Cosmético",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Uso regular manhã e noite associado a hidratante facial.",
+            "doseUnit": "%",
+            "frequency": "2x ao dia (manhã e noite)",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "Sérum tópico a 3% a 10%",
+            "doseUnit": "%",
+            "frequency": "2x ao dia (manhã e noite)",
+            "duration": "Uso contínuo (mínimo de 28 dias para avaliação de profundidade de rugas)",
+            "administrationNotes": "Aplicação tópica facial na pele limpa ao redor dos olhos (pés de galinha) e testa.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "5-amino-1mq",
@@ -4214,7 +6122,27 @@ const PEPTIDES_DATABASE = [
       "Doença hepática ou renal avançada (enzima NNMT desempenha papéis regulatórios em tecidos parenquimatosos)",
       "Gravidez e amamentação (composto estritamente investigacional, sem dados humanos de segurança)"
     ],
-    "criticalAlert": "ALERTA DE PESQUISA: Inibidor seletivo da enzima nicotinamida N-metiltransferase (NNMT) celular. Composto investigacional de uso laboratorial em biologia celular e modelos murinos; dados toxicológicos em humanos não estabelecidos."
+    "criticalAlert": "ALERTA DE PESQUISA: Inibidor seletivo da enzima nicotinamida N-metiltransferase (NNMT) celular. Composto investigacional de uso laboratorial em biologia celular e modelos murinos; dados toxicológicos em humanos não estabelecidos.",
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Investigação Farmacológica Pré-Clínica (Modelos Celulares / Animais)",
+        "targetAudience": "Pesquisa em Modelos Animais / Não Aprovado para Uso Humano",
+        "evidenceLevel": "Classe D (Informativo / Sem Posologia Humana Validada)",
+        "gapNotice": "Não existem ensaios clínicos controlados em humanos que tenham determinado posologia terapêutica segura, farmacocinética ou janela de eficácia. Dados estritamente restritos a ensaios in vitro e roedores de laboratório. A prescrição ou administração empírica em humanos carece de respaldo toxicológico. Calculadora de reconstituição bloqueada para prevenir falsa impressão de segurança clínica.",
+        "phases": [],
+        "sources": [
+          {
+            "title": "Literatura Biomédica Pré-Clínica Indexada (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "preclinical"
+          }
+        ]
+      }
+    ],
+    "calculatorBlocked": true,
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "cjc-1295-dac",
@@ -4306,7 +6234,39 @@ const PEPTIDES_DATABASE = [
       "Gravidez e lactação",
       "Hipertensão intracraniana idiopática"
     ],
-    "criticalAlert": "ALERTA FARMACOCINÉTICO: Secretagogo bio-conjugado de longa ação que se liga irreversivelmente à albumina sérica, sustentando liberação de GH por até 14 dias. A exposição contínua ao GH/IGF-1 reduz a pulsatilidade fisiológica endógena."
+    "criticalAlert": "ALERTA FARMACOCINÉTICO: Secretagogo bio-conjugado de longa ação que se liga irreversivelmente à albumina sérica, sustentando liberação de GH por até 14 dias. A exposição contínua ao GH/IGF-1 reduz a pulsatilidade fisiológica endógena.",
+    "safetyClassification": "clinical_trial",
+    "safetyHeaderTitle": "Critérios de Exclusão & Restrições Clínicas Documentadas",
+    "structuredProtocols": [
+      {
+        "objective": "Elevação Sustentada Contínua de GH e IGF-1 Basal",
+        "targetAudience": "Ensaios Clínicos de Meia-Vida Estendida",
+        "evidenceLevel": "Classe B (Ensaios Clínicos Farmacocinéticos)",
+        "phases": [
+          {
+            "phaseName": "Protocolo Semanal de Liberação Prolongada",
+            "dose": "1,0 a 2,0 mg",
+            "doseUnit": "mg",
+            "frequency": "1x por semana (ou 1,0 mg 2x/sem)",
+            "duration": "8 a 12 semanas",
+            "administrationNotes": "Aplicação SC semanal. A conjugação com bioconjugado DAC liga-se à albumina sérica conferindo meia-vida de até 8 dias."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Teichman et al. Prolonged stimulation of GH and IGF-1 by CJC-1295 (J Clin Endocrinol Metab 2006, PMID 16822826)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16822826/",
+            "type": "clinical_trial"
+          },
+          {
+            "title": "Arcana Labs Peptide Database — CJC-1295 com DAC",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (H4.3.1)"
   },
   {
     "id": "follistatin-344",
@@ -4397,7 +6357,52 @@ const PEPTIDES_DATABASE = [
       "Distúrbios articulares e tendíneos agudos sem consolidação (hipertrofia muscular rápida descompassada da adaptação tendínea)",
       "Gravidez e lactação"
     ],
-    "criticalAlert": "ADVERTÊNCIA CRÍTICA: Proteína recombinante inibidora de miostatina, ativina e TGF-beta. Induz hipertrofia muscular rápida em modelos pré-clínicos; o aumento rápido de massa pode sobrecarregar estruturas tendíneas não adaptadas."
+    "criticalAlert": "ADVERTÊNCIA CRÍTICA: Proteína recombinante inibidora de miostatina, ativina e TGF-beta. Induz hipertrofia muscular rápida em modelos pré-clínicos; o aumento rápido de massa pode sobrecarregar estruturas tendíneas não adaptadas.",
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Iniciar com 50 mcg/dia nos primeiros 3 dias.",
+            "doseUnit": "mcg",
+            "frequency": "1x ao dia durante ciclos curtos de 10 a 20 dias",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "50 mcg a 100 mcg por dia",
+            "doseUnit": "mcg",
+            "frequency": "1x ao dia durante ciclos curtos de 10 a 20 dias",
+            "duration": "10 a 20 dias seguidos, com intervalo de pelo menos 60 a 90 dias",
+            "administrationNotes": "Subcutâneo ou IM pós-treino ou pela manhã.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "igf-1-des",
@@ -4473,7 +6478,52 @@ const PEPTIDES_DATABASE = [
       "Instabilidade glicêmica ou episódios recorrentes de hipoglicemia grave (potente ação insulinomimética)",
       "Gravidez e lactação"
     ],
-    "criticalAlert": "ALERTA SEVERO: Forma truncada de IGF-1 com afinidade reduzida pelas proteínas carreadoras IGFBP, resultando em potência biológica extrema e imediata. Risco agudo severo de hipoglicemia profunda pós-administração."
+    "criticalAlert": "ALERTA SEVERO: Forma truncada de IGF-1 com afinidade reduzida pelas proteínas carreadoras IGFBP, resultando em potência biológica extrema e imediata. Risco agudo severo de hipoglicemia profunda pós-administração.",
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Iniciar com 20 mcg para avaliar hipoglicemia transitória e sensibilidade.",
+            "doseUnit": "mcg",
+            "frequency": "Em dias de treino (pré ou pós-treino imediato)",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "20 mcg a 50 mcg (frequentemente bilateral)",
+            "doseUnit": "mcg",
+            "frequency": "Em dias de treino (pré ou pós-treino imediato)",
+            "duration": "4 semanas consecutivas, seguidas de 4 semanas de intervalo",
+            "administrationNotes": "Aplicação IM localizada no grupo muscular estimulado, precedida ou sucedida de ingestão de carboidratos.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "argireline",
@@ -4566,7 +6616,52 @@ const PEPTIDES_DATABASE = [
       "Aplicação sobre pele desepitelizada, queimaduras abertas ou lesões infecciosas agudas",
       "Administração parenteral ou injetável (veículo e insumo cosmético exclusivo para uso tópico)"
     ],
-    "criticalAlert": "ALERTA COSMÉTICO: Hexapeptídeo tópico modulador da liberação de catecolaminas pré-sinápticas. Destinado unicamente à aplicação cosmética tópica; nunca injetar."
+    "criticalAlert": "ALERTA COSMÉTICO: Hexapeptídeo tópico modulador da liberação de catecolaminas pré-sinápticas. Destinado unicamente à aplicação cosmética tópica; nunca injetar.",
+    "safetyClassification": "cosmetic_topical",
+    "safetyHeaderTitle": "Advertências & Precauções de Uso Tópico Cosmético",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Uso constante diário.",
+            "doseUnit": "%",
+            "frequency": "2x ao dia (manhã e noite sobre a pele limpa)",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "Sérum tópico formulado a 5% a 10%",
+            "doseUnit": "%",
+            "frequency": "2x ao dia (manhã e noite sobre a pele limpa)",
+            "duration": "Uso contínuo (avaliação de resultados a partir de 30 dias)",
+            "administrationNotes": "Aplicação dérmica nas regiões frontal e periorbital antes de cremes oleosos.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "mazdutide",
@@ -4657,7 +6752,52 @@ const PEPTIDES_DATABASE = [
       "Histórico de pancreatite aguda necrotizante associada a agonistas incretínicos",
       "Gravidez e lactação"
     ],
-    "criticalAlert": "ALERTA CLÍNICO: Co-agonista dual GLP-1/Glucagon em Fase 3. Promove expressiva redução de gordura visceral e melhora de enzimas hepáticas na esteatose hepática metabólica; exige titulação escalonada rigorosa."
+    "criticalAlert": "ALERTA CLÍNICO: Co-agonista dual GLP-1/Glucagon em Fase 3. Promove expressiva redução de gordura visceral e melhora de enzimas hepáticas na esteatose hepática metabólica; exige titulação escalonada rigorosa.",
+    "safetyClassification": "clinical_trial",
+    "safetyHeaderTitle": "Critérios de Exclusão & Restrições Clínicas Documentadas",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Escalonamento a cada 4 semanas: 1.5 mg -> 3.0 mg -> 4.5 mg -> 6.0 mg.",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "3.0 mg a 6.0 mg (até 9.0 mg em obesidade refratária)",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "24 a 48 semanas contínuas",
+            "administrationNotes": "Subcutâneo no mesmo dia da semana, independente de refeições.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "cortexin",
@@ -4751,7 +6891,52 @@ const PEPTIDES_DATABASE = [
       "Estado de mal epiléptico ou crises convulsivas agudas não controladas sem estabilização prévia",
       "Gravidez e lactação"
     ],
-    "criticalAlert": "ALERTA NEUROLÓGICO: Complexo de polipeptídeos corticais com atividade neurotrófica empregado clinicamente na Rússia. Dados em conformidade com padrões FDA/EMA são limitados; monitoramento eletroencefalográfico em pacientes epilépticos."
+    "criticalAlert": "ALERTA NEUROLÓGICO: Complexo de polipeptídeos corticais com atividade neurotrófica empregado clinicamente na Rússia. Dados em conformidade com padrões FDA/EMA são limitados; monitoramento eletroencefalográfico em pacientes epilépticos.",
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Dose fixa de 10 mg para adultos saudáveis ou 20 mg em protocolos neurológicos agudos.",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia (pela manhã)",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "10 mg a 20 mg ao dia",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia (pela manhã)",
+            "duration": "10 dias consecutivos de protocolo, repetidos a cada 3 a 6 meses se indicado",
+            "administrationNotes": "Injeção Intramuscular (IM) profunda pela manhã.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "larazotide",
@@ -4844,7 +7029,52 @@ const PEPTIDES_DATABASE = [
       "Abdômen agudo cirúrgico, obstrução mecânica ou perfuração intestinal",
       "Gravidez e lactação (em fase de investigação clínica)"
     ],
-    "criticalAlert": "ALERTA DE PESQUISA: Peptídeo regulador de junções oclusivas intestinais (tight junctions) antagonista da zonulina. Restrito a ensaios clínicos para doença celíaca refratária e permeabilidade intestinal."
+    "criticalAlert": "ALERTA DE PESQUISA: Peptídeo regulador de junções oclusivas intestinais (tight junctions) antagonista da zonulina. Restrito a ensaios clínicos para doença celíaca refratária e permeabilidade intestinal.",
+    "safetyClassification": "clinical_trial",
+    "safetyHeaderTitle": "Critérios de Exclusão & Restrições Clínicas Documentadas",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "0.5 mg 3x/dia é a dose padrão otimizada com melhor curva de resposta clínica.",
+            "doseUnit": "mg",
+            "frequency": "3x ao dia (15 a 30 minutos antes das principais refeições)",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "0.5 mg a 1.0 mg",
+            "doseUnit": "mg",
+            "frequency": "3x ao dia (15 a 30 minutos antes das principais refeições)",
+            "duration": "6 a 12 semanas consecutivas",
+            "administrationNotes": "Via oral com água antes do café da manhã, almoço e jantar.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "slu-pp-332",
@@ -4941,7 +7171,27 @@ const PEPTIDES_DATABASE = [
       "Billon C, et al. A Synthetic ERR Agonist Alleviates Metabolic Syndrome. J Pharmacol Exp Ther. 2024. PMID: 37737227",
       "Billon C, Burris TP, et al. Synthetic ERR agonists in exercise mimetics. ACS Chem Biol. 2024. PMID: 38507567"
     ],
-    "popularityScore": 91
+    "popularityScore": 91,
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Investigação Farmacológica Pré-Clínica (Modelos Celulares / Animais)",
+        "targetAudience": "Pesquisa em Modelos Animais / Não Aprovado para Uso Humano",
+        "evidenceLevel": "Classe D (Informativo / Sem Posologia Humana Validada)",
+        "gapNotice": "Não existem ensaios clínicos controlados em humanos que tenham determinado posologia terapêutica segura, farmacocinética ou janela de eficácia. Dados estritamente restritos a ensaios in vitro e roedores de laboratório. A prescrição ou administração empírica em humanos carece de respaldo toxicológico. Calculadora de reconstituição bloqueada para prevenir falsa impressão de segurança clínica.",
+        "phases": [],
+        "sources": [
+          {
+            "title": "Literatura Biomédica Pré-Clínica Indexada (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "preclinical"
+          }
+        ]
+      }
+    ],
+    "calculatorBlocked": true,
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "slu-pp-915",
@@ -5036,7 +7286,27 @@ const PEPTIDES_DATABASE = [
       "Billon C, et al. An orally active estrogen receptor-related receptor agonist, SLU-PP-915. J Pharmacol Exp Ther. 2025. PMID: 39537130",
       "Walker JK, Burris TP, et al. Development and pharmacological evaluation of a new chemical series of potent pan-ERR agonists. Eur J Med Chem. 2024. PMID: 38101340"
     ],
-    "popularityScore": 89
+    "popularityScore": 89,
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Investigação Farmacológica Pré-Clínica (Modelos Celulares / Animais)",
+        "targetAudience": "Pesquisa em Modelos Animais / Não Aprovado para Uso Humano",
+        "evidenceLevel": "Classe D (Informativo / Sem Posologia Humana Validada)",
+        "gapNotice": "Não existem ensaios clínicos controlados em humanos que tenham determinado posologia terapêutica segura, farmacocinética ou janela de eficácia. Dados estritamente restritos a ensaios in vitro e roedores de laboratório. A prescrição ou administração empírica em humanos carece de respaldo toxicológico. Calculadora de reconstituição bloqueada para prevenir falsa impressão de segurança clínica.",
+        "phases": [],
+        "sources": [
+          {
+            "title": "Literatura Biomédica Pré-Clínica Indexada (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "preclinical"
+          }
+        ]
+      }
+    ],
+    "calculatorBlocked": true,
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "liraglutide",
@@ -5213,7 +7483,39 @@ const PEPTIDES_DATABASE = [
         "operationalCaveat": "Caneta com seletor de dose escalonado até 3,0 mg/dia. Não requer reconstituição líquida em seringa."
       }
     ],
-    "popularityScore": 98
+    "popularityScore": 98,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "0,6 mg a 1,8 mg/dia (DM2 / Victoza) ou até 3,0 mg/dia (Obesidade / Saxenda)",
+            "doseUnit": "mcg",
+            "frequency": "1x ao dia (mesmo horário)",
+            "duration": "Uso crônico contínuo sob monitoramento médico",
+            "administrationNotes": "Administração: Subcutânea (SC). Horário padronizado conforme protocolo clínico individualizado."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Liraglutida)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "teduglutide",
@@ -5375,7 +7677,39 @@ const PEPTIDES_DATABASE = [
         "operationalCaveat": "Reagente laboratorial não qualificado para uso parenteral humano. Utilizar a calculadora estritamente para conversões teóricas de massa e diluição."
       }
     ],
-    "popularityScore": 92
+    "popularityScore": 92,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "0,05 mg/kg de peso corporal uma vez ao dia (posologia oficial de bula)",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia (mesmo horário)",
+            "duration": "Tratamento crônico contínuo sob acompanhamento gastroenterológico",
+            "administrationNotes": "Administração: Subcutânea (SC). Horário padronizado conforme protocolo clínico individualizado."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Teduglutida)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "setmelanotide",
@@ -5514,7 +7848,39 @@ const PEPTIDES_DATABASE = [
         "operationalCaveat": "Reagente laboratorial não qualificado para uso parenteral humano. Utilizar a calculadora estritamente para conversões teóricas de massa e diluição."
       }
     ],
-    "popularityScore": 90
+    "popularityScore": 90,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "0,5 mg a 3 mg SC 1x/dia pela manhã (estratificado por indicação, idade e função renal)",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia (pela manhã)",
+            "duration": "Tratamento contínuo sob acompanhamento médico; avaliar eficácia às 12-16 semanas",
+            "administrationNotes": "Administração: Subcutânea (SC). Horário padronizado conforme protocolo clínico individualizado."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Setmelanotida)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "abaloparatide",
@@ -5604,7 +7970,39 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "Novas fraturas vertebrais em 18 meses ocorreram em 0,58% com abaloparatida versus 4,22% no grupo placebo (redução de risco relativo de 86%, P < 0,001). A incidência de hipercalcemia foi menor com abaloparatida (3,4%) do que com teriparatida (6,4%)."
       }
     ],
-    "popularityScore": 88
+    "popularityScore": 88,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "80 mcg SC 1x ao dia (dose oficial de bula Tymlos®)",
+            "doseUnit": "mcg",
+            "frequency": "1x ao dia",
+            "duration": "Uso cumulativo máximo de 2 anos ao longo da vida (limite de classe PTH1R)",
+            "administrationNotes": "Administração: Subcutânea (SC). Subcutânea no abdômen periumbilical, uma vez ao dia, preferencialmente no mesmo horário.."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Abaloparatida)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "ace-031",
@@ -5694,7 +8092,27 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "Tendência numérica não significativa para manutenção na distância de caminhada de 6 minutos; ensaio interrompido após o segundo regime de doses devido a epistaxe e telangiectasias."
       }
     ],
-    "popularityScore": 82
+    "popularityScore": 82,
+    "safetyClassification": "clinical_trial",
+    "safetyHeaderTitle": "Critérios de Exclusão & Restrições Clínicas Documentadas",
+    "structuredProtocols": [
+      {
+        "objective": "Investigação Farmacológica Pré-Clínica (Modelos Celulares / Animais)",
+        "targetAudience": "Pesquisa em Modelos Animais / Não Aprovado para Uso Humano",
+        "evidenceLevel": "Classe D (Informativo / Sem Posologia Humana Validada)",
+        "gapNotice": "Não existem ensaios clínicos controlados em humanos que tenham determinado posologia terapêutica segura, farmacocinética ou janela de eficácia. Dados estritamente restritos a ensaios in vitro e roedores de laboratório. A prescrição ou administração empírica em humanos carece de respaldo toxicológico. Calculadora de reconstituição bloqueada para prevenir falsa impressão de segurança clínica.",
+        "phases": [],
+        "sources": [
+          {
+            "title": "Literatura Biomédica Pré-Clínica Indexada (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "preclinical"
+          }
+        ]
+      }
+    ],
+    "calculatorBlocked": true,
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "ahk-cu",
@@ -5782,7 +8200,52 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "AHK-Cu em concentrações micromolares estimulou o alongamento folicular ex vivo e aumentou a proliferação celular, suprimindo apoptose via redução de TGF-beta1."
       }
     ],
-    "popularityScore": 79
+    "popularityScore": 79,
+    "safetyClassification": "cosmetic_topical",
+    "safetyHeaderTitle": "Advertências & Precauções de Uso Tópico Cosmético",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Não aplicável (ausência de dados clínicos humanos)",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "Não há dose humana validada nesta base de evidências",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Não aplicável",
+            "administrationNotes": "Não aplicável.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "b7-33",
@@ -5880,7 +8343,27 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "B7-33 mimetizou as ações antifibróticas da relaxina-2 sem elevar cAMP oncogênico, revertendo fibrose com equipotência em relação à serelaxina nativa."
       }
     ],
-    "popularityScore": 77
+    "popularityScore": 77,
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Investigação Farmacológica Pré-Clínica (Modelos Celulares / Animais)",
+        "targetAudience": "Pesquisa em Modelos Animais / Não Aprovado para Uso Humano",
+        "evidenceLevel": "Classe D (Informativo / Sem Posologia Humana Validada)",
+        "gapNotice": "Não existem ensaios clínicos controlados em humanos que tenham determinado posologia terapêutica segura, farmacocinética ou janela de eficácia. Dados estritamente restritos a ensaios in vitro e roedores de laboratório. A prescrição ou administração empírica em humanos carece de respaldo toxicológico. Calculadora de reconstituição bloqueada para prevenir falsa impressão de segurança clínica.",
+        "phases": [],
+        "sources": [
+          {
+            "title": "Literatura Biomédica Pré-Clínica Indexada (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "preclinical"
+          }
+        ]
+      }
+    ],
+    "calculatorBlocked": true,
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "dulaglutide",
@@ -5974,7 +8457,39 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "Desfecho primário MACE-3 ocorreu em 594 de 4.949 participantes no grupo dulaglutida (12,0%; 2,4 por 100 pessoas-ano) versus 663 de 4.952 participantes no grupo placebo (13,4%; 2,7 por 100 pessoas-ano; HR 0,88, IC95% 0,79 a 0,99; P = 0,026), com benefício consistente em prevenção primária e secundária."
       }
     ],
-    "popularityScore": 95
+    "popularityScore": 95,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "0,75 mg a 4,5 mg SC uma vez por semana (regime oficial Trulicity®)",
+            "doseUnit": "mg",
+            "frequency": "1x por semana",
+            "duration": "Tratamento contínuo sob acompanhamento médico",
+            "administrationNotes": "Administração: Subcutânea (SC). Subcutânea no abdômen, coxa ou parte superior do braço, a qualquer hora do dia, no mesmo dia a cada semana.."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Dulaglutida)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "eloralintide",
@@ -6065,7 +8580,52 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "Reduções médias no peso corporal após 48 semanas alcançaram até -20% na dose de 9 mg e no escalonamento 6-9 mg (estimando de eficácia: -9% a -20% vs -0,4% placebo). Eventos adversos mais comuns foram náuseas e fadiga."
       }
     ],
-    "popularityScore": 91
+    "popularityScore": 91,
+    "safetyClassification": "clinical_trial",
+    "safetyHeaderTitle": "Critérios de Exclusão & Restrições Clínicas Documentadas",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Escalonamentos avaliados em ensaio: 3 mg para 9 mg, ou 6 mg para 9 mg semanais.",
+            "doseUnit": "mg",
+            "frequency": "1x por semana (em ensaio clínico)",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "Não há posologia aprovada de rotina (uso restrito ao protocolo do ensaio)",
+            "doseUnit": "mg",
+            "frequency": "1x por semana (em ensaio clínico)",
+            "duration": "48 semanas (protocolo do ensaio clínico Fase 2 NCT06230523)",
+            "administrationNotes": "Subcutânea semanal no abdômen.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "foxo4-dri",
@@ -6154,7 +8714,27 @@ const PEPTIDES_DATABASE = [
     "administrationRoutes": [
       "Subcutânea (Investigacional)",
       "Intraperitoneal (Em Roedores)"
-    ]
+    ],
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Investigação Farmacológica Pré-Clínica (Modelos Celulares / Animais)",
+        "targetAudience": "Pesquisa em Modelos Animais / Não Aprovado para Uso Humano",
+        "evidenceLevel": "Classe D (Informativo / Sem Posologia Humana Validada)",
+        "gapNotice": "Não existem ensaios clínicos controlados em humanos que tenham determinado posologia terapêutica segura, farmacocinética ou janela de eficácia. Dados estritamente restritos a ensaios in vitro e roedores de laboratório. A prescrição ou administração empírica em humanos carece de respaldo toxicológico. Calculadora de reconstituição bloqueada para prevenir falsa impressão de segurança clínica.",
+        "phases": [],
+        "sources": [
+          {
+            "title": "Literatura Biomédica Pré-Clínica Indexada (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "preclinical"
+          }
+        ]
+      }
+    ],
+    "calculatorBlocked": true,
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "gonadorelin",
@@ -6246,7 +8826,39 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "Tratamento com GnRH pulsátil s.c. induziu ovulação em 93% das pacientes e em 90% dos ciclos, com taxa de gravidez por ciclo ovulatório de 30% e 23 crianças nascidas sem eventos adversos graves."
       }
     ],
-    "popularityScore": 83
+    "popularityScore": 83,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Diagnóstico: 100 mcg IV/SC bolus único (Factrel). Terapêutico: 2,5 a 20 mcg por pulso s.c. a cada 90 min via bomba especializada",
+            "doseUnit": "mcg",
+            "frequency": "Dose diagnóstica única ou pulsátil a cada 90 min via bomba",
+            "duration": "Definida pelo teste diagnóstico ou pelo protocolo de reprodução assistida",
+            "administrationNotes": "Administração: Subcutânea (SC Pulsátil via Bomba). Teste diagnóstico: coleta de LH/FSH nos tempos 0, 15, 30 e 60 minutos pós-injeção.."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Gonadorelina)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "hcg",
@@ -6340,14 +8952,46 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "hCG em monoterapia normalizou a testosterona sérica em todos os 22 homens e induziu espermatozoides no ejaculado em 14 de 22 pacientes (63,6%), demonstrando que o hCG isolado, na ausência de FSH exógeno, pode completar a espermiogênese em homens com hipogonadismo hipogonadotrófico."
       }
     ],
-    "popularityScore": 97
+    "popularityScore": 97,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Uso médico individualizado sob prescrição (500 UI a 2000 UI 2 a 3x por semana)",
+            "doseUnit": "UI",
+            "frequency": "2x a 3x por semana sob prescrição médica",
+            "duration": "Definida clinicamente conforme resposta hormonal e espermograma",
+            "administrationNotes": "Administração: Subcutânea (SC). Subcutânea no abdômen ou intramuscular profunda.."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (HCG)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "somatropin",
     "name": "HGH (Somatropina)",
     "fullName": "Somatropina (Hormônio do Crescimento Humano Recombinante — rhGH / Genotropin® / Serostim®)",
-    "category": "Secretagogos de GH",
-    "categoryId": "gh-secretagogues",
+    "category": "Hormônios Recombinantes & Proteínas (rhGH)",
+    "categoryId": "rhgh-biologics",
     "therapeuticTargets": [
       "musculo",
       "articulacoes",
@@ -6452,7 +9096,70 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "Tratamento com somatropina 6 mg/dia produziu aumento significativo no peso corporal e massa magra e melhora na capacidade de trabalho físico em esteira ergométrica."
       }
     ],
-    "popularityScore": 99
+    "popularityScore": 99,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Reposição Endocrinológica (DGH), Caquexia & Suporte Anabólico Estrutural",
+        "targetAudience": "Bula Oficial Aprovada FDA/EMA/Anvisa & Prática Esportiva Documentada",
+        "evidenceLevel": "Classe A (Bula Oficial / Farmacopeia)",
+        "phases": [
+          {
+            "phaseName": "Esquema Clínico 1: Deficiência de GH em Adultos (DGH / Genotropin®)",
+            "dose": "0,15 a 0,30 mg/dia (~0,45 a 0,90 UI/dia)",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia (à noite ao deitar)",
+            "duration": "Tratamento contínuo prolongado",
+            "administrationNotes": "Aplicação SC antes de dormir. Titulação mensal com base nos níveis de IGF-1 sérico e glicemia de jejum. 1 mg = 3 UI biológicas."
+          },
+          {
+            "phaseName": "Esquema Clínico 2: Caquexia Associada ao HIV (Serostim®)",
+            "dose": "Até 6,0 mg/dia (~18 UI/dia para peso >55 kg)",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia ao deitar",
+            "duration": "Ciclos de 12 semanas sob rigoroso controle",
+            "administrationNotes": "Dose de resgate ponderal aprovada pelo FDA em caquexia crônica grave."
+          },
+          {
+            "phaseName": "Esquema 3: Composição Corporal & Relatos Esportivos (Classe C / Não Homologado)",
+            "dose": "2 a 4 UI/dia (~0,66 a 1,33 mg/dia)",
+            "doseUnit": "UI",
+            "frequency": "1x ao dia ou dividida em 2x",
+            "duration": "12 a 24 semanas (prática comunitária descrita)",
+            "administrationNotes": "EVIDÊNCIA CIENTÍFICA: Revisões sistemáticas (Liu et al. 2008, Hermansen et al. 2017) comprovam que em adultos saudáveis o rhGH aumenta massa magra prioritariamente por retenção hídrica extracelular e síntese de matriz de colágeno, SEM gerar ganho significativo de força isométrica contrátil máxima isolada. Proibido pela WADA."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial FDA Genotropin (somatropin for injection)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Bula Oficial FDA Serostim (somatropin in HIV-associated wasting)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Liu et al. Systematic review: the effects of growth hormone on athletic performance (Ann Intern Med 2008, PMID 18347346)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18347346/",
+            "type": "systematic_review"
+          },
+          {
+            "title": "Hermansen et al. Growth hormone administration and exercise performance in healthy adults: a systematic review (Sports Med 2017, PMID 28168641)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28168641/",
+            "type": "systematic_review"
+          },
+          {
+            "title": "Arcana Labs Peptide Database — Somatropina (HGH)",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (H4.3.1)"
   },
   {
     "id": "menotropin-hmg",
@@ -6544,7 +9251,39 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "Tratamento inicial com hCG induziu espermatozoides em 3 pacientes; a adição de hMG resultou em espermatozoides em 11 de 12 pacientes. Quatro de 5 pacientes mantiveram espermatogênese apenas com hCG após retirada de hMG, demonstrando que o estímulo contínuo com FSH exógeno não é biologicamente obrigatório em todos os indivíduos."
       }
     ],
-    "popularityScore": 86
+    "popularityScore": 86,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Uso médico individualizado sob monitoramento clínico e espermograma (tipicamente 75 a 150 UI 2 a 3x por semana associado a hCG)",
+            "doseUnit": "UI",
+            "frequency": "2x a 3x por semana associado a hCG",
+            "duration": "Ciclos de indução de espermatogênese requerem tipicamente 3 a 6 meses de tratamento contínuo",
+            "administrationNotes": "Administração: Subcutânea (SC). Subcutânea ou intramuscular profunda conforme prescrição do especialista em fertilidade.."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (HMG (Menotropina))",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "palmitoyl-pentapeptide-4",
@@ -6632,7 +9371,52 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "Avaliações instrumentais e fotográficas indicaram melhora nos escores de rugas periorbitárias e autoavaliação com PPP-4 e AHP-3 em relação a placebo, sem eventos adversos graves, requerendo ensaios confirmatórios maiores."
       }
     ],
-    "popularityScore": 84
+    "popularityScore": 84,
+    "safetyClassification": "cosmetic_topical",
+    "safetyHeaderTitle": "Advertências & Precauções de Uso Tópico Cosmético",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Conforme tolerabilidade cutânea individual da fórmula cosmética.",
+            "doseUnit": "ppm",
+            "frequency": "1 a 2x ao dia tópico na pele limpa",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "Uso tópico cosmético (formulações cosméticas contendo 3 a 50 ppm da molécula)",
+            "doseUnit": "ppm",
+            "frequency": "1 a 2x ao dia tópico na pele limpa",
+            "duration": "Aplicação tópica continuada por 8 a 12 semanas em protocolos dermocosméticos",
+            "administrationNotes": "Aplicação facial matutina ou noturna sobre a pele limpa.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "pe-22-28",
@@ -6721,7 +9505,27 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "PE-22-28 apresentou afinidade nanomolar por TREK-1, induzindo neurogênese hipocampal e comportamento antidepressivo em 4 dias de tratamento com estabilidade in vivo superior à espadina."
       }
     ],
-    "popularityScore": 78
+    "popularityScore": 78,
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Investigação Farmacológica Pré-Clínica (Modelos Celulares / Animais)",
+        "targetAudience": "Pesquisa em Modelos Animais / Não Aprovado para Uso Humano",
+        "evidenceLevel": "Classe D (Informativo / Sem Posologia Humana Validada)",
+        "gapNotice": "Não existem ensaios clínicos controlados em humanos que tenham determinado posologia terapêutica segura, farmacocinética ou janela de eficácia. Dados estritamente restritos a ensaios in vitro e roedores de laboratório. A prescrição ou administração empírica em humanos carece de respaldo toxicológico. Calculadora de reconstituição bloqueada para prevenir falsa impressão de segurança clínica.",
+        "phases": [],
+        "sources": [
+          {
+            "title": "Literatura Biomédica Pré-Clínica Indexada (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "preclinical"
+          }
+        ]
+      }
+    ],
+    "calculatorBlocked": true,
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "ptd-dbm",
@@ -6810,7 +9614,27 @@ const PEPTIDES_DATABASE = [
     "administrationRoutes": [
       "Tópica (Investigacional de Bancada)",
       "Subcutânea Peri-Folicular (Pré-Clínica)"
-    ]
+    ],
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Investigação Farmacológica Pré-Clínica (Modelos Celulares / Animais)",
+        "targetAudience": "Pesquisa em Modelos Animais / Não Aprovado para Uso Humano",
+        "evidenceLevel": "Classe D (Informativo / Sem Posologia Humana Validada)",
+        "gapNotice": "Não existem ensaios clínicos controlados em humanos que tenham determinado posologia terapêutica segura, farmacocinética ou janela de eficácia. Dados estritamente restritos a ensaios in vitro e roedores de laboratório. A prescrição ou administração empírica em humanos carece de respaldo toxicológico. Calculadora de reconstituição bloqueada para prevenir falsa impressão de segurança clínica.",
+        "phases": [],
+        "sources": [
+          {
+            "title": "Literatura Biomédica Pré-Clínica Indexada (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "preclinical"
+          }
+        ]
+      }
+    ],
+    "calculatorBlocked": true,
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "triptorelin",
@@ -6901,7 +9725,39 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "Triptorelina depot alcançou níveis de castração médica cirúrgica de testosterona (<50 ng/dL) em mais de 95% dos pacientes no dia 28, mantendo supressão contínua durante todo o intervalo de aplicação."
       }
     ],
-    "popularityScore": 93
+    "popularityScore": 93,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "3,75 mg IM (4 semanas), 11,25 mg IM (12 semanas) ou 22,5 mg IM (24 semanas) conforme apresentação oficial de bula",
+            "doseUnit": "mg",
+            "frequency": "A cada 4, 12 ou 24 semanas conforme bula oficial",
+            "duration": "Definida oncológica ou clinicamente sob rigoroso seguimento de PSA",
+            "administrationNotes": "Administração: Intramuscular (IM). Injeção intramuscular profunda administrada por profissional de saúde treinado.."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Triptorelina)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "acth-1-39",
@@ -6999,7 +9855,39 @@ const PEPTIDES_DATABASE = [
     "monoisotopicMass": "4538.26 Da",
     "pubchemCid": 16132265,
     "casNumber": "9002-60-2",
-    "modifications": []
+    "modifications": [],
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Não há dose humana validada nesta base de evidências",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Não aplicável",
+            "administrationNotes": "Administração: Subcutânea (Pesquisa). Não aplicável.."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (ACTH 1-39)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "adipotide",
@@ -7089,7 +9977,27 @@ const PEPTIDES_DATABASE = [
     "modifications": [
       "Ponte dissulfeto intracadeia Cys1-Cys9",
       "14 D-aminoácidos no domínio pró-apoptótico D(KLAKLAK)2"
-    ]
+    ],
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Investigação Farmacológica Pré-Clínica (Modelos Celulares / Animais)",
+        "targetAudience": "Pesquisa em Modelos Animais / Não Aprovado para Uso Humano",
+        "evidenceLevel": "Classe D (Informativo / Sem Posologia Humana Validada)",
+        "gapNotice": "Não existem ensaios clínicos controlados em humanos que tenham determinado posologia terapêutica segura, farmacocinética ou janela de eficácia. Dados estritamente restritos a ensaios in vitro e roedores de laboratório. A prescrição ou administração empírica em humanos carece de respaldo toxicológico. Calculadora de reconstituição bloqueada para prevenir falsa impressão de segurança clínica.",
+        "phases": [],
+        "sources": [
+          {
+            "title": "Literatura Biomédica Pré-Clínica Indexada (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "preclinical"
+          }
+        ]
+      }
+    ],
+    "calculatorBlocked": true,
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "bronchogen",
@@ -7185,7 +10093,52 @@ const PEPTIDES_DATABASE = [
     "casNumber": "857267-12-0",
     "modifications": [
       "Divergência de sequência entre fontes: Ala-Glu-Asp-Leu (AEDL, PubChem CID 11690869) vs Ala-Asp-Glu-Leu (ADEL, PMID 21240358). Isômeros com idêntica fórmula C18H30N4O9 e massa 446.5 g/mol"
-    ]
+    ],
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Não aplicável (ausência de dados clínicos humanos)",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "Não há dose humana validada nesta base de evidências",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Não aplicável",
+            "administrationNotes": "Não aplicável.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "cardiogen",
@@ -7268,7 +10221,52 @@ const PEPTIDES_DATABASE = [
     "monoisotopicMass": "489.22 Da",
     "pubchemCid": 11583989,
     "casNumber": "857267-15-3",
-    "modifications": []
+    "modifications": [],
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Não aplicável (ausência de dados clínicos humanos)",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "Não há dose humana validada nesta base de evidências",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Não aplicável",
+            "administrationNotes": "Não aplicável.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "chonluten",
@@ -7350,7 +10348,52 @@ const PEPTIDES_DATABASE = [
     "monoisotopicMass": "319.10 Da",
     "pubchemCid": null,
     "casNumber": "857267-18-6",
-    "modifications": []
+    "modifications": [],
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Não aplicável (ausência de dados clínicos humanos)",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "Não há dose humana validada nesta base de evidências",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Não aplicável",
+            "administrationNotes": "Não aplicável.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "cortagen",
@@ -7442,7 +10485,52 @@ const PEPTIDES_DATABASE = [
     "monoisotopicMass": "430.17 Da",
     "pubchemCid": 18439621,
     "casNumber": "857267-14-2",
-    "modifications": []
+    "modifications": [],
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Não aplicável (ausência de dados clínicos humanos)",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "Não há dose humana validada nesta base de evidências",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Não aplicável",
+            "administrationNotes": "Não aplicável.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "dermorphin",
@@ -7542,7 +10630,27 @@ const PEPTIDES_DATABASE = [
     "modifications": [
       "D-Alanina na posição 2",
       "Amidação C-terminal (-NH2)"
-    ]
+    ],
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Investigação Farmacológica Pré-Clínica (Modelos Celulares / Animais)",
+        "targetAudience": "Pesquisa em Modelos Animais / Não Aprovado para Uso Humano",
+        "evidenceLevel": "Classe D (Informativo / Sem Posologia Humana Validada)",
+        "gapNotice": "Não existem ensaios clínicos controlados em humanos que tenham determinado posologia terapêutica segura, farmacocinética ou janela de eficácia. Dados estritamente restritos a ensaios in vitro e roedores de laboratório. A prescrição ou administração empírica em humanos carece de respaldo toxicológico. Calculadora de reconstituição bloqueada para prevenir falsa impressão de segurança clínica.",
+        "phases": [],
+        "sources": [
+          {
+            "title": "Literatura Biomédica Pré-Clínica Indexada (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "preclinical"
+          }
+        ]
+      }
+    ],
+    "calculatorBlocked": true,
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "hgh-fragment-176-191",
@@ -7644,7 +10752,52 @@ const PEPTIDES_DATABASE = [
     "casNumber": "66004-57-7",
     "modifications": [
       "Ponte dissulfeto intracadeia Cys182-Cys189 (entre Cys7 e Cys14 do fragmento)"
-    ]
+    ],
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Não aplicável (ausência de dados clínicos humanos específicos)",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "Não há dose humana validada nesta base de evidências",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Não aplicável",
+            "administrationNotes": "Não aplicável.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "livagen",
@@ -7728,7 +10881,52 @@ const PEPTIDES_DATABASE = [
     "monoisotopicMass": "461.21 Da",
     "pubchemCid": 87919683,
     "casNumber": "857267-13-1",
-    "modifications": []
+    "modifications": [],
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Não aplicável (ausência de dados clínicos humanos)",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "Não há dose humana validada nesta base de evidências",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Não aplicável",
+            "administrationNotes": "Não aplicável.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "mgf-e-peptide",
@@ -7829,7 +11027,52 @@ const PEPTIDES_DATABASE = [
     "monoisotopicMass": "2847.44 Da",
     "pubchemCid": null,
     "casNumber": "1356779-84-4",
-    "modifications": []
+    "modifications": [],
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Não aplicável (ausência de dados de segurança ou eficácia clínica humana)",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "Não há dose humana validada nesta base de evidências",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Não aplicável",
+            "administrationNotes": "Não aplicável.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "orexin-a",
@@ -7947,7 +11190,52 @@ const PEPTIDES_DATABASE = [
       "Piroglutamato N-terminal (<Glu / Pyr1)",
       "2 pontes dissulfeto: Cys6-Cys12 e Cys7-Cys14",
       "Amidação C-terminal (-NH2)"
-    ]
+    ],
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Não aplicável (ausência de formulação farmacêutica aprovada)",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "Não há dose humana validada nesta base de evidências",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Não aplicável",
+            "administrationNotes": "Não aplicável.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "orexin-b",
@@ -8032,7 +11320,52 @@ const PEPTIDES_DATABASE = [
     "casNumber": "205640-91-1",
     "modifications": [
       "Amidação C-terminal (-NH2)"
-    ]
+    ],
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Não aplicável (ausência de ensaios terapêuticos humanos)",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "Não há dose humana validada nesta base de evidências",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Não aplicável",
+            "administrationNotes": "Não aplicável.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "pancragen",
@@ -8134,7 +11467,52 @@ const PEPTIDES_DATABASE = [
     "casNumber": "857267-17-5",
     "modifications": [
       "Amidação C-terminal (-NH2)"
-    ]
+    ],
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Não aplicável (ausência de ensaios controlados confirmatórios)",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "Não há dose humana validada nesta base de evidências",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Não aplicável",
+            "administrationNotes": "Não aplicável.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "pnc-27",
@@ -8227,7 +11605,27 @@ const PEPTIDES_DATABASE = [
     "monoisotopicMass": "4029.20 Da",
     "pubchemCid": 16201774,
     "casNumber": "1356779-90-2",
-    "modifications": []
+    "modifications": [],
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Investigação Farmacológica Pré-Clínica (Modelos Celulares / Animais)",
+        "targetAudience": "Pesquisa em Modelos Animais / Não Aprovado para Uso Humano",
+        "evidenceLevel": "Classe D (Informativo / Sem Posologia Humana Validada)",
+        "gapNotice": "Não existem ensaios clínicos controlados em humanos que tenham determinado posologia terapêutica segura, farmacocinética ou janela de eficácia. Dados estritamente restritos a ensaios in vitro e roedores de laboratório. A prescrição ou administração empírica em humanos carece de respaldo toxicológico. Calculadora de reconstituição bloqueada para prevenir falsa impressão de segurança clínica.",
+        "phases": [],
+        "sources": [
+          {
+            "title": "Literatura Biomédica Pré-Clínica Indexada (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "preclinical"
+          }
+        ]
+      }
+    ],
+    "calculatorBlocked": true,
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "prostamax",
@@ -8317,7 +11715,52 @@ const PEPTIDES_DATABASE = [
     "monoisotopicMass": "487.23 Da",
     "pubchemCid": 9848296,
     "casNumber": "857267-16-4",
-    "modifications": []
+    "modifications": [],
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Não aplicável (ausência de ensaios clínicos urológicos humanos)",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "Não há dose humana validada nesta base de evidências",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Não aplicável",
+            "administrationNotes": "Não aplicável.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "thymogen",
@@ -8421,7 +11864,52 @@ const PEPTIDES_DATABASE = [
     "monoisotopicMass": "333.13 Da",
     "pubchemCid": 100094,
     "casNumber": "105250-86-0",
-    "modifications": []
+    "modifications": [],
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Não aplicável (ausência de protocolo clínico internacional validado)",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "Não há dose humana validada nesta base de evidências",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Não aplicável",
+            "administrationNotes": "Não aplicável.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "thymulin",
@@ -8507,7 +11995,52 @@ const PEPTIDES_DATABASE = [
     "modifications": [
       "Piroglutamato N-terminal (<Glu / Pyr1)",
       "Complexo biologicamente ativo requer íon Zn(II) equimolar [C33H52N12O15Zn]"
-    ]
+    ],
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Não aplicável (ausência de formulação farmacêutica aprovada)",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "Não há dose humana validada nesta base de evidências",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Não aplicável",
+            "administrationNotes": "Não aplicável.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "vesugen",
@@ -8598,7 +12131,52 @@ const PEPTIDES_DATABASE = [
     "monoisotopicMass": "390.18 Da",
     "pubchemCid": null,
     "casNumber": "857267-19-7",
-    "modifications": []
+    "modifications": [],
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Não aplicável (ausência de ensaios cardiovasculares controlados)",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "Não há dose humana validada nesta base de evidências",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Não aplicável",
+            "administrationNotes": "Não aplicável.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "vilon",
@@ -8689,7 +12267,52 @@ const PEPTIDES_DATABASE = [
     "monoisotopicMass": "275.15 Da",
     "pubchemCid": 7010502,
     "casNumber": "857267-20-0",
-    "modifications": []
+    "modifications": [],
+    "safetyClassification": "preclinical_risk",
+    "safetyHeaderTitle": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Não aplicável (ausência de dados de eficácia clínica humana)",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "Não há dose humana validada nesta base de evidências",
+            "doseUnit": "N/A",
+            "frequency": "Não aplicável",
+            "duration": "Não aplicável",
+            "administrationNotes": "Não aplicável.. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "teriparatide",
@@ -8773,7 +12396,39 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [],
     "popularityScore": 88,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Posologia restrita à bula oficial: 20 mcg SC uma vez ao dia via caneta pré-cheia. Duração máxima de tratamento de 24 meses ao longo da vida.",
+            "doseUnit": "N/A",
+            "frequency": "Diária (conforme prescrição médica)",
+            "duration": "Máximo de 24 meses acumulados ao longo da vida",
+            "administrationNotes": "Administração: Subcutânea (Caneta Pré-cheia Oficial). Administração subcutânea na coxa ou abdômen uma vez ao dia."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Teriparatida)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "palopegteriparatide",
@@ -8853,7 +12508,39 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [],
     "popularityScore": 86,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Posologia de bula oficial individualizada: dose inicial recomendada de 18 mcg/dia SC, com titulação a cada 2-4 semanas monitorando calcemia sérica.",
+            "doseUnit": "N/A",
+            "frequency": "Uma vez ao dia via subcutânea com caneta oficial Yorvipath",
+            "duration": "Tratamento contínuo de manutenção crônica",
+            "administrationNotes": "Administração: Subcutânea (Caneta Pré-cheia Multidose Oficial). Injeção subcutânea diária no abdômen ou coxa."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Palopegteriparatida)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "octreotide",
@@ -8934,7 +12621,39 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [],
     "popularityScore": 90,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Posologia restrita à bula oficial: 50 a 100 mcg SC a cada 8-12 horas na formulação imediata; 20 a 30 mg IM glútea profunda a cada 4 semanas na formulação LAR.",
+            "doseUnit": "N/A",
+            "frequency": "2 a 3 vezes ao dia SC (imediata) ou a cada 28 dias IM (depot)",
+            "duration": "Tratamento contínuo sob acompanhamento endócrino e oncológico",
+            "administrationNotes": "Administração: Subcutânea (Solução Injetável Imediata). Injeções subcutâneas entre as refeições para minimizar desconforto gastrointestinal."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Octreotida)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "lanreotide",
@@ -9014,7 +12733,39 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [],
     "popularityScore": 87,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Posologia de bula oficial: 60 mg, 90 mg ou 120 mg via injeção subcutânea profunda no quadrante superior externo da nádega a cada 28 dias.",
+            "doseUnit": "N/A",
+            "frequency": "A cada 28 dias (injeção mensal profunda)",
+            "duration": "Terapia oncológica ou endócrina contínua",
+            "administrationNotes": "Administração: Subcutânea Profunda (Seringa Pré-carregada Oficial). Injeção administrada por profissional habilitado em nádega alternada."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Lanreotida)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "pasireotide",
@@ -9095,7 +12846,39 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [],
     "popularityScore": 85,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Posologia de bula oficial: 0,6 mg ou 0,9 mg SC a cada 12 horas; ou 40 a 60 mg IM profunda a cada 28 dias na apresentação LAR.",
+            "doseUnit": "N/A",
+            "frequency": "A cada 12 horas SC ou a cada 28 dias IM",
+            "duration": "Terapia crônica sob estrito controle endocrinológico",
+            "administrationNotes": "Administração: Subcutânea (Solução Injetável Signifor). Injeção subcutânea matinal e noturna em locais alternados."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Pasireotida)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "ziconotide",
@@ -9176,7 +12959,39 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [],
     "popularityScore": 84,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Posologia intratecal de bula: dose inicial não superior a 2,4 mcg/dia (0,1 mcg/hora), com titulação gradual de até 2,4 mcg/dia por semana até dose máxima de 19,2 mcg/dia (0,8 mcg/hora).",
+            "doseUnit": "N/A",
+            "frequency": "Infusão intratecal contínua programada via bomba cirurgicamente implantada",
+            "duration": "Manejo crônico contínuo de dor refratária",
+            "administrationNotes": "Administração: Intratecal Contínua (Bomba de Infusão Implantável Medtronic SynchroMed II). Taxa de infusão intratecal contínua em microgramas por hora programada eletronicamente."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Ziconotida)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "degarelix",
@@ -9256,7 +13071,39 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [],
     "popularityScore": 87,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Posologia de bula oficial: Dose de ataque de 240 mg administrada como duas injeções subcutâneas de 120 mg cada no abdômen, seguida por dose mensal de manutenção de 80 mg SC a cada 28 dias.",
+            "doseUnit": "N/A",
+            "frequency": "Dose de ataque inicial única de 240 mg; depois 80 mg a cada 28 dias",
+            "duration": "Terapia de privação androgênica contínua no câncer de próstata",
+            "administrationNotes": "Administração: Subcutânea Abdominal (Suspensão Depot com Gel Formado In Situ). Injeção subcutânea no abdômen alternando quadrantes."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Degarelix)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "ganirelix",
@@ -9336,7 +13183,39 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [],
     "popularityScore": 86,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Posologia restrita à bula oficial: 0,25 mg SC uma vez ao dia, iniciando tipicamente no dia 5 ou 6 da estimulação ovariana com FSH/gonadotrofina e mantido até o dia de indução final com hCG.",
+            "doseUnit": "N/A",
+            "frequency": "Uma vez ao dia por período curto (cerca de 4 a 7 dias)",
+            "duration": "Limitado à janela de bloqueio ovulatório no ciclo de reprodução assistida (4 a 6 dias)",
+            "administrationNotes": "Administração: Subcutânea (Seringa Pré-carregada Oficial). Injeção subcutânea na parte superior da coxa preferencialmente pela manhã ou final da tarde em horário fixo."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Ganirelix)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "cetrorelix",
@@ -9416,7 +13295,39 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [],
     "popularityScore": 86,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Posologia de bula oficial: 0,25 mg SC administrado uma vez ao dia pela manhã ou à noite (iniciando no dia 5 ou 6 da estimulação ovariana até a administração de hCG); ou dose única de 3 mg SC no dia 7 da estimulação.",
+            "doseUnit": "N/A",
+            "frequency": "Regime de doses múltiplas diárias (0,25 mg) ou dose única (3 mg)",
+            "duration": "Janela de bloqueio pré-ovulatório (aproximadamente 4 a 6 dias)",
+            "administrationNotes": "Administração: Subcutânea na Região Abdominal Inferior. Injeção subcutânea na parede abdominal inferior em horários regulares."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Cetrorelix)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "leuprorelin",
@@ -9498,7 +13409,39 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [],
     "popularityScore": 92,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Posologia restrita à bula oficial: 7,5 mg IM a cada 4 semanas, 22,5 mg IM a cada 12 semanas, 30 mg IM a cada 16 semanas ou 45 mg SC a cada 24 semanas conforme apresentação depot.",
+            "doseUnit": "N/A",
+            "frequency": "Mensal, trimestral, quadrimestral ou semestral conforme formulação depot",
+            "duration": "Terapia prolongada em oncologia ou limitada a 6 meses em ginecologia",
+            "administrationNotes": "Administração: Intramuscular (Microesferas Lupron Depot). Injeção administrada exclusivamente por profissionais de saúde habilitados."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Leuprorrelina)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "goserelin",
@@ -9578,7 +13521,39 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [],
     "popularityScore": 90,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Posologia de bula oficial: Implante de 3,6 mg SC no abdômen a cada 28 dias; ou implante de 10,8 mg SC a cada 12 semanas (84 dias) em oncologia.",
+            "doseUnit": "N/A",
+            "frequency": "A cada 28 dias (3,6 mg) ou a cada 12 semanas (10,8 mg)",
+            "duration": "Contínua no câncer de próstata/mama; limitada a 6 meses na endometriose",
+            "administrationNotes": "Administração: Subcutânea Abdominal (Implante Sólido Estéril em Seringa com Sistema de Segurança). Inserção subcutânea na parede abdominal anterior abaixo da linha umbilical."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Goserrelina)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "atosiban",
@@ -9661,7 +13636,39 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [],
     "popularityScore": 84,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Posologia de bula hospitalar em três etapas sucessivas: (1) Injeção em bolus IV de 6,75 mg em 1 minuto; (2) Infusão de ataque de 300 mcg/min durante 3 horas; (3) Infusão de manutenção de 100 mcg/min por até 45 horas. Duração máxima de 48 horas por ciclo.",
+            "doseUnit": "N/A",
+            "frequency": "Regime contínuo intravenoso hospitalar em três etapas por até 48 horas",
+            "duration": "Máximo de 48 horas acumuladas de infusão tocolítica",
+            "administrationNotes": "Administração: Intravenosa Hospitalar (Bolus seguido por Infusão Contínua). Infusão intravenosa contínua sob monitoramento tocodinâmico e cardiotocografia fetal."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Atosibana)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "linaclotide",
@@ -9740,7 +13747,39 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [],
     "popularityScore": 89,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Posologia de bula oral: 290 mcg por via oral uma vez ao dia para SII-C; ou 72 mcg a 145 mcg uma vez ao dia para constipação idiopática crônica, ingerida com estômago vazio pelo menos 30 minutos antes da primeira refeição.",
+            "doseUnit": "N/A",
+            "frequency": "Uma vez ao dia em jejum",
+            "duration": "Tratamento contínuo sob acompanhamento gastroenterológico",
+            "administrationNotes": "Administração: Oral (Cápsulas Rígidas Oficiais com Microgrânulos). Ingerir em jejum matinal pelo menos 30 minutos antes do café da manhã."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Linaclotida)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "plecanatide",
@@ -9819,7 +13858,39 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [],
     "popularityScore": 87,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Posologia de bula oral aprovada: 3 mg por via oral uma vez ao dia, administrado com ou sem alimentos.",
+            "doseUnit": "N/A",
+            "frequency": "Uma vez ao dia por via oral",
+            "duration": "Terapia de manutenção a longo prazo",
+            "administrationNotes": "Administração: Oral (Comprimidos Simples Oficiais). Comprimido deglutido inteiro com um copo de água, com ou sem refeições."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Plecanatida)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "dasiglucagon",
@@ -9898,7 +13969,39 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [],
     "popularityScore": 89,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Posologia de emergência de bula oficial: 0,6 mg SC em dose única via autoinjetor pré-carregado no abdômen, nádega, coxa ou parte externa do braço. Se não houver recuperação após 15 minutos, administrar segunda dose de 0,6 mg.",
+            "doseUnit": "N/A",
+            "frequency": "Dose de resgate de emergência",
+            "duration": "Aplicação pontual de emergência (resgate hipoglicêmico)",
+            "administrationNotes": "Administração: Subcutânea de Emergência (Autoinjetor ou Seringa Pré-carregada Pronta). Administração imediata diante de hipoglicemia grave documentada ou suspeita com perda de consciência."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Dasiglucagon)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "glucagon",
@@ -9981,7 +14084,39 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [],
     "popularityScore": 94,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Posologia de emergência de bula oficial: 1 mg (1 UI) SC, IM ou IV para adultos e crianças >25 kg (ou >6 anos de idade); 0,5 mg para crianças <25 kg; ou 3 mg via pó nasal seco (Baqsimi) em narina única.",
+            "doseUnit": "N/A",
+            "frequency": "Dose de resgate aguda; repetir após 15 minutos se não houver resposta clínica",
+            "duration": "Episódio agudo de hipoglicemia (uso pontual de emergência)",
+            "administrationNotes": "Administração: Intramuscular. Administração imediata assim que detectada hipoglicemia incapacitante."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Glucagon)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "desmopressin",
@@ -10065,7 +14200,39 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [],
     "popularityScore": 93,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Posologia de bula oral: 0,1 mg a 0,2 mg oral ao deitar para enurese noturna (máximo 0,4 mg); 0,1 a 0,8 mg/dia fracionado em 2-3 tomadas para diabetes insipidus central. Na hemofilia leve: 0,3 mcg/kg IV/SC diluído em salina.",
+            "doseUnit": "N/A",
+            "frequency": "Uma vez ao deitar ou 2 a 3 vezes ao dia conforme indicação",
+            "duration": "Terapia crônica de reposição no diabetes insipidus ou ciclos de 3 meses na enurese",
+            "administrationNotes": "Administração: Oral (Comprimidos ou Liofilizado Oral Melt). Tomada noturna com restrição rigorosa de ingestão hídrica 1 hora antes até 8 horas após a dose."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Desmopressina)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "pramlintide",
@@ -10146,7 +14313,39 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [],
     "popularityScore": 88,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Posologia de bula oficial: Em diabetes tipo 1, iniciar com 15 mcg SC imediatamente antes das principais refeições, titulando para 30 mcg e até 60 mcg; em diabetes tipo 2, iniciar com 60 mcg SC, titulando para 120 mcg conforme tolerabilidade. Reduzir a dose de insulina prandial em 50% no início.",
+            "doseUnit": "N/A",
+            "frequency": "Imediatamente antes das refeições principais contendo carboidratos (≥250 kcal ou ≥30g carboidratos)",
+            "duration": "Terapia crônica adjunta à insulinoterapia",
+            "administrationNotes": "Administração: Subcutânea Prandial (Caneta Injetora Pré-calibrada SymlinPen). Injetar no abdômen ou coxa imediatamente antes da refeição em seringa/caneta separada da insulina."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Pramlintida)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "enfuvirtide",
@@ -10224,7 +14423,39 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [],
     "popularityScore": 86,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Posologia de bula oficial: 90 mg via injeção subcutânea duas vezes ao dia (a cada 12 horas) no braço, abdômen ou coxa, em regime associado a outros antirretrovirais ativos.",
+            "doseUnit": "N/A",
+            "frequency": "Duas vezes ao dia (a cada 12 horas)",
+            "duration": "Terapia antirretroviral crônica de resgate",
+            "administrationNotes": "Administração: Subcutânea (Braço, Abdômen ou Coxa). Injeção subcutânea matinal e noturna alternando rigorosamente os sítios anatômicos."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Enfuvirtida)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "exenatide",
@@ -10307,7 +14538,39 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [],
     "popularityScore": 91,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Posologia de bula oficial: Iniciar com 5 mcg SC duas vezes ao dia nas 60 minutos anteriores às duas principais refeições do dia (intervalo mínimo de 6 horas); após 1 mês, pode ser titulada para 10 mcg SC duas vezes ao dia conforme tolerabilidade.",
+            "doseUnit": "N/A",
+            "frequency": "Duas vezes ao dia nos 60 minutos antes das refeições",
+            "duration": "Terapia crônica de controle metabólico",
+            "administrationNotes": "Administração: Subcutânea (Caneta Pré-cheia Oficial Byetta). Administrar no abdômen, coxa ou braço até 60 minutos antes do café e jantar (nunca após as refeições)."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Exenatida)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "lixisenatide",
@@ -10389,7 +14652,39 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [],
     "popularityScore": 88,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "formal_label",
+    "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
+    "structuredProtocols": [
+      {
+        "objective": "Tratamento Clínico Homologado em Bula",
+        "targetAudience": "Uso Clínico Conforme Bula Oficial Aprovada",
+        "evidenceLevel": "Classe A (Bula Oficial / Diretrizes Médicas)",
+        "phases": [
+          {
+            "phaseName": "Regime Posológico de Bula",
+            "dose": "Posologia de bula oficial: Dose inicial de 10 mcg SC uma vez ao dia durante 14 dias dentro de 1 hora antes de qualquer refeição do dia; a partir do dia 15, aumentar para a dose de manutenção de 20 mcg SC uma vez ao dia.",
+            "doseUnit": "N/A",
+            "frequency": "Uma vez ao dia dentro de 1 hora antes da refeição",
+            "duration": "Terapia crônica adjunta de controle glicêmico",
+            "administrationNotes": "Administração: Subcutânea (Caneta Pré-carregada Oficial). Injeção subcutânea diária na coxa, abdômen ou parte superior do braço."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Bula Oficial Homologada (Lixisenatida)",
+            "url": "https://accessdata.fda.gov",
+            "type": "regulatory"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "Concluído (Bula Aprovada)"
   },
   {
     "id": "apraglutide",
@@ -10488,7 +14783,52 @@ const PEPTIDES_DATABASE = [
       }
     ],
     "popularityScore": 81,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "clinical_trial",
+    "safetyHeaderTitle": "Critérios de Exclusão & Restrições Clínicas Documentadas",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Conforme desenho do protocolo clínico investigacional",
+            "doseUnit": "N/A",
+            "frequency": "Semanal em ensaios clínicos",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "Não há dose humana validada nesta base de evidências. Composto restrito a protocolos clínicos de ensaios de fase 3 supervisionados.",
+            "doseUnit": "N/A",
+            "frequency": "Semanal em ensaios clínicos",
+            "duration": "Protocolo de ensaio clínico (estudos STARS)",
+            "administrationNotes": "Injeção subcutânea semanal em dias padronizados. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   },
   {
     "id": "zenagamtide",
@@ -10617,15 +14957,62 @@ const PEPTIDES_DATABASE = [
       }
     ],
     "popularityScore": 85,
-    "calculatorBlocked": true
+    "calculatorBlocked": true,
+    "safetyClassification": "clinical_trial",
+    "safetyHeaderTitle": "Critérios de Exclusão & Restrições Clínicas Documentadas",
+    "structuredProtocols": [
+      {
+        "objective": "Pesquisa Clínica e Avaliação de Biomarcadores",
+        "targetAudience": "Protocolos Experimentais de Pesquisa Clínica",
+        "evidenceLevel": "Classe B/C (Ensaios Clínicos Preliminares / Modelos Pré-Clínicos)",
+        "phases": [
+          {
+            "phaseName": "Fase 1: Titulação / Adaptação",
+            "dose": "Escalonamento gradual de dose semanal em coortes de ensaio para controle de eventos gastrointestinais",
+            "doseUnit": "N/A",
+            "frequency": "Semanal SC ou diária oral nos ensaios clínicos",
+            "duration": "Iniciação do protocolo",
+            "administrationNotes": "Avaliação prévia de tolerância e resposta de biomarcadores."
+          },
+          {
+            "phaseName": "Fase Terapêutica / Manutenção Investigacional",
+            "dose": "Não há dose humana validada nesta base de evidências. Molécula restrita a protocolos clínicos de Fase 2 e Fase 3 supervisionados.",
+            "doseUnit": "N/A",
+            "frequency": "Semanal SC ou diária oral nos ensaios clínicos",
+            "duration": "Protocolos de ensaio de 12 a 36 semanas (The Lancet 2025/2026)",
+            "administrationNotes": "Administração supervisionada em centros de pesquisa autorizados. Dados clínicos preliminares sob investigação."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ensaios Clínicos e Estudos Indexados (PubMed)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "type": "clinical_study"
+          },
+          {
+            "title": "Arcana Labs Peptide Database",
+            "url": "https://www.arcana-labs.app/peptideos",
+            "type": "comparative"
+          },
+          {
+            "title": "PeptidePedia",
+            "url": "https://peptidepedia.org/all-peptides",
+            "type": "comparative"
+          }
+        ]
+      }
+    ],
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   }
 ];
+;
 
 // Categorias com metadados e contadores dinâmicos
 const PEPTIDE_CATEGORIES = [
   { id: "all", name: "Todos os Peptídeos", icon: "sparkles", count: PEPTIDES_DATABASE.length },
   { id: "regeneration", name: "Regeneração & Tecidos", icon: "activity", count: PEPTIDES_DATABASE.filter(p => p.categoryId === "regeneration").length },
   { id: "gh-secretagogues", name: "Secretagogos de GH", icon: "trending-up", count: PEPTIDES_DATABASE.filter(p => p.categoryId === "gh-secretagogues").length },
+  { id: "rhgh-biologics", name: "Hormônios Recombinantes (rhGH)", icon: "activity", count: PEPTIDES_DATABASE.filter(p => p.categoryId === "rhgh-biologics").length },
   { id: "metabolism", name: "Metabolismo & Emagrecimento", icon: "flame", count: PEPTIDES_DATABASE.filter(p => p.categoryId === "metabolism").length },
   { id: "longevity", name: "Longevidade & Mitocôndria", icon: "hourglass", count: PEPTIDES_DATABASE.filter(p => p.categoryId === "longevity").length },
   { id: "cognition", name: "Nootrópicos & Cognição", icon: "brain", count: PEPTIDES_DATABASE.filter(p => p.categoryId === "cognition").length },

@@ -1414,65 +1414,97 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-        <!-- Protocolo & Prática de Pesquisa -->
-
-        <div class="space-y-3">
-
-          <h4 class="text-sm font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
-
-            <i data-lucide="clipboard-check" class="w-4 h-4 text-emerald-400"></i>
-
-            Protocolo de Pesquisa & Posologia Documentada
-
-          </h4>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
-
-            <div class="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800 space-y-1">
-
-              <span class="text-slate-400 block text-xs">Dosagem Usual:</span>
-
-              <span class="text-white font-mono font-bold text-sm text-cyan-300">${peptide.researchProtocols.typicalDose}</span>
-
-              ${peptide.researchProtocols.titration ? `<p class="text-[11px] text-slate-400 mt-1"><strong>Titulação:</strong> ${peptide.researchProtocols.titration}</p>` : ''}
-
-            </div>
-
-            <div class="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800 space-y-1">
-
-              <span class="text-slate-400 block text-xs">Frequência:</span>
-
-              <span class="text-white font-medium">${peptide.researchProtocols.frequency}</span>
-
-            </div>
-
-            <div class="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800 space-y-1">
-
-              <span class="text-slate-400 block text-xs">Horário / Timing:</span>
-
-              <span class="text-slate-300">${(peptide.researchProtocols && peptide.researchProtocols.timing) || "Horário padronizado conforme protocolo clínico"}</span>
-
-            </div>
-
-            <div class="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800 space-y-1">
-
-              <span class="text-slate-400 block text-xs">Duração do Ciclo:</span>
-
-              <span class="text-slate-300 font-mono">${(peptide.researchProtocols && (peptide.researchProtocols.cycleLength || peptide.researchProtocols.duration)) || "Duração sob protocolo individualizado / Tratamento contínuo"}</span>
-
-            </div>
-
+                <!-- Protocolo & Prática de Pesquisa Estruturada por Objetivo -->
+        <div class="space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+            <h4 class="text-sm font-bold uppercase tracking-wider text-slate-200 flex items-center gap-2">
+              <i data-lucide="clipboard-check" class="w-4 h-4 text-emerald-400"></i>
+              Protocolos Estruturados por Objetivo & Fases
+            </h4>
+            <span class="text-xs font-mono px-2.5 py-0.5 rounded-full ${peptide.pendingScientificReview && peptide.pendingScientificReview.includes('P5.1') ? 'bg-amber-950/60 text-amber-300 border border-amber-800/40' : 'bg-emerald-950/60 text-emerald-300 border border-emerald-800/40'}">
+              ${escapeHtml(peptide.pendingScientificReview || 'Revisado')}
+            </span>
           </div>
 
-          <p class="text-xs text-slate-400 italic">
+          ${(Array.isArray(peptide.structuredProtocols) && peptide.structuredProtocols.length > 0) ? peptide.structuredProtocols.map(sp => `
+            <div class="p-4 bg-slate-950/80 border border-slate-800 rounded-xl space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs sm:text-sm font-bold text-cyan-300 uppercase tracking-wider">${escapeHtml(sp.objective)}</span>
+                </div>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-900 border border-slate-700 text-slate-300">
+                  ${escapeHtml(sp.evidenceLevel)}
+                </span>
+              </div>
 
-            <strong>Foco investigacional:</strong> ${(peptide.researchProtocols && peptide.researchProtocols.researchFocus) || "Avaliação de biomarcadores e composição corporal"}
+              ${sp.gapNotice ? `
+                <div class="p-3 bg-amber-950/30 border border-amber-900/50 rounded-lg text-xs text-amber-200/90 leading-relaxed">
+                  <div class="flex items-center gap-1.5 font-bold text-amber-400 mb-1">
+                    <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-400"></i>
+                    Lacuna Científica Documentada (Pendente Revisão P5.1)
+                  </div>
+                  ${escapeHtml(sp.gapNotice)}
+                </div>
+              ` : ''}
 
-          </p>
+              ${(Array.isArray(sp.phases) && sp.phases.length > 0) ? `
+                <div class="space-y-2 pt-1">
+                  <span class="text-xs font-semibold text-slate-300 block">Fases Posológicas Documentadas:</span>
+                  <div class="grid grid-cols-1 gap-2">
+                    ${sp.phases.map(ph => `
+                      <div class="p-3 bg-slate-900/70 border border-slate-800/80 rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div class="space-y-0.5">
+                          <span class="text-xs font-bold text-white block">${escapeHtml(ph.phaseName)}</span>
+                          <span class="text-xs text-slate-400 block">${escapeHtml(ph.administrationNotes || '')}</span>
+                        </div>
+                        <div class="flex flex-wrap sm:flex-col sm:items-end gap-1 shrink-0 text-xs">
+                          <span class="font-mono font-bold text-cyan-300 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/40">${escapeHtml(ph.dose)}</span>
+                          <span class="text-slate-400 font-mono text-[11px]">${escapeHtml(ph.frequency)} • ${escapeHtml(ph.duration)}</span>
+                        </div>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              ` : ''}
 
+              ${(Array.isArray(sp.sources) && sp.sources.length > 0) ? `
+                <div class="pt-2 border-t border-slate-800/60 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-400">
+                  <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Fontes Documentadas:</span>
+                  ${sp.sources.map(src => `
+                    <a href="${escapeHtml(src.url)}" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 flex items-center gap-1">
+                      <span>${escapeHtml(src.title)}</span>
+                      <i data-lucide="external-link" class="w-3 h-3"></i>
+                    </a>
+                  `).join('')}
+                </div>
+              ` : ''}
+            </div>
+          `).join('') : `
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+              <div class="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800 space-y-1">
+                <span class="text-slate-400 block text-xs">Dosagem Usual:</span>
+                <span class="text-white font-mono font-bold text-sm text-cyan-300">${peptide.researchProtocols.typicalDose}</span>
+                ${peptide.researchProtocols.titration ? `<p class="text-xs text-slate-400 mt-1"><strong>Titulação:</strong> ${peptide.researchProtocols.titration}</p>` : ''}
+              </div>
+              <div class="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800 space-y-1">
+                <span class="text-slate-400 block text-xs">Frequência:</span>
+                <span class="text-white font-medium">${peptide.researchProtocols.frequency}</span>
+              </div>
+            </div>
+          `}
+
+          <!-- Resumo de Horário e Duração -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+            <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800 space-y-1">
+              <span class="text-slate-400 block text-xs">Horário / Timing Recomendado:</span>
+              <span class="text-slate-300">${escapeHtml((peptide.researchProtocols && peptide.researchProtocols.timing) || "Horário padronizado conforme protocolo clínico")}</span>
+            </div>
+            <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800 space-y-1">
+              <span class="text-slate-400 block text-xs">Duração do Ciclo / Tratamento:</span>
+              <span class="text-slate-300 font-mono">${escapeHtml((peptide.researchProtocols && (peptide.researchProtocols.cycleLength || peptide.researchProtocols.duration)) || "Duração sob protocolo individualizado / Tratamento contínuo")}</span>
+            </div>
+          </div>
         </div>
-
-
 
         <!-- Apresentações e formulações (Piloto Multiformulação) -->
 
@@ -2008,7 +2040,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
               <i data-lucide="shield-alert" class="w-4 h-4 text-slate-400"></i>
 
-              Contraindicações Formais de Bula
+              ${escapeHtml(peptide.safetyHeaderTitle || 'Contraindicações & Precauções de Segurança')}
 
             </h5>
 

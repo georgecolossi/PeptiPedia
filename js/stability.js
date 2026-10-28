@@ -166,9 +166,9 @@ class PeptideStabilityClock {
       let evidenceBadgeClass = 'bg-cyan-950/80 text-cyan-300 border-cyan-800';
 
       if (this.selectedPeptideId === 'igf-1-lr3' && this.selectedSolventId === 'acetic_acid') {
-        evidenceLevel = 'level_a_conditional';
-        evidenceBadgeText = 'NÍVEL A — PARÂMETRO EXPERIMENTAL ESPECÍFICO';
-        evidenceBadgeClass = 'bg-emerald-950/80 text-emerald-300 border-emerald-800';
+        evidenceLevel = 'level_b_solubility';
+        evidenceBadgeText = 'NÍVEL B — COMPATIBILIDADE QUALITATIVA DE SOLUBILIZAÇÃO';
+        evidenceBadgeClass = 'bg-cyan-950/80 text-cyan-300 border-cyan-800';
       }
 
       return {
