@@ -118,7 +118,7 @@ const CLINICAL_STUDIES_DATABASE = [
     "duration": "48 semanas",
     "intervention": "Retatrutida subcutânea semanal (escalonada até 1 mg, 4 mg, 8 mg ou 12 mg) vs placebo",
     "primaryEndpoint": "Variação percentual do peso corporal até a semana 24 e semana 48",
-    "keyFindings": "Na semana 48, a redução média de peso com Retatrutida atingiu -24,2% na dose mais alta (12 mg), comparado a -2,1% no placebo. 100% dos pacientes no grupo de 12 mg perderam ≥5% do peso corporal e 26% perderam ≥30% de seu peso total. Além disso, houve resolução de 86% da esteatose hepática.",
+    "keyFindings": "Na semana 48, a redução média de peso com Retatrutida atingiu -24,2% na dose mais alta (12 mg), comparado a -2,1% no placebo. 100% dos pacientes no grupo de 12 mg perderam ≥5% do peso corporal e 26% perderam ≥30% de seu peso total. Em subestudo específico em pacientes com MASLD publicado na Nature Medicine (Sanyal et al. 2024, DOI: 10.1038/s41591-024-03018-2), observou-se redução relativa média de aproximadamente 86% (86,1%) na fração de gordura hepática avaliada por MRI-PDFF às 48 semanas no grupo de 12 mg (redução relativa de gordura hepática que não equivale a resolução de esteatose em 86% dos participantes).",
     "clinicalSignificance": "O agonismo triplo (GLP-1 + GIP + Glucagon) adicionou o poder termogênico e oxidativo do glucagon ao controle de apetite, estabelecendo a maior taxa de perda de peso já registrada na história da farmacologia.",
     "tags": [
       "Fase 2",

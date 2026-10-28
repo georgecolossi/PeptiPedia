@@ -49,7 +49,7 @@ target_30 = [
     'mazdutide', 'cortexin', 'larazotide'
 ]
 
-# Generate MATRIZ_H4_3_2_114_PEPTIDEOS_REAIS.csv
+# Generate MATRIZ_H4_3_3_114_PEPTIDEOS_REAIS.csv
 pep_rows = []
 for i, p in enumerate(peptides):
     pid = p["id"]
@@ -58,27 +58,18 @@ for i, p in enumerate(peptides):
     cat_name = p.get("category", "")
     tier = p.get("tier", "")
     contras = p.get("contraindications", [])
-    has_contra = "Sim" if len(contras) > 0 else "Não"
-    qtd_contra = len(contras)
+    has_contra = "Sim" if (isinstance(contras, list) and len(contras) > 0) else "Não"
+    qtd_contra = len(contras) if isinstance(contras, list) else 0
     safety_class = p.get("safetyClassification", "")
     safety_header = p.get("safetyHeaderTitle", "")
-    
-    rp = p.get("researchProtocols", {})
-    cycle_len = rp.get("cycleLength", "")
-    has_cycle = "Sim" if cycle_len else "N/A"
-    
+    cycle_len = p.get("researchProtocols", {}).get("cycleLength", "")
+    has_cycle = "Sim" if cycle_len else "Não"
     struct_protos = p.get("structuredProtocols", [])
-    qtd_struct = len(struct_protos)
-    gap_notice = p.get("gapNotice", "")
-    pending_rev = p.get("pendingScientificReview", "")
+    qtd_struct = len(struct_protos) if isinstance(struct_protos, list) else 0
+    proto_status = "Completo" if qtd_struct > 0 else "Pendente"
+    gap_notice = p.get("protocolGapNotice", "")
+    pending_rev = p.get("pendingClinicalReview", "")
     
-    if qtd_struct > 0:
-        proto_status = "Documentado com Fases Clínicas/Empíricas"
-    elif gap_notice:
-        proto_status = "Lacuna Científica Declarada (P5.1)"
-    else:
-        proto_status = "N/A"
-        
     e2e_pep = e2e_data.get("peptides", {}).get(pid, {})
     desk_st = e2e_pep.get("desktop", "SKIPPED")
     tab_st = e2e_pep.get("tablet", "SKIPPED")
@@ -86,7 +77,7 @@ for i, p in enumerate(peptides):
     esc_st = e2e_pep.get("escape_close", "SKIPPED")
     link_st = e2e_pep.get("link_audit", "SKIPPED")
     glob_st = e2e_pep.get("status", "SKIPPED")
-        
+    
     pep_rows.append({
         "numero": i + 1,
         "id": pid,
@@ -122,14 +113,14 @@ pep_csv_headers = [
 
 # Write peptide CSVs
 for dest_dir in [artifact_dir, os.path.join(repo_root, "tests")]:
-    target_path = os.path.join(dest_dir, "MATRIZ_H4_3_2_114_PEPTIDEOS_REAIS.csv")
+    target_path = os.path.join(dest_dir, "MATRIZ_H4_3_3_114_PEPTIDEOS_REAIS.csv")
     with open(target_path, "w", encoding="utf-8-sig", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=pep_csv_headers)
         writer.writeheader()
         writer.writerows(pep_rows)
     print(f"Gerado: {target_path} ({len(pep_rows)} linhas)")
 
-# Generate MATRIZ_H4_3_2_70_ESTUDOS_REAIS.csv
+# Generate MATRIZ_H4_3_3_70_ESTUDOS_REAIS.csv
 study_rows = []
 affected_count = 0
 for i, s in enumerate(studies):
@@ -192,7 +183,7 @@ study_csv_headers = [
 ]
 
 for dest_dir in [artifact_dir, os.path.join(repo_root, "tests")]:
-    target_path = os.path.join(dest_dir, "MATRIZ_H4_3_2_70_ESTUDOS_REAIS.csv")
+    target_path = os.path.join(dest_dir, "MATRIZ_H4_3_3_70_ESTUDOS_REAIS.csv")
     with open(target_path, "w", encoding="utf-8-sig", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=study_csv_headers)
         writer.writeheader()

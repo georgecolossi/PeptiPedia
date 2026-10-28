@@ -190,14 +190,14 @@ class PeptideCalculator {
         category: "Análogo de GHRH Estabilizado",
         synonyms: ["tesa", "egrifta", "th9507"],
         defaultUnit: "mg",
-        notice: "Medicamento aprovado pelo FDA (Egrifta®) para redução de gordura visceral intra-abdominal (VAT) no HIV. Possui formulações com dosagens distintas: Egrifta WR (1,28 mg/dia SC), Egrifta SV (1,4 mg/dia SC) e a formulação histórica original (2,0 mg/dia SC). Não intercambiar formulações nem misturar diluentes incompatíveis.",
+        notice: "Medicamento aprovado pelo FDA (Egrifta®) exclusivamente para redução de excesso de gordura visceral intra-abdominal (VAT) em adultos com lipodistrofia associada ao HIV (não indicado para perda de peso geral). Formulações com dosagens distintas: Egrifta WR (11,6 mg / 1,3 mL -> 8 mg/mL nominais, dose diária de 1,28 mg = 0,16 mL), Egrifta SV (2 mg / 0,5 mL -> 4 mg/mL nominais, dose diária de 1,4 mg = 0,35 mL) e formulação histórica original (2,0 mg/dia em 2,0 mL WFI). Não intercambiar formulações nem diluentes.",
         presentations: [
-          { label: "Egrifta WR (Frasco semanal 8 mg/mL)", vialMg: 8, waterMl: 1.0, suggestedSyringe: "u30" },
+          { label: "Egrifta WR (Frasco semanal 11,6 mg / 1,3 mL -> 8 mg/mL nominais)", vialMg: 11.6, waterMl: 1.3, nominalConcMgMl: 8.0, suggestedSyringe: "u30" },
           { label: "Egrifta SV (Frasco dose única 4 mg/mL)", vialMg: 2, waterMl: 0.5, suggestedSyringe: "u50" },
           { label: "Formulação Histórica Original (1 mg/mL)", vialMg: 2, waterMl: 2.0, suggestedSyringe: "u100" }
         ],
         doses: [
-          { label: "1,28 mg (Bula FDA Egrifta WR)", val: 1.28, unit: "mg", context: "Bula Oficial FDA 2025 (0,16 mL a 8 mg/mL)", evidence: "Classe A (Bula FDA Egrifta WR)" },
+          { label: "1,28 mg (Bula FDA Egrifta WR: 0,16 mL)", val: 1.28, unit: "mg", context: "Bula Oficial FDA 2025 (0,16 mL a 8 mg/mL nominais)", evidence: "Classe A (Bula FDA Egrifta WR)" },
           { label: "1,40 mg (Bula FDA Egrifta SV)", val: 1.40, unit: "mg", context: "Bula Oficial FDA 2024 (0,35 mL a 4 mg/mL)", evidence: "Classe A (Bula FDA Egrifta SV)" },
           { label: "2,0 mg (Registro Histórico 2010)", val: 2.0, unit: "mg", context: "Bula Histórica 2010 (2,0 mL a 1 mg/mL)", evidence: "Classe A (Registro Histórico FDA)" }
         ]
@@ -717,3 +717,7 @@ class PeptideCalculator {
 
 // Instância global para uso no app
 const peptideCalculator = new PeptideCalculator();
+if (typeof window !== 'undefined') {
+  window.PeptideCalculator = PeptideCalculator;
+  window.peptideCalculator = peptideCalculator;
+}

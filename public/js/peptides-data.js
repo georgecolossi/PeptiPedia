@@ -978,10 +978,10 @@ const PEPTIDES_DATABASE = [
       "Subcutânea (SC)"
     ],
     "primaryRoute": "Subcutânea (SC)",
-    "summary": "Análogo estabilizado de GHRH aprovado pelo FDA para redução de gordura visceral intra-abdominal (VAT) em lipodistrofia associada ao HIV. Possui três formulações históricas e vigentes: Egrifta WR (1,28 mg/dia SC), Egrifta SV (1,4 mg/dia SC) e a formulação original histórica (2,0 mg/dia SC).",
+    "summary": "Análogo estabilizado de GHRH aprovado pelo FDA para redução de gordura visceral intra-abdominal (VAT) em adultos com lipodistrofia associada ao HIV (não indicado para perda de peso ou emagrecimento geral). Possui três formulações: Egrifta WR (11,6 mg / 1,3 mL -> 8 mg/mL nominais, dose diária de 1,28 mg = 0,16 mL), Egrifta SV (2 mg / 0,5 mL -> 4 mg/mL nominais, dose diária de 1,4 mg = 0,35 mL) e a formulação original histórica (2,0 mg/dia em 2 mL WFI).",
     "mechanism": "Ativa os receptores de GHRH na hipófise de forma altamente eficiente, gerando pulsos de GH que ativam a lipólise profunda nos adipócitos viscerais através da lipase hormônio-sensível (HSL).",
     "researchProtocols": {
-      "typicalDose": "1,28 mg/dia (Egrifta WR) ou 1,4 mg/dia (Egrifta SV) ou 2,0 mg/dia (Egrifta original histórica)",
+      "typicalDose": "1,28 mg/dia (Egrifta WR: 0,16 mL de solução 8 mg/mL) ou 1,4 mg/dia (Egrifta SV: 0,35 mL de solução 4 mg/mL) ou 2,0 mg/dia (Egrifta histórica: 2,0 mL de solução 1 mg/mL)",
       "defaultDoseNumber": 1.28,
       "defaultUnit": "mg",
       "frequency": "1 vez ao dia (à noite ao deitar)",
@@ -990,16 +990,16 @@ const PEPTIDES_DATABASE = [
       "defaultCycleWeeks": 26,
       "timing": "Subcutâneo no abdômen à noite antes de deitar.",
       "titration": "Conforme apresentação de bula (Egrifta WR: 1,28 mg/dia; Egrifta SV: 1,4 mg/dia; formulação histórica: 2,0 mg/dia). Não requer titulação prévia de escalonamento.",
-      "researchFocus": "Redução seletiva de tecido adiposo visceral patológico (VAT) e esteatose hepática.",
-      "administrationGuide": "FORMULAÇÕES OFICIAIS FDA: (1) Egrifta WR (Aprovação FDA 2024/2025): 1,28 mg/dia SC (administrado como 0,16 mL de solução reconstituída a 8 mg/mL a partir de frasco multidose semanal). (2) Egrifta SV (Aprovação FDA 2024): 1,4 mg/dia SC (administrado como 0,35 mL de solução reconstituída a 4 mg/mL a partir de frasco de dose única de 2 mg). (3) Formulação Original Histórica (Aprovada em 2010): 2,0 mg/dia SC (administrada como 2 mL de solução reconstituída a 1 mg/mL a partir de 2 frascos de 1 mg ou 1 frasco de 2 mg com diluente estéril WFI). As formulações diferem em volume, concentração e diluente e NÃO devem ser misturadas nem ter suas doses intercambiadas arbitrariamente."
+      "researchFocus": "Redução específica de tecido adiposo visceral excessivo (VAT) em lipodistrofia associada ao HIV. Não aprovado para obesidade comum ou perda de peso geral.",
+      "administrationGuide": "FORMULAÇÕES OFICIAIS FDA: (1) Egrifta WR (Bula FDA 2025): Frasco multidose semanal de 11,6 mg de tesamorelina liofilizada, reconstituído com 1,3 mL do diluente estéril bacteriostático fornecido no kit, fornecendo concentração nominal de 8 mg/mL (volume total utilizável de ~1,45 mL). A dose diária prescrita é de 1,28 mg SC (exatamente 0,16 mL na seringa). Estável sob refrigeração (2°C a 8°C) por até 7 dias após diluição. (2) Egrifta SV (Bula FDA 2024): Frasco de dose única de 2 mg liofilizado, reconstituído com 0,5 mL de água estéril para injeção (WFI), fornecendo 4 mg/mL. A dose diária é de 1,4 mg SC (0,35 mL). Uso imediato de dose única. (3) Formulação Original Histórica (2010): 2,0 mg/dia SC reconstituído em 2,0 mL de WFI (1 mg/mL). As formulações diferem substancialmente em massa, diluente, concentração e volume e NÃO devem ter suas doses intercambiadas arbitrariamente. Indicação estrita: lipodistrofia no HIV, sem indicação para emagrecimento geral."
     },
     "reconstitution": {
-      "vialSize": "Egrifta WR: frasco multidose com liofilizado | Egrifta SV: frasco dose única 2 mg | Histórica: frascos de 1 mg ou 2 mg",
-      "recommendedDiluent": "Conforme a formulação de bula: Egrifta WR utiliza diluente bacteriostático próprio do kit; Egrifta SV e histórica utilizam água estéril para injeção (WFI) sem conservantes.",
-      "recommendedBacWater": "WR: volume específico do kit (resulta em 8 mg/mL) | SV: 0,35 mL (resulta em 4 mg/mL) | Histórica: 2,0 mL (resulta em 1 mg/mL)",
+      "vialSize": "Egrifta WR: frasco semanal 11,6 mg | Egrifta SV: frasco dose única 2 mg | Histórica: frascos de 1 mg ou 2 mg",
+      "recommendedDiluent": "Egrifta WR: 1,3 mL do diluente estéril bacteriostático próprio do kit (com conservante para 7 dias) | Egrifta SV e Histórica: água estéril para injeção (WFI) sem conservantes para uso imediato",
+      "recommendedBacWater": "WR: 1,3 mL (fornece 8 mg/mL) | SV: 0,5 mL (fornece 4 mg/mL) | Histórica: 2,0 mL (fornece 1 mg/mL)",
       "resultingConcentration": "WR: 8 mg/mL | SV: 4 mg/mL | Histórica: 1 mg/mL",
       "storageUnmixed": "2°C a 8°C protegido da luz",
-      "storageMixed": "Egrifta WR: refrigerado por até 7 dias | Egrifta SV e Histórica: uso imediato em dose única descartável.",
+      "storageMixed": "Egrifta WR: estritamente a 2°C a 8°C, utilizar em até 7 dias | Egrifta SV e Histórica: uso imediato em dose única descartável após reconstituição.",
       "handlingNotes": "Não congelar e não agitar vigorosamente. Seguir estritamente o manual da apresentação específica."
     },
     "synergies": [
@@ -1048,17 +1048,17 @@ const PEPTIDES_DATABASE = [
     "safetyHeaderTitle": "Contraindicações Formais de Bula (Medicamento Homologado)",
     "structuredProtocols": [
       {
-        "objective": "Redução Específica de Gordura Visceral Abdominal — Egrifta WR (Bula FDA 2024/2025)",
-        "targetAudience": "Bula Oficial FDA Egrifta WR (NDA 022505/S-020)",
+        "objective": "Redução de Gordura Visceral Abdominal em Lipodistrofia no HIV — Egrifta WR (Bula FDA 2025)",
+        "targetAudience": "Bula Oficial FDA Egrifta WR (NDA 022505/S-020) — Restrito ao HIV com Lipodistrofia",
         "evidenceLevel": "Classe A (Bula Oficial Homologada pelo FDA)",
         "phases": [
           {
-            "phaseName": "Regime Terapêutico Homologado — Egrifta WR",
-            "dose": "1,28 mg/dia (0,16 mL de solução a 8 mg/mL)",
+            "phaseName": "Regime Terapêutico Homologado — Egrifta WR (11,6 mg / 1,3 mL)",
+            "dose": "1,28 mg/dia (0,16 mL de solução a 8 mg/mL a partir de frasco de 11,6 mg)",
             "doseUnit": "mg",
             "frequency": "1x ao dia (à noite ao deitar)",
             "duration": "Conforme avaliação clínica médica (ensaios de 26 a 52 semanas)",
-            "administrationNotes": "Injeção SC diária no abdômen antes de dormir. Frasco semanal reconstituído estável sob refrigeração."
+            "administrationNotes": "Injeção SC diária no abdômen antes de dormir. Frasco semanal de 11,6 mg reconstituído com 1,3 mL de diluente bacteriostático, estável sob refrigeração (2°C a 8°C) por até 7 dias. Indicação restrita a excesso de gordura visceral intra-abdominal no HIV; não indicado para emagrecimento geral."
           }
         ],
         "sources": [
@@ -1549,7 +1549,7 @@ const PEPTIDES_DATABASE = [
         "pmid": "37366315",
         "phase": "Ensaio Clínico Randomizado, Duplo-Cego, Controlado por Placebo (Fase 2)",
         "participants": "338 adultos com obesidade ou sobrepeso com comorbidades",
-        "keyFindings": "Na semana 48, a redução média de peso com Retatrutida atingiu -24,2% na dose mais alta (12 mg), comparado a -2,1% no placebo. 100% dos pacientes no grupo de 12 mg perderam ≥5% do peso corporal e 26% perderam ≥30% de seu peso total. Além disso, houve resolução de 86% da esteatose hepática."
+        "keyFindings": "No ensaio NEJM 2023 (Jastreboff et al., PMID 37366315), a redução média de peso com Retatrutida atingiu -24,2% na dose mais alta (12 mg às 48 semanas), com 100% dos pacientes no grupo de 12 mg atingindo perda ≥5% e 26% atingindo perda ≥30%. Em subestudo paralelo de pacientes com MASLD publicado na Nature Medicine (Sanyal et al. 2024, DOI: 10.1038/s41591-024-03018-2), a retatrutida 12 mg promoveu redução relativa média da fração de gordura hepática por ressonância magnética (MRI-PDFF) de aproximadamente 86% (86,1%) às 48 semanas, o que não equivale a resolução clínica de esteatose em 86% dos participantes."
       }
     ],
     "popularityScore": 98,
@@ -1591,7 +1591,7 @@ const PEPTIDES_DATABASE = [
             "doseUnit": "mg",
             "frequency": "1x por semana",
             "duration": "36 semanas (até semana 48)",
-            "administrationNotes": "Dose de manutenção do grupo de 12 mg; perda ponderal média de 24,2% (26,2 kg) com resolução de 86% da esteatose hepática."
+            "administrationNotes": "Dose de manutenção do grupo paralelo de 12 mg; perda ponderal média de 24,2% (26,2 kg) às 48 semanas no ensaio NEJM 2023. Em subestudo específico de MASLD (Nature Medicine 2024), a dose de 12 mg demonstrou redução relativa média do teor de gordura hepática por MRI-PDFF de aproximadamente 86%."
           }
         ],
         "sources": [
@@ -3607,16 +3607,17 @@ const PEPTIDES_DATABASE = [
     "summary": "Primeiro agonista oral de GLP-1 de molécula pequena não-peptídica aprovado pelo FDA (Foundayo - 01/04/2026) para controle crônico de peso. Não requer inibidores de absorção gástrica (como o SNAC do Rybelsus) nem jejum ou restrição hídrica matinal.",
     "mechanism": "Liga-se ao domínio de transmembrana do receptor de GLP-1 humano induzindo conformação ativa acoplada à proteína Gs, aumentando cAMP intracelular e promovendo secreção dependente de glicose de insulina e supressão de glucagon.",
     "researchProtocols": {
-      "typicalDose": "Conforme bula Foundayo: dose inicial de titulação oral diária escalonada mensalmente até dose terapêutica de manutenção",
-      "defaultDoseNumber": 12,
+      "typicalDose": "0,8 mg oral diário inicialmente (semanas 1-4) -> 2,5 mg oral diário (semanas 5-8) -> 5,5 mg oral diário (manutenção padrão); elevações opcionais para 9 mg, 14,5 mg ou dose máxima de 17,2 mg ao dia",
+      "defaultDoseNumber": 0.8,
       "defaultUnit": "mg",
       "frequency": "1x ao dia (oral diário)",
       "defaultFrequency": "1x ao dia (diário)",
       "cycleLength": "Tratamento contínuo para controle crônico de peso",
       "defaultCycleWeeks": 52,
       "timing": "Via oral diária a qualquer hora do dia, com ou sem alimentos.",
-      "titration": "Escalonamento gradual mensal conforme orientação médica para mitigação de efeitos adversos gastrointestinais.",
-      "researchFocus": "Controle crônico de peso em adultos com obesidade ou sobrepeso com comorbidades relacionadas ao peso."
+      "titration": "Titulação obrigatória de bula: iniciar com 0,8 mg/dia por pelo menos 30 dias; progredir para 2,5 mg/dia por pelo menos 30 dias; progredir para o patamar padrão de 5,5 mg/dia. Se necessário e bem tolerado, incrementos opcionais de 9 mg, 14,5 mg até a dose máxima de 17,2 mg/dia, respeitando intervalos mínimos de 30 dias entre aumentos.",
+      "researchFocus": "Controle crônico de peso em adultos com obesidade ou sobrepeso com comorbidades relacionadas ao peso.",
+      "administrationGuide": "REGIME OFICIAL DE TITULAÇÃO DE BULA (FDA 2026 — NDA 220934/S-003): (1) Iniciação: 0,8 mg oral 1x/dia por pelo menos 30 dias. (2) Escalonamento 1: 2,5 mg oral 1x/dia por pelo menos 30 dias. (3) Manutenção Padrão: 5,5 mg oral 1x/dia. (4) Elevações Opcionais de Eficácia Adicional: Caso haja indicação clínica e adequada tolerabilidade gastrointestinal, a dose pode ser elevada para 9 mg, 14,5 mg e até a dose máxima homologada de 17,2 mg/dia, mantendo intervalo de pelo menos 30 dias em cada nível. A progressão além de 5,5 mg é opcional e não obrigatória. Advertências: Interações farmacocinéticas decorrentes do retardo no esvaziamento gástrico; monitoramento em pacientes sob uso de contraceptivos orais ou fármacos de janela terapêutica estreita. Indicação restrita a controle crônico de peso; diabetes tipo 2 não constitui indicação aprovada nesta bula."
     },
     "reconstitution": {
       "vialSize": "Cápsulas Orais",
@@ -3670,20 +3671,49 @@ const PEPTIDES_DATABASE = [
     "safetyHeaderTitle": "Contraindicações Formais de Bula (Foundayo® — FDA)",
     "structuredProtocols": [
       {
-        "objective": "Controle Crônico de Peso em Adultos (Bula Aprovada FDA — Foundayo®)",
-        "targetAudience": "Bula Oficial Homologada FDA (01/04/2026)",
+        "objective": "Controle Crônico de Peso em Adultos — Titulação Oficial Foundayo® (Bula FDA 2026)",
+        "targetAudience": "Bula Oficial Homologada FDA (NDA 220934/S-003) — Controle Crônico de Peso",
         "evidenceLevel": "Classe A (Bula Oficial Homologada pelo FDA)",
         "phases": [
           {
-            "phaseName": "Regime Terapêutico de Bula — Controle Crônico de Peso",
-            "dose": "Dose oral diária conforme esquema de titulação de bula",
+            "phaseName": "Fase 1: Iniciação de Tolerabilidade (Semanas 1 a 4)",
+            "dose": "0,8 mg",
             "doseUnit": "mg",
             "frequency": "1x ao dia (oral)",
-            "duration": "Uso contínuo sob acompanhamento médico",
-            "administrationNotes": "Administração oral uma vez ao dia com ou sem alimentos. Indicação exclusiva para controle ponderal crônico."
+            "duration": "Pelo menos 30 dias",
+            "administrationNotes": "Dose oral inicial obrigatória para adaptação e mitigação de reações adversas gastrointestinais."
+          },
+          {
+            "phaseName": "Fase 2: Primeiro Escalonamento (Semanas 5 a 8)",
+            "dose": "2,5 mg",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia (oral)",
+            "duration": "Pelo menos 30 dias",
+            "administrationNotes": "Escalonamento após no mínimo 30 dias de uso e boa tolerabilidade com 0,8 mg."
+          },
+          {
+            "phaseName": "Fase 3: Patamar Terapêutico Padrão (Semanas 9+)",
+            "dose": "5,5 mg",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia (oral)",
+            "duration": "Manutenção contínua (ou mínimo de 30 dias antes de elevação opcional)",
+            "administrationNotes": "Patamar padrão de dose terapêutica eficaz para controle crônico de peso."
+          },
+          {
+            "phaseName": "Fase 4: Elevações Opcionais de Eficácia Adicional (9 mg, 14,5 mg e 17,2 mg)",
+            "dose": "9,0 mg, 14,5 mg ou 17,2 mg (Dose Máxima de Bula)",
+            "doseUnit": "mg",
+            "frequency": "1x ao dia (oral)",
+            "duration": "Intervalos mínimos de pelo menos 30 dias entre cada incremento",
+            "administrationNotes": "Progressão opcional individualizada baseada em resposta ponderal e tolerabilidade clínica. Dose máxima diária aprovada: 17,2 mg/dia."
           }
         ],
         "sources": [
+          {
+            "title": "Bula Oficial FDA Foundayo (orforglipron tablets, NDA 220934/S-003, 2026)",
+            "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/220934s003lbl.pdf",
+            "type": "regulatory"
+          },
           {
             "title": "FDA Approves First New Molecular Entity Under National Priority Voucher Program (Foundayo, 01/04/2026)",
             "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-new-molecular-entity-under-national-priority-voucher-program",
@@ -15138,6 +15168,7 @@ const PEPTIDES_DATABASE = [
     "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
   }
 ];
+;
 ;
 ;
 
