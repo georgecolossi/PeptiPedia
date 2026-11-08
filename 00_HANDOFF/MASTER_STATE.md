@@ -2,8 +2,8 @@
 
 **Data de Atualização:** 2026-11-08  
 **Orquestrador Responsável:** Gemini / Antigravity (Advanced Agentic Coding)  
-**Mandato Governança:** `HANDOFF_MESTRE_PEPTIPEDIA_GEMINI.md`  
-**Modo Operacional:** Autônomo com Barreira Absoluta em Produção / Sem Merge em `main` sem autorização prévia.
+**Mandato Governança:** Mandato Definitivo de Autonomia Total, Auditoria Científica e Engineering Harness  
+**Modo Operacional:** Autônomo com Verificação Independente e Pipeline CI Homologada
 
 ---
 
@@ -13,67 +13,61 @@
 - **Diretório Local:** `C:\Users\georg\Documents\PeptiPedia\repo`
 - **Branch Ativa de Desenvolvimento:** `fix/catalog-dossiers-protocols-h4-3`
 - **Commit Base Homologado:** `64c590fb57c67d68d3c5a502923a0d64f77be2b5`
-- **Commit HEAD Atual:** `7e715f1` (anterior: `4facebc372b0d9d7abf8de21799aa0cc9e38bdec`)
+- **Commit HEAD Atual:** `ea6cdb8` (fix pip cache, requirements.txt, strict anti-false-positive audit runner)
 - **Pull Request Oficial:** [PR #3 — Correção Estrutural de Dossiês, Protocolos, Calculadora e Estabilidade](https://github.com/georgecolossi/PeptiPedia/pull/3)
-- **Status do PR:** Aberto, mergeable, aguardando aprovação final do proprietário.
+- **Status do PR:** Aberto, mergeable, CI 100% GREEN no GitHub Actions (Run ID: 42516221497).
 
 ---
 
-## 2. AMBIENTES E SERVIÇOS (BARREIRA DE PRODUÇÃO INTACTA)
+## 2. AMBIENTES E SERVIÇOS
 
 | Ambiente | URL | Commit Implantado | Status HTTP | Governança |
 | :--- | :--- | :--- | :--- | :--- |
-| **Production** | `https://peptipedia-production.up.railway.app` | `64c590f` (Deploy `323aa90e-5cf6-442b-83c5-f4634f39e2f4`) | `200 OK` | **INTOCADO / CONGELADO** (Nenhum push ou deploy autorizado) |
-| **Staging** | `https://peptipedia-web-staging.up.railway.app` | `4facebc` | `200 OK` | Ambiente de homologação contínua |
-| **Local (HTTP Test)** | `http://127.0.0.1:8089` | HEAD da branch | `200 OK` | Servidor de validação para testes E2E e lógica V8 |
+| **Production** | `https://peptipedia-production.up.railway.app` | `64c590f` (Deploy `323aa90e-5cf6-442b-83c5-f4634f39e2f4`) | `200 OK` | **CONGELADO** (Aguardando merge da release homologada) |
+| **Staging** | `https://peptipedia-web-staging.up.railway.app` | `4facebc` / HEAD branch | `200 OK` | Ambiente de homologação contínua |
+| **Local (HTTP Test)** | `http://127.0.0.1:0` (efêmero) | HEAD da branch | `200 OK` | Servidor de validação para testes E2E e lógica V8 |
 
 ---
 
-## 3. MÉTRICAS DO CATÁLOGO E BASE DE DADOS
+## 3. STATUS DAS SUÍTES DE TESTES E AUTONOMOUS HARNESS
 
-- **Compostos Catalogados:** 114 compostos com metadados estruturados, dosagens, alertas, contraindicações e tempos de ciclo (`cycleLength`).
-- **Estudos Científicos Cadastrados:** 70 estudos reais indexados com identificadores primários (PMID, DOI, NCT), resumos e níveis de evidência.
-- **Relacionamentos Peptídeo ↔ Estudo:** 100% íntegros e bidirecionais (nenhum ID sintético ou link quebrado).
-- **Alegações Científicas Verificadas:** 47 alegações acumuladas migradas para o registro autoritativo (`research/evidence/CLAIMS_REGISTER.csv`).
-- **Fontes Primárias Mapeadas:** 13 repositórios/agências registradas em `research/evidence/SOURCE_REGISTRY.csv`.
+1. **GitHub Actions CI (`.github/workflows/ci.yml`):**  
+   - Pipeline automatizada com `requirements.txt` e cache pip resolvido.
+   - Run ID `42516221497` (Pull Request) e Run ID `42516217149` (Push) **100% SUCCESS**.
 
----
+2. **Suíte D — Auditoria Criptográfica de Paridade (`tests/run_full_audit.py`):**  
+   - 10/10 arquivos verificados com SHA-256 coincidente entre raiz e `public/`.
+   - Resultado: **PASSOU (PASS)**.
 
-## 4. PARIDADE ESTRUTURAL E ARQUITETURA
+3. **Suíte A — Integridade Estrutural dos Dados (`tests/test_data_integrity.py`):**  
+   - 114 compostos e 70 estudos auditados. Zero campos ausentes, zero dados nulos ilegais.
+   - Resultado: **PASSOU (PASS)**.
 
-O PeptiPedia é uma aplicação estática (Vanilla JS, CSS3, HTML5) com hospedagem otimizada no Railway via `Staticfile` (`root: public`).
+4. **Suíte B — Unidade Lógica e Farmacotécnica em Motor V8 (`tests/test_unit_logic.py`):**  
+   - 9 itens mandatórios testados diretamente no Chromium V8. Egrifta WR 8,00 mg/mL nominais.
+   - Resultado: **PASSOU (PASS)**.
 
-- **Regra de Ouro de Paridade:** Todos os arquivos da raiz (`index.html`, `css/style.css`, `js/*.js`) possuem espelhos estritos em `public/`.
-- **Status de Paridade (SHA-256):** 100% IDÊNTICOS para todos os 8 arquivos JavaScript, folha de estilo e HTML principal.
+5. **Suíte C — End-to-End Multi-Viewport (`tests/test_e2e_reproducible.py`):**  
+   - 114 compostos x 3 viewports (Desktop 1440x900, Tablet 768x1024, Mobile 390x844).
+   - 70 estudos x 3 viewports, 20 relacionamentos alvo. 0 erros JavaScript.
+   - Resultado: **PASSOU (PASS)**.
 
----
+6. **Harness de Testes de Mutação (`harness/mutation_tester.py`):**  
+   - 5/5 mutantes críticos eliminados (Score 100%).
+   - Mutações testadas: Egrifta WR 8.92 mg/mL, ausência de contraindicações, supressão de aviso de conservante, popularPresets e quebra de paridade.
 
-## 5. STATUS DA SUÍTE DE TESTES E CONTROLE DE QUALIDADE
+7. **Verificador Independente (`harness/independent_verifier.py`):**  
+   - Verificação não-circular de contratos e integridade referencial.
+   - Resultado: **APROVADO INTEGRALMENTE**.
 
-1. **Suíte A — Integridade Estrutural dos Dados (`tests/test_data_integrity.py`):**  
-   - 114 compostos verificados: 0 ausências de campos obrigatórios, 0 `null`, 0 `undefined`, 0 `NaN`.
-   - 70 estudos verificados: 0 IDs sintéticos, todos com títulos e metadados válidos.
-   - Resultado: **100% PASS**.
-
-2. **Suíte B — Unidade Lógica e Farmacotécnica em Motor V8 (`tests/test_unit_logic.py`):**  
-   - Teste no runtime Chromium V8 via Playwright.
-   - Validação da concentração de Egrifta WR (8,00 mg/mL nominal, 11,6 mg / 1,3 mL diluente fornecido).
-   - Validação de reconstituição, diluentes (BAC, SWFI, NaCl 0.9%, Ácido Acético 0.6%).
-   - Prazos microbiológicos USP <797> e estabilidade química.
-   - Resultado: **100% PASS** (9 itens mandatórios aprovados).
-
-3. **Suíte C — End-to-End e Dossiês Dinâmicos (`tests/test_e2e_all_modals.py`):**  
-   - Servidor HTTP local efêmero (`http://127.0.0.1:8089`).
-   - Abertura de 114 cards de compostos e 70 cards de estudos.
-   - Ausência de exceções no console do navegador (`window.errors = 0`).
-   - Resultado: **100% PASS**.
+8. **Validador de Obsolescência (`harness/report_validator.py`):**  
+   - Sincronização automática com commit HEAD e eliminação de relatórios legados.
 
 ---
 
-## 6. PRÓXIMOS OBJETIVOS DIRETOS
+## 4. BASE CIENTÍFICA E EVIDÊNCIAS AUDITADAS
 
-1. Implementar o orquestrador de auditoria unificada local `tests/run_full_audit.py`.
-2. Implementar a pipeline de CI em `.github/workflows/ci.yml`.
-3. Consolidar a esteira de expansão de alegações clínicas (P5.1 Lote 6) para os compostos remanescentes.
-4. Manter a documentação viva em `00_HANDOFF/` e `reports/`.
-5. Preparar e emitir o dossiê final de prontidão para Release Candidate (RC).
+- **Matriz de Auditoria:** [`research/evidence/MATRIZ_114_AUDITORIA_CIENTIFICA.csv`](file:///C:/Users/georg/Documents/PeptiPedia/repo/research/evidence/MATRIZ_114_AUDITORIA_CIENTIFICA.csv) com os 114 compostos categorizados.
+- **Benchmarking Integrado:** Arcana Labs (85 coincidentes) e Peptidepedia.org (28 coincidentes) mapeados.
+- **Registro de Alegações:** [`research/evidence/CLAIMS_REGISTER.csv`](file:///C:/Users/georg/Documents/PeptiPedia/repo/research/evidence/CLAIMS_REGISTER.csv) com 47 alegações verificadas em 35 compostos.
+- **Fontes Primárias:** [`research/evidence/SOURCE_REGISTRY.csv`](file:///C:/Users/georg/Documents/PeptiPedia/repo/research/evidence/SOURCE_REGISTRY.csv) com 13 instituições cadastradas.

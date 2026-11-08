@@ -171,8 +171,11 @@ with open(stab_file, "r", encoding="utf-8") as f:
     stab_text = f.read()
 
 assert 'id: "acetic_acid"' in stab_text, "Solvente acetic_acid ausente!"
-assert "budDays: null" in stab_text, "Ácido acético deve ter budDays: null!"
-assert "Sem conservante validado" in stab_text, "Aviso de ausência de conservante obrigatório!"
+aa_idx = stab_text.find('id: "acetic_acid"')
+aa_block = stab_text[aa_idx:aa_idx + 400]
+assert "budDays: null" in aa_block, "Solvente acetic_acid deve ter budDays: null!"
+assert "budDays: 28" not in aa_block, "Ácido acético não pode conter budDays de 28 dias!"
+assert "Sem conservante validado" in aa_block, "Aviso de ausência de conservante obrigatório!"
 print("[PASS] Solvente ácido acético com BUD nulo e nota estrita USP <797>.")
 
 print("\n=== TODOS OS TESTES DA SUÍTE A FORAM APROVADOS COM SUCESSO! ===")

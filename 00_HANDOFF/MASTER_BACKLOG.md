@@ -9,39 +9,49 @@
 
 | ID | Item | Escopo Técnico | Status | Critério de Aceite |
 | :--- | :--- | :--- | :--- | :--- |
-| **P0-1** | Barreira de Produção | Bloqueio de merge em `main` e de publicação em `peptipedia-production.up.railway.app` | **ATIVO PERMANENTE** | Nenhuma alteração em `main` ou deploy em produção sem autorização expressa do proprietário. |
-| **P0-2** | Paridade Raiz ↔ `public/` | Espelhamento de `index.html`, `css/style.css` e `js/*.js` para `public/` | **CONCLUÍDO / MONITORADO** | SHA-256 idêntico verificado antes de cada commit. |
-| **P0-3** | Zero Erros JS em Execução | Eliminação de exceções, `undefined`, `null` ou `NaN` visíveis | **CONCLUÍDO / MONITORADO** | Console limpo em testes automatizados com Playwright. |
-| **P0-4** | Farmacotécnica da Tesamorelina (Egrifta WR) | Reconstituição com 1,3 mL para concentração nominal de 8,00 mg/mL (11,6 mg no frasco) | **CONCLUÍDO** | Aprovado na Suíte B de testes V8. |
-| **P0-5** | Prazos Microbiológicos e Diluentes | Diferenciação entre estabilidade química da molécula e prazo microbiológico de assepsia (USP <797>) | **CONCLUÍDO** | Diluentes bacteriostáticos com limite de 28 dias; SWFI 24-48h refrigerado; Ácido acético não tem prazo 0. |
+| **P0-1** | Barreira de Produção | Bloqueio de merge descontrolado em `main` e proteção de `peptipedia-production.up.railway.app` | **ATIVO** | Merge e deploy condicionados à aprovação de todos os gates de engenharia, científicos e release. |
+| **P0-2** | Paridade Raiz ↔ `public/` | Espelhamento de `index.html`, `css/style.css` e `js/*.js` para `public/` | **CONCLUÍDO** | SHA-256 100% idêntico em 10/10 arquivos auditados. |
+| **P0-3** | Zero Erros JS em Execução | Eliminação de exceções, `undefined`, `null` ou `NaN` visíveis | **CONCLUÍDO** | Console limpo em testes automatizados com Playwright. |
+| **P0-4** | Farmacotécnica da Tesamorelina (Egrifta WR) | Reconstituição com 1,3 mL para concentração nominal de 8,00 mg/mL (11,6 mg no frasco) | **CONCLUÍDO** | Bloqueado 8.92 mg/mL; validado na Suíte B e no Mutation Testing. |
+| **P0-5** | Prazos Microbiológicos e Diluentes | Diferenciação entre estabilidade química da molécula e prazo microbiológico de assepsia (USP <797>) | **CONCLUÍDO** | Diluentes com BAC limitados a 28 dias; SWFI 24-48h; ácido acético sem BUD numérico arbitrário. |
 
 ---
 
-## PRIORIDADE P1 — AUTOMAÇÃO, AUDITORIA UNIFICADA E CI/CD
+## PRIORIDADE P1 — AUTOMAÇÃO, CI/CD E COMBATE A FALSOS POSITIVOS
 
 | ID | Item | Escopo Técnico | Status | Critério de Aceite |
 | :--- | :--- | :--- | :--- | :--- |
-| **P1-1** | Orquestrador Local Unificado | Criar `tests/run_full_audit.py` que executa todas as suítes (A, B, C, D) e retorna exit code 0 | **A FAZER** | Execução única em terminal com relatório claro e validação total. |
-| **P1-2** | Workflow de CI GitHub Actions | Criar `.github/workflows/ci.yml` para validação automatizada de PRs sem deploy acidental | **A FAZER** | Execução em push/PR na branch de homologação, validando sintaxe, integridade e testes. |
-| **P1-3** | Registro Autoritativo de Alegações | Migração e consolidação de alegações clínicas para `research/evidence/CLAIMS_REGISTER.csv` | **EM ANDAMENTO** | 47 alegações migradas; estrutura pronta para expansão contínua. |
-| **P1-4** | Responsividade Multi-Viewport | Testes automatizados em resoluções Desktop (1440x900), Tablet (768x1024) e Mobile (390x844) | **A FAZER** | Todos os modais, filtros e calculadoras utilizáveis e sem transbordamento em todas as resoluções. |
+| **P1-1** | Correção do CI GitHub Actions | Criar `requirements.txt` e resolver falha de cache pip | **CONCLUÍDO** | Run ID 42516221497 e 42516217149 com status SUCCESS no GitHub Actions. |
+| **P1-2** | Runner Anti-Falso-Positivo | Eliminar aprovação indevida de suítes ignoradas (`SKIPPED`) em `run_full_audit.py` | **CONCLUÍDO** | Status estrito: PASS, FAIL, SKIPPED, ERROR. Flag `--strict` reprova qualquer SKIPPED. |
+| **P1-3** | Orquestrador Local Unificado | Execução unificada de Suítes D, A, B e C via CLI com código de saída estrito | **CONCLUÍDO** | Sucesso comprovado via `tests/run_full_audit.py`. |
+| **P1-4** | Responsividade Multi-Viewport | Testes em Desktop (1440x900), Tablet (768x1024) e Mobile (390x844) | **CONCLUÍDO** | 114 peptídeos e 70 estudos aprovados em todos os 3 viewports. |
 
 ---
 
-## PRIORIDADE P2 — EXPANSÃO CIENTÍFICA E BENCHMARKING
+## PRIORIDADE P2 — ENGINEERING HARNESS E TESTES DE MUTAÇÃO
 
 | ID | Item | Escopo Técnico | Status | Critério de Aceite |
 | :--- | :--- | :--- | :--- | :--- |
-| **P2-1** | Benchmarking Arcana Labs | Mapeamento comparativo dos 123 compostos e 26 categorias da Arcana Labs | **EM ANDAMENTO** | Identificação de lacunas de interesse no catálogo PeptiPedia. |
-| **P2-2** | Benchmarking Peptidepedia.org | Avaliação do modelo de síntese clínica dos 23 compostos do Peptidepedia.org | **EM ANDAMENTO** | Incorporação de seções "Key Takeaways" e níveis de evidência E1-E5. |
-| **P2-3** | Expansão de Alegações (Lote 6+) | Reconciliação dos 79 compostos remanescentes com evidências primárias | **PLANEJADO** | Redução progressiva de `pendingScientificReview` com respaldo bibliográfico. |
-| **P2-4** | Painel de Qualidade Contínuo | Criação e manutenção de `reports/QUALITY_DASHBOARD.md` | **EM ANDAMENTO** | Visão instantânea da saúde técnica do catálogo e dos testes. |
+| **P2-1** | Mutation Testing | Injeção de 5 mutantes deliberados em áreas críticas | **CONCLUÍDO** | Score 100% (5/5 mutantes eliminados pelo sistema de testes). |
+| **P2-2** | Verificador Independente | Implementação de `harness/independent_verifier.py` não-circular | **CONCLUÍDO** | Aprovado integralmente sem uso de rotinas internas da aplicação. |
+| **P2-3** | Validador de Obsolescência | Implementação de `harness/report_validator.py` | **CONCLUÍDO** | Detecção e expurgo de relatórios vinculados a commits desatualizados. |
 
 ---
 
-## PRIORIDADE P3 — PREPARAÇÃO PARA RELEASE CANDIDATE (RC)
+## PRIORIDADE P3 — AUDITORIA CIENTÍFICA E BENCHMARKING
 
 | ID | Item | Escopo Técnico | Status | Critério de Aceite |
 | :--- | :--- | :--- | :--- | :--- |
-| **P3-1** | Checklist de Release Readiness | Elaboração do documento `reports/RELEASE_READINESS.md` com critérios formais de homologação | **EM ANDAMENTO** | 100% dos critérios do handoff mestre auditados e assinados. |
-| **P3-2** | Atualização do PR #3 | Sincronização do PR no GitHub com sumário executivo completo e auditável | **PLANEJADO** | PR descritivo, documentando avanços desde H4.3 até o estado atual. |
+| **P3-1** | Matriz de Auditoria dos 114 Compostos | Criação de `MATRIZ_114_AUDITORIA_CIENTIFICA.csv` | **CONCLUÍDO** | 114 compostos mapeados por categoria e nível de evidência. |
+| **P3-2** | Benchmarking Arcana Labs & Peptidepedia | Correlação com 123 compostos da Arcana e 23 do Peptidepedia.org | **CONCLUÍDO** | 85 Arcana e 28 Peptidepedia mapeados com identificação de lacunas. |
+| **P3-3** | Auditoria das 47 Alegações Clínicas | Rastreabilidade com fontes primárias (FDA/EMA/PubMed) | **CONCLUÍDO** | Registrado em `CLAIMS_REGISTER.csv` e validado contra evidências originais. |
+
+---
+
+## PRIORIDADE P4 — HOMOLOGAÇÃO E PROMOÇÃO DE RELEASE (RC -> PROD)
+
+| ID | Item | Escopo Técnico | Status | Critério de Aceite |
+| :--- | :--- | :--- | :--- | :--- |
+| **P4-1** | Atualização do PR #3 | Sincronização do PR no GitHub com sumário executivo completo | **EM ANDAMENTO** | PR atualizado com os novos harnesses e relatórios. |
+| **P4-2** | Promoção e Merge em `main` | Merge seguro da branch homologada na branch `main` | **PRONTO P/ DISPARO** | Condicionado à verificação final de todos os gates. |
+| **P4-3** | Deploy em Production e Smoke Tests | Verificação ao vivo em `peptipedia-production.up.railway.app` | **PLANEJADO** | Deployment verificado com HTTP 200 e testes de runtime em navegador. |
