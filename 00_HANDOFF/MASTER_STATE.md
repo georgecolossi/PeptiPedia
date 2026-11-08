@@ -12,7 +12,7 @@
 - **Repositório GitHub:** `georgecolossi/PeptiPedia`
 - **Diretório Local:** `C:\Users\georg\Documents\PeptiPedia\repo`
 - **Branch Ativa:** `main` (produção definitiva)
-- **Commit HEAD Atual:** `adbb336ad23055a12f4b1096b0ce8b645f06d27f` (`adbb336`)
+- **Commit HEAD Atual:** `2122ed04feff48fd2c689a841eaad67d1dd0e22a` (`2122ed0`)
 - **Pull Request #3:** [PR #3 — Finalizado, Homologado e Mesclado com Sucesso](https://github.com/georgecolossi/PeptiPedia/pull/3)
 - **Status do PR:** **CLOSED / MERGED** (Merged At: 2026-11-08T19:55:10Z)
 - **GitHub Actions CI:** Run ID `42517430554` na branch `main` (**STATUS: COMPLETED, CONCLUSION: SUCCESS**)

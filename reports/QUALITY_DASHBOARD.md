@@ -1,7 +1,7 @@
 # PEPTIPEDIA — PAINEL DE QUALIDADE TÉCNICA E CIENTÍFICA (QUALITY_DASHBOARD)
 
 **Data da Última Auditoria:** 2026-11-08  
-**Commit Auditado:** `adbb336ad23055a12f4b1096b0ce8b645f06d27f` (`adbb336`)  
+**Commit Auditado:** `2122ed04feff48fd2c689a841eaad67d1dd0e22a` (`2122ed0`)  
 **Branch:** `main`  
 **CI GitHub Actions:** Runs `42517430554` (main), `42516995343` & `42516990476` (Status: **SUCCESS**)  
 **Status Consolidado:** **VERDE (HOMOLOGADO EM TODAS AS SUÍTES E GATES)**
