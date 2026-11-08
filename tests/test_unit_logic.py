@@ -4,7 +4,7 @@ import re
 import sys
 from playwright.sync_api import sync_playwright
 
-sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+sys.stdout.reconfigure(encoding='utf-8', errors='replace', line_buffering=True)
 
 repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 calc_file = os.path.join(repo_root, "js", "calculator.js")
@@ -24,7 +24,7 @@ print("[PASS] popularPresets 100% eliminado do código da calculadora.")
 # 2. Execução Direta no Runtime V8 (via Playwright Chromium / Chrome)
 with sync_playwright() as p:
     browser = None
-    for channel in ["chrome", "msedge", None]:
+    for channel in [None, "chrome", "msedge"]:
         try:
             if channel:
                 browser = p.chromium.launch(channel=channel, headless=True)

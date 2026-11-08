@@ -8,7 +8,7 @@ import sys
 import threading
 from playwright.async_api import async_playwright
 
-sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+sys.stdout.reconfigure(encoding='utf-8', errors='replace', line_buffering=True)
 
 repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 public_dir = os.path.join(repo_root, "public")

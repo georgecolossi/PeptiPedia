@@ -5,7 +5,7 @@ import re
 import sys
 from playwright.async_api import async_playwright
 
-sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+sys.stdout.reconfigure(encoding='utf-8', errors='replace', line_buffering=True)
 
 async def dismiss_disclaimer(page):
     disc = page.locator("#disclaimer-modal")
@@ -16,7 +16,7 @@ async def dismiss_disclaimer(page):
             await page.wait_for_timeout(200)
 
 async def run_tests():
-    repo_root = r"C:\Users\georg\Documents\PeptiPedia\repo"
+    repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     html_path = "file:///" + os.path.join(repo_root, "index.html").replace("\\", "/")
     
     # Load peptides and studies JSON
@@ -36,7 +36,18 @@ async def run_tests():
     studies = json.loads(cleaned_stud)
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(channel="msedge", headless=True)
+        browser = None
+        for channel_opt in [None, "chrome", "msedge"]:
+            try:
+                if channel_opt:
+                    browser = await p.chromium.launch(channel=channel_opt, headless=True)
+                else:
+                    browser = await p.chromium.launch(headless=True)
+                print(f"[Playwright] Navegador conectado (canal: {channel_opt or 'default chromium'})")
+                break
+            except Exception:
+                continue
+        assert browser is not None, "Falha ao inicializar Chromium no ambiente!"
         
         viewports = [
             {"name": "Desktop", "width": 1440, "height": 900},
