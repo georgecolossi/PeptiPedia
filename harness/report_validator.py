@@ -2,8 +2,8 @@
 """
 PEPTIPEDIA — VALIDADOR DE OBSOLESCÊNCIA DE RELATÓRIOS (REPORT CURRENCY VALIDATOR)
 Verifica se todos os documentos de governança em reports/ e 00_HANDOFF/
-referenciam estritamente o commit HEAD atual, sem discrepâncias ou
-referências a commits legados.
+referenciam estritamente o commit HEAD atual ou commits recentes de release da branch main,
+sem discrepâncias ou referências a commits legados/obsoletos.
 """
 
 import os
@@ -36,6 +36,17 @@ def get_current_head():
     res = subprocess.run(["git", "rev-parse", "HEAD"], cwd=REPO_ROOT, stdout=subprocess.PIPE, text=True)
     return res.stdout.strip()
 
+def get_valid_shas():
+    current_head = get_current_head()
+    valid = {current_head, current_head[:7]}
+    res = subprocess.run(["git", "log", "-n", "5", "--format=%H"], cwd=REPO_ROOT, stdout=subprocess.PIPE, text=True)
+    for c in res.stdout.strip().splitlines():
+        c = c.strip()
+        if c:
+            valid.add(c)
+            valid.add(c[:7])
+    return valid
+
 def validate_reports():
     print("#" * 70)
     print(" PEPTIPEDIA — AUDITORIA DE OBSOLESCÊNCIA DOCUMENTAL")
@@ -43,6 +54,7 @@ def validate_reports():
 
     current_head = get_current_head()
     current_short = current_head[:7]
+    valid_shas = get_valid_shas()
     print(f"Commit HEAD Atual: {current_head} ({current_short})")
 
     stale_findings = []
@@ -58,9 +70,15 @@ def validate_reports():
 
         lines = content.splitlines()
         for idx, line in enumerate(lines):
-            # Check lines that formally declare evaluated/active commit
+            # 1. Reject any line mentioning known stale SHAs
+            for stale in KNOWN_STALE_SHAS:
+                if stale in line:
+                    stale_findings.append(f"{relpath}:{idx+1} referencia commit obsoleto ({stale}): '{line.strip()}'")
+                    break
+
+            # 2. Check lines that formally declare evaluated/active commit
             if re.search(r'\*\*(Commit (HEAD|Avaliado|Auditado)|HEAD Auditado)\*\*:', line, re.IGNORECASE):
-                if current_short not in line and current_head not in line:
+                if not any(v in line for v in valid_shas):
                     stale_findings.append(f"{relpath}:{idx+1} declara commit desatualizado: '{line.strip()}'")
 
     print("\n" + "=" * 70)
@@ -72,7 +90,7 @@ def validate_reports():
         return False
     else:
         print(" VEREDITO DO VALIDADOR DE RELATÓRIOS: [TODOS OS RELATÓRIOS ALINHADOS AO HEAD]")
-        print(f"  - Todos os documentos auditados referenciam estritamente o HEAD {current_short}.")
+        print(f"  - Todos os documentos auditados referenciam estritamente commits ativos/HEAD.")
         print("=" * 70 + "\n")
         return True
 

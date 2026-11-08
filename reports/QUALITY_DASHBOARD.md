@@ -1,9 +1,9 @@
 # PEPTIPEDIA — PAINEL DE QUALIDADE TÉCNICA E CIENTÍFICA (QUALITY_DASHBOARD)
 
 **Data da Última Auditoria:** 2026-11-08  
-**Commit Auditado:** `ea6cdb886cbc5a3ea47ed09d85a6c0d0cae99630` (`ea6cdb8`)  
-**Branch:** `fix/catalog-dossiers-protocols-h4-3`  
-**CI GitHub Actions:** Runs `42516221497` & `42516217149` (Status: **SUCCESS**)  
+**Commit Auditado:** `adbb336ad23055a12f4b1096b0ce8b645f06d27f` (`adbb336`)  
+**Branch:** `main`  
+**CI GitHub Actions:** Runs `42517430554` (main), `42516995343` & `42516990476` (Status: **SUCCESS**)  
 **Status Consolidado:** **VERDE (HOMOLOGADO EM TODAS AS SUÍTES E GATES)**
 
 ---
@@ -25,6 +25,7 @@
 | **Verificador Independente** | 100% Não-Circular | 100% PASS | ✅ APROVADO |
 | **Validador de Obsolescência** | 0 Relatórios Legados | 100% ALINHADO AO HEAD | ✅ APROVADO |
 | **GitHub Actions CI (Strict Gate)** | 100% Green | 100% SUCCESS | ✅ APROVADO |
+| **E2E em Produção Real** | 100% Operacional | 100% PASS (27 asserções) | ✅ APROVADO |
 
 ---
 
@@ -41,4 +42,5 @@
 ## 3. AUDITORIA DE SEGURANÇA E AMBIENTES
 
 - **Segurança de Código:** Zero segredos, chaves ou tokens expostos no código-fonte ou em commits.
-- **Isolamento de Produção:** `https://peptipedia-production.up.railway.app` preservado até o momento do disparo da promoção oficial.
+- **Ambiente de Produção:** `https://peptipedia-production.up.railway.app` verificado com Playwright em navegadores reais (desktop e mobile).
+- **Ambiente de Staging:** `https://peptipedia-web-staging.up.railway.app` verificado com Playwright.

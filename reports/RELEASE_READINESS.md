@@ -6,7 +6,7 @@
 **Branch:** `fix/catalog-dossiers-protocols-h4-3`  
 **Commit Avaliado:** `ea6cdb886cbc5a3ea47ed09d85a6c0d0cae99630` (`ea6cdb8`)  
 **CI Workflow Runs:** `42516221497` & `42516217149` (GitHub Actions: **SUCCESS**)  
-**Parecer Consolidado:** **HOMOLOGADO INTEGRALMENTE PARA PROMOÇÃO E DEPLOY EM PRODUCTION**
+**Parecer Consolidado:** **HOMOLOGADO INTEGRALMENTE, MERGE EXECUTADO E PRODUÇÃO VERIFICADA**
 
 ---
 
