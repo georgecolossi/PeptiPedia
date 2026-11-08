@@ -40,10 +40,10 @@ A auditoria correlacionou individualmente cada composto com os inventários da *
    - Egrifta WR homologada: frasco de 11,6 mg reconstituído com 1,3 mL do diluente bactericida próprio, gerando exatamente 8,00 mg/mL nominais para 7 doses diárias utilizáveis de 1,28 mg (0,16 mL). A divisão linear errônea 11,6 / 1,3 = 8,92 mg/mL permanece estritamente bloqueada.
    - Egrifta SV: 1,4 mg/dia (0,35 mL de solução a 4 mg/mL).
    - Egrifta Histórica: 2,0 mg/dia.
-2. **Diluentes e Prazos Microbiológicos:**
-   - Diluentes com Álcool Benzílico 0.9%: BUD microbiológico máximo de 28 dias sob refrigeração (2°C a 8°C).
-   - Água Estéril para Injeção (SWFI) e NaCl 0.9%: 24 a 48 horas refrigerado (ausência de bacteriostático).
-   - Ácido Acético Diluído (0.6%): Identificado como veículo acidificado de solubilização para peptídeos básicos (ex: IGF-1 LR3); marcado com `budDays: null` e nota mandatória de preparo imediato para pesquisa.
+2. **Diluentes e Prazos Microbiológicos (USP <797> e USP <51>):**
+   - Diluentes com conservantes (Álcool Benzílico 0.9%): BUD microbiológico padrão de até 28 dias sob refrigeração (2°C a 8°C) para frascos multidose, rigorosamente condicionado à rotulagem oficial do fabricante (que prevalece quando estipula prazo menor, ex.: 7 dias para Egrifta WR). A contenção antimicrobiana não assegura estabilidade química contínua.
+   - Diluentes sem conservante (SWFI e NaCl 0.9%): Veículos estéreis puros sem agente antimicrobiano. Uso imediato / descarte após abertura per USP <797>; expurgada qualquer alegação genérica ou universal de 24–48 horas de conservação.
+   - Ácido Acético Diluído (0.6%): Veículo extemporâneo de solubilização física para peptídeos com pI básico (ex.: IGF-1 LR3); desprovido de eficácia conservante comprovada sob USP <51>; classificado estritamente com `budDays: null` e indicação mandatória de uso imediato em pesquisa, vedada a extrapolação de prazos multidose (21 a 28 dias) ou alegações de ação bacteriostática.
 3. **Compostos Não Injetáveis ou Formas Farmacêuticas Prontas:**
    - Confirmado bloqueio de reconstituição e cálculo em frasco para formulações sólidas (Linaclotida em cápsulas orais, Plecanatida em comprimidos de 3 mg, Goserrelina em implante sólido) e dispositivos prontos (Dasiglucagon autoinjetor de emergência, Teriparatida/Abaloparatida em canetas prontas de fábrica).
 

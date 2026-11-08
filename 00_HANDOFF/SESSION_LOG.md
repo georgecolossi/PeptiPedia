@@ -73,3 +73,16 @@ Este arquivo registra cronologicamente todas as intervenções, análises, audit
   - `https://peptipedia-production.up.railway.app`: 100% PASS (114 compostos, 70 estudos, 18 stacks, 37 verbetes, modais, gráficos de estabilidade, viewports Desktop, Tablet e Mobile, 0 erros no console).
   - `https://peptipedia-web-staging.up.railway.app`: 100% PASS.
 - Estado Terminal Atingido: **PRODUCTION DEPLOYED — INDEPENDENTLY VERIFIED — PROJECT COMPLETE**.
+
+
+### 7. Saneamento do Deploy Railway (Railpack Staticfile) e Revisão Farmacotécnica Rigorosa
+- Diagnóstico da Falha de Publicação: A adição de `requirements.txt` fez com que o Railpack da Railway inferisse incorretamente que o projeto era uma aplicação Python, gerando falha de build nos commits `adbb336` e `a08ffb6` e mantendo a versão antiga `64c590f` servida em Produção.
+- Correção de Infraestrutura: Criação do arquivo `railpack.json` na raiz declarando `"provider": "staticfile"`, preservando `requirements.txt` para o GitHub Actions e `Staticfile` para a pasta `public/`.
+- Revisão Farmacotécnica Complementar:
+  - Expurgada a afirmação universal de "24-48 horas" para SWFI e NaCl 0.9%; definidos como recipientes monodose sem conservante sob USP <797>, exigindo uso imediato ou conformidade estrita com a bula de cada fármaco.
+  - Retificado o limite de 28 dias para diluentes com conservantes (Álcool Benzílico 0.9%), explicitando que a rotulagem do fabricante sempre prevalece quando estipula prazo menor (ex.: 7 dias da Egrifta WR) e que a contenção microbiológica não garante estabilidade química contínua.
+  - Expurgada a hipótese de que o ácido acético 0,6% possui ação bacteriostática moderada; reafirmado que não possui eficácia conservante validada (USP <51>) e que seu `budDays` é estritamente `null` (uso imediato extemporâneo em pesquisa).
+  - Alinhada a decisão FDR-002 em `MASTER_DECISIONS.md` com o código e os relatórios científicos.
+  - Retificado o hCG em `js/peptides-data.js` para dissociar diluente sem conservante de prazos prolongados de 30-60 dias.
+  - Inseridas meta-tags de rastreabilidade de build (`peptipedia-railpack`, `peptipedia-version`) em `index.html` e `public/index.html`.
+- Validação Local Completa: Suítes D, A, B e C (114 peptídeos x 3 viewports e 70 estudos x 3 viewports) 100% aprovadas. Mutation Testing com 5/5 mutantes eliminados (100%).

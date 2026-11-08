@@ -29,7 +29,7 @@
 - [x] Benchmarking com Arcana Labs (85 coincidentes) e Peptidepedia.org (28 coincidentes) concluído.
 - [x] 47 alegações clínicas verificadas com fontes primárias rastreáveis (FDA, EMA, PubMed).
 - [x] Farmacotécnica da Egrifta WR: 8,00 mg/mL nominais homologados; bloqueada a divisão errônea 11,6 / 1,3 = 8,92 mg/mL.
-- [x] Prazos microbiológicos USP <797>: Álcool benzílico limitado a 28 dias; SWFI 24-48h; ácido acético sem BUD numérico arbitrário.
+- [x] Prazos microbiológicos USP <797>: Álcool benzílico limitado a até 28 dias (salvo especificação menor de bula, ex.: 7 dias Egrifta WR); diluentes sem conservante (SWFI, NaCl 0,9%) para uso imediato sem regra genérica de 24-48h; ácido acético 0,6% sem conservante sob USP <51> e com budDays: null.
 - [x] Advertências de ausência de dose clínica (`protocolGapNotice`) visíveis em compostos sem homologação.
 
 ### Gate 3: Produto e Interface do Usuário (UI/UX)
