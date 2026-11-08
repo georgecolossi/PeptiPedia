@@ -13,37 +13,347 @@ class PeptideCalculator {
     this.syringeType = "u100";
     this.frequencyPerWeek = 7;
     this.vialCost = 0;
-    
-    this.syringeConfigs = {
+    this.activePresentation = null;
+this.syringeConfigs = {
       u100: { capacityMl: 1.0, units: 100, label: "Seringa U-100 de 1,0 mL (capacidade: 100 unidades U-100)", tickInterval: 10 },
       u50: { capacityMl: 0.5, units: 50, label: "Seringa U-100 de 0,5 mL (capacidade: 50 unidades U-100)", tickInterval: 5 },
       u30: { capacityMl: 0.3, units: 30, label: "Seringa U-100 de 0,3 mL (capacidade: 30 unidades U-100 — Alta precisão)", tickInterval: 5 }
     };
 
-    // Presets rápidos dos compostos mais comuns com suporte a mcg e mg
-    this.popularPresets = [
-      { name: "BPC-157 (250 mcg)", vialMg: 5, waterMl: 2.0, doseVal: 250, doseUnit: "mcg", doseMcg: 250, syringe: "u100" },
-      { name: "BPC-157 (500 mcg)", vialMg: 5, waterMl: 2.0, doseVal: 500, doseUnit: "mcg", doseMcg: 500, syringe: "u100" },
-      { name: "TB-500 (2.5 mg)", vialMg: 10, waterMl: 2.5, doseVal: 2.5, doseUnit: "mg", doseMcg: 2500, syringe: "u100" },
-      { name: "Semaglutida (0.25 mg)", vialMg: 5, waterMl: 2.0, doseVal: 0.25, doseUnit: "mg", doseMcg: 250, syringe: "u100" },
-      { name: "Semaglutida (0.50 mg)", vialMg: 5, waterMl: 2.0, doseVal: 0.50, doseUnit: "mg", doseMcg: 500, syringe: "u100" },
-      { name: "Tirzepatida (2.5 mg)", vialMg: 10, waterMl: 2.0, doseVal: 2.5, doseUnit: "mg", doseMcg: 2500, syringe: "u100" },
-      { name: "Tirzepatida (5.0 mg)", vialMg: 10, waterMl: 2.0, doseVal: 5.0, doseUnit: "mg", doseMcg: 5000, syringe: "u100" },
-      { name: "Retatrutida (2.0 mg)", vialMg: 10, waterMl: 2.0, doseVal: 2.0, doseUnit: "mg", doseMcg: 2000, syringe: "u100" },
-      { name: "Ipamorelin (200 mcg)", vialMg: 5, waterMl: 2.5, doseVal: 200, doseUnit: "mcg", doseMcg: 200, syringe: "u50" },
-      { name: "CJC-1295 No DAC (100 mcg)", vialMg: 2, waterMl: 2.0, doseVal: 100, doseUnit: "mcg", doseMcg: 100, syringe: "u30" },
-      { name: "Tesamorelina (1.0 mg)", vialMg: 10, waterMl: 2.0, doseVal: 1.0, doseUnit: "mg", doseMcg: 1000, syringe: "u100" },
-      { name: "Epitalon (5.0 mg)", vialMg: 10, waterMl: 2.0, doseVal: 5.0, doseUnit: "mg", doseMcg: 5000, syringe: "u100" },
-      { name: "GHK-Cu (2.0 mg)", vialMg: 50, waterMl: 2.5, doseVal: 2.0, doseUnit: "mg", doseMcg: 2000, syringe: "u100" },
-      { name: "NAD+ (50 mg)", vialMg: 500, waterMl: 5.0, doseVal: 50, doseUnit: "mg", doseMcg: 50000, syringe: "u100" },
-      { name: "Glutationa (200 mg)", vialMg: 600, waterMl: 3.0, doseVal: 200, doseUnit: "mg", doseMcg: 200000, syringe: "u100" },
-      { name: "MOTS-c (5.0 mg)", vialMg: 10, waterMl: 2.0, doseVal: 5.0, doseUnit: "mg", doseMcg: 5000, syringe: "u100" },
-      { name: "PT-141 (1.0 mg)", vialMg: 10, waterMl: 2.0, doseVal: 1.0, doseUnit: "mg", doseMcg: 1000, syringe: "u100" },
-      { name: "AOD-9604 (300 mcg)", vialMg: 5, waterMl: 2.5, doseVal: 300, doseUnit: "mcg", doseMcg: 300, syringe: "u50" },
-      { name: "KPV (250 mcg)", vialMg: 5, waterMl: 2.0, doseVal: 250, doseUnit: "mcg", doseMcg: 250, syringe: "u100" },
-      { name: "SLU-PP-332 (15 mg)", vialMg: 50, waterMl: 2.0, doseVal: 15, doseUnit: "mg", doseMcg: 15000, syringe: "u100" },
-      { name: "SLU-PP-915 (10 mg)", vialMg: 50, waterMl: 2.0, doseVal: 10, doseUnit: "mg", doseMcg: 10000, syringe: "u100" }
+    // Arquitetura em 3 Camadas: 16 Compostos Populares Estruturados
+    // Camada 1: Composto | Camada 2: Apresentações de Frasco | Camada 3: Doses Documentadas / Fases Clínicas
+    this.compoundPresets = [
+      {
+        id: "tirzepatide",
+        name: "Tirzepatida",
+        category: "Incretina Dual GLP-1 / GIP",
+        synonyms: ["tirz", "mounjaro", "zepbound"],
+        defaultUnit: "mg",
+        notice: "Agonista dual GLP-1/GIP. Protocolo oficial de titulação em etapas de 4 semanas com incrementos de 2,5 mg.",
+        presentations: [
+          { label: "5 mg (2.0 mL)", vialMg: 5, waterMl: 2.0, suggestedSyringe: "u100" },
+          { label: "10 mg (2.0 mL)", vialMg: 10, waterMl: 2.0, suggestedSyringe: "u100" },
+          { label: "15 mg (3.0 mL)", vialMg: 15, waterMl: 3.0, suggestedSyringe: "u100" },
+          { label: "30 mg (3.0 mL)", vialMg: 30, waterMl: 3.0, suggestedSyringe: "u100" }
+        ],
+        doses: [
+          { label: "2,5 mg (Início - Fase 1)", val: 2.5, unit: "mg", context: "Sem 1-4 (Adaptação GI)", evidence: "Classe A (Bula FDA/EMA)" },
+          { label: "5,0 mg (Manutenção 1)", val: 5.0, unit: "mg", context: "Sem 5-8 (Dose terapêutica)", evidence: "Classe A (Bula FDA/EMA)" },
+          { label: "7,5 mg (Escalonamento 1)", val: 7.5, unit: "mg", context: "Sem 9-12 (Intermediário)", evidence: "Classe A (Bula FDA/EMA)" },
+          { label: "10,0 mg (Manutenção 2)", val: 10.0, unit: "mg", context: "Sem 13-16 (Controle avançado)", evidence: "Classe A (Bula FDA/EMA)" },
+          { label: "12,5 mg (Escalonamento 2)", val: 12.5, unit: "mg", context: "Sem 17-20", evidence: "Classe A (Bula FDA/EMA)" },
+          { label: "15,0 mg (Dose Máxima)", val: 15.0, unit: "mg", context: "Sem 21+ (Dose teto homologada)", evidence: "Classe A (Bula FDA/EMA)" }
+        ]
+      },
+      {
+        id: "semaglutide",
+        name: "Semaglutida",
+        category: "Agonista do Receptor GLP-1",
+        synonyms: ["sema", "ozempic", "wegovy", "rybelsus"],
+        defaultUnit: "mg",
+        notice: "Agonista de GLP-1 de longa duração. Titulação mensal com início em 0,25 mg para mitigação de efeitos gastrointestinais.",
+        presentations: [
+          { label: "2 mg (2.0 mL)", vialMg: 2, waterMl: 2.0, suggestedSyringe: "u100" },
+          { label: "5 mg (2.0 mL)", vialMg: 5, waterMl: 2.0, suggestedSyringe: "u100" },
+          { label: "10 mg (2.5 mL)", vialMg: 10, waterMl: 2.5, suggestedSyringe: "u100" }
+        ],
+        doses: [
+          { label: "0,25 mg (Iniciação Sem 1-4)", val: 0.25, unit: "mg", context: "Adaptação GI inicial", evidence: "Classe A (Bula FDA/EMA)" },
+          { label: "0,50 mg (Escalonamento Sem 5-8)", val: 0.50, unit: "mg", context: "Primeiro degrau terapêutico", evidence: "Classe A (Bula FDA/EMA)" },
+          { label: "1,0 mg (Manutenção Padrão)", val: 1.0, unit: "mg", context: "Manutenção diabetes T2", evidence: "Classe A (Bula FDA/EMA)" },
+          { label: "1,7 mg (Escalonamento Obesidade)", val: 1.7, unit: "mg", context: "Protocolo STEP obesidade", evidence: "Classe A (Bula FDA/EMA)" },
+          { label: "2,4 mg (Manutenção Máxima)", val: 2.4, unit: "mg", context: "Dose teto Wegovy® obesidade", evidence: "Classe A (Bula FDA/EMA)" }
+        ]
+      },
+      {
+        id: "retatrutide",
+        name: "Retatrutida",
+        category: "Agonista Triplo GIP / GLP-1 / Glucagon",
+        synonyms: ["reta", "tri-agonist", "ly3437943"],
+        defaultUnit: "mg",
+        notice: "Molécula investigacional tri-agonista. O ensaio Fase 2 (NEJM 2023, PMID 37366315) avaliou grupos paralelos independentes de dose fixa ou escalonamento: coortes de 1 mg, 4 mg, 8 mg e 12 mg semanais; a dose de 2 mg foi utilizada unicamente como passo inicial de titulação nas semanas 1-4 dos grupos de escalonamento.",
+        presentations: [
+          { label: "5 mg (2.0 mL - Exemplo matemático)", vialMg: 5, waterMl: 2.0, suggestedSyringe: "u100" },
+          { label: "10 mg (2.0 mL - Exemplo matemático)", vialMg: 10, waterMl: 2.0, suggestedSyringe: "u100" }
+        ],
+        doses: [
+          { label: "1,0 mg (Grupo Paralelo Fixo)", val: 1.0, unit: "mg", context: "Coorte independente de dose fixa contínua (NEJM 2023)", evidence: "Classe B (Ensaio Clínico Fase 2 NEJM)" },
+          { label: "2,0 mg (Passo Inicial de Titulação)", val: 2.0, unit: "mg", context: "Iniciação Sem 1-4 para coortes de 4, 8 e 12 mg (não é grupo de manutenção)", evidence: "Classe B (Ensaio Clínico Fase 2 NEJM)" },
+          { label: "4,0 mg (Grupo Paralelo Intermediário)", val: 4.0, unit: "mg", context: "Dose de manutenção da coorte de 4 mg (NEJM 2023)", evidence: "Classe B (Ensaio Clínico Fase 2 NEJM)" },
+          { label: "8,0 mg (Grupo Paralelo Alta Eficácia)", val: 8.0, unit: "mg", context: "Dose de manutenção da coorte de 8 mg (NEJM 2023)", evidence: "Classe B (Ensaio Clínico Fase 2 NEJM)" },
+          { label: "12,0 mg (Grupo Paralelo Dose Teto)", val: 12.0, unit: "mg", context: "Dose de manutenção teto investigacional (NEJM 2023)", evidence: "Classe B (Ensaio Clínico Fase 2 NEJM)" }
+        ]
+      },
+      {
+        id: "bpc-157",
+        name: "BPC-157",
+        category: "Composto de Reparação Gástrica e Tecidual",
+        synonyms: ["bpc", "pl-14736", "bepecin", "pentadecapeptide"],
+        defaultUnit: "mcg",
+        notice: "Pentadecapeptídeo estável derivado do suco gástrico. Protocolos pré-clínicos de citoproteção e reparação tecidual. AVISO: Parâmetros numéricos configuram exclusivamente exemplos para cálculo volumétrico na escala de seringa, não constituindo recomendação médica ou posologia validada.",
+        presentations: [
+          { label: "5 mg (2.0 mL)", vialMg: 5, waterMl: 2.0, suggestedSyringe: "u100" },
+          { label: "10 mg (2.0 mL)", vialMg: 10, waterMl: 2.0, suggestedSyringe: "u100" }
+        ],
+        doses: [
+          { label: "250 mcg (Dose Pesquisa Baixa)", val: 250, unit: "mcg", context: "1 a 2x/dia protocolo de manutenção tecidual", evidence: "Classe C (Pesquisa Pré-Clínica)" },
+          { label: "500 mcg (Dose Pesquisa Padrão)", val: 500, unit: "mcg", context: "1 a 2x/dia modelos de tendinopatia/lesão muscular", evidence: "Classe C (Pesquisa Pré-Clínica)" },
+          { label: "750 mcg (Dose Investigacional Alta)", val: 750, unit: "mcg", context: "Modelos agudos de reparação", evidence: "Classe C (Pesquisa Pré-Clínica)" }
+        ]
+      },
+      {
+        id: "tb-500",
+        name: "TB-500 (Timosina Beta-4)",
+        category: "Peptídeo de Migração Celular e Angiogênese",
+        synonyms: ["tb500", "tβ4", "thymosin beta 4"],
+        defaultUnit: "mg",
+        notice: "Sequestrador de actina-G indutor de angiogênese e reparo celular. Administração bi-semanal ou semanal em protocolos experimentais. AVISO: Parâmetros numéricos configuram exclusivamente exemplos para cálculo volumétrico na escala de seringa, não constituindo recomendação médica ou posologia validada.",
+        presentations: [
+          { label: "5 mg (2.0 mL)", vialMg: 5, waterMl: 2.0, suggestedSyringe: "u100" },
+          { label: "10 mg (2.5 mL)", vialMg: 10, waterMl: 2.5, suggestedSyringe: "u100" }
+        ],
+        doses: [
+          { label: "2,0 mg (Manutenção 1x/sem)", val: 2.0, unit: "mg", context: "Protocolo semanal de suporte", evidence: "Classe C (Pré-Clínica / Ensaios Tβ4)" },
+          { label: "2,5 mg (Reparação 2x/sem)", val: 2.5, unit: "mg", context: "Protocolo bi-semanal de reparação", evidence: "Classe C (Pré-Clínica / Ensaios Tβ4)" },
+          { label: "5,0 mg (Carga Inicial Semanal)", val: 5.0, unit: "mg", context: "Fase de indução inicial", evidence: "Classe C (Investigacional)" }
+        ]
+      },
+      {
+        id: "ghk-cu",
+        name: "GHK-Cu",
+        category: "Complexo Tripeptídeo-Cobre Remodelador",
+        synonyms: ["ghk", "copper peptide", "cobre"],
+        defaultUnit: "mg",
+        notice: "Complexo Gly-His-Lys com íon Cu(II). Estimula síntese de colágeno e decorina. Diluição com volume suficiente para evitar desconforto local. AVISO: Parâmetros numéricos configuram exclusivamente exemplos para cálculo volumétrico na escala de seringa, não constituindo recomendação médica ou posologia validada.",
+        presentations: [
+          { label: "50 mg (2.5 mL)", vialMg: 50, waterMl: 2.5, suggestedSyringe: "u100" },
+          { label: "100 mg (5.0 mL)", vialMg: 100, waterMl: 5.0, suggestedSyringe: "u100" }
+        ],
+        doses: [
+          { label: "1,0 mg (Dose Dérmica / Tópica)", val: 1.0, unit: "mg", context: "Estimulação dérmica diária", evidence: "Classe B (Ensaios Cosméticos/Regenerativos)" },
+          { label: "2,0 mg (Dose Sistêmica Padrão)", val: 2.0, unit: "mg", context: "Subcutâneo diário ciclo 30 dias", evidence: "Classe C (Pesquisas Loren Pickart)" },
+          { label: "3,0 mg (Remodelação Intensa)", val: 3.0, unit: "mg", context: "Pesquisa avançada tecidual", evidence: "Classe C (Pesquisas Loren Pickart)" }
+        ]
+      },
+      {
+        id: "cjc-1295-no-dac",
+        name: "CJC-1295 sem DAC (Mod GRF 1-29)",
+        category: "Secretagogo de GH Pulsação Fisiológica",
+        synonyms: ["cjc no dac", "mod grf", "mod grf 1-29"],
+        defaultUnit: "mcg",
+        notice: "Análogo tetra-substituído de GHRH de ação curta (~30 min). Preserva a pulsatilidade fisiológica natural do hormônio do crescimento. AVISO: Parâmetros numéricos configuram exclusivamente exemplos para cálculo volumétrico na escala de seringa, não constituindo recomendação médica ou posologia validada.",
+        presentations: [
+          { label: "2 mg (2.0 mL)", vialMg: 2, waterMl: 2.0, suggestedSyringe: "u30" },
+          { label: "5 mg (2.5 mL)", vialMg: 5, waterMl: 2.5, suggestedSyringe: "u50" }
+        ],
+        doses: [
+          { label: "100 mcg (Pulso Fisiológico Padrão)", val: 100, unit: "mcg", context: "1 a 3x/dia antes de dormir ou em jejum", evidence: "Classe B (Ensaios Clínicos GH)" },
+          { label: "150 mcg (Pulso Elevado)", val: 150, unit: "mcg", context: "Saturação de receptores hipofisários", evidence: "Classe C (Investigacional)" }
+        ]
+      },
+      {
+        id: "cjc-1295-dac",
+        name: "CJC-1295 com DAC",
+        category: "Secretagogo de GH Liberação Prolongada",
+        synonyms: ["cjc dac", "cjc1295 dac", "long-acting ghrh"],
+        defaultUnit: "mg",
+        notice: "Possui Drug Affinity Complex (DAC) que se liga covalentemente à albumina plasmática circulante, conferindo meia-vida de 6 a 8 dias. AVISO: Parâmetros numéricos configuram exclusivamente exemplos para cálculo volumétrico na escala de seringa, não constituindo recomendação médica ou posologia validada.",
+        presentations: [
+          { label: "2 mg (2.0 mL)", vialMg: 2, waterMl: 2.0, suggestedSyringe: "u100" },
+          { label: "5 mg (2.5 mL)", vialMg: 5, waterMl: 2.5, suggestedSyringe: "u100" }
+        ],
+        doses: [
+          { label: "1,0 mg (Dose Semanal Baixa)", val: 1.0, unit: "mg", context: "1x por semana elevação contínua basal", evidence: "Classe B (Ensaios Clínicos Fase 1/2)" },
+          { label: "2,0 mg (Dose Semanal Padrão)", val: 2.0, unit: "mg", context: "1x por semana sustentação de IGF-1 sérico", evidence: "Classe B (Ensaios Clínicos Fase 1/2)" }
+        ]
+      },
+      {
+        id: "ipamorelin",
+        name: "Ipamorelina",
+        category: "Agonista Seletivo do Receptor de Ghrelina (GHSR)",
+        synonyms: ["ipa", "ipamoreline", "ghrp"],
+        defaultUnit: "mcg",
+        notice: "GHRP de terceira geração altamente seletivo. Não estimula significativamente prolactina ou cortisol em doses terapêuticas. AVISO: Parâmetros numéricos configuram exclusivamente exemplos para cálculo volumétrico na escala de seringa, não constituindo recomendação médica ou posologia validada.",
+        presentations: [
+          { label: "2 mg (2.0 mL)", vialMg: 2, waterMl: 2.0, suggestedSyringe: "u50" },
+          { label: "5 mg (2.5 mL)", vialMg: 5, waterMl: 2.5, suggestedSyringe: "u50" }
+        ],
+        doses: [
+          { label: "100 mcg (Pulso Leve)", val: 100, unit: "mcg", context: "1x ao dia pré-sono", evidence: "Classe B (Ensaios Clínicos Fase 2)" },
+          { label: "200 mcg (Pulso Padrão)", val: 200, unit: "mcg", context: "1 a 2x/dia sinergia com Mod GRF 1-29", evidence: "Classe B (Ensaios Clínicos Fase 2)" },
+          { label: "300 mcg (Pulso Alto)", val: 300, unit: "mcg", context: "Pico máximo de amplitude secretora", evidence: "Classe C (Investigacional)" }
+        ]
+      },
+      {
+        id: "tesamorelin",
+        name: "Tesamorelina",
+        category: "Análogo de GHRH Estabilizado",
+        synonyms: ["tesa", "egrifta", "th9507"],
+        defaultUnit: "mg",
+        notice: "Medicamento aprovado pelo FDA (Egrifta®) exclusivamente para redução de excesso de gordura visceral intra-abdominal (VAT) em adultos com lipodistrofia associada ao HIV (não indicado para perda de peso geral). Formulações com dosagens distintas: Egrifta WR (11,6 mg / 1,3 mL -> 8 mg/mL nominais, dose diária de 1,28 mg = 0,16 mL), Egrifta SV (2 mg / 0,5 mL -> 4 mg/mL nominais, dose diária de 1,4 mg = 0,35 mL) e formulação histórica original (2,0 mg/dia em 2,0 mL WFI). Não intercambiar formulações nem diluentes.",
+        presentations: [
+          {
+            label: "Egrifta WR (Frasco semanal 11,6 mg / 1,3 mL -> 8 mg/mL nominais)",
+            vialMg: 11.6,
+            waterMl: 1.3,
+            nominalConcMgMl: 8.0,
+            usableDoses: 7,
+            officialCommercial: true,
+            storageNotice: "Conservar a solução reconstituída em temperatura ambiente controlada de 20°C a 25°C e descartar após 7 dias (DailyMed/FDA)",
+            suggestedSyringe: "u30"
+          },
+          {
+            label: "Egrifta SV (Frasco dose única 2 mg / 0,5 mL -> 4 mg/mL)",
+            vialMg: 2,
+            waterMl: 0.5,
+            nominalConcMgMl: 4.0,
+            usableDoses: 1,
+            officialCommercial: true,
+            storageNotice: "Uso imediato de dose única descartável após reconstituição com WFI sem conservantes (Bula FDA 2024)",
+            suggestedSyringe: "u50"
+          },
+          {
+            label: "Formulação Histórica Original (2 mg / 2,0 mL -> 1 mg/mL)",
+            vialMg: 2,
+            waterMl: 2.0,
+            nominalConcMgMl: 1.0,
+            usableDoses: 1,
+            officialCommercial: true,
+            storageNotice: "Uso imediato de dose única descartável após reconstituição com WFI sem conservantes (Registro FDA 2010)",
+            suggestedSyringe: "u100"
+          }
+        ],
+        doses: [
+          { label: "1,28 mg (Bula FDA Egrifta WR: 0,16 mL)", val: 1.28, unit: "mg", context: "Bula Oficial FDA 2025 (0,16 mL a 8 mg/mL nominais)", evidence: "Classe A (Bula FDA Egrifta WR)" },
+          { label: "1,40 mg (Bula FDA Egrifta SV)", val: 1.40, unit: "mg", context: "Bula Oficial FDA 2024 (0,35 mL a 4 mg/mL)", evidence: "Classe A (Bula FDA Egrifta SV)" },
+          { label: "2,0 mg (Registro Histórico 2010)", val: 2.0, unit: "mg", context: "Bula Histórica 2010 (2,0 mL a 1 mg/mL)", evidence: "Classe A (Registro Histórico FDA)" }
+        ]
+      },
+      {
+        id: "pt-141",
+        name: "PT-141 (Bremelanotida)",
+        category: "Agonista dos Receptores de Melanocortina (MC3R/MC4R)",
+        synonyms: ["bremelanotide", "vyleesi"],
+        defaultUnit: "mg",
+        notice: "Medicamento aprovado pelo FDA (Vyleesi®) para disfunção do desejo sexual. Ação central hipotalâmica.",
+        presentations: [
+          { label: "10 mg (2.0 mL)", vialMg: 10, waterMl: 2.0, suggestedSyringe: "u100" }
+        ],
+        doses: [
+          { label: "1,0 mg (Dose Teste de Tolerabilidade)", val: 1.0, unit: "mg", context: "Avaliação prévia de tolerância cardiovascular", evidence: "Classe A (Bula FDA Vyleesi)" },
+          { label: "1,75 mg (Dose Homologada FDA)", val: 1.75, unit: "mg", context: "45 min antes da atividade (máximo 1x em 24h)", evidence: "Classe A (Bula FDA Vyleesi)" }
+        ]
+      },
+      {
+        id: "thymosin-alpha-1",
+        name: "Timosina Alfa-1 (Zadaxin)",
+        category: "Polipeptídeo Imunomodulador Tímico",
+        synonyms: ["tα1", "ta1", "zadaxin", "thymalfasin"],
+        defaultUnit: "mg",
+        notice: "Regulador da maturação de células T e células NK. Utilizado internacionalmente como adjuvante em imunodeficiências e infecções.",
+        presentations: [
+          { label: "1,6 mg (1.0 mL)", vialMg: 1.6, waterMl: 1.0, suggestedSyringe: "u100" },
+          { label: "5 mg (2.5 mL)", vialMg: 5, waterMl: 2.5, suggestedSyringe: "u100" }
+        ],
+        doses: [
+          { label: "1,6 mg (Dose de Bula Zadaxin)", val: 1.6, unit: "mg", context: "2x por semana em dias alternados", evidence: "Classe A (Bula Internacional Zadaxin)" },
+          { label: "3,2 mg (Dose Investigacional Aguda)", val: 3.2, unit: "mg", context: "Protocolos intensivos sob monitoramento", evidence: "Classe B (Ensaios Clínicos)" }
+        ]
+      },
+      {
+        id: "mots-c",
+        name: "MOTS-c",
+        category: "Peptídeo Mitocondrial Regulador Metabólico",
+        synonyms: ["motsc", "mitochondrial open reading frame"],
+        defaultUnit: "mg",
+        notice: "Peptídeo de 16 aminoácidos derivado do DNA mitocondrial. Ativador da via AMPK e modulador da sensibilidade insulínica. AVISO: Parâmetros numéricos configuram exclusivamente exemplos para cálculo volumétrico na escala de seringa, não constituindo recomendação médica ou posologia validada.",
+        presentations: [
+          { label: "5 mg (1.0 mL)", vialMg: 5, waterMl: 1.0, suggestedSyringe: "u100" },
+          { label: "10 mg (2.0 mL)", vialMg: 10, waterMl: 2.0, suggestedSyringe: "u100" }
+        ],
+        doses: [
+          { label: "2,5 mg (Dose Investigacional Inicial)", val: 2.5, unit: "mg", context: "Adaptação metabólica (estudos Lee et al.)", evidence: "Classe B (Ensaios Clínicos Lee et al.)" },
+          { label: "5,0 mg (Dose Investigacional Padrão)", val: 5.0, unit: "mg", context: "1 a 3x por semana (estudos Lee et al.)", evidence: "Classe B (Ensaios Clínicos Lee et al.)" }
+        ]
+      },
+      {
+        id: "epitalon",
+        name: "Epitalon",
+        category: "Tetrapeptídeo Epifisário Regulador de Telomerase",
+        synonyms: ["epithalon", "alador", "a-4"],
+        defaultUnit: "mg",
+        notice: "Tetrapeptídeo Ala-Glu-Asp-Gly. Modulador de ritmos circadianos e expressão de telomerase em modelos biogerontológicos. AVISO: Parâmetros numéricos configuram exclusivamente exemplos para cálculo volumétrico na escala de seringa, não constituindo recomendação médica ou posologia validada.",
+        presentations: [
+          { label: "10 mg (2.0 mL)", vialMg: 10, waterMl: 2.0, suggestedSyringe: "u100" },
+          { label: "50 mg (5.0 mL)", vialMg: 50, waterMl: 5.0, suggestedSyringe: "u100" }
+        ],
+        doses: [
+          { label: "5,0 mg (Ciclo de Longevidade)", val: 5.0, unit: "mg", context: "1x ao dia por 10 a 20 dias (ciclo semestral)", evidence: "Classe B (Pesquisas Clínicas Khavinson)" },
+          { label: "10,0 mg (Protocolo Intensivo)", val: 10.0, unit: "mg", context: "1x ao dia por 10 dias (pesquisa biogerontológica)", evidence: "Classe B (Pesquisas Clínicas Khavinson)" }
+        ]
+      },
+      {
+        id: "kpv",
+        name: "KPV",
+        category: "Tripeptídeo Anti-inflamatório Mucoso",
+        synonyms: ["lys-pro-val", "alfa-msh 11-13"],
+        defaultUnit: "mcg",
+        notice: "Fragmento C-terminal do hormônio alfa-MSH com potente atividade anti-inflamatória e antimicrobiana sem pigmentação. AVISO: Parâmetros numéricos configuram exclusivamente exemplos para cálculo volumétrico na escala de seringa, não constituindo recomendação médica ou posologia validada.",
+        presentations: [
+          { label: "5 mg (2.0 mL)", vialMg: 5, waterMl: 2.0, suggestedSyringe: "u100" },
+          { label: "10 mg (2.0 mL)", vialMg: 10, waterMl: 2.0, suggestedSyringe: "u100" }
+        ],
+        doses: [
+          { label: "200 mcg (Pesquisa Imunológica Baixa)", val: 200, unit: "mcg", context: "1 a 2x ao dia anti-inflamatório", evidence: "Classe C (Modelos Pré-Clínicos)" },
+          { label: "250 mcg (Dose Padrão Tecidual)", val: 250, unit: "mcg", context: "1 a 2x ao dia inflamação sistêmica", evidence: "Classe C (Modelos Pré-Clínicos)" },
+          { label: "500 mcg (Pesquisa Intestinal / Colite)", val: 500, unit: "mcg", context: "Modelos pré-clínicos de colite inflamatória", evidence: "Classe C (Modelos Pré-Clínicos)" }
+        ]
+      },
+      {
+        id: "cagrilintide",
+        name: "Cagrilintida",
+        category: "Análogo de Amilina de Ação Prolongada",
+        synonyms: ["cagri", "nn9838", "amylin analog"],
+        defaultUnit: "mg",
+        notice: "Análogo não seletivo do receptor de amilina e calcitonina. Promove saciedade sinérgica com agonistas de GLP-1. AVISO: Parâmetros numéricos configuram exclusivamente exemplos para cálculo volumétrico na escala de seringa, não constituindo recomendação médica ou posologia validada.",
+        presentations: [
+          { label: "5 mg (2.0 mL)", vialMg: 5, waterMl: 2.0, suggestedSyringe: "u100" },
+          { label: "10 mg (2.0 mL)", vialMg: 10, waterMl: 2.0, suggestedSyringe: "u100" }
+        ],
+        doses: [
+          { label: "0,3 mg (Iniciação Titulação Sem 1-4)", val: 0.3, unit: "mg", context: "Ensaio Fase 2/3 CagriSema", evidence: "Classe B (Ensaios Clínicos Lancet)" },
+          { label: "0,6 mg (Escalonamento 1 Sem 5-8)", val: 0.6, unit: "mg", context: "Ensaio Fase 2/3", evidence: "Classe B (Ensaios Clínicos Lancet)" },
+          { label: "1,2 mg (Escalonamento 2 Sem 9-12)", val: 1.2, unit: "mg", context: "Ensaio Fase 2/3", evidence: "Classe B (Ensaios Clínicos Lancet)" },
+          { label: "2,4 mg (Manutenção Máxima Ensaio)", val: 2.4, unit: "mg", context: "Dose teto semanal ensaios de obesidade", evidence: "Classe B (Ensaios Clínicos Lancet)" }
+        ]
+      }
     ];
+  }
+
+  setOfficialPresentation(presentation) {
+    if (!presentation || typeof presentation !== 'object') {
+      this.clearOfficialPresentation();
+      return;
+    }
+    this.activePresentation = {
+      label: presentation.label || "",
+      vialMg: presentation.vialMg,
+      waterMl: presentation.waterMl,
+      nominalConcMgMl: presentation.nominalConcMgMl || null,
+      usableDoses: presentation.usableDoses || null,
+      officialCommercial: !!presentation.officialCommercial,
+      storageNotice: presentation.storageNotice || null,
+      suggestedSyringe: presentation.suggestedSyringe || null
+    };
+    if (typeof presentation.vialMg === 'number') this.vialMg = presentation.vialMg;
+    if (typeof presentation.waterMl === 'number') this.waterMl = presentation.waterMl;
+    if (presentation.suggestedSyringe && this.syringeConfigs[presentation.suggestedSyringe]) {
+      this.syringeType = presentation.suggestedSyringe;
+    }
+  }
+
+  clearOfficialPresentation() {
+    this.activePresentation = null;
   }
 
   reset() {
@@ -52,10 +362,11 @@ class PeptideCalculator {
     this.doseValue = null;
     this.desiredDoseMcg = null;
     this.vialCost = 0;
+    this.activePresentation = null;
   }
 
   setValues(params = {}) {
-    const { vialMg, waterMl, doseValue, doseUnit, desiredDoseMcg, syringeType, frequencyPerWeek, vialCost } = params;
+    const { vialMg, waterMl, doseValue, doseUnit, desiredDoseMcg, syringeType, frequencyPerWeek, vialCost, officialPresentation, clearOfficial } = params;
 
     const parseStrictPositiveFinite = (val) => {
       if (val === null || val === undefined || val === '') return null;
@@ -63,6 +374,26 @@ class PeptideCalculator {
       const num = Number(val);
       return (typeof num === 'number' && Number.isFinite(num) && !isNaN(num) && num > 0) ? num : null;
     };
+
+    if (officialPresentation !== undefined) {
+      if (officialPresentation) {
+        this.setOfficialPresentation(officialPresentation);
+      } else {
+        this.clearOfficialPresentation();
+      }
+    } else if (clearOfficial === true) {
+      this.clearOfficialPresentation();
+    } else if (this.activePresentation) {
+      // Quando o usuário alterar manualmente massa ou volume, invalidar concentração de bula que deixe de ser aplicável
+      if (vialMg !== undefined) {
+        const pV = parseStrictPositiveFinite(vialMg);
+        if (pV !== this.activePresentation.vialMg) this.clearOfficialPresentation();
+      }
+      if (waterMl !== undefined) {
+        const pW = parseStrictPositiveFinite(waterMl);
+        if (pW !== this.activePresentation.waterMl) this.clearOfficialPresentation();
+      }
+    }
 
     if (vialMg !== undefined) {
       this.vialMg = parseStrictPositiveFinite(vialMg);
@@ -108,6 +439,28 @@ class PeptideCalculator {
         this.vialCost = (typeof parsedCost === 'number' && Number.isFinite(parsedCost) && !isNaN(parsedCost) && parsedCost >= 0) ? parsedCost : 0;
       }
     }
+  }
+
+
+  getCompoundPresets() {
+    return this.compoundPresets || [];
+  }
+
+  filterCompounds(query) {
+    if (!query || typeof query !== 'string') return this.compoundPresets || [];
+    const q = query.trim().toLowerCase();
+    if (!q) return this.compoundPresets || [];
+    return (this.compoundPresets || []).filter(c => {
+      if (c.name.toLowerCase().includes(q)) return true;
+      if (c.category.toLowerCase().includes(q)) return true;
+      if (c.synonyms && c.synonyms.some(s => s.toLowerCase().includes(q))) return true;
+      return false;
+    });
+  }
+
+  getCompoundById(id) {
+    if (!id || typeof id !== 'string') return null;
+    return (this.compoundPresets || []).find(c => c.id === id.trim()) || null;
   }
 
   calculate() {
@@ -186,9 +539,11 @@ class PeptideCalculator {
       };
     }
     
-    // Concentrações
-    const concentrationMgPerMl = this.vialMg / this.waterMl;
-    const concentrationMcgPerMl = vialMcg / this.waterMl;
+    // Concentrações: distinção entre formulação comercial oficial de bula vs cálculo genérico teórico
+    const isOfficial = !!(this.activePresentation && this.activePresentation.officialCommercial && typeof this.activePresentation.nominalConcMgMl === 'number' && this.activePresentation.nominalConcMgMl > 0);
+
+    const concentrationMgPerMl = isOfficial ? this.activePresentation.nominalConcMgMl : (this.vialMg / this.waterMl);
+    const concentrationMcgPerMl = isOfficial ? (this.activePresentation.nominalConcMgMl * 1000) : (vialMcg / this.waterMl);
     
     // Volume em mL por dose desejada
     const volumePerDoseMl = this.desiredDoseMcg / concentrationMcgPerMl;
@@ -298,8 +653,12 @@ class PeptideCalculator {
       };
     }
     
-    // Doses totais no frasco
-    const totalDosesInVial = vialMcg / this.desiredDoseMcg;
+    // Doses totais no frasco:
+    // Para apresentações comerciais homologadas (como Egrifta WR), o fabricante declara exatamente 7 doses utilizáveis por frasco (não 9 doses calculadas por divisão linear simples).
+    // Para cálculos genéricos, calcula-se pela divisão linear teórica.
+    const totalDosesInVial = (isOfficial && typeof this.activePresentation.usableDoses === 'number' && this.activePresentation.usableDoses > 0)
+      ? this.activePresentation.usableDoses
+      : (vialMcg / this.desiredDoseMcg);
     
     // Duração do frasco em dias
     const daysDuration = (totalDosesInVial / (this.frequencyPerWeek / 7));
@@ -326,6 +685,13 @@ class PeptideCalculator {
 
     return {
       isValid: true,
+      isOfficialCommercial: isOfficial,
+      officialPresentationLabel: isOfficial ? this.activePresentation.label : null,
+      concentrationType: isOfficial ? "official_nominal" : "generic_theoretical",
+      concentrationSource: isOfficial ? "Bula Oficial Homologada (FDA / DailyMed)" : "Cálculo volumétrico teórico (massa nominal / volume de diluente)",
+      nominalVialMg: this.vialMg,
+      diluentAddedMl: this.waterMl,
+      storageNotice: isOfficial ? this.activePresentation.storageNotice : null,
       errorMessage: null,
       calculationError: null,
       measurementPrecisionAlert: measurementPrecisionAlert,
@@ -344,12 +710,15 @@ class PeptideCalculator {
       unitsOnSyringe: unitsOnSyringe.toFixed(1),
       exactUnitsNumber: unitsOnSyringe,
       totalDosesInVial: Math.floor(totalDosesInVial),
+      usableDosesSource: (isOfficial && this.activePresentation.usableDoses) ? "Bula Oficial do Fabricante (7 doses utilizáveis)" : "Divisão linear teórica",
       daysDuration: Math.round(daysDuration),
       costPerDose: costPerDose,
       fillPercentage: fillPercentage,
       warning: warning,
       warningLevel: warningLevel,
-      pharmacotechnicalNotice: pharmacotechnicalNotice
+      pharmacotechnicalNotice: isOfficial
+        ? `Apresentação Comercial Homologada: Concentração nominal oficial de bula de ${concentrationMgPerMl} mg/mL e ${Math.floor(totalDosesInVial)} doses utilizáveis declaradas pelo fabricante (DailyMed/FDA). Diluente bacteriostático fornecido: ${this.waterMl} mL. Conservação: ${this.activePresentation.storageNotice || '20°C a 25°C por até 7 dias'}.`
+        : pharmacotechnicalNotice
     };
   }
 
@@ -438,3 +807,7 @@ class PeptideCalculator {
 
 // Instância global para uso no app
 const peptideCalculator = new PeptideCalculator();
+if (typeof window !== 'undefined') {
+  window.PeptideCalculator = PeptideCalculator;
+  window.peptideCalculator = peptideCalculator;
+}
