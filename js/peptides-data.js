@@ -9051,11 +9051,11 @@ const PEPTIDES_DATABASE = [
     },
     "reconstitution": {
       "vialSize": "Frasco-ampola com pó liofilizado (ex: 5000 UI ou 10000 UI)",
-      "recommendedDiluent": "Diluente estéril oficial (solução fisiológica de cloreto de sódio 0,9%)",
+      "recommendedDiluent": "Água Bacteriostática para Injeção (com 0,9% álcool benzílico) fornecida pelo fabricante (ex: Pregnyl) ou diluente estéril oficial específico",
       "recommendedBacWater": "1,0 mL a 2,0 mL",
       "resultingConcentration": "2500 UI/mL ou 5000 UI/mL conforme diluição oficial",
       "storageUnmixed": "20°C a 25°C antes da reconstituição",
-      "storageMixed": "Estritamente refrigerado a 2°C a 8°C protegido da luz; descartar em 30 a 60 dias conforme a marca farmacêutica.",
+      "storageMixed": "Estritamente refrigerado a 2°C a 8°C protegido da luz; quando reconstituído com diluente bacteriostático oficial (álcool benzílico), descartar conforme bula (ex: Pregnyl até 60 dias, Novarel até 30 dias); se reconstituído com diluente sem conservante, uso imediato.",
       "handlingNotes": "Injetar o diluente pelas paredes internas sem agitação vigorosa para não desnaturar as cadeias proteicas."
     },
     "synergies": [],

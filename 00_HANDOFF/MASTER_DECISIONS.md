@@ -33,13 +33,13 @@ Este documento registra todas as decisões arquiteturais, científicas, farmacot
 - **Decisão:** O PeptiPedia deve calcular rigorosamente a concentração nominal de 8,00 mg/mL da Egrifta WR, vedando terminantemente a exibição da divisão aritmética simplista 11,6 / 1,3 = 8,92 mg/mL, que ignora o sobreenchimento exigido para a retirada das 7 doses completas.
 - **Fontes:** Bula FDA Egrifta WR (Suplemento S020) e Egrifta SV (Suplemento S018).
 
-### FDR-002: Distinção Categórica de Prazos Microbiológicos e Estabilidade Química (USP <797>)
-- **Contexto:** Anteriormente, havia confusão entre a taxa de degradação da cadeia de aminoácidos (química) e o prazo limite de uso após punção/reconstituição (assepsia microbiológica).
+### FDR-002: Distinção Categórica de Prazos Microbiológicos e Estabilidade Química (USP <797> e USP <51>)
+- **Contexto:** Anteriormente, havia confusão entre a taxa de degradação da cadeia de aminoácidos (química), o prazo limite microbiológico de assepsia após punção e a eficácia de conservantes antimicrobianos.
 - **Decisão:**
-  1. Diluentes com conservantes antimicrobianos (Álcool Benzílico 0.9%, Meta-cresol): Limite microbiológico de até 28 dias após primeira punção sob refrigeração constante (2°C a 8°C).
-  2. Diluentes sem conservantes (Água Estéril para Injeção - SWFI, Soro Fisiológico 0.9%): Uso imediato ou descarte em no máximo 24-48 horas refrigerado.
-  3. Diluentes com Ácido Acético Diluído (0.6%): Possuem ação bacteriostática moderada em meio ácido e jamais devem ser marcados com validade "0 dias".
-- **Consequência:** Rigor sanitário estrito alinhado à Farmacopeia Americana (USP <797>) e Brasileira (6ª Ed.).
+  1. *Recipientes multidose com conservantes antimicrobianos (Álcool Benzílico 0.9%, Meta-cresol, Fenol):* O teto microbiológico padrão sob USP <797> é de até 28 dias após primeira punção sob refrigeração (2°C a 8°C), **salvo se a rotulagem oficial do fabricante especificar prazo menor** (ex.: 7 dias para Egrifta WR, 14 dias para formulações específicas). A contenção antimicrobiana jamais garante estabilidade química ou potência biológica, que podem declinar antes desse limite.
+  2. *Recipientes monodose / diluentes isentos de conservantes (Água Estéril para Injeção - SWFI, Soro Fisiológico NaCl 0.9%):* Veículos estéreis puros sem agentes antimicrobianos. Frascos monodose puncionados fora de ambiente ISO Classe 5 devem ser utilizados em até 4 horas ou imediatamente (USP <797>). É vedada qualquer afirmação genérica ou universal de validade de 24–48 horas para soluções sem conservante; a estabilidade pós-reconstituição é determinada estritamente pela rotulagem/bula individual aprovada de cada produto.
+  3. *Diluentes com Ácido Acético Diluído (0.6% / pH ~3.5 a 4.0):* Trata-se exclusivamente de um veículo acidificado de solubilização física para peptídeos com pI básico propensos à agregação coloidal (ex.: IGF-1 LR3). **Não possui eficácia antimicrobiana validada como conservante multidose sob USP <51>**. Portanto, é classificado com `budDays: null` e categorizado como preparo extemporâneo estéril para uso imediato em protocolos de pesquisa, sendo proibida a atribuição de prazos de conservação multidose prolongados (ex.: 21 a 28 dias) ou alegações não comprovadas de bacteriostasia.
+- **Consequência:** Rigor sanitário e farmacotécnico estrito alinhado à Farmacopeia Americana (USP <797> e USP <51>) e às bulas oficiais homologadas pelas agências reguladoras (FDA/Anvisa/EMA).
 
 ### FDR-003: Tratamento de Compostos Investigacionais e Alertas de Uso Empírico
 - **Contexto:** Compostos sem aprovação regulatória para uso humano frequentemente circulam em fóruns com faixas de dosagem não homologadas.

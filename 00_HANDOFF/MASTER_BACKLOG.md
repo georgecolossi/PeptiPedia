@@ -13,7 +13,7 @@
 | **P0-2** | Paridade Raiz ↔ `public/` | Espelhamento de `index.html`, `css/style.css` e `js/*.js` para `public/` | **CONCLUÍDO** | SHA-256 100% idêntico em 10/10 arquivos auditados. |
 | **P0-3** | Zero Erros JS em Execução | Eliminação de exceções, `undefined`, `null` ou `NaN` visíveis | **CONCLUÍDO** | Console limpo em testes automatizados com Playwright. |
 | **P0-4** | Farmacotécnica da Tesamorelina (Egrifta WR) | Reconstituição com 1,3 mL para concentração nominal de 8,00 mg/mL (11,6 mg no frasco) | **CONCLUÍDO** | Bloqueado 8.92 mg/mL; validado na Suíte B e no Mutation Testing. |
-| **P0-5** | Prazos Microbiológicos e Diluentes | Diferenciação entre estabilidade química da molécula e prazo microbiológico de assepsia (USP <797>) | **CONCLUÍDO** | Diluentes com BAC limitados a 28 dias; SWFI 24-48h; ácido acético sem BUD numérico arbitrário. |
+| **P0-5** | Prazos Microbiológicos e Diluentes | Diferenciação entre estabilidade química da molécula e prazo microbiológico de assepsia (USP <797>) | **CONCLUÍDO** | Diluentes com BAC limitados a até 28 dias sob USP <797> (salvo bula específica); diluentes sem conservante (SWFI/NaCl 0,9%) para uso imediato sem prazo genérico de 24-48h; ácido acético sem conservante sob USP <51> e com budDays: null. |
 
 ---
 
