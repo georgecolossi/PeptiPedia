@@ -103,9 +103,9 @@ class TestRemediationH47(unittest.TestCase):
     def test_zero_cross_compound_bibliographic_collisions(self):
         c_map = {c["id"]: c for c in self.compounds_store}
         
-        # 1. Ates K (17467690) Peg-MGF
+        # 1. Ates K (17531227) Peg-MGF (FEBS Lett 2007)
         peg_sources = json.dumps(c_map["peg-mgf"].get("sources", []))
-        self.assertIn("17467690", peg_sources)
+        self.assertIn("17531227", peg_sources)
 
         # 2. Pickart L (29986520) GHK-Cu vs TB-500
         ghk_sources = json.dumps(c_map["ghk-cu"].get("sources", []))
@@ -113,11 +113,11 @@ class TestRemediationH47(unittest.TestCase):
         self.assertIn("29986520", ghk_sources)
         self.assertNotIn("29986520", tb_sources)
 
-        # 3. Bowers CY (8400827) GHRP-2 vs Ipamorelin
+        # 3. Pihoker C / Bowers CY (9543135) GHRP-2 vs Ipamorelin
         ghrp2_sources = json.dumps(c_map["ghrp-2"].get("sources", []))
         ipa_sources = json.dumps(c_map["ipamorelin"].get("sources", []))
-        self.assertIn("8400827", ghrp2_sources)
-        self.assertNotIn("8400827", ipa_sources)
+        self.assertIn("9543135", ghrp2_sources)
+        self.assertNotIn("9543135", ipa_sources)
 
         # 4. Dorr RT (8637402) Melanotan-2 vs Melanotan-1
         mt2_sources = json.dumps(c_map["melanotan-2"].get("sources", []))

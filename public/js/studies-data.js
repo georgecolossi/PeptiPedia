@@ -1004,7 +1004,7 @@ const CLINICAL_STUDIES_DATABASE = [
     "journal": "Journal of Pharmacology and Experimental Therapeutics",
     "year": 2012,
     "doi": "10.1124/jpet.112.199497",
-    "pmid": "23051674",
+    "pmid": "23055539",
     "studyDesign": "Estudo Farmacodinâmico Molecular de Sinaptogênese e Espinogênese",
     "sampleSize": "Culturas de neurônios piramidais hipocampais e modelos animais de Alzheimer",
     "duration": "Avaliações morfológicas e eletrofisiológicas seriadas",

@@ -5267,9 +5267,9 @@ const PEPTIDES_DATABASE = [
       {
         "title": "The novel angiotensin IV analog Dihexa promotes spinogenesis and facilitates synaptogenesis in hippocampal neurons",
         "journal": "Journal of Pharmacology and Experimental Therapeutics (2012)",
-        "pmid": "23051674",
+        "pmid": "23055539",
         "doi": "10.1124/jpet.112.199497",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/23051674/"
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23055539/"
       }
     ],
     "popularityScore": 88,

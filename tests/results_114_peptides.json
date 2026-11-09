@@ -82,7 +82,7 @@
     "name": "Tesamorelin",
     "categoryId": "gh-secretagogues",
     "contraindications_count": 3,
-    "structured_protocols_count": 1,
+    "structured_protocols_count": 3,
     "safety_header": "Contraindicações Formais de Bula (Medicamento Homologado)",
     "pending_review": "Concluído (H4.3.1)",
     "status": "PASS"
@@ -115,7 +115,7 @@
     "name": "Retatrutida",
     "categoryId": "metabolism",
     "contraindications_count": 2,
-    "structured_protocols_count": 1,
+    "structured_protocols_count": 4,
     "safety_header": "Critérios de Exclusão & Restrições Clínicas Documentadas",
     "pending_review": "Concluído (H4.3.1)",
     "status": "PASS"
@@ -159,7 +159,7 @@
     "name": "SS-31 (Elamipretide)",
     "categoryId": "longevity",
     "contraindications_count": 1,
-    "structured_protocols_count": 1,
+    "structured_protocols_count": 2,
     "safety_header": "Precauções Documentadas & Riscos Teóricos de Pesquisa",
     "pending_review": "P5.1 (Revisão Científica Aprofundada)",
     "status": "PASS"
@@ -269,8 +269,8 @@
     "name": "Orforglipron",
     "categoryId": "metabolism",
     "contraindications_count": 4,
-    "structured_protocols_count": 1,
-    "safety_header": "Critérios de Exclusão & Restrições Clínicas Documentadas",
+    "structured_protocols_count": 2,
+    "safety_header": "Contraindicações Formais de Bula (Foundayo® — FDA)",
     "pending_review": "P5.1 (Revisão Científica Aprofundada)",
     "status": "PASS"
   },
@@ -731,7 +731,7 @@
     "name": "HGH (Somatropina)",
     "categoryId": "rhgh-biologics",
     "contraindications_count": 4,
-    "structured_protocols_count": 1,
+    "structured_protocols_count": 3,
     "safety_header": "Contraindicações Formais de Bula (Medicamento Homologado)",
     "pending_review": "Concluído (H4.3.1)",
     "status": "PASS"

@@ -153,7 +153,14 @@
             criticalAlert: c.safetyProfile?.criticalAlert || ""
           },
           unitConventions: c.unitConventions || {},
-          sources: c.sources || []
+          sources: c.sources || [],
+          clinicalStudies: (c.sources || []).map(s => ({
+            title: s.title,
+            journal: s.journal || 'PubMed Reference',
+            year: s.year || '',
+            pmid: s.pmid,
+            url: s.url || (s.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${s.pmid}/` : '')
+          }))
         };
       });
     }
@@ -167,6 +174,8 @@
         return {
           id: s.id,
           name: s.canonicalName,
+          title: s.canonicalName,
+          badge: s.badge || (s.compositionType === 'commercial_fixed_blend' || s.compositionType === 'commercial_blend' ? 'Blend Comercial & Relato Comunitário' : 'Stack de Pesquisa'),
           category: s.category,
           peptides: (s.components || []).map(c => c.compoundId),
           summary: s.description || s.synergyRationale || "",

@@ -1,0 +1,11 @@
+testId,viewport,component,action,expectedBehavior,observedBehavior,consoleErrors,auditStatus
+UI-H49-01,Desktop (1280x800),DomainEngine & Catalogo Inicial,Carregamento inicial e integracao DomainEngine,"Status 200, DomainEngine ativo, 114 compostos e 19 stacks","HTTP 200, DomainEngine=True, 114 compostos, 19 stacks",0,APROVADO
+UI-H49-02,Desktop (1280x800),Busca em Tempo Real,Filtrar por 'Semax',Exibir card correspondente ao Semax,1 card(s) visivel(is),0,APROVADO
+UI-H49-03,Desktop (1280x800),Modal de Detalhes Cientificos,Abrir modal do Semax e inspecionar fontes,Exibir modal com evidencia e referencia PMID 16996037,Modal aberto com sucesso; referencia Dolotov/16996037=True,0,APROVADO
+UI-H49-04,Desktop (1280x800),Aba Stacks & Combinacoes,Navegar para aba de stacks e verificar KLOW,"Aba visivel contendo os 19 stacks, incluindo KLOW",Stacks renderizados; KLOW detectado=True,0,APROVADO
+UI-H49-05,Desktop (1280x800),Calculadora de Reconstituicao,Acessar interface da calculadora de diluicao,Interface interativa de dosagem e seringas carregada,Calculadora renderizada com sucesso (visivel=True),0,APROVADO
+UI-H49-06,Tablet (768x1024),Layout Responsivo Tablet,Carregamento e adaptacao de grid intermediario,Grid ajustado sem quebras de layout ou erros de console,"Renderizacao integra em 768px, erros=0",0,APROVADO
+UI-H49-07,Mobile (375x667),Layout Responsivo Mobile,Navegacao e renderizacao em viewport mobile,Menu condensado / cards em coluna unica sem scroll horizontal,"Renderizacao mobile correta em 375px, erros=0",0,APROVADO
+UI-H49-08,Desktop (1280x800),Filtro Negativo de Busca,Buscar termo inexistente 'COMPOSTO_INEXISTENTE_XYZ_999',Zero cards exibidos e estado vazio apresentado,"Cards visiveis=0, tratamento de busca sem resultados=True",0,APROVADO
+UI-H49-09,Headless Runtime,DomainEngine Fail-Closed,Executar validateReferentialIntegrity com stack referenciando composto inexistente,Retornar { valid: false } com erros descritivos,"Rejeicao fail-closed confirmada (valid=false, erro emitido)=True",0,APROVADO
+UI-H49-10,Headless Runtime,Regressao 59 Compostos Sistemicos,Verificar ausencia de strings de cosmetica em unitConventions,Zero residuos de boilerplate em compostos sistemicos,Verificacao 100% limpa (boilerplate_free=True),0,APROVADO
