@@ -912,7 +912,7 @@
     "frequency": "Ciclo de 10-20 dias (anual/semestral)",
     "duration": "3 semanas",
     "administrationContext": "Administração Intramuscular (IM) em regime Ciclo de 10-20 dias (anual/semestral) por 3 semanas.",
-    "formulation": "Frasco liofilizado de Ampolas líquidas estéreis de 5 mL ou 10 mL prontas para uso",
+    "formulation": "Ampolas líquidas estéreis de 5 mL ou 10 mL prontas para uso",
     "reconstitutionInformation": {
       "diluent": "Solução Salina Estéril 0.9% (Uso Imediato)",
       "volume": "Já formulado em solução líquida pronta estéril de fábrica",
@@ -1240,7 +1240,7 @@
     "frequency": "1x ao dia (diário)",
     "duration": "52 semanas",
     "administrationContext": "Administração Oral em regime 1x ao dia (diário) por 52 semanas.",
-    "formulation": "Frasco liofilizado de Cápsulas Orais",
+    "formulation": "Cápsulas orais formuladas para administração matinal em jejum",
     "reconstitutionInformation": {
       "diluent": "Não se aplica (Cápsula / Comprimido Oral)",
       "volume": "Não se aplica (Oral)",
@@ -2166,7 +2166,7 @@
     "frequency": "1x ao dia (diário)",
     "duration": "8 semanas",
     "administrationContext": "Administração Oral (Cápsulas) em regime 1x ao dia (diário) por 8 semanas.",
-    "formulation": "Frasco liofilizado de Cápsulas de 50 mg",
+    "formulation": "Cápsulas orais de 50 mg de grau de pesquisa",
     "reconstitutionInformation": {
       "diluent": "Não se aplica (Via Oral / Cápsula)",
       "volume": "Não se aplica (composto oral formulado em cápsulas)",
@@ -2786,7 +2786,7 @@
     "frequency": "1x ao dia",
     "duration": "104 semanas",
     "administrationContext": "Administração Subcutânea (SC) em regime 1x ao dia por 104 semanas.",
-    "formulation": "Frasco liofilizado de Caneta preenchida multidose Tymlos® (3120 mcg / 1,56 mL)",
+    "formulation": "Caneta preenchida multidose Tymlos (3120 mcg / 1,56 mL entregando 80 mcg por dose em solução aquosa)",
     "reconstitutionInformation": {
       "diluent": "Não aplicável (solução pronta em caneta descartável do fabricante)",
       "volume": "0 mL (solução líquida pronta)",
@@ -2834,7 +2834,7 @@
     "frequency": "1x por semana",
     "duration": "52 semanas",
     "administrationContext": "Administração Subcutânea (SC) em regime 1x por semana por 52 semanas.",
-    "formulation": "Frasco liofilizado de Caneta pré-preenchida de dose única Trulicity® (0,75 mg / 1,5 mg / 3,0 mg / 4,5 mg em 0,5 mL)",
+    "formulation": "Caneta pré-preenchida descartável de dose única Trulicity (0,75 mg, 1,5 mg, 3,0 mg e 4,5 mg em 0,5 mL de solução estéril)",
     "reconstitutionInformation": {
       "diluent": "Não aplicável (solução líquida pronta para uso)",
       "volume": "0 mL",
@@ -3192,7 +3192,7 @@
     "frequency": "1x a 2x ao dia em sérum cosmético",
     "duration": "8 semanas",
     "administrationContext": "Administração Tópica em regime 1x a 2x ao dia por 8 semanas.",
-    "formulation": "Frasco liofilizado de Insumo cosmético formulado em sérum ou creme",
+    "formulation": "Insumo cosmético formulado em sérum ou creme tópico (3% a 5%)",
     "reconstitutionInformation": {
       "diluent": "Não aplicável (veículo cosmético formulado)",
       "volume": "0 mL",
@@ -3289,7 +3289,7 @@
     "frequency": "1x ao dia",
     "duration": "104 semanas",
     "administrationContext": "Administração Subcutânea (Caneta Pré-cheia Oficial) em regime Diária por 104 semanas.",
-    "formulation": "Frasco liofilizado de Caneta pré-carregada multidose contendo 600 mcg / 2,4 mL (entrega 20 mcg por dose)",
+    "formulation": "Caneta pré-carregada multidose contendo 600 mcg / 2,4 mL (solução aquosa estéril, 20 mcg/dose)",
     "reconstitutionInformation": {
       "diluent": "Solução pré-formulada estéril pronta para uso",
       "volume": "N/A (solução aquosa pronta)",
@@ -3339,7 +3339,7 @@
     "frequency": "1x ao dia",
     "duration": "52 semanas",
     "administrationContext": "Administração Subcutânea (Caneta Pré-cheia Multidose Oficial) em regime Uma vez ao dia por 52 semanas.",
-    "formulation": "Frasco liofilizado de Cartuchos multidose Yorvipath (600 mcg/mL, 1200 mcg/mL, 1800 mcg/mL)",
+    "formulation": "Cartuchos multidose Yorvipath (solução aquosa injetável SC: 600, 1200, 1800 mcg/mL)",
     "reconstitutionInformation": {
       "diluent": "Solução pré-formulada pronta para injeção",
       "volume": "N/A",
@@ -3430,7 +3430,7 @@
     "frequency": "A cada 4 semanas",
     "duration": "52 semanas",
     "administrationContext": "Administração Subcutânea Profunda (Seringa Pré-carregada Oficial) em regime A cada 28 dias por 52 semanas.",
-    "formulation": "Frasco liofilizado de Seringas pré-cheias de 60 mg/0,2 mL, 90 mg/0,3 mL e 120 mg/0,5 mL com sistema de segurança",
+    "formulation": "Seringas pré-cheias de autogel de 60 mg/0,2 mL, 90 mg/0,3 mL e 120 mg/0,5 mL com sistema de segurança",
     "reconstitutionInformation": {
       "diluent": "Gel autossuspensível pré-carregado pronto para injeção",
       "volume": "N/A",
@@ -3523,7 +3523,7 @@
     "frequency": "Infusão contínua em bomba",
     "duration": "52 semanas",
     "administrationContext": "Administração Intratecal Contínua (Bomba de Infusão Implantável Medtronic SynchroMed II) em regime Infusão contínua por 52 semanas.",
-    "formulation": "Frasco liofilizado de Frascos-ampola estéreis Prialt de 100 mcg/mL (frascos de 1 mL, 2 mL e 5 mL) e 250 mcg/mL (frasco de 20 mL)",
+    "formulation": "Frascos-ampola estéreis Prialt de 100 mcg/mL ou 250 mcg/mL (solução aquosa para infusão contínua em bomba intratecal)",
     "reconstitutionInformation": {
       "diluent": "Solução estéril de cloreto de sódio 0,9% livre de conservantes para diluição no reservatório da bomba",
       "volume": "Proibido uso de água bacteriostática com álcool benzílico (neurotóxico no LCR)",
@@ -3759,7 +3759,7 @@
     "frequency": "A cada 28 dias (ou 10,8 mg a cada 12 semanas)",
     "duration": "24 semanas",
     "administrationContext": "Administração Subcutânea Abdominal (Implante Sólido Estéril em Seringa com Sistema de Segurança) em regime Periódica conforme implante oficial por 24 semanas.",
-    "formulation": "Frasco liofilizado de Seringa aplicadora estéril contendo implante cilíndrico pré-carregado de 3,6 mg ou 10,8 mg",
+    "formulation": "Seringa aplicadora estéril contendo implante cilíndrico sólido biodegradável de 3,6 mg ou 10,8 mg",
     "reconstitutionInformation": {
       "diluent": "N/A (implante sólido pronto para inserção via trocarte/agulha)",
       "volume": "Proibida diluição líquida",
@@ -3806,7 +3806,7 @@
     "frequency": "Infusão contínua hospitalar até 48 horas",
     "duration": "1 semanas",
     "administrationContext": "Administração Intravenosa Hospitalar (Bolus seguido por Infusão Contínua) em regime Infusão intravenosa hospitalar contínua por 1 semanas.",
-    "formulation": "Frasco liofilizado de Frascos para injeção em bolus (6,75 mg/0,9 mL) e frascos concentrados para infusão (37,5 mg/5 mL)",
+    "formulation": "Frascos para injeção em bolus (6,75 mg/0,9 mL) e frascos concentrados de solução injetável (37,5 mg/5 mL)",
     "reconstitutionInformation": {
       "diluent": "Solução estéril de glicose a 5%, solução de cloreto de sódio 0,9% ou solução de Ringer lactato",
       "volume": "Usar exclusivamente os diluentes parenterais hospitalares estéreis",
@@ -3856,7 +3856,7 @@
     "frequency": "1x ao dia pela manhã em jejum",
     "duration": "12 semanas",
     "administrationContext": "Administração Oral (Cápsulas Rígidas Oficiais com Microgrânulos) em regime Diária matinal por 12 semanas.",
-    "formulation": "Frasco liofilizado de Cápsulas orais de 72 mcg, 145 mcg e 290 mcg",
+    "formulation": "Cápsulas orais de 72 mcg, 145 mcg e 290 mcg",
     "reconstitutionInformation": {
       "diluent": "N/A (cápsula sólida oral ingerida com água)",
       "volume": "Proibida reconstituição injetável",
@@ -3902,7 +3902,7 @@
     "frequency": "1x ao dia",
     "duration": "12 semanas",
     "administrationContext": "Administração Oral (Comprimidos Simples Oficiais) em regime Uma vez ao dia por 12 semanas.",
-    "formulation": "Frasco liofilizado de Comprimidos de 3 mg em frascos de polietileno de alta densidade",
+    "formulation": "Comprimidos orais de 3 mg em frascos de polietileno de alta densidade",
     "reconstitutionInformation": {
       "diluent": "N/A (comprimido oral)",
       "volume": "Proibida diluição injetável",
@@ -3948,7 +3948,7 @@
     "frequency": "Dose única em emergência hipoglicêmica",
     "duration": "1 semanas",
     "administrationContext": "Administração Subcutânea de Emergência (Autoinjetor ou Seringa Pré-carregada Pronta) em regime Emergencial conforme episódio hipoglicêmico por 1 semanas.",
-    "formulation": "Frasco liofilizado de Autoinjetor ou seringa pré-cheia Zegalogue entregando 0,6 mg em 0,6 mL de solução aquosa clara e incolor",
+    "formulation": "Autoinjetor ou seringa pré-cheia Zegalogue entregando 0,6 mg/0,6 mL de solução líquida aquosa estável",
     "reconstitutionInformation": {
       "diluent": "Solução aquosa estabilizada pronta de fábrica",
       "volume": "Proibida diluição adicional",
@@ -4041,7 +4041,7 @@
     "frequency": "1x a 2x ao dia",
     "duration": "12 semanas",
     "administrationContext": "Administração Oral (Comprimidos ou Liofilizado Oral Melt) em regime Uma vez ao deitar por 12 semanas.",
-    "formulation": "Frasco liofilizado de Comprimidos de 0,1 mg e 0,2 mg; Liofilizado sublingual Melt de 60 mcg e 120 mcg; Ampolas de 4 mcg/mL",
+    "formulation": "Comprimidos orais de 0,1 mg e 0,2 mg; Liofilizado oral Melt 60 e 120 mcg; Spray nasal 10 mcg/dose; Ampolas 4 mcg/mL",
     "reconstitutionInformation": {
       "diluent": "N/A para comprimidos; solução fisiológica 0,9% estéril para infusão hospitalar",
       "volume": "Proibido para formulações orais",
@@ -4089,7 +4089,7 @@
     "frequency": "Imediatamente antes das refeições principais",
     "duration": "52 semanas",
     "administrationContext": "Administração Subcutânea Prandial (Caneta Injetora Pré-calibrada SymlinPen) em regime 2 a 3 vezes ao dia pré-prandial por 52 semanas.",
-    "formulation": "Frasco liofilizado de Canetas aplicadoras SymlinPen 60 (doses de 15, 30, 45, 60 mcg) e SymlinPen 120 (doses de 60 e 120 mcg)",
+    "formulation": "Canetas aplicadoras SymlinPen 60 (15, 30, 45, 60 mcg) e SymlinPen 120 (60, 120 mcg) em solução aquosa estéril",
     "reconstitutionInformation": {
       "diluent": "Solução aquosa estéril pronta em cartucho pré-carregado",
       "volume": "Proibida diluição",
@@ -4181,7 +4181,7 @@
     "frequency": "2x ao dia (ou 2 mg SC semanal em suspensão)",
     "duration": "52 semanas",
     "administrationContext": "Administração Subcutânea (Caneta Pré-cheia Oficial Byetta) em regime Duas vezes ao dia por 52 semanas.",
-    "formulation": "Frasco liofilizado de Canetas pré-carregadas Byetta entregando 5 mcg/dose ou 10 mcg/dose (cartuchos de 1,2 mL ou 2,4 mL)",
+    "formulation": "Canetas pré-carregadas Byetta (solução: 5 ou 10 mcg/dose) e autoinjetores Bydureon BCise (suspensão de microesferas: 2 mg)",
     "reconstitutionInformation": {
       "diluent": "Solução aquosa estéril pronta em cartucho selado",
       "volume": "Proibida diluição",
@@ -4229,7 +4229,7 @@
     "frequency": "1x ao dia antes da primeira refeição",
     "duration": "52 semanas",
     "administrationContext": "Administração Subcutânea (Caneta Pré-carregada Oficial) em regime Uma vez ao dia por 52 semanas.",
-    "formulation": "Frasco liofilizado de Canetas pré-cheias descartáveis de 10 mcg/dose (verde) e 20 mcg/dose (bordô) com 3 mL de solução",
+    "formulation": "Canetas pré-cheias descartáveis de 10 mcg/dose (verde) e 20 mcg/dose (bordô) com 3 mL de solução estéril",
     "reconstitutionInformation": {
       "diluent": "Solução estéril pronta em cartucho de vidro",
       "volume": "Proibida diluição",
