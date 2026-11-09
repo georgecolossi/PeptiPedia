@@ -15202,3 +15202,17 @@ const THERAPEUTIC_TARGETS = [
   { id: "imunidade", name: "Imunidade & Defesa" },
   { id: "libido", name: "Libido & Função Sexual" }
 ];
+
+// H4.7: Sincronizacao automatica com DomainEngine se disponivel
+if (typeof DomainEngine !== 'undefined') {
+  try {
+    const canonicalPeptides = DomainEngine.rebuildPeptidesDatabase();
+    PEPTIDES_DATABASE.length = 0;
+    PEPTIDES_DATABASE.push(...canonicalPeptides);
+    if (typeof window !== 'undefined') {
+      window.PEPTIDES_DATABASE = PEPTIDES_DATABASE;
+    }
+  } catch (e) {
+    console.warn('[PeptiPedia] Erro ao sincronizar PEPTIDES_DATABASE com DomainEngine:', e);
+  }
+}

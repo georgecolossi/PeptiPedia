@@ -1,0 +1,11 @@
+﻿checkId,scope,expected,status
+CHK-01,UI Integration,index.html loads js/domain/*.js and app.js uses DomainEngine,VERIFIED
+CHK-02,Molecular Classification,"Orforglipron, SLU-PP-332, SLU-PP-915 = small_molecule; Cortexin = biological_extract",VERIFIED
+CHK-03,Unit Conventions,Zero systemic parenteral compounds with cosmetic boilerplate,VERIFIED
+CHK-04,Bibliographic Collisions,13 cross-compound PMID collisions rectified with primary sources,VERIFIED
+CHK-05,KLOW Stack,"KLOW registered in STACKS_STORE (80 mg blend, 4 components) and PROTOCOLS_STORE",VERIFIED
+CHK-06,GLOW Reconciliation,70 mg vial (5:1:1) reconciled with daily administration schedule,VERIFIED
+CHK-07,Protocol Sanitization,25 artificial placeholders decommissioned; 25 clinical drugs populated with real doses,VERIFIED
+CHK-08,Setmelanotide Sources,FDA NDA 213793 and Phase 3 trial PMIDs populated,VERIFIED
+CHK-09,DomainEngine Parameterization,validateReferentialIntegrity accepts customData; create factory exposed,VERIFIED
+CHK-10,Parity Mirror,100% SHA-256 match between js/domain and public/js/domain,VERIFIED

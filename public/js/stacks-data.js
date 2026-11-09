@@ -1101,3 +1101,17 @@ if (typeof window !== 'undefined') {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { RESEARCH_STACKS };
 }
+
+// H4.7: Sincronizacao automatica com DomainEngine se disponivel
+if (typeof DomainEngine !== 'undefined') {
+  try {
+    const canonicalStacks = DomainEngine.rebuildResearchStacks();
+    RESEARCH_STACKS.length = 0;
+    RESEARCH_STACKS.push(...canonicalStacks);
+    if (typeof window !== 'undefined') {
+      window.RESEARCH_STACKS = RESEARCH_STACKS;
+    }
+  } catch (e) {
+    console.warn('[PeptiPedia] Erro ao sincronizar RESEARCH_STACKS com DomainEngine:', e);
+  }
+}

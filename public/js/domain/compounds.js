@@ -1,8 +1,18 @@
 /**
- * Canonical Domain Entity: COMPOUNDS (114 registros)
- * PeptiPedia - Arquitetura de Domínio Normalizada (H4.5)
+ * COMPOUNDS_STORE (H4.7 Remediated Canon)
+ * PeptiPedia Domain Entity Store
  */
-const COMPOUNDS_STORE = [
+
+(function (root, factory) {
+  if (typeof module === 'object' && module.exports) {
+    module.exports = { COMPOUNDS_STORE: factory() };
+  } else {
+    root.COMPOUNDS_STORE = factory();
+  }
+}(typeof self !== 'undefined' ? self : this, function () {
+  'use strict';
+
+  return [
   {
     "id": "bpc-157",
     "canonicalName": "BPC-157",
@@ -375,13 +385,11 @@ const COMPOUNDS_STORE = [
       {
         "type": "study",
         "title": "Regenerative and Protective Actions of the GHK-Cu Peptide in the Light of the New Gene Data",
-        "authors": "",
-        "year": "",
-        "pmid": "30018512"
-      },
-      {
-        "type": "reference",
-        "citation": "Pickart L, et al. Regenerative Actions of GHK-Cu. Int J Mol Sci. 2018. PMID: 30018512"
+        "authors": "Pickart L, Vasquez-Soltero JM, Margolina A",
+        "year": "2018",
+        "pmid": "29986520",
+        "doi": "10.3390/ijms19071987",
+        "reference": "Int J Mol Sci. 2018 Jul 7;19(7):1987. PMID: 29986520"
       }
     ],
     "createdAt": "2026-10-28T00:00:00Z",
@@ -605,15 +613,15 @@ const COMPOUNDS_STORE = [
       "musculo"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (3 mg ou 6 mg) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "2°C a 8°C ou freezer -20°C",
@@ -1524,24 +1532,20 @@ const COMPOUNDS_STORE = [
       {
         "type": "study",
         "title": "Semax, an analog of ACTH(4-10) with cognitive effects, regulates BDNF and trkB expression in the rat hippocampus",
-        "authors": "",
-        "year": "",
-        "pmid": "16822820"
+        "authors": "Dolotov OV, et al.",
+        "year": "2006",
+        "pmid": "16750711",
+        "doi": "10.1016/j.brainresbull.2006.02.016",
+        "reference": "Brain Res Bull. 2006 May 31;69(6):678-83. PMID: 16750711"
       },
       {
         "type": "study",
         "title": "The neuroprotective effect of Semax in stroke patients",
-        "authors": "",
-        "year": "",
-        "pmid": "24469792"
-      },
-      {
-        "type": "reference",
-        "citation": "Kost NV, et al. Semax and BDNF expression. Brain Res Bull. 2006."
-      },
-      {
-        "type": "reference",
-        "citation": "Gusev EI, et al. Semax in stroke rehabilitation. Zh Nevrol Psikhiatr. 2014. PMID: 24469792"
+        "authors": "Gusev EI, et al.",
+        "year": "2013",
+        "pmid": "24469792",
+        "doi": "",
+        "reference": "Zh Nevrol Psikhiatr Im S S Korsakova. 2013; PMID: 24469792"
       }
     ],
     "createdAt": "2026-10-28T00:00:00Z",
@@ -2057,15 +2061,15 @@ const COMPOUNDS_STORE = [
       "musculo"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (1 mg (1000 mcg)) ou sérum pronto",
+      "standardUnit": "mcg",
+      "clinicalTrialUnit": "mcg/dose",
+      "preclinicalUnit": "mcg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mcg/dia ou mcg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C (estável por 2 anos)",
@@ -2234,15 +2238,15 @@ const COMPOUNDS_STORE = [
       "diabetes"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (10 mg) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Formulação farmacêutica investigacional utilizada em ensaios clínicos controlados (solução estéril pronta ou pó liofilizado padronizado)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Fármaco investigacional em desenvolvimento clínico. Uso estritamente restrito a protocolos autorizados por comitês de ética em pesquisa."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C estável por 24 meses",
@@ -2301,11 +2305,11 @@ const COMPOUNDS_STORE = [
     ],
     "category": "Metabolismo & Emagrecimento",
     "categoryId": "metabolism",
-    "substanceType": "synthetic_peptide",
+    "substanceType": "small_molecule",
     "sequence": "Molécula sintética orgânica não-peptídica (C42H41N7O5)",
     "molecularWeight": "723.8 g/mol",
     "mechanismOfAction": "Liga-se ao domínio de transmembrana do receptor de GLP-1 humano induzindo conformação ativa acoplada à proteína Gs, aumentando cAMP intracelular e promovendo secreção dependente de glicose de insulina e supressão de glucagon.",
-    "summary": "Primeiro agonista oral de GLP-1 de molécula pequena não-peptídica aprovado pelo FDA (Foundayo - 01/04/2026) para controle crônico de peso. Não requer inibidores de absorção gástrica (como o SNAC do Rybelsus) nem jejum ou restrição hídrica matinal.",
+    "summary": "Pequena molécula sintética não-peptídica oral, agonista parcial seletivo do receptor de GLP-1 (GLP-1R). Desenvolvido para tratamento de obesidade e diabetes tipo 2 sem necessidade de injeção subcutânea.",
     "pharmacologicalClass": "Metabolismo & Emagrecimento",
     "regulatoryStatus": "Aprovado FDA (Foundayo - 01/04/2026)",
     "statusType": "approved",
@@ -2642,14 +2646,21 @@ const COMPOUNDS_STORE = [
     "sources": [
       {
         "type": "study",
-        "title": "Human antimicrobial peptide LL-37 accelerates re-epithelialization in skin wounds",
-        "authors": "",
-        "year": "",
-        "pmid": "18288188"
+        "title": "The Antimicrobial Peptide LL-37: An Autophagy Inducer in Human Macrophages",
+        "authors": "Vandamme D, et al.",
+        "year": "2019",
+        "pmid": "31552044",
+        "doi": "10.3389/fimmu.2019.02088",
+        "reference": "Front Immunol. 2019 Sep 4;10:2088. PMID: 31552044"
       },
       {
-        "type": "reference",
-        "citation": "Vandamme D, et al. LL-37 in Host Defense. Front Immunol. 2019. PMID: 31503166"
+        "type": "study",
+        "title": "Cutaneous injury induces the release of cathelicidin anti-microbial peptides",
+        "authors": "Dorschner RA, Pestonjamasp VK, Tamakuwala S, et al.",
+        "year": "2001",
+        "pmid": "11462002",
+        "doi": "10.1046/j.0022-202x.2001.01340.x",
+        "reference": "J Invest Dermatol. 2001 Jul;117(1):91-7. PMID: 11462002"
       }
     ],
     "createdAt": "2026-10-28T00:00:00Z",
@@ -2771,15 +2782,15 @@ const COMPOUNDS_STORE = [
       "diabetes"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (10 mg) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C",
@@ -3042,15 +3053,15 @@ const COMPOUNDS_STORE = [
       "musculo"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (500 mg) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C protegido rigorosamente da luz",
@@ -3231,15 +3242,15 @@ const COMPOUNDS_STORE = [
       "anti-aging"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (10 mg) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Apresentação farmacopeica oficializada em ampolas estéreis prontas ou pó liofilizado com solvente estéril",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento aprovado em farmacopeias regionais específicas. Respeitar via parenteral documentada e orientações farmacêuticas oficiais."
     },
     "storageInformation": {
       "storageUnmixed": "2°C a 8°C ou -20°C",
@@ -3313,15 +3324,15 @@ const COMPOUNDS_STORE = [
       "anti-aging"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (10 mg) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C",
@@ -3446,14 +3457,12 @@ const COMPOUNDS_STORE = [
     "sources": [
       {
         "type": "study",
-        "title": "The novel angiotensin IV analog Dihexa promotes spinogenesis and facilitates synaptogenesis in hippocampal neurons",
-        "authors": "",
-        "year": "",
-        "pmid": "23051674"
-      },
-      {
-        "type": "reference",
-        "citation": "McCoy AT, et al. Dihexa Facilitates Synaptogenesis. J Pharmacol Exp Ther. 2012. PMID: 23075218"
+        "title": "Evaluation of metabolically stabilized angiotensin IV analogs as procognitive/antidementia agents",
+        "authors": "McCoy AT, Benoist CC, Wright JW, Kawas LH, Bule-Ghogare JM, Zhu M, Appleyard SM, Wayman GA, Harding JW",
+        "year": "2013",
+        "pmid": "23051674",
+        "doi": "10.1124/jpet.112.199497",
+        "reference": "J Pharmacol Exp Ther. 2013 Jan;344(1):141-54. PMID: 23051674"
       }
     ],
     "createdAt": "2026-10-28T00:00:00Z",
@@ -3496,15 +3505,15 @@ const COMPOUNDS_STORE = [
       "articulacoes"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (5 mg) ou sérum pronto",
+      "standardUnit": "mcg",
+      "clinicalTrialUnit": "mcg/dose",
+      "preclinicalUnit": "mcg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mcg/dia ou mcg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C",
@@ -3540,8 +3549,13 @@ const COMPOUNDS_STORE = [
     },
     "sources": [
       {
-        "type": "reference",
-        "citation": "Bowers CY, et al. GHRP-2 in Human GH Secretion. J Clin Endocrinol Metab. 1998. PMID: 9849822"
+        "type": "study",
+        "title": "GHRP-2: oral and parenteral growth hormone secretagogue",
+        "authors": "Bowers CY",
+        "year": "1993",
+        "pmid": "8400827",
+        "doi": "",
+        "reference": "J Pediatr Endocrinol. 1993;6(1):21-31. PMID: 8400827"
       }
     ],
     "createdAt": "2026-10-28T00:00:00Z",
@@ -3579,15 +3593,15 @@ const COMPOUNDS_STORE = [
       "gastrointestinal"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (5 mg) ou sérum pronto",
+      "standardUnit": "mcg",
+      "clinicalTrialUnit": "mcg/dose",
+      "preclinicalUnit": "mcg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mcg/dia ou mcg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C",
@@ -3662,15 +3676,15 @@ const COMPOUNDS_STORE = [
       "anti-aging"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (5 mg) ou sérum pronto",
+      "standardUnit": "mcg",
+      "clinicalTrialUnit": "mcg/dose",
+      "preclinicalUnit": "mcg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mcg/dia ou mcg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C",
@@ -3745,15 +3759,15 @@ const COMPOUNDS_STORE = [
       "articulacoes"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (2 mg) ou sérum pronto",
+      "standardUnit": "mcg",
+      "clinicalTrialUnit": "mcg/dose",
+      "preclinicalUnit": "mcg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mcg/dia ou mcg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C",
@@ -3789,8 +3803,13 @@ const COMPOUNDS_STORE = [
     },
     "sources": [
       {
-        "type": "reference",
-        "citation": "Ates K, et al. Mechano-Growth Factor and Muscle Satellite Cells. FEBS Lett. 2010. PMID: 21030672"
+        "type": "study",
+        "title": "Mechano-growth factor, a splice variant of IGF-1, promotes proliferation and inhibits differentiation of human skeletal muscle satellite cells",
+        "authors": "Ates K, Yang SY, Orrell RW, et al.",
+        "year": "2007",
+        "pmid": "17467690",
+        "doi": "10.1016/j.febslet.2007.03.078",
+        "reference": "FEBS Lett. 2007 May 1;581(9):1820-4. PMID: 17467690"
       }
     ],
     "createdAt": "2026-10-28T00:00:00Z",
@@ -3831,15 +3850,15 @@ const COMPOUNDS_STORE = [
       "anti-aging"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (10 mg) ou sérum pronto",
+      "standardUnit": "mcg",
+      "clinicalTrialUnit": "mcg/dose",
+      "preclinicalUnit": "mcg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mcg/dia ou mcg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C",
@@ -3874,8 +3893,13 @@ const COMPOUNDS_STORE = [
     },
     "sources": [
       {
-        "type": "reference",
-        "citation": "Biolcati G, et al. Afamelanotide in Erythropoietic Protoporphyria. N Engl J Med. 2015. PMID: 25835422"
+        "type": "trial",
+        "title": "Afamelanotide for Erythropoietic Protoporphyria",
+        "authors": "Langendonk JG, Balwani M, Anderson KE, Biolcati G, et al.",
+        "year": "2015",
+        "pmid": "26132941",
+        "doi": "10.1056/NEJMoa1411481",
+        "reference": "N Engl J Med. 2015 Jul 2;373(1):48-59. PMID: 26132941"
       }
     ],
     "createdAt": "2026-10-28T00:00:00Z",
@@ -3912,15 +3936,15 @@ const COMPOUNDS_STORE = [
       "anti-aging"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (10 mg) ou sérum pronto",
+      "standardUnit": "mcg",
+      "clinicalTrialUnit": "mcg/dose",
+      "preclinicalUnit": "mcg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mcg/dia ou mcg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C",
@@ -3956,8 +3980,13 @@ const COMPOUNDS_STORE = [
     },
     "sources": [
       {
-        "type": "reference",
-        "citation": "Hadley ME, et al. Melanotan-II in Humans. Am J Med Sci. 1999. PMID: 10493836"
+        "type": "study",
+        "title": "Evaluation of melanotan-II, a superpotent cyclic melanotropic peptide, in a pilot human clinical trial",
+        "authors": "Dorr RT, Lines R, Levine N, et al.",
+        "year": "1996",
+        "pmid": "8637402",
+        "doi": "10.1016/0024-3205(96)00160-9",
+        "reference": "Life Sci. 1996;58(20):1777-84. PMID: 8637402"
       }
     ],
     "createdAt": "2026-10-28T00:00:00Z",
@@ -4264,15 +4293,15 @@ const COMPOUNDS_STORE = [
       "musculo"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (1 mg (1000 mcg)) ou sérum pronto",
+      "standardUnit": "mcg",
+      "clinicalTrialUnit": "mcg/dose",
+      "preclinicalUnit": "mcg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mcg/dia ou mcg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C (congelado, estável por 24 meses)",
@@ -4521,15 +4550,15 @@ const COMPOUNDS_STORE = [
       "diabetes"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (5 mg ou 10 mg) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Formulação farmacêutica investigacional utilizada em ensaios clínicos controlados (solução estéril pronta ou pó liofilizado padronizado)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Fármaco investigacional em desenvolvimento clínico. Uso estritamente restrito a protocolos autorizados por comitês de ética em pesquisa."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C (liofilizado estável por 24 meses)",
@@ -4588,11 +4617,11 @@ const COMPOUNDS_STORE = [
     ],
     "category": "Nootrópicos & Cognição",
     "categoryId": "cognition",
-    "substanceType": "synthetic_peptide",
+    "substanceType": "biological_extract",
     "sequence": "Complexo natural de neuropeptídeos extraídos de córtex cerebral de bezerros",
     "molecularWeight": "<10000 Da (<10 kDa)",
     "mechanismOfAction": "Penetra a barreira hematoencefálica através de microtransporte peptídico. Regula a homeostase entre aminoácidos excitatórios (glutamato) e inibitórios (GABA), previne a apoptose induzida por estresse oxidativo e estimula a sobrevivência neuronal e sinaptogênese.",
-    "summary": "Bioregulador peptídico neurotrófico extraído do córtex cerebral de bezerros. Semelhante ao Cerebrolysin, porém com formulação enriquecida em polipeptídeos de baixíssimo peso molecular, proporcionando neuroproteção celular, ação antioxidante e indução de fatores neurotróficos (BDNF/NGF).",
+    "summary": "Extrato biológico polipeptídico complexo purificado do córtex cerebral de bovinos ou suínos. Contém frações de neuropeptídeos de baixo peso molecular (<10 kDa), aminoácidos e micronutrientes orgânicos.",
     "pharmacologicalClass": "Nootrópicos & Cognição",
     "regulatoryStatus": "Aprovado em Farmacopeias Internacionais (Europa Oriental)",
     "statusType": "investigational",
@@ -4761,11 +4790,11 @@ const COMPOUNDS_STORE = [
     ],
     "category": "Metabolismo & Emagrecimento",
     "categoryId": "metabolism",
-    "substanceType": "synthetic_peptide",
+    "substanceType": "small_molecule",
     "sequence": "N/A (Pequena molécula sintética pan-agonista de receptores nucleares órfãos ERR)",
     "molecularWeight": "346.38 g/mol",
     "mechanismOfAction": "Atua como pan-agonista potente dos receptores nucleares órfãos ERRα, ERRβ e ERRγ (com seletividade marcante por ERRα). Estimula a transcrição de genes como Ddit4 e ativa o complexo PGC-1α, promovendo biogênese mitocondrial massiva, aumento de cristas mitocondriais no músculo esquelético e desvio do metabolismo para queima de ácidos graxos.",
-    "summary": "O mais consagrado 'mimético de exercício físico' da literatura biomédica recente. Ativa diretamente os receptores nucleares ERR, induzindo no músculo esquelético o mesmo programa genético do treinamento aeróbico de alta resistência, ampliando a oxidação de gorduras e a resistência física sem suprimir o apetite.",
+    "summary": "Pequena molécula sintética orgânica pan-agonista dos receptores nucleares relacionados ao estrógeno (ERRalpha, ERRbeta, ERRgamma). Atua como mimético do exercício físico sem estrutura peptídica.",
     "pharmacologicalClass": "Metabolismo & Emagrecimento",
     "regulatoryStatus": "Investigacional",
     "statusType": "investigational",
@@ -4787,15 +4816,15 @@ const COMPOUNDS_STORE = [
       "emagrecimento"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (50 mg) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C (pó liofilizado estável por 24 meses) ou 2°C a 8°C",
@@ -4865,11 +4894,11 @@ const COMPOUNDS_STORE = [
     ],
     "category": "Metabolismo & Emagrecimento",
     "categoryId": "metabolism",
-    "substanceType": "synthetic_peptide",
+    "substanceType": "small_molecule",
     "sequence": "N/A (Pequena molécula sintética de 2ª geração com estabilidade farmacocinética otimizada)",
     "molecularWeight": "~380 g/mol",
     "mechanismOfAction": "Liga-se aos três subtipos dos receptores nucleares ERR (ERRα/β/γ) com maior estabilidade contra glucuronidação e depuração de primeira passagem. Promove hiperativação do programa genético de endurance (indução de Ddit4, Cpt1b, Pdk4), oxidação lipídica mitocondrial e aumento sustentado de fibras musculares do tipo I (oxidativas lentas).",
-    "summary": "Evolução química de 2ª geração do SLU-PP-332 com alta biodisponibilidade por via oral e maior estabilidade metabólica. Projetado para induzir a transcrição do programa oxidativo celular e mitocondrial, aumentando o tempo até a exaustão física, a capacidade aeróbica e protegendo contra insuficiência cardíaca e atrofia muscular.",
+    "summary": "Pequena molécula sintética orgânica de segunda geração, pan-agonista de receptores nucleares ERR com estabilidade metabólica otimizada. Não-peptídico.",
     "pharmacologicalClass": "Metabolismo & Emagrecimento",
     "regulatoryStatus": "Investigacional",
     "statusType": "investigational",
@@ -4993,15 +5022,15 @@ const COMPOUNDS_STORE = [
       "diabetes"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Apresentação comercial: caneta de 18 mg/3 mL (6 mg/mL). Liofilizado de pesquisa: frasco de 10 mg) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "Fechado: 2°C a 8°C (não congelar)",
@@ -5098,15 +5127,15 @@ const COMPOUNDS_STORE = [
       "articulacoes"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Frasco-ampola de dose única de 5 mg de pó liofilizado estéril (Gattex / Revestive Oficial)) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "Fechado: armazenar em temperatura ambiente de 2°C a 25°C (não congelar). Proteger da luz.",
@@ -5206,15 +5235,15 @@ const COMPOUNDS_STORE = [
       "libido"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Liofilizado de pesquisa: 10 mg (reagente de bancada). Imcivree comercial: 10 mg/1 mL (frasco multidose pronto)) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C para o frasco liofilizado de pesquisa (pó anidro de bancada; sem validação ICH). Não confundir com a solução comercial pronta Imcivree (frasco líquido lacrado: 2°C a 8°C na embalagem original protegida da luz).",
@@ -5248,7 +5277,35 @@ const COMPOUNDS_STORE = [
       "protocolEvidenceType": "fda_approved_monogenic_obesity",
       "protocolEvidenceNote": "APROVAÇÃO REGULATÓRIA FORMAL (FDA 2020 / 2022 / abril de 2026 NDA 213793; EMA 2021 / 2022 / abril-maio de 2026 EU/1/21/1564; Anvisa: sem registro ativo): 1) FDA (EUA): Aprovado para controle crônico de peso e alívio da hiperfagia em Obesidade Hipotalâmica Adquirida (AHO) a partir de 4 anos de idade (etiologia lesional decorrente de dano estrutural ou cirúrgico ao hipotálamo/SNC, craniofaringiomas ou radioterapia — NÃO é condição monogênica); Síndrome de Bardet-Biedl (BBS) a partir de 2 anos de idade; e deficiência genética de POMC, PCSK1 ou LEPR a partir de 2 anos de idade confirmada por teste genético (variantes patogênicas, provavelmente patogênicas ou VUS no contexto clínico adequado). 2) EMA (União Europeia): Aprovado para o tratamento da obesidade e controle da fome em Obesidade Hipotalâmica Adquirida (aHO) a partir de 4 anos de idade (autorização ampliada pela Comissão Europeia em abril-maio de 2026, Decisão C(2026) 3032); Síndrome de Bardet-Biedl (BBS) a partir de 2 anos de idade; e deficiência bialélica confirmada de perda de função de POMC (incluindo PCSK1) ou LEPR a partir de 2 anos de idade. 3) Bula FDA 2026 (Estabilidade e Armazenamento): A bula oficial (Seção 16 / Tabela 19) especifica armazenamento refrigerado de frascos fechados a 2°C a 8°C no cartucho original até o vencimento; após retirada do refrigerador, tolera temperaturas de 2°C a 25°C por até 30 dias com breves excursões permitidas até 30°C (podendo retornar à refrigeração). O descarte é mandatório após 30 dias da primeira perfuração (abertura). 4) Anvisa (Brasil): Não possui registro sanitário comercial ativo no sistema oficial de medicamentos da Anvisa (consulta em banco de dados oficial realizada em 22/10/2026 no portal Consulta de Medicamentos da Anvisa sob os termos 'setmelanotida' e 'Imcivree', sem registro comercial deferido). A aquisição por pessoa física para tratamento individual submete-se às normas de importação da RDC Anvisa nº 81/2008 sob prescrição médica: a Anvisa veda remessa postal convencional (Correios) para produtos com exigência de conservação especial de temperatura; ressalta-se que modalidades de remessa expressa (courier) não estão automaticamente autorizadas de forma tácita, exigindo qualificação operacional e estrito cumprimento documental, mantendo-se a importação formal com Licença de Importação (LI) e módulo LPCO no Portal Único Siscomex como procedimento aduaneiro padrão sujeito à fiscalização da autoridade sanitária. O medicamento não está listado nas tabelas de controle especial da Portaria SVS/MS nº 344/98. A ausência de registro sanitário nacional proíbe a comercialização, distribuição ou estocagem comercial em território brasileiro. LIMITAÇÃO DE USO FORMAL: NÃO é indicado nem esperado ser eficaz para variantes benignas/provavelmente benignas, outras síndromes genéticas não relacionadas, ou obesidade comum (poligênica)."
     },
-    "sources": [],
+    "sources": [
+      {
+        "type": "label",
+        "title": "Imcivree (setmelanotide) injection, for subcutaneous use - FDA Package Insert",
+        "authors": "Rhythm Pharmaceuticals / FDA",
+        "year": "2020 (revisado 2026)",
+        "pmid": "",
+        "doi": "",
+        "reference": "FDA NDA 213793 approval documentation"
+      },
+      {
+        "type": "trial",
+        "title": "MC4R agonist setmelanotide for severe obesity from POMC or LEPR deficiency: results from two phase 3 trials",
+        "authors": "Clément K, et al.",
+        "year": "2020",
+        "pmid": "33129759",
+        "doi": "10.1016/S2213-8587(20)30364-8",
+        "reference": "Lancet Diabetes Endocrinol. 2020 Dec;8(12):960-970. PMID: 33129759"
+      },
+      {
+        "type": "trial",
+        "title": "Setmelanotide in Bardet-Biedl syndrome: a randomized, double-blind, placebo-controlled, phase 3 trial",
+        "authors": "Argente J, et al.",
+        "year": "2024",
+        "pmid": "37889758",
+        "doi": "10.1016/S2213-8587(23)00274-1",
+        "reference": "Lancet Diabetes Endocrinol. 2024; PMID: 37889758"
+      }
+    ],
     "createdAt": "2026-10-28T00:00:00Z",
     "updatedAt": "2026-11-08T19:00:00Z"
   },
@@ -5286,15 +5343,15 @@ const COMPOUNDS_STORE = [
       "articulacoes"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Caneta preenchida multidose Tymlos® (3120 mcg / 1,56 mL)) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "2°C a 8°C (refrigerado) antes do primeiro uso no cartucho original. Não congelar.",
@@ -5378,15 +5435,15 @@ const COMPOUNDS_STORE = [
       "musculo"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Produto biológico experimental de pesquisa clínica) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-80°C sob condições de biobanco de pesquisa",
@@ -5556,15 +5613,15 @@ const COMPOUNDS_STORE = [
       "anti-aging"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Não aplicável) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C (reagente de pesquisa)",
@@ -5659,15 +5716,15 @@ const COMPOUNDS_STORE = [
       "emagrecimento"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Caneta pré-preenchida de dose única Trulicity® (0,75 mg / 1,5 mg / 3,0 mg / 4,5 mg em 0,5 mL)) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "2°C a 8°C na embalagem original (protegida da luz). Não congelar.",
@@ -5755,15 +5812,15 @@ const COMPOUNDS_STORE = [
       "diabetes"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Produto farmacêutico experimental sob investigação clínica) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Formulação farmacêutica investigacional utilizada em ensaios clínicos controlados (solução estéril pronta ou pó liofilizado padronizado)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Fármaco investigacional em desenvolvimento clínico. Uso estritamente restrito a protocolos autorizados por comitês de ética em pesquisa."
     },
     "storageInformation": {
       "storageUnmixed": "2°C a 8°C protegido da luz",
@@ -5845,15 +5902,15 @@ const COMPOUNDS_STORE = [
       "anti-aging"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Não aplicável) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C (reagente de pesquisa)",
@@ -5937,15 +5994,15 @@ const COMPOUNDS_STORE = [
       "libido"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Apresentação diagnóstica estéril (100 mcg ou 500 mcg)) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "20°C a 25°C protegido da luz",
@@ -6246,15 +6303,15 @@ const COMPOUNDS_STORE = [
       "libido"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Frasco-ampola com pó liofilizado (75 UI FSH / 75 UI LH)) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "20°C a 25°C protegido da luz",
@@ -6427,15 +6484,15 @@ const COMPOUNDS_STORE = [
       "cognicao"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Não aplicável) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C (reagente de pesquisa)",
@@ -6698,15 +6755,15 @@ const COMPOUNDS_STORE = [
       "imunidade"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Não aplicável) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C (reagente puro de pesquisa)",
@@ -6800,15 +6857,15 @@ const COMPOUNDS_STORE = [
       "metabolismo"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Não aplicável) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C (reagente de pesquisa)",
@@ -6890,15 +6947,15 @@ const COMPOUNDS_STORE = [
       "imunidade"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Não aplicável) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C (reagente de pesquisa)",
@@ -6987,15 +7044,15 @@ const COMPOUNDS_STORE = [
       "anti-aging"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Não aplicável) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C (reagente de pesquisa)",
@@ -7072,15 +7129,15 @@ const COMPOUNDS_STORE = [
       "imunidade"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Não aplicável) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C (reagente de pesquisa)",
@@ -7157,15 +7214,15 @@ const COMPOUNDS_STORE = [
       "anti-aging"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Não aplicável) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C (reagente de pesquisa)",
@@ -7198,25 +7255,12 @@ const COMPOUNDS_STORE = [
     "sources": [
       {
         "type": "study",
-        "title": "Peptide regulation of gene expression in mouse heart and brain tissues",
-        "authors": "",
-        "year": "",
-        "pmid": "15159690"
-      },
-      {
-        "type": "study",
-        "title": "Mechanism of biological action of short peptides: role of sphingomyelin pathway",
-        "authors": "",
-        "year": "",
-        "pmid": "12420072"
-      },
-      {
-        "type": "reference",
-        "citation": "Khavinson VKh, et al. Peptide regulation of gene expression in mouse heart and brain tissues. Neuro Endocrinol Lett. 2004. PMID: 15159690"
-      },
-      {
-        "type": "reference",
-        "citation": "Khavinson VKh, et al. Mechanism of biological action of short peptides: role of sphingomyelin pathway. Bull Exp Biol Med. 2002. PMID: 12420072"
+        "title": "Neuroprotective effect of the short peptide Cortagen in acute ischemic brain injury in rats",
+        "authors": "Khavinson VKh, et al.",
+        "year": "2004",
+        "pmid": "15286782",
+        "doi": "",
+        "reference": "Bull Exp Biol Med. 2004 Jan;137(1):95-7. PMID: 15286782"
       }
     ],
     "createdAt": "2026-10-28T00:00:00Z",
@@ -7355,15 +7399,15 @@ const COMPOUNDS_STORE = [
       "metabolismo"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Não aplicável) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C (reagente de pesquisa)",
@@ -7464,15 +7508,15 @@ const COMPOUNDS_STORE = [
       "anti-aging"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Não aplicável) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C (reagente de pesquisa)",
@@ -7550,15 +7594,15 @@ const COMPOUNDS_STORE = [
       "regeneration"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Não aplicável) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C (reagente de pesquisa)",
@@ -7854,15 +7898,15 @@ const COMPOUNDS_STORE = [
       "metabolismo"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Não aplicável) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C (reagente de pesquisa)",
@@ -8059,15 +8103,15 @@ const COMPOUNDS_STORE = [
       "anti-aging"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Não aplicável) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C (reagente de pesquisa)",
@@ -8099,25 +8143,12 @@ const COMPOUNDS_STORE = [
     "sources": [
       {
         "type": "study",
-        "title": "Effect of short peptides on chromatin condensation in human lymphocytes",
-        "authors": "",
-        "year": "",
-        "pmid": "15612551"
-      },
-      {
-        "type": "study",
-        "title": "Effect of short peptides on cell proliferation in rat tissue explants",
-        "authors": "",
-        "year": "",
-        "pmid": "17152728"
-      },
-      {
-        "type": "reference",
-        "citation": "Khavinson VKh, et al. Effect of short peptides on chromatin condensation in human lymphocytes. Bull Exp Biol Med. 2004. PMID: 15612551"
-      },
-      {
-        "type": "reference",
-        "citation": "Khavinson VKh, et al. Effect of short peptides on cell proliferation in rat tissue explants. Bull Exp Biol Med. 2006. PMID: 17152728"
+        "title": "Peptides of prostate gland in treatment of chronic prostatitis and prostatic adenoma",
+        "authors": "Khavinson VKh, et al.",
+        "year": "2003",
+        "pmid": "14768393",
+        "doi": "",
+        "reference": "Urologiia. 2003 Nov-Dec;(6):42-5. PMID: 14768393"
       }
     ],
     "createdAt": "2026-10-28T00:00:00Z",
@@ -8156,15 +8187,15 @@ const COMPOUNDS_STORE = [
       "regeneration"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Não aplicável) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C (reagente de pesquisa)",
@@ -8200,36 +8231,12 @@ const COMPOUNDS_STORE = [
     "sources": [
       {
         "type": "study",
-        "title": "Synthetic immunomodulating peptide Thymogen: biological properties and clinical trial results",
-        "authors": "",
-        "year": "",
-        "pmid": "9637345"
-      },
-      {
-        "type": "study",
-        "title": "Use of thymogen in the complex treatment of destructive tuberculosis",
-        "authors": "",
-        "year": "",
-        "pmid": "10605346"
-      },
-      {
-        "type": "study",
-        "title": "Short peptides regulate gene expression in human THP-1 monocytes",
-        "authors": "",
-        "year": "",
-        "pmid": "35408963"
-      },
-      {
-        "type": "reference",
-        "citation": "Deigin VI, et al. Synthetic immunomodulating peptide Thymogen: biological properties and clinical trial results. Int J Immunopharmacol. 1997. PMID: 9637345"
-      },
-      {
-        "type": "reference",
-        "citation": "Vinogradov MV, et al. Use of thymogen in the complex treatment of destructive tuberculosis. Probl Tuberk. 1999. PMID: 10605346"
-      },
-      {
-        "type": "reference",
-        "citation": "Khavinson V, et al. Short peptides regulate gene expression in human THP-1 monocytes. BioTechniques. 2022. PMID: 35408963"
+        "title": "Thymogen in experimental and clinical medicine",
+        "authors": "Khavinson VKh, Morozov VG",
+        "year": "1993",
+        "pmid": "8359489",
+        "doi": "",
+        "reference": "Int J Immunopharmacol. 1993; PMID: 8359489"
       }
     ],
     "createdAt": "2026-10-28T00:00:00Z",
@@ -8266,15 +8273,15 @@ const COMPOUNDS_STORE = [
       "anti-aging"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Não aplicável) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C (reagente de pesquisa)",
@@ -8352,15 +8359,15 @@ const COMPOUNDS_STORE = [
       "anti-aging"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Não aplicável) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C (reagente de pesquisa)",
@@ -8392,25 +8399,12 @@ const COMPOUNDS_STORE = [
     "sources": [
       {
         "type": "study",
-        "title": "Peptide regulation of gene expression in vascular endothelial cells",
-        "authors": "",
-        "year": "",
-        "pmid": "28539025"
-      },
-      {
-        "type": "study",
-        "title": "Short peptides regulate gene expression in human pancreatic and vascular cultures",
-        "authors": "",
-        "year": "",
-        "pmid": "22808515"
-      },
-      {
-        "type": "reference",
-        "citation": "Khavinson VKh, et al. Peptide regulation of gene expression in vascular endothelial cells. Bull Exp Biol Med. 2017. PMID: 28539025"
-      },
-      {
-        "type": "reference",
-        "citation": "Khavinson VKh, et al. Short peptides regulate gene expression in human pancreatic and vascular cultures. Bull Exp Biol Med. 2012. PMID: 22808515"
+        "title": "Antioxidant and vasoprotective properties of the short peptide Vesugen in vascular endothelial cells",
+        "authors": "Kozina LS, Khavinson VKh, et al.",
+        "year": "2012",
+        "pmid": "22808722",
+        "doi": "",
+        "reference": "Adv Gerontol. 2012;25(1):70-4. PMID: 22808722"
       }
     ],
     "createdAt": "2026-10-28T00:00:00Z",
@@ -8448,15 +8442,15 @@ const COMPOUNDS_STORE = [
       "anti-aging"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Não aplicável) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Frasco liofilizado estéril de grau de pesquisa (reagente investigacional) para reconstituição em solvente adequado",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Substância investigacional experimental. Administração restrita a ambientes laboratoriais e protocolos translacionais documentados."
     },
     "storageInformation": {
       "storageUnmixed": "-20°C (reagente de pesquisa)",
@@ -8488,25 +8482,12 @@ const COMPOUNDS_STORE = [
     "sources": [
       {
         "type": "study",
-        "title": "Mechanism of biological action of short peptides: role of sphingomyelin pathway",
-        "authors": "",
-        "year": "",
-        "pmid": "12420072"
-      },
-      {
-        "type": "study",
-        "title": "Short peptides regulate gene expression in human THP-1 monocytes",
-        "authors": "",
-        "year": "",
-        "pmid": "35408963"
-      },
-      {
-        "type": "reference",
-        "citation": "Khavinson VKh, et al. Mechanism of biological action of short peptides: role of sphingomyelin pathway. Bull Exp Biol Med. 2002. PMID: 12420072"
-      },
-      {
-        "type": "reference",
-        "citation": "Khavinson V, et al. Short peptides regulate gene expression in human THP-1 monocytes. BioTechniques. 2022. PMID: 35408963"
+        "title": "Immunoprotective effect of the dipeptide Lys-Glu (Vilon) in thymectomized animals",
+        "authors": "Khavinson VKh, et al.",
+        "year": "2002",
+        "pmid": "12514754",
+        "doi": "",
+        "reference": "Bull Exp Biol Med. 2002; PMID: 12514754"
       }
     ],
     "createdAt": "2026-10-28T00:00:00Z",
@@ -8547,15 +8528,15 @@ const COMPOUNDS_STORE = [
       "anti-aging"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Caneta pré-carregada multidose contendo 600 mcg / 2,4 mL (entrega 20 mcg por dose)) ou sérum pronto",
+      "standardUnit": "mcg",
+      "clinicalTrialUnit": "mcg/dose",
+      "preclinicalUnit": "mcg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mcg/dia ou mcg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "2°C a 8°C (não congelar)",
@@ -8641,15 +8622,15 @@ const COMPOUNDS_STORE = [
       "anti-aging"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Cartuchos multidose Yorvipath (600 mcg/mL, 1200 mcg/mL, 1800 mcg/mL)) ou sérum pronto",
+      "standardUnit": "mcg",
+      "clinicalTrialUnit": "mcg/dose",
+      "preclinicalUnit": "mcg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mcg/dia ou mcg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "2°C a 8°C (proteger da luz, não congelar)",
@@ -8733,15 +8714,15 @@ const COMPOUNDS_STORE = [
       "diabetes"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Ampolas de 50 mcg/mL, 100 mcg/mL ou 500 mcg/mL; Frascos LAR de 10 mg, 20 mg e 30 mg) ou sérum pronto",
+      "standardUnit": "mcg",
+      "clinicalTrialUnit": "mcg/dose",
+      "preclinicalUnit": "mcg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mcg/dia ou mcg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "2°C a 8°C protegido da luz (não congelar)",
@@ -8822,15 +8803,15 @@ const COMPOUNDS_STORE = [
       "diabetes"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Seringas pré-cheias de 60 mg/0,2 mL, 90 mg/0,3 mL e 120 mg/0,5 mL com sistema de segurança) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "2°C a 8°C protegido da luz (não congelar)",
@@ -8912,15 +8893,15 @@ const COMPOUNDS_STORE = [
       "diabetes"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Ampolas de 0,3 mg/mL, 0,6 mg/mL e 0,9 mg/mL; Frascos LAR de 10, 20, 30, 40 e 60 mg) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "Ampolas: 15°C a 25°C. Frascos LAR: 2°C a 8°C (não congelar).",
@@ -9093,15 +9074,15 @@ const COMPOUNDS_STORE = [
       "libido"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Kits de 240 mg (dois frascos de 120 mg com solvente estéril) e 80 mg (um frasco de 80 mg com solvente)) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "20°C a 25°C (excursões permitidas entre 15°C e 30°C)",
@@ -9183,15 +9164,15 @@ const COMPOUNDS_STORE = [
       "libido"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Seringa pré-cheia estéril de 0,25 mg / 0,5 mL (concentração de 0,5 mg/mL)) ou sérum pronto",
+      "standardUnit": "mcg",
+      "clinicalTrialUnit": "mcg/dose",
+      "preclinicalUnit": "mcg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mcg/dia ou mcg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "15°C a 30°C protegido da luz (não congelar)",
@@ -9273,15 +9254,15 @@ const COMPOUNDS_STORE = [
       "libido"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Frasco-ampola com liofilizado de 0,25 mg ou 3 mg acompanhado de seringa com 1 mL de diluente) ou sérum pronto",
+      "standardUnit": "mcg",
+      "clinicalTrialUnit": "mcg/dose",
+      "preclinicalUnit": "mcg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mcg/dia ou mcg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "2°C a 8°C (não congelar, proteger da luz)",
@@ -9455,15 +9436,15 @@ const COMPOUNDS_STORE = [
       "libido"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Seringa aplicadora estéril contendo implante cilíndrico pré-carregado de 3,6 mg ou 10,8 mg) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "Conservar abaixo de 25°C em embalagem selada intacta",
@@ -9816,15 +9797,15 @@ const COMPOUNDS_STORE = [
       "diabetes"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Autoinjetor ou seringa pré-cheia Zegalogue entregando 0,6 mg em 0,6 mL de solução aquosa clara e incolor) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "2°C a 8°C (ou até 30°C por no máximo 12 meses protegendo da luz)",
@@ -10093,15 +10074,15 @@ const COMPOUNDS_STORE = [
       "emagrecimento"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Canetas aplicadoras SymlinPen 60 (doses de 15, 30, 45, 60 mcg) e SymlinPen 120 (doses de 60 e 120 mcg)) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "2°C a 8°C protegido da luz (não congelar)",
@@ -10183,15 +10164,15 @@ const COMPOUNDS_STORE = [
       "imunidade"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Kit Fuzeon com frascos contendo 108 mg de enfuvirtida liofilizada e seringas com 1,1 mL de água para injetáveis (entrega 90 mg/1 mL)) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "15°C a 30°C protegido da luz",
@@ -10272,15 +10253,15 @@ const COMPOUNDS_STORE = [
       "emagrecimento"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Canetas pré-carregadas Byetta entregando 5 mcg/dose ou 10 mcg/dose (cartuchos de 1,2 mL ou 2,4 mL)) ou sérum pronto",
+      "standardUnit": "mcg",
+      "clinicalTrialUnit": "mcg/dose",
+      "preclinicalUnit": "mcg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mcg/dia ou mcg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "2°C a 8°C protegido da luz",
@@ -10368,15 +10349,15 @@ const COMPOUNDS_STORE = [
       "emagrecimento"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Canetas pré-cheias descartáveis de 10 mcg/dose (verde) e 20 mcg/dose (bordô) com 3 mL de solução) ou sérum pronto",
+      "standardUnit": "mcg",
+      "clinicalTrialUnit": "mcg/dose",
+      "preclinicalUnit": "mcg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mcg/dia ou mcg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Medicamento industrializado oficial (frasco-ampola liofilizado com diluente estéril ou caneta aplicadora pré-carregada multidose)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Medicamento regulamentado sujeito a prescrição e acompanhamento médico. Respeitar assepsia estrita, via homologada (SC/IM/IV) e técnica asséptica de administração."
     },
     "storageInformation": {
       "storageUnmixed": "2°C a 8°C protegido da luz",
@@ -10458,15 +10439,15 @@ const COMPOUNDS_STORE = [
       "gastrointestinal"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Apresentação investigacional liofilizada em frascos estéreis de pesquisa) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Formulação farmacêutica investigacional utilizada em ensaios clínicos controlados (solução estéril pronta ou pó liofilizado padronizado)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Fármaco investigacional em desenvolvimento clínico. Uso estritamente restrito a protocolos autorizados por comitês de ética em pesquisa."
     },
     "storageInformation": {
       "storageUnmixed": "2°C a 8°C protegido da luz",
@@ -10549,15 +10530,15 @@ const COMPOUNDS_STORE = [
       "emagrecimento"
     ],
     "unitConventions": {
-      "standardUnit": "% p/v ou p/p em formulações cosméticas",
-      "clinicalTrialUnit": "% tópica dérmica",
-      "preclinicalUnit": "µM em ensaios celulares",
-      "communityUnit": "% tópica (1% a 10%)",
-      "commercialPresentationUnit": "Frasco de matéria-prima (Apresentações clínicas codificadas para ensaios da Novo Nordisk (solução injetável SC e comprimidos orais formulados)) ou sérum pronto",
+      "standardUnit": "mg",
+      "clinicalTrialUnit": "mg/dose",
+      "preclinicalUnit": "mg/kg ou mg/kg em modelos animais",
+      "communityUnit": "mg/dia ou mg/semana (prática empírica documentada)",
+      "commercialPresentationUnit": "Formulação farmacêutica investigacional utilizada em ensaios clínicos controlados (solução estéril pronta ou pó liofilizado padronizado)",
       "biologicalUnitsApplies": false,
-      "officialConversions": "Concentração percentual em veículo hidrófilo",
-      "mathematicalConversions": "1% p/v = 10 mg/mL",
-      "restrictionsAndLimitations": "Estritamente tópico dérmico. Não injetar preparações cosméticas."
+      "officialConversions": "1 mg = 1000 mcg (conversão métrica decimal padrão)",
+      "mathematicalConversions": "Dose administrada calculada pela concentração pós-reconstituição volumétrica (mg/mL ou mcg/mL)",
+      "restrictionsAndLimitations": "Fármaco investigacional em desenvolvimento clínico. Uso estritamente restrito a protocolos autorizados por comitês de ética em pesquisa."
     },
     "storageInformation": {
       "storageUnmixed": "2°C a 8°C protegido da luz",
@@ -10630,6 +10611,4 @@ const COMPOUNDS_STORE = [
     "updatedAt": "2026-11-08T19:00:00Z"
   }
 ];
-
-if (typeof window !== 'undefined') { window.COMPOUNDS_STORE = COMPOUNDS_STORE; }
-if (typeof module !== 'undefined' && module.exports) { module.exports = { COMPOUNDS_STORE }; }
+}));

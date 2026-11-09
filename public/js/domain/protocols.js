@@ -1,8 +1,18 @@
 /**
- * Canonical Domain Entity: PROTOCOLS (135 protocolos com vínculo unívoco a Composto ou Stack)
- * PeptiPedia - Arquitetura de Domínio Normalizada (H4.5)
+ * PROTOCOLS_STORE (H4.7 Remediated Canon)
+ * PeptiPedia Domain Entity Store
  */
-const PROTOCOLS_STORE = [
+
+(function (root, factory) {
+  if (typeof module === 'object' && module.exports) {
+    module.exports = { PROTOCOLS_STORE: factory() };
+  } else {
+    root.PROTOCOLS_STORE = factory();
+  }
+}(typeof self !== 'undefined' ? self : this, function () {
+  'use strict';
+
+  return [
   {
     "id": "proto-comp-bpc-157-standard",
     "subjectType": "compound",
@@ -352,13 +362,13 @@ const PROTOCOLS_STORE = [
         "rationale": "Concentração nominal de 8 mg/mL"
       },
       {
-        "convertedValue": 16.0,
+        "convertedValue": 16,
         "convertedUnit": "unidades U-100",
         "method": "seringa_volumetrica",
         "rationale": "0,16 mL * 100 un/mL"
       }
     ],
-    "concentration": 8.0,
+    "concentration": 8,
     "concentrationUnit": "mg/mL",
     "frequency": "1x ao dia",
     "duration": "Contínuo sob monitoramento",
@@ -448,11 +458,11 @@ const PROTOCOLS_STORE = [
     "population": "Adultos HIV",
     "indication": "Gordura intra-abdominal",
     "route": "Subcutânea (SC)",
-    "dose": 2.0,
+    "dose": 2,
     "doseUnit": "mg",
     "unitType": "mass",
     "derivedConversions": [],
-    "concentration": 1.0,
+    "concentration": 1,
     "concentrationUnit": "mg/mL",
     "frequency": "1x ao dia",
     "duration": "Ciclos dos ensaios clínicos pivotais de registro",
@@ -2804,149 +2814,6 @@ const PROTOCOLS_STORE = [
     "reviewedAt": "2026-11-08"
   },
   {
-    "id": "proto-comp-ace-031-standard",
-    "subjectType": "compound",
-    "compoundId": "ace-031",
-    "stackId": null,
-    "protocolName": "ACE-031 — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "clinical_trial_only",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "musculo",
-    "route": "Subcutânea (SC)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Subcutânea (SC) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Produto biológico experimental de pesquisa clínica",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (produto de uso exclusivo em centros de pesquisa autorizados)",
-      "volume": "0 mL",
-      "resultingConcentration": "Não padronizada comercialmente"
-    },
-    "stabilityConditions": "Não aplicável",
-    "contraindications": [
-      "Distúrbios de coagulação ou histórico de hemorragias",
-      "Malformações arteriovenosas ou telangiectasias prévias",
-      "Uso humano recreativo ou fora de protocolos aprovados por comitês de ética"
-    ],
-    "adverseEffects": [
-      "Epistaxe recorrente (sangramentos nasais moderados a severos)",
-      "Telangiectasias cutâneas e em mucosas orais e nasais",
-      "Eritema conjuntival e vasodilatações periféricas",
-      "Hipertrofia gengival reversível",
-      "Potencial de toxicidade vascular por inibição colateral de BMP9/BMP10"
-    ],
-    "limitations": [
-      "AVISO REGULATÓRIO E DE SEGURANÇA: O ACE-031 é uma proteína de fusão biológica investigacional cujo ensaio clínico de Fase 2 em meninos com Distrofia Muscular de Duchenne (DMD) foi interrompido após o segundo regime de dose devido a preocupações de segurança vascular (epistaxe e telangiectasias cutâneas/mucosas). NÃO possui aprovação da FDA, EMA ou Anvisa. NÃO há dose terapêutica autorizada nem perfil de segurança para uso fora de pesquisa."
-    ],
-    "sources": [
-      "Myostatin inhibitor ACE-031 treatment of ambulatory boys with Duchenne muscular dystrophy: Results of a randomized, placebo-controlled clinical trial"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-ahk-cu-standard",
-    "subjectType": "compound",
-    "compoundId": "ahk-cu",
-    "stackId": null,
-    "protocolName": "AHK-Cu — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "anti-aging",
-    "route": "Tópica",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Tópica em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Hipersensibilidade conhecida ao cobre ou a peptídeos de cobre",
-      "Dermatites ativas no couro cabeludo ou lesões abertas na pele"
-    ],
-    "adverseEffects": [
-      "Irritação dérmica e dermatite de contato em formulações tópicas",
-      "Eritema local transitório",
-      "Riscos parenterais não documentados clinicamente (ausência de dados de segurança toxicológica)"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO E REGULATÓRIO: O AHK-Cu é um tripeptídeo complexado com cobre investigado exclusivamente em modelos in vitro e em folículos capilares humanos isolados ex vivo para estímulo folicular. NÃO possui aprovação regulatória da FDA, EMA ou Anvisa como medicamento injetável ou para tratamento de alopecia. Não há ensaios clínicos controlados em humanos para via injetável."
-    ],
-    "sources": [
-      "The effect of tripeptide-copper complex on human hair growth in vitro"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-b7-33-standard",
-    "subjectType": "compound",
-    "compoundId": "b7-33",
-    "stackId": null,
-    "protocolName": "B7-33 — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "articulacoes",
-    "route": "Subcutânea (SC)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Subcutânea (SC) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Gravidez",
-      "Hipotensão grave ou insuficiência cardíaca descompensada",
-      "Uso humano terapêutico fora de pesquisa clínica aprovada"
-    ],
-    "adverseEffects": [
-      "Vasodilatação periférica transitória",
-      "Hipotensão ortostática teórica",
-      "Perfil toxicológico em humanos ainda não determinado"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO E REGULATÓRIO: O B7-33 é um peptídeo sintético desenhado funcionalmente para reproduzir os efeitos antifibróticos e vasodilatadores da relaxina-2 humana através do receptor RXFP1, sem ativar a via oncogênica dependente de cAMP. Trata-se de molécula estritamente investigacional, sem ensaios clínicos de Fase 2 ou 3 em humanos e sem registro em nenhuma agência regulatória."
-    ],
-    "sources": [
-      "A single-chain peptide agonist of the relaxin receptor-1 (RXFP1) is anti-fibrotic in vivo",
-      "B7-33 Attenuates Myocardial Fibrosis in Diabetic Cardiomyopathy Mice"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
     "id": "proto-comp-dulaglutide-standard",
     "subjectType": "compound",
     "compoundId": "dulaglutide",
@@ -3009,13 +2876,13 @@ const PROTOCOLS_STORE = [
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "emagrecimento",
     "route": "Subcutânea (SC)",
-    "dose": null,
+    "dose": "Dose escalonada de ensaio clínico",
     "doseUnit": "mg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "1x por semana",
+    "frequency": "Semanal em ensaios de fase 2/3",
     "duration": "48 semanas",
     "administrationContext": "Administração Subcutânea (SC) em regime 1x por semana por 48 semanas.",
     "formulation": "Frasco liofilizado de Produto farmacêutico experimental sob investigação clínica",
@@ -3042,53 +2909,6 @@ const PROTOCOLS_STORE = [
     ],
     "sources": [
       "Eloralintide, a selective amylin receptor agonist for the treatment of obesity: a 48-week phase 2, multicentre, double-blind, randomised, placebo-controlled trial"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-foxo4-dri-standard",
-    "subjectType": "compound",
-    "compoundId": "foxo4-dri",
-    "stackId": null,
-    "protocolName": "FOXO4-DRI — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "anti-aging",
-    "route": "Subcutânea (Investigacional)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Subcutânea (Investigacional) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Uso humano terapêutico",
-      "Gestação e lactação",
-      "Neoplasias ativas (potencial interferência desregulada com vias de p53)"
-    ],
-    "adverseEffects": [
-      "Citotoxicidade teórica não seletiva em concentrações suprafisiológicas",
-      "Possíveis reações imunogênicas a peptídeos sintéticos de sequência longa",
-      "Toxicologia clínica em humanos completamente desconhecida"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO E REGULATÓRIO: O FOXO4-DRI é um peptídeo sintético retro-inverso concebido em pesquisa pré-clínica para eliminar seletivamente células senescentes por apoptose mediada por p53. Trata-se de reagente estritamente de bancada experimental, sem ensaios clínicos de Fase 1, 2 ou 3 em seres humanos e sem aprovação em nenhum órgão sanitário mundial."
-    ],
-    "sources": [
-      "Targeted Apoptosis of Senescent Cells Restores Tissue Homeostasis in Response to Chemotoxicity and Aging"
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -3260,18 +3080,18 @@ const PROTOCOLS_STORE = [
     "population": "Fisiculturismo amador",
     "indication": "Lipólise e recuperação tecidual (Proibido WADA S2)",
     "route": "Subcutânea (SC)",
-    "dose": 3.0,
+    "dose": 3,
     "doseUnit": "UI",
     "unitType": "biological_iu",
     "derivedConversions": [
       {
-        "convertedValue": 1.0,
+        "convertedValue": 1,
         "convertedUnit": "mg",
         "method": "who_standard",
         "rationale": "1 UI = 0,333 mg"
       }
     ],
-    "concentration": 10.0,
+    "concentration": 10,
     "concentrationUnit": "UI/mL",
     "frequency": "1x ao dia",
     "duration": "12 a 24 semanas",
@@ -3362,14 +3182,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "preclinical_model",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "anti-aging",
-    "route": "Tópica",
-    "dose": null,
-    "doseUnit": "ppm",
-    "unitType": "mass",
+    "route": "Tópica Dérmica",
+    "dose": "3 a 5 ppm (0,0003% a 0,0005%)",
+    "doseUnit": "%",
+    "unitType": "percentage",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "1x a 2x ao dia",
+    "frequency": "1x a 2x ao dia em sérum cosmético",
     "duration": "8 semanas",
     "administrationContext": "Administração Tópica em regime 1x a 2x ao dia por 8 semanas.",
     "formulation": "Frasco liofilizado de Insumo cosmético formulado em sérum ou creme",
@@ -3394,100 +3214,6 @@ const PROTOCOLS_STORE = [
     ],
     "sources": [
       "Double-blind, Randomized Trial on the Effectiveness of Acetylhexapeptide-3 Cream and Palmitoyl Pentapeptide-4 Cream for Crow's Feet"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-pe-22-28-standard",
-    "subjectType": "compound",
-    "compoundId": "pe-22-28",
-    "stackId": null,
-    "protocolName": "PE-22-28 — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "cognicao",
-    "route": "Subcutânea (Investigacional)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Subcutânea (Investigacional) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Uso humano",
-      "Histórico de epilepsia ou convulsões",
-      "Uso concomitante com inibidores de MAO ou antidepressivos serotoninérgicos"
-    ],
-    "adverseEffects": [
-      "Possível excitabilidade neuronal desregulada em doses elevadas",
-      "Risco teórico de arritmias cardíacas por bloqueio inespecífico de canais de potássio em outros tecidos",
-      "Perfil toxicológico em humanos completamente desconhecido"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO E REGULATÓRIO: O PE-22-28 é um peptídeo sintético linear de 7 aminoácidos derivado da espadina, desenvolvido em modelos animais de neurociência básica como bloqueador do canal de potássio TREK-1. Trata-se de substância estritamente investigacional, sem ensaios clínicos de Fase 1, 2 ou 3 em seres humanos e sem registro em nenhuma autoridade regulatória sanitária mundial."
-    ],
-    "sources": [
-      "PE-22-28, a shorter and more stable spadin-derived analog, is a promising candidate for antidepressant therapy"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-ptd-dbm-standard",
-    "subjectType": "compound",
-    "compoundId": "ptd-dbm",
-    "stackId": null,
-    "protocolName": "PTD-DBM — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "anti-aging",
-    "route": "Tópica (Investigacional de Bancada)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Tópica (Investigacional de Bancada) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Uso terapêutico humano",
-      "Neoplasias cutâneas ou lesões displásicas suspeitas",
-      "Gestação e amamentação"
-    ],
-    "adverseEffects": [
-      "Reações inflamatórias locais e prurido dérmico",
-      "Dermatite eritematosa",
-      "Riscos biológicos sistêmicos desconhecidos em humanos (via Wnt hiperativada)"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO E REGULATÓRIO: O PTD-DBM é um peptídeo sintético de transdução desenvolvido na Universidade de Yonsei para interromper a interação CXXC5-Dishevelled e reativar a via Wnt/beta-catenina no folículo capilar. É um composto puramente de bancada laboratorial, sem ensaios clínicos controlados de Fase 1, 2 ou 3 em humanos e sem qualquer autorização regulatória médica."
-    ],
-    "sources": [
-      "Targeting of CXXC5 by a Competing Peptide Stimulates Hair Regrowth and Wound-Induced Hair Neogenesis"
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -3543,882 +3269,6 @@ const PROTOCOLS_STORE = [
     "reviewedAt": "2026-11-08"
   },
   {
-    "id": "proto-comp-acth-1-39-standard",
-    "subjectType": "compound",
-    "compoundId": "acth-1-39",
-    "stackId": null,
-    "protocolName": "ACTH 1-39 — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "metabolismo",
-    "route": "Subcutânea (Pesquisa)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Subcutânea (Pesquisa) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Insuficiência adrenal primária (ausência de parênquima adrenal funcionante)",
-      "Hipersensibilidade a peptídeos corticotróficos",
-      "Infecções fúngicas sistêmicas ou infecções não controladas",
-      "Hipertensão arterial grave descompensada e insuficiência cardíaca congestiva"
-    ],
-    "adverseEffects": [
-      "Supressão do eixo hipotálamo-hipófise-adrenal (HPA) após exposição prolongada",
-      "Hiperglicemia e resistência insulínica",
-      "Retenção hidrossalina, hipertensão arterial e hipocalemia",
-      "Alterações de humor, insônia e irritabilidade",
-      "Imunossupressão e suscetibilidade a infecções oportunistas"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO E REGULATÓRIO: O ACTH(1-39) é o peptídeo monomérico nativo corticotrófico de 39 resíduos. NÃO se confunde com formulações comerciais extrativas purificadas como Acthar Gel ou Cortrophin Gel, que são misturas biológicas de origem porcina em gelatina de depósito expressas em Unidades USP (não em miligramas de peptídeo sintético). Não possui protocolo posológico parenteral validado como peptídeo sintético isolado nesta base de dados."
-    ],
-    "sources": [
-      "Acthar Gel (repository corticotropin injection) Prescribing Information",
-      "Purified Cortrophin Gel Prescribing Information"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-adipotide-standard",
-    "subjectType": "compound",
-    "compoundId": "adipotide",
-    "stackId": null,
-    "protocolName": "Adipotide — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "emagrecimento",
-    "route": "Subcutânea (Pesquisa Animal)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Subcutânea (Pesquisa Animal) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Insuficiência renal e qualquer histórico de doença renal",
-      "Gravidez e lactação",
-      "Administração humana ambulatorial ou recreativa"
-    ],
-    "adverseEffects": [
-      "Disfunção tubular renal com elevação pronunciada de creatinina e ureia",
-      "Lesões histológicas e necrose tubular renal documentadas em primatas",
-      "Desidratação, alterações eletrolíticas e proteinúria",
-      "Potencial toxicidade vascular em leitos vasculares não-adiposos"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO E REGULATÓRIO: Peptidomimético pró-apoptótico vascular dirigido à vasculatura de gordura branca. Não possui aprovação na FDA, EMA ou Anvisa. Em primatas não humanos (Barnhart et al., 2011, PMID 22072637), provocou disfunção tubular renal e lesões histopatológicas renais. Não há qualquer protocolo de uso ou segurança aprovado para humanos."
-    ],
-    "sources": [
-      "A peptidomimetic targeting white fat causes weight loss and improved insulin resistance in obese monkeys"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-bronchogen-standard",
-    "subjectType": "compound",
-    "compoundId": "bronchogen",
-    "stackId": null,
-    "protocolName": "Bronchogen — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "regeneration",
-    "route": "Subcutânea (Pesquisa)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Subcutânea (Pesquisa) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Hipersensibilidade ao tetrapeptídeo ou análogos",
-      "Gravidez e lactação"
-    ],
-    "adverseEffects": [
-      "Reações locais no ponto de injeção",
-      "Perfil toxicológico clínico humano incompleto"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO E REGULATÓRIO: Tetrapeptídeo biorregulador pulmonar em divergência de sequência documental. A literatura científica russa (ex: PMID 21240358) descreve a sequência Ala-Asp-Glu-Leu (ADEL), enquanto o registro internacional PubChem (CID 11690869) e CAS Registry (857267-12-0) associa formalmente 'Bronchogen' à sequência Ala-Glu-Asp-Leu (AEDL). Ambas as moléculas são isômeros estruturais de mesma fórmula (C18H30N4O9) e mesma massa molecular (446,5 g/mol). Devido à indefinição quanto à equivalência farmacológica e de identidade primária, a ficha é mantida sob IDENTIDADE_PENDENTE. Calculadora e conversões bloqueadas fail-closed."
-    ],
-    "sources": [
-      "Effects of bronchogen on the conformation of DNA-protein complexes in chromatin",
-      "Effect of Bronchogen on Cytokine Profile in Rats with Chronic Obstructive Pulmonary Disease"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-cardiogen-standard",
-    "subjectType": "compound",
-    "compoundId": "cardiogen",
-    "stackId": null,
-    "protocolName": "Cardiogen — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "regeneration",
-    "route": "Subcutânea (Pesquisa Laboratorial)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Subcutânea (Pesquisa Laboratorial) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Hipersensibilidade ao peptídeo",
-      "Gravidez e lactação"
-    ],
-    "adverseEffects": [
-      "Dados de toxicidade clínica humana inexistentes"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO E REGULATÓRIO: Tetrapeptídeo de pesquisa avaliado em explantes organotípicos de tecido cardíaco de ratos. Não há ensaios clínicos humanos randomizados nem aprovação na FDA, EMA ou Anvisa. Calculadora indisponível."
-    ],
-    "sources": [
-      "Effect of short peptides on the proliferation of cell culture from different rat tissues"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-chonluten-standard",
-    "subjectType": "compound",
-    "compoundId": "chonluten",
-    "stackId": null,
-    "protocolName": "Chonluten — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "regeneration",
-    "route": "Subcutânea (Pesquisa Laboratorial)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Subcutânea (Pesquisa Laboratorial) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Hipersensibilidade ao tripeptídeo"
-    ],
-    "adverseEffects": [
-      "Desconhecidos em humanos"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO E REGULATÓRIO: Tripeptídeo investigado em culturas celulares in vitro de monócitos humanos (THP-1). Não possui ensaios clínicos em humanos nem aprovação em agências regulatórias. Não há dose humana estabelecida."
-    ],
-    "sources": [
-      "Short peptides regulate gene expression in human THP-1 monocytes"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-cortagen-standard",
-    "subjectType": "compound",
-    "compoundId": "cortagen",
-    "stackId": null,
-    "protocolName": "Cortagen — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "cognicao",
-    "route": "Subcutânea (Pesquisa)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Subcutânea (Pesquisa) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Hipersensibilidade ao peptídeo",
-      "Gravidez e lactação"
-    ],
-    "adverseEffects": [
-      "Perfil clínico humano não documentado"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO E REGULATÓRIO: Tetrapeptídeo biorregulador derivado de estudos neuroprotetores experimentais em camundongos. Não possui ensaios clínicos controlados de fase 3 nem registro terapêutico na FDA, EMA ou Anvisa. Calculadora indisponível."
-    ],
-    "sources": [
-      "Peptide regulation of gene expression in mouse heart and brain tissues",
-      "Mechanism of biological action of short peptides: role of sphingomyelin pathway"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-dermorphin-standard",
-    "subjectType": "compound",
-    "compoundId": "dermorphin",
-    "stackId": null,
-    "protocolName": "Dermorfina — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "cognicao",
-    "route": "Intravenosa (Estudos Farmacodinâmicos Históricos Restritos)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Intravenosa (Estudos Farmacodinâmicos Históricos Restritos) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Uso recreativo, esportivo ou autoprescrição",
-      "Depressão respiratória prévia, DPOC descompensada ou insuficiência respiratória",
-      "Histórico de transtorno por uso de opioides ou dependência química",
-      "Administração sem disponibilidade imediata de suporte ventilatório e naloxona"
-    ],
-    "adverseEffects": [
-      "Depressão respiratória grave com risco de parada respiratória e morte",
-      "Rápido desenvolvimento de tolerância e dependência física e psíquica severa",
-      "Sedação profunda, confusão mental e coma em doses elevadas",
-      "Constipação intestinal intensa, náuseas e vômitos",
-      "Rigidez da musculatura torácica e broncoespasmo"
-    ],
-    "limitations": [
-      "AVISO CRÍTICO DE SUBSTÂNCIA CONTROLADA E RISCO VITAL: A dermorfina é um peptídeo opioide de alta potência isolado da pele de anfíbios (Phyllomedusa sauvagei) contendo D-alanina na posição 2. Apresenta afinidade e potência analgésica de 30 a 40 vezes superior à morfina sobre o receptor mu-opioide. NÃO possui aprovação médica para analgesia clínica. A calculadora está sumariamente desativada."
-    ],
-    "sources": [
-      "Pharmacological data on dermorphins, a new class of potent opioid peptides from amphibian skin",
-      "Effect of dermorphin on growth hormone and prolactin secretion in normal men"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-hgh-fragment-176-191-standard",
-    "subjectType": "compound",
-    "compoundId": "hgh-fragment-176-191",
-    "stackId": null,
-    "protocolName": "HGH Fragment 176-191 — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "emagrecimento",
-    "route": "Subcutânea (Pesquisa Animal)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Subcutânea (Pesquisa Animal) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Hipersensibilidade ao peptídeo",
-      "Gravidez e lactação"
-    ],
-    "adverseEffects": [
-      "Reações locais eritematosas no local de injeção",
-      "Efeitos clínicos humanos desconhecidos de forma controlada"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO E REGULATÓRIO: O Fragmento 176-191 nativo da somatropina humana possui 16 aminoácidos (Phe-Leu-Arg-Ile-Val-Gln-Cys-Arg-Ser-Val-Glu-Gly-Ser-Cys-Gly-Phe; FLRIVQCRSVEGSCGF; PM 1799,1 g/mol, PubChem CID 16131230, CAS 66004-57-7) com ponte dissulfeto Cys182-Cys189. DIFERENCIAÇÃO TRIPARTITE OBRIGATÓRIA: (1) hGH 176–191 nativo possui 16 resíduos iniciando em Phe176; (2) hGH 177–191 possui 15 resíduos iniciando em Leu177; (3) AOD-9604 é o análogo modificado de 16 resíduos constituído por Tyr-hGH 177-191. Os ensaios clínicos realizados com AOD-9604 NÃO podem ser transpostos ao fragmento 176-191. Inexistem ensaios clínicos humanos publicados que comprovem perda ponderal para a molécula 176-191 pura. Calculadora bloqueada fail-closed."
-    ],
-    "sources": [
-      "A C-terminal fragment of human growth hormone stimulates lipolysis and inhibits lipogenesis",
-      "The effects of human GH and its lipolytic fragment (AOD9604) on lipid metabolism",
-      "Detection of human growth hormone fragment AOD9604 and native fragment 176-191"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-livagen-standard",
-    "subjectType": "compound",
-    "compoundId": "livagen",
-    "stackId": null,
-    "protocolName": "Livagen — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "longevidade",
-    "route": "Subcutânea (Pesquisa)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Subcutânea (Pesquisa) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Hipersensibilidade ao peptídeo",
-      "Doença hepática aguda descompensada sem investigação"
-    ],
-    "adverseEffects": [
-      "Dados clínicos humanos não sistematizados"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO E REGULATÓRIO: Tetrapeptídeo sintético estudado na literatura laboratorial russa sobre cromatina de linfócitos em indivíduos idosos e enzimas hepáticas de roedores. Não possui ensaios clínicos terapêuticos nem aprovação em órgãos regulatórios. Calculadora indisponível."
-    ],
-    "sources": [
-      "Peptide regulation of gene expression and chromatin remodeling in aging"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-mgf-e-peptide-standard",
-    "subjectType": "compound",
-    "compoundId": "mgf-e-peptide",
-    "stackId": null,
-    "protocolName": "MGF E-Peptide — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "musculo",
-    "route": "Subcutânea (Pesquisa)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Subcutânea (Pesquisa) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Neoplasias ativas ou suspeitas",
-      "Uso em ambiente clínico ou esportivo"
-    ],
-    "adverseEffects": [
-      "Dados de toxicidade em humanos inexistentes",
-      "Riscos teóricos de instabilidade imune e reações inflamatórias"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO E REGULATÓRIO: O MGF E-Peptide investigacional de 24 resíduos (YQPPSTNKNTKSQRRKGSTFEEHK; CAS 1356779-84-4) possui fórmula molecular recalculada C121H194N40O40 e PM 2849,1 g/mol (massa monoisotópica 2847,44 Da). Associações prévias ao CID 137700201 foram formalmente removidas por divergência estrutural irreconciliável no PubChem (que identifica beta-Hydroxythioacetylfentanyl). Não existem ensaios clínicos em humanos que demonstrem eficácia anabólica; estudos limitados a modelos in vitro e animais. Calculadora bloqueada fail-closed."
-    ],
-    "sources": [
-      "Mechano-growth factor E-peptide stimulates proliferation of human muscle progenitor cells",
-      "High-throughput screening identifies that MGF E-peptide does not promote proliferation or differentiation of primary human myoblasts",
-      "A novel method to test MGF function in human skeletal muscle"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-orexin-a-standard",
-    "subjectType": "compound",
-    "compoundId": "orexin-a",
-    "stackId": null,
-    "protocolName": "Orexina A — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "sono",
-    "route": "Intranasal (Ensaio Clínico Piloto)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Intranasal (Ensaio Clínico Piloto) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Hipertensão grave não controlada",
-      "Transtornos psicóticos ou ansiedade severa",
-      "Insônia crônica primária"
-    ],
-    "adverseEffects": [
-      "Elevação transitória de pressão arterial e frequência cardíaca",
-      "Irritação da mucosa nasal no uso intranasal",
-      "Cefaleia e aumento do estado de alerta autonômico"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO E REGULATÓRIO: Neuropeptídeo endógeno modulador da vigília e estabilidade do sono REM. Foi avaliado em ensaio clínico piloto randomizado cruzado via intranasal em 14 pacientes com narcolepsia e cataplexia (Weinhold et al., 2014, PMID 24406723). Embora tenha mostrado modulação modesta de parâmetros de sono e atenção, NÃO possui aprovação pela FDA, EMA ou Anvisa nem dose terapêutica comercialmente estabelecida. Calculadora bloqueada."
-    ],
-    "sources": [
-      "Orexins and orexin receptors: a family of hypothalamic neuropeptides and G protein-coupled receptors that regulate feeding behavior",
-      "The effect of intranasal orexin-A (hypocretin-1) on sleep, wakefulness and attention in narcolepsy with cataplexy",
-      "Intranasal orexin-A in narcolepsy"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-orexin-b-standard",
-    "subjectType": "compound",
-    "compoundId": "orexin-b",
-    "stackId": null,
-    "protocolName": "Orexina B — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "sono",
-    "route": "Intracerebroventricular (Pesquisa em Roedores)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Intracerebroventricular (Pesquisa em Roedores) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Qualquer uso clínico não controlado"
-    ],
-    "adverseEffects": [
-      "Efeitos clínicos em humanos desconhecidos"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO E REGULATÓRIO: A Orexina B humana é o neuropeptídeo linear de 28 aminoácidos (RSGPPGLQGRLQRLLQASGNHAAGILTM-NH2, Guide to Pharmacology Ligand ID 1699, PubChem CID desvinculado (CID 44404987 revertido C->N MTLIGAAHNGSAQLLRQLRGQLGPPGSR-NH2; CAS 205599-76-4), CAS 205640-91-1, PM 2899,4 g/mol) amidado no C-terminal com resíduos Ser2 e Ser18 verificados. O CAS 202801-92-1 corresponde à variante murina (Pro2, Asn18) e não identifica a forma humana. Farmacologicamente, apresenta seletividade e preferência por receptores OX2R (evitando-se a alegação errônea de equipotência universal com OX1R). NÃO possui pontes dissulfeto e NÃO pode herdar dados de ensaios da Orexina A. Inexistem ensaios clínicos terapêuticos em humanos. Calculadora bloqueada fail-closed."
-    ],
-    "sources": [
-      "Orexins and orexin receptors: a family of hypothalamic neuropeptides and G protein-coupled receptors that regulate feeding behavior"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-pancragen-standard",
-    "subjectType": "compound",
-    "compoundId": "pancragen",
-    "stackId": null,
-    "protocolName": "Pancragen — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "diabetes",
-    "route": "Subcutânea (Pesquisa)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Subcutânea (Pesquisa) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Diabetes descompensado com cetoacidose ou estado hiperosmolar",
-      "Hipersensibilidade ao peptídeo"
-    ],
-    "adverseEffects": [
-      "Desconhecidos de forma controlada em humanos"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO: Tetrapeptídeo biorregulador pancreático. Fórmula molecular recalculada C26H37N7O8 e PM 575,6 g/mol. CID 11954310 prévio removido por pertencer a esteroide incompatível no PubChem (Boldenone undecylenate). Calculadora bloqueada fail-closed."
-    ],
-    "sources": [
-      "Pancragen stimulates differentiation of pancreatic cells in patients with diabetes mellitus",
-      "Effect of Pancragen on functional state of pancreas in rats with alloxan diabetes",
-      "Short peptides regulate gene expression in human pancreatic cell cultures"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-pnc-27-standard",
-    "subjectType": "compound",
-    "compoundId": "pnc-27",
-    "stackId": null,
-    "protocolName": "PNC-27 — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "anti-aging",
-    "route": "Intravenosa (Modelos de Pesquisa Laboratorial)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Intravenosa (Modelos de Pesquisa Laboratorial) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Substituição de quimioterapia ou imunoterapia oncológica validada",
-      "Uso clínico em pacientes sem supervisão de ensaio clínico formal"
-    ],
-    "adverseEffects": [
-      "Citólise inespecífica e choque hemodinâmico potencial",
-      "Toxicidade endotelial não caracterizada",
-      "Dados clínicos humanos de segurança ausentes"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO E REGULATÓRIO: O peptídeo investigacional antitumoral PNC-27 possui 32 aminoácidos (PPLSQETFSDLWKLLKKWKMRRNQFWVKVQRG; CAS 1356779-90-2). Sua estrutura primária corresponde estritamente ao PubChem CID 16201774, com fórmula C188H293N53O44S, massa molecular média de 4031,8 g/mol e massa monoisotópica recalculada de 4029,20 Da (corrigindo a divergência de 4028,18 Da). A associação prévia ao CID 137700204 foi removida por corresponder no PubChem a uma ceramida (C32 Ceramide). Inexistem ensaios clínicos humanos de fase avançada; evidência restrita a modelos pré-clínicos in vitro e animais. Calculadora bloqueada fail-closed."
-    ],
-    "sources": [
-      "Anticancer peptide PNC-27 adopts core structure and induces tumor cell membranolysis",
-      "PNC-27 targets membrane-bound HDM2 forming trans-membrane pores in cancer cells"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-prostamax-standard",
-    "subjectType": "compound",
-    "compoundId": "prostamax",
-    "stackId": null,
-    "protocolName": "Prostamax — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "regeneration",
-    "route": "Subcutânea (Pesquisa Laboratorial)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Subcutânea (Pesquisa Laboratorial) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Suspeita ou diagnóstico de carcinoma prostático sem avaliação urológica"
-    ],
-    "adverseEffects": [
-      "Desconhecidos em humanos"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO: Tetrapeptídeo biorregulador prostático. Fórmula molecular corrigida para C20H33N5O9 e PM 487,5 g/mol (PubChem CID 9848296, CAS 857267-16-4). Calculadora bloqueada fail-closed."
-    ],
-    "sources": [
-      "Effect of short peptides on chromatin condensation in human lymphocytes",
-      "Effect of short peptides on cell proliferation in rat tissue explants"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-thymogen-standard",
-    "subjectType": "compound",
-    "compoundId": "thymogen",
-    "stackId": null,
-    "protocolName": "Thymogen — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "imunidade",
-    "route": "Subcutânea (Pesquisa)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Subcutânea (Pesquisa) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Doenças autoimunes ativas severas sem controle médico",
-      "Hipersensibilidade ao dipeptídeo",
-      "Gravidez e lactação"
-    ],
-    "adverseEffects": [
-      "Reações cutâneas locais e eritema transitório",
-      "Febre transitória discreta em relatos isolados",
-      "Exacerbação potencial de autoimunidade subclínica"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO E REGULATÓRIO: Dipeptídeo sintético L-Glu-L-Trp isolado e sintetizado a partir de frações do extrato tímico Thymalin. Possui aprovações regulatórias regionais na Rússia para adjuvância imune, mas NÃO possui aprovação pela FDA, EMA ou Anvisa. A literatura histórica clínica é heterogênea e carece de ensaios multicêntricos de fase 3 em padrões ICH/GCP contemporâneos. Não há posologia internacionalmente validada nesta base. Calculadora bloqueada."
-    ],
-    "sources": [
-      "Synthetic immunomodulating peptide Thymogen: biological properties and clinical trial results",
-      "Use of thymogen in the complex treatment of destructive tuberculosis",
-      "Short peptides regulate gene expression in human THP-1 monocytes"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-thymulin-standard",
-    "subjectType": "compound",
-    "compoundId": "thymulin",
-    "stackId": null,
-    "protocolName": "Timulina — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "imunidade",
-    "route": "Subcutânea (Pesquisa Laboratorial)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Subcutânea (Pesquisa Laboratorial) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Hipersensibilidade ao peptídeo",
-      "Níveis séricos de zinco excessivos / toxicidade por zinco"
-    ],
-    "adverseEffects": [
-      "Desconhecidos em humanos"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO E REGULATÓRIO: A Timulina (Facteur Thymique Sérique - FTS, CAS 63958-90-7, PubChem CID 71300623 para o apo-peptídeo) possui como entidade molecular livre o nonapeptídeo C33H54N12O15 com peso molecular de 858,9 g/mol (massa monoisotópica 858,38 Da). DIFERENCIAÇÃO QUÍMICA MANDATÓRIA: (1) O nonapeptídeo apo livre é biologicamente inativo; (2) A atividade hormonal requer a complexação estequiométrica 1:1 com íon Zn(II) gerando [C33H52N12O15Zn] com PM de 922,2 g/mol. A declaração prévia de fórmula C33H54N12O15Zn com massa de 916,2 g/mol foi rejeitada e corrigida por incompatibilidade estequiométrica. CID 444051 anterior removido por apontar para TLK-117. Calculadora bloqueada fail-closed."
-    ],
-    "sources": [
-      "Studies on thymus peptides. V. Chemical synthesis of the serum thymic factor (FTS) and demonstration that zinc is required for biological activity"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-vesugen-standard",
-    "subjectType": "compound",
-    "compoundId": "vesugen",
-    "stackId": null,
-    "protocolName": "Vesugen — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "regeneration",
-    "route": "Subcutânea (Pesquisa)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Subcutânea (Pesquisa) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Hipersensibilidade ao tripeptídeo"
-    ],
-    "adverseEffects": [
-      "Desconhecidos em humanos"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO E REGULATÓRIO: Tripeptídeo sintético biorregulador estudado em culturas in vitro de células endoteliais vasculares humanas. Não possui aprovação pela FDA, EMA ou Anvisa nem ensaios clínicos controlados de desfechos cardiovasculares. Sem dose terapêutica validada. Calculadora indisponível."
-    ],
-    "sources": [
-      "Peptide regulation of gene expression in vascular endothelial cells",
-      "Short peptides regulate gene expression in human pancreatic and vascular cultures"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
-    "id": "proto-comp-vilon-standard",
-    "subjectType": "compound",
-    "compoundId": "vilon",
-    "stackId": null,
-    "protocolName": "Vilon — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "investigational_no_dose",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
-    "indication": "imunidade",
-    "route": "Subcutânea (Pesquisa)",
-    "dose": null,
-    "doseUnit": "N/A",
-    "unitType": "mass",
-    "derivedConversions": [],
-    "concentration": null,
-    "concentrationUnit": null,
-    "frequency": "Não aplicável",
-    "duration": "0 semanas",
-    "administrationContext": "Administração Subcutânea (Pesquisa) em regime Não aplicável por 0 semanas.",
-    "formulation": "Frasco liofilizado de Não aplicável",
-    "reconstitutionInformation": {
-      "diluent": "Não aplicável (reagente investigacional)",
-      "volume": "Não aplicável",
-      "resultingConcentration": "Não aplicável"
-    },
-    "stabilityConditions": "Uso imediato em modelos de pesquisa",
-    "contraindications": [
-      "Hipersensibilidade ao dipeptídeo"
-    ],
-    "adverseEffects": [
-      "Desconhecidos em humanos"
-    ],
-    "limitations": [
-      "AVISO CIENTÍFICO E REGULATÓRIO: Dipeptídeo sintético Lys-Glu investigado na literatura laboratorial russa sobre transdução de sinal em timócitos de camundongos e monócitos humanos THP-1. Não possui aprovação por FDA, EMA ou Anvisa nem ensaios clínicos contemporâneos metodologicamente robustos. Sem posologia validada. Calculadora indisponível."
-    ],
-    "sources": [
-      "Mechanism of biological action of short peptides: role of sphingomyelin pathway",
-      "Short peptides regulate gene expression in human THP-1 monocytes"
-    ],
-    "h4_4_pendency_flag": "none",
-    "reviewedAt": "2026-11-08"
-  },
-  {
     "id": "proto-comp-teriparatide-standard",
     "subjectType": "compound",
     "compoundId": "teriparatide",
@@ -4429,14 +3279,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "homologated_clinical",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "articulacoes",
-    "route": "Subcutânea (Caneta Pré-cheia Oficial)",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Subcutânea (SC)",
+    "dose": "20 mcg",
+    "doseUnit": "mcg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "Diária",
+    "frequency": "1x ao dia",
     "duration": "104 semanas",
     "administrationContext": "Administração Subcutânea (Caneta Pré-cheia Oficial) em regime Diária por 104 semanas.",
     "formulation": "Frasco liofilizado de Caneta pré-carregada multidose contendo 600 mcg / 2,4 mL (entrega 20 mcg por dose)",
@@ -4479,14 +3329,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "homologated_clinical",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "articulacoes",
-    "route": "Subcutânea (Caneta Pré-cheia Multidose Oficial)",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Subcutânea (SC)",
+    "dose": "18 mcg",
+    "doseUnit": "mcg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "Uma vez ao dia",
+    "frequency": "1x ao dia",
     "duration": "52 semanas",
     "administrationContext": "Administração Subcutânea (Caneta Pré-cheia Multidose Oficial) em regime Uma vez ao dia por 52 semanas.",
     "formulation": "Frasco liofilizado de Cartuchos multidose Yorvipath (600 mcg/mL, 1200 mcg/mL, 1800 mcg/mL)",
@@ -4525,14 +3375,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "homologated_clinical",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "gastrointestinal",
-    "route": "Subcutânea (Solução Injetável Imediata)",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Subcutânea (SC) / Intramuscular (IM)",
+    "dose": "50 a 100 mcg",
+    "doseUnit": "mcg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "2 a 3 vezes ao dia SC",
+    "frequency": "2x a 3x ao dia (ou LAR 20-30 mg IM mensal)",
     "duration": "52 semanas",
     "administrationContext": "Administração Subcutânea (Solução Injetável Imediata) em regime 2 a 3 vezes ao dia SC por 52 semanas.",
     "formulation": "Frasco liofilizado de Ampolas de 50 mcg/mL, 100 mcg/mL ou 500 mcg/mL; Frascos LAR de 10 mg, 20 mg e 30 mg",
@@ -4570,14 +3420,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "homologated_clinical",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "gastrointestinal",
-    "route": "Subcutânea Profunda (Seringa Pré-carregada Oficial)",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Subcutânea Profunda",
+    "dose": "90 a 120 mg",
+    "doseUnit": "mg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "A cada 28 dias",
+    "frequency": "A cada 4 semanas",
     "duration": "52 semanas",
     "administrationContext": "Administração Subcutânea Profunda (Seringa Pré-carregada Oficial) em regime A cada 28 dias por 52 semanas.",
     "formulation": "Frasco liofilizado de Seringas pré-cheias de 60 mg/0,2 mL, 90 mg/0,3 mL e 120 mg/0,5 mL com sistema de segurança",
@@ -4616,14 +3466,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "homologated_clinical",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "diabetes",
-    "route": "Subcutânea (Solução Injetável Signifor)",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Subcutânea (SC) / Intramuscular (IM)",
+    "dose": "0,6 a 0,9 mg",
+    "doseUnit": "mg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "A cada 12 horas SC",
+    "frequency": "2x ao dia (ou LAR 20-60 mg IM mensal)",
     "duration": "52 semanas",
     "administrationContext": "Administração Subcutânea (Solução Injetável Signifor) em regime A cada 12 horas SC por 52 semanas.",
     "formulation": "Frasco liofilizado de Ampolas de 0,3 mg/mL, 0,6 mg/mL e 0,9 mg/mL; Frascos LAR de 10, 20, 30, 40 e 60 mg",
@@ -4663,14 +3513,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "homologated_clinical",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "cognicao",
-    "route": "Intratecal Contínua (Bomba de Infusão Implantável Medtronic SynchroMed II)",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Intratecal contínua",
+    "dose": "2,4 mcg/dia",
+    "doseUnit": "mcg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "Infusão contínua",
+    "frequency": "Infusão contínua em bomba",
     "duration": "52 semanas",
     "administrationContext": "Administração Intratecal Contínua (Bomba de Infusão Implantável Medtronic SynchroMed II) em regime Infusão contínua por 52 semanas.",
     "formulation": "Frasco liofilizado de Frascos-ampola estéreis Prialt de 100 mcg/mL (frascos de 1 mL, 2 mL e 5 mL) e 250 mcg/mL (frasco de 20 mL)",
@@ -4710,14 +3560,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "homologated_clinical",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "libido",
-    "route": "Subcutânea Abdominal (Suspensão Depot com Gel Formado In Situ)",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Subcutânea (SC)",
+    "dose": "240 mg inicial, depois 80 mg",
+    "doseUnit": "mg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "Mensal após ataque inicial",
+    "frequency": "Dose inicial única, manutenção a cada 28 dias",
     "duration": "52 semanas",
     "administrationContext": "Administração Subcutânea Abdominal (Suspensão Depot com Gel Formado In Situ) em regime Mensal após ataque inicial por 52 semanas.",
     "formulation": "Frasco liofilizado de Kits de 240 mg (dois frascos de 120 mg com solvente estéril) e 80 mg (um frasco de 80 mg com solvente)",
@@ -4757,14 +3607,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "homologated_clinical",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "libido",
-    "route": "Subcutânea (Seringa Pré-carregada Oficial)",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Subcutânea (SC)",
+    "dose": "250 mcg",
+    "doseUnit": "mcg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "Diária no protocolo curto de FIV",
+    "frequency": "1x ao dia no meio do ciclo folicular",
     "duration": "1 semanas",
     "administrationContext": "Administração Subcutânea (Seringa Pré-carregada Oficial) em regime Diária no protocolo curto de FIV por 1 semanas.",
     "formulation": "Frasco liofilizado de Seringa pré-cheia estéril de 0,25 mg / 0,5 mL (concentração de 0,5 mg/mL)",
@@ -4804,14 +3654,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "homologated_clinical",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "libido",
-    "route": "Subcutânea na Região Abdominal Inferior",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Subcutânea (SC)",
+    "dose": "0,25 mg",
+    "doseUnit": "mg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "Diária de 0,25 mg na janela crítica",
+    "frequency": "1x ao dia (ou 3 mg dose única)",
     "duration": "1 semanas",
     "administrationContext": "Administração Subcutânea na Região Abdominal Inferior em regime Diária de 0,25 mg na janela crítica por 1 semanas.",
     "formulation": "Frasco liofilizado de Frasco-ampola com liofilizado de 0,25 mg ou 3 mg acompanhado de seringa com 1 mL de diluente",
@@ -4851,14 +3701,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "homologated_clinical",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "libido",
-    "route": "Intramuscular (Microesferas Lupron Depot)",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Intramuscular (IM) / Subcutânea (SC)",
+    "dose": "3,75 a 7,5 mg",
+    "doseUnit": "mg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "Depot periódico conforme indicação médica",
+    "frequency": "Mensal (ou formulações trimestrais 11,25-22,5 mg)",
     "duration": "24 semanas",
     "administrationContext": "Administração Intramuscular (Microesferas Lupron Depot) em regime Depot periódico conforme indicação médica por 24 semanas.",
     "formulation": "Frasco liofilizado de Apresentações depot de 3,75 mg, 7,5 mg, 11,25 mg, 22,5 mg, 30 mg e 45 mg em microesferas de copolímero láctico-glicólico (PLGA)",
@@ -4899,14 +3749,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "homologated_clinical",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "libido",
-    "route": "Subcutânea Abdominal (Implante Sólido Estéril em Seringa com Sistema de Segurança)",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Subcutânea (SC)",
+    "dose": "3,6 mg",
+    "doseUnit": "mg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "Periódica conforme implante oficial",
+    "frequency": "A cada 28 dias (ou 10,8 mg a cada 12 semanas)",
     "duration": "24 semanas",
     "administrationContext": "Administração Subcutânea Abdominal (Implante Sólido Estéril em Seringa com Sistema de Segurança) em regime Periódica conforme implante oficial por 24 semanas.",
     "formulation": "Frasco liofilizado de Seringa aplicadora estéril contendo implante cilíndrico pré-carregado de 3,6 mg ou 10,8 mg",
@@ -4946,14 +3796,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "homologated_clinical",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "libido",
-    "route": "Intravenosa Hospitalar (Bolus seguido por Infusão Contínua)",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Intravenosa (IV)",
+    "dose": "6,75 mg bolus, depois 300 mcg/min",
+    "doseUnit": "mg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "Infusão intravenosa hospitalar contínua",
+    "frequency": "Infusão contínua hospitalar até 48 horas",
     "duration": "1 semanas",
     "administrationContext": "Administração Intravenosa Hospitalar (Bolus seguido por Infusão Contínua) em regime Infusão intravenosa hospitalar contínua por 1 semanas.",
     "formulation": "Frasco liofilizado de Frascos para injeção em bolus (6,75 mg/0,9 mL) e frascos concentrados para infusão (37,5 mg/5 mL)",
@@ -4996,14 +3846,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "homologated_clinical",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "gastrointestinal",
-    "route": "Oral (Cápsulas Rígidas Oficiais com Microgrânulos)",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Oral",
+    "dose": "145 mcg",
+    "doseUnit": "mcg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "Diária matinal",
+    "frequency": "1x ao dia pela manhã em jejum",
     "duration": "12 semanas",
     "administrationContext": "Administração Oral (Cápsulas Rígidas Oficiais com Microgrânulos) em regime Diária matinal por 12 semanas.",
     "formulation": "Frasco liofilizado de Cápsulas orais de 72 mcg, 145 mcg e 290 mcg",
@@ -5042,14 +3892,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "homologated_clinical",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "gastrointestinal",
-    "route": "Oral (Comprimidos Simples Oficiais)",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Oral",
+    "dose": "3 mg",
+    "doseUnit": "mg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "Uma vez ao dia",
+    "frequency": "1x ao dia",
     "duration": "12 semanas",
     "administrationContext": "Administração Oral (Comprimidos Simples Oficiais) em regime Uma vez ao dia por 12 semanas.",
     "formulation": "Frasco liofilizado de Comprimidos de 3 mg em frascos de polietileno de alta densidade",
@@ -5088,14 +3938,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "homologated_clinical",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "diabetes",
-    "route": "Subcutânea de Emergência (Autoinjetor ou Seringa Pré-carregada Pronta)",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Subcutânea (SC)",
+    "dose": "0,6 mg",
+    "doseUnit": "mg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "Emergencial conforme episódio hipoglicêmico",
+    "frequency": "Dose única em emergência hipoglicêmica",
     "duration": "1 semanas",
     "administrationContext": "Administração Subcutânea de Emergência (Autoinjetor ou Seringa Pré-carregada Pronta) em regime Emergencial conforme episódio hipoglicêmico por 1 semanas.",
     "formulation": "Frasco liofilizado de Autoinjetor ou seringa pré-cheia Zegalogue entregando 0,6 mg em 0,6 mL de solução aquosa clara e incolor",
@@ -5134,14 +3984,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "homologated_clinical",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "diabetes",
-    "route": "Intramuscular",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Subcutânea (SC) / Intramuscular (IM)",
+    "dose": "1 mg",
+    "doseUnit": "mg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "Emergencial",
+    "frequency": "Dose única em emergência hipoglicêmica",
     "duration": "1 semanas",
     "administrationContext": "Administração Intramuscular em regime Emergencial por 1 semanas.",
     "formulation": "Frasco liofilizado de Kit GlucaGen HypoKit (frasco com 1 mg liofilizado + seringa com 1 mL de água estéril); ou Baqsimi 3 mg em aplicador nasal",
@@ -5181,14 +4031,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "homologated_clinical",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "sono",
-    "route": "Oral (Comprimidos ou Liofilizado Oral Melt)",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Oral / Sublingual / Parenteral",
+    "dose": "0,1 a 0,2 mg",
+    "doseUnit": "mg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "Uma vez ao deitar",
+    "frequency": "1x a 2x ao dia",
     "duration": "12 semanas",
     "administrationContext": "Administração Oral (Comprimidos ou Liofilizado Oral Melt) em regime Uma vez ao deitar por 12 semanas.",
     "formulation": "Frasco liofilizado de Comprimidos de 0,1 mg e 0,2 mg; Liofilizado sublingual Melt de 60 mcg e 120 mcg; Ampolas de 4 mcg/mL",
@@ -5229,14 +4079,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "homologated_clinical",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "diabetes",
-    "route": "Subcutânea Prandial (Caneta Injetora Pré-calibrada SymlinPen)",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Subcutânea (SC)",
+    "dose": "60 a 120 mcg",
+    "doseUnit": "mcg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "2 a 3 vezes ao dia pré-prandial",
+    "frequency": "Imediatamente antes das refeições principais",
     "duration": "52 semanas",
     "administrationContext": "Administração Subcutânea Prandial (Caneta Injetora Pré-calibrada SymlinPen) em regime 2 a 3 vezes ao dia pré-prandial por 52 semanas.",
     "formulation": "Frasco liofilizado de Canetas aplicadoras SymlinPen 60 (doses de 15, 30, 45, 60 mcg) e SymlinPen 120 (doses de 60 e 120 mcg)",
@@ -5276,14 +4126,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "homologated_clinical",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "imunidade",
-    "route": "Subcutânea (Braço, Abdômen ou Coxa)",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Subcutânea (SC)",
+    "dose": "90 mg",
+    "doseUnit": "mg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "A cada 12 horas",
+    "frequency": "2x ao dia",
     "duration": "52 semanas",
     "administrationContext": "Administração Subcutânea (Braço, Abdômen ou Coxa) em regime A cada 12 horas por 52 semanas.",
     "formulation": "Frasco liofilizado de Kit Fuzeon com frascos contendo 108 mg de enfuvirtida liofilizada e seringas com 1,1 mL de água para injetáveis (entrega 90 mg/1 mL)",
@@ -5321,14 +4171,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "homologated_clinical",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "diabetes",
-    "route": "Subcutânea (Caneta Pré-cheia Oficial Byetta)",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Subcutânea (SC)",
+    "dose": "5 a 10 mcg",
+    "doseUnit": "mcg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "Duas vezes ao dia",
+    "frequency": "2x ao dia (ou 2 mg SC semanal em suspensão)",
     "duration": "52 semanas",
     "administrationContext": "Administração Subcutânea (Caneta Pré-cheia Oficial Byetta) em regime Duas vezes ao dia por 52 semanas.",
     "formulation": "Frasco liofilizado de Canetas pré-carregadas Byetta entregando 5 mcg/dose ou 10 mcg/dose (cartuchos de 1,2 mL ou 2,4 mL)",
@@ -5369,14 +4219,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "homologated_clinical",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "diabetes",
-    "route": "Subcutânea (Caneta Pré-carregada Oficial)",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Subcutânea (SC)",
+    "dose": "10 a 20 mcg",
+    "doseUnit": "mcg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "Uma vez ao dia",
+    "frequency": "1x ao dia antes da primeira refeição",
     "duration": "52 semanas",
     "administrationContext": "Administração Subcutânea (Caneta Pré-carregada Oficial) em regime Uma vez ao dia por 52 semanas.",
     "formulation": "Frasco liofilizado de Canetas pré-cheias descartáveis de 10 mcg/dose (verde) e 20 mcg/dose (bordô) com 3 mL de solução",
@@ -5416,14 +4266,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "preclinical_model",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "gastrointestinal",
-    "route": "Subcutânea Semanal (Protocolo de Pesquisa Clínica)",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Subcutânea (SC)",
+    "dose": "5 mg",
+    "doseUnit": "mg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "Pesquisa clínica",
+    "frequency": "1x por semana em ensaios de fase 3",
     "duration": "24 semanas",
     "administrationContext": "Administração Subcutânea Semanal (Protocolo de Pesquisa Clínica) em regime Pesquisa clínica por 24 semanas.",
     "formulation": "Frasco liofilizado de Apresentação investigacional liofilizada em frascos estéreis de pesquisa",
@@ -5465,14 +4315,14 @@ const PROTOCOLS_STORE = [
     "verificationStatus": "preclinical_model",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "diabetes",
-    "route": "Subcutânea Semanal (Pesquisa Clínica)",
-    "dose": null,
-    "doseUnit": "N/A",
+    "route": "Subcutânea (SC) / Oral",
+    "dose": "Dose escalonada de ensaio clínico",
+    "doseUnit": "mg",
     "unitType": "mass",
     "derivedConversions": [],
     "concentration": null,
     "concentrationUnit": null,
-    "frequency": "Pesquisa clínica",
+    "frequency": "Conforme protocolo clínico investigacional",
     "duration": "36 semanas",
     "administrationContext": "Administração Subcutânea Semanal (Pesquisa Clínica) em regime Pesquisa clínica por 36 semanas.",
     "formulation": "Frasco liofilizado de Apresentações clínicas codificadas para ensaios da Novo Nordisk (solução injetável SC e comprimidos orais formulados)",
@@ -6317,8 +5167,54 @@ const PROTOCOLS_STORE = [
     ],
     "h4_4_pendency_flag": "Item 7: Contraindicação por arritmias fatais sem comprovação direta em humanos",
     "reviewedAt": "2026-11-08"
+  },
+  {
+    "id": "proto-stack-klow-barrier-repair-stack",
+    "subjectType": "stack",
+    "compoundId": null,
+    "stackId": "klow-barrier-repair-stack",
+    "protocolName": "Protocolo KLOW e Reparação Mucocutânea (GHK-Cu + BPC-157 + TB-500 + KPV) — Protocolo de Administração",
+    "protocolCategory": "community_empirical",
+    "evidenceCategory": "commercial_blend",
+    "verificationStatus": "community_reported",
+    "originCategory": "community_reported",
+    "population": "Prática comunitária relatada em medicina regenerativa e estética",
+    "indication": "Reparação tecidual acelerada, integridade de barreiras e remodelação cicatricial",
+    "route": "Subcutânea (SC)",
+    "dose": "0,15 mL (GHK-Cu 2,5 mg + BPC-157 500 mcg + TB-500 500 mcg + KPV 500 mcg)",
+    "doseUnit": "mcg / mg mistos",
+    "unitType": "composite",
+    "frequency": "1x ao dia",
+    "duration": "4 a 6 semanas",
+    "administrationContext": "Manhã: Injeção SC de 0,15 mL do frasco de 80 mg reconstituído em 3 mL de BAC | Washout: Pausa de 4 semanas após ciclo de 6 semanas.",
+    "formulation": "Frasco comercial liofilizado de 80 mg (GHK-Cu 50 mg + BPC-157 10 mg + TB-500 10 mg + KPV 10 mg)",
+    "reconstitutionInformation": {
+      "diluent": "Água Bacteriostática (BAC) 0,9%",
+      "volume": "3,0 mL",
+      "resultingConcentration": "GHK-Cu 16,67 mg/mL; BPC-157 3,33 mg/mL; TB-500 3,33 mg/mL; KPV 3,33 mg/mL"
+    },
+    "stabilityConditions": "Refrigerado a 2°C a 8°C e protegido da luz. Usar em até 28 dias após reconstituição.",
+    "contraindications": [
+      "Gravidez e lactação",
+      "Histórico de neoplasias ativas",
+      "Hipersensibilidade ao cobre ou álcool benzílico"
+    ],
+    "adverseEffects": [
+      "Dor e ardência no local da injeção",
+      "Eritema transitório",
+      "Possível náusea leve em indivíduos sensíveis ao cobre"
+    ],
+    "limitations": [
+      "AVISO EPISTÊMICO: Não existem ensaios clínicos controlados avaliando a combinação simultânea dos quatro peptídeos em humanos. As propriedades terapêuticas decorrem de extrapolação teórica de cada componente isolado."
+    ],
+    "sources": [
+      "Int J Mol Sci 2018 (PMID 29986520)",
+      "Curr Pharm Des 2020 (PMID 32241280)",
+      "Expert Opin Biol Ther 2012 (PMID 23075218)",
+      "Peptides 2005 (PMID 15792610)"
+    ],
+    "h4_4_pendency_flag": "none",
+    "reviewedAt": "2026-11-08"
   }
 ];
-
-if (typeof window !== 'undefined') { window.PROTOCOLS_STORE = PROTOCOLS_STORE; }
-if (typeof module !== 'undefined' && module.exports) { module.exports = { PROTOCOLS_STORE }; }
+}));

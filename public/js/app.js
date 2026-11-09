@@ -9,6 +9,44 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
+  // ----------------------------------------------------
+  // H4.7: Sincronizacao do Dominio Normalizado e Contadores de Categorias
+  // ----------------------------------------------------
+  if (typeof window !== 'undefined' && window.DomainEngine) {
+    try {
+      const canonicalPeptides = window.DomainEngine.rebuildPeptidesDatabase();
+      const canonicalStacks = window.DomainEngine.rebuildResearchStacks();
+
+      if (typeof PEPTIDES_DATABASE !== 'undefined' && Array.isArray(PEPTIDES_DATABASE)) {
+        PEPTIDES_DATABASE.length = 0;
+        PEPTIDES_DATABASE.push(...canonicalPeptides);
+        window.PEPTIDES_DATABASE = PEPTIDES_DATABASE;
+      } else {
+        window.PEPTIDES_DATABASE = canonicalPeptides;
+      }
+
+      if (typeof RESEARCH_STACKS !== 'undefined' && Array.isArray(RESEARCH_STACKS)) {
+        RESEARCH_STACKS.length = 0;
+        RESEARCH_STACKS.push(...canonicalStacks);
+        window.RESEARCH_STACKS = RESEARCH_STACKS;
+      } else {
+        window.RESEARCH_STACKS = canonicalStacks;
+      }
+
+      if (typeof PEPTIDE_CATEGORIES !== 'undefined' && Array.isArray(PEPTIDE_CATEGORIES)) {
+        PEPTIDE_CATEGORIES.forEach(cat => {
+          if (cat.id === 'all') {
+            cat.count = window.PEPTIDES_DATABASE.length;
+          } else {
+            cat.count = window.PEPTIDES_DATABASE.filter(p => p.categoryId === cat.id).length;
+          }
+        });
+      }
+    } catch (err) {
+      console.warn('[PeptiPedia Domain] Erro na inicializacao do DomainEngine em app.js:', err);
+    }
+  }
+
 
   // Helper de sanitização segura contra injeção de HTML no DOM
 

@@ -1,8 +1,18 @@
 /**
- * Canonical Domain Entity: STACKS (Combinações canônicas de pesquisa)
- * PeptiPedia - Arquitetura de Domínio Normalizada (H4.5)
+ * STACKS_STORE (H4.7 Remediated Canon)
+ * PeptiPedia Domain Entity Store
  */
-const STACKS_STORE = [
+
+(function (root, factory) {
+  if (typeof module === 'object' && module.exports) {
+    module.exports = { STACKS_STORE: factory() };
+  } else {
+    root.STACKS_STORE = factory();
+  }
+}(typeof self !== 'undefined' ? self : this, function () {
+  'use strict';
+
+  return [
   {
     "id": "wolverine-stack",
     "canonicalName": "Protocolo Tecidual Wolverine (BPC-157 + TB-500)",
@@ -38,7 +48,7 @@ const STACKS_STORE = [
     "commercialFormulations": {
       "isFixedRatioBlend": true,
       "totalVialMassMg": 10,
-      "typicalReconstitutionVolumeMl": 2.0,
+      "typicalReconstitutionVolumeMl": 2,
       "diluentRecommended": "Água Bacteriostática (BAC) 0,9%",
       "componentProportions": {
         "bpc-157": "50% (5 mg)",
@@ -913,7 +923,7 @@ const STACKS_STORE = [
     "commercialFormulations": {
       "isFixedRatioBlend": true,
       "totalVialMassMg": 70,
-      "typicalReconstitutionVolumeMl": 3.0,
+      "typicalReconstitutionVolumeMl": 3,
       "diluentRecommended": "Água Bacteriostática (BAC) 0,9%",
       "componentProportions": {
         "ghk-cu": "71,4% (50 mg)",
@@ -922,7 +932,8 @@ const STACKS_STORE = [
       },
       "resultingConcentrations": "GHK-Cu: 16,67 mg/mL; BPC-157: 3,33 mg/mL; TB-500: 3,33 mg/mL",
       "kineticConflictWarning": "O blend pronto força a administração diária de TB-500 e impede ajuste isolado da dose de cobre.",
-      "physicochemicalRisk": "Risco moderado de clivagem catalítica de ligações peptídicas por íons Cu2+ livres sob luz e calor."
+      "physicochemicalRisk": "Risco moderado de clivagem catalítica de ligações peptídicas por íons Cu2+ livres sob luz e calor.",
+      "mathematicalReconciliation": "Conciliação analítica: O frasco liofilizado comercial contém 70 mg total com proporção fixa 5:1:1 (GHK-Cu 50 mg, BPC-157 10 mg, TB-500 10 mg). Reconstituído em 3 mL de BAC, cada 0,15 mL fornece GHK-Cu 2,5 mg, BPC-157 500 mcg e TB-500 500 mcg. As quantidades unitárias declaradas no array components (2 mg / 250 mcg / 2,5 mg) refletem monoterapias teóricas que não coincidem com a razão fixa 5:1:1 do frasco único."
     },
     "intendedPurpose": "Regeneração & Tecidos",
     "evidenceCategory": "commercial_blend",
@@ -993,9 +1004,85 @@ const STACKS_STORE = [
     ],
     "auditConfirmationStatus": "contraindicated_cardiovascular_risk_pending_direct_fatal_arrhythmia_trial",
     "createdAt": "2026-10-28T00:00:00Z",
-    "updatedAt": "2026-11-08T19:00:00Z"
+    "updatedAt": "2026-11-08T19:00:00Z",
+    "safetyAlert": "Alto risco de taquicardia sinusal excessiva, sobrecarga cardiovascular autonômica e intolerância gastrointestinal severa decorrente de superestimulação redundante de receptores GLP-1/Glucagon."
+  },
+  {
+    "id": "klow-barrier-repair-stack",
+    "canonicalName": "Protocolo KLOW e Reparação Mucocutânea (GHK-Cu + BPC-157 + TB-500 + KPV)",
+    "synonyms": [
+      "KLOW",
+      "KLOW Blend",
+      "Quad Stack de Reparação Mucocutânea"
+    ],
+    "category": "Cicatrizantes & Teciduais",
+    "categoryId": "healing",
+    "compositionType": "commercial_fixed_blend",
+    "components": [
+      {
+        "compoundId": "ghk-cu",
+        "role": "remodeling",
+        "amount": "2 mg",
+        "unit": "mg",
+        "ratio": "62,5% (50 mg)"
+      },
+      {
+        "compoundId": "bpc-157",
+        "role": "angiogenic",
+        "amount": "250 mcg",
+        "unit": "mcg",
+        "ratio": "12,5% (10 mg)"
+      },
+      {
+        "compoundId": "tb-500",
+        "role": "cell_migration",
+        "amount": "500 mcg",
+        "unit": "mcg",
+        "ratio": "12,5% (10 mg)"
+      },
+      {
+        "compoundId": "kpv",
+        "role": "anti_inflammatory",
+        "amount": "250 mcg",
+        "unit": "mcg",
+        "ratio": "12,5% (10 mg)"
+      }
+    ],
+    "commercialFormulations": {
+      "isFixedRatioBlend": true,
+      "totalVialMassMg": 80,
+      "typicalReconstitutionVolumeMl": 3,
+      "diluentRecommended": "Água Bacteriostática (BAC) 0,9%",
+      "componentProportions": {
+        "ghk-cu": "62,5% (50 mg)",
+        "bpc-157": "12,5% (10 mg)",
+        "tb-500": "12,5% (10 mg)",
+        "kpv": "12,5% (10 mg)"
+      },
+      "resultingConcentrations": "GHK-Cu: 16,67 mg/mL; BPC-157: 3,33 mg/mL; TB-500: 3,33 mg/mL; KPV: 3,33 mg/mL",
+      "kineticConflictWarning": "O blend comercial pronto de 80 mg fixa a razão estequiométrica e força administração diária de TB-500 (microdosagem) e KPV, sem flexibilidade de titulação isolada.",
+      "physicochemicalRisk": "A alta constante de afinidade de GHK-Cu (log beta ≈ 16,4) reduz o risco de remoção estequiométrica de cobre por quelação competitiva com KPV em pH neutro, mas a mistura quádrupla carece de dados analíticos por HPLC/MS."
+    },
+    "evidenceCategory": "commercial_blend",
+    "riskLevel": "moderate",
+    "synergyRationale": "GHK-Cu estimula síntese de colágeno e remodelação dérmica; BPC-157 ativa angiogênese via VEGF; TB-500 promove migração de queratinócitos e fibroblastos; KPV modula inflamação local via supressão de NF-kB. Ausência de ensaios clínicos da combinação completa de 4 peptídeos.",
+    "knownInteractions": [
+      "Dor e irritação transitória no local da injeção decorrente do cobre.",
+      "Risco de microdosagem diária de TB-500 em blends fixos.",
+      "Estabilidade físico-química da solução reconstituída restrita a 28 dias a 2-8°C protegida da luz."
+    ],
+    "sources": [
+      "Int J Mol Sci 2018 (PMID 29986520)",
+      "Curr Pharm Des 2020 (PMID 32241280)",
+      "Expert Opin Biol Ther 2012 (PMID 23075218)",
+      "Peptides 2005 (PMID 15792610)",
+      "https://peptidepedia.org/all-peptides",
+      "https://www.arcana-labs.app/peptideos"
+    ],
+    "createdAt": "2026-11-08T22:00:00Z",
+    "updatedAt": "2026-11-08T22:00:00Z",
+    "fixedRatio": true,
+    "auditConfirmationStatus": "h4_4_allegations_pending_independent_confirmation"
   }
 ];
-
-if (typeof window !== 'undefined') { window.STACKS_STORE = STACKS_STORE; }
-if (typeof module !== 'undefined' && module.exports) { module.exports = { STACKS_STORE }; }
+}));
