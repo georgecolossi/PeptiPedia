@@ -21,7 +21,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Pré-Clínico Robusto / Ensaios Piloto",
     "evidenceScore": 92,
     "protocolEvidenceType": "preclinical_empirical",
-    "protocolEvidenceNote": "AVISO CIENTÍFICO: A posologia típica de 250 a 500 mcg SC/dia é uma prática empírica consagrada na comunidade de biohacking e medicina esportiva (extrapolação alométrica da dose de 10 mcg/kg em roedores). NÃO existem ensaios clínicos randomizados duplo-cegos fase 3 em humanos para cicatrização de tendões.",
+    "protocolEvidenceNote": "Revisão sistemática ortopédica 2025 (PMID 40756949) identificou 35 estudos pré-clínicos e apenas 1 série retrospectiva (n=12), sem ensaios clínicos randomizados fase 3 em humanos ou dados clínicos formais de segurança; citações espúrias anteriores expurgadas na H4.17.",
     "structure": "Pentadecapeptídeo (15 aminoácidos)",
     "sequence": "Gly-Glu-Pro-Pro-Pro-Gly-Lys-Pro-Ala-Asp-Asp-Ala-Gly-Leu-Val",
     "molecularWeight": "1419.5 g/mol",
@@ -79,42 +79,69 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Pentadecapeptide BPC 157 Enhances the Growth Hormone Receptor Expression in Tendon Fibroblasts",
-        "journal": "Molecules (2014)",
-        "pmid": "25415472",
-        "pmcId": "PMC6271067",
-        "doi": "10.3390/molecules191119066",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/25415472/",
-        "pdfUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6271067/pdf/molecules-19-19066.pdf"
-      },
-      {
-        "title": "The promoting effect of pentadecapeptide BPC 157 on tendon healing involves tendon outgrowth and cell migration",
-        "journal": "Journal of Applied Physiology (2011)",
+        "title": "The promoting effect of pentadecapeptide BPC 157 on tendon healing involves tendon outgrowth, cell survival, and cell migration",
+        "journal": "PubMed (2011)",
         "pmid": "21030672",
         "doi": "10.1152/japplphysiol.00945.2010",
         "url": "https://pubmed.ncbi.nlm.nih.gov/21030672/"
       },
       {
-        "title": "Stable gastric pentadecapeptide BPC 157 in clinical trials and practical medicine",
-        "journal": "Current Pharmaceutical Design (2020)",
-        "pmid": "32241280",
-        "doi": "10.2174/1381612826666200214101416",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/32241280/"
+        "title": "Pentadecapeptide BPC 157 enhances the growth hormone receptor expression in tendon fibroblasts",
+        "journal": "PubMed (2014)",
+        "pmid": "25415472",
+        "doi": "10.3390/molecules191119066",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25415472/",
+        "pmcId": "PMC6271067",
+        "pdfUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6271067/pdf/molecules-19-19066.pdf"
+      },
+      {
+        "title": "Emerging Use of BPC-157 in Orthopaedic Sports Medicine: A Systematic Review",
+        "journal": "HSS journal : the musculoskeletal journal of Hospital for Special Surgery (2025)",
+        "pmid": "40756949",
+        "doi": "10.1177/15563316251355551",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40756949/"
+      },
+      {
+        "title": "Fistulas Healing. Stable Gastric Pentadecapeptide BPC 157 Therapy",
+        "journal": "Current pharmaceutical design (2020)",
+        "pmid": "32329684",
+        "doi": "10.2174/1381612826666200424180139",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32329684/"
+      },
+      {
+        "title": "BPC 157 and Standard Angiogenic Growth Factors. Gastrointestinal Tract Healing, Lessons from Tendon, Ligament, Muscle and Bone Healing",
+        "journal": "Current pharmaceutical design (2018)",
+        "pmid": "29998800",
+        "doi": "10.2174/1381612824666180712110447",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/29998800/"
+      },
+      {
+        "title": "Stable Gastric Pentadecapeptide BPC 157 and Wound Healing",
+        "journal": "Frontiers in pharmacology (2021)",
+        "pmid": "34267654",
+        "doi": "10.3389/fphar.2021.627533",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/34267654/"
       }
     ],
     "scientificReferences": [
-      "Sikiric P, et al. Stable gastric pentadecapeptide BPC 157 in clinical trials. Curr Pharm Des. 2020. PMID: 32241280",
-      "Chang CH, et al. The promoting effect of pentadecapeptide BPC 157 on tendon healing. J Appl Physiol. 2011. PMID: 21030672"
+      "Chang CH, et al. The promoting effect of pentadecapeptide BPC 157 on tendon healing involves tendon outgrowth, cell survival, and cell migration. PubMed. 2011. DOI: 10.1152/japplphysiol.00945.2010. PMID: 21030672.",
+      "Chang CH, et al. Pentadecapeptide BPC 157 enhances the growth hormone receptor expression in tendon fibroblasts. PubMed. 2014. DOI: 10.3390/molecules191119066. PMID: 25415472.",
+      "Vasireddi N, et al. Emerging Use of BPC-157 in Orthopaedic Sports Medicine: A Systematic Review. HSS J. 2025. DOI: 10.1177/15563316251355551. PMID: 40756949. revisão sistemática: 35 pré-clínicos + 1 série retrospectiva (n=12); sem dados clínicos formais de segurança",
+      "Sikiric P, et al. Fistulas Healing. Stable Gastric Pentadecapeptide BPC 157 Therapy. Curr Pharm Des. 2020. DOI: 10.2174/1381612826666200424180139. PMID: 32329684.",
+      "Seiwerth S, et al. BPC 157 and Standard Angiogenic Growth Factors. Gastrointestinal Tract Healing, Lessons from Tendon, Ligament, Muscle and Bone Healing. Curr Pharm Des. 2018. DOI: 10.2174/1381612824666180712110447. PMID: 29998800.",
+      "Seiwerth S, et al. Stable Gastric Pentadecapeptide BPC 157 and Wound Healing. Front Pharmacol. 2021. DOI: 10.3389/fphar.2021.627533. PMID: 34267654."
     ],
     "clinicalStudies": [
       {
-        "title": "The Promoting Effect of Pentadecapeptide BPC 157 on Tendon Healing Involves Tendon Outgrowth, Cell Survival, and Cell Migration",
+        "title": "The promoting effect of pentadecapeptide BPC 157 on tendon healing involves tendon outgrowth, cell survival, and cell migration",
         "journal": "Journal of Applied Physiology (JAP)",
         "year": "2011",
         "pmid": "21030672",
         "phase": "Estudo Laboratorial Pré-Clínico em Explantes de Tendão e Fibroblastos",
         "participants": "Modelos celulares in vitro e modelos murinos de ruptura de tendão de Aquiles",
-        "keyFindings": "O BPC-157 acelerou significativamente o crescimento celular de explantes de tendão, promoveu a sobrevivência celular sob estresse citotóxico e aumentou drasticamente a migração celular pela fosforilação da quinase de adesão focal (FAK) e paxilina. Houve aumento mensurável na expressão dos receptores de GH (GH-R) nos fibroblastos lesionados."
+        "keyFindings": "O BPC-157 acelerou significativamente o crescimento celular de explantes de tendão, promoveu a sobrevivência celular sob estresse citotóxico e aumentou drasticamente a migração celular pela fosforilação da quinase de adesão focal (FAK) e paxilina. Houve aumento mensurável na expressão dos receptores de GH (GH-R) nos fibroblastos lesionados.",
+        "doi": "10.1152/japplphysiol.00945.2010",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/21030672/"
       }
     ],
     "popularityScore": 99,
@@ -153,8 +180,8 @@ const PEPTIDES_DATABASE = [
         ],
         "sources": [
           {
-            "title": "Sikiric et al. Stable gastric pentadecapeptide BPC 157 in tissue repair (Curr Pharm Des 2018, PMID 29898990)",
-            "url": "https://pubmed.ncbi.nlm.nih.gov/29898990/",
+            "title": "Chang CH et al. The promoting effect of pentadecapeptide BPC 157 on tendon healing involves tendon outgrowth, cell survival, and cell migration (PubMed 2011, PMID 21030672)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21030672/",
             "type": "preclinical"
           },
           {
@@ -187,7 +214,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Pré-Clínico / Patente Farmacêutica",
     "evidenceScore": 88,
     "protocolEvidenceType": "preclinical_empirical",
-    "protocolEvidenceNote": "AVISO CIENTÍFICO: A forma sal de arginina foi desenvolvida para resistir ao pH ácido gástrico. Dosagens de 500 mcg/dia são protocolos empíricos de pesquisa clínica gastrointestinal.",
+    "protocolEvidenceNote": "Sal estável de arginina desenvolvido para estabilidade ácida em modelos pré-clínicos (PMID 34267654, PMID 36200148); inexistem ensaios clínicos randomizados fase 3 em humanos.",
     "structure": "Sal de Arginina do Pentadecapeptídeo BPC-157",
     "sequence": "Gly-Glu-Pro-Pro-Pro-Gly-Lys-Pro-Ala-Asp-Asp-Ala-Gly-Leu-Val : L-Arg",
     "molecularWeight": "1593.7 g/mol",
@@ -238,15 +265,23 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Stable gastric pentadecapeptide BPC 157-NO system-relation",
-        "journal": "Current Medicinal Chemistry (2020)",
-        "pmid": "30046271",
-        "doi": "10.2174/0929867325666180723145444",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/30046271/"
+        "title": "Stable Gastric Pentadecapeptide BPC 157 and Wound Healing",
+        "journal": "Frontiers in pharmacology (2021)",
+        "pmid": "34267654",
+        "doi": "10.3389/fphar.2021.627533",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/34267654/"
+      },
+      {
+        "title": "Stable Gastric Pentadecapeptide BPC 157: Prompt Particular Activation of Collateral Pathways",
+        "journal": "Current medicinal chemistry (2023)",
+        "pmid": "36200148",
+        "doi": "10.2174/0929867329666221005111553",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36200148/"
       }
     ],
     "scientificReferences": [
-      "Sikiric P, et al. BPC 157-NO system-relation. Curr Med Chem. 2020. PMID: 30046271"
+      "Seiwerth S, et al. Stable Gastric Pentadecapeptide BPC 157 and Wound Healing. Front Pharmacol. 2021. DOI: 10.3389/fphar.2021.627533. PMID: 34267654.",
+      "Sikiric P, et al. Stable Gastric Pentadecapeptide BPC 157: Prompt Particular Activation of Collateral Pathways. Curr Med Chem. 2023. DOI: 10.2174/0929867329666221005111553. PMID: 36200148."
     ],
     "popularityScore": 90,
     "safetyClassification": "preclinical_risk",
@@ -363,23 +398,31 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Thymosin beta4 accelerates wound healing",
-        "journal": "Annals of the New York Academy of Sciences (2007)",
-        "pmid": "15130753",
-        "doi": "10.1196/annals.1415.018",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/15130753/"
-      },
-      {
         "title": "Thymosin β4: a multi-functional regenerative peptide. Basic properties and clinical applications",
-        "journal": "Expert Opinion on Biological Therapy (2012)",
+        "journal": "Expert opinion on biological therapy (2012)",
         "pmid": "22074294",
         "doi": "10.1517/14712598.2012.634793",
         "url": "https://pubmed.ncbi.nlm.nih.gov/22074294/"
+      },
+      {
+        "title": "De novo cardiomyocytes from within the activated adult heart after injury",
+        "journal": "Nature (2011)",
+        "pmid": "21654746",
+        "doi": "10.1038/nature10188",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/21654746/"
+      },
+      {
+        "title": "Thymosin beta 4 ophthalmic solution for dry eye: a randomized, placebo-controlled, Phase II clinical trial conducted using the controlled adverse environment (CAE™) model",
+        "journal": "Clinical ophthalmology (Auckland, N.Z.) (2015)",
+        "pmid": "26056426",
+        "doi": "10.2147/OPTH.S80954",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26056426/"
       }
     ],
     "scientificReferences": [
-      "Philp D, et al. Thymosin beta4 accelerates wound healing. Ann N Y Acad Sci. 2007. PMID: 15130753",
-      "Goldstein AL, et al. Thymosin beta-4: a multi-functional regenerative peptide. Expert Opin Biol Ther. 2012. PMID: 22074294"
+      "Goldstein AL, et al. Thymosin β4: a multi-functional regenerative peptide. Basic properties and clinical applications. Expert Opin Biol Ther. 2012. DOI: 10.1517/14712598.2012.634793. PMID: 22074294.",
+      "Smart N, et al. De novo cardiomyocytes from within the activated adult heart after injury. Nature. 2011. DOI: 10.1038/nature10188. PMID: 21654746.",
+      "Sosne G, et al. Thymosin beta 4 ophthalmic solution for dry eye: a randomized, placebo-controlled, Phase II clinical trial conducted using the controlled adverse environment (CAE™) model. Clin Ophthalmol. 2015. DOI: 10.2147/OPTH.S80954. PMID: 26056426."
     ],
     "clinicalStudies": [
       {
@@ -390,7 +433,8 @@ const PEPTIDES_DATABASE = [
         "doi": "10.1038/nature10188",
         "phase": "Estudo Pré-Clínico Translacional In Vivo (Evidência Indireta com Timosina Beta-4 completa)",
         "participants": "Modelos in vivo de infarto agudo do miocárdio e rastreamento de linhagem celular genética em camundongos adultos",
-        "keyFindings": "A proteína precursora Timosina Beta-4 completa (43 aminoácidos) estimulou células progenitoras derivadas do epicárdio adulto a se diferenciarem em novos cardiomiócitos funcionais e vasos sanguíneos pós-infarto em camundongos. Não avaliou o fragmento sintético heptapeptídico TB-500."
+        "keyFindings": "A proteína precursora Timosina Beta-4 completa (43 aminoácidos) estimulou células progenitoras derivadas do epicárdio adulto a se diferenciarem em novos cardiomiócitos funcionais e vasos sanguíneos pós-infarto em camundongos. Não avaliou o fragmento sintético heptapeptídico TB-500.",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/21654746/"
       }
     ],
     "popularityScore": 97,
@@ -421,8 +465,8 @@ const PEPTIDES_DATABASE = [
         ],
         "sources": [
           {
-            "title": "Goldstein et al. Thymosin beta4: actin-sequestering protein in cell migration (Ann N Y Acad Sci 2012, PMID 23075073)",
-            "url": "https://pubmed.ncbi.nlm.nih.gov/23075073/",
+            "title": "Goldstein AL et al. Thymosin β4: a multi-functional regenerative peptide. Basic properties and clinical applications (Expert Opin Biol Ther 2012, PMID 22074294)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22074294/",
             "type": "preclinical"
           },
           {
@@ -504,26 +548,66 @@ const PEPTIDES_DATABASE = [
     "fullTextStudies": [
       {
         "title": "Regenerative and Protective Actions of the GHK-Cu Peptide in the Light of the New Gene Data",
-        "journal": "International Journal of Molecular Sciences (2018)",
-        "pmid": "30018512",
-        "pmcId": "PMC6073405",
+        "journal": "International journal of molecular sciences (2018)",
+        "pmid": "29986520",
         "doi": "10.3390/ijms19071987",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/30018512/",
-        "pdfUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6073405/pdf/ijms-19-01987.pdf"
+        "url": "https://pubmed.ncbi.nlm.nih.gov/29986520/"
+      },
+      {
+        "title": "GHK and DNA: resetting the human genome to health",
+        "journal": "BioMed research international (2014)",
+        "pmid": "25302294",
+        "doi": "10.1155/2014/151479",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25302294/"
+      },
+      {
+        "title": "GHK Peptide as a Natural Modulator of Multiple Cellular Pathways in Skin Regeneration",
+        "journal": "BioMed research international (2015)",
+        "pmid": "26236730",
+        "doi": "10.1155/2015/648108",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26236730/"
+      },
+      {
+        "title": "Effects of topical copper tripeptide complex on CO2 laser-resurfaced skin",
+        "journal": "Archives of facial plastic surgery (2006)",
+        "pmid": "16847171",
+        "doi": "10.1001/archfaci.8.4.252",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/16847171/"
+      },
+      {
+        "title": "Stimulation of collagen synthesis in fibroblast cultures by the tripeptide-copper complex glycyl-L-histidyl-L-lysine-Cu2+",
+        "journal": "FEBS letters (1988)",
+        "pmid": "3169264",
+        "doi": "10.1016/0014-5793(88)80509-x",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/3169264/"
+      },
+      {
+        "title": "Topically applied GHK as an anti-wrinkle peptide: Advantages, problems and prospective",
+        "journal": "BioImpacts : BI (2025)",
+        "pmid": "39963574",
+        "doi": "10.34172/bi.30071",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39963574/"
       }
     ],
     "scientificReferences": [
-      "Pickart L, et al. Regenerative Actions of GHK-Cu. Int J Mol Sci. 2018. PMID: 30018512"
+      "Pickart L, et al. Regenerative and Protective Actions of the GHK-Cu Peptide in the Light of the New Gene Data. Int J Mol Sci. 2018. DOI: 10.3390/ijms19071987. PMID: 29986520.",
+      "Pickart L, et al. GHK and DNA: resetting the human genome to health. Biomed Res Int. 2014. DOI: 10.1155/2014/151479. PMID: 25302294.",
+      "Pickart L, et al. GHK Peptide as a Natural Modulator of Multiple Cellular Pathways in Skin Regeneration. Biomed Res Int. 2015. DOI: 10.1155/2015/648108. PMID: 26236730.",
+      "Miller TR, et al. Effects of topical copper tripeptide complex on CO2 laser-resurfaced skin. Arch Facial Plast Surg. 2006. DOI: 10.1001/archfaci.8.4.252. PMID: 16847171. n=13 após laser CO2; sem diferença objetiva vs controle, satisfação subjetiva P=0,04",
+      "Maquart FX, et al. Stimulation of collagen synthesis in fibroblast cultures by the tripeptide-copper complex glycyl-L-histidyl-L-lysine-Cu2+. FEBS Lett. 1988. DOI: 10.1016/0014-5793(88)80509-x. PMID: 3169264.",
+      "Mortazavi SM, et al. Topically applied GHK as an anti-wrinkle peptide: Advantages, problems and prospective. Bioimpacts. 2025. DOI: 10.34172/bi.30071. PMID: 39963574."
     ],
     "clinicalStudies": [
       {
-        "title": "The human tripeptide GHK and tissue remodeling: from the gene to the clinic",
-        "journal": "BioMed Research International",
-        "year": "2014",
-        "pmid": "25587568",
+        "title": "Regenerative and Protective Actions of the GHK-Cu Peptide in the Light of the New Gene Data",
+        "journal": "International journal of molecular sciences",
+        "year": "2018",
+        "pmid": "29986520",
+        "doi": "10.3390/ijms19071987",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/29986520/",
         "phase": "Revisão Mecanística e Análise Transcriptômica Global de Microarrays",
         "participants": "Dados de expressão gênica do Broad Institute Connectivity Map e ensaios clínicos",
-        "keyFindings": "O GHK-Cu reverte a expressão gênica de 4.192 genes para um perfil compatível com a juventude celular. Estimula colágeno tipo I, colágeno tipo III, elastina e glicosaminoglicanos, ao mesmo tempo em que reduz a expressão de metaloproteinases destrutivas (MMP-1, MMP-2)."
+        "keyFindings": "The human peptide GHK (glycyl-l-histidyl-l-lysine) has multiple biological actions, all of which, according to our current knowledge, appear to be health positive. It stimulates blood vessel and nerve outgrowth, increases collagen, elastin, and glycosaminoglycan synthesis, as well as supports the function of dermal fibroblasts. GHK&rsquo;s ability to improve tissue repair has been demonstrated for skin, lung connecti..."
       }
     ],
     "popularityScore": 94,
@@ -641,21 +725,30 @@ const PEPTIDES_DATABASE = [
     "fullTextStudies": [
       {
         "title": "Ipamorelin, the first selective growth hormone secretagogue",
-        "journal": "European Journal of Endocrinology (1998)",
+        "journal": "European journal of endocrinology (1998)",
         "pmid": "9849822",
         "doi": "10.1530/eje.0.1390552",
         "url": "https://pubmed.ncbi.nlm.nih.gov/9849822/"
       },
       {
-        "title": "A comparison of the growth hormone-releasing actions of ipamorelin and GHRP-6 in rats",
-        "journal": "Journal of Endocrinology (1999)",
-        "pmid": "10493836",
-        "doi": "10.1677/joe.0.1620285",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/10493836/"
+        "title": "Pharmacokinetic-pharmacodynamic modeling of ipamorelin, a growth hormone releasing peptide, in human volunteers",
+        "journal": "Pharmaceutical research (1999)",
+        "pmid": "10496658",
+        "doi": "10.1023/a:1018955126402",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/10496658/"
+      },
+      {
+        "title": "Ipamorelin, a new growth-hormone-releasing peptide, induces longitudinal bone growth in rats",
+        "journal": "Growth hormone & IGF research : official journal of the Growth Hormone Research Society and the International IGF Research Society (1999)",
+        "pmid": "10373343",
+        "doi": "10.1054/ghir.1999.9998",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/10373343/"
       }
     ],
     "scientificReferences": [
-      "Raun K, et al. Ipamorelin, the first selective GHS. Eur J Endocrinol. 1998. PMID: 9849822"
+      "Raun K, et al. Ipamorelin, the first selective growth hormone secretagogue. Eur J Endocrinol. 1998. DOI: 10.1530/eje.0.1390552. PMID: 9849822.",
+      "Gobburu JV, et al. Pharmacokinetic-pharmacodynamic modeling of ipamorelin, a growth hormone releasing peptide, in human volunteers. Pharm Res. 1999. DOI: 10.1023/a:1018955126402. PMID: 10496658.",
+      "Johansen PB, et al. Ipamorelin, a new growth-hormone-releasing peptide, induces longitudinal bone growth in rats. Growth Horm IGF Res. 1999. DOI: 10.1054/ghir.1999.9998. PMID: 10373343."
     ],
     "clinicalStudies": [
       {
@@ -665,7 +758,9 @@ const PEPTIDES_DATABASE = [
         "pmid": "9849822",
         "phase": "Estudo Farmacológico Comparativo de Alta Resolução",
         "participants": "Ensaios farmacodinâmicos celulares e modelos in vivo de mamíferos",
-        "keyFindings": "O Ipamorelin exibiu potência comparável ao GHRP-6 na estimulação de GH, porém foi o primeiro composto a demonstrar zero estímulo na secreção de cortisol, ACTH ou prolactina mesmo em doses 100 vezes superiores à dose eficaz média (ED50)."
+        "keyFindings": "O Ipamorelin exibiu potência comparável ao GHRP-6 na estimulação de GH, porém foi o primeiro composto a demonstrar zero estímulo na secreção de cortisol, ACTH ou prolactina mesmo em doses 100 vezes superiores à dose eficaz média (ED50).",
+        "doi": "10.1530/eje.0.1390552",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/9849822/"
       }
     ],
     "popularityScore": 98,
@@ -696,8 +791,8 @@ const PEPTIDES_DATABASE = [
         ],
         "sources": [
           {
-            "title": "Gobburu et al. Pharmacokinetic-pharmacodynamic modeling of ipamorelin (Pharm Res 1999, PMID 10565863)",
-            "url": "https://pubmed.ncbi.nlm.nih.gov/10565863/",
+            "title": "Raun K et al. Ipamorelin, the first selective growth hormone secretagogue (Eur J Endocrinol 1998, PMID 9849822)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9849822/",
             "type": "clinical_trial"
           },
           {
@@ -722,10 +817,10 @@ const PEPTIDES_DATABASE = [
     ],
     "status": "Investigacional",
     "statusType": "investigational",
-    "evidenceLevel": "Ensaios Clínicos Fase 1/2",
+    "evidenceLevel": "Pré-Clínico / Mecanismo GHRH(1-29) — Sem ECR Isolado Humano",
     "evidenceScore": 87,
-    "protocolEvidenceType": "clinical_pilot",
-    "protocolEvidenceNote": "ENSAIOS CLÍNICOS: A versão sem DAC (Mod GRF 1-29) possui meia-vida de 30 minutos, ideal para mimetizar a pulsatilidade fisiológica natural do GHRH sem causar elevação crônica não-fisiológica.",
+    "protocolEvidenceType": "preclinical_empirical",
+    "protocolEvidenceNote": "AVISO CIENTÍFICO: Mod GRF (1-29) sem DAC é um análogo tetrassubstituído de hGRF(1-29) fundamentado em ensaios pré-clínicos de estabilidade frente à DPP-IV e ativação hipofisária (Jetté et al., Endocrinology 2005, PMID 15817669; Bongers et al., 1992, PMID 1353684). NÃO há ensaio clínico randomizado isolado específico para Mod GRF (1-29) sem DAC em humanos; os ensaios clínicos publicados com CJC-1295 referem-se à molécula conjugada à albumina (com DAC, PMID: 15817669).",
     "structure": "Peptídeo de 29 aminoácidos com 4 substituições D-alanina",
     "sequence": "Tyr-D-Ala-Asp-Ala-Ile-Phe-Thr-Gln-Ser-Tyr-Arg-Lys-Val-Leu-Ala-Gln-Leu-Ser-Ala-Arg-Lys-Leu-Leu-Gln-Asp-Ile-Leu-Ser-Arg-NH2",
     "molecularWeight": "3367.9 g/mol",
@@ -776,25 +871,35 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Pulsatile secretion of growth hormone (GH) induced by GHRH analogs",
-        "journal": "Journal of Clinical Endocrinology & Metabolism (2006)",
-        "pmid": "16822820",
-        "doi": "10.1210/jc.2005-1536",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/16822820/"
+        "title": "Human growth hormone-releasing factor (hGRF)1-29-albumin bioconjugates activate the GRF receptor on the anterior pituitary in rats: identification of CJC-1295 as a long-lasting GRF analog",
+        "journal": "Endocrinology (2005)",
+        "pmid": "15817669",
+        "doi": "10.1210/en.2004-1286",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/15817669/"
+      },
+      {
+        "title": "Kinetics of dipeptidyl peptidase IV proteolysis of growth hormone-releasing factor and analogs",
+        "journal": "Biochim Biophys Acta (1992)",
+        "pmid": "1353684",
+        "doi": "10.1016/0167-4838(92)90317-7",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/1353684/"
       }
     ],
     "scientificReferences": [
-      "Teichman SL, et al. Prolonged stimulation of GH by CJC-1295. J Clin Endocrinol Metab. 2006. PMID: 16822820"
+      "Jetté L, et al. Human growth hormone-releasing factor (hGRF)1-29-albumin bioconjugates activate the GRF receptor on the anterior pituitary in rats: identification of CJC-1295 as a long-lasting GRF analog. Endocrinology. 2005. DOI: 10.1210/en.2004-1286. PMID: 15817669.",
+      "Bongers J, et al. Kinetics of dipeptidyl peptidase IV proteolysis of growth hormone-releasing factor and analogs. Biochim Biophys Acta. 1992. DOI: 10.1016/0167-4838(92)90317-7. PMID: 1353684."
     ],
     "clinicalStudies": [
       {
-        "title": "Prolonged Stimulation of Growth Hormone (GH) and Insulin-Like Growth Factor I Secretion by CJC-1295 in Healthy Adults",
-        "journal": "The Journal of Clinical Endocrinology & Metabolism (JCEM)",
-        "year": "2006",
-        "pmid": "16822820",
-        "phase": "Ensaio Clínico Farmacocinético e Farmacodinâmico em Humanos",
-        "participants": "Voluntários adultos saudáveis de ambos os sexos",
-        "keyFindings": "A estimulação do receptor de GHRH aumentou os níveis cumulativos de GH secretado por 24 horas em 2 a 10 vezes sem extinguir a pulsatilidade hipofisária. O IGF-1 plasmático aumentou de 1,5 a 3 vezes mantendo-se dentro da margem fisiológica segura."
+        "title": "Human growth hormone-releasing factor (hGRF)1-29-albumin bioconjugates activate the GRF receptor on the anterior pituitary in rats: identification of CJC-1295 as a long-lasting GRF analog",
+        "journal": "Endocrinology",
+        "year": "2005",
+        "pmid": "15817669",
+        "doi": "10.1210/en.2004-1286",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/15817669/",
+        "phase": "Estudo Bioquímico e Pré-Clínico de Estabilidade Enzimática e Ativação Hipofisária In Vivo/In Vitro (Fundamento hGRF(1-29) / CJC-1295)",
+        "participants": "Células hipofisárias anteriores de rato e ratos Sprague-Dawley machos normais",
+        "keyFindings": "As substituições no fragmento hGRF(1-29) conferiram estabilidade aumentada frente à clivagem pela DPP-IV in vitro e preservaram bioatividade no receptor de GRF hipofisário; a adição do braço de conjugação à albumina gerou o CJC-1295 com meia-vida prolongada. Nota: ensaios clínicos randomizados humanos foram conduzidos especificamente com a forma conjugada à albumina com DAC (Teichman 2006, PMID 16352683), não havendo ECR clínico isolado do Mod GRF(1-29) sem DAC."
       }
     ],
     "popularityScore": 95,
@@ -817,8 +922,8 @@ const PEPTIDES_DATABASE = [
         ],
         "sources": [
           {
-            "title": "Ionescu & Frohman. Pulsatile secretion of growth hormone by GHRH analogs (J Clin Endocrinol Metab 2006, PMID 16352683)",
-            "url": "https://pubmed.ncbi.nlm.nih.gov/16352683/",
+            "title": "Jetté L et al. Human growth hormone-releasing factor (hGRF)1-29-albumin bioconjugates activate the GRF receptor on the anterior pituitary in rats: identification of CJC-1295 as a long-lasting GRF analog (Endocrinology 2005, PMID 15817669)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15817669/",
             "type": "clinical_trial"
           },
           {
@@ -898,25 +1003,35 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Sermorelin: A review of its use in the diagnosis and treatment of children with idiopathic growth hormone deficiency",
-        "journal": "Clinical Pharmacokinetics (1999)",
-        "pmid": "18047149",
-        "doi": "10.2165/00003088-199937020-00003",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/18047149/"
+        "title": "Endocrine and metabolic effects of long-term administration of [Nle27]growth hormone-releasing hormone-(1-29)-NH2 in age-advanced men and women",
+        "journal": "The Journal of clinical endocrinology and metabolism (1997)",
+        "pmid": "9141536",
+        "doi": "10.1210/jcem.82.5.3943",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/9141536/"
+      },
+      {
+        "title": "Sermorelin: a better approach to management of adult-onset growth hormone insufficiency?",
+        "journal": "Clinical interventions in aging (2006)",
+        "pmid": "18046908",
+        "doi": "10.2147/ciia.2006.1.4.307",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18046908/"
       }
     ],
     "scientificReferences": [
-      "Geref (Sermorelin acetate) FDA Package Insert. NDA 020443."
+      "Khorram O, et al. Endocrine and metabolic effects of long-term administration of [Nle27]growth hormone-releasing hormone-(1-29)-NH2 in age-advanced men and women. J Clin Endocrinol Metab. 1997. DOI: 10.1210/jcem.82.5.3943. PMID: 9141536.",
+      "Walker RF, et al. Sermorelin: a better approach to management of adult-onset growth hormone insufficiency?. Clin Interv Aging. 2006. DOI: 10.2147/ciia.2006.1.4.307. PMID: 18046908."
     ],
     "clinicalStudies": [
       {
-        "title": "Effects of growth hormone-releasing hormone (GHRH 1-29) on body composition and IGF-1 in elderly humans",
-        "journal": "The Journal of Clinical Endocrinology & Metabolism (JCEM)",
+        "title": "Endocrine and metabolic effects of long-term administration of [Nle27]growth hormone-releasing hormone-(1-29)-NH2 in age-advanced men and women",
+        "journal": "The Journal of clinical endocrinology and metabolism",
         "year": "1997",
-        "pmid": "9024227",
-        "phase": "Ensaio Clínico Controlado em Idosos Saudáveis",
-        "participants": "Homens e mulheres idosos (idade 65 a 80 anos) com declínio somatotrófico (somatopausa)",
-        "keyFindings": "A administração noturna de Sermorelin reativou a pulsatilidade hipofisária noturna de GH, aumentou o IGF-1 médio em 38% e promoveu ganho estatisticamente significativo de 1,26 kg de massa livre de gordura sem retenção hídrica patológica."
+        "pmid": "9141536",
+        "doi": "10.1210/jcem.82.5.3943",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/9141536/",
+        "phase": "Ensaio Clínico Simples-Cego, Randomizado, Controlado por Placebo",
+        "participants": "19 participantes idosos saudáveis (10 mulheres e 9 homens)",
+        "keyFindings": "A administração crônica de análogo de GHRH(1-29)-NH2 aumentou o IGF-I sérico e modificou marcadores metabólicos e de massa corporal em homens e mulheres de idade avançada."
       }
     ],
     "popularityScore": 92,
@@ -1022,25 +1137,35 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Effects of a Growth Hormone–Releasing Factor Analogue in HIV-Infected Patients with Visceral Fat Accumulation",
-        "journal": "New England Journal of Medicine (2007)",
-        "pmid": "17978291",
+        "title": "Metabolic effects of a growth hormone-releasing factor in patients with HIV",
+        "journal": "The New England journal of medicine (2007)",
+        "pmid": "18057338",
         "doi": "10.1056/NEJMoa072375",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/17978291/"
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18057338/"
+      },
+      {
+        "title": "Effects of tesamorelin on non-alcoholic fatty liver disease in HIV: a randomised, double-blind, multicentre trial",
+        "journal": "The lancet. HIV (2019)",
+        "pmid": "31611038",
+        "doi": "10.1016/S2352-3018(19)30338-8",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31611038/"
       }
     ],
     "scientificReferences": [
-      "Falutz J, et al. Tesamorelin in patients with visceral adiposity. N Engl J Med. 2007. PMID: 17978291"
+      "Falutz J, et al. Metabolic effects of a growth hormone-releasing factor in patients with HIV. N Engl J Med. 2007. DOI: 10.1056/NEJMoa072375. PMID: 18057338.",
+      "Stanley TL, et al. Effects of tesamorelin on non-alcoholic fatty liver disease in HIV: a randomised, double-blind, multicentre trial. Lancet HIV. 2019. DOI: 10.1016/S2352-3018(19)30338-8. PMID: 31611038."
     ],
     "clinicalStudies": [
       {
-        "title": "Effects of Tesamorelin, a Growth Hormone-Releasing Factor Analog, in Patients with Abdominal Fat Accumulation",
+        "title": "Metabolic effects of a growth hormone-releasing factor in patients with HIV",
         "journal": "The New England Journal of Medicine (NEJM)",
         "year": "2007",
         "pmid": "18057338",
         "phase": "Ensaio Clínico Randomizado, Duplo-Cego, Fase 3 Multicêntrico",
         "participants": "412 pacientes com lipodistrofia e excesso de gordura visceral",
-        "keyFindings": "Na semana 26, o grupo tratado com Tesamorelin apresentou redução média de -15,2% na gordura visceral profunda (VAT), comparado a um aumento de +5,0% no grupo placebo (P<0,001). Os níveis de IGF-1 sérico aumentaram significativamente dentro da faixa fisiológica sem impacto adverso descompensador na glicemia."
+        "keyFindings": "Na semana 26, o grupo tratado com Tesamorelin apresentou redução média de -15,2% na gordura visceral profunda (VAT), comparado a um aumento de +5,0% no grupo placebo (P<0,001). Os níveis de IGF-1 sérico aumentaram significativamente dentro da faixa fisiológica sem impacto adverso descompensador na glicemia.",
+        "doi": "10.1056/NEJMoa072375",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/18057338/"
       }
     ],
     "popularityScore": 93,
@@ -1107,8 +1232,8 @@ const PEPTIDES_DATABASE = [
         ],
         "sources": [
           {
-            "title": "Falutz et al. Metabolic effects of a growth hormone-releasing factor in HIV lipodystrophy (NEJM 2007, PMID 18056598)",
-            "url": "https://pubmed.ncbi.nlm.nih.gov/18056598/",
+            "title": "Falutz J et al. Metabolic effects of a growth hormone-releasing factor in patients with HIV (N Engl J Med 2007, PMID 18057338)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18057338/",
             "type": "clinical_trial"
           }
         ]
@@ -1184,14 +1309,14 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Once-Weekly Semaglutide in Adults with Overweight or Obesity (STEP-1)",
+        "title": "Once-Weekly Semaglutide in Adults with Overweight or Obesity",
         "journal": "New England Journal of Medicine (2021)",
         "pmid": "33567185",
         "doi": "10.1056/NEJMoa2032183",
         "url": "https://pubmed.ncbi.nlm.nih.gov/33567185/"
       },
       {
-        "title": "Semaglutide and Cardiovascular Outcomes in Obesity without Diabetes (SELECT Trial)",
+        "title": "Semaglutide and Cardiovascular Outcomes in Obesity without Diabetes",
         "journal": "New England Journal of Medicine (2023)",
         "pmid": "37952131",
         "doi": "10.1056/NEJMoa2307563",
@@ -1357,14 +1482,14 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Tirzepatide Once Weekly for the Treatment of Obesity (SURMOUNT-1)",
+        "title": "Tirzepatide Once Weekly for the Treatment of Obesity",
         "journal": "New England Journal of Medicine (2022)",
         "pmid": "35658024",
         "doi": "10.1056/NEJMoa2206038",
         "url": "https://pubmed.ncbi.nlm.nih.gov/35658024/"
       },
       {
-        "title": "Tirzepatide versus Semaglutide Once Weekly in Patients with Type 2 Diabetes (SURPASS-2)",
+        "title": "Tirzepatide versus Semaglutide Once Weekly in Patients with Type 2 Diabetes",
         "journal": "New England Journal of Medicine (2021)",
         "pmid": "34170647",
         "doi": "10.1056/NEJMoa2107519",
@@ -1531,7 +1656,7 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+        "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity - A Phase 2 Trial",
         "journal": "New England Journal of Medicine (2023)",
         "pmid": "37366315",
         "doi": "10.1056/NEJMoa2301972",
@@ -1760,25 +1885,43 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "AOD9604, a peptide containing the C-terminal fragment of human growth hormone, in the treatment of obesity",
-        "journal": "Journal of Endocrinology (2001)",
-        "pmid": "11716911",
-        "doi": "10.1677/joe.0.1710285",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/11716911/"
+        "title": "Increase of fat oxidation and weight loss in obese mice caused by chronic treatment with human growth hormone or a modified C-terminal fragment",
+        "journal": "International journal of obesity and related metabolic disorders : journal of the International Association for the Study of Obesity (2001)",
+        "pmid": "11673763",
+        "doi": "10.1038/sj.ijo.0801740",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11673763/"
+      },
+      {
+        "title": "Metabolic studies of a synthetic lipolytic domain (AOD9604) of human growth hormone",
+        "journal": "Hormone research (2000)",
+        "pmid": "11146367",
+        "doi": "10.1159/000053183",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11146367/"
+      },
+      {
+        "title": "Detection and in vitro metabolism of AOD9604",
+        "journal": "PubMed (2015)",
+        "pmid": "25208511",
+        "doi": "10.1002/dta.1715",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25208511/"
       }
     ],
     "scientificReferences": [
-      "Ng FM, et al. AOD9604 in the treatment of obesity. J Endocrinol. 2001. PMID: 11716911"
+      "Heffernan MA, et al. Increase of fat oxidation and weight loss in obese mice caused by chronic treatment with human growth hormone or a modified C-terminal fragment. Int J Obes Relat Metab Disord. 2001. DOI: 10.1038/sj.ijo.0801740. PMID: 11673763.",
+      "Ng FM, et al. Metabolic studies of a synthetic lipolytic domain (AOD9604) of human growth hormone. Horm Res. 2000. DOI: 10.1159/000053183. PMID: 11146367.",
+      "Cox HD, et al. Detection and in vitro metabolism of AOD9604. PubMed. 2015. DOI: 10.1002/dta.1715. PMID: 25208511."
     ],
     "clinicalStudies": [
       {
-        "title": "Metabolic studies of the C-terminal growth hormone fragment AOD9604 in human adipose tissue",
-        "journal": "International Journal of Obesity",
+        "title": "Increase of fat oxidation and weight loss in obese mice caused by chronic treatment with human growth hormone or a modified C-terminal fragment",
+        "journal": "International journal of obesity and related metabolic disorders : journal of the International Association for the Study of Obesity",
         "year": "2001",
-        "pmid": "11378834",
-        "phase": "Estudo Farmacológico Translacional Ex Vivo em Tecido Adiposo Humano",
-        "participants": "Biópsias de tecido adiposo subcutâneo humano de voluntários obesos e eutróficos",
-        "keyFindings": "O AOD-9604 demonstrou capacidade pronunciada de estimular a oxidação lipídica e lipólise no tecido adiposo humano sem exibir afinidade pelos receptores de GH sistêmicos, demonstrando completa ausência de efeito hiperglicemiante ou aumento de IGF-1."
+        "pmid": "11673763",
+        "doi": "10.1038/sj.ijo.0801740",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/11673763/",
+        "phase": "Estudo Pré-Clínico In Vivo em Modelos Murinos e Ensaio Mecanístico de Receptor de GH In Vitro",
+        "participants": "Camundongos obesos (ob/ob) e magros C57BL/6J",
+        "keyFindings": "O tratamento crônico com AOD9604 aumentou a oxidação de gorduras e reduziu o ganho/peso corporal em camundongos ob/ob sem desencadear proliferação mediada pelo receptor de GH humano nem intolerância glicêmica aguda típica do hGH intacto."
       }
     ],
     "popularityScore": 89,
@@ -1801,8 +1944,8 @@ const PEPTIDES_DATABASE = [
         ],
         "sources": [
           {
-            "title": "Heffernan et al. The effects of human GH and its lipolytic fragment (AOD9604) on lipid metabolism (Endocrinology 2001, PMID 11714653)",
-            "url": "https://pubmed.ncbi.nlm.nih.gov/11714653/",
+            "title": "Heffernan MA et al. Increase of fat oxidation and weight loss in obese mice caused by chronic treatment with human growth hormone or a modified C-terminal fragment (Int J Obes Relat Metab Disord 2001, PMID 11673763)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11673763/",
             "type": "clinical_study"
           },
           {
@@ -1897,7 +2040,7 @@ const PEPTIDES_DATABASE = [
         "title": "Peptide promotes overcoming of the division limit in human somatic cell",
         "journal": "Bulletin of Experimental Biology and Medicine (2004)",
         "pmid": "15455129",
-        "doi": "10.1023/B:BEBM.0000038164.49947.8c",
+        "doi": "10.1023/b:bebm.0000038164.49947.8c",
         "url": "https://pubmed.ncbi.nlm.nih.gov/15455129/"
       },
       {
@@ -1909,19 +2052,21 @@ const PEPTIDES_DATABASE = [
       }
     ],
     "scientificReferences": [
-      "Khavinson V, et al. Epithalon peptide induces telomerase activity and telomere elongation in human somatic cells. Bull Exp Biol Med. 2003. PMID: 12937682",
-      "Khavinson V, et al. Peptide promotes overcoming of the division limit in human somatic cell. Bull Exp Biol Med. 2004. PMID: 15455129",
-      "Anisimov VN, et al. Effect of Epitalon on biomarkers of aging and life span in mice. Biogerontology. 2003. PMID: 14501183 (modelo murino; PMID 15372138 anterior descartado por apontar para etilenoglicol)"
+      "Khavinson VKh, et al. Peptide promotes overcoming of the division limit in human somatic cell. PubMed. 2004. DOI: 10.1023/b:bebm.0000038164.49947.8c. PMID: 15455129.",
+      "Khavinson VKh, et al. Epithalon peptide induces telomerase activity and telomere elongation in human somatic cells. PubMed. 2003. DOI: 10.1023/a:1025493705728. PMID: 12937682.",
+      "Anisimov VN, et al. Effect of Epitalon on biomarkers of aging, life span and spontaneous tumor incidence in female Swiss-derived SHR mice. PubMed. 2003. DOI: 10.1023/a:1025114230714. PMID: 14501183."
     ],
     "clinicalStudies": [
       {
-        "title": "Peptide Promotes Overcoming of the Division Limit in Human Somatic Cells",
+        "title": "Peptide promotes overcoming of the division limit in human somatic cell",
         "journal": "Bulletin of Experimental Biology and Medicine",
         "year": "2004",
         "pmid": "15455129",
         "phase": "Estudo Experimental In Vitro em Culturas Celulares Humanas (Não é Ensaio Clínico em Humanos)",
         "participants": "Culturas celulares de fibroblastos fetais humanos diploides (cepa pré-senescente)",
-        "keyFindings": "A adição de Epitalon (Ala-Glu-Asp-Gly) ao meio de cultura induziu a expressão de telomerase e permitiu que os fibroblastos realizassem 10 divisões adicionais em comparação ao controle, atingindo a passagem 44 antes da senescência replicativa. Trata-se de experimento celular in vitro que não permite extrapolação direta para longevidade sistêmica em humanos."
+        "keyFindings": "A adição de Epitalon (Ala-Glu-Asp-Gly) ao meio de cultura induziu a expressão de telomerase e permitiu que os fibroblastos realizassem 10 divisões adicionais em comparação ao controle, atingindo a passagem 44 antes da senescência replicativa. Trata-se de experimento celular in vitro que não permite extrapolação direta para longevidade sistêmica em humanos.",
+        "doi": "10.1023/b:bebm.0000038164.49947.8c",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/15455129/"
       }
     ],
     "popularityScore": 96,
@@ -2024,35 +2169,37 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "The Mitochondrial-Derived Peptide MOTS-c Promotes Metabolic Homeostasis and Reduces Obesity and Insulin Resistance",
-        "journal": "Cell Metabolism (2015)",
+        "title": "The mitochondrial-derived peptide MOTS-c promotes metabolic homeostasis and reduces obesity and insulin resistance",
+        "journal": "Cell metabolism (2015)",
         "pmid": "25738459",
-        "pmcId": "PMC4350610",
         "doi": "10.1016/j.cmet.2015.02.009",
         "url": "https://pubmed.ncbi.nlm.nih.gov/25738459/",
+        "pmcId": "PMC4350610",
         "pdfUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4350610/pdf/nihms666014.pdf"
       },
       {
-        "title": "MOTS-c is an exercise-induced mitochondrial-encoded regulator of walking capacity and muscle homeostasis",
-        "journal": "Nature Communications (2021)",
-        "pmid": "33473117",
+        "title": "MOTS-c is an exercise-induced mitochondrial-encoded regulator of age-dependent physical decline and muscle homeostasis",
+        "journal": "Nature communications (2021)",
+        "pmid": "33473109",
         "doi": "10.1038/s41467-020-20790-0",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/33473117/"
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33473109/"
       }
     ],
     "scientificReferences": [
-      "Lee C, et al. MOTS-c Promotes Metabolic Homeostasis. Cell Metab. 2015. PMID: 25738459",
-      "Reynolds JC, et al. MOTS-c regulator of muscle. Nat Commun. 2021. PMID: 33473117"
+      "Lee C, et al. The mitochondrial-derived peptide MOTS-c promotes metabolic homeostasis and reduces obesity and insulin resistance. Cell Metab. 2015. DOI: 10.1016/j.cmet.2015.02.009. PMID: 25738459.",
+      "Reynolds JC, et al. MOTS-c is an exercise-induced mitochondrial-encoded regulator of age-dependent physical decline and muscle homeostasis. Nat Commun. 2021. DOI: 10.1038/s41467-020-20790-0. PMID: 33473109."
     ],
     "clinicalStudies": [
       {
-        "title": "The Mitochondrial-Derived Peptide MOTS-c Promotes Metabolic Homeostasis and Reduces Diet-Induced Obesity",
+        "title": "The mitochondrial-derived peptide MOTS-c promotes metabolic homeostasis and reduces obesity and insulin resistance",
         "journal": "Cell Metabolism",
         "year": "2015",
         "pmid": "25738459",
         "phase": "Estudo Translacional Molecular e Pré-Clínico In Vivo",
         "participants": "Modelos murinos de obesidade induzida por dieta hiperlipídica e culturas celulares",
-        "keyFindings": "O MOTS-c atua diretamente no músculo esquelético, inibindo o ciclo folato-metionina, o que eleva os níveis intracelulares de AICAR e ativa constitutivamente a quinase AMPK. Preveniu completamente o ganho de massa gorda induzido por dieta rica em gordura e reverteu a resistência periférica à insulina."
+        "keyFindings": "O MOTS-c atua diretamente no músculo esquelético, inibindo o ciclo folato-metionina, o que eleva os níveis intracelulares de AICAR e ativa constitutivamente a quinase AMPK. Preveniu completamente o ganho de massa gorda induzido por dieta rica em gordura e reverteu a resistência periférica à insulina.",
+        "doi": "10.1016/j.cmet.2015.02.009",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/25738459/"
       }
     ],
     "popularityScore": 93,
@@ -2313,21 +2460,38 @@ const PEPTIDES_DATABASE = [
     "fullTextStudies": [
       {
         "title": "Semax, an analog of ACTH(4-10) with cognitive effects, regulates BDNF and trkB expression in the rat hippocampus",
-        "journal": "Brain Research Bulletin (2006)",
-        "pmid": "16822820",
-        "doi": "10.1016/j.brainresbull.2006.01.011",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/16822820/"
+        "journal": "PubMed (2006)",
+        "pmid": "16996037",
+        "doi": "10.1016/j.brainres.2006.07.108",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/16996037/"
       },
       {
-        "title": "The neuroprotective effect of Semax in stroke patients",
-        "journal": "Zhurnal Nevrologii i Psikhiatrii (2014)",
-        "pmid": "24469792",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/24469792/"
+        "title": "[The efficacy of semax in the tretament of patients at different stages of ischemic stroke]",
+        "journal": "Zhurnal nevrologii i psikhiatrii imeni S.S. Korsakova (2018)",
+        "pmid": "29798983",
+        "doi": "10.17116/jnevro20181183261-68",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/29798983/"
+      },
+      {
+        "title": "[Effectiveness of semax in acute period of hemispheric ischemic stroke (a clinical and electrophysiological study)]",
+        "journal": "Zhurnal nevrologii i psikhiatrii imeni S.S. Korsakova (1997)",
+        "pmid": "11517472",
+        "doi": null,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11517472/"
+      },
+      {
+        "title": "[Semax in prevention of disease progress and development of exacerbations in patients with cerebrovascular insufficiency]",
+        "journal": "Zhurnal nevrologii i psikhiatrii imeni S.S. Korsakova (2005)",
+        "pmid": "15792140",
+        "doi": null,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/15792140/"
       }
     ],
     "scientificReferences": [
-      "Kost NV, et al. Semax and BDNF expression. Brain Res Bull. 2006.",
-      "Gusev EI, et al. Semax in stroke rehabilitation. Zh Nevrol Psikhiatr. 2014. PMID: 24469792"
+      "Dolotov OV, et al. Semax, an analog of ACTH(4-10) with cognitive effects, regulates BDNF and trkB expression in the rat hippocampus. PubMed. 2006. DOI: 10.1016/j.brainres.2006.07.108. PMID: 16996037.",
+      "Gusev EI, et al. [The efficacy of semax in the tretament of patients at different stages of ischemic stroke]. Zh Nevrol Psikhiatr Im S S Korsakova. 2018. DOI: 10.17116/jnevro20181183261-68. PMID: 29798983.",
+      "Gusev EI, et al. [Effectiveness of semax in acute period of hemispheric ischemic stroke (a clinical and electrophysiological study)]. Zh Nevrol Psikhiatr Im S S Korsakova. 1997. PMID: 11517472.",
+      "Gusev EI, et al. [Semax in prevention of disease progress and development of exacerbations in patients with cerebrovascular insufficiency]. Zh Nevrol Psikhiatr Im S S Korsakova. 2005. PMID: 15792140."
     ],
     "clinicalStudies": [
       {
@@ -2338,7 +2502,8 @@ const PEPTIDES_DATABASE = [
         "doi": "10.1016/j.brainres.2006.07.108",
         "phase": "Estudo Experimental Pré-Clínico em Modelo Murino (Ratos)",
         "participants": "Ratos Wistar adultos (análise de tecido hipocampal e expressão proteica/gênica)",
-        "keyFindings": "O tratamento com Semax regulou positivamente a expressão de BDNF e do receptor trkB no hipocampo de ratos, demonstrando aumento dos níveis proteicos de BDNF no tecido cerebral. Trata-se de evidência pré-clínica fundamental em modelo animal roedor, que elucida os mecanismos neuroquímicos e não deve ser confundida com ensaio clínico confirmatório em seres humanos."
+        "keyFindings": "O tratamento com Semax regulou positivamente a expressão de BDNF e do receptor trkB no hipocampo de ratos, demonstrando aumento dos níveis proteicos de BDNF no tecido cerebral. Trata-se de evidência pré-clínica fundamental em modelo animal roedor, que elucida os mecanismos neuroquímicos e não deve ser confundida com ensaio clínico confirmatório em seres humanos.",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/16996037/"
       }
     ],
     "primaryFormulationId": "semax-lyophilized-research",
@@ -2519,24 +2684,43 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Efficacy of the novel nootropic and anxiolytic peptide Selank in generalized anxiety disorder",
-        "journal": "Zhurnal Nevrologii i Psikhiatrii (2008)",
-        "pmid": "19090288",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/19090288/"
+        "title": "[Efficacy and possible mechanisms of action of a new peptide anxiolytic selank in the therapy of generalized anxiety disorders and neurasthenia]",
+        "journal": "Zhurnal nevrologii i psikhiatrii imeni S.S. Korsakova (2008)",
+        "pmid": "18454096",
+        "doi": null,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18454096/"
+      },
+      {
+        "title": "[Optimization of the treatment of anxiety disorders with selank]",
+        "journal": "Zhurnal nevrologii i psikhiatrii imeni S.S. Korsakova (2015)",
+        "pmid": "26356395",
+        "doi": "10.17116/jnevro20151156133-40",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26356395/"
+      },
+      {
+        "title": "Functional Connectomic Approach to Studying Selank and Semax Effects",
+        "journal": "Doklady biological sciences : proceedings of the Academy of Sciences of the USSR, Biological sciences sections (2020)",
+        "pmid": "32342318",
+        "doi": "10.1134/S001249662001007X",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32342318/"
       }
     ],
     "scientificReferences": [
-      "Zozulya AA, et al. Anxiolytic peptide Selank. Zh Nevrol Psikhiatr. 2008. PMID: 19090288"
+      "Zozulia AA, et al. [Efficacy and possible mechanisms of action of a new peptide anxiolytic selank in the therapy of generalized anxiety disorders and neurasthenia]. Zh Nevrol Psikhiatr Im S S Korsakova. 2008. PMID: 18454096.",
+      "Medvedev VE, et al. [Optimization of the treatment of anxiety disorders with selank]. Zh Nevrol Psikhiatr Im S S Korsakova. 2015. DOI: 10.17116/jnevro20151156133-40. PMID: 26356395.",
+      "Panikratova YR, et al. Functional Connectomic Approach to Studying Selank and Semax Effects. Dokl Biol Sci. 2020. DOI: 10.1134/S001249662001007X. PMID: 32342318."
     ],
     "clinicalStudies": [
       {
-        "title": "Efficacy of the heptapeptide Selank in patients with generalized anxiety disorder and neurasthenia",
-        "journal": "Bulletin of Experimental Biology and Medicine",
+        "title": "[Efficacy and possible mechanisms of action of a new peptide anxiolytic selank in the therapy of generalized anxiety disorders and neurasthenia]",
+        "journal": "Zhurnal nevrologii i psikhiatrii imeni S.S. Korsakova",
         "year": "2008",
-        "pmid": "18661062",
-        "phase": "Ensaio Clínico Controlado Comparativo (Selank vs Medazepam)",
-        "participants": "62 pacientes diagnosticados com transtorno de ansiedade generalizada (TAG) e neurastenia",
-        "keyFindings": "O Selank demonstrou eficácia ansiolítica comparável à do medazepam, com a grande vantagem de não induzir sedação, amnésia anterógrada, relaxamento muscular excessivo ou síndrome de abstinência, além de melhorar o desempenho cognitivo e a atenção concentrada."
+        "pmid": "18454096",
+        "doi": null,
+        "link": "https://pubmed.ncbi.nlm.nih.gov/18454096/",
+        "phase": "Estudo Clínico Comparativo Controlado Ativo (Selank versus Medazepam)",
+        "participants": "62 pacientes com Transtorno de Ansiedade Generalizada (TAG) e neurastenia (Selank n=30; medazepam n=32)",
+        "keyFindings": "O efeito ansiolítico do Selank foi comparável ao do medazepam, somando efeitos antiastênicos e psicoestimulantes sem sedação benzodiazepínica; pacientes tratados mostraram normalização da inibição das encefalinases séricas."
       }
     ],
     "primaryFormulationId": "selank-lyophilized-research",
@@ -2697,33 +2881,35 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Safety and efficacy of Cerebrolysin in early post-stroke recovery: a randomized clinical trial (CARS)",
+        "title": "Cerebrolysin and Recovery After Stroke (CARS): A Randomized, Placebo-Controlled, Double-Blind, Multicenter Trial",
         "journal": "Stroke (2016)",
-        "pmid": "27329975",
-        "doi": "10.1161/STROKEAHA.116.013444",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/27329975/"
+        "pmid": "26564102",
+        "doi": "10.1161/STROKEAHA.115.009416",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26564102/"
       },
       {
-        "title": "Cerebrolysin in Patients with Mild Cognitive Impairment: A Randomized Clinical Trial",
-        "journal": "Journal of Alzheimer's Disease (2015)",
-        "pmid": "25835422",
-        "doi": "10.3233/JAD-143046",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/25835422/"
+        "title": "Cerebrolysin for acute ischaemic stroke",
+        "journal": "The Cochrane database of systematic reviews (2023)",
+        "pmid": "37818733",
+        "doi": "10.1002/14651858.CD007026.pub7",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37818733/"
       }
     ],
     "scientificReferences": [
-      "Guekht A, et al. CARS Trial. Stroke. 2016. PMID: 27329975",
-      "Alvarez XA, et al. Cerebrolysin in MCI. J Alzheimers Dis. 2015. PMID: 25835422"
+      "Muresanu DF, et al. Cerebrolysin and Recovery After Stroke (CARS): A Randomized, Placebo-Controlled, Double-Blind, Multicenter Trial. Stroke. 2016. DOI: 10.1161/STROKEAHA.115.009416. PMID: 26564102.",
+      "Ziganshina LE, et al. Cerebrolysin for acute ischaemic stroke. Cochrane Database Syst Rev. 2023. DOI: 10.1002/14651858.CD007026.pub7. PMID: 37818733."
     ],
     "clinicalStudies": [
       {
-        "title": "Cerebrolysin in Patients with Acute Ischemic Stroke (Ensaio Clínico CARS)",
-        "journal": "Stroke (American Heart Association)",
-        "year": "2018",
-        "pmid": "29555835",
-        "phase": "Ensaio Clínico Randomizado, Duplo-Cego, Controlado por Placebo",
-        "participants": "208 pacientes com AVC isquêmico agudo do território da artéria cerebral média",
-        "keyFindings": "Pacientes tratados com Cerebrolysin demonstraram melhora precoce estatisticamente superior na função motora fina do braço e mão em comparação ao placebo no dia 90 (P<0,001). A incidência de efeitos adversos graves foi idêntica à do grupo placebo."
+        "title": "Cerebrolysin and Recovery After Stroke (CARS): A Randomized, Placebo-Controlled, Double-Blind, Multicenter Trial",
+        "journal": "Stroke",
+        "year": "2016",
+        "pmid": "26564102",
+        "doi": "10.1161/STROKEAHA.115.009416",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/26564102/",
+        "phase": "Ensaio Clínico Prospectivo, Multicêntrico, Randomizado, Duplo-Cego, Controlado por Placebo (CARS)",
+        "participants": "Pacientes com AVC isquêmico agudo randomizados entre 24 e 72 horas do início dos sintomas",
+        "keyFindings": "No ensaio CARS, pacientes recebendo Cerebrolysin por 21 dias somado à reabilitação precoce atingiram desfecho motor superior ao placebo no dia 90 (ressalta-se que revisão Cochrane atualizada de 2023 [PMID 37818733] avalia evidência global de eficácia como incerta/de baixa certeza em subgrupos não homogêneos)."
       }
     ],
     "popularityScore": 97,
@@ -2851,7 +3037,7 @@ const PEPTIDES_DATABASE = [
         "url": "https://pubmed.ncbi.nlm.nih.gov/32442287/"
       },
       {
-        "title": "Historical review of thymosin alpha 1 in infectious diseases",
+        "title": "Historical review of thymosin α 1 in infectious diseases",
         "journal": "Expert Opinion on Biological Therapy (2015)",
         "pmid": "26098768",
         "doi": "10.1517/14712598.2015.1033393",
@@ -2859,9 +3045,9 @@ const PEPTIDES_DATABASE = [
       }
     ],
     "scientificReferences": [
-      "Wu J, et al. The efficacy of thymosin alpha 1 for severe sepsis (ETASS). Crit Care. 2013. PMID: 23327199",
-      "Liu Y, et al. Thymosin Alpha 1 in Severe COVID-19. Clin Infect Dis. 2020. PMID: 32442287 (estudo retrospectivo observacional)",
-      "Camerini R, et al. Historical review of thymosin alpha 1 in infectious diseases. Expert Opin Biol Ther. 2015. PMID: 26098768 (corrigido do PMID incorreto 26099307)"
+      "Wu J, et al. The efficacy of thymosin alpha 1 for severe sepsis (ETASS): a multicenter, single-blind, randomized and controlled trial. Crit Care. 2013. DOI: 10.1186/cc11932. PMID: 23327199.",
+      "Liu Y, et al. Thymosin Alpha 1 Reduces the Mortality of Severe Coronavirus Disease 2019 by Restoration of Lymphocytopenia and Reversion of Exhausted T Cells. Clin Infect Dis. 2020. DOI: 10.1093/cid/ciaa630. PMID: 32442287.",
+      "Camerini R, et al. Historical review of thymosin α 1 in infectious diseases. Expert Opin Biol Ther. 2015. DOI: 10.1517/14712598.2015.1033393. PMID: 26098768."
     ],
     "clinicalStudies": [
       {
@@ -2871,7 +3057,9 @@ const PEPTIDES_DATABASE = [
         "pmid": "23327199",
         "phase": "Ensaio Clínico Multicêntrico, Randomizado, Simples-Cego e Controlado (ETASS)",
         "participants": "361 participantes com sepse grave em UTIs (181 grupo Tα1, 180 grupo controle)",
-        "keyFindings": "A mortalidade por todas as causas em 28 dias foi de 26,0% (47/181) no grupo Tα1 contra 35,0% (63/180) no grupo controle convencional, com significância marginal na análise não estratificada (P=0,062; teste de log-rank P=0,049; risco relativo de 0,74; IC 95%: 0,54 a 1,02). Houve recuperação na expressão monocítica de mHLA-DR nos dias 3 e 7. Os dados sugerem atividade imunomoduladora adjuvante, mas não comprovam eficácia definitiva de sobrevida."
+        "keyFindings": "A mortalidade por todas as causas em 28 dias foi de 26,0% (47/181) no grupo Tα1 contra 35,0% (63/180) no grupo controle convencional, com significância marginal na análise não estratificada (P=0,062; teste de log-rank P=0,049; risco relativo de 0,74; IC 95%: 0,54 a 1,02). Houve recuperação na expressão monocítica de mHLA-DR nos dias 3 e 7. Os dados sugerem atividade imunomoduladora adjuvante, mas não comprovam eficácia definitiva de sobrevida.",
+        "doi": "10.1186/cc11932",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/23327199/"
       }
     ],
     "popularityScore": 97,
@@ -2899,8 +3087,8 @@ const PEPTIDES_DATABASE = [
             "type": "regulatory"
           },
           {
-            "title": "Garaci et al. Thymosin alpha 1 in the treatment of immunocompromised hosts (Ann N Y Acad Sci 2012, PMID 23075071)",
-            "url": "https://pubmed.ncbi.nlm.nih.gov/23075071/",
+            "title": "Wu J et al. The efficacy of thymosin alpha 1 for severe sepsis (ETASS): a multicenter, single-blind, randomized and controlled trial (Crit Care 2013, PMID 23327199)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/23327199/",
             "type": "clinical_review"
           },
           {
@@ -2972,25 +3160,35 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Bremelanotide for female sexual dysfunctions",
-        "journal": "Expert Opinion on Drug Safety (2019)",
-        "pmid": "31503166",
-        "doi": "10.1080/14740338.2019.1668374",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/31503166/"
+        "title": "Bremelanotide for the Treatment of Hypoactive Sexual Desire Disorder: Two Randomized Phase 3 Trials",
+        "journal": "Obstetrics and gynecology (2019)",
+        "pmid": "31599840",
+        "doi": "10.1097/AOG.0000000000003500",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31599840/"
+      },
+      {
+        "title": "Bremelanotide for female sexual dysfunctions in premenopausal women: a randomized, placebo-controlled dose-finding trial",
+        "journal": "Women's health (London, England) (2016)",
+        "pmid": "27181790",
+        "doi": "10.2217/whe-2016-0018",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/27181790/"
       }
     ],
     "scientificReferences": [
-      "Kingsberg SA, et al. Bremelanotide for HSDD: RECONNECT study. Obstet Gynecol. 2019. PMID: 31503166"
+      "Kingsberg SA, et al. Bremelanotide for the Treatment of Hypoactive Sexual Desire Disorder: Two Randomized Phase 3 Trials. Obstet Gynecol. 2019. DOI: 10.1097/AOG.0000000000003500. PMID: 31599840.",
+      "Clayton AH, et al. Bremelanotide for female sexual dysfunctions in premenopausal women: a randomized, placebo-controlled dose-finding trial. Womens Health (Lond). 2016. DOI: 10.2217/whe-2016-0018. PMID: 27181790."
     ],
     "clinicalStudies": [
       {
-        "title": "Bremelanotide for the Treatment of Hypoactive Sexual Desire Disorder: Two Randomized Phase 3 Trials (RECONNECT)",
-        "journal": "Obstetrics & Gynecology (ACOG)",
+        "title": "Bremelanotide for the Treatment of Hypoactive Sexual Desire Disorder: Two Randomized Phase 3 Trials",
+        "journal": "Obstetrics and gynecology",
         "year": "2019",
-        "pmid": "31503166",
+        "pmid": "31599840",
+        "doi": "10.1097/AOG.0000000000003500",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/31599840/",
         "phase": "Dois Ensaios Clínicos Randomizados, Duplo-Cegos de Fase 3 (Estudos 301 e 302)",
         "participants": "1.247 mulheres na pré-menopausa com transtorno do desejo sexual hipoativo (HSDD)",
-        "keyFindings": "Mulheres tratadas com Bremelanotide apresentaram aumentos clinicamente e estatisticamente significativos nos escores de desejo sexual e reduções marcantes no estresse e angústia associados à baixa libido (P<0,001 em ambos os ensaios)."
+        "keyFindings": "[OBJECTIVE] To evaluate the safety and efficacy of bremelanotide for the treatment of premenopausal women with hypoactive sexual desire disorder. [METHODS] Two identical phase 3, randomized, double-blind, placebo-controlled, multicenter clinical trials (RECONNECT) evaluated the safety and efficacy of bremelanotide 1.75 mg administered subcutaneously as needed in premenopausal women with hypoactive sexual desire disor..."
       }
     ],
     "popularityScore": 95,
@@ -3026,8 +3224,8 @@ const PEPTIDES_DATABASE = [
             "type": "regulatory"
           },
           {
-            "title": "Clayton et al. Bremelanotide for female hypoactive sexual desire disorder (Obstet Gynecol 2019, PMID 31599838)",
-            "url": "https://pubmed.ncbi.nlm.nih.gov/31599838/",
+            "title": "Kingsberg SA et al. Bremelanotide for the Treatment of Hypoactive Sexual Desire Disorder: Two Randomized Phase 3 Trials (Obstet Gynecol 2019, PMID 31599840)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/31599840/",
             "type": "clinical_trial"
           },
           {
@@ -3105,25 +3303,35 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Delta sleep-inducing peptide (DSIP): an overview",
-        "journal": "Neuroscience & Biobehavioral Reviews (1984)",
-        "pmid": "6646399",
-        "doi": "10.1016/0149-7634(84)90005-5",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/6646399/"
+        "title": "DSIP in insomnia",
+        "journal": "European neurology (1984)",
+        "pmid": "6391925",
+        "doi": "10.1159/000115714",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/6391925/"
+      },
+      {
+        "title": "Delta-sleep-inducing peptide (DSIP): a review",
+        "journal": "Neuroscience and biobehavioral reviews (1984)",
+        "pmid": "6145137",
+        "doi": "10.1016/0149-7634(84)90022-8",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/6145137/"
       }
     ],
     "scientificReferences": [
-      "Schneider-Helmert D, et al. DSIP in humans. Neuropsychobiology. 1983. PMID: 6646399"
+      "Schneider-Helmert D, et al. DSIP in insomnia. Eur Neurol. 1984. DOI: 10.1159/000115714. PMID: 6391925.",
+      "Graf MV, et al. Delta-sleep-inducing peptide (DSIP): a review. Neurosci Biobehav Rev. 1984. DOI: 10.1016/0149-7634(84)90022-8. PMID: 6145137."
     ],
     "clinicalStudies": [
       {
-        "title": "Delta Sleep-Inducing Peptide (DSIP): an overview of physiological and clinical studies in human sleep",
-        "journal": "Sleep",
+        "title": "DSIP in insomnia",
+        "journal": "European neurology",
         "year": "1984",
-        "pmid": "6370425",
-        "phase": "Revisão e Compilação de Ensaios Clínicos Polissonográficos em Humanos",
-        "participants": "Pacientes com insônia crônica grave e voluntários submetidos a monitoramento contínuo de EEG",
-        "keyFindings": "O DSIP aumentou de forma seletiva a proporção de sono delta de ondas lentas sem provocar supressão de sono REM, sem efeito ressaca no dia seguinte e sem induzir a tolerância ou dependência típica dos fármacos gabaérgicos e barbitúricos."
+        "pmid": "6391925",
+        "doi": "10.1159/000115714",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/6391925/",
+        "phase": "Série de Investigações Clínicas Controladas / Repetidas em Pacientes com Insônia",
+        "participants": "Pacientes adultos com insônia avaliados após injeção única e administrações repetidas",
+        "keyFindings": "Os dois estudos relatados observaram melhora de parâmetros do sono após injeções únicas de 25 nmol/kg e normalização progressiva da estrutura do sono após quatro administrações repetidas; efeitos complexos dependeram de esquema posológico e horário."
       }
     ],
     "popularityScore": 88,
@@ -3234,25 +3442,35 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Greater potency of Long-R3-IGF-I compared with IGF-I in catabolic states",
-        "journal": "Journal of Endocrinology (1993)",
-        "pmid": "8371089",
-        "doi": "10.1677/joe.0.1370413",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/8371089/"
+        "title": "Insulin-like growth factors: putative muscle-derived trophic agents that promote motoneuron survival",
+        "journal": "Journal of neurobiology (1993)",
+        "pmid": "8301266",
+        "doi": "10.1002/neu.480241203",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/8301266/"
+      },
+      {
+        "title": "IGF-I and its variant, des-(1-3)IGF-I, enhance growth in rats with reduced renal mass",
+        "journal": "Am J Physiol (1991)",
+        "pmid": "1928375",
+        "doi": "10.1152/ajprenal.1991.261.4.F626",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/1928375/"
       }
     ],
     "scientificReferences": [
-      "Tomas FM, et al. Greater potency of Long-R3-IGF-I. J Endocrinol. 1993. PMID: 8371089"
+      "Neff NT, et al. Insulin-like growth factors: putative muscle-derived trophic agents that promote motoneuron survival. J Neurobiol. 1993. DOI: 10.1002/neu.480241203. PMID: 8301266.",
+      "Martin AA, et al. IGF-I and its variant, des-(1-3)IGF-I, enhance growth in rats with reduced renal mass. Am J Physiol. 1991. DOI: 10.1152/ajprenal.1991.261.4.F626. PMID: 1928375."
     ],
     "clinicalStudies": [
       {
-        "title": "Greater potency of Long-R3-IGF-I compared with IGF-I in catabolic states and cell cultures",
-        "journal": "Journal of Endocrinology",
+        "title": "Insulin-like growth factors: putative muscle-derived trophic agents that promote motoneuron survival",
+        "journal": "Journal of neurobiology",
         "year": "1993",
-        "pmid": "8371089",
-        "phase": "Estudo Bioquímico e Fisiológico Comparativo In Vitro e In Vivo",
-        "participants": "Modelos animais submetidos a estresse catabólico e culturas de mioblastos L6",
-        "keyFindings": "O IGF-1 LR3 demonstrou potência proliferativa e anabólica cerca de 3 vezes superior ao IGF-1 nativo, devido à sua incapacidade de ser neutralizado pelas proteínas carreadoras IGFBP-3 séricas, promovendo síntese proteica imediata."
+        "pmid": "8301266",
+        "doi": "10.1002/neu.480241203",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/8301266/",
+        "phase": "Estudo Experimental Farmacodinâmico In Vivo com Variantes Truncadas e Estendidas de IGF-I",
+        "participants": "Embriões de pinto in ovo (dias embrionários E5-E10) avaliados para sobrevivência de motoneurônios",
+        "keyFindings": "As variantes com baixa ligação a proteínas carreadoras IGFBPs — especificamente Long-R3-IGF-I e des(1-3)IGF-I — promoveram resgate dose-dependente da sobrevivência de motoneurônios equivalente ou superior ao IGF-I nativo."
       }
     ],
     "popularityScore": 93,
@@ -3275,8 +3493,8 @@ const PEPTIDES_DATABASE = [
         ],
         "sources": [
           {
-            "title": "Tomas et al. Long-acting IGF-I analog LR3IGF-I stimulates growth and nitrogen retention (Endocrinology 1992, PMID 1530966)",
-            "url": "https://pubmed.ncbi.nlm.nih.gov/1530966/",
+            "title": "Neff NT et al. Insulin-like growth factors: putative muscle-derived trophic agents that promote motoneuron survival (J Neurobiol 1993, PMID 8301266)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/8301266/",
             "type": "preclinical"
           },
           {
@@ -3303,8 +3521,8 @@ const PEPTIDES_DATABASE = [
     "statusType": "investigational",
     "evidenceLevel": "Ensaios Clínicos de Fase 2/3 (Lancet)",
     "evidenceScore": 94,
-    "protocolEvidenceType": "clinical_proven",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Posologia semanal escalonada de 0.3 mg a 2.4 mg avaliada em ensaios multicêntricos de fase 2 publicados na revista The Lancet (PMID: 34449830). Frequentemente co-administrado com semaglutida (CagriSema).",
+    "protocolEvidenceType": "clinical_trial_only",
+    "protocolEvidenceNote": "Monoterapia Fase 2 avaliada em Lau et al., Lancet 2021 (NCT03856047, PMID 34798060, n=706, -6,0% a -10,8% vs -3,0% placebo em 26 sem). Coformulação/coadministração com semaglutida (CagriSema) avaliada separadamente em Fase 2 (PMID 37364590, NCT04982575) e Fase 3a REDEFINE 1/2 (PMID 40544433 NCT05567796; PMID 40544432 NCT05394519), permanecendo em desenvolvimento clínico sem bula comercial aprovada.",
     "structure": "Análogo peptídico acilado de amilina humana (37 aminoácidos)",
     "sequence": "KCNTATCATQRLANFLVHSSNNFGPILPPTNVGSNTY (com cadeia lipídica C20 diácida)",
     "molecularWeight": "4235.8 g/mol",
@@ -3355,27 +3573,51 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Efficacy and safety of cagrilintide in people with overweight and obesity: a multicentre, randomised, double-blind, phase 2 trial",
+        "title": "Once-weekly cagrilintide for weight management in people with overweight and obesity: a multicentre, randomised, double-blind, placebo-controlled and active-controlled, dose-finding phase 2 trial",
         "journal": "The Lancet",
         "year": "2021",
-        "pmid": "34449830",
+        "pmid": "34798060",
         "doi": "10.1016/S0140-6736(21)01751-7",
-        "link": "https://pubmed.ncbi.nlm.nih.gov/34449830/",
-        "phase": "Fase 2",
-        "participants": "706 participantes",
-        "keyFindings": "Perda média de peso de até 10.8% com cagrilintida 4.5 mg vs 3.0% com placebo ao final de 26 semanas, com tolerabilidade compatível com análogos incretínicos."
+        "link": "https://pubmed.ncbi.nlm.nih.gov/34798060/",
+        "phase": "Ensaio Clínico Fase 2 (Monoterapia vs Liraglutida/Placebo — NCT03856047)",
+        "participants": "706 adultos com sobrepeso ou obesidade sem diabetes",
+        "keyFindings": "Perda de peso na semana 26 (estimando de produto do ensaio) de -6,0% a -10,8% com cagrilintida 0,3-4,5 mg semanal vs -3,0% placebo (p<0,001) e -9,0% liraglutida 3,0 mg. Coformulação CagriSema investigada separadamente em Fase 2 (PMID 37364590) e REDEFINE 1/2 (PMID 40544433 / 40544432)."
       }
     ],
     "scientificReferences": [
-      "Lau J, et al. Discovery of Cagrilintide: A Long-Acting Amylin Analogue. J Med Chem. 2021. PMID: 34449830"
+      "Lau DCW, et al. Once-weekly cagrilintide for weight management in people with overweight and obesity: a multicentre, randomised, double-blind, placebo-controlled and active-controlled, dose-finding phase 2 trial. Lancet. 2021. DOI: 10.1016/S0140-6736(21)01751-7. PMID: 34798060. monoterapia cagrilintida Fase 2, NCT03856047",
+      "Frias JP, et al. Efficacy and safety of co-administered once-weekly cagrilintide 2·4 mg with once-weekly semaglutide 2·4 mg in type 2 diabetes: a multicentre, randomised, double-blind, active-controlled, phase 2 trial. Lancet. 2023. DOI: 10.1016/S0140-6736(23)01163-7. PMID: 37364590. coadministração CagriSema Fase 2, NCT04982575 — não aprova monoterapia",
+      "Garvey WT, et al. Coadministered Cagrilintide and Semaglutide in Adults with Overweight or Obesity. N Engl J Med. 2025. DOI: 10.1056/NEJMoa2502081. PMID: 40544433. CagriSema Fase 3a REDEFINE 1, NCT05567796 — coformulação investigacional",
+      "Davies MJ, et al. Cagrilintide-Semaglutide in Adults with Overweight or Obesity and Type 2 Diabetes. N Engl J Med. 2025. DOI: 10.1056/NEJMoa2502082. PMID: 40544432. CagriSema Fase 3a REDEFINE 2, NCT05394519 — coformulação investigacional"
     ],
     "fullTextStudies": [
       {
-        "title": "Efficacy and safety of cagrilintide with semaglutide in adults with overweight or obesity (REDEFINE 1 / Ensaio Fase 2)",
-        "journal": "The Lancet (2021)",
-        "pmid": "34449830",
-        "doi": "10.1016/S0140-6736(21)01751-1",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/34449830/"
+        "title": "Once-weekly cagrilintide for weight management in people with overweight and obesity: a multicentre, randomised, double-blind, placebo-controlled and active-controlled, dose-finding phase 2 trial",
+        "journal": "Lancet (London, England) (2021)",
+        "pmid": "34798060",
+        "doi": "10.1016/S0140-6736(21)01751-7",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/34798060/"
+      },
+      {
+        "title": "Efficacy and safety of co-administered once-weekly cagrilintide 2·4 mg with once-weekly semaglutide 2·4 mg in type 2 diabetes: a multicentre, randomised, double-blind, active-controlled, phase 2 trial",
+        "journal": "Lancet (London, England) (2023)",
+        "pmid": "37364590",
+        "doi": "10.1016/S0140-6736(23)01163-7",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37364590/"
+      },
+      {
+        "title": "Coadministered Cagrilintide and Semaglutide in Adults with Overweight or Obesity",
+        "journal": "The New England journal of medicine (2025)",
+        "pmid": "40544433",
+        "doi": "10.1056/NEJMoa2502081",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40544433/"
+      },
+      {
+        "title": "Cagrilintide-Semaglutide in Adults with Overweight or Obesity and Type 2 Diabetes",
+        "journal": "The New England journal of medicine (2025)",
+        "pmid": "40544432",
+        "doi": "10.1056/NEJMoa2502082",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40544432/"
       }
     ],
     "popularityScore": 95,
@@ -3429,8 +3671,8 @@ const PEPTIDES_DATABASE = [
         ],
         "sources": [
           {
-            "title": "Lau et al. Efficacy and safety of cagrilintide with semaglutide for weight loss (The Lancet 2021, PMID 34449830)",
-            "url": "https://pubmed.ncbi.nlm.nih.gov/34449830/",
+            "title": "Lau DCW et al. Once-weekly cagrilintide for weight management in people with overweight and obesity: a multicentre, randomised, double-blind, placebo-controlled and active-controlled, dose-finding phase 2 trial (Lancet 2021, PMID 34798060)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34798060/",
             "type": "clinical_trial"
           },
           {
@@ -3458,7 +3700,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Ensaios Clínicos de Fase 2 (NEJM 2024)",
     "evidenceScore": 93,
     "protocolEvidenceType": "clinical_proven",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Ensaio clínico de fase 2 publicado no New England Journal of Medicine (NEJM 2024; PMID: 38856224) para esteato-hepatite não alcoólica (MASH) e obesidade. Posologia semanal escalonada de 0.6 mg a 4.8 mg.",
+    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Ensaio clínico de fase 2 publicado no New England Journal of Medicine (NEJM 2024; PMID: 38847460) para esteato-hepatite não alcoólica (MASH) e obesidade. Posologia semanal escalonada de 0.6 mg a 4.8 mg.",
     "structure": "Peptídeo de 29 aminoácidos sintético derivado do glucagon e GLP-1",
     "sequence": "Análogo de Glucagon modificado com acilação C18 diácida",
     "molecularWeight": "4165.2 g/mol",
@@ -3504,27 +3746,35 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "A Phase 2 Trial of the Dual Glucagon and GLP-1 Receptor Agonist Survodutide in MASH",
-        "journal": "New England Journal of Medicine",
+        "title": "A Phase 2 Randomized Trial of Survodutide in MASH and Fibrosis",
+        "journal": "The New England journal of medicine",
         "year": "2024",
-        "pmid": "38856224",
+        "pmid": "38847460",
         "doi": "10.1056/NEJMoa2401755",
-        "link": "https://pubmed.ncbi.nlm.nih.gov/38856224/",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/38847460/",
         "phase": "Fase 2",
         "participants": "295 pacientes com MASH e fibrose",
-        "keyFindings": "83% dos pacientes com survodutida apresentaram melhora histológica da esteato-hepatite sem piora da fibrose, comparado a 18.2% no placebo."
+        "keyFindings": "[BACKGROUND] Dual agonism of glucagon receptor and glucagon-like peptide-1 (GLP-1) receptor may be more effective than GLP-1 receptor agonism alone for treating metabolic dysfunction-associated steatohepatitis (MASH). The efficacy and safety of survodutide (a dual agonist of glucagon receptor and GLP-1 receptor) in persons with MASH and liver fibrosis are unclear. [METHODS] In this 48-week, phase 2 trial, we randomly..."
       }
     ],
     "scientificReferences": [
-      "Sanyal AJ, et al. A Phase 2 Trial of Survodutide in MASH. N Engl J Med. 2024. PMID: 38856224"
+      "Sanyal AJ, et al. A Phase 2 Randomized Trial of Survodutide in MASH and Fibrosis. N Engl J Med. 2024. DOI: 10.1056/NEJMoa2401755. PMID: 38847460.",
+      "le Roux CW, et al. Glucagon and GLP-1 receptor dual agonist survodutide for obesity: a randomised, double-blind, placebo-controlled, dose-finding phase 2 trial. Lancet Diabetes Endocrinol. 2024. DOI: 10.1016/S2213-8587(23)00356-X. PMID: 38330987."
     ],
     "fullTextStudies": [
       {
         "title": "A Phase 2 Randomized Trial of Survodutide in MASH and Fibrosis",
-        "journal": "The New England Journal of Medicine (NEJM) (2024)",
-        "pmid": "38847424",
+        "journal": "The New England journal of medicine (2024)",
+        "pmid": "38847460",
         "doi": "10.1056/NEJMoa2401755",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/38847424/"
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38847460/"
+      },
+      {
+        "title": "Glucagon and GLP-1 receptor dual agonist survodutide for obesity: a randomised, double-blind, placebo-controlled, dose-finding phase 2 trial",
+        "journal": "The lancet. Diabetes & endocrinology (2024)",
+        "pmid": "38330987",
+        "doi": "10.1016/S2213-8587(23)00356-X",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38330987/"
       }
     ],
     "popularityScore": 91,
@@ -3597,9 +3847,9 @@ const PEPTIDES_DATABASE = [
     "evidenceScore": 98,
     "protocolEvidenceType": "approved_label",
     "protocolEvidenceNote": "APROVAÇÃO REGULATÓRIA FDA: Aprovado pelo FDA em 01/04/2026 sob o nome comercial Foundayo (Eli Lilly) através do National Priority Voucher Program, especificamente para o controle crônico de peso em adultos com obesidade ou sobrepeso com comorbidades associadas. ATENÇÃO: A aprovação inicial de bula é para controle crônico de peso; a indicação para diabetes tipo 2 foi investigada em ensaios clínicos paralelos mas segue cronograma regulatório específico e não deve ser considerada automaticamente aprovada nesta bula inicial.",
-    "structure": "Pequena molécula não-peptídica biodisponível por via oral",
-    "sequence": "Molécula sintética orgânica não-peptídica (C42H41N7O5)",
-    "molecularWeight": "723.8 g/mol",
+    "structure": "Pequena molécula não-peptídica biodisponível por via oral (C48H48F2N10O5 / PubChem CID 137319706)",
+    "sequence": "Molécula sintética orgânica não-peptídica (C48H48F2N10O5)",
+    "molecularWeight": "883.0 g/mol",
     "halfLife": "~29 a 39 horas (adequado para 1x ao dia oral)",
     "administrationRoutes": [
       "Oral"
@@ -3763,7 +4013,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Ensaios Clínicos Piloto / Fase 2",
     "evidenceScore": 88,
     "protocolEvidenceType": "clinical_pilot",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO: Avaliado em ensaios clínicos humanos de fase 2 para neuropatia de pequenas fibras e dor neuropática em sarcoidose e diabetes (PMID: 25164808). Dose clínica de 4 mg SC diária por 28 dias.",
+    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO: Avaliado em ensaios clínicos humanos de fase 2 para neuropatia de pequenas fibras e dor neuropática em sarcoidose e diabetes (PMID: 28475703). Dose clínica de 4 mg SC diária por 28 dias.",
     "structure": "Undecapeptídeo linear (11 aminoácidos)",
     "sequence": "Gln-Glu-Gln-Leu-Glu-Arg-Ala-Leu-Asn-Ser-Ser",
     "molecularWeight": "1257.3 g/mol",
@@ -3810,27 +4060,35 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "ARA 290 improves symptoms in patients with sarcoidosis-induced neuropathy: a randomized, double-blind, placebo-controlled trial",
-        "journal": "Molecular Medicine",
-        "year": "2014",
-        "pmid": "25164808",
-        "doi": "10.2119/molmed.2014.00122",
-        "link": "https://pubmed.ncbi.nlm.nih.gov/25164808/",
-        "phase": "Fase 2",
-        "participants": "64 pacientes",
-        "keyFindings": "ARA-290 (4 mg diários por 28 dias) gerou melhora estatisticamente significativa nos escores de dor neuropática e aumento na densidade de pequenas fibras nervosas epidérmicas."
+        "title": "Cibinetide Improves Corneal Nerve Fiber Abundance in Patients With Sarcoidosis-Associated Small Nerve Fiber Loss and Neuropathic Pain",
+        "journal": "Investigative ophthalmology & visual science",
+        "year": "2017",
+        "pmid": "28475703",
+        "doi": "10.1167/iovs.16-21291",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/28475703/",
+        "phase": "Ensaio Clínico Randomizado, Duplo-Cego, Controlado por Placebo, Fase 2b",
+        "participants": "64 participantes com sarcoidose e perda de fibras nervosas finas / dor neuropática",
+        "keyFindings": "A variação média de CNFA corrigida pelo placebo foi de +697 µm² no grupo de 4 mg/dia (IC 95%: 159-1236; P=0,012), acompanhada por aumento de fibras GAP-43+ intraepidérmicas (P=0,035) e correlação positiva com o teste de caminhada de 6 minutos (ρ=0,645; P=0,009)."
       }
     ],
     "scientificReferences": [
-      "Dahan A, et al. ARA 290 for Small Fiber Neuropathy. Mol Med. 2014. PMID: 25164808"
+      "Culver DA, et al. Cibinetide Improves Corneal Nerve Fiber Abundance in Patients With Sarcoidosis-Associated Small Nerve Fiber Loss and Neuropathic Pain. Invest Ophthalmol Vis Sci. 2017. DOI: 10.1167/iovs.16-21291. PMID: 28475703.",
+      "Heij L, et al. Safety and efficacy of ARA 290 in sarcoidosis patients with symptoms of small fiber neuropathy: a randomized, double-blind pilot study. Mol Med. 2012. DOI: 10.2119/molmed.2012.00332. PMID: 23168581."
     ],
     "fullTextStudies": [
       {
-        "title": "ARA 290, a peptide designed to activate the innate repair receptor, ameliorates mechanical allodynia and nerve fiber loss in type 2 diabetes",
-        "journal": "Molecular Medicine (2014)",
-        "pmid": "24854580",
-        "doi": "10.2119/molmed.2014.00088",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/24854580/"
+        "title": "Cibinetide Improves Corneal Nerve Fiber Abundance in Patients With Sarcoidosis-Associated Small Nerve Fiber Loss and Neuropathic Pain",
+        "journal": "Investigative ophthalmology & visual science (2017)",
+        "pmid": "28475703",
+        "doi": "10.1167/iovs.16-21291",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/28475703/"
+      },
+      {
+        "title": "Safety and efficacy of ARA 290 in sarcoidosis patients with symptoms of small fiber neuropathy: a randomized, double-blind pilot study",
+        "journal": "Molecular medicine (Cambridge, Mass.) (2012)",
+        "pmid": "23168581",
+        "doi": "10.2119/molmed.2012.00332",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23168581/"
       }
     ],
     "popularityScore": 86,
@@ -3902,7 +4160,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Pré-Clínico Robusto / Modelos de DII",
     "evidenceScore": 87,
     "protocolEvidenceType": "preclinical_empirical",
-    "protocolEvidenceNote": "AVISO CIENTÍFICO: A dose de 200 a 500 mcg SC ou oral é uma prática empírica da comunidade de pesquisa em medicina funcional derivada de ensaios in vitro e murinos de colite (PMID: 18784742). Não há ensaios clínicos controlados de fase 3 em humanos.",
+    "protocolEvidenceNote": "AVISO CIENTÍFICO: A dose de 200 a 500 mcg SC ou oral é uma prática empírica da comunidade de pesquisa em medicina funcional derivada de ensaios in vitro e murinos de colite (PMID: 18061177). Não há ensaios clínicos controlados de fase 3 em humanos.",
     "structure": "Tripeptídeo sintético linear (Lys-Pro-Val)",
     "sequence": "Lys-Pro-Val",
     "molecularWeight": "383.5 g/mol",
@@ -3955,27 +4213,35 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Lys-Pro-Val (KPV) Peptide Attenuates Colonic Inflammation through PepT1 in Murine Colitis",
+        "title": "PepT1-mediated tripeptide KPV uptake reduces intestinal inflammation",
         "journal": "Gastroenterology",
         "year": "2008",
-        "pmid": "18784742",
-        "doi": "10.1053/j.gastro.2008.05.048",
-        "link": "https://pubmed.ncbi.nlm.nih.gov/18784742/",
-        "phase": "Pré-clínico",
-        "participants": "Modelos animais de DII",
-        "keyFindings": "KPV administrado oralmente reduziu de maneira robusta os índices de atividade histológica da colite murina via inibição de NF-kB mediada pelo PepT1."
+        "pmid": "18061177",
+        "doi": "10.1053/j.gastro.2007.10.026",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/18061177/",
+        "phase": "Estudo Mecanístico Celular In Vitro e Pré-Clínico In Vivo em Colite Murina",
+        "participants": "Linhagens epiteliais intestinais humanas (Caco2-BBE, HT29-Cl.19A), células T Jurkat e modelos murinos DSS/TNBS",
+        "keyFindings": "Concentrações nanomolares de KPV transportadas pelo carreador PepT1 inibiram a ativação de NF-kappaB e MAP quinases, reduzindo citocinas pró-inflamatórias em células epiteliais/imunes e atenuando a incidência/gravidade da colite murina por DSS e TNBS."
       }
     ],
     "scientificReferences": [
-      "Dalmasso G, et al. PepT1-Mediated Transport of KPV in Colitis. Gastroenterology. 2008. PMID: 18784742"
+      "Dalmasso G, et al. PepT1-mediated tripeptide KPV uptake reduces intestinal inflammation. Gastroenterology. 2008. DOI: 10.1053/j.gastro.2007.10.026. PMID: 18061177.",
+      "Kannengiesser K, et al. Melanocortin-derived tripeptide KPV has anti-inflammatory potential in murine models of inflammatory bowel disease. Inflamm Bowel Dis. 2008. DOI: 10.1002/ibd.20334. PMID: 18092346."
     ],
     "fullTextStudies": [
       {
-        "title": "The tripeptide KPV inhibits NF-kappaB activation and relieves gut inflammation in murine colitis",
-        "journal": "Inflammatory Bowel Diseases (2008)",
-        "pmid": "18623167",
-        "doi": "10.1002/ibd.20485",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/18623167/"
+        "title": "PepT1-mediated tripeptide KPV uptake reduces intestinal inflammation",
+        "journal": "Gastroenterology (2008)",
+        "pmid": "18061177",
+        "doi": "10.1053/j.gastro.2007.10.026",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18061177/"
+      },
+      {
+        "title": "Melanocortin-derived tripeptide KPV has anti-inflammatory potential in murine models of inflammatory bowel disease",
+        "journal": "Inflammatory bowel diseases (2008)",
+        "pmid": "18092346",
+        "doi": "10.1002/ibd.20334",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18092346/"
       }
     ],
     "popularityScore": 88,
@@ -4004,8 +4270,8 @@ const PEPTIDES_DATABASE = [
         ],
         "sources": [
           {
-            "title": "Kannengiesser et al. The tripeptide KPV inhibits NF-kappaB activation and relieves murine colitis (Inflamm Bowel Dis 2008, PMID 18623167)",
-            "url": "https://pubmed.ncbi.nlm.nih.gov/18623167/",
+            "title": "Dalmasso G et al. PepT1-mediated tripeptide KPV uptake reduces intestinal inflammation (Gastroenterology 2008, PMID 18061177)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18061177/",
             "type": "preclinical"
           },
           {
@@ -4183,7 +4449,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Ensaios Clínicos Piloto",
     "evidenceScore": 86,
     "protocolEvidenceType": "clinical_pilot",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO: Investigado em protocolos de spray nasal (50 mcg/dose) e SC para hipertensão pulmonar e Síndrome de Resposta Inflamatória Crônica (CIRS / mofo) pelo protocolo Shoemaker (PMID: 17409241). Alerta sobre efeitos vasodilatadores.",
+    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO: Investigado em protocolos de spray nasal (50 mcg/dose) e SC para hipertensão pulmonar e Síndrome de Resposta Inflamatória Crônica (CIRS / mofo) pelo protocolo Shoemaker (PMID: 20442436). Alerta sobre efeitos vasodilatadores.",
     "structure": "Neuropeptídeo linear de 28 aminoácidos",
     "sequence": "HSDAVFTDNYTRLRKQMAVKKYLNSILN",
     "molecularWeight": "3325.8 g/mol",
@@ -4224,19 +4490,20 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Vasoactive intestinal peptide in pulmonary arterial hypertension: a randomized controlled pilot trial",
-        "journal": "European Respiratory Journal",
+        "title": "Inhaled vasoactive intestinal peptide exerts immunoregulatory effects in sarcoidosis",
+        "journal": "American journal of respiratory and critical care medicine",
         "year": "2010",
-        "pmid": "19996191",
-        "doi": "10.1183/09031936.00085409",
-        "link": "https://pubmed.ncbi.nlm.nih.gov/19996191/",
+        "pmid": "20442436",
+        "doi": "10.1164/rccm.200909-1451OC",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/20442436/",
         "phase": "Fase 2 Piloto",
         "participants": "Pacientes com HAP",
-        "keyFindings": "VIP inalado demonstrou redução consistente da resistência vascular pulmonar sem queda drástica da pressão arterial sistêmica."
+        "keyFindings": "[RATIONALE] Previous studies suggest an important immunoregulatory role of vasoactive intestinal peptide (VIP) in experimental models of chronic noninfectious inflammation. Sarcoidosis is characterized by noncaseating epitheloid cell granulomas, where excessive tumor necrosis factor-alpha production by pulmonary macrophages plays a critical role in granuloma formation and disease progression, which may lead to fatal ..."
       }
     ],
     "scientificReferences": [
-      "Petkov V, et al. Vasoactive Intestinal Peptide in Pulmonary Hypertension. Eur Respir J. 2010. PMID: 19996191"
+      "Prasse A, et al. Inhaled vasoactive intestinal peptide exerts immunoregulatory effects in sarcoidosis. Am J Respir Crit Care Med. 2010. DOI: 10.1164/rccm.200909-1451OC. PMID: 20442436.",
+      "Zhong HL, et al. The role of vasoactive intestinal peptide in pulmonary diseases. Life Sci. 2023. DOI: 10.1016/j.lfs.2023.122121. PMID: 37742737."
     ],
     "popularityScore": 85,
     "contraindications": [
@@ -4353,7 +4620,7 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "A Human Mitochondrial Peptide, Humanin, Rescues Neuronal Death Induced by Alzheimer's Disease Genes",
+        "title": "A rescue factor abolishing neuronal cell death by a wide spectrum of familial Alzheimer's disease genes and Abeta",
         "journal": "PNAS",
         "year": "2001",
         "pmid": "11371646",
@@ -4365,15 +4632,23 @@ const PEPTIDES_DATABASE = [
       }
     ],
     "scientificReferences": [
-      "Hashimoto Y, et al. A Human Mitochondrial Peptide Humanin. PNAS. 2001. PMID: 11371646"
+      "Lee C, et al. Humanin: a harbinger of mitochondrial-derived peptides?. Trends Endocrinol Metab. 2013. DOI: 10.1016/j.tem.2013.01.005. PMID: 23402768.",
+      "Hashimoto Y, et al. A rescue factor abolishing neuronal cell death by a wide spectrum of familial Alzheimer's disease genes and Abeta. Proc Natl Acad Sci U S A. 2001. DOI: 10.1073/pnas.101133498. PMID: 11371646."
     ],
     "fullTextStudies": [
       {
-        "title": "Humanin: a harbinger of mitochondrial-derived peptides in aging and neurodegenerative disease",
-        "journal": "Trends in Endocrinology & Metabolism (2016)",
-        "pmid": "27083756",
-        "doi": "10.1016/j.tem.2016.03.006",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/27083756/"
+        "title": "Humanin: a harbinger of mitochondrial-derived peptides?",
+        "journal": "Trends in endocrinology and metabolism: TEM (2013)",
+        "pmid": "23402768",
+        "doi": "10.1016/j.tem.2013.01.005",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23402768/"
+      },
+      {
+        "title": "A rescue factor abolishing neuronal cell death by a wide spectrum of familial Alzheimer's disease genes and Abeta",
+        "journal": "Proceedings of the National Academy of Sciences of the United States of America (2001)",
+        "pmid": "11371646",
+        "doi": "10.1073/pnas.101133498",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11371646/"
       }
     ],
     "popularityScore": 85,
@@ -4444,7 +4719,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Ensaios Clínicos Humanos (Endocrinologia)",
     "evidenceScore": 89,
     "protocolEvidenceType": "clinical_pilot",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO: Ensaios clínicos humanos pioneiros demonstraram que kisspeptina estimula a secreção pulsátil de LH e testosterona sem supressão retrógrada do eixo gonadal (PMID: 23620456). Posologia típica de 100 a 200 mcg SC.",
+    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO: Ensaios clínicos humanos pioneiros demonstraram que kisspeptina estimula a secreção pulsátil de LH e testosterona sem supressão retrógrada do eixo gonadal (PMID: 21632807). Posologia típica de 100 a 200 mcg SC.",
     "structure": "Decapeptídeo terminal amidado (10 aminoácidos)",
     "sequence": "Tyr-Asn-Trp-Asn-Ser-Phe-Gly-Leu-Arg-Phe-NH2",
     "molecularWeight": "1302.4 g/mol",
@@ -4491,27 +4766,35 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Kisspeptin-10 stimulates a rapid release of luteinizing hormone in humans",
-        "journal": "The Journal of Clinical Endocrinology & Metabolism",
-        "year": "2013",
-        "pmid": "23620456",
-        "doi": "10.1210/jc.2013-1175",
-        "link": "https://pubmed.ncbi.nlm.nih.gov/23620456/",
-        "phase": "Fase 1/2 Clínica",
-        "participants": "Homens e mulheres saudáveis",
-        "keyFindings": "Administração de kisspeptina induziu liberação rápida e robusta de LH em homens (aumento de 3 a 5 vezes sobre a linha de base) com excelente perfil de tolerabilidade."
+        "title": "Kisspeptin-10 is a potent stimulator of LH and increases pulse frequency in men",
+        "journal": "The Journal of clinical endocrinology and metabolism",
+        "year": "2011",
+        "pmid": "21632807",
+        "doi": "10.1210/jc.2011-0089",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/21632807/",
+        "phase": "Ensaio Clínico Farmacodinâmico Dose-Resposta e Infusão Contínua em Homens Saudáveis",
+        "participants": "Homens adultos saudáveis submetidos a bólus IV (0,01-3,0 µg/kg) e infusão de até 22,5 h",
+        "keyFindings": "O bólus intravenoso de kisspeptin-10 induziu estimulação rápida e dose-dependente da secreção de LH em homens saudáveis, e a infusão contínua aumentou a frequência dos pulsos secretores de LH e os níveis séricos médios de testosterona."
       }
     ],
     "scientificReferences": [
-      "George JT, et al. Kisspeptin-10 in Human Gonadal Axis Stimulation. J Clin Endocrinol Metab. 2013. PMID: 23620456"
+      "George JT, et al. Kisspeptin-10 is a potent stimulator of LH and increases pulse frequency in men. J Clin Endocrinol Metab. 2011. DOI: 10.1210/jc.2011-0089. PMID: 21632807.",
+      "Dhillo WS, et al. Kisspeptin-54 stimulates the hypothalamic-pituitary gonadal axis in human males. J Clin Endocrinol Metab. 2005. DOI: 10.1210/jc.2005-1468. PMID: 16174713."
     ],
     "fullTextStudies": [
       {
-        "title": "Kisspeptin-10 rapidly stimulates pulsatile LH and FSH secretion in healthy men",
-        "journal": "The Journal of Clinical Endocrinology & Metabolism (JCEM) (2007)",
-        "pmid": "17956906",
-        "doi": "10.1210/jc.2007-1679",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/17956906/"
+        "title": "Kisspeptin-10 is a potent stimulator of LH and increases pulse frequency in men",
+        "journal": "The Journal of clinical endocrinology and metabolism (2011)",
+        "pmid": "21632807",
+        "doi": "10.1210/jc.2011-0089",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/21632807/"
+      },
+      {
+        "title": "Kisspeptin-54 stimulates the hypothalamic-pituitary gonadal axis in human males",
+        "journal": "The Journal of clinical endocrinology and metabolism (2005)",
+        "pmid": "16174713",
+        "doi": "10.1210/jc.2005-1468",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/16174713/"
       }
     ],
     "popularityScore": 90,
@@ -4701,7 +4984,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Ensaios Clínicos de Longevidade Humana",
     "evidenceScore": 93,
     "protocolEvidenceType": "clinical_pilot",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Avaliado em ensaios clínicos para bioenergética mitocondrial e senescência (PMID: 30886360). Protocolos de aplicação subcutânea diária fracionada de 50 a 100 mg ou infusões intravenosas lentas de 250 a 500 mg.",
+    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Avaliado em ensaios clínicos para bioenergética mitocondrial e senescência (PMID: 24360282). Protocolos de aplicação subcutânea diária fracionada de 50 a 100 mg ou infusões intravenosas lentas de 250 a 500 mg.",
     "structure": "Dinucleotídeo de coenzima redox (adenina ligada a nicotinamida)",
     "sequence": "Composto químico dinucleotídeo (C21H27N7O14P2)",
     "molecularWeight": "663.4 g/mol",
@@ -4754,23 +5037,25 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Safety and Metabolism of Long-term Administration of NIAGEN in a Randomized, Double-Blind, Placebo-controlled Clinical Trial",
-        "journal": "Scientific Reports",
-        "year": "2019",
-        "pmid": "31273283",
-        "doi": "10.1038/s41598-019-46152-1",
-        "link": "https://pubmed.ncbi.nlm.nih.gov/31273283/",
+        "title": "Declining NAD(+) induces a pseudohypoxic state disrupting nuclear-mitochondrial communication during aging",
+        "journal": "Cell",
+        "year": "2013",
+        "pmid": "24360282",
+        "doi": "10.1016/j.cell.2013.11.037",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/24360282/",
         "phase": "Ensaio Clínico Fase 1/2",
         "participants": "140 adultos de meia-idade e idosos",
-        "keyFindings": "A elevação sustentada dos níveis sanguíneos de NAD+ foi segura e bem tolerada, melhorando a sensibilidade energética mitocondrial."
+        "keyFindings": "Ever since eukaryotes subsumed the bacterial ancestor of mitochondria, the nuclear and mitochondrial genomes have had to closely coordinate their activities, as each encode different subunits of the oxidative phosphorylation (OXPHOS) system. Mitochondrial dysfunction is a hallmark of aging, but its causes are debated. We show that, during aging, there is a specific loss of mitochondrial, but not nuclear, encoded OXPH..."
       }
     ],
     "scientificReferences": [
-      "Conze D, et al. Safety of NAD+ Elevation in Humans. Sci Rep. 2019. PMID: 31273283"
+      "Gomes AP, et al. Declining NAD(+) induces a pseudohypoxic state disrupting nuclear-mitochondrial communication during aging. Cell. 2013. DOI: 10.1016/j.cell.2013.11.037. PMID: 24360282.",
+      "Martens CR, et al. Chronic nicotinamide riboside supplementation is well-tolerated and elevates NAD+ in healthy middle-aged and older adults. Nat Commun. 2018. DOI: 10.1038/s41467-018-03421-7. PMID: 29599478.",
+      "Yoshino M, et al. Nicotinamide mononucleotide increases muscle insulin sensitivity in prediabetic women. Science. 2021. DOI: 10.1126/science.abe9985. PMID: 33888596."
     ],
     "fullTextStudies": [
       {
-        "title": "Declining NAD+ induces a pseudohypoxic state disrupting nuclear-mitochondrial communication during aging",
+        "title": "Declining NAD(+) induces a pseudohypoxic state disrupting nuclear-mitochondrial communication during aging",
         "journal": "Cell (2013)",
         "pmid": "24360282",
         "doi": "10.1016/j.cell.2013.11.037",
@@ -4833,7 +5118,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Ensaios Clínicos Humanos Robustos",
     "evidenceScore": 95,
     "protocolEvidenceType": "clinical_proven",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Aprovada mundialmente pela FDA/ANVISA para fins obstétricos e amplamente documentada em ensaios duplo-cegos para modulação social e de estresse (PMID: 18451838). Dose intranasal típica em pesquisa: 10 a 24 UI (spray nasal) antes de situações sociais.",
+    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Aprovada mundialmente pela FDA/ANVISA para fins obstétricos e amplamente documentada em ensaios duplo-cegos para modulação social e de estresse (PMID: 15931222). Dose intranasal típica em pesquisa: 10 a 24 UI (spray nasal) antes de situações sociais.",
     "structure": "Nonapeptídeo cíclico com ponte dissulfeto entre Cys1 e Cys6",
     "sequence": "Cys-Tyr-Ile-Gln-Asn-Cys-Pro-Leu-Gly-NH2",
     "molecularWeight": "1007.2 g/mol",
@@ -4881,19 +5166,21 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Oxytocin modulates neural circuitry for social cognition and fear in humans",
-        "journal": "The Journal of Neuroscience",
-        "year": "2008",
-        "pmid": "18451838",
-        "doi": "10.1523/JNEUROSCI.4753-07.2008",
-        "link": "https://pubmed.ncbi.nlm.nih.gov/18451838/",
+        "title": "Oxytocin increases trust in humans",
+        "journal": "Nature",
+        "year": "2005",
+        "pmid": "15931222",
+        "doi": "10.1038/nature03701",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/15931222/",
         "phase": "Ensaio Clínico Randomizado Duplo-Cego",
         "participants": "Adultos voluntários em ressonância magnética funcional",
-        "keyFindings": "A ocitocina intranasal reduziu agudamente a reatividade da amígdala cerebral e reforçou o acoplamento corticolímbico de regulação emocional."
+        "keyFindings": "Trust pervades human societies. Trust is indispensable in friendship, love, families and organizations, and plays a key role in economic exchange and politics. In the absence of trust among trading partners, market transactions break down. In the absence of trust in a country's institutions and leaders, political legitimacy breaks down. Much recent evidence indicates that trust contributes to economic, political and ..."
       }
     ],
     "scientificReferences": [
-      "Baumgartner T, et al. Oxytocin and Social Fear Reduction. J Neurosci. 2008. PMID: 18451838"
+      "Kosfeld M, et al. Oxytocin increases trust in humans. Nature. 2005. DOI: 10.1038/nature03701. PMID: 15931222.",
+      "Widmer M, et al. Heat-Stable Carbetocin versus Oxytocin to Prevent Hemorrhage after Vaginal Birth. N Engl J Med. 2018. DOI: 10.1056/NEJMoa1805489. PMID: 29949473.",
+      "Sikich L, et al. Intranasal Oxytocin in Children and Adolescents with Autism Spectrum Disorder. N Engl J Med. 2021. DOI: 10.1056/NEJMoa2103583. PMID: 34644471."
     ],
     "fullTextStudies": [
       {
@@ -5006,7 +5293,7 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Peptide bioregulators in the prevention of age-related pathology and increase in human life expectancy",
+        "title": "[Geroprotective effect of thymalin and epithalamin]",
         "journal": "Gerontology",
         "year": "2003",
         "pmid": "12577695",
@@ -5088,7 +5375,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Ensaios Clínicos Piloto (Rússia)",
     "evidenceScore": 86,
     "protocolEvidenceType": "clinical_pilot",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO: Tripeptídeo sintético formulado por Khavinson avaliado em ensaios clínicos para astenia, fadiga cognitiva e proteção do tecido cortical contra estresse oxidativo e hipóxia (PMID: 22168393). Dose comum de 2 a 5 mg SC ou oral diária por 20 a 30 dias.",
+    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO: Tripeptídeo sintético formulado por Khavinson avaliado em ensaios clínicos para astenia, fadiga cognitiva e proteção do tecido cortical contra estresse oxidativo e hipóxia (PMID: 21978084). Dose comum de 2 a 5 mg SC ou oral diária por 20 a 30 dias.",
     "structure": "Tripeptídeo sintético linear (Glu-Asp-Arg)",
     "sequence": "Glu-Asp-Arg",
     "molecularWeight": "432.4 g/mol",
@@ -5135,25 +5422,35 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Neuroprotective effect of peptide bioregulator pinealon in hypoxia and aging",
-        "journal": "Advances in Gerontology",
+        "title": "Pinealon increases cell viability by suppression of free radical levels and activating proliferative processes",
+        "journal": "Rejuvenation Research",
         "year": "2011",
-        "pmid": "22168393",
-        "phase": "Ensaio Piloto / Pré-clínico",
-        "participants": "Modelos celulares e grupos clínicos de astenia",
-        "keyFindings": "Pinealon demonstrou ativação de enzimas antioxidantes endógenas e redução significativa de necrose neuronal após episódios hipóxicos agudos."
+        "pmid": "21978084",
+        "doi": "10.1089/rej.2011.1172",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/21978084/",
+        "phase": "Estudo Experimental Celular In Vitro (Sem ECR clínico em humanos)",
+        "participants": "Células granulares cerebelares, neutrófilos e células PC12 sob estresse oxidativo",
+        "keyFindings": "O tripeptídeo Pinealon (Glu-Asp-Arg) reduziu acúmulo de EROs e morte necrótica por iodeto de propídio in vitro, modulando ativação de ERK 1/2."
       }
     ],
     "scientificReferences": [
-      "Khavinson VK, et al. Neuroprotective Effects of Pinealon. Adv Gerontol. 2011. PMID: 22168393"
+      "Khavinson V, et al. Pinealon increases cell viability by suppression of free radical levels and activating proliferative processes. Rejuvenation Res. 2011. DOI: 10.1089/rej.2011.1172. PMID: 21978084.",
+      "Arutjunyan A, et al. Pinealon protects the rat offspring from prenatal hyperhomocysteinemia. Int J Clin Exp Med. 2012. PMID: 22567179."
     ],
     "fullTextStudies": [
       {
-        "title": "Effect of the short peptide Pinealon on the structural and functional organization of the brain in aging and oxidative stress",
-        "journal": "Bulletin of Experimental Biology and Medicine (2011)",
-        "pmid": "21544275",
-        "doi": "10.1007/s10517-011-1250-7",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/21544275/"
+        "title": "Pinealon increases cell viability by suppression of free radical levels and activating proliferative processes",
+        "journal": "Rejuvenation research (2011)",
+        "pmid": "21978084",
+        "doi": "10.1089/rej.2011.1172",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/21978084/"
+      },
+      {
+        "title": "Pinealon protects the rat offspring from prenatal hyperhomocysteinemia",
+        "journal": "International journal of clinical and experimental medicine (2012)",
+        "pmid": "22567179",
+        "doi": null,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/22567179/"
       }
     ],
     "popularityScore": 87,
@@ -5334,7 +5631,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Ensaios Clínicos Humanos Robustos",
     "evidenceScore": 91,
     "protocolEvidenceType": "clinical_pilot",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Aprovado sob o nome Pralmorelina no Japão para testes de reserva hipofisária de GH (PMID: 9849822). Dosagem clínica padrão de 100 a 200 mcg SC em jejum 1 a 2x ao dia.",
+    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Aprovado no Japão sob o nome Pralmorelina para diagnóstico da reserva hipofisária de GH, com farmacocinética e farmacodinâmica avaliadas em humanos por Pihoker et al., J Clin Endocrinol Metab 1998 (PMID 9543135, DOI 10.1210/jcem.83.4.4744) e caracterização farmacológica em Doi et al., 2004 (PMID 15646370) e Ohara et al., 2017 (PMID 28623445). Referência cruzada espúria anterior ao ipamorelin expurgada na H4.17.",
     "structure": "Hexapeptídeo sintético não-natural de cadeia D-aminoácidos",
     "sequence": "D-Ala-D-beta-Nal-Ala-Trp-D-Phe-Lys-NH2",
     "molecularWeight": "817.9 g/mol",
@@ -5381,17 +5678,21 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Stimulation of growth hormone secretion by the hexapeptide GHRP-2 in healthy volunteers",
+        "title": "Pharmacokinetics and pharmacodynamics of growth hormone-releasing peptide-2: a phase I study in children",
         "journal": "The Journal of Clinical Endocrinology & Metabolism",
         "year": "1998",
-        "pmid": "9849822",
-        "phase": "Ensaio Clínico Humano",
-        "participants": "Voluntários saudáveis",
-        "keyFindings": "Demonstrou liberação potente e dose-dependente de GH sérico humano após administração subcutânea e intravenosa com excelente reprodutibilidade."
+        "pmid": "9543135",
+        "doi": "10.1210/jcem.83.4.4744",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/9543135/",
+        "phase": "Ensaio Clínico Fase 1 PK/PD em Humanos",
+        "participants": "10 crianças pré-púberes com baixa estatura",
+        "keyFindings": "Dose única IV de 1 mcg/kg produziu Cmax de GH de 50,7 ± 17,2 ng/mL, Emax modelada de 67,5 ± 23,5 ng/mL e t1/2 beta plasmático do GHRP-2 de 0,55 ± 0,14 h."
       }
     ],
     "scientificReferences": [
-      "Bowers CY, et al. GHRP-2 in Human GH Secretion. J Clin Endocrinol Metab. 1998. PMID: 9849822"
+      "Pihoker C, et al. Pharmacokinetics and pharmacodynamics of growth hormone-releasing peptide-2: a phase I study in children. J Clin Endocrinol Metab. 1998. DOI: 10.1210/jcem.83.4.4744. PMID: 9543135.",
+      "Doi N, et al. Pharmacological characteristics of KP-102 (GHRP-2), a potent growth hormone-releasing peptide. Arzneimittelforschung. 2004. DOI: 10.1055/s-0031-1297041. PMID: 15646370.",
+      "Ohara E, et al. Laparoscopic Sleeve Gastrectomy Resolves Low GHRP-2-Stimulated Growth Hormone Levels in Obese Patients. Obes Surg. 2017. DOI: 10.1007/s11695-017-2769-4. PMID: 28623445."
     ],
     "popularityScore": 89,
     "contraindications": [
@@ -5463,7 +5764,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Ensaios Clínicos Históricos",
     "evidenceScore": 88,
     "protocolEvidenceType": "clinical_pilot",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA HISTÓRICA: O primeiro hexapeptídeo secretagogo prototípico sintetizado pela equipe do Dr. Cyril Bowers (PMID: 8371089). Notório por desencadear estímulo imediato e potente de apetite hipotalâmico via receptor de grelina.",
+    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA HISTÓRICA: O primeiro hexapeptídeo secretagogo prototípico sintetizado pela equipe do Dr. Cyril Bowers (PMID: 7920995). Notório por desencadear estímulo imediato e potente de apetite hipotalâmico via receptor de grelina.",
     "structure": "Hexapeptídeo sintético (His-D-Trp-Ala-Trp-D-Phe-Lys-NH2)",
     "sequence": "His-D-Trp-Ala-Trp-D-Phe-Lys-NH2",
     "molecularWeight": "873.0 g/mol",
@@ -5509,17 +5810,21 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Administration of GHRP-6 stimulates growth hormone secretion in humans",
-        "journal": "Clinical Endocrinology",
-        "year": "1995",
-        "pmid": "7554378",
+        "title": "Regulation of growth hormone secretion by the growth hormone releasing hexapeptide (GHRP-6)",
+        "journal": "The Journal of pediatric endocrinology",
+        "year": "1993",
+        "pmid": "7920995",
+        "doi": "10.1515/jpem.1993.6.3-4.283",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/7920995/",
         "phase": "Ensaio Clínico",
         "participants": "Adultos voluntários",
-        "keyFindings": "Comprovou elevação aguda de GH comparável à infusão de GHRH natural com segurança cardiovascular e reversibilidade rápida."
+        "keyFindings": "Growth hormone (GH) secretion is regulated by a complex system of central and peripheral signals. Recently, a new GH-releasing hexapeptide (His-D-Trp-Ala-Trp-D-Phe-Lys-NH2) called GHRP-6 which specifically releases GH has been studied. In the present work the mechanism of action of GHRP-6 has been addressed in experimental animal models as well as in obese subjects. GHRP-6 releases GH independently of the hypothalami..."
       }
     ],
     "scientificReferences": [
-      "Bowers CY, et al. GHRP-6 and Pituitary Secretion. Clin Endocrinol. 1995. PMID: 7554378"
+      "Micic D, et al. Regulation of growth hormone secretion by the growth hormone releasing hexapeptide (GHRP-6). J Pediatr Endocrinol. 1993. DOI: 10.1515/jpem.1993.6.3-4.283. PMID: 7920995.",
+      "Pombo M, et al. Growth hormone releasing hexapeptide-6 (GHRP-6) test in the diagnosis of GH-deficiency. J Pediatr Endocrinol Metab. 1996. PMID: 8887178.",
+      "Micic D, et al. Growth hormone response to GHRH + GHRP-6 in type 2 diabetes during euglycemic and hyperglycemic clamp. Diabetes Res Clin Pract. 2004. DOI: 10.1016/j.diabres.2003.08.012. PMID: 14693411."
     ],
     "popularityScore": 87,
     "contraindications": [
@@ -5591,7 +5896,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Ensaios Clínicos Fase 1/2",
     "evidenceScore": 89,
     "protocolEvidenceType": "clinical_pilot",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO: Hexapeptídeo secretagogo com o maior pico de GH da categoria e propriedades cardioprotetoras exclusivas mediadas pelo receptor CD36 (PMID: 15372138). Sofre dessensibilização rápida; requer ciclos curtos de 2 a 4 semanas.",
+    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO: Hexapeptídeo secretagogo com o maior pico de GH da categoria e propriedades cardioprotetoras exclusivas mediadas pelo receptor CD36 (PMID: 8954038). Sofre dessensibilização rápida; requer ciclos curtos de 2 a 4 semanas.",
     "structure": "Hexapeptídeo sintético altamente potente",
     "sequence": "His-2-Me-D-Trp-Ala-Trp-D-Phe-Lys-NH2",
     "molecularWeight": "887.0 g/mol",
@@ -5631,18 +5936,20 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Cardioprotective effects of hexarelin in patients with ischemic cardiomyopathy",
-        "journal": "Cardiovascular Drug Reviews",
-        "year": "2004",
-        "pmid": "15372138",
-        "doi": "10.1111/j.1527-3466.2004.tb00139.x",
+        "title": "Hexarelin-induced growth hormone, cortisol, and prolactin release: a dose-response study",
+        "journal": "The Journal of clinical endocrinology and metabolism",
+        "year": "1996",
+        "pmid": "8954038",
+        "doi": "10.1210/jcem.81.12.8954038",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/8954038/",
         "phase": "Fase 2 Clínica",
         "participants": "Pacientes com cardiopatia isquêmica",
-        "keyFindings": "A hexarelina melhorou a fração de ejeção do ventrículo esquerdo e reduziu marcadores de dano miocárdico via ativação de receptores CD36."
+        "keyFindings": "Dose-response data for GH-releasing peptides are limited. We studied the effects of varying doses (0-1.0 microgram/kg) of hexarelin, a novel GH-releasing peptide, administered iv to healthy adult males on GH, PRL, and cortisol release. In addition, we studied the effect of administration of a single dose of GHRH-(1-29)-NH2 (1.0 microgram/kg), alone or in combination with a low dose of hexarelin (0.125 microgram/kg). ..."
       }
     ],
     "scientificReferences": [
-      "Locatelli V, et al. Hexarelin in Cardioprotection and GH Secretion. Cardiovasc Drug Rev. 2004. PMID: 15372138"
+      "Massoud AF, et al. Hexarelin-induced growth hormone, cortisol, and prolactin release: a dose-response study. J Clin Endocrinol Metab. 1996. DOI: 10.1210/jcem.81.12.8954038. PMID: 8954038.",
+      "Maccario M, et al. Metabolic modulation of the growth hormone-releasing activity of hexarelin in man. Metabolism. 1995. DOI: 10.1016/0026-0495(95)90300-3. PMID: 7854159."
     ],
     "popularityScore": 86,
     "contraindications": [
@@ -5713,7 +6020,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Pré-Clínico / Biologia Molecular Muscular",
     "evidenceScore": 84,
     "protocolEvidenceType": "preclinical_empirical",
-    "protocolEvidenceNote": "AVISO CIENTÍFICO OBRIGATÓRIO: A aplicação de 200 a 400 mcg SC/IM 2 a 3x por semana é uma prática empírica difundida na comunidade de hipertrofia. O PEG-MGF é uma variante de splicing do IGF-1 peguilada para prolongar a meia-vida (PMID: 21030672). NÃO existem ensaios clínicos controlados de fase 3 em humanos.",
+    "protocolEvidenceNote": "AVISO CIENTÍFICO OBRIGATÓRIO: PEG-MGF é uma variante peguilada experimental de pesquisa do domínio E do IGF-1 (Ec/MGF). Os artigos indexados (Ates et al., FEBS Lett 2007, PMID 17531227; Matheny et al., 2010, PMID 20130113; Kandalla et al., 2011, PMID 21354439) investigaram o peptídeo nativo MGF/domínio E em culturas musculares e modelos pré-clínicos; NÃO existem ensaios clínicos randomizados publicados avaliando segurança ou eficácia do PEG-MGF sintético peguilado em seres humanos. Referência cruzada espúria anterior ao BPC-157 expurgada na H4.17.",
     "structure": "Variante de splicing do IGF-1 (domínio E) ligada covalentemente a polietilenoglicol (PEG)",
     "sequence": "Tyr-Gln-Pro-Pro-Ser-Thr-Asn-Lys-Asn-Thr-Lys-Ser-Gln-Arg-Arg-Lys-Gly-Ser-Thr-Phe-Glu-Glu-His-Lys-PEG",
     "molecularWeight": "~3200 g/mol (peptídeo) + 20000 Da (cadeia PEG)",
@@ -5760,18 +6067,22 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Mechano-growth factor peptide promotes muscle satellite cell proliferation",
+        "title": "The IGF-I splice variant MGF increases progenitor cells in ALS, dystrophic, and normal muscle",
         "journal": "FEBS Letters",
-        "year": "2010",
-        "pmid": "21030672",
-        "doi": "10.1016/j.febslet.2010.10.053",
-        "phase": "Pré-clínico Molecular",
-        "participants": "Culturas celulares musculares",
-        "keyFindings": "Evidenciou que o domínio E do MGF ativa a divisão mitótica de mioblastos esqueléticos humanos e previne a apoptose celular."
+        "year": "2007",
+        "pmid": "17531227",
+        "doi": "10.1016/j.febslet.2007.05.030",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/17531227/",
+        "phase": "Estudo Pré-Clínico Celular In Vitro (MGF E-domain; SEM ensaios clínicos de PEG-MGF em humanos)",
+        "participants": "Culturas primárias humanas de mioblastos/células progenitoras (ELA, distróficas e normais)",
+        "keyFindings": "O peptídeo sintético MGF (domínio E do IGF-I, não peguilado) aumentou a ativação de células progenitoras musculares humanas in vitro; inexistem ensaios clínicos com PEG-MGF peguilado em humanos."
       }
     ],
     "scientificReferences": [
-      "Ates K, et al. Mechano-Growth Factor and Muscle Satellite Cells. FEBS Lett. 2010. PMID: 21030672"
+      "Ates K, et al. The IGF-I splice variant MGF increases progenitor cells in ALS, dystrophic, and normal muscle. FEBS Lett. 2007. DOI: 10.1016/j.febslet.2007.05.030. PMID: 17531227.",
+      "Matheny RW, et al. Minireview: Mechano-growth factor: a putative product of IGF-I gene expression involved in tissue repair and regeneration. Endocrinology. 2010. DOI: 10.1210/en.2009-1217. PMID: 20130113.",
+      "Kandalla PK, et al. Mechano Growth Factor E peptide (MGF-E), derived from an isoform of IGF-1, activates human muscle progenitor cells and induces an increase in their fusion potential at different ages. Mech Ageing Dev. 2011. DOI: 10.1016/j.mad.2011.02.007. PMID: 21354439.",
+      "Fornaro M, et al. Mechano-growth factor peptide, the COOH terminus of unprocessed insulin-like growth factor 1, has no apparent effect on myoblasts or primary muscle stem cells. Am J Physiol Endocrinol Metab. 2014. DOI: 10.1152/ajpendo.00408.2013. PMID: 24253050."
     ],
     "popularityScore": 87,
     "contraindications": [
@@ -5842,7 +6153,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Ensaios Clínicos Fase 3 & Registro Sanitário",
     "evidenceScore": 96,
     "protocolEvidenceType": "clinical_proven",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA ROBUSTA: Aprovado pela FDA e pela Agência Europeia de Medicamentos (EMA) sob a marca Scenesse para fotoproteção em protoporfiria eritropoiética (PMID: 25835422). Ativação seletiva de MC1R para melanogênese com mínimos efeitos pressóricos ou de náusea comparado ao Melanotan II.",
+    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA ROBUSTA: Aprovado pela FDA e pela Agência Europeia de Medicamentos (EMA) sob a marca Scenesse para fotoproteção em protoporfiria eritropoiética (PMID: 26132941). Ativação seletiva de MC1R para melanogênese com mínimos efeitos pressóricos ou de náusea comparado ao Melanotan II.",
     "structure": "Tridecapeptídeo linear sintético análogo de alfa-MSH",
     "sequence": "Ac-Ser-Tyr-Ser-Nle-Glu-His-D-Phe-Arg-Trp-Gly-Lys-Pro-Val-NH2",
     "molecularWeight": "1646.9 g/mol",
@@ -5883,18 +6194,19 @@ const PEPTIDES_DATABASE = [
     "clinicalStudies": [
       {
         "title": "Afamelanotide for Erythropoietic Protoporphyria",
-        "journal": "New England Journal of Medicine",
+        "journal": "The New England journal of medicine",
         "year": "2015",
-        "pmid": "25835422",
+        "pmid": "26132941",
         "doi": "10.1056/NEJMoa1411481",
-        "link": "https://pubmed.ncbi.nlm.nih.gov/25835422/",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/26132941/",
         "phase": "Fase 3 Multicêntrica Duplo-Cega",
         "participants": "168 pacientes com intolerância extrema à luz solar",
-        "keyFindings": "Afamelanotide aumentou expressivamente o tempo de exposição solar sem dor e melhorou drasticamente a qualidade de vida dos pacientes."
+        "keyFindings": "[BACKGROUND] Erythropoietic protoporphyria is a severe photodermatosis that is associated with acute phototoxicity. Patients with this condition have excruciating pain and a markedly reduced quality of life. We evaluated the safety and efficacy of an α-melanocyte-stimulating hormone analogue, afamelanotide, to decrease pain and improve quality of life. [METHODS] We conducted two multicenter, randomized, double-blind,..."
       }
     ],
     "scientificReferences": [
-      "Biolcati G, et al. Afamelanotide in Erythropoietic Protoporphyria. N Engl J Med. 2015. PMID: 25835422"
+      "Langendonk JG, et al. Afamelanotide for Erythropoietic Protoporphyria. N Engl J Med. 2015. DOI: 10.1056/NEJMoa1411481. PMID: 26132941.",
+      "Biolcati G, et al. Long-term observational study of afamelanotide in 115 patients with erythropoietic protoporphyria. Br J Dermatol. 2015. DOI: 10.1111/bjd.13598. PMID: 25494545."
     ],
     "popularityScore": 92,
     "contraindications": [
@@ -5991,17 +6303,19 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Evaluation of Melanotan-II, a superpotent cyclic melanotropic peptide, in human volunteers",
-        "journal": "The American Journal of the Medical Sciences",
-        "year": "1999",
-        "pmid": "10493836",
+        "title": "Evaluation of melanotan-II, a superpotent cyclic melanotropic peptide in a pilot phase-I clinical study",
+        "journal": "Life sciences",
+        "year": "1996",
+        "pmid": "8637402",
+        "doi": "10.1016/0024-3205(96)00160-9",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/8637402/",
         "phase": "Fase 1/2 Clínica",
         "participants": "Voluntários humanos",
-        "keyFindings": "Comprovou que baixas doses subcutâneas de MT-2 induzem melanogênese com menos de 5 doses cumulativas, associado a efeito pro-erétil imediato."
+        "keyFindings": "A pilot phase I study was conducted with a cyclic heptapeptide analog of alpha-melanocyte stimulating hormone (alpha-MSH). The lactam-bridged molecule, called Melanotan-II (MT-II), has the structure Ac-Nle4-Asp5-His6-D-Phe7-Arg8-Trp9-Lys10 alpha-MSH4-10-NH2 (MT-II) and has superpotent melanotropic activity in vitro. A single-blind, alternating day (saline or MT-II), placebo-controlled trial was conducted in 3 normal ..."
       }
     ],
     "scientificReferences": [
-      "Hadley ME, et al. Melanotan-II in Humans. Am J Med Sci. 1999. PMID: 10493836"
+      "Dorr RT, et al. Evaluation of melanotan-II, a superpotent cyclic melanotropic peptide in a pilot phase-I clinical study. Life Sci. 1996. DOI: 10.1016/0024-3205(96)00160-9. PMID: 8637402."
     ],
     "popularityScore": 93,
     "contraindications": [
@@ -6069,10 +6383,10 @@ const PEPTIDES_DATABASE = [
     ],
     "status": "Cosmético Aprovado (Uso Tópico)",
     "statusType": "approved",
-    "evidenceLevel": "Ensaios Clínicos Dermatológicos Tópicos",
+    "evidenceLevel": "Cosmético Tópico sem Ensaio Clínico Indexado no PubMed",
     "evidenceScore": 89,
-    "protocolEvidenceType": "clinical_pilot",
-    "protocolEvidenceNote": "AVISO DE VIA DE ADMINISTRAÇÃO: SNAP-8 é um octapeptídeo concebido estritamente para aplicação TÓPICA dermatológica em séruns e cremes a 3%-10% (PMID: 26099307). JAMAIS DEVE SER INJETADO. Estudos clínicos comprovam atenuação de rugas de expressão periorbiculares.",
+    "protocolEvidenceType": "community_unvalidated",
+    "protocolEvidenceNote": "LACUNA BIBLIOGRÁFICA DOCUMENTADA (H4.17): Busca sistemática no PubMed para 'SNAP-8' e 'acetyl octapeptide-3' retornou 0 estudos clínicos indexados nesta verificação (citação espúria anterior expurgada na H4.17). Comercializado como insumo cosmético tópico sem validação clínica indexada no PubMed; JAMAIS injetar.",
     "structure": "Octapeptídeo sintético linear N-acetilado",
     "sequence": "Ac-Glu-Glu-Met-Gln-Arg-Arg-Ala-Asp-NH2",
     "molecularWeight": "1075.1 g/mol",
@@ -6115,29 +6429,11 @@ const PEPTIDES_DATABASE = [
       "Extremamente seguro via tópica",
       "Raramente discreta irritação dérmica de contato em pessoas com hipersensibilidade prévia"
     ],
-    "clinicalStudies": [
-      {
-        "title": "In vivo anti-wrinkle efficacy of SNAP-8 topical octapeptide",
-        "journal": "International Journal of Cosmetic Science",
-        "year": "2015",
-        "pmid": "26099307",
-        "phase": "Ensaio Clínico Dermatológico",
-        "participants": "Mulheres voluntárias",
-        "keyFindings": "A aplicação tópica contínua de SNAP-8 por 28 dias demonstrou redução mensurável de até 35% na profundidade de rugas perioculares."
-      }
-    ],
+    "clinicalStudies": null,
     "scientificReferences": [
-      "Gutierrez L, et al. SNAP-8 in Expression Wrinkle Reduction. Int J Cosmet Sci. 2015. PMID: 26099307"
+      "Lacuna bibliográfica auditada H4.17: busca sistemática no PubMed ('SNAP-8' OR 'acetyl octapeptide-3') = 0 estudos indexados; citação espúria anterior expurgada."
     ],
-    "fullTextStudies": [
-      {
-        "title": "In vivo anti-wrinkle efficacy of SNAP-8 topical octapeptide",
-        "journal": "International Journal of Cosmetic Science (2015)",
-        "pmid": "26099307",
-        "doi": "10.1111/ics.12235",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/26099307/"
-      }
-    ],
+    "fullTextStudies": [],
     "popularityScore": 86,
     "contraindications": [
       "Hipersensibilidade ao octapeptídeo SNAP-8",
@@ -6207,7 +6503,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Pré-Clínico de Alta Potência (Cell Metabolism)",
     "evidenceScore": 88,
     "protocolEvidenceType": "preclinical_empirical",
-    "protocolEvidenceNote": "AVISO CIENTÍFICO OBRIGATÓRIO: A dosagem oral de 50 a 150 mg diários é uma prática empírica em protocolos de otimização metabólica. O 5-Amino-1MQ é uma pequena molécula inibidora da enzima NNMT que eleva NAD+ celular (PMID: 30018512). NÃO possui ensaios clínicos controlados de fase 3 em humanos.",
+    "protocolEvidenceNote": "AVISO CIENTÍFICO: Pequena molécula inibidora de NNMT investigada em modelos pré-clínicos murinos (Neelakantan et al., Biochem Pharmacol 2018, PMID 29155147; Dimet-Wiley et al., Sci Rep 2022, PMID 35013352). Sem ensaios clínicos controlados de Fase 3 em humanos; citação espúria anterior expurgada na H4.17.",
     "structure": "Pequena molécula permeável à membrana celular (sal iodeto de metilquinolinio)",
     "sequence": "5-Amino-1-methylquinolin-1-ium iodide (C10H11IN2)",
     "molecularWeight": "286.1 g/mol",
@@ -6258,26 +6554,35 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Selective small molecule inhibitor of NNMT promotes cellular NAD+ and reverses diet-induced obesity in mice",
-        "journal": "Biochemical Pharmacology",
+        "title": "Selective and membrane-permeable small molecule inhibitors of nicotinamide N-methyltransferase reverse high fat diet-induced obesity in mice",
+        "journal": "Biochemical pharmacology",
         "year": "2018",
-        "pmid": "30018512",
-        "doi": "10.1016/j.bcp.2018.06.014",
-        "phase": "Pré-clínico Robusto",
-        "participants": "Modelos animais de obesidade dietética",
-        "keyFindings": "O tratamento com 5-Amino-1MQ reduziu o tamanho dos adipócitos brancos em 35% e a massa gorda corporal total em 7% em 10 dias, sem alterar a ingestão alimentar."
+        "pmid": "29155147",
+        "doi": "10.1016/j.bcp.2017.11.007",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/29155147/",
+        "phase": "Caracterização Farmacológica In Vitro (PAMPA/Caco-2/Adipócitos) e Estudo Pré-Clínico In Vivo (Camundongos DIO)",
+        "participants": "Adipócitos em cultura e camundongos em dieta hiperlipídica (DIO)",
+        "keyFindings": "Os inibidores seletivos de NNMT reduziram 1-MNA intracelular, elevaram NAD+ e SAM e suprimiram a lipogênese em adipócitos. Em camundongos DIO, reduziram peso corporal, massa adiposa branca, tamanho dos adipócitos e colesterol total sem reduzir a ingestão alimentar."
       }
     ],
     "scientificReferences": [
-      "Neelakantan S, et al. Small Molecule NNMT Inhibitor Reverses Obesity. Biochem Pharmacol. 2018. PMID: 30018512"
+      "Neelakantan H, et al. Selective and membrane-permeable small molecule inhibitors of nicotinamide N-methyltransferase reverse high fat diet-induced obesity in mice. Biochem Pharmacol. 2018. DOI: 10.1016/j.bcp.2017.11.007. PMID: 29155147.",
+      "Dimet-Wiley A, et al. Reduced calorie diet combined with NNMT inhibition establishes a distinct microbiome in DIO mice. Sci Rep. 2022. DOI: 10.1038/s41598-021-03670-5. PMID: 35013352."
     ],
     "fullTextStudies": [
       {
-        "title": "Selective small molecule inhibitor of NNMT promotes cellular NAD+ and reverses diet-induced obesity in mice",
-        "journal": "Biochemical Pharmacology (2018)",
-        "pmid": "30018512",
-        "doi": "10.1016/j.bcp.2018.06.014",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/30018512/"
+        "title": "Selective and membrane-permeable small molecule inhibitors of nicotinamide N-methyltransferase reverse high fat diet-induced obesity in mice",
+        "journal": "Biochemical pharmacology (2018)",
+        "pmid": "29155147",
+        "doi": "10.1016/j.bcp.2017.11.007",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/29155147/"
+      },
+      {
+        "title": "Reduced calorie diet combined with NNMT inhibition establishes a distinct microbiome in DIO mice",
+        "journal": "Scientific reports (2022)",
+        "pmid": "35013352",
+        "doi": "10.1038/s41598-021-03670-5",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/35013352/"
       }
     ],
     "popularityScore": 91,
@@ -6324,7 +6629,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Ensaios Clínicos em Humanos Fase 1/2",
     "evidenceScore": 89,
     "protocolEvidenceType": "clinical_proven",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Posologia semanal de 30 a 60 mcg/kg administrada via SC foi documentada em humanos em ensaio clínico da ConjuChem publicado no JCEM (PMID: 16822826). O complexo DAC liga-se covalentemente à albumina sérica, estendendo a meia-vida para 6-8 dias.",
+    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Posologia semanal de 30 a 60 mcg/kg administrada via SC foi documentada em humanos em ensaio clínico da ConjuChem publicado no JCEM (PMID: 16352683). O complexo DAC liga-se covalentemente à albumina sérica, estendendo a meia-vida para 6-8 dias.",
     "structure": "Peptídeo de 30 resíduos modificado com DAC (Maleimidoproprionic acid no resíduo Lys C-terminal)",
     "sequence": "Tyr-D-Ala-Asp-Ala-Ile-Phe-Thr-Gln-Ser-Tyr-Arg-Lys-Val-Leu-Ala-Gln-Leu-Ser-Ala-Arg-Lys-Leu-Leu-Gln-Asp-Ile-Leu-Ser-Arg-Lys(DAC)-NH2",
     "molecularWeight": "3647.28 g/mol",
@@ -6370,25 +6675,35 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Prolonged stimulation of growth hormone and insulin-like growth factor-I in human subjects by CJC-1295, a long-acting growth hormone-releasing hormone factor",
-        "journal": "The Journal of Clinical Endocrinology & Metabolism",
+        "title": "Prolonged stimulation of growth hormone (GH) and insulin-like growth factor I secretion by CJC-1295, a long-acting analog of GH-releasing hormone, in healthy adults",
+        "journal": "The Journal of clinical endocrinology and metabolism",
         "year": "2006",
-        "pmid": "16822826",
-        "phase": "Ensaio Clínico Fase 1/2",
-        "participants": "Adultos saudáveis (homens e mulheres)",
-        "keyFindings": "Uma única injeção de CJC-1295 causou elevação de 2 a 10 vezes no GH plasmático durante 6 dias e aumento de 1.5 a 3 vezes no IGF-1 durante 9 a 11 dias."
+        "pmid": "16352683",
+        "doi": "10.1210/jc.2005-1536",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/16352683/",
+        "phase": "Dois Ensaios Clínicos Randomizados, Duplo-Cegos, Controlados por Placebo, de Doses Ascendentes",
+        "participants": "Voluntários adultos saudáveis de ambos os sexos (21 a 61 anos)",
+        "keyFindings": "Após dose única de CJC-1295, o GH médio elevou-se de 2 a 10 vezes por >= 6 dias e o IGF-I médio aumentou 1,5 a 3 vezes por 9-11 dias (t1/2 estimado de 5,8 a 8,1 dias). Após múltiplas doses, o IGF-I permaneceu acima da linha de base por até 28 dias, sem reações adversas graves relatadas. O estudo subsequente de Ionescu & Frohman (PMID 17018654) confirmou preservação da pulsatilidade de GH."
       }
     ],
     "scientificReferences": [
-      "Teichman SL, et al. Prolonged Stimulation of GH and IGF-I by CJC-1295. J Clin Endocrinol Metab. 2006. PMID: 16822826"
+      "Teichman SL, et al. Prolonged stimulation of growth hormone (GH) and insulin-like growth factor I secretion by CJC-1295, a long-acting analog of GH-releasing hormone, in healthy adults. J Clin Endocrinol Metab. 2006. DOI: 10.1210/jc.2005-1536. PMID: 16352683.",
+      "Ionescu M, et al. Pulsatile secretion of growth hormone (GH) persists during continuous stimulation by CJC-1295, a long-acting GH-releasing hormone analog. J Clin Endocrinol Metab. 2006. DOI: 10.1210/jc.2006-1702. PMID: 17018654."
     ],
     "fullTextStudies": [
       {
-        "title": "Prolonged stimulation of growth hormone and insulin-like growth factor-I in human subjects by CJC-1295, a long-acting growth hormone-releasing factor",
-        "journal": "The Journal of Clinical Endocrinology & Metabolism (JCEM) (2006)",
-        "pmid": "16822826",
-        "doi": "10.1210/jc.2006-0348",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/16822826/"
+        "title": "Prolonged stimulation of growth hormone (GH) and insulin-like growth factor I secretion by CJC-1295, a long-acting analog of GH-releasing hormone, in healthy adults",
+        "journal": "The Journal of clinical endocrinology and metabolism (2006)",
+        "pmid": "16352683",
+        "doi": "10.1210/jc.2005-1536",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/16352683/"
+      },
+      {
+        "title": "Pulsatile secretion of growth hormone (GH) persists during continuous stimulation by CJC-1295, a long-acting GH-releasing hormone analog",
+        "journal": "J Clin Endocrinol Metab (2006)",
+        "pmid": "17018654",
+        "doi": "10.1210/jc.2006-1702",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/17018654/"
       }
     ],
     "popularityScore": 92,
@@ -6418,8 +6733,8 @@ const PEPTIDES_DATABASE = [
         ],
         "sources": [
           {
-            "title": "Teichman et al. Prolonged stimulation of GH and IGF-1 by CJC-1295 (J Clin Endocrinol Metab 2006, PMID 16822826)",
-            "url": "https://pubmed.ncbi.nlm.nih.gov/16822826/",
+            "title": "Teichman SL et al. Prolonged stimulation of growth hormone (GH) and insulin-like growth factor I secretion by CJC-1295, a long-acting analog of GH-releasing hormone, in healthy adults (J Clin Endocrinol Metab 2006, PMID 16352683)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16352683/",
             "type": "clinical_trial"
           },
           {
@@ -6493,25 +6808,35 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Follistatin gene therapy improves muscle function and muscle mass in dystrophic mice and non-human primates",
-        "journal": "Science Translational Medicine",
+        "title": "Follistatin gene delivery enhances muscle growth and strength in nonhuman primates",
+        "journal": "Science translational medicine",
         "year": "2009",
-        "pmid": "18987389",
-        "phase": "Estudo Pré-Clínico Translacional",
-        "participants": "Modelos primatas não-humanos e murinos",
-        "keyFindings": "A entrega mediada de folistatina induziu aumentos robustos e consistentes de força e massa muscular sem toxicidade orgânica detectável."
+        "pmid": "20368179",
+        "doi": "10.1126/scitranslmed.3000112",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/20368179/",
+        "phase": "Estudo Pré-Clínico Translacional de Terapia Gênica com Vetor Viral AAV em Primatas Não-Humanos",
+        "participants": "Primatas não-humanos (macacos cynomolgus)",
+        "keyFindings": "A transferência gênica de FS344 promoveu aumento significativo da área muscular do quadríceps e da força de geração de pico sem alterar órgãos não-musculares ou eixos reprodutivos/cardíacos nos primatas avaliados."
       }
     ],
     "scientificReferences": [
-      "Kota J, et al. Follistatin Gene Therapy for Muscular Dystrophy. Sci Transl Med. 2009. PMID: 18987389"
+      "Kota J, et al. Follistatin gene delivery enhances muscle growth and strength in nonhuman primates. Sci Transl Med. 2009. DOI: 10.1126/scitranslmed.3000112. PMID: 20368179.",
+      "Mendell JR, et al. A phase 1/2a follistatin gene therapy trial for becker muscular dystrophy. Mol Ther. 2015. DOI: 10.1038/mt.2014.200. PMID: 25322757."
     ],
     "fullTextStudies": [
       {
-        "title": "Follistatin gene therapy improves muscle function and muscle mass in dystrophic mice and non-human primates",
-        "journal": "Science Translational Medicine (2009)",
-        "pmid": "18987389",
+        "title": "Follistatin gene delivery enhances muscle growth and strength in nonhuman primates",
+        "journal": "Science translational medicine (2009)",
+        "pmid": "20368179",
         "doi": "10.1126/scitranslmed.3000112",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/18987389/"
+        "url": "https://pubmed.ncbi.nlm.nih.gov/20368179/"
+      },
+      {
+        "title": "A phase 1/2a follistatin gene therapy trial for becker muscular dystrophy",
+        "journal": "Molecular therapy : the journal of the American Society of Gene Therapy (2015)",
+        "pmid": "25322757",
+        "doi": "10.1038/mt.2014.200",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25322757/"
       }
     ],
     "popularityScore": 88,
@@ -6623,17 +6948,21 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "A truncated human insulin-like growth factor I with increased biologic potency in bovine mammary epithelial cells",
-        "journal": "Endocrinology",
-        "year": "1989",
-        "pmid": "2479261",
+        "title": "IGF-I and its variant, des-(1-3)IGF-I, enhance growth in rats with reduced renal mass",
+        "journal": "Am J Physiol",
+        "year": "1991",
+        "pmid": "1928375",
+        "doi": "10.1152/ajprenal.1991.261.4.F626",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/1928375/",
         "phase": "Estudo Bioquímico In Vitro",
         "participants": "Culturas celulares de tecido de mamíferos",
-        "keyFindings": "Des(1-3)IGF-1 demonstrou atividade biológica 10 vezes superior ao IGF-1 intacto devido à ausência de inibição por proteínas de ligação IGFBP."
+        "keyFindings": "The efficacy of insulin-like growth factor I (IGF-I) in enhancing growth in animals with reduced renal mass was investigated in subtotally nephrectomized young male rats. Recombinant human IGF-I was administered by osmotic minipumps for 7 days at two doses, 0.9 and 2.2 mg.kg body wt-1. day-1, and the truncated analogue of IGF-I, des-(1-3)IGF-I, was given at a dose of 0.9 mg.kg body wt-1.day-1. The partial nephrectomy..."
       }
     ],
     "scientificReferences": [
-      "Ballard FJ, et al. Biological Potency of Des(1-3)IGF-1. Endocrinology. 1989. PMID: 2479261"
+      "Martin AA, et al. IGF-I and its variant, des-(1-3)IGF-I, enhance growth in rats with reduced renal mass. Am J Physiol. 1991. DOI: 10.1152/ajprenal.1991.261.4.F626. PMID: 1928375.",
+      "Crescioli C, et al. Des (1-3) IGF-I-stimulated growth of human stromal BPH cells is inhibited by a vitamin D3 analogue. Mol Cell Endocrinol. 2002. DOI: 10.1016/s0303-7207(02)00370-2. PMID: 12573816.",
+      "Neff NT, et al. Insulin-like growth factors: putative muscle-derived trophic agents that promote motoneuron survival. J Neurobiol. 1993. DOI: 10.1002/neu.480241203. PMID: 8301266."
     ],
     "popularityScore": 87,
     "contraindications": [
@@ -6703,7 +7032,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Ensaios Clínicos Dermatológicos Publicados",
     "evidenceScore": 91,
     "protocolEvidenceType": "clinical_proven",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Eficácia anti-rugas comprovada em ensaios dermatológicos humanos duplo-cegos (PMID: 18498523, PMID: 12400766). Formulações tópicas de 5% a 10% demonstram redução estatisticamente significativa na profundidade das rugas de expressão facial em 15 a 30 dias.",
+    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Eficácia anti-rugas comprovada em ensaios dermatológicos humanos duplo-cegos (PMID: 18498523, PMID: 18498523). Formulações tópicas de 5% a 10% demonstram redução estatisticamente significativa na profundidade das rugas de expressão facial em 15 a 30 dias.",
     "structure": "Hexapeptídeo sintético acetilado (análogo do N-terminal da proteína SNAP-25)",
     "sequence": "Ac-Glu-Glu-Met-Gln-Arg-Arg-NH2",
     "molecularWeight": "888.99 g/mol",
@@ -6754,24 +7083,34 @@ const PEPTIDES_DATABASE = [
     "clinicalStudies": [
       {
         "title": "A synthetic hexapeptide (Argireline) with antiwrinkle activity",
-        "journal": "International Journal of Cosmetic Science",
+        "journal": "PubMed",
         "year": "2002",
-        "pmid": "12400766",
+        "pmid": "18498523",
+        "doi": "10.1046/j.1467-2494.2002.00153.x",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/18498523/",
         "phase": "Ensaio Clínico em Humanos",
         "participants": "Voluntárias femininas com rugas faciais",
-        "keyFindings": "A aplicação tópica contínua de emulsão contendo 10% de Argireline por 30 dias reduziu a profundidade das rugas em até 30% em comparação com placebo."
+        "keyFindings": "Botulinum neurotoxins (BoNTs) represent a revolution in cosmetic science because of their remarkable and long-lasting antiwrinkle activity. However, their high neurotoxicity seriously limits their use. Thus, there is a need to design and validate non-toxic molecules that mimic the action of BoNTs. The hexapeptide Ac-EEMQRR-NH(2) (coined Argireline) was identified as a result of a rational design programme. Noteworthy..."
       }
     ],
     "scientificReferences": [
-      "Blanes-Mira C, et al. Synthetic Hexapeptide (Argireline) Antiwrinkle Activity. Int J Cosmet Sci. 2002. PMID: 12400766"
+      "Blanes-Mira C, et al. A synthetic hexapeptide (Argireline) with antiwrinkle activity. PubMed. 2002. DOI: 10.1046/j.1467-2494.2002.00153.x. PMID: 18498523.",
+      "Kluczyk A, et al. Argireline: Needle-Free Botox as Analytical Challenge. Chem Biodivers. 2021. DOI: 10.1002/cbdv.202000992. PMID: 33482052."
     ],
     "fullTextStudies": [
       {
         "title": "A synthetic hexapeptide (Argireline) with antiwrinkle activity",
-        "journal": "International Journal of Cosmetic Science (2002)",
-        "pmid": "12400766",
+        "journal": "PubMed (2002)",
+        "pmid": "18498523",
         "doi": "10.1046/j.1467-2494.2002.00153.x",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/12400766/"
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18498523/"
+      },
+      {
+        "title": "Argireline: Needle-Free Botox as Analytical Challenge",
+        "journal": "Chemistry & biodiversity (2021)",
+        "pmid": "33482052",
+        "doi": "10.1002/cbdv.202000992",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33482052/"
       }
     ],
     "popularityScore": 90,
@@ -6842,7 +7181,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Ensaios Clínicos Multicêntricos Fase 2/3 (Lancet)",
     "evidenceScore": 95,
     "protocolEvidenceType": "clinical_proven",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Avaliado rigorosamente em ensaios multicêntricos publicados na Lancet Diabetes & Endocrinology (PMID: 38242131) nas dosagens de 3 mg, 4.5 mg e 6 mg e 9 mg semanais. Reduz drasticamente a gordura hepática (esteatose) além do peso corporal.",
+    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Avaliado em ensaio Fase 2 controlado por placebo em Nat Commun 2023 (Ji et al., NCT04904913, PMID 38092790, DOI 10.1038/s41467-023-44067-4, n=248, 24 sem: -6,7% com 3 mg, -10,4% com 4,5 mg e -11,3% com 6 mg vs +1,0% placebo) e em ensaio Fase 3 GLORY-1 no NEJM 2025 (Ji et al., NCT05607680, PMID 40421736, DOI 10.1056/NEJMoa2411528, n=610, 48 sem: -14,01% com 6 mg vs +0,30% placebo). Citação espúria anterior e alegação não comprovada de -18,6% expurgadas na H4.17.",
     "structure": "Análogo acilado sintético da oxintomodulina de ação prolongada",
     "sequence": "Peptídeo de 29 aminoácidos acilado com cadeia lipídica C20 diácida",
     "molecularWeight": "4230.7 g/mol",
@@ -6888,25 +7227,46 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Mazdutide in Chinese adults with overweight or obesity: a randomised, double-blind, placebo-controlled, phase 2 trial",
-        "journal": "The Lancet Diabetes & Endocrinology",
-        "year": "2024",
-        "pmid": "38242131",
-        "phase": "Ensaio Clínico Fase 2/3",
-        "participants": "Adultos com sobrepeso ou obesidade",
-        "keyFindings": "Mazdutide 6 mg e 9 mg induziu perda de peso de até 18.6% com redução superior a 70% na fração de gordura hepática medida por ressonância magnética."
+        "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+        "journal": "Nature Communications",
+        "year": "2023",
+        "pmid": "38092790",
+        "doi": "10.1038/s41467-023-44067-4",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/38092790/",
+        "phase": "Ensaio Clínico Fase 2 Randomizado Duplo-Cego (NCT04904913)",
+        "participants": "248 adultos chineses com sobrepeso ou obesidade",
+        "keyFindings": "Alteração média de peso na semana 24 de -6,7% (3 mg), -10,4% (4,5 mg) e -11,3% (6 mg) vs +1,0% placebo (p<0,0001)."
+      },
+      {
+        "title": "Once-Weekly Mazdutide in Chinese Adults with Obesity or Overweight",
+        "journal": "The New England Journal of Medicine",
+        "year": "2025",
+        "pmid": "40421736",
+        "doi": "10.1056/NEJMoa2411528",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/40421736/",
+        "phase": "Ensaio Clínico Fase 3 Randomizado Duplo-Cego (GLORY-1, NCT05607680)",
+        "participants": "610 adultos chineses com sobrepeso ou obesidade",
+        "keyFindings": "Na semana 48, redução média de peso de -11,00% (4 mg) e -14,01% (6 mg) vs +0,30% placebo (P<0,001)."
       }
     ],
     "scientificReferences": [
-      "Ji L, et al. Mazdutide in Adults with Overweight or Obesity. Lancet Diabetes Endocrinol. 2024. PMID: 38242131"
+      "Ji L, et al. A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity. Nat Commun. 2023. DOI: 10.1038/s41467-023-44067-4. PMID: 38092790.",
+      "Ji L, et al. Once-Weekly Mazdutide in Chinese Adults with Obesity or Overweight. N Engl J Med. 2025. DOI: 10.1056/NEJMoa2411528. PMID: 40421736."
     ],
     "fullTextStudies": [
       {
-        "title": "Mazdutide in Chinese adults with overweight or obesity: a randomised, double-blind, placebo-controlled, phase 2 trial",
-        "journal": "The Lancet Diabetes & Endocrinology (2024)",
-        "pmid": "38242131",
-        "doi": "10.1016/S2213-8587(23)00356-2",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/38242131/"
+        "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+        "journal": "Nature communications (2023)",
+        "pmid": "38092790",
+        "doi": "10.1038/s41467-023-44067-4",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38092790/"
+      },
+      {
+        "title": "Once-Weekly Mazdutide in Chinese Adults with Obesity or Overweight",
+        "journal": "The New England journal of medicine (2025)",
+        "pmid": "40421736",
+        "doi": "10.1056/NEJMoa2411528",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40421736/"
       }
     ],
     "popularityScore": 94,
@@ -6978,7 +7338,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Ensaios Clínicos Controlados em Neurologia",
     "evidenceScore": 89,
     "protocolEvidenceType": "clinical_proven",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Protocolo clínico padrão de 10 mg a 20 mg IM diários por 10 dias consecutivos amplamente documentado na literatura médica neurológica russa e europeia (PMID: 24577546, PMID: 18458682) para reabilitação pós-AVC e traumatismo cranioencefálico.",
+    "protocolEvidenceNote": "Ensaios clínicos randomizados conduzidos em AVC isquêmico agudo/recuperação precoce (Belova et al., 2016, PMID 27845314; Khabirov et al., 2020, PMID 33449527) e isquemia cerebral crônica (Fedin et al., 2018, PMID 30335070), além de estudos mecanísticos de neuroproteção/inibição de caspase-8 (PMID 28251948, PMID 34260655). Citações espúrias anteriores expurgadas na H4.17.",
     "structure": "Fração liofilizada de polipeptídeos e neuropeptídeos de baixo peso molecular (<10 kDa)",
     "sequence": "Complexo natural de neuropeptídeos extraídos de córtex cerebral de bezerros",
     "molecularWeight": "<10000 Da (<10 kDa)",
@@ -7028,25 +7388,59 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Efficacy of Cortexin in the acute and early recovery periods of ischemic stroke",
+        "title": "[Efficacy of cortexin in acute and recovery periodes of hemispheric ischemic stroke]",
         "journal": "Zhurnal Nevrologii i Psikhiatrii imeni S.S. Korsakova",
-        "year": "2014",
-        "pmid": "24577546",
-        "phase": "Ensaio Clínico Multicêntrico Randomizado",
-        "participants": "Pacientes com acidente vascular cerebral isquêmico agudo",
-        "keyFindings": "A administração de Cortexin 10-20 mg diários por 10 dias acelerou de forma significativa a recuperação neurológica na escala NIHSS e reduziu o déficit motor."
+        "year": "2016",
+        "pmid": "27845314",
+        "doi": "10.17116/jnevro201611610138-42",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/27845314/",
+        "phase": "Estudo Clínico Controlado em AVC Isquêmico Agudo/Recuperação",
+        "participants": "90 pacientes com AVC isquêmico hemisférico",
+        "keyFindings": "Cursos repetidos de Cortexin 20 mg IM associados à terapia basal associaram-se a regressão mais acentuada do déficit neurológico nas escalas NIHSS, Rankin e Barthel a partir dos dias 11-13."
       }
     ],
     "scientificReferences": [
-      "Skvortsova VI, et al. Efficacy of Cortexin in Acute Ischemic Stroke. Zh Nevrol Psikhiatr Im S S Korsakova. 2014. PMID: 24577546"
+      "Belova LA, et al. [Efficacy of cortexin in acute and recovery periodes of hemispheric ischemic stroke]. Zh Nevrol Psikhiatr Im S S Korsakova. 2016. DOI: 10.17116/jnevro201611610138-42. PMID: 27845314.",
+      "Fedin AI, et al. [Dose-dependent effects of cortexin in chronic cerebral ischemia (results of a multicenter randomized controlled study)]. Zh Nevrol Psikhiatr Im S S Korsakova. 2018. DOI: 10.17116/jnevro201811809135. PMID: 30335070.",
+      "Khabirov FA, et al. [Comparison of the efficacy of Cellex and Cortexin in patients in the early recovery period of ischemic stroke]. Zh Nevrol Psikhiatr Im S S Korsakova. 2020. DOI: 10.17116/jnevro202012012211. PMID: 33449527.",
+      "Yakovlev AA, et al. [Peptide drug cortexin inhibits brain caspase-8]. Biomed Khim. 2017. DOI: 10.18097/PBMC2017630127. PMID: 28251948.",
+      "Kurkin DV, et al. Neuroprotective action of Cortexin, Cerebrolysin and Actovegin in acute or chronic brain ischemia in rats. PLoS One. 2021. DOI: 10.1371/journal.pone.0254493. PMID: 34260655."
     ],
     "fullTextStudies": [
       {
-        "title": "Efficacy of Cortexin in the acute and early recovery periods of ischemic stroke: a multicenter randomized clinical trial",
-        "journal": "Zhurnal Nevrologii i Psikhiatrii imeni S.S. Korsakova (2014)",
-        "pmid": "24577546",
-        "doi": "10.17116/jnevro201411412143-51",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/24577546/"
+        "title": "[Efficacy of cortexin in acute and recovery periodes of hemispheric ischemic stroke]",
+        "journal": "Zhurnal nevrologii i psikhiatrii imeni S.S. Korsakova (2016)",
+        "pmid": "27845314",
+        "doi": "10.17116/jnevro201611610138-42",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/27845314/"
+      },
+      {
+        "title": "[Dose-dependent effects of cortexin in chronic cerebral ischemia (results of a multicenter randomized controlled study)]",
+        "journal": "Zhurnal nevrologii i psikhiatrii imeni S.S. Korsakova (2018)",
+        "pmid": "30335070",
+        "doi": "10.17116/jnevro201811809135",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30335070/"
+      },
+      {
+        "title": "[Comparison of the efficacy of Cellex and Cortexin in patients in the early recovery period of ischemic stroke]",
+        "journal": "Zhurnal nevrologii i psikhiatrii imeni S.S. Korsakova (2020)",
+        "pmid": "33449527",
+        "doi": "10.17116/jnevro202012012211",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33449527/"
+      },
+      {
+        "title": "[Peptide drug cortexin inhibits brain caspase-8]",
+        "journal": "Biomeditsinskaia khimiia (2017)",
+        "pmid": "28251948",
+        "doi": "10.18097/PBMC2017630127",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/28251948/"
+      },
+      {
+        "title": "Neuroprotective action of Cortexin, Cerebrolysin and Actovegin in acute or chronic brain ischemia in rats",
+        "journal": "PloS one (2021)",
+        "pmid": "34260655",
+        "doi": "10.1371/journal.pone.0254493",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/34260655/"
       }
     ],
     "popularityScore": 87,
@@ -7116,7 +7510,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Ensaios Clínicos Randomizados Fase 2b/3 (Aliment Pharmacol Ther)",
     "evidenceScore": 93,
     "protocolEvidenceType": "clinical_proven",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Posologia oral de 0.5 mg a 1.0 mg administrada 3 vezes ao dia antes das principais refeições avaliada em ensaios multicêntricos de fase 2b publicados em Gastroenterology e Aliment Pharmacol Ther (PMID: 26027878, PMID: 22882736).",
+    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Posologia oral de 0.5 mg a 1.0 mg administrada 3 vezes ao dia antes das principais refeições avaliada em ensaios multicêntricos de fase 2b publicados em Gastroenterology e Aliment Pharmacol Ther (PMID: 25683116, PMID: 25683116).",
     "structure": "Octapeptídeo sintético linear derivado da toxina da zônula ocludente (ZOT)",
     "sequence": "Gly-Gly-Val-Leu-Val-Gln-Pro-Gly",
     "molecularWeight": "726.83 g/mol",
@@ -7166,25 +7560,35 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Larazotide acetate for persistent symptoms in patients with celiac disease on a gluten-free diet: a randomized controlled trial",
+        "title": "Larazotide acetate for persistent symptoms of celiac disease despite a gluten-free diet: a randomized controlled trial",
         "journal": "Gastroenterology",
         "year": "2015",
-        "pmid": "26027878",
+        "pmid": "25683116",
+        "doi": "10.1053/j.gastro.2015.02.008",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/25683116/",
         "phase": "Ensaio Clínico Fase 2b Multicêntrico",
         "participants": "342 pacientes com sintomas persistentes de permeabilidade intestinal",
-        "keyFindings": "Larazotide 0.5 mg 3x/dia reduziu significativamente os sintomas gastrointestinais e a translocação de antígenos em comparação com placebo."
+        "keyFindings": "[BACKGROUND & AIMS] Celiac disease (CeD) is a prevalent autoimmune condition. Recurrent signs and symptoms are common despite treatment with a gluten-free diet (GFD), yet no approved or proven nondietary treatment is available. [METHODS] In this multicenter, randomized, double-blind, placebo-controlled study, we assessed larazotide acetate 0.5, 1, or 2 mg 3 times daily to relieve ongoing symptoms in 342 adults with C..."
       }
     ],
     "scientificReferences": [
-      "Leffler DA, et al. Larazotide Acetate in Celiac Disease. Gastroenterology. 2015. PMID: 26027878"
+      "Leffler DA, et al. Larazotide acetate for persistent symptoms of celiac disease despite a gluten-free diet: a randomized controlled trial. Gastroenterology. 2015. DOI: 10.1053/j.gastro.2015.02.008. PMID: 25683116.",
+      "Kelly CP, et al. Larazotide acetate in patients with coeliac disease undergoing a gluten challenge: a randomised placebo-controlled study. Aliment Pharmacol Ther. 2013. DOI: 10.1111/apt.12147. PMID: 23163616."
     ],
     "fullTextStudies": [
       {
-        "title": "Larazotide acetate for persistent symptoms in patients with celiac disease on a gluten-free diet: a randomized controlled trial",
+        "title": "Larazotide acetate for persistent symptoms of celiac disease despite a gluten-free diet: a randomized controlled trial",
         "journal": "Gastroenterology (2015)",
-        "pmid": "26027878",
+        "pmid": "25683116",
         "doi": "10.1053/j.gastro.2015.02.008",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/26027878/"
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25683116/"
+      },
+      {
+        "title": "Larazotide acetate in patients with coeliac disease undergoing a gluten challenge: a randomised placebo-controlled study",
+        "journal": "Alimentary pharmacology & therapeutics (2013)",
+        "pmid": "23163616",
+        "doi": "10.1111/apt.12147",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23163616/"
       }
     ],
     "popularityScore": 92,
@@ -7257,10 +7661,10 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Pré-Clínico de Alto Impacto (JPET / ACS)",
     "evidenceScore": 88,
     "protocolEvidenceType": "preclinical_empirical",
-    "protocolEvidenceNote": "AVISO CIENTÍFICO: O SLU-PP-332 é um composto estritamente investigacional (Research Chemical) desenvolvido pela Universidade da Flórida/Saint Louis University. NÃO possui aprovação para consumo humano por Anvisa ou FDA. As dosagens reportadas na comunidade científica e biohacking (10 a 25 mg/dia) decorrem de extrapolação alométrica de ensaios murinos (50 mg/kg IP).",
-    "structure": "Molécula Sintética Não-Esteroide Ativadora Nuclear (C21H18N2O3 / MW: 346.38 g/mol)",
+    "protocolEvidenceNote": "AVISO CIENTÍFICO: Composto sintético não-peptídico pré-clínico (PubChem CID 5338394, fórmula molecular C18H14N2O2, peso molecular 290,3 g/mol) investigado em modelos murinos (Billon et al., ACS Chem Biol 2023 PMID 36988910; JPET 2024 PMID 37739806). NÃO possui ensaios clínicos em humanos nem aprovação FDA/EMA/Anvisa. Citações espúrias e massa molecular incorreta corrigidas na H4.17.",
+    "structure": "Molécula Sintética Não-Esteroide Ativadora Nuclear (C18H14N2O2 / MW: 290.3 g/mol / PubChem CID 5338394)",
     "sequence": "N/A (Pequena molécula sintética pan-agonista de receptores nucleares órfãos ERR)",
-    "molecularWeight": "346.38 g/mol",
+    "molecularWeight": "290.3 g/mol",
     "halfLife": "~6 a 8 horas (in vivo)",
     "administrationRoutes": [
       "Subcutânea (SC)",
@@ -7318,22 +7722,22 @@ const PEPTIDES_DATABASE = [
     "fullTextStudies": [
       {
         "title": "A Synthetic ERR Agonist Alleviates Metabolic Syndrome",
-        "journal": "Journal of Pharmacology and Experimental Therapeutics (2023)",
-        "pmid": "37737227",
+        "journal": "The Journal of pharmacology and experimental therapeutics (2024)",
+        "pmid": "37739806",
         "doi": "10.1124/jpet.123.001733",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/37737227/"
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37739806/"
       },
       {
-        "title": "A synthetic ERRα/β/γ agonist induces an endurance exercise training phenotype in skeletal muscle",
-        "journal": "ACS Chemical Biology (2024)",
-        "pmid": "38507567",
-        "doi": "10.1021/acschembio.3c00714",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/38507567/"
+        "title": "Synthetic ERRα/β/γ Agonist Induces an ERRα-Dependent Acute Aerobic Exercise Response and Enhances Exercise Capacity",
+        "journal": "ACS chemical biology (2023)",
+        "pmid": "36988910",
+        "doi": "10.1021/acschembio.2c00720",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36988910/"
       }
     ],
     "scientificReferences": [
-      "Billon C, et al. A Synthetic ERR Agonist Alleviates Metabolic Syndrome. J Pharmacol Exp Ther. 2024. PMID: 37737227",
-      "Billon C, Burris TP, et al. Synthetic ERR agonists in exercise mimetics. ACS Chem Biol. 2024. PMID: 38507567"
+      "Billon C, et al. A Synthetic ERR Agonist Alleviates Metabolic Syndrome. J Pharmacol Exp Ther. 2024. DOI: 10.1124/jpet.123.001733. PMID: 37739806.",
+      "Billon C, et al. Synthetic ERRα/β/γ Agonist Induces an ERRα-Dependent Acute Aerobic Exercise Response and Enhances Exercise Capacity. ACS Chem Biol. 2023. DOI: 10.1021/acschembio.2c00720. PMID: 36988910."
     ],
     "popularityScore": 91,
     "safetyClassification": "preclinical_risk",
@@ -7374,10 +7778,10 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Pré-Clínico In Vivo (JPET / Eur J Med Chem 2024/2025)",
     "evidenceScore": 86,
     "protocolEvidenceType": "preclinical_empirical",
-    "protocolEvidenceNote": "AVISO CIENTÍFICO: SLU-PP-915 é um análogo pan-ERR de 2ª geração sintetizado com grupo ácido borônico em template de tiofeno para superar a baixa biodisponibilidade oral do SLU-PP-332. Dados estritamente pré-clínicos in vivo publicados entre 2023 e 2025 pela equipe do Dr. Thomas Burris.",
-    "structure": "Molécula Sintética Boronada (2,5-disubstituted thiophene derivative / MW: ~380 g/mol)",
+    "protocolEvidenceNote": "AVISO CIENTÍFICO: Composto sintético de 2ª geração contendo boro (PubChem CID 142532359, fórmula molecular C17H13BFNO3S, peso molecular 341,2 g/mol; Hampton et al., Eur J Med Chem 2023 PMID 37421886; Billon et al., JPET 2026 PMID 41421047). Dados exclusivamente pré-clínicos in vitro/in vivo; sem aprovação humana.",
+    "structure": "Molécula Sintética Boronada (C17H13BFNO3S / MW: 341.2 g/mol / PubChem CID 142532359)",
     "sequence": "N/A (Pequena molécula sintética de 2ª geração com estabilidade farmacocinética otimizada)",
-    "molecularWeight": "~380 g/mol",
+    "molecularWeight": "341.2 g/mol",
     "halfLife": "~12 a 16 horas (biodisponibilidade oral superior)",
     "administrationRoutes": [
       "Oral (Cápsula / Suspensão)",
@@ -7433,22 +7837,22 @@ const PEPTIDES_DATABASE = [
     "fullTextStudies": [
       {
         "title": "An orally active estrogen receptor-related receptor agonist, SLU-PP-915, enhances aerobic exercise capacity",
-        "journal": "Journal of Pharmacology and Experimental Therapeutics (2025)",
-        "pmid": "39537130",
-        "doi": "10.1124/jpet.124.002271",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/39537130/"
+        "journal": "The Journal of pharmacology and experimental therapeutics (2026)",
+        "pmid": "41421047",
+        "doi": "10.1016/j.jpet.2025.103787",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41421047/"
       },
       {
         "title": "Development and pharmacological evaluation of a new chemical series of potent pan-ERR agonists, identification of SLU-PP-915",
-        "journal": "European Journal of Medicinal Chemistry (2024)",
-        "pmid": "38101340",
-        "doi": "10.1016/j.ejmech.2023.116045",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/38101340/"
+        "journal": "European journal of medicinal chemistry (2023)",
+        "pmid": "37421886",
+        "doi": "10.1016/j.ejmech.2023.115582",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37421886/"
       }
     ],
     "scientificReferences": [
-      "Billon C, et al. An orally active estrogen receptor-related receptor agonist, SLU-PP-915. J Pharmacol Exp Ther. 2025. PMID: 39537130",
-      "Walker JK, Burris TP, et al. Development and pharmacological evaluation of a new chemical series of potent pan-ERR agonists. Eur J Med Chem. 2024. PMID: 38101340"
+      "Billon C, et al. An orally active estrogen receptor-related receptor agonist, SLU-PP-915, enhances aerobic exercise capacity. J Pharmacol Exp Ther. 2026. DOI: 10.1016/j.jpet.2025.103787. PMID: 41421047.",
+      "Hampton CS, et al. Development and pharmacological evaluation of a new chemical series of potent pan-ERR agonists, identification of SLU-PP-915. Eur J Med Chem. 2023. DOI: 10.1016/j.ejmech.2023.115582. PMID: 37421886."
     ],
     "popularityScore": 89,
     "safetyClassification": "preclinical_risk",
@@ -8044,7 +8448,11 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "scientificReferences": [
+      "Clément K, et al. Efficacy and safety of setmelanotide, an MC4R agonist, in individuals with severe obesity due to LEPR or POMC deficiency: single-arm, open-label, multicentre, phase 3 trials. PubMed. 2020. DOI: 10.1016/S2213-8587(20)30364-8. PMID: 33137293.",
+      "Haqq AM, et al. Efficacy and safety of setmelanotide, a melanocortin-4 receptor agonist, in patients with Bardet-Biedl syndrome and Alström syndrome: a multicentre, randomised, double-blind, placebo-controlled, phase 3 trial with an open-label period. PubMed. 2022. DOI: 10.1016/S2213-8587(22)00277-7. PMID: 36356613."
+    ]
   },
   {
     "id": "abaloparatide",
@@ -8343,9 +8751,9 @@ const PEPTIDES_DATABASE = [
     "fullTextStudies": [
       {
         "title": "The effect of tripeptide-copper complex on human hair growth in vitro",
-        "journal": "Biological & Pharmaceutical Bulletin",
+        "journal": "Arch Pharm Res (2007)",
         "pmid": "17703734",
-        "doi": "10.1248/bpb.30.1501",
+        "doi": "10.1007/BF02978833",
         "url": "https://pubmed.ncbi.nlm.nih.gov/17703734/"
       }
     ],
@@ -8358,7 +8766,7 @@ const PEPTIDES_DATABASE = [
         "journal": "Biological & Pharmaceutical Bulletin",
         "year": "2007",
         "pmid": "17703734",
-        "doi": "10.1248/bpb.30.1501",
+        "doi": "10.1007/BF02978833",
         "phase": "Estudo Pré-Clínico Translacional Ex Vivo / In Vitro",
         "participants": "Folículos capilares humanos isolados de biópsias e células da papila dérmica",
         "keyFindings": "AHK-Cu em concentrações micromolares estimulou o alongamento folicular ex vivo e aumentou a proliferação celular, suprimindo apoptose via redução de TGF-beta1."
@@ -8477,17 +8885,17 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "A single-chain peptide agonist of the relaxin receptor-1 (RXFP1) is anti-fibrotic in vivo",
+        "title": "A single-chain derivative of the relaxin hormone is a functionally selective agonist of the G protein-coupled receptor, RXFP1",
         "journal": "Chemical Science",
         "pmid": "30155023",
-        "doi": "10.1039/c5sc04860k",
+        "doi": "10.1039/c5sc04754d",
         "url": "https://pubmed.ncbi.nlm.nih.gov/30155023/"
       },
       {
-        "title": "B7-33 Attenuates Myocardial Fibrosis in Diabetic Cardiomyopathy Mice",
+        "title": "The single-chain relaxin mimetic, B7-33, maintains the cardioprotective effects of relaxin and more rapidly reduces left ventricular fibrosis compared to perindopril in an experimental model of cardiomyopathy",
         "journal": "Frontiers in Pharmacology",
         "pmid": "36753958",
-        "doi": "10.3389/fphar.2023.1119565",
+        "doi": "10.1016/j.biopha.2023.114370",
         "url": "https://pubmed.ncbi.nlm.nih.gov/36753958/"
       }
     ],
@@ -8497,11 +8905,11 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "A single-chain peptide agonist of the relaxin receptor-1 (RXFP1) is anti-fibrotic in vivo",
+        "title": "A single-chain derivative of the relaxin hormone is a functionally selective agonist of the G protein-coupled receptor, RXFP1",
         "journal": "Chemical Science",
         "year": "2016",
         "pmid": "30155023",
-        "doi": "10.1039/c5sc04860k",
+        "doi": "10.1039/c5sc04754d",
         "phase": "Estudo Pré-Clínico Translacional Farmacológico In Vivo",
         "participants": "Modelos murinos de fibrose cardíaca e pulmonar induzida",
         "keyFindings": "B7-33 mimetizou as ações antifibróticas da relaxina-2 sem elevar cAMP oncogênico, revertendo fibrose com equipotência em relação à serelaxina nativa."
@@ -9222,21 +9630,20 @@ const PEPTIDES_DATABASE = [
         "title": "Bula Oficial Genotropin (somatropin for injection) - Prescribing Information",
         "journal": "FDA DailyMed",
         "pmid": null,
-        "doi": "10.1000/fda-genotropin-2026",
+        "doi": null,
         "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=98e94553-ee83-49d6-b4b0-379d71c99c51"
       },
       {
         "title": "Bula Oficial Serostim (somatropin for injection) for HIV-associated wasting - Prescribing Information",
         "journal": "FDA DailyMed",
         "pmid": null,
-        "doi": "10.1000/fda-serostim-2026",
+        "doi": null,
         "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8f1c841c-897d-4171-be99-282d8c361952"
       }
     ],
     "scientificReferences": [
-      "Bula Oficial Genotropin (somatropina) - FDA NDA 020280 / Anvisa 102980126, revisão 2026.",
-      "Bula Oficial Serostim (somatropina para caquexia no HIV) - FDA NDA 020604, revisão 2026.",
-      "Consensus guidelines for the diagnosis and treatment of adults with GH deficiency. Eur J Endocrinol. 2018."
+      "Liu H, et al. Systematic review: the effects of growth hormone on athletic performance. Ann Intern Med. 2008. DOI: 10.7326/0003-4819-148-10-200805200-00215. PMID: 18347346.",
+      "Yuen KCJ, et al. AMERICAN ASSOCIATION OF CLINICAL ENDOCRINOLOGISTS AND AMERICAN COLLEGE OF ENDOCRINOLOGY GUIDELINES FOR MANAGEMENT OF GROWTH HORMONE DEFICIENCY IN ADULTS AND PATIENTS TRANSITIONING FROM PEDIATRIC TO ADULT CARE. Endocr Pract. 2019. DOI: 10.4158/GL-2019-0405. PMID: 31760824."
     ],
     "clinicalStudies": [
       {
@@ -9324,7 +9731,7 @@ const PEPTIDES_DATABASE = [
             "doseUnit": "UI",
             "frequency": "1x ao dia ou dividida em 2x",
             "duration": "12 a 24 semanas (prática comunitária empírica)",
-            "administrationNotes": "EVIDÊNCIA CIENTÍFICA: Revisões sistemáticas e meta-análises (Liu et al. Ann Intern Med 2008, PMID 18347346; Hermansen et al. Sports Med 2017, PMID 28168641) comprovam que em adultos saudáveis e eutróficos o rhGH eleva a massa magra prioritariamente por retenção hídrica extracelular e síntese de matriz de colágeno, SEM gerar ganho significativo de força isométrica contrátil máxima ou hipertrofia miofibrilar isolada. Uso para fins de melhoramento atlético é estritamente proibido pela WADA."
+            "administrationNotes": "EVIDÊNCIA CIENTÍFICA: Revisão sistemática publicada por Liu et al. (Ann Intern Med 2008, PMID 18347346) e diretrizes clínicas AACE/ACE (Yuen et al., Endocr Pract 2019, PMID 31760824) documentam que em adultos saudáveis o rhGH eleva a massa livre de gordura prioritariamente por retenção hídrica extracelular e síntese de colágeno, sem demonstrar ganho significativo de força muscular ou desempenho atlético. Uso para fins de melhoramento atlético é proibido pela WADA."
           }
         ],
         "sources": [
@@ -9334,8 +9741,8 @@ const PEPTIDES_DATABASE = [
             "type": "systematic_review"
           },
           {
-            "title": "Hermansen et al. Growth hormone administration and exercise performance in healthy adults: a systematic review (Sports Med 2017, PMID 28168641)",
-            "url": "https://pubmed.ncbi.nlm.nih.gov/28168641/",
+            "title": "Liu H et al. Systematic review: the effects of growth hormone on athletic performance (Ann Intern Med 2008, PMID 18347346)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18347346/",
             "type": "systematic_review"
           }
         ]
@@ -9639,7 +10046,7 @@ const PEPTIDES_DATABASE = [
       "timing": "Não aplicável.",
       "titration": "Não aplicável (ausência de dados clínicos humanos)",
       "researchFocus": "Canais TREK-1, neurogênese hipocampal e modelos pré-clínicos de depressão.",
-      "administrationGuide": "DADOS PRÉ-CLÍNICOS EM MODELOS ANIMAIS: No estudo de Veyssiere et al. (Neuropharmacology 2017, PMID 28552636), camundongos receberam injeções intravenosas ou intraperitoneais de 0,1 a 1,0 mg/kg, observando-se início de ação tipo-antidepressivo em 4 dias. Não existem ensaios clínicos em seres humanos nem guias de administração clínica autorizados.",
+      "administrationGuide": "DADOS PRÉ-CLÍNICOS EM MODELOS ANIMAIS: No estudo de Moha Ou Maati, Veyssiere et al. (Neuropharmacology 2012, PMID 21807005; ver também revisão Djillani et al., Pharmacol Ther 2019, PMID 30291907), roedores tratados com spadin apresentaram efeito tipo-antidepressivo rápido (4 dias) por bloqueio de canais TREK-1 sem eventos adversos relacionados ao canal. Não existem ensaios clínicos em seres humanos nem guias de administração clínica autorizados.",
       "cycleLength": "Não aplicável"
     },
     "reconstitution": {
@@ -9665,26 +10072,35 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "PE-22-28, a shorter and more stable spadin-derived analog, is a promising candidate for antidepressant therapy",
-        "journal": "Neuropharmacology",
-        "pmid": "28552636",
-        "doi": "10.1016/j.neuropharm.2017.05.021",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/28552636/"
+        "title": "Fighting against depression with TREK-1 blockers: Past and future. A focus on spadin",
+        "journal": "Pharmacol Ther (2019)",
+        "pmid": "30291907",
+        "doi": "10.1016/j.pharmthera.2018.10.003",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30291907/"
+      },
+      {
+        "title": "Spadin as a new antidepressant: absence of TREK-1-related side effects",
+        "journal": "Neuropharmacology (2012)",
+        "pmid": "21807005",
+        "doi": "10.1016/j.neuropharm.2011.07.019",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/21807005/"
       }
     ],
     "scientificReferences": [
-      "Veyssiere J, et al. PE-22-28, a shorter and more stable spadin-derived analog, is a promising candidate for antidepressant therapy. Neuropharmacology. 2017. PMID: 28552636"
+      "Djillani A, et al. Fighting against depression with TREK-1 blockers: Past and future. A focus on spadin. Pharmacol Ther. 2019. DOI: 10.1016/j.pharmthera.2018.10.003. PMID: 30291907.",
+      "Moha Ou Maati H, et al. Spadin as a new antidepressant: absence of TREK-1-related side effects. Neuropharmacology. 2012. DOI: 10.1016/j.neuropharm.2011.07.019. PMID: 21807005."
     ],
     "clinicalStudies": [
       {
-        "title": "PE-22-28, a shorter and more stable spadin-derived analog, acts as a TREK-1 channel blocker in vivo",
-        "journal": "Neuropharmacology",
-        "year": "2017",
-        "pmid": "28552636",
-        "doi": "10.1016/j.neuropharm.2017.05.021",
+        "title": "Fighting against depression with TREK-1 blockers: Past and future. A focus on spadin",
+        "journal": "Pharmacol Ther",
+        "year": "2019",
+        "pmid": "30291907",
+        "doi": "10.1016/j.pharmthera.2018.10.003",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/30291907/",
         "phase": "Estudo Pré-Clínico Fundamental In Vivo",
         "participants": "Camundongos submetidos a testes comportamentais de nado forçado e suspensão pela cauda",
-        "keyFindings": "PE-22-28 apresentou afinidade nanomolar por TREK-1, induzindo neurogênese hipocampal e comportamento antidepressivo em 4 dias de tratamento com estabilidade in vivo superior à espadina."
+        "keyFindings": "Depression is a devastating mood disorder and a leading cause of disability worldwide. Depression affects approximately one in five individuals in the world and represents heavy economic and social burdens. The neurobiological mechanisms of depression are not fully understood, but evidence highlights the role of monoamine neurotransmitter balance. Several antidepressants (ADs) are marketed to treat depression and rel..."
       }
     ],
     "popularityScore": 78,
@@ -9770,7 +10186,7 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Targeting of CXXC5 by a Competing Peptide Stimulates Hair Regrowth and Wound-Induced Hair Neogenesis",
+        "title": "Targeting of CXXC5 by a Competing Peptide Stimulates Hair Regrowth and Wound-Induced Hair Neogenesis",
         "journal": "Journal of Investigative Dermatology",
         "pmid": "28595998",
         "doi": "10.1016/j.jid.2017.04.038",
@@ -9888,7 +10304,7 @@ const PEPTIDES_DATABASE = [
         "title": "Bula Oficial Trelstar (triptorelin pamoate for injectable suspension)",
         "journal": "FDA DailyMed",
         "pmid": null,
-        "doi": "10.1000/fda-trelstar-2026",
+        "doi": null,
         "url": "https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=b1b84d62-a369-a4b7-5c41-dd1f553a18f3"
       }
     ],
@@ -10245,14 +10661,14 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Effects of bronchogen on the conformation of DNA-protein complexes in chromatin",
+        "title": "Effect of the peptide bronchogen (Ala-Asp-Glu-Leu) on DNA thermostability",
         "journal": "Bulletin of Experimental Biology and Medicine",
         "pmid": "21240358",
         "doi": "10.1007/s10517-011-1146-x",
         "url": "https://pubmed.ncbi.nlm.nih.gov/21240358/"
       },
       {
-        "title": "Effect of Bronchogen on Cytokine Profile in Rats with Chronic Obstructive Pulmonary Disease",
+        "title": "Modulating Effect of Peptide Therapy on the Morphofunctional State of Bronchial Epithelium in Rats with Obstructive Lung Pathology",
         "journal": "Bulletin of Experimental Biology and Medicine",
         "pmid": "26468022",
         "doi": "10.1007/s10517-015-3047-x",
@@ -10384,15 +10800,15 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Effect of short peptides on the proliferation of cell culture from different rat tissues",
-        "journal": "Bulletin of Experimental Biology and Medicine",
+        "title": "[The tissue-specific effect of synthetic peptides-biologic regulators in organotypic tissues culture in young and old rats]",
+        "journal": "Adv Gerontol (2006)",
         "pmid": "17152728",
         "doi": null,
         "url": "https://pubmed.ncbi.nlm.nih.gov/17152728/"
       }
     ],
     "scientificReferences": [
-      "Khavinson VKh, et al. Effect of short peptides on the proliferation of cell culture from different rat tissues. Bull Exp Biol Med. 2006. PMID: 17152728"
+      "Zakutskiĭ AN, et al. [The tissue-specific effect of synthetic peptides-biologic regulators in organotypic tissues culture in young and old rats]. Adv Gerontol. 2006. PMID: 17152728."
     ],
     "clinicalStudies": [],
     "popularityScore": 60,
@@ -10511,15 +10927,15 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Short peptides regulate gene expression in human THP-1 monocytes",
-        "journal": "BioTechniques",
+        "title": "Peptides Regulating Proliferative Activity and Inflammatory Pathways in the Monocyte/Macrophage THP-1 Cell Line",
+        "journal": "Int J Mol Sci (2022)",
         "pmid": "35408963",
-        "doi": "10.2144/btn-2019-0169",
+        "doi": "10.3390/ijms23073607",
         "url": "https://pubmed.ncbi.nlm.nih.gov/35408963/"
       }
     ],
     "scientificReferences": [
-      "Khavinson V, et al. Short peptides regulate gene expression in human THP-1 monocytes. BioTechniques. 2022. PMID: 35408963"
+      "Avolio F, et al. Peptides Regulating Proliferative Activity and Inflammatory Pathways in the Monocyte/Macrophage THP-1 Cell Line. Int J Mol Sci. 2022. DOI: 10.3390/ijms23073607. PMID: 35408963."
     ],
     "clinicalStudies": [],
     "popularityScore": 58,
@@ -10640,14 +11056,14 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Peptide regulation of gene expression in mouse heart and brain tissues",
+        "title": "Elucidation of the effect of brain cortex tetrapeptide Cortagen on gene expression in mouse heart by microarray",
         "journal": "Neuro Endocrinology Letters",
         "pmid": "15159690",
         "doi": null,
         "url": "https://pubmed.ncbi.nlm.nih.gov/15159690/"
       },
       {
-        "title": "Mechanism of biological action of short peptides: role of sphingomyelin pathway",
+        "title": "Effects of short peptides on thymocyte blast transformation and signal transduction along the sphingomyelin pathway",
         "journal": "Bulletin of Experimental Biology and Medicine",
         "pmid": "12420072",
         "doi": "10.1023/a:1019830308824",
@@ -10655,8 +11071,9 @@ const PEPTIDES_DATABASE = [
       }
     ],
     "scientificReferences": [
-      "Khavinson VKh, et al. Peptide regulation of gene expression in mouse heart and brain tissues. Neuro Endocrinol Lett. 2004. PMID: 15159690",
-      "Khavinson VKh, et al. Mechanism of biological action of short peptides: role of sphingomyelin pathway. Bull Exp Biol Med. 2002. PMID: 12420072"
+      "Turchaninova LN, et al. Effect of tetrapeptide cortagen on regeneration of sciatic nerve. PubMed. 2000. PMID: 11276314.",
+      "Anisimov SV, et al. Elucidation of the effect of brain cortex tetrapeptide Cortagen on gene expression in mouse heart by microarray. PubMed. 2004. PMID: 15159690.",
+      "Khavinson VKh, et al. Effects of short peptides on thymocyte blast transformation and signal transduction along the sphingomyelin pathway. Bull Exp Biol Med. 2002. DOI: 10.1023/a:1019830308824. PMID: 12420072."
     ],
     "clinicalStudies": [],
     "popularityScore": 63,
@@ -10789,7 +11206,7 @@ const PEPTIDES_DATABASE = [
         "url": "https://pubmed.ncbi.nlm.nih.gov/7195758/"
       },
       {
-        "title": "Effect of dermorphin on growth hormone and prolactin secretion in normal men",
+        "title": "Stimulatory effect of dermorphin, a new synthetic potent opiate-like peptide, on human growth hormone secretion",
         "journal": "Neuroendocrinology",
         "pmid": "6633818",
         "doi": "10.1159/000123559",
@@ -10897,21 +11314,21 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "A C-terminal fragment of human growth hormone stimulates lipolysis and inhibits lipogenesis",
+        "title": "Antilipogenic action of synthetic C-terminal sequence 177-191 of human growth hormone",
         "journal": "American Journal of Physiology",
         "pmid": "8358331",
         "doi": null,
         "url": "https://pubmed.ncbi.nlm.nih.gov/8358331/"
       },
       {
-        "title": "The effects of human GH and its lipolytic fragment (AOD9604) on lipid metabolism",
+        "title": "Reduction of cumulative body weight gain and adipose tissue mass in obese mice: response to chronic treatment with synthetic hGH 177-191 peptide",
         "journal": "Endocrinology",
         "pmid": "7987248",
         "doi": null,
         "url": "https://pubmed.ncbi.nlm.nih.gov/7987248/"
       },
       {
-        "title": "Detection of human growth hormone fragment AOD9604 and native fragment 176-191",
+        "title": "Detection and in vitro metabolism of AOD9604",
         "journal": "Drug Testing and Analysis",
         "pmid": "25208511",
         "doi": "10.1002/dta.1715",
@@ -11044,15 +11461,15 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Peptide regulation of gene expression and chromatin remodeling in aging",
-        "journal": "Bulletin of Experimental Biology and Medicine",
+        "title": "[Effect of peptide Livagen on activity of digestive enzymes in gastrointestinal tract and non-digestive organs in rats of different ages]",
+        "journal": "Adv Gerontol (2005)",
         "pmid": "16075683",
         "doi": null,
         "url": "https://pubmed.ncbi.nlm.nih.gov/16075683/"
       }
     ],
     "scientificReferences": [
-      "Khavinson VKh, et al. Peptide regulation of gene expression and chromatin remodeling in aging. Bull Exp Biol Med. 2005. PMID: 16075683"
+      "Timofeeva NM, et al. [Effect of peptide Livagen on activity of digestive enzymes in gastrointestinal tract and non-digestive organs in rats of different ages]. Adv Gerontol. 2005. PMID: 16075683."
     ],
     "clinicalStudies": [],
     "popularityScore": 61,
@@ -11174,24 +11591,24 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Mechano-growth factor E-peptide stimulates proliferation of human muscle progenitor cells",
+        "title": "Mechano Growth Factor E peptide (MGF-E), derived from an isoform of IGF-1, activates human muscle progenitor cells and induces an increase in their fusion potential at different ages",
         "journal": "Mechanisms of Ageing and Development",
         "pmid": "21354439",
         "doi": "10.1016/j.mad.2011.02.007",
         "url": "https://pubmed.ncbi.nlm.nih.gov/21354439/"
       },
       {
-        "title": "High-throughput screening identifies that MGF E-peptide does not promote proliferation or differentiation of primary human myoblasts",
+        "title": "Mechano-growth factor peptide, the COOH terminus of unprocessed insulin-like growth factor 1, has no apparent effect on myoblasts or primary muscle stem cells",
         "journal": "American Journal of Physiology - Endocrinology and Metabolism",
         "pmid": "24253050",
         "doi": "10.1152/ajpendo.00408.2013",
         "url": "https://pubmed.ncbi.nlm.nih.gov/24253050/"
       },
       {
-        "title": "A novel method to test MGF function in human skeletal muscle",
-        "journal": "Growth Hormone & IGF Research",
+        "title": "Minireview: Mechano-growth factor: a putative product of IGF-I gene expression involved in tissue repair and regeneration",
+        "journal": "Endocrinology (2010)",
         "pmid": "20130113",
-        "doi": null,
+        "doi": "10.1210/en.2009-1217",
         "url": "https://pubmed.ncbi.nlm.nih.gov/20130113/"
       }
     ],
@@ -11336,10 +11753,10 @@ const PEPTIDES_DATABASE = [
         "url": "https://pubmed.ncbi.nlm.nih.gov/24406723/"
       },
       {
-        "title": "Intranasal orexin-A in narcolepsy",
-        "journal": "Journal of Clinical Psychopharmacology",
+        "title": "Effects of intranasal hypocretin-1 (orexin A) on sleep in narcolepsy with cataplexy",
+        "journal": "Sleep Med (2011)",
         "pmid": "22036605",
-        "doi": null,
+        "doi": "10.1016/j.sleep.2011.06.015",
         "url": "https://pubmed.ncbi.nlm.nih.gov/22036605/"
       }
     ],
@@ -11612,21 +12029,21 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Pancragen stimulates differentiation of pancreatic cells in patients with diabetes mellitus",
+        "title": "Prospects of using pancragen for correction of metabolic disorders in elderly people",
         "journal": "Bulletin of Experimental Biology and Medicine",
         "pmid": "22448364",
         "doi": "10.1007/s10517-011-1354-4",
         "url": "https://pubmed.ncbi.nlm.nih.gov/22448364/"
       },
       {
-        "title": "Effect of Pancragen on functional state of pancreas in rats with alloxan diabetes",
+        "title": "Effect of pancragen on blood glucose level, capillary permeability and adhesion in rats with experimental diabetes mellitus",
         "journal": "Bulletin of Experimental Biology and Medicine",
         "pmid": "18642713",
         "doi": "10.1007/s10517-007-0377-3",
         "url": "https://pubmed.ncbi.nlm.nih.gov/18642713/"
       },
       {
-        "title": "Short peptides regulate gene expression in human pancreatic cell cultures",
+        "title": "Peptides tissue-specifically stimulate cell differentiation during their aging",
         "journal": "Bulletin of Experimental Biology and Medicine",
         "pmid": "22808515",
         "doi": "10.1007/s10517-012-1664-1",
@@ -11634,9 +12051,9 @@ const PEPTIDES_DATABASE = [
       }
     ],
     "scientificReferences": [
-      "Khavinson VKh, et al. Pancragen stimulates differentiation of pancreatic cells in patients with diabetes mellitus. Bull Exp Biol Med. 2011. PMID: 22448364",
-      "Khavinson VKh, et al. Effect of Pancragen on functional state of pancreas in rats with alloxan diabetes. Bull Exp Biol Med. 2007. PMID: 18642713",
-      "Khavinson VKh, et al. Short peptides regulate gene expression in human pancreatic cell cultures. Bull Exp Biol Med. 2012. PMID: 22808515"
+      "Korkushko OV, et al. Prospects of using pancragen for correction of metabolic disorders in elderly people. PubMed. 2011. DOI: 10.1007/s10517-011-1354-4. PMID: 22448364.",
+      "Khavinson VKh, et al. Effect of pancragen on blood glucose level, capillary permeability and adhesion in rats with experimental diabetes mellitus. PubMed. 2007. DOI: 10.1007/s10517-007-0377-3. PMID: 18642713.",
+      "Khavinson VKh, et al. Peptides tissue-specifically stimulate cell differentiation during their aging. Bull Exp Biol Med. 2012. DOI: 10.1007/s10517-012-1664-1. PMID: 22808515."
     ],
     "clinicalStudies": [],
     "popularityScore": 64,
@@ -11760,14 +12177,14 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Anticancer peptide PNC-27 adopts core structure and induces tumor cell membranolysis",
+        "title": "Anticancer peptide PNC-27 adopts an HDM-2-binding conformation and kills cancer cells by binding to HDM-2 in their membranes",
         "journal": "Proceedings of the National Academy of Sciences of the USA",
         "pmid": "20080680",
         "doi": "10.1073/pnas.0909364107",
         "url": "https://pubmed.ncbi.nlm.nih.gov/20080680/"
       },
       {
-        "title": "PNC-27 targets membrane-bound HDM2 forming trans-membrane pores in cancer cells",
+        "title": "PNC-27, a Chimeric p53-Penetratin Peptide Binds to HDM-2 in a p53 Peptide-like Structure, Induces Selective Membrane-Pore Formation and Leads to Cancer Cell Lysis",
         "journal": "Biomedicines",
         "pmid": "35625682",
         "doi": "10.3390/biomedicines10050945",
@@ -11870,23 +12287,23 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Effect of short peptides on chromatin condensation in human lymphocytes",
-        "journal": "Bulletin of Experimental Biology and Medicine",
+        "title": "[The influence of the peptide bioregulator prostamax on heterochromatin of human lymphocytes in situ]",
+        "journal": "Biofizika (2004)",
         "pmid": "15612551",
         "doi": null,
         "url": "https://pubmed.ncbi.nlm.nih.gov/15612551/"
       },
       {
-        "title": "Effect of short peptides on cell proliferation in rat tissue explants",
-        "journal": "Bulletin of Experimental Biology and Medicine",
+        "title": "[The tissue-specific effect of synthetic peptides-biologic regulators in organotypic tissues culture in young and old rats]",
+        "journal": "Adv Gerontol (2006)",
         "pmid": "17152728",
         "doi": null,
         "url": "https://pubmed.ncbi.nlm.nih.gov/17152728/"
       }
     ],
     "scientificReferences": [
-      "Khavinson VKh, et al. Effect of short peptides on chromatin condensation in human lymphocytes. Bull Exp Biol Med. 2004. PMID: 15612551",
-      "Khavinson VKh, et al. Effect of short peptides on cell proliferation in rat tissue explants. Bull Exp Biol Med. 2006. PMID: 17152728"
+      "Meskhi T, et al. [The influence of the peptide bioregulator prostamax on heterochromatin of human lymphocytes in situ]. Biofizika. 2004. PMID: 15612551.",
+      "Zakutskiĭ AN, et al. [The tissue-specific effect of synthetic peptides-biologic regulators in organotypic tissues culture in young and old rats]. Adv Gerontol. 2006. PMID: 17152728."
     ],
     "clinicalStudies": [],
     "popularityScore": 57,
@@ -12011,31 +12428,31 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Synthetic immunomodulating peptide Thymogen: biological properties and clinical trial results",
+        "title": "Natural and synthetic thymic peptides as therapeutics for immune dysfunction",
         "journal": "International Journal of Immunopharmacology",
         "pmid": "9637345",
         "doi": "10.1016/s0192-0561(97)00058-1",
         "url": "https://pubmed.ncbi.nlm.nih.gov/9637345/"
       },
       {
-        "title": "Use of thymogen in the complex treatment of destructive tuberculosis",
+        "title": "[The effect of thymogen on the state of immunity in destructive pulmonary tuberculosis]",
         "journal": "Problemy Tuberkuleza",
         "pmid": "10605346",
         "doi": null,
         "url": "https://pubmed.ncbi.nlm.nih.gov/10605346/"
       },
       {
-        "title": "Short peptides regulate gene expression in human THP-1 monocytes",
-        "journal": "BioTechniques",
+        "title": "Peptides Regulating Proliferative Activity and Inflammatory Pathways in the Monocyte/Macrophage THP-1 Cell Line",
+        "journal": "Int J Mol Sci (2022)",
         "pmid": "35408963",
-        "doi": "10.2144/btn-2019-0169",
+        "doi": "10.3390/ijms23073607",
         "url": "https://pubmed.ncbi.nlm.nih.gov/35408963/"
       }
     ],
     "scientificReferences": [
-      "Deigin VI, et al. Synthetic immunomodulating peptide Thymogen: biological properties and clinical trial results. Int J Immunopharmacol. 1997. PMID: 9637345",
-      "Vinogradov MV, et al. Use of thymogen in the complex treatment of destructive tuberculosis. Probl Tuberk. 1999. PMID: 10605346",
-      "Khavinson V, et al. Short peptides regulate gene expression in human THP-1 monocytes. BioTechniques. 2022. PMID: 35408963"
+      "Morozov VG, et al. Natural and synthetic thymic peptides as therapeutics for immune dysfunction. PubMed. 1997. DOI: 10.1016/s0192-0561(97)00058-1. PMID: 9637345.",
+      "Avolio F, et al. Peptides Regulating Proliferative Activity and Inflammatory Pathways in the Monocyte/Macrophage THP-1 Cell Line. Int J Mol Sci. 2022. DOI: 10.3390/ijms23073607. PMID: 35408963.",
+      "Medus AI, et al. [The effect of thymogen on the state of immunity in destructive pulmonary tuberculosis]. PubMed. 1999. PMID: 10605346."
     ],
     "clinicalStudies": [],
     "popularityScore": 70,
@@ -12155,7 +12572,7 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Studies on thymus peptides. V. Chemical synthesis of the serum thymic factor (FTS) and demonstration that zinc is required for biological activity",
+        "title": "Contribution of zinc and other metals to the biological activity of the serum thymic factor",
         "journal": "Proceedings of the National Academy of Sciences of the USA",
         "pmid": "6957870",
         "doi": "10.1073/pnas.79.17.5370",
@@ -12286,14 +12703,14 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Peptide regulation of gene expression in vascular endothelial cells",
-        "journal": "Bulletin of Experimental Biology and Medicine",
+        "title": "[Molecular aspects of vasoprotective peptide KED activity during atherosclerosis and restenosis]",
+        "journal": "Adv Gerontol (2016)",
         "pmid": "28539025",
         "doi": null,
         "url": "https://pubmed.ncbi.nlm.nih.gov/28539025/"
       },
       {
-        "title": "Short peptides regulate gene expression in human pancreatic and vascular cultures",
+        "title": "Peptides tissue-specifically stimulate cell differentiation during their aging",
         "journal": "Bulletin of Experimental Biology and Medicine",
         "pmid": "22808515",
         "doi": "10.1007/s10517-012-1664-1",
@@ -12301,8 +12718,8 @@ const PEPTIDES_DATABASE = [
       }
     ],
     "scientificReferences": [
-      "Khavinson VKh, et al. Peptide regulation of gene expression in vascular endothelial cells. Bull Exp Biol Med. 2017. PMID: 28539025",
-      "Khavinson VKh, et al. Short peptides regulate gene expression in human pancreatic and vascular cultures. Bull Exp Biol Med. 2012. PMID: 22808515"
+      "Kozlov KL, et al. [Molecular aspects of vasoprotective peptide KED activity during atherosclerosis and restenosis]. PubMed. 2016. PMID: 28539025.",
+      "Khavinson VKh, et al. Peptides tissue-specifically stimulate cell differentiation during their aging. Bull Exp Biol Med. 2012. DOI: 10.1007/s10517-012-1664-1. PMID: 22808515."
     ],
     "clinicalStudies": [],
     "popularityScore": 62,
@@ -12422,23 +12839,24 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Mechanism of biological action of short peptides: role of sphingomyelin pathway",
+        "title": "Effects of short peptides on thymocyte blast transformation and signal transduction along the sphingomyelin pathway",
         "journal": "Bulletin of Experimental Biology and Medicine",
         "pmid": "12420072",
         "doi": "10.1023/a:1019830308824",
         "url": "https://pubmed.ncbi.nlm.nih.gov/12420072/"
       },
       {
-        "title": "Short peptides regulate gene expression in human THP-1 monocytes",
-        "journal": "BioTechniques",
+        "title": "Peptides Regulating Proliferative Activity and Inflammatory Pathways in the Monocyte/Macrophage THP-1 Cell Line",
+        "journal": "Int J Mol Sci (2022)",
         "pmid": "35408963",
-        "doi": "10.2144/btn-2019-0169",
+        "doi": "10.3390/ijms23073607",
         "url": "https://pubmed.ncbi.nlm.nih.gov/35408963/"
       }
     ],
     "scientificReferences": [
-      "Khavinson VKh, et al. Mechanism of biological action of short peptides: role of sphingomyelin pathway. Bull Exp Biol Med. 2002. PMID: 12420072",
-      "Khavinson V, et al. Short peptides regulate gene expression in human THP-1 monocytes. BioTechniques. 2022. PMID: 35408963"
+      "Khavinson VKh, et al. A synthetic dipeptide vilon (L-Lys-L-Glu) inhibits growth of spontaneous tumors and increases life span of mice. PubMed. 2000. PMID: 10944717.",
+      "Khavinson VKh, et al. Effects of short peptides on thymocyte blast transformation and signal transduction along the sphingomyelin pathway. Bull Exp Biol Med. 2002. DOI: 10.1023/a:1019830308824. PMID: 12420072.",
+      "Avolio F, et al. Peptides Regulating Proliferative Activity and Inflammatory Pathways in the Monocyte/Macrophage THP-1 Cell Line. Int J Mol Sci. 2022. DOI: 10.3390/ijms23073607. PMID: 35408963."
     ],
     "clinicalStudies": [],
     "popularityScore": 64,
@@ -12685,8 +13103,8 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [],
     "scientificReferences": [
-      "Bula Oficial Yorvipath (palopegteriparatide) - Ascendis Pharma / FDA NDA 216793, 2024.",
-      "Khan AA, et al. Efficacy and Safety of TransCon PTH in Adults With Hypoparathyroidism: 26-Week Results of the Phase 3 PaTHway Trial. J Bone Miner Res. 2023;38(1):14-25. PMID: 36250624."
+      "Khan AA, et al. Efficacy and Safety of Parathyroid Hormone Replacement With TransCon PTH in Hypoparathyroidism: 26-Week Results From the Phase 3 PaTHway Trial. J Bone Miner Res. 2023. DOI: 10.1002/jbmr.4726. PMID: 36271471.",
+      "Clarke BL, et al. Efficacy and Safety of TransCon PTH in Adults With Hypoparathyroidism: 52-Week Results From the Phase 3 PaTHway Trial. J Clin Endocrinol Metab. 2025. DOI: 10.1210/clinem/dgae693. PMID: 39376010."
     ],
     "clinicalStudies": [],
     "popularityScore": 86,
@@ -13248,8 +13666,8 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [],
     "scientificReferences": [
-      "Bula Oficial Firmagon (degarelix) - Ferring Pharmaceuticals / FDA NDA 022201, 2026.",
-      "Klotz L, et al. Disease control outcomes from analysis of randomized, active-controlled, 3-year trial of degarelix in patients with prostate cancer. J Urol. 2011;186(3):886-891. PMID: 21791355."
+      "Klotz L, et al. The efficacy and safety of degarelix: a 12-month, comparative, randomized, open-label, parallel-group phase III study in patients with prostate cancer. BJU Int. 2008. DOI: 10.1111/j.1464-410X.2008.08183.x. PMID: 19035858.",
+      "Lopes RD, et al. Cardiovascular Safety of Degarelix Versus Leuprolide in Patients With Prostate Cancer: The Primary Results of the PRONOUNCE Randomized Trial. Circulation. 2021. DOI: 10.1161/CIRCULATIONAHA.121.056810. PMID: 34459214."
     ],
     "clinicalStudies": [],
     "popularityScore": 87,
@@ -13472,8 +13890,8 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [],
     "scientificReferences": [
-      "Bula Oficial Cetrotide (cetrorelix acetate) - EMD Serono / FDA NDA 021197, 2026.",
-      "Albano C, et al. Comparison of a gonadotropin-releasing hormone antagonist (cetrorelix) with a gonadotropin-releasing hormone agonist (triptorelin) for ovarian stimulation in in vitro fertilization: a randomized, controlled, phase 3 study. Fertil Steril. 2000;73(2):347-354. PMID: 10685540."
+      "Albano C, et al. Ovarian stimulation with HMG: results of a prospective randomized phase III European study comparing the luteinizing hormone-releasing hormone (LHRH)-antagonist cetrorelix and the LHRH-agonist buserelin. European Cetrorelix Study Group. Hum Reprod. 2000. DOI: 10.1093/humrep/15.3.526. PMID: 10686191.",
+      "Olivennes F, et al. Safety and efficacy of a 3 mg dose of the GnRH antagonist cetrorelix in preventing premature LH surges: report of two large multicentre, multinational, phase IIIb clinical experiences. Reprod Biomed Online. 2003. DOI: 10.1016/s1472-6483(10)62163-3. PMID: 12831588."
     ],
     "clinicalStudies": [],
     "popularityScore": 86,
@@ -13586,8 +14004,8 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [],
     "scientificReferences": [
-      "Bula Oficial Lupron Depot (leuprolide acetate) - AbbVie / FDA NDA 019732, 2026.",
-      "The Leuprolide Study Group. Leuprolide versus diethylstilbestrol for metastatic prostate cancer. N Engl J Med. 1984;311(20):1281-1286. PMID: 6436707."
+      "Lopes RD, et al. Cardiovascular Safety of Degarelix Versus Leuprolide in Patients With Prostate Cancer: The Primary Results of the PRONOUNCE Randomized Trial. Circulation. 2021. DOI: 10.1161/CIRCULATIONAHA.121.056810. PMID: 34459214.",
+      "et al. LBA02-09 EMBARK: A Phase 3 Randomized Study of Enzalutamide or Placebo Plus Leuprolide Acetate and Enzalutamide Monotherapy in High-risk Biochemically Recurrent Prostate Cancer. J Urol. 2023. DOI: 10.1097/JU.0000000000003518. PMID: 37119051."
     ],
     "clinicalStudies": [],
     "popularityScore": 92,
@@ -13698,8 +14116,8 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [],
     "scientificReferences": [
-      "Bula Oficial Zoladex (goserelin acetate implant) - AstraZeneca / FDA NDA 019726, 2026.",
-      "Kaisary AV, et al. A randomized trial of goserelin acetate (Zoladex) versus orchidectomy in the treatment of advanced prostate cancer. Br J Urol. 1991;67(5):502-508. PMID: 2043987."
+      "Jonat W, et al. Goserelin (Zoladex)--its role in early breast cancer in pre- and perimenopausal women. Br J Cancer. 2001. DOI: 10.1054/bjoc.2001.1981. PMID: 11900209.",
+      "Gu C, et al. Efficacy and safety of LY01005 versus goserelin implant in Chinese patients with prostate cancer: A multicenter, randomized, open-label, phase III, non-inferiority trial. Chin Med J (Engl). 2023. DOI: 10.1097/CM9.0000000000002638. PMID: 37010251."
     ],
     "clinicalStudies": [],
     "popularityScore": 90,
@@ -13813,8 +14231,9 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [],
     "scientificReferences": [
-      "Bula Oficial Tractocile (atosiban) - Ferring / EMA EPAR EMEA/H/C/000253, 2026.",
-      "The Worldwide Atosiban versus Beta-agonists Study Group. Effectiveness and safety of the oxytocin antagonist atosiban versus beta-adrenergic agonists in the treatment of preterm labour. BJOG. 2001;108(2):133-142. PMID: 11236867."
+      "Tsatsaris V, et al. Atosiban for preterm labour. Drugs. 2004. DOI: 10.2165/00003495-200464040-00003. PMID: 14969573.",
+      "van Winden TMS, et al. Tocolysis with nifedipine versus atosiban and perinatal outcome: an individual participant data meta-analysis. BMC Pregnancy Childbirth. 2022. DOI: 10.1186/s12884-022-04854-1. PMID: 35840927.",
+      "Makama M, et al. Atosiban and managing women in preterm labour. Lancet. 2025. DOI: 10.1016/S0140-6736(25)00402-7. PMID: 40049188."
     ],
     "clinicalStudies": [],
     "popularityScore": 84,
@@ -14035,8 +14454,8 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [],
     "scientificReferences": [
-      "Bula Oficial Trulance (plecanatide tablets) - Salix Pharmaceuticals / FDA NDA 208745, 2026.",
-      "Miner PB Jr, et al. Plecanatide for the treatment of chronic idiopathic constipation: results from a multicenter, randomized, double-blind, placebo-controlled, phase 3 trial. Am J Gastroenterol. 2017;112(4):613-621. PMID: 28117448."
+      "Miner PB, et al. Efficacy and safety of plecanatide in treating constipation predominant irritable bowel syndrome. Expert Opin Pharmacother. 2018. DOI: 10.1080/14656566.2018.1427733. PMID: 29376436.",
+      "Love BL, et al. Plecanatide for Treatment of Chronic Constipation and Irritable Bowel Syndrome. Am J Med. 2019. DOI: 10.1016/j.amjmed.2018.11.027. PMID: 30550753."
     ],
     "clinicalStudies": [],
     "popularityScore": 87,
@@ -14146,8 +14565,8 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [],
     "scientificReferences": [
-      "Bula Oficial Zegalogue (dasiglucagon injection) - Zealand Pharma / FDA NDA 214231, 2026.",
-      "Pieber TR, et al. Dasiglucagon—A Next-Generation Glucagon Analog for Rapid and Reliable Reversal of Severe Hypoglycemia in Type 1 Diabetes: Results of a Phase 3 Randomized Double-Blind Trial. Diabetes Care. 2021;44(6):1361-1367. PMID: 33795454."
+      "Nielsen CK, et al. Dasiglucagon Effectively Mitigates Postbariatric Postprandial Hypoglycemia: A Randomized, Double-Blind, Placebo-Controlled, Crossover Trial. Diabetes Care. 2022. DOI: 10.2337/dc21-2252. PMID: 35320361.",
+      "Nielsen CK, et al. Dasiglucagon Treatment for Postprandial Hypoglycemia After Gastric Bypass: A Randomized, Double-Blind, Placebo-Controlled Trial. Diabetes Care. 2023. DOI: 10.2337/dc23-1193. PMID: 37819999."
     ],
     "clinicalStudies": [],
     "popularityScore": 89,
@@ -14377,8 +14796,8 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [],
     "scientificReferences": [
-      "Bula Oficial DDAVP (desmopressin acetate tablets) - Ferring / FDA NDA 017922, 2026.",
-      "Vande Walle J, et al. Practical consensus guidelines for the management of enuresis. Eur J Pediatr. 2012;171(6):971-983. PMID: 22362444."
+      "Vande Walle J, et al. Desmopressin 30 years in clinical use: a safety review. Curr Drug Saf. 2007. DOI: 10.2174/157488607781668891. PMID: 18690973.",
+      "Ebell MH, et al. A systematic review of the efficacy and safety of desmopressin for nocturia in adults. J Urol. 2014. DOI: 10.1016/j.juro.2014.03.095. PMID: 24704009."
     ],
     "clinicalStudies": [],
     "popularityScore": 93,
@@ -14490,8 +14909,8 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [],
     "scientificReferences": [
-      "Bula Oficial Symlin (pramlintide acetate injection) - AstraZeneca / FDA NDA 021332, 2026.",
-      "Ratner RE, et al. Amylin replacement with pramlintide as an adjunct to insulin therapy in type 1 diabetes: a 6-month randomized controlled trial. Diabet Med. 2004;21(11):1204-1212. PMID: 15498086."
+      "Ryan GJ, et al. Pramlintide in the treatment of type 1 and type 2 diabetes mellitus. Clin Ther. 2005. DOI: 10.1016/j.clinthera.2005.10.009. PMID: 16330288.",
+      "Singh-Franco D, et al. Pramlintide acetate injection for the treatment of type 1 and type 2 diabetes mellitus. Clin Ther. 2007. DOI: 10.1016/j.clinthera.2007.04.005. PMID: 17617279."
     ],
     "clinicalStudies": [],
     "popularityScore": 88,
@@ -14941,7 +15360,7 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "STARS Phase 3 Trial: Once-Weekly Apraglutide Reduces Parenteral Support in Short Bowel Syndrome-Intestinal Failure.",
+        "title": "STARS Phase 3 Trial: Once-Weekly Apraglutide Reduces Parenteral Support in Short Bowel Syndrome-Intestinal Failure",
         "journal": "Clinical Gastroenterology and Hepatology",
         "year": "2026",
         "pmid": "42692160",
@@ -15087,7 +15506,7 @@ const PEPTIDES_DATABASE = [
     ],
     "fullTextStudies": [
       {
-        "title": "Efficacy and safety of once-weekly subcutaneous zenagamtide, a novel unimolecular GLP-1 and amylin receptor agonist, in type 2 diabetes: a multicentre, randomised, parallel, double-blind, placebo-controlled, dose-finding, phase 2 trial.",
+        "title": "Efficacy and safety of once-weekly subcutaneous zenagamtide, a novel unimolecular GLP-1 and amylin receptor agonist, in type 2 diabetes: a multicentre, randomised, parallel, double-blind, placebo-controlled, dose-finding, phase 2 trial",
         "journal": "The Lancet",
         "year": "2026",
         "pmid": "42532080",
@@ -15095,7 +15514,7 @@ const PEPTIDES_DATABASE = [
         "url": "https://pubmed.ncbi.nlm.nih.gov/42532080/"
       },
       {
-        "title": "Efficacy and safety of once-daily oral zenagamtide, a novel unimolecular GLP-1 and amylin receptor agonist, in adults with type 2 diabetes: a multicentre, randomised, parallel, double-blind, placebo-controlled, dose-finding, phase 2 trial.",
+        "title": "Efficacy and safety of once-daily oral zenagamtide, a novel unimolecular GLP-1 and amylin receptor agonist, in adults with type 2 diabetes: a multicentre, randomised, parallel, double-blind, placebo-controlled, dose-finding, phase 2 trial",
         "journal": "The Lancet",
         "year": "2026",
         "pmid": "42532079",
@@ -15103,7 +15522,7 @@ const PEPTIDES_DATABASE = [
         "url": "https://pubmed.ncbi.nlm.nih.gov/42532079/"
       },
       {
-        "title": "Amycretin, a novel, unimolecular GLP-1 and amylin receptor agonist administered subcutaneously: results from a phase 1b/2a randomised controlled study.",
+        "title": "Amycretin, a novel, unimolecular GLP-1 and amylin receptor agonist administered subcutaneously: results from a phase 1b/2a randomised controlled study",
         "journal": "The Lancet",
         "year": "2025",
         "pmid": "40550231",

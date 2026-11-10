@@ -51,12 +51,15 @@
       "Potencial teórico de angiogênese indesejada em portadores de processos neoplásicos ocultos"
     ],
     "limitations": [
-      "AVISO CIENTÍFICO: A posologia típica de 250 a 500 mcg SC/dia é uma prática empírica consagrada na comunidade de biohacking e medicina esportiva (extrapolação alométrica da dose de 10 mcg/kg em roedores). NÃO existem ensaios clínicos randomizados duplo-cegos fase 3 em humanos para cicatrização de tendões."
+      "Revisão sistemática ortopédica 2025 (PMID 40756949) identificou 35 estudos pré-clínicos e apenas 1 série retrospectiva (n=12), sem ensaios clínicos randomizados fase 3 em humanos ou dados clínicos formais de segurança; citações espúrias anteriores expurgadas na H4.17."
     ],
     "sources": [
-      "Pentadecapeptide BPC 157 Enhances the Growth Hormone Receptor Expression in Tendon Fibroblasts",
-      "The promoting effect of pentadecapeptide BPC 157 on tendon healing involves tendon outgrowth and cell migration",
-      "Stable gastric pentadecapeptide BPC 157 in clinical trials and practical medicine"
+      "Chang CH, et al. The promoting effect of pentadecapeptide BPC 157 on tendon healing involves tendon outgrowth, cell survival, and cell migration. PubMed. 2011. DOI: 10.1152/japplphysiol.00945.2010. PMID: 21030672.",
+      "Chang CH, et al. Pentadecapeptide BPC 157 enhances the growth hormone receptor expression in tendon fibroblasts. PubMed. 2014. DOI: 10.3390/molecules191119066. PMID: 25415472.",
+      "Vasireddi N, et al. Emerging Use of BPC-157 in Orthopaedic Sports Medicine: A Systematic Review. HSS J. 2025. DOI: 10.1177/15563316251355551. PMID: 40756949.",
+      "Sikiric P, et al. Fistulas Healing. Stable Gastric Pentadecapeptide BPC 157 Therapy. Curr Pharm Des. 2020. DOI: 10.2174/1381612826666200424180139. PMID: 32329684.",
+      "Seiwerth S, et al. BPC 157 and Standard Angiogenic Growth Factors. Gastrointestinal Tract Healing, Lessons from Tendon, Ligament, Muscle and Bone Healing. Curr Pharm Des. 2018. DOI: 10.2174/1381612824666180712110447. PMID: 29998800.",
+      "Seiwerth S, et al. Stable Gastric Pentadecapeptide BPC 157 and Wound Healing. Front Pharmacol. 2021. DOI: 10.3389/fphar.2021.627533. PMID: 34267654."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -98,10 +101,11 @@
       "Aumento momentâneo da motilidade intestinal"
     ],
     "limitations": [
-      "AVISO CIENTÍFICO: A forma sal de arginina foi desenvolvida para resistir ao pH ácido gástrico. Dosagens de 500 mcg/dia são protocolos empíricos de pesquisa clínica gastrointestinal."
+      "Sal estável de arginina desenvolvido para estabilidade ácida em modelos pré-clínicos (PMID 34267654, PMID 36200148); inexistem ensaios clínicos randomizados fase 3 em humanos."
     ],
     "sources": [
-      "Stable gastric pentadecapeptide BPC 157-NO system-relation"
+      "Seiwerth S, et al. Stable Gastric Pentadecapeptide BPC 157 and Wound Healing. Front Pharmacol. 2021. DOI: 10.3389/fphar.2021.627533. PMID: 34267654.",
+      "Sikiric P, et al. Stable Gastric Pentadecapeptide BPC 157: Prompt Particular Activation of Collateral Pathways. Curr Med Chem. 2023. DOI: 10.2174/0929867329666221005111553. PMID: 36200148."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -148,8 +152,9 @@
       "AVISO CIENTÍFICO E REGULATÓRIO: O TB-500 é quimicamente definido como o heptapeptídeo sintético Ac-LKKTETQ (fragmento 17-23 da Timosina Beta-4). Os ensaios clínicos em humanos foram conduzidos exclusivamente com a proteína precursora completa Timosina Beta-4 (43 aminoácidos, formulação oftálmica RGN-259), cujos desfechos primários de eficácia no ensaio de 72 pacientes foram nulos/não significativos. Não existem ensaios clínicos controlados de Fase 2 ou 3 em humanos demonstrando eficácia ou segurança do fragmento isolado TB-500 administrado por via injetável para reparo tendíneo ou muscular."
     ],
     "sources": [
-      "Thymosin beta4 accelerates wound healing",
-      "Thymosin beta-4: a key player in wound healing and tissue regeneration"
+      "Goldstein AL, et al. Thymosin β4: a multi-functional regenerative peptide. Basic properties and clinical applications. Expert Opin Biol Ther. 2012. DOI: 10.1517/14712598.2012.634793. PMID: 22074294.",
+      "Smart N, et al. De novo cardiomyocytes from within the activated adult heart after injury. Nature. 2011. DOI: 10.1038/nature10188. PMID: 21654746.",
+      "Sosne G, et al. Thymosin beta 4 ophthalmic solution for dry eye: a randomized, placebo-controlled, Phase II clinical trial conducted using the controlled adverse environment (CAE™) model. Clin Ophthalmol. 2015. DOI: 10.2147/OPTH.S80954. PMID: 26056426."
     ],
     "h4_4_pendency_flag": "Item 1: Regime 2-2.5 mg 2x/sem pendente de validação clínica formal em humanos",
     "reviewedAt": "2026-11-08"
@@ -195,7 +200,12 @@
       "EVIDÊNCIAS COSMÉTICAS E PILOTO: Comprovado extensamente em ensaios clínicos dermatológicos para síntese de colágeno dérmico e cicatrização. A aplicação injetável subcutânea sistêmica (1.5 a 2.5 mg/dia) é uma prática comum de longevidade na literatura de biohacking."
     ],
     "sources": [
-      "Regenerative and Protective Actions of the GHK-Cu Peptide in the Light of the New Gene Data"
+      "Pickart L, et al. Regenerative and Protective Actions of the GHK-Cu Peptide in the Light of the New Gene Data. Int J Mol Sci. 2018. DOI: 10.3390/ijms19071987. PMID: 29986520.",
+      "Pickart L, et al. GHK and DNA: resetting the human genome to health. Biomed Res Int. 2014. DOI: 10.1155/2014/151479. PMID: 25302294.",
+      "Pickart L, et al. GHK Peptide as a Natural Modulator of Multiple Cellular Pathways in Skin Regeneration. Biomed Res Int. 2015. DOI: 10.1155/2015/648108. PMID: 26236730.",
+      "Miller TR, et al. Effects of topical copper tripeptide complex on CO2 laser-resurfaced skin. Arch Facial Plast Surg. 2006. DOI: 10.1001/archfaci.8.4.252. PMID: 16847171.",
+      "Maquart FX, et al. Stimulation of collagen synthesis in fibroblast cultures by the tripeptide-copper complex glycyl-L-histidyl-L-lysine-Cu2+. FEBS Lett. 1988. DOI: 10.1016/0014-5793(88)80509-x. PMID: 3169264.",
+      "Mortazavi SM, et al. Topically applied GHK as an anti-wrinkle peptide: Advantages, problems and prospective. Bioimpacts. 2025. DOI: 10.34172/bi.30071. PMID: 39963574."
     ],
     "h4_4_pendency_flag": "Item 2: Faixa de pH 5.5-6.8 pendente de confirmação analítica ampla",
     "reviewedAt": "2026-11-08"
@@ -241,8 +251,9 @@
       "ENSAIOS FASE 2: Desenvolvido inicialmente pela Novo Nordisk para íleo paralítico pós-operatório. A combinação com Mod GRF 1-29 (100mcg + 100mcg) é prática padrão de pesquisa endocrinológica para pulsos de GH sem pico de prolactina ou cortisol."
     ],
     "sources": [
-      "Ipamorelin, the first selective growth hormone secretagogue",
-      "A comparison of the growth hormone-releasing actions of ipamorelin and GHRP-6 in rats"
+      "Raun K, et al. Ipamorelin, the first selective growth hormone secretagogue. Eur J Endocrinol. 1998. DOI: 10.1530/eje.0.1390552. PMID: 9849822.",
+      "Gobburu JV, et al. Pharmacokinetic-pharmacodynamic modeling of ipamorelin, a growth hormone releasing peptide, in human volunteers. Pharm Res. 1999. DOI: 10.1023/a:1018955126402. PMID: 10496658.",
+      "Johansen PB, et al. Ipamorelin, a new growth-hormone-releasing peptide, induces longitudinal bone growth in rats. Growth Horm IGF Res. 1999. DOI: 10.1054/ghir.1999.9998. PMID: 10373343."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -254,7 +265,7 @@
     "stackId": null,
     "protocolName": "CJC-1295 (sem DAC / Mod GRF 1-29) — Protocolo Documentado de Pesquisa",
     "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "clinical_pilot",
+    "evidenceCategory": "preclinical_empirical",
     "verificationStatus": "preclinical_model",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "anti-aging",
@@ -285,10 +296,11 @@
       "Aumento discreto da fome dependendo do horário"
     ],
     "limitations": [
-      "ENSAIOS CLÍNICOS: A versão sem DAC (Mod GRF 1-29) possui meia-vida de 30 minutos, ideal para mimetizar a pulsatilidade fisiológica natural do GHRH sem causar elevação crônica não-fisiológica."
+      "AVISO CIENTÍFICO: Mod GRF (1-29) sem DAC é um análogo tetrassubstituído de hGRF(1-29) fundamentado em ensaios pré-clínicos de estabilidade frente à DPP-IV e ativação hipofisária (Jetté et al., Endocrinology 2005, PMID 15817669; Bongers et al., 1992, PMID 1353684). NÃO há ensaio clínico randomizado isolado específico para Mod GRF (1-29) sem DAC em humanos; os ensaios clínicos publicados com CJC-1295 referem-se à molécula conjugada à albumina (com DAC, PMID 16352683)."
     ],
     "sources": [
-      "Pulsatile secretion of growth hormone (GH) induced by GHRH analogs"
+      "Jetté L, et al. Human growth hormone-releasing factor (hGRF)1-29-albumin bioconjugates activate the GRF receptor on the anterior pituitary in rats: identification of CJC-1295 as a long-lasting GRF analog. Endocrinology. 2005. DOI: 10.1210/en.2004-1286. PMID: 15817669.",
+      "Bongers J, et al. Kinetics of dipeptidyl peptidase IV proteolysis of growth hormone-releasing factor and analogs. Biochim Biophys Acta. 1992. DOI: 10.1016/0167-4838(92)90317-7. PMID: 1353684."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -334,7 +346,8 @@
       "EVIDÊNCIA CLÍNICA ROBUSTA: Aprovado pelo FDA para o diagnóstico de deficiência hipofisária de somatotrofina e utilizado em clínicas médicas com posologia estabelecida em bula de 0.5 a 1.0 mg ao deitar."
     ],
     "sources": [
-      "Sermorelin: A review of its use in the diagnosis and treatment of children with idiopathic growth hormone deficiency"
+      "Khorram O, et al. Endocrine and metabolic effects of long-term administration of [Nle27]growth hormone-releasing hormone-(1-29)-NH2 in age-advanced men and women. J Clin Endocrinol Metab. 1997. DOI: 10.1210/jcem.82.5.3943. PMID: 9141536.",
+      "Walker RF, et al. Sermorelin: a better approach to management of adult-onset growth hormone insufficiency?. Clin Interv Aging. 2006. DOI: 10.2147/ciia.2006.1.4.307. PMID: 18046908."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -470,7 +483,7 @@
     "reconstitution_volume": "2.0 mL",
     "resulting_concentration": "1.00 mg/mL",
     "sources": [
-      "N Engl J Med 2007 (PMID 18057337)"
+      "N Engl J Med 2007;357:2359-70 (Falutz et al. — PMID 18057338, DOI 10.1056/NEJMoa072375)"
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -656,7 +669,9 @@
       "ENSAIOS FASE 2: Testado em mais de 900 pacientes em ensaios clínicos australianos para perda de peso. Apresenta excelente perfil de segurança por não estimular receptores de IGF-1 nem elevar glicemia. A aplicação intra-articular para osteoartrite é apoiada por estudos pré-clínicos."
     ],
     "sources": [
-      "AOD9604, a peptide containing the C-terminal fragment of human growth hormone, in the treatment of obesity"
+      "Heffernan MA, et al. Increase of fat oxidation and weight loss in obese mice caused by chronic treatment with human growth hormone or a modified C-terminal fragment. Int J Obes Relat Metab Disord. 2001. DOI: 10.1038/sj.ijo.0801740. PMID: 11673763.",
+      "Ng FM, et al. Metabolic studies of a synthetic lipolytic domain (AOD9604) of human growth hormone. Horm Res. 2000. DOI: 10.1159/000053183. PMID: 11146367.",
+      "Cox HD, et al. Detection and in vitro metabolism of AOD9604. PubMed. 2015. DOI: 10.1002/dta.1715. PMID: 25208511."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -701,9 +716,9 @@
       "EVIDÊNCIA EXPERIMENTAL E HISTÓRICA: Desenvolvido pelo Prof. Vladimir Khavinson (Instituto de São Petersburgo). Estudos primários indexados com dados verificáveis demonstram ativação de telomerase e aumento replicativo in vitro em culturas celulares humanas e modelos murinos. Relatos de acompanhamento clínico humano de 12 anos e posologias empíricas de 5 a 10 mg/dia provêm de monografias e publicações soviéticas/russas, carecendo de ensaios clínicos controlados randomizados de fase 3 indexados para validação formal de longevidade ou segurança oncológica humana."
     ],
     "sources": [
-      "Epithalon peptide induces telomerase activity and telomere elongation in human somatic cells",
-      "Peptide promotes overcoming of the division limit in human somatic cell",
-      "Effect of Epitalon on biomarkers of aging, life span and spontaneous tumor incidence in female Swiss-derived SHR mice"
+      "Khavinson VKh, et al. Peptide promotes overcoming of the division limit in human somatic cell. PubMed. 2004. DOI: 10.1023/b:bebm.0000038164.49947.8c. PMID: 15455129.",
+      "Khavinson VKh, et al. Epithalon peptide induces telomerase activity and telomere elongation in human somatic cells. PubMed. 2003. DOI: 10.1023/a:1025493705728. PMID: 12937682.",
+      "Anisimov VN, et al. Effect of Epitalon on biomarkers of aging, life span and spontaneous tumor incidence in female Swiss-derived SHR mice. PubMed. 2003. DOI: 10.1023/a:1025114230714. PMID: 14501183."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -748,8 +763,8 @@
       "AVISO CIENTÍFICO: A posologia comum de 5 mg a 10 mg 3x por semana (ou antes de treinos intensos) é uma prática empírica estabelecida na comunidade de longevidade, extrapolada do estudo de referência de Lee et al. (Cell Metabolism 2015). Não há ensaio clínico randomizado fase 2 concluído."
     ],
     "sources": [
-      "The Mitochondrial-Derived Peptide MOTS-c Promotes Metabolic Homeostasis and Reduces Obesity and Insulin Resistance",
-      "MOTS-c is an exercise-induced mitochondrial-encoded regulator of walking capacity and muscle homeostasis"
+      "Lee C, et al. The mitochondrial-derived peptide MOTS-c promotes metabolic homeostasis and reduces obesity and insulin resistance. Cell Metab. 2015. DOI: 10.1016/j.cmet.2015.02.009. PMID: 25738459.",
+      "Reynolds JC, et al. MOTS-c is an exercise-induced mitochondrial-encoded regulator of age-dependent physical decline and muscle homeostasis. Nat Commun. 2021. DOI: 10.1038/s41467-020-20790-0. PMID: 33473109."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -840,8 +855,10 @@
       "EVIDÊNCIA CLÍNICA NA RÚSSIA: Aprovado pelo Ministério da Saúde da Federação Russa e incluído na lista oficial de medicamentos vitais. Utilizado clinicamente como gotas nasais 0.1% (nootrópico) e 1.0% (pós-AVC isquêmico)."
     ],
     "sources": [
-      "Semax, an analog of ACTH(4-10) with cognitive effects, regulates BDNF and trkB expression in the rat hippocampus",
-      "The neuroprotective effect of Semax in stroke patients"
+      "Dolotov OV, et al. Semax, an analog of ACTH(4-10) with cognitive effects, regulates BDNF and trkB expression in the rat hippocampus. PubMed. 2006. DOI: 10.1016/j.brainres.2006.07.108. PMID: 16996037.",
+      "Gusev EI, et al. [The efficacy of semax in the tretament of patients at different stages of ischemic stroke]. Zh Nevrol Psikhiatr Im S S Korsakova. 2018. DOI: 10.17116/jnevro20181183261-68. PMID: 29798983.",
+      "Gusev EI, et al. [Effectiveness of semax in acute period of hemispheric ischemic stroke (a clinical and electrophysiological study)]. Zh Nevrol Psikhiatr Im S S Korsakova. 1997. PMID: 11517472.",
+      "Gusev EI, et al. [Semax in prevention of disease progress and development of exacerbations in patients with cerebrovascular insufficiency]. Zh Nevrol Psikhiatr Im S S Korsakova. 2005. PMID: 15792140."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -886,7 +903,9 @@
       "EVIDÊNCIA CLÍNICA NA RÚSSIA: Aprovado pelo Ministério da Saúde Russo como ansiolítico e nootrópico. Ausência comprovada de efeitos colaterais comuns a benzodiazepínicos (sem sedação, sem tolerância, sem síndrome de abstinência)."
     ],
     "sources": [
-      "Efficacy of the novel nootropic and anxiolytic peptide Selank in generalized anxiety disorder"
+      "Zozulia AA, et al. [Efficacy and possible mechanisms of action of a new peptide anxiolytic selank in the therapy of generalized anxiety disorders and neurasthenia]. Zh Nevrol Psikhiatr Im S S Korsakova. 2008. PMID: 18454096.",
+      "Medvedev VE, et al. [Optimization of the treatment of anxiety disorders with selank]. Zh Nevrol Psikhiatr Im S S Korsakova. 2015. DOI: 10.17116/jnevro20151156133-40. PMID: 26356395.",
+      "Panikratova YR, et al. Functional Connectomic Approach to Studying Selank and Semax Effects. Dokl Biol Sci. 2020. DOI: 10.1134/S001249662001007X. PMID: 32342318."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -932,8 +951,8 @@
       "EVIDÊNCIA CLÍNICA MÁXIMA: Medicamento biológico aprovado em mais de 50 países para tratamento de AVC agudo, traumatismo cranioencefálico (TCE) e demência vascular (estudos multicêntricos duplo-cegos fase 3 publicados no Stroke e Lancet Neurology)."
     ],
     "sources": [
-      "Safety and efficacy of Cerebrolysin in early post-stroke recovery: a randomized clinical trial (CARS)",
-      "Cerebrolysin in Patients with Mild Cognitive Impairment: A Randomized Clinical Trial"
+      "Muresanu DF, et al. Cerebrolysin and Recovery After Stroke (CARS): A Randomized, Placebo-Controlled, Double-Blind, Multicenter Trial. Stroke. 2016. DOI: 10.1161/STROKEAHA.115.009416. PMID: 26564102.",
+      "Ziganshina LE, et al. Cerebrolysin for acute ischaemic stroke. Cochrane Database Syst Rev. 2023. DOI: 10.1002/14651858.CD007026.pub7. PMID: 37818733."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -978,9 +997,9 @@
       "APROVAÇÃO REGULATÓRIA INTERNACIONAL: Aprovado em mais de 30 países (Zadaxin) primariamente como adjuvante para hepatite B crônica e imunodeficiências secundárias selecionadas. Seu uso em sepse grave (ensaio ETASS de 2013) e infecções virais agudas (como COVID-19) foi investigado em ensaios clínicos com resultados preliminares ou exploratórios, não constituindo recomendação de eficácia comprovada para essas condições agudas."
     ],
     "sources": [
-      "The efficacy of thymosin alpha 1 for severe sepsis (ETASS): a multicenter, single-blind, randomized and controlled trial",
-      "Thymosin Alpha 1 Reduces the Mortality of Severe Coronavirus Disease 2019 by Restoration of Lymphocytopenia and Reversion of Exhausted T Cells",
-      "Historical review of thymosin alpha 1 in infectious diseases"
+      "Wu J, et al. The efficacy of thymosin alpha 1 for severe sepsis (ETASS): a multicenter, single-blind, randomized and controlled trial. Crit Care. 2013. DOI: 10.1186/cc11932. PMID: 23327199.",
+      "Liu Y, et al. Thymosin Alpha 1 Reduces the Mortality of Severe Coronavirus Disease 2019 by Restoration of Lymphocytopenia and Reversion of Exhausted T Cells. Clin Infect Dis. 2020. DOI: 10.1093/cid/ciaa630. PMID: 32442287.",
+      "Camerini R, et al. Historical review of thymosin α 1 in infectious diseases. Expert Opin Biol Ther. 2015. DOI: 10.1517/14712598.2015.1033393. PMID: 26098768."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -1026,7 +1045,8 @@
       "EVIDÊNCIA CLÍNICA ROBUSTA: Aprovado pelo FDA em 2019 (Vyleesi) para o tratamento de disfunção do desejo sexual hipoativo (HSDD) generalizado em mulheres pré-menopáusicas. Dose de bula: 1.75 mg SC sob demanda."
     ],
     "sources": [
-      "Bremelanotide for female sexual dysfunctions"
+      "Kingsberg SA, et al. Bremelanotide for the Treatment of Hypoactive Sexual Desire Disorder: Two Randomized Phase 3 Trials. Obstet Gynecol. 2019. DOI: 10.1097/AOG.0000000000003500. PMID: 31599840.",
+      "Clayton AH, et al. Bremelanotide for female sexual dysfunctions in premenopausal women: a randomized, placebo-controlled dose-finding trial. Womens Health (Lond). 2016. DOI: 10.2217/whe-2016-0018. PMID: 27181790."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -1071,7 +1091,8 @@
       "ENSAIOS PILOTO: Isolado originalmente por Schoenenberger e Monnier em Basileia (Suíça). Estudado clinicamente em pacientes com insônia crônica grave em doses de 100 a 250 mcg SC ao deitar."
     ],
     "sources": [
-      "Delta sleep-inducing peptide (DSIP): an overview"
+      "Schneider-Helmert D, et al. DSIP in insomnia. Eur Neurol. 1984. DOI: 10.1159/000115714. PMID: 6391925.",
+      "Graf MV, et al. Delta-sleep-inducing peptide (DSIP): a review. Neurosci Biobehav Rev. 1984. DOI: 10.1016/0149-7634(84)90022-8. PMID: 6145137."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -1118,7 +1139,8 @@
       "ALERTA SEVERO / PRÁTICA EMPÍRICA: Dosagens de 20 a 50 mcg/dia são estritamente práticas empíricas clandestinas originadas no fisiculturismo. NÃO há aprovação para uso humano devido à alta afinidade mitogênica e ao risco de acelerar o crescimento de pólipos e tumores ocultos."
     ],
     "sources": [
-      "Greater potency of Long-R3-IGF-I compared with IGF-I in catabolic states"
+      "Neff NT, et al. Insulin-like growth factors: putative muscle-derived trophic agents that promote motoneuron survival. J Neurobiol. 1993. DOI: 10.1002/neu.480241203. PMID: 8301266.",
+      "Martin AA, et al. IGF-I and its variant, des-(1-3)IGF-I, enhance growth in rats with reduced renal mass. Am J Physiol. 1991. DOI: 10.1152/ajprenal.1991.261.4.F626. PMID: 1928375."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -1129,10 +1151,10 @@
     "compoundId": "cagrilintide",
     "stackId": null,
     "protocolName": "Cagrilintida — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "clinical_proven",
-    "verificationStatus": "preclinical_model",
-    "population": "Modelos experimentais de laboratório / Pesquisa translacional",
+    "protocolCategory": "clinical_trial",
+    "evidenceCategory": "clinical_trial_only",
+    "verificationStatus": "clinical_trial",
+    "population": "Participantes adultos em ensaios clínicos de Fase 2/3 (Monoterapia NCT03856047; CagriSema REDEFINE NCT05567796 / NCT05394519)",
     "indication": "emagrecimento",
     "route": "Subcutânea (SC)",
     "dose": 0.3,
@@ -1163,10 +1185,12 @@
       "Risco potencial de hipoglicemia se associado a sulfonilureias ou insulina"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA: Posologia semanal escalonada de 0.3 mg a 2.4 mg avaliada em ensaios multicêntricos de fase 2 publicados na revista The Lancet (PMID: 34449830). Frequentemente co-administrado com semaglutida (CagriSema)."
+      "ENSAIO CLÍNICO (MONOTERAPIA vs COFORMULAÇÃO — Item 8 / REDEFINE): Posologia semanal escalonada de 0,3 mg a 4,5 mg avaliada em monoterapia na Fase 2 (Lau et al., Lancet 2021; NCT03856047; PMID: 34798060, -6,0% a -10,8% vs -3,0% placebo). Coformulação CagriSema (cagrilintida + semaglutida) investigada separadamente em Fase 2 (PMID: 37364590) e REDEFINE 1/2 (PMID: 40544433 / 40544432), sem aprovação comercial vigente."
     ],
     "sources": [
-      "Efficacy and safety of cagrilintide with semaglutide in adults with overweight or obesity (REDEFINE 1 / Ensaio Fase 2)"
+      "Lau DCW, et al. Once-weekly cagrilintide for weight management in people with overweight and obesity: a multicentre, randomised, double-blind, placebo-controlled and active-controlled, dose-finding phase 2 trial. Lancet. 2021. DOI: 10.1016/S0140-6736(21)01751-7. PMID: 34798060.",
+      "Frias JP, et al. Efficacy and safety of co-administered once-weekly cagrilintide 2·4 mg with once-weekly semaglutide 2·4 mg in type 2 diabetes: a multicentre, randomised, double-blind, active-controlled, phase 2 trial. Lancet. 2023. DOI: 10.1016/S0140-6736(23)01163-7. PMID: 37364590.",
+      "Garvey WT, et al. Coadministered Cagrilintide and Semaglutide in Adults with Overweight or Obesity. N Engl J Med. 2025. DOI: 10.1056/NEJMoa2502081. PMID: 40544433."
     ],
     "h4_4_pendency_flag": "Item 8: Coformulação CagriSema investigacional Fase 3 (REDEFINE), não aprovada comercialmente",
     "reviewedAt": "2026-11-08"
@@ -1211,10 +1235,11 @@
       "Sensação de plenitude gástrica precoce"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA: Ensaio clínico de fase 2 publicado no New England Journal of Medicine (NEJM 2024; PMID: 38856224) para esteato-hepatite não alcoólica (MASH) e obesidade. Posologia semanal escalonada de 0.6 mg a 4.8 mg."
+      "VALIDAÇÃO CLÍNICA: Ensaio clínico de fase 2 publicado no New England Journal of Medicine (NEJM 2024; (fonte primária verificada: PMID 38847460)) para esteato-hepatite não alcoólica (MASH) e obesidade. Posologia semanal escalonada de 0.6 mg a 4.8 mg."
     ],
     "sources": [
-      "A Phase 2 Randomized Trial of Survodutide in MASH and Fibrosis"
+      "Sanyal AJ, et al. A Phase 2 Randomized Trial of Survodutide in MASH and Fibrosis. N Engl J Med. 2024. DOI: 10.1056/NEJMoa2401755. PMID: 38847460.",
+      "le Roux CW, et al. Glucagon and GLP-1 receptor dual agonist survodutide for obesity: a randomised, double-blind, placebo-controlled, dose-finding phase 2 trial. Lancet Diabetes Endocrinol. 2024. DOI: 10.1016/S2213-8587(23)00356-X. PMID: 38330987."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -1306,10 +1331,11 @@
       "Sem qualquer elevação de hematócrito (diferente da EPO intacta)"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA PILOTO: Avaliado em ensaios clínicos humanos de fase 2 para neuropatia de pequenas fibras e dor neuropática em sarcoidose e diabetes (PMID: 25164808). Dose clínica de 4 mg SC diária por 28 dias."
+      "VALIDAÇÃO CLÍNICA PILOTO: Avaliado em ensaios clínicos humanos de fase 2 para neuropatia de pequenas fibras e dor neuropática em sarcoidose e diabetes (fonte primária verificada: PMID 28475703). Dose clínica de 4 mg SC diária por 28 dias."
     ],
     "sources": [
-      "ARA 290, a peptide designed to activate the innate repair receptor, ameliorates mechanical allodynia and nerve fiber loss in type 2 diabetes"
+      "Culver DA, et al. Cibinetide Improves Corneal Nerve Fiber Abundance in Patients With Sarcoidosis-Associated Small Nerve Fiber Loss and Neuropathic Pain. Invest Ophthalmol Vis Sci. 2017. DOI: 10.1167/iovs.16-21291. PMID: 28475703.",
+      "Heij L, et al. Safety and efficacy of ARA 290 in sarcoidosis patients with symptoms of small fiber neuropathy: a randomized, double-blind pilot study. Mol Med. 2012. DOI: 10.2119/molmed.2012.00332. PMID: 23168581."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -1353,10 +1379,11 @@
       "Sem efeitos melanogênicos ou sobre a pressão arterial"
     ],
     "limitations": [
-      "AVISO CIENTÍFICO: A dose de 200 a 500 mcg SC ou oral é uma prática empírica da comunidade de pesquisa em medicina funcional derivada de ensaios in vitro e murinos de colite (PMID: 18784742). Não há ensaios clínicos controlados de fase 3 em humanos."
+      "AVISO CIENTÍFICO: A dose de 200 a 500 mcg SC ou oral é uma prática empírica da comunidade de pesquisa em medicina funcional derivada de ensaios in vitro e murinos de colite (fonte primária verificada: PMID 18061177). Não há ensaios clínicos controlados de fase 3 em humanos."
     ],
     "sources": [
-      "The tripeptide KPV inhibits NF-kappaB activation and relieves gut inflammation in murine colitis"
+      "Dalmasso G, et al. PepT1-mediated tripeptide KPV uptake reduces intestinal inflammation. Gastroenterology. 2008. DOI: 10.1053/j.gastro.2007.10.026. PMID: 18061177.",
+      "Kannengiesser K, et al. Melanocortin-derived tripeptide KPV has anti-inflammatory potential in murine models of inflammatory bowel disease. Inflamm Bowel Dis. 2008. DOI: 10.1002/ibd.20334. PMID: 18092346."
     ],
     "h4_4_pendency_flag": "Item 4: Competição pela quelação de cobre pendente de constante de afinidade",
     "reviewedAt": "2026-11-08"
@@ -1451,9 +1478,12 @@
       "Taquicardia reflexa passageira se administrado rapidamente"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA PILOTO: Investigado em protocolos de spray nasal (50 mcg/dose) e SC para hipertensão pulmonar e Síndrome de Resposta Inflamatória Crônica (CIRS / mofo) pelo protocolo Shoemaker (PMID: 17409241). Alerta sobre efeitos vasodilatadores."
+      "VALIDAÇÃO CLÍNICA PILOTO: Investigado em protocolos de spray nasal (50 mcg/dose) e SC para hipertensão pulmonar e Síndrome de Resposta Inflamatória Crônica (CIRS / mofo) pelo protocolo Shoemaker (fonte primária verificada: PMID 20442436). Alerta sobre efeitos vasodilatadores."
     ],
-    "sources": [],
+    "sources": [
+      "Prasse A, et al. Inhaled vasoactive intestinal peptide exerts immunoregulatory effects in sarcoidosis. Am J Respir Crit Care Med. 2010. DOI: 10.1164/rccm.200909-1451OC. PMID: 20442436.",
+      "Zhong HL, et al. The role of vasoactive intestinal peptide in pulmonary diseases. Life Sci. 2023. DOI: 10.1016/j.lfs.2023.122121. PMID: 37742737."
+    ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
   },
@@ -1495,10 +1525,11 @@
       "Extremamente bem tolerado em estudos experimentais"
     ],
     "limitations": [
-      "AVISO CIENTÍFICO: Dosagens de 1 a 2 mg SC 2 a 3x por semana representam protocolos empíricos de pesquisa celular de longevidade. A literatura em modelos murinos demonstra citoproteção e bloqueio de apoptose mediada por Bax (PMID: 11371646). Não existem ensaios fase 3 em humanos."
+      "AVISO CIENTÍFICO: Dosagens de 1 a 2 mg SC 2 a 3x por semana representam protocolos empíricos de pesquisa celular de longevidade. A literatura em modelos murinos demonstra citoproteção e bloqueio de apoptose mediada por Bax (fonte primária verificada: PMID 23402768). Não existem ensaios fase 3 em humanos."
     ],
     "sources": [
-      "Humanin: a harbinger of mitochondrial-derived peptides in aging and neurodegenerative disease"
+      "Lee C, et al. Humanin: a harbinger of mitochondrial-derived peptides?. Trends Endocrinol Metab. 2013. DOI: 10.1016/j.tem.2013.01.005. PMID: 23402768.",
+      "Hashimoto Y, et al. A rescue factor abolishing neuronal cell death by a wide spectrum of familial Alzheimer's disease genes and Abeta. Proc Natl Acad Sci U S A. 2001. DOI: 10.1073/pnas.101133498. PMID: 11371646."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -1542,10 +1573,11 @@
       "Ausência de dessensibilização rápida em doses pulsáteis espaçadas"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA PILOTO: Ensaios clínicos humanos pioneiros demonstraram que kisspeptina estimula a secreção pulsátil de LH e testosterona sem supressão retrógrada do eixo gonadal (PMID: 23620456). Posologia típica de 100 a 200 mcg SC."
+      "VALIDAÇÃO CLÍNICA PILOTO: Ensaios clínicos humanos pioneiros demonstraram que kisspeptina estimula a secreção pulsátil de LH e testosterona sem supressão retrógrada do eixo gonadal (fonte primária verificada: PMID 21632807). Posologia típica de 100 a 200 mcg SC."
     ],
     "sources": [
-      "Kisspeptin-10 rapidly stimulates pulsatile LH and FSH secretion in healthy men"
+      "George JT, et al. Kisspeptin-10 is a potent stimulator of LH and increases pulse frequency in men. J Clin Endocrinol Metab. 2011. DOI: 10.1210/jc.2011-0089. PMID: 21632807.",
+      "Dhillo WS, et al. Kisspeptin-54 stimulates the hypothalamic-pituitary gonadal axis in human males. J Clin Endocrinol Metab. 2005. DOI: 10.1210/jc.2005-1468. PMID: 16174713."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -1634,10 +1666,12 @@
       "Atenuado completamente com injeção subcutânea lenta e fracionada"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA: Avaliado em ensaios clínicos para bioenergética mitocondrial e senescência (PMID: 30886360). Protocolos de aplicação subcutânea diária fracionada de 50 a 100 mg ou infusões intravenosas lentas de 250 a 500 mg."
+      "VALIDAÇÃO CLÍNICA: Avaliado em ensaios clínicos para bioenergética mitocondrial e senescência (fonte primária verificada: PMID 24360282). Protocolos de aplicação subcutânea diária fracionada de 50 a 100 mg ou infusões intravenosas lentas de 250 a 500 mg."
     ],
     "sources": [
-      "Declining NAD+ induces a pseudohypoxic state disrupting nuclear-mitochondrial communication during aging"
+      "Gomes AP, et al. Declining NAD(+) induces a pseudohypoxic state disrupting nuclear-mitochondrial communication during aging. Cell. 2013. DOI: 10.1016/j.cell.2013.11.037. PMID: 24360282.",
+      "Martens CR, et al. Chronic nicotinamide riboside supplementation is well-tolerated and elevates NAD+ in healthy middle-aged and older adults. Nat Commun. 2018. DOI: 10.1038/s41467-018-03421-7. PMID: 29599478.",
+      "Yoshino M, et al. Nicotinamide mononucleotide increases muscle insulin sensitivity in prediabetic women. Science. 2021. DOI: 10.1126/science.abe9985. PMID: 33888596."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -1682,10 +1716,12 @@
       "Uso contínuo diário desaconselhado para evitar dessensibilização do receptor OXTR"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA: Aprovada mundialmente pela FDA/ANVISA para fins obstétricos e amplamente documentada em ensaios duplo-cegos para modulação social e de estresse (PMID: 18451838). Dose intranasal típica em pesquisa: 10 a 24 UI (spray nasal) antes de situações sociais."
+      "VALIDAÇÃO CLÍNICA: Aprovada mundialmente pela FDA/ANVISA para fins obstétricos e amplamente documentada em ensaios duplo-cegos para modulação social e de estresse (fonte primária verificada: PMID 15931222). Dose intranasal típica em pesquisa: 10 a 24 UI (spray nasal) antes de situações sociais."
     ],
     "sources": [
-      "Oxytocin increases trust in humans"
+      "Kosfeld M, et al. Oxytocin increases trust in humans. Nature. 2005. DOI: 10.1038/nature03701. PMID: 15931222.",
+      "Widmer M, et al. Heat-Stable Carbetocin versus Oxytocin to Prevent Hemorrhage after Vaginal Birth. N Engl J Med. 2018. DOI: 10.1056/NEJMoa1805489. PMID: 29949473.",
+      "Sikich L, et al. Intranasal Oxytocin in Children and Adolescents with Autism Spectrum Disorder. N Engl J Med. 2021. DOI: 10.1056/NEJMoa2103583. PMID: 34644471."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -1772,10 +1808,11 @@
       "Sem alterações de pressão arterial ou sonolência residual"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA PILOTO: Tripeptídeo sintético formulado por Khavinson avaliado em ensaios clínicos para astenia, fadiga cognitiva e proteção do tecido cortical contra estresse oxidativo e hipóxia (PMID: 22168393). Dose comum de 2 a 5 mg SC ou oral diária por 20 a 30 dias."
+      "VALIDAÇÃO CLÍNICA PILOTO: Tripeptídeo sintético formulado por Khavinson avaliado em ensaios clínicos para astenia, fadiga cognitiva e proteção do tecido cortical contra estresse oxidativo e hipóxia (fonte primária verificada: PMID 21978084). Dose comum de 2 a 5 mg SC ou oral diária por 20 a 30 dias."
     ],
     "sources": [
-      "Effect of the short peptide Pinealon on the structural and functional organization of the brain in aging and oxidative stress"
+      "Khavinson V, et al. Pinealon increases cell viability by suppression of free radical levels and activating proliferative processes. Rejuvenation Res. 2011. DOI: 10.1089/rej.2011.1172. PMID: 21978084.",
+      "Arutjunyan A, et al. Pinealon protects the rat offspring from prenatal hyperhomocysteinemia. Int J Clin Exp Med. 2012. PMID: 22567179."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -1867,9 +1904,13 @@
       "Leve retenção hídrica ou formigamento nas mãos (parestesia pelo pico de GH)"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA: Aprovado sob o nome Pralmorelina no Japão para testes de reserva hipofisária de GH (PMID: 9849822). Dosagem clínica padrão de 100 a 200 mcg SC em jejum 1 a 2x ao dia."
+      "VALIDAÇÃO CLÍNICA: Aprovado no Japão sob o nome Pralmorelina para diagnóstico da reserva hipofisária de GH, com farmacocinética e farmacodinâmica avaliadas em humanos por Pihoker et al., J Clin Endocrinol Metab 1998 (PMID 9543135, DOI 10.1210/jcem.83.4.4744) e caracterização farmacológica em Doi et al., 2004 (PMID 15646370) e Ohara et al., 2017 (PMID 28623445). Referência cruzada espúria anterior ao ipamorelin expurgada na H4.17."
     ],
-    "sources": [],
+    "sources": [
+      "Pihoker C, et al. Pharmacokinetics and pharmacodynamics of growth hormone-releasing peptide-2: a phase I study in children. J Clin Endocrinol Metab. 1998. DOI: 10.1210/jcem.83.4.4744. PMID: 9543135.",
+      "Doi N, et al. Pharmacological characteristics of KP-102 (GHRP-2), a potent growth hormone-releasing peptide. Arzneimittelforschung. 2004. DOI: 10.1055/s-0031-1297041. PMID: 15646370.",
+      "Ohara E, et al. Laparoscopic Sleeve Gastrectomy Resolves Low GHRP-2-Stimulated Growth Hormone Levels in Obese Patients. Obes Surg. 2017. DOI: 10.1007/s11695-017-2769-4. PMID: 28623445."
+    ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
   },
@@ -1913,9 +1954,13 @@
       "Elevação moderada transitória de cortisol e prolactina séricos"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA HISTÓRICA: O primeiro hexapeptídeo secretagogo prototípico sintetizado pela equipe do Dr. Cyril Bowers (PMID: 8371089). Notório por desencadear estímulo imediato e potente de apetite hipotalâmico via receptor de grelina."
+      "VALIDAÇÃO CLÍNICA HISTÓRICA: O primeiro hexapeptídeo secretagogo prototípico sintetizado pela equipe do Dr. Cyril Bowers (fonte primária verificada: PMID 7920995). Notório por desencadear estímulo imediato e potente de apetite hipotalâmico via receptor de grelina."
     ],
-    "sources": [],
+    "sources": [
+      "Micic D, et al. Regulation of growth hormone secretion by the growth hormone releasing hexapeptide (GHRP-6). J Pediatr Endocrinol. 1993. DOI: 10.1515/jpem.1993.6.3-4.283. PMID: 7920995.",
+      "Pombo M, et al. Growth hormone releasing hexapeptide-6 (GHRP-6) test in the diagnosis of GH-deficiency. J Pediatr Endocrinol Metab. 1996. PMID: 8887178.",
+      "Micic D, et al. Growth hormone response to GHRH + GHRP-6 in type 2 diabetes during euglycemic and hyperglycemic clamp. Diabetes Res Clin Pract. 2004. DOI: 10.1016/j.diabres.2003.08.012. PMID: 14693411."
+    ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
   },
@@ -1959,9 +2004,12 @@
       "Sem aumento severo de apetite como ocorre no GHRP-6"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA PILOTO: Hexapeptídeo secretagogo com o maior pico de GH da categoria e propriedades cardioprotetoras exclusivas mediadas pelo receptor CD36 (PMID: 15372138). Sofre dessensibilização rápida; requer ciclos curtos de 2 a 4 semanas."
+      "VALIDAÇÃO CLÍNICA PILOTO: Hexapeptídeo secretagogo com o maior pico de GH da categoria e propriedades cardioprotetoras exclusivas mediadas pelo receptor CD36 (fonte primária verificada: PMID 8954038). Sofre dessensibilização rápida; requer ciclos curtos de 2 a 4 semanas."
     ],
-    "sources": [],
+    "sources": [
+      "Massoud AF, et al. Hexarelin-induced growth hormone, cortisol, and prolactin release: a dose-response study. J Clin Endocrinol Metab. 1996. DOI: 10.1210/jcem.81.12.8954038. PMID: 8954038.",
+      "Maccario M, et al. Metabolic modulation of the growth hormone-releasing activity of hexarelin in man. Metabolism. 1995. DOI: 10.1016/0026-0495(95)90300-3. PMID: 7854159."
+    ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
   },
@@ -2005,9 +2053,14 @@
       "Potencial teórico de proliferação celular indiscriminada"
     ],
     "limitations": [
-      "AVISO CIENTÍFICO OBRIGATÓRIO: A aplicação de 200 a 400 mcg SC/IM 2 a 3x por semana é uma prática empírica difundida na comunidade de hipertrofia. O PEG-MGF é uma variante de splicing do IGF-1 peguilada para prolongar a meia-vida (PMID: 21030672). NÃO existem ensaios clínicos controlados de fase 3 em humanos."
+      "AVISO CIENTÍFICO OBRIGATÓRIO: PEG-MGF é uma variante peguilada experimental de pesquisa do domínio E do IGF-1 (Ec/MGF). Os artigos indexados (Ates et al., FEBS Lett 2007, PMID 17531227; Matheny et al., 2010, PMID 20130113; Kandalla et al., 2011, PMID 21354439) investigaram o peptídeo nativo MGF/domínio E em culturas musculares e modelos pré-clínicos; NÃO existem ensaios clínicos randomizados publicados avaliando segurança ou eficácia do PEG-MGF sintético peguilado em seres humanos. Referência cruzada espúria anterior ao BPC-157 expurgada na H4.17."
     ],
-    "sources": [],
+    "sources": [
+      "Ates K, et al. The IGF-I splice variant MGF increases progenitor cells in ALS, dystrophic, and normal muscle. FEBS Lett. 2007. DOI: 10.1016/j.febslet.2007.05.030. PMID: 17531227.",
+      "Matheny RW, et al. Minireview: Mechano-growth factor: a putative product of IGF-I gene expression involved in tissue repair and regeneration. Endocrinology. 2010. DOI: 10.1210/en.2009-1217. PMID: 20130113.",
+      "Kandalla PK, et al. Mechano Growth Factor E peptide (MGF-E), derived from an isoform of IGF-1, activates human muscle progenitor cells and induces an increase in their fusion potential at different ages. Mech Ageing Dev. 2011. DOI: 10.1016/j.mad.2011.02.007. PMID: 21354439.",
+      "Fornaro M, et al. Mechano-growth factor peptide, the COOH terminus of unprocessed insulin-like growth factor 1, has no apparent effect on myoblasts or primary muscle stem cells. Am J Physiol Endocrinol Metab. 2014. DOI: 10.1152/ajpendo.00408.2013. PMID: 24253050."
+    ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
   },
@@ -2050,9 +2103,12 @@
       "Escurecimento gradual de sardas e nevos cutâneos pré-existentes"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA ROBUSTA: Aprovado pela FDA e pela Agência Europeia de Medicamentos (EMA) sob a marca Scenesse para fotoproteção em protoporfiria eritropoiética (PMID: 25835422). Ativação seletiva de MC1R para melanogênese com mínimos efeitos pressóricos ou de náusea comparado ao Melanotan II."
+      "VALIDAÇÃO CLÍNICA ROBUSTA: Aprovado pela FDA e pela Agência Europeia de Medicamentos (EMA) sob a marca Scenesse para fotoproteção em protoporfiria eritropoiética (fonte primária verificada: PMID 26132941). Ativação seletiva de MC1R para melanogênese com mínimos efeitos pressóricos ou de náusea comparado ao Melanotan II."
     ],
-    "sources": [],
+    "sources": [
+      "Langendonk JG, et al. Afamelanotide for Erythropoietic Protoporphyria. N Engl J Med. 2015. DOI: 10.1056/NEJMoa1411481. PMID: 26132941.",
+      "Biolcati G, et al. Long-term observational study of afamelanotide in 115 patients with erythropoietic protoporphyria. Br J Dermatol. 2015. DOI: 10.1111/bjd.13598. PMID: 25494545."
+    ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
   },
@@ -2098,7 +2154,9 @@
     "limitations": [
       "AVISO CIENTÍFICO SEVERO: A dosagem de 250 a 500 mcg SC 2 a 3x por semana é uma prática empírica comum na comunidade online. Melanotan II é um agonista cíclico não seletivo com ação em MC1R, MC3R, MC4R e MC5R. NÃO possui aprovação sanitária para consumo recreativo devido a riscos de náuseas agudas, pico pressórico e hiperpigmentação heterogênea."
     ],
-    "sources": [],
+    "sources": [
+      "Dorr RT, et al. Evaluation of melanotan-II, a superpotent cyclic melanotropic peptide in a pilot phase-I clinical study. Life Sci. 1996. DOI: 10.1016/0024-3205(96)00160-9. PMID: 8637402."
+    ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
   },
@@ -2108,9 +2166,9 @@
     "compoundId": "snap-8",
     "stackId": null,
     "protocolName": "SNAP-8 — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "clinical_documented",
-    "evidenceCategory": "clinical_pilot",
-    "verificationStatus": "homologated_clinical",
+    "protocolCategory": "community_empirical",
+    "evidenceCategory": "community_unvalidated",
+    "verificationStatus": "community_unvalidated",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "anti-aging",
     "route": "Tópica (Creme/Sérum)",
@@ -2140,10 +2198,10 @@
       "Raramente discreta irritação dérmica de contato em pessoas com hipersensibilidade prévia"
     ],
     "limitations": [
-      "AVISO DE VIA DE ADMINISTRAÇÃO: SNAP-8 é um octapeptídeo concebido estritamente para aplicação TÓPICA dermatológica em séruns e cremes a 3%-10% (PMID: 26099307). JAMAIS DEVE SER INJETADO. Estudos clínicos comprovam atenuação de rugas de expressão periorbiculares."
+      "AVISO DE VIA DE ADMINISTRAÇÃO E LACUNA BIBLIOGRÁFICA: SNAP-8 (acetyl octapeptide-3) é comercializado exclusivamente para aplicação TÓPICA cosmética; JAMAIS DEVE SER INJETADO. Auditoria bibliográfica H4.17 no PubMed retornou 0 estudos clínicos indexados (citação espúria anterior expurgada na H4.17)."
     ],
     "sources": [
-      "In vivo anti-wrinkle efficacy of SNAP-8 topical octapeptide"
+      "Lacuna bibliográfica H4.17: 0 estudos indexados no PubMed para SNAP-8 / acetyl octapeptide-3."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -2187,10 +2245,11 @@
       "Segurança toxicológica favorável em ensaios com modelos de mamíferos"
     ],
     "limitations": [
-      "AVISO CIENTÍFICO OBRIGATÓRIO: A dosagem oral de 50 a 150 mg diários é uma prática empírica em protocolos de otimização metabólica. O 5-Amino-1MQ é uma pequena molécula inibidora da enzima NNMT que eleva NAD+ celular (PMID: 30018512). NÃO possui ensaios clínicos controlados de fase 3 em humanos."
+      "AVISO CIENTÍFICO: Pequena molécula inibidora de NNMT investigada em modelos pré-clínicos murinos (Neelakantan et al., Biochem Pharmacol 2018, PMID 29155147; Dimet-Wiley et al., Sci Rep 2022, PMID 35013352). Sem ensaios clínicos controlados de Fase 3 em humanos; citação espúria anterior expurgada na H4.17."
     ],
     "sources": [
-      "Selective small molecule inhibitor of NNMT promotes cellular NAD+ and reverses diet-induced obesity in mice"
+      "Neelakantan H, et al. Selective and membrane-permeable small molecule inhibitors of nicotinamide N-methyltransferase reverse high fat diet-induced obesity in mice. Biochem Pharmacol. 2018. DOI: 10.1016/j.bcp.2017.11.007. PMID: 29155147.",
+      "Dimet-Wiley A, et al. Reduced calorie diet combined with NNMT inhibition establishes a distinct microbiome in DIO mice. Sci Rep. 2022. DOI: 10.1038/s41598-021-03670-5. PMID: 35013352."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -2235,10 +2294,11 @@
       "Possível letargia e aumento do apetite nas primeiras 48h pós-dose"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA: Posologia semanal de 30 a 60 mcg/kg administrada via SC foi documentada em humanos em ensaio clínico da ConjuChem publicado no JCEM (PMID: 16822826). O complexo DAC liga-se covalentemente à albumina sérica, estendendo a meia-vida para 6-8 dias."
+      "VALIDAÇÃO CLÍNICA: Posologia semanal de 30 a 60 mcg/kg administrada via SC foi documentada em humanos em ensaio clínico da ConjuChem publicado no JCEM (fonte primária verificada: PMID 16352683). O complexo DAC liga-se covalentemente à albumina sérica, estendendo a meia-vida para 6-8 dias."
     ],
     "sources": [
-      "Prolonged stimulation of growth hormone and insulin-like growth factor-I in human subjects by CJC-1295, a long-acting growth hormone-releasing factor"
+      "Teichman SL, et al. Prolonged stimulation of growth hormone (GH) and insulin-like growth factor I secretion by CJC-1295, a long-acting analog of GH-releasing hormone, in healthy adults. J Clin Endocrinol Metab. 2006. DOI: 10.1210/jc.2005-1536. PMID: 16352683.",
+      "Ionescu M, et al. Pulsatile secretion of growth hormone (GH) persists during continuous stimulation by CJC-1295, a long-acting GH-releasing hormone analog. J Clin Endocrinol Metab. 2006. DOI: 10.1210/jc.2006-1702. PMID: 17018654."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -2286,7 +2346,8 @@
       "ALERTA SEVERO / PRÁTICA EMPÍRICA: Dosagens de 50 a 100 mcg diários por ciclos curtos (10 a 20 dias) são exclusivamente empíricas no meio esportivo. A folistatina nativa é um ligante de alta afinidade da miostatina e ativina. Não possui aprovação formal da FDA para ganho de massa magra em indivíduos saudáveis."
     ],
     "sources": [
-      "Follistatin gene therapy improves muscle function and muscle mass in dystrophic mice and non-human primates"
+      "Kota J, et al. Follistatin gene delivery enhances muscle growth and strength in nonhuman primates. Sci Transl Med. 2009. DOI: 10.1126/scitranslmed.3000112. PMID: 20368179.",
+      "Mendell JR, et al. A phase 1/2a follistatin gene therapy trial for becker muscular dystrophy. Mol Ther. 2015. DOI: 10.1038/mt.2014.200. PMID: 25322757."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -2333,7 +2394,11 @@
     "limitations": [
       "ADVERTÊNCIA RIGOROSA: Dosagem empírica de 20 a 50 mcg via IM local pré/pós-treino. Trata-se de variante truncada natural do IGF-1 com ação hiperlocalizada e meia-vida ultracurta. Uso estritamente restrito a pesquisa in vitro e modelos experimentais."
     ],
-    "sources": [],
+    "sources": [
+      "Martin AA, et al. IGF-I and its variant, des-(1-3)IGF-I, enhance growth in rats with reduced renal mass. Am J Physiol. 1991. DOI: 10.1152/ajprenal.1991.261.4.F626. PMID: 1928375.",
+      "Crescioli C, et al. Des (1-3) IGF-I-stimulated growth of human stromal BPH cells is inhibited by a vitamin D3 analogue. Mol Cell Endocrinol. 2002. DOI: 10.1016/s0303-7207(02)00370-2. PMID: 12573816.",
+      "Neff NT, et al. Insulin-like growth factors: putative muscle-derived trophic agents that promote motoneuron survival. J Neurobiol. 1993. DOI: 10.1002/neu.480241203. PMID: 8301266."
+    ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
   },
@@ -2375,10 +2440,11 @@
       "Raríssima irritação de contato ou hiperemia transitória em indivíduos hipersensíveis"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA: Eficácia anti-rugas comprovada em ensaios dermatológicos humanos duplo-cegos (PMID: 18498523, PMID: 12400766). Formulações tópicas de 5% a 10% demonstram redução estatisticamente significativa na profundidade das rugas de expressão facial em 15 a 30 dias."
+      "VALIDAÇÃO CLÍNICA: Eficácia anti-rugas comprovada em ensaios dermatológicos humanos duplo-cegos (fonte primária verificada: PMID 18498523). Formulações tópicas de 5% a 10% demonstram redução estatisticamente significativa na profundidade das rugas de expressão facial em 15 a 30 dias."
     ],
     "sources": [
-      "A synthetic hexapeptide (Argireline) with antiwrinkle activity"
+      "Blanes-Mira C, et al. A synthetic hexapeptide (Argireline) with antiwrinkle activity. PubMed. 2002. DOI: 10.1046/j.1467-2494.2002.00153.x. PMID: 18498523.",
+      "Kluczyk A, et al. Argireline: Needle-Free Botox as Analytical Challenge. Chem Biodivers. 2021. DOI: 10.1002/cbdv.202000992. PMID: 33482052."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -2423,10 +2489,11 @@
       "Sensação temporária de plenitude pós-prandial"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA: Avaliado rigorosamente em ensaios multicêntricos publicados na Lancet Diabetes & Endocrinology (PMID: 38242131) nas dosagens de 3 mg, 4.5 mg e 6 mg e 9 mg semanais. Reduz drasticamente a gordura hepática (esteatose) além do peso corporal."
+      "VALIDAÇÃO CLÍNICA: Avaliado em ensaio Fase 2 controlado por placebo em Nat Commun 2023 (Ji et al., NCT04904913, PMID 38092790, DOI 10.1038/s41467-023-44067-4, n=248, 24 sem: -6,7% com 3 mg, -10,4% com 4,5 mg e -11,3% com 6 mg vs +1,0% placebo) e em ensaio Fase 3 GLORY-1 no NEJM 2025 (Ji et al., NCT05607680, PMID 40421736, DOI 10.1056/NEJMoa2411528, n=610, 48 sem: -14,01% com 6 mg vs +0,30% placebo). Citação espúria anterior e alegação não comprovada de -18,6% expurgadas na H4.17."
     ],
     "sources": [
-      "Mazdutide in Chinese adults with overweight or obesity: a randomised, double-blind, placebo-controlled, phase 2 trial"
+      "Ji L, et al. A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity. Nat Commun. 2023. DOI: 10.1038/s41467-023-44067-4. PMID: 38092790.",
+      "Ji L, et al. Once-Weekly Mazdutide in Chinese Adults with Obesity or Overweight. N Engl J Med. 2025. DOI: 10.1056/NEJMoa2411528. PMID: 40421736."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -2469,10 +2536,14 @@
       "Sensação discreta de hiperativação mental passageira se administrado no período noturno"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA: Protocolo clínico padrão de 10 mg a 20 mg IM diários por 10 dias consecutivos amplamente documentado na literatura médica neurológica russa e europeia (PMID: 24577546, PMID: 18458682) para reabilitação pós-AVC e traumatismo cranioencefálico."
+      "Ensaios clínicos randomizados conduzidos em AVC isquêmico agudo/recuperação precoce (Belova et al., 2016, PMID 27845314; Khabirov et al., 2020, PMID 33449527) e isquemia cerebral crônica (Fedin et al., 2018, PMID 30335070), além de estudos mecanísticos de neuroproteção/inibição de caspase-8 (PMID 28251948, PMID 34260655). Citações espúrias anteriores expurgadas na H4.17."
     ],
     "sources": [
-      "Efficacy of Cortexin in the acute and early recovery periods of ischemic stroke: a multicenter randomized clinical trial"
+      "Belova LA, et al. [Efficacy of cortexin in acute and recovery periodes of hemispheric ischemic stroke]. Zh Nevrol Psikhiatr Im S S Korsakova. 2016. DOI: 10.17116/jnevro201611610138-42. PMID: 27845314.",
+      "Fedin AI, et al. [Dose-dependent effects of cortexin in chronic cerebral ischemia (results of a multicenter randomized controlled study)]. Zh Nevrol Psikhiatr Im S S Korsakova. 2018. DOI: 10.17116/jnevro201811809135. PMID: 30335070.",
+      "Khabirov FA, et al. [Comparison of the efficacy of Cellex and Cortexin in patients in the early recovery period of ischemic stroke]. Zh Nevrol Psikhiatr Im S S Korsakova. 2020. DOI: 10.17116/jnevro202012012211. PMID: 33449527.",
+      "Yakovlev AA, et al. [Peptide drug cortexin inhibits brain caspase-8]. Biomed Khim. 2017. DOI: 10.18097/PBMC2017630127. PMID: 28251948.",
+      "Kurkin DV, et al. Neuroprotective action of Cortexin, Cerebrolysin and Actovegin in acute or chronic brain ischemia in rats. PLoS One. 2021. DOI: 10.1371/journal.pone.0254493. PMID: 34260655."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -2515,10 +2586,11 @@
       "Raramente discreto desconforto abdominal transitório ou cefaleia leve"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA: Posologia oral de 0.5 mg a 1.0 mg administrada 3 vezes ao dia antes das principais refeições avaliada em ensaios multicêntricos de fase 2b publicados em Gastroenterology e Aliment Pharmacol Ther (PMID: 26027878, PMID: 22882736)."
+      "VALIDAÇÃO CLÍNICA: Posologia oral de 0.5 mg a 1.0 mg administrada 3 vezes ao dia antes das principais refeições avaliada em ensaios multicêntricos de fase 2b publicados em Gastroenterology e Aliment Pharmacol Ther (fonte primária verificada: PMID 25683116)."
     ],
     "sources": [
-      "Larazotide acetate for persistent symptoms in patients with celiac disease on a gluten-free diet: a randomized controlled trial"
+      "Leffler DA, et al. Larazotide acetate for persistent symptoms of celiac disease despite a gluten-free diet: a randomized controlled trial. Gastroenterology. 2015. DOI: 10.1053/j.gastro.2015.02.008. PMID: 25683116.",
+      "Kelly CP, et al. Larazotide acetate in patients with coeliac disease undergoing a gluten challenge: a randomised placebo-controlled study. Aliment Pharmacol Ther. 2013. DOI: 10.1111/apt.12147. PMID: 23163616."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -2563,11 +2635,11 @@
       "Falta de dados toxicológicos crônicos em humanos a longo prazo"
     ],
     "limitations": [
-      "AVISO CIENTÍFICO: O SLU-PP-332 é um composto estritamente investigacional (Research Chemical) desenvolvido pela Universidade da Flórida/Saint Louis University. NÃO possui aprovação para consumo humano por Anvisa ou FDA. As dosagens reportadas na comunidade científica e biohacking (10 a 25 mg/dia) decorrem de extrapolação alométrica de ensaios murinos (50 mg/kg IP)."
+      "AVISO CIENTÍFICO: Composto sintético não-peptídico pré-clínico (PubChem CID 5338394, fórmula molecular C18H14N2O2, peso molecular 290,3 g/mol) investigado em modelos murinos (Billon et al., ACS Chem Biol 2023 PMID 36988910; JPET 2024 PMID 37739806). NÃO possui ensaios clínicos em humanos nem aprovação FDA/EMA/Anvisa. Citações espúrias e massa molecular incorreta corrigidas na H4.17."
     ],
     "sources": [
-      "A Synthetic ERR Agonist Alleviates Metabolic Syndrome",
-      "A synthetic ERRα/β/γ agonist induces an endurance exercise training phenotype in skeletal muscle"
+      "Billon C, et al. A Synthetic ERR Agonist Alleviates Metabolic Syndrome. J Pharmacol Exp Ther. 2024. DOI: 10.1124/jpet.123.001733. PMID: 37739806.",
+      "Billon C, et al. Synthetic ERRα/β/γ Agonist Induces an ERRα-Dependent Acute Aerobic Exercise Response and Enhances Exercise Capacity. ACS Chem Biol. 2023. DOI: 10.1021/acschembio.2c00720. PMID: 36988910."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -2611,11 +2683,11 @@
       "Dados limitados a modelos animais e ensaios farmacológicos in vivo"
     ],
     "limitations": [
-      "AVISO CIENTÍFICO: SLU-PP-915 é um análogo pan-ERR de 2ª geração sintetizado com grupo ácido borônico em template de tiofeno para superar a baixa biodisponibilidade oral do SLU-PP-332. Dados estritamente pré-clínicos in vivo publicados entre 2023 e 2025 pela equipe do Dr. Thomas Burris."
+      "AVISO CIENTÍFICO: Composto sintético de 2ª geração contendo boro (PubChem CID 142532359, fórmula molecular C17H13BFNO3S, peso molecular 341,2 g/mol; Hampton et al., Eur J Med Chem 2023 PMID 37421886; Billon et al., JPET 2026 PMID 41421047). Dados exclusivamente pré-clínicos in vitro/in vivo; sem aprovação humana."
     ],
     "sources": [
-      "An orally active estrogen receptor-related receptor agonist, SLU-PP-915, enhances aerobic exercise capacity",
-      "Development and pharmacological evaluation of a new chemical series of potent pan-ERR agonists, identification of SLU-PP-915"
+      "Billon C, et al. An orally active estrogen receptor-related receptor agonist, SLU-PP-915, enhances aerobic exercise capacity. J Pharmacol Exp Ther. 2026. DOI: 10.1016/j.jpet.2025.103787. PMID: 41421047.",
+      "Hampton CS, et al. Development and pharmacological evaluation of a new chemical series of potent pan-ERR agonists, identification of SLU-PP-915. Eur J Med Chem. 2023. DOI: 10.1016/j.ejmech.2023.115582. PMID: 37421886."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -2764,7 +2836,11 @@
     "limitations": [
       "APROVAÇÃO REGULATÓRIA FORMAL (FDA 2020 / 2022 / abril de 2026 NDA 213793; EMA 2021 / 2022 / abril-maio de 2026 EU/1/21/1564; Anvisa: sem registro ativo): 1) FDA (EUA): Aprovado para controle crônico de peso e alívio da hiperfagia em Obesidade Hipotalâmica Adquirida (AHO) a partir de 4 anos de idade (etiologia lesional decorrente de dano estrutural ou cirúrgico ao hipotálamo/SNC, craniofaringiomas ou radioterapia — NÃO é condição monogênica); Síndrome de Bardet-Biedl (BBS) a partir de 2 anos de idade; e deficiência genética de POMC, PCSK1 ou LEPR a partir de 2 anos de idade confirmada por teste genético (variantes patogênicas, provavelmente patogênicas ou VUS no contexto clínico adequado). 2) EMA (União Europeia): Aprovado para o tratamento da obesidade e controle da fome em Obesidade Hipotalâmica Adquirida (aHO) a partir de 4 anos de idade (autorização ampliada pela Comissão Europeia em abril-maio de 2026, Decisão C(2026) 3032); Síndrome de Bardet-Biedl (BBS) a partir de 2 anos de idade; e deficiência bialélica confirmada de perda de função de POMC (incluindo PCSK1) ou LEPR a partir de 2 anos de idade. 3) Bula FDA 2026 (Estabilidade e Armazenamento): A bula oficial (Seção 16 / Tabela 19) especifica armazenamento refrigerado de frascos fechados a 2°C a 8°C no cartucho original até o vencimento; após retirada do refrigerador, tolera temperaturas de 2°C a 25°C por até 30 dias com breves excursões permitidas até 30°C (podendo retornar à refrigeração). O descarte é mandatório após 30 dias da primeira perfuração (abertura). 4) Anvisa (Brasil): Não possui registro sanitário comercial ativo no sistema oficial de medicamentos da Anvisa (consulta em banco de dados oficial realizada em 22/10/2026 no portal Consulta de Medicamentos da Anvisa sob os termos 'setmelanotida' e 'Imcivree', sem registro comercial deferido). A aquisição por pessoa física para tratamento individual submete-se às normas de importação da RDC Anvisa nº 81/2008 sob prescrição médica: a Anvisa veda remessa postal convencional (Correios) para produtos com exigência de conservação especial de temperatura; ressalta-se que modalidades de remessa expressa (courier) não estão automaticamente autorizadas de forma tácita, exigindo qualificação operacional e estrito cumprimento documental, mantendo-se a importação formal com Licença de Importação (LI) e módulo LPCO no Portal Único Siscomex como procedimento aduaneiro padrão sujeito à fiscalização da autoridade sanitária. O medicamento não está listado nas tabelas de controle especial da Portaria SVS/MS nº 344/98. A ausência de registro sanitário nacional proíbe a comercialização, distribuição ou estocagem comercial em território brasileiro. LIMITAÇÃO DE USO FORMAL: NÃO é indicado nem esperado ser eficaz para variantes benignas/provavelmente benignas, outras síndromes genéticas não relacionadas, ou obesidade comum (poligênica)."
     ],
-    "sources": [],
+    "sources": [
+      "FDA NDA 213793 (Imcivree Prescribing Information 2020/2026)",
+      "Clément K, et al. Efficacy and safety of setmelanotide, an MC4R agonist, in individuals with severe obesity due to LEPR or POMC deficiency: single-arm, open-label, multicentre, phase 3 trials. PubMed. 2020. DOI: 10.1016/S2213-8587(20)30364-8. PMID: 33137293.",
+      "Haqq AM, et al. Efficacy and safety of setmelanotide, a melanocortin-4 receptor agonist, in patients with Bardet-Biedl syndrome and Alström syndrome: a multicentre, randomised, double-blind, placebo-controlled, phase 3 trial with an open-label period. PubMed. 2022. DOI: 10.1016/S2213-8587(22)00277-7. PMID: 36356613."
+    ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
   },
@@ -3363,7 +3439,10 @@
     "limitations": [
       "STATUS REGULATÓRIO: Aprovado pela FDA em agosto/2024 (NDA 216793) e pela EMA em novembro/2023 (Yorvipath) como terapia hormonal de reposição para hipoparatireoidismo em adultos. Pró-fármaco peguilado com ligante liberável. Calculadora bloqueada."
     ],
-    "sources": [],
+    "sources": [
+      "Khan AA, et al. Efficacy and Safety of Parathyroid Hormone Replacement With TransCon PTH in Hypoparathyroidism: 26-Week Results From the Phase 3 PaTHway Trial. J Bone Miner Res. 2023. DOI: 10.1002/jbmr.4726. PMID: 36271471.",
+      "Clarke BL, et al. Efficacy and Safety of TransCon PTH in Adults With Hypoparathyroidism: 52-Week Results From the Phase 3 PaTHway Trial. J Clin Endocrinol Metab. 2025. DOI: 10.1210/clinem/dgae693. PMID: 39376010."
+    ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
   },
@@ -3595,7 +3674,10 @@
     "limitations": [
       "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 022201), EMA e ANVISA (Firmagon) para tratamento do câncer de próstata avançado hormônio-dependente. Antagonista seletivo de GnRH com supressão androgênica imediata sem efeito 'flare-up'. Calculadora bloqueada."
     ],
-    "sources": [],
+    "sources": [
+      "Klotz L, et al. The efficacy and safety of degarelix: a 12-month, comparative, randomized, open-label, parallel-group phase III study in patients with prostate cancer. BJU Int. 2008. DOI: 10.1111/j.1464-410X.2008.08183.x. PMID: 19035858.",
+      "Lopes RD, et al. Cardiovascular Safety of Degarelix Versus Leuprolide in Patients With Prostate Cancer: The Primary Results of the PRONOUNCE Randomized Trial. Circulation. 2021. DOI: 10.1161/CIRCULATIONAHA.121.056810. PMID: 34459214."
+    ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
   },
@@ -3689,7 +3771,10 @@
     "limitations": [
       "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 021197), EMA e ANVISA (Cetrotide) para prevenção de ovulação prematura em pacientes submetidas à estimulação ovariana controlada seguida por aspiração oocitária e reprodução assistida. Calculadora bloqueada."
     ],
-    "sources": [],
+    "sources": [
+      "Albano C, et al. Ovarian stimulation with HMG: results of a prospective randomized phase III European study comparing the luteinizing hormone-releasing hormone (LHRH)-antagonist cetrorelix and the LHRH-agonist buserelin. European Cetrorelix Study Group. Hum Reprod. 2000. DOI: 10.1093/humrep/15.3.526. PMID: 10686191.",
+      "Olivennes F, et al. Safety and efficacy of a 3 mg dose of the GnRH antagonist cetrorelix in preventing premature LH surges: report of two large multicentre, multinational, phase IIIb clinical experiences. Reprod Biomed Online. 2003. DOI: 10.1016/s1472-6483(10)62163-3. PMID: 12831588."
+    ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
   },
@@ -3737,7 +3822,10 @@
     "limitations": [
       "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 019732, NDA 020517), EMA e ANVISA (Lupron / Eligard / Camcevi) para câncer de próstata avançado, endometriose, leiomioma uterino (mioma) e puberdade precoce central. Agonista potente de GnRH de ação depot. Calculadora bloqueada."
     ],
-    "sources": [],
+    "sources": [
+      "Lopes RD, et al. Cardiovascular Safety of Degarelix Versus Leuprolide in Patients With Prostate Cancer: The Primary Results of the PRONOUNCE Randomized Trial. Circulation. 2021. DOI: 10.1161/CIRCULATIONAHA.121.056810. PMID: 34459214.",
+      "et al. LBA02-09 EMBARK: A Phase 3 Randomized Study of Enzalutamide or Placebo Plus Leuprolide Acetate and Enzalutamide Monotherapy in High-risk Biochemically Recurrent Prostate Cancer. J Urol. 2023. DOI: 10.1097/JU.0000000000003518. PMID: 37119051."
+    ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
   },
@@ -3784,7 +3872,10 @@
     "limitations": [
       "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 019726, NDA 020578), EMA e ANVISA (Zoladex 3,6 mg e Zoladex LA 10,8 mg) para carcinoma de próstata avançado, carcinoma de mama avançado em pré e perimenopausa, endometriose e afinamento do endométrio pré-ablação. Calculadora bloqueada."
     ],
-    "sources": [],
+    "sources": [
+      "Jonat W, et al. Goserelin (Zoladex)--its role in early breast cancer in pre- and perimenopausal women. Br J Cancer. 2001. DOI: 10.1054/bjoc.2001.1981. PMID: 11900209.",
+      "Gu C, et al. Efficacy and safety of LY01005 versus goserelin implant in Chinese patients with prostate cancer: A multicenter, randomized, open-label, phase III, non-inferiority trial. Chin Med J (Engl). 2023. DOI: 10.1097/CM9.0000000000002638. PMID: 37010251."
+    ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
   },
@@ -3834,7 +3925,11 @@
     "limitations": [
       "STATUS REGULATÓRIO: Aprovado pela EMA (Tractocile) e ANVISA para tocólise e adiamento do parto prematuro iminente em gestantes adultas entre a 24ª e a 33ª semana de gestação. Antagonista seletivo do receptor de ocitocina com uso estritamente hospitalar intravenoso. Calculadora bloqueada."
     ],
-    "sources": [],
+    "sources": [
+      "Tsatsaris V, et al. Atosiban for preterm labour. Drugs. 2004. DOI: 10.2165/00003495-200464040-00003. PMID: 14969573.",
+      "van Winden TMS, et al. Tocolysis with nifedipine versus atosiban and perinatal outcome: an individual participant data meta-analysis. BMC Pregnancy Childbirth. 2022. DOI: 10.1186/s12884-022-04854-1. PMID: 35840927.",
+      "Makama M, et al. Atosiban and managing women in preterm labour. Lancet. 2025. DOI: 10.1016/S0140-6736(25)00402-7. PMID: 40049188."
+    ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
   },
@@ -3926,7 +4021,10 @@
     "limitations": [
       "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 208745) para tratamento da constipação idiopática crônica (CIC) e síndrome do intestino irritável com constipação (SII-C) em adultos. Análogo sintético da uroguanilina de administração oral. Calculadora bloqueada."
     ],
-    "sources": [],
+    "sources": [
+      "Miner PB, et al. Efficacy and safety of plecanatide in treating constipation predominant irritable bowel syndrome. Expert Opin Pharmacother. 2018. DOI: 10.1080/14656566.2018.1427733. PMID: 29376436.",
+      "Love BL, et al. Plecanatide for Treatment of Chronic Constipation and Irritable Bowel Syndrome. Am J Med. 2019. DOI: 10.1016/j.amjmed.2018.11.027. PMID: 30550753."
+    ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
   },
@@ -3972,7 +4070,10 @@
     "limitations": [
       "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 214231) e EMA (Zegalogue) para tratamento da hipoglicemia grave em pacientes com diabetes mellitus a partir de 6 anos de idade. Solução aquosa estável pronta para uso sem necessidade de reconstituição. Calculadora bloqueada."
     ],
-    "sources": [],
+    "sources": [
+      "Nielsen CK, et al. Dasiglucagon Effectively Mitigates Postbariatric Postprandial Hypoglycemia: A Randomized, Double-Blind, Placebo-Controlled, Crossover Trial. Diabetes Care. 2022. DOI: 10.2337/dc21-2252. PMID: 35320361.",
+      "Nielsen CK, et al. Dasiglucagon Treatment for Postprandial Hypoglycemia After Gastric Bypass: A Randomized, Double-Blind, Placebo-Controlled Trial. Diabetes Care. 2023. DOI: 10.2337/dc23-1193. PMID: 37819999."
+    ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
   },
@@ -4067,7 +4168,10 @@
     "limitations": [
       "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 017922, NDA 019955), EMA e ANVISA (DDAVP) para diabetes insipidus central, enurese noturna primária em crianças acima de 5 anos, noctúria em adultos e hemofilia A leve / doença de von Willebrand tipo 1. Calculadora bloqueada."
     ],
-    "sources": [],
+    "sources": [
+      "Vande Walle J, et al. Desmopressin 30 years in clinical use: a safety review. Curr Drug Saf. 2007. DOI: 10.2174/157488607781668891. PMID: 18690973.",
+      "Ebell MH, et al. A systematic review of the efficacy and safety of desmopressin for nocturia in adults. J Urol. 2014. DOI: 10.1016/j.juro.2014.03.095. PMID: 24704009."
+    ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
   },
@@ -4114,7 +4218,10 @@
     "limitations": [
       "STATUS REGULATÓRIO: Aprovado pela FDA em 2005 (NDA 021332, SymlinPen) como adjuvante prandial à terapia com insulina em pacientes com diabetes tipo 1 ou diabetes tipo 2 com controle glicêmico inadequado. Análogo estável da amilina humana. Calculadora bloqueada."
     ],
-    "sources": [],
+    "sources": [
+      "Ryan GJ, et al. Pramlintide in the treatment of type 1 and type 2 diabetes mellitus. Clin Ther. 2005. DOI: 10.1016/j.clinthera.2005.10.009. PMID: 16330288.",
+      "Singh-Franco D, et al. Pramlintide acetate injection for the treatment of type 1 and type 2 diabetes mellitus. Clin Ther. 2007. DOI: 10.1016/j.clinthera.2007.04.005. PMID: 17617279."
+    ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
   },
@@ -4396,9 +4503,10 @@
       "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
     ],
     "sources": [
-      "Curr Pharm Des 2020 (PMID 32241280)",
-      "Ann N Y Acad Sci 2010 (PMID 20557467)",
-      "https://peptidepedia.org/all-peptides"
+      "BPC-157 monoterapia pré-clínica — PubMed 2011 (PMID 21030672)",
+      "BPC-157 revisão sistemática — HSS J 2025 (PMID 40756949)",
+      "TB-500 revisão isolada — Expert Opin Biol Ther 2012 (PMID 22074294)",
+      "Nota epistêmica: fontes referentes apenas aos componentes isolados (0 ensaios clínicos combinados; blends comerciais sem ensaio ICH Q1A)."
     ],
     "h4_4_pendency_flag": "Item 1/3: Microdosagem diária de TB-500 em blend vs bolus e catálise oxidativa Cu2+",
     "reviewedAt": "2026-11-08"
@@ -4487,9 +4595,9 @@
       "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
     ],
     "sources": [
-      "Bull Exp Biol Med 2003 (PMID 12822002)",
-      "Oxid Med Cell Longev 2012 (PMID 23193437)",
-      "Expert Opin Biol Ther 2018 (PMID 29649919)"
+      "Epitalon in vitro isolado — PubMed 2004 (PMID 15455129)",
+      "GHK-Cu revisão isolada — Int J Mol Sci 2018 (PMID 29986520)",
+      "Timosina Alfa-1 estudo isolado — Crit Care 2013 (PMID 23327199)"
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -4533,8 +4641,8 @@
       "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
     ],
     "sources": [
-      "Bull Exp Biol Med 2008 (PMID 18528574)",
-      "Zh Nevrol Psikhiatr 2010 (PMID 20689487)"
+      "Semax pré-clínico BDNF isolado — PubMed 2006 (PMID 16996037)",
+      "Selank clínico isolado — Zh Nevrol Psikhiatr Im S S Korsakova 2008 (PMID 18454096)"
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -4578,8 +4686,8 @@
       "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
     ],
     "sources": [
-      "Circ Heart Fail 2016 (PMID 27655866)",
-      "Cell Metab 2015 (PMID 25738459)"
+      "SS-31/Elamipretida MMPOWER-3 isolado — PubMed 2023 (PMID 37268435)",
+      "MOTS-c pré-clínico isolado — Cell Metab 2015 (PMID 25738459)"
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -4623,8 +4731,8 @@
       "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
     ],
     "sources": [
-      "J Physiol Pharmacol 2010 (PMID 21191146)",
-      "Peptides 2005 (PMID 15792610)"
+      "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)",
+      "KPV colite murina isolado — Gastroenterology 2008 (PMID 18061177)"
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -4668,8 +4776,9 @@
       "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
     ],
     "sources": [
-      "Eur Neurol 1984 (PMID 6705820)",
-      "Growth Horm IGF Res 2006 (PMID 16843020)"
+      "DSIP clínico insônia isolado — Eur Neurol 1984 (PMID 6391925)",
+      "GHRH(1-29)/Sermorelin clínico isolado — J Clin Endocrinol Metab 1997 (PMID 9141536)",
+      "Ipamorelin seletividade GH isolado — Eur J Endocrinol 1998 (PMID 9849822)"
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -4713,8 +4822,9 @@
       "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
     ],
     "sources": [
-      "Cochrane Database Syst Rev 2020 (CD007026)",
-      "Stroke 2016 (PMID 27233792)"
+      "Semax AVC clínico isolado — Zh Nevrol Psikhiatr Im S S Korsakova 2018 (PMID 29798983)",
+      "Cerebrolysin CARS clínico isolado — Stroke 2016 (PMID 26564102)",
+      "Cerebrolysin revisão Cochrane 2023 — Cochrane Database Syst Rev 2023 (PMID 37818733)"
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -4758,8 +4868,9 @@
       "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
     ],
     "sources": [
-      "N Engl J Med 2022 (PMID 35658002)",
-      "Lancet 2021 (PMID 34480838)"
+      "Tirzepatide SURMOUNT-1 monoterapia — PubMed 2022 (PMID 35658024)",
+      "Cagrilintide Fase 2 monoterapia NCT03856047 — Lancet 2021 (PMID 34798060)",
+      "Referência comparativa CagriSema Fase 2 semaglutida+cagrilintida — Lancet 2023 (PMID 37364590)"
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -4803,8 +4914,8 @@
       "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
     ],
     "sources": [
-      "Front Immunol 2020 (PMID 32582155)",
-      "Antimicrob Agents Chemother 2014 (PMID 24982074)"
+      "Timosina Alfa-1 ETASS isolado — Crit Care 2013 (PMID 23327199)",
+      "LL-37 revisão isolada — PubMed 2012 (PMID 23246832)"
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -4848,7 +4959,8 @@
       "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
     ],
     "sources": [
-      "Endocr Rev 2009 (PMID 19602534)",
+      "IGF-1 LR3 experimental isolado — J Neurobiol 1993 (PMID 8301266)",
+      "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)",
       "WADA Prohibited List Class S2"
     ],
     "h4_4_pendency_flag": "none",
@@ -4893,8 +5005,9 @@
       "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
     ],
     "sources": [
-      "Oxid Med Cell Longev 2012 (PMID 23193437)",
-      "Burns 2003 (PMID 12788506)"
+      "GHK-Cu revisão isolada — Int J Mol Sci 2018 (PMID 29986520)",
+      "GHK-Cu tópico pós-laser — Arch Facial Plast Surg 2006 (PMID 16847171)",
+      "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)"
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -4938,8 +5051,8 @@
       "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
     ],
     "sources": [
-      "Int J Cosmet Sci 2002 (PMID 18498523)",
-      "J Cosmet Laser Ther 2013 (PMID 23441963)"
+      "Argireline tópico isolado — PubMed 2002 (PMID 18498523)",
+      "Argireline analítico tópico isolado — Chem Biodivers 2021 (PMID 33482052)"
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -4983,8 +5096,9 @@
       "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
     ],
     "sources": [
-      "Gastroenterology 2015 (PMID 26071922)",
-      "J Physiol Pharmacol 2010 (PMID 21191146)"
+      "Larazotide doença celíaca isolado — Gastroenterology 2015 (PMID 25683116)",
+      "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)",
+      "KPV pré-clínico isolado — Gastroenterology 2008 (PMID 18061177)"
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -5028,8 +5142,9 @@
       "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
     ],
     "sources": [
-      "Biochem Pharmacol 2018 (PMID 29474868)",
-      "Cell Metab 2015 (PMID 25738459)"
+      "MOTS-c pré-clínico isolado — Cell Metab 2015 (PMID 25738459)",
+      "SS-31/Elamipretida coração isolado — PubMed 2017 (PMID 29217757)",
+      "5-Amino-1MQ pré-clínico isolado — Biochem Pharmacol 2018 (PMID 29155147)"
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -5073,8 +5188,9 @@
       "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
     ],
     "sources": [
-      "JAMA Netw Open 2019 (PMID 31580407)",
-      "Bula FDA Vyleesi (NDA 210595)"
+      "PT-141/Bremelanotida RECONNECT isolado — Obstet Gynecol 2019 (PMID 31599840)",
+      "Kisspeptin-10 homens isolado — J Clin Endocrinol Metab 2011 (PMID 21632807)",
+      "Bula FDA Vyleesi (NDA 210595) — PT-141 isolado"
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -5118,9 +5234,10 @@
       "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
     ],
     "sources": [
-      "Oxid Med Cell Longev 2012 (PMID 23193437)",
-      "Curr Pharm Des 2020 (PMID 32241280)",
-      "https://peptidepedia.org/all-peptides"
+      "GHK-Cu revisão isolada — sem ensaio HPLC/MS da mistura tríplice GLOW — Int J Mol Sci 2018 (PMID 29986520)",
+      "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)",
+      "TB-500 revisão isolada — Expert Opin Biol Ther 2012 (PMID 22074294)",
+      "Nota epistêmica: fontes referentes apenas aos componentes isolados (0 ensaios clínicos combinados; blends comerciais sem ensaio ICH Q1A)."
     ],
     "h4_4_pendency_flag": "Item 1/3: Microdosagem diária de TB-500 em blend vs bolus e catálise oxidativa Cu2+",
     "reviewedAt": "2026-11-08"
@@ -5154,7 +5271,7 @@
     },
     "stabilityConditions": "Refrigerado a 2-8°C ao abrigo de luz.",
     "contraindications": [
-      "RISCO CARDIOVASCULAR SEVERO: A estimulação redundante do receptor de glucagon pode provocar taquicardia sinusal excessiva, arritmias ventriculares, náuseas severas e desidratação crítica."
+      "RISCO CARDIOVASCULAR E AUTONÔMICO ELEVADO: A sobreposição redundante de agonismo do receptor de glucagon pode induzir taquicardia sinusal dose-dependente acentuada (observada em monoterapia com retatrutida no Fase 2, NEJM 2023 PMID 37366315), desconforto cardiovascular autonômico, náuseas graves e desidratação. Risco de arritmia ventricular não estabelecido diretamente por ensaios desta combinação específica."
     ],
     "adverseEffects": [
       "Reações locais",
@@ -5164,9 +5281,10 @@
       "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
     ],
     "sources": [
-      "N Engl J Med 2023 (PMID 37366315)",
-      "Diabetes Care 2024 (PMID 38198592)",
-      "Alertas de Farmacovigilância FDA/EMA"
+      "Retatrutida Fase 2 NEJM 2023 monoterapia (taquicardia sinusal dose-dependente) — PubMed 2023 (PMID 37366315)",
+      "Mazdutida Fase 2 Nat Commun 2023 monoterapia — Nat Commun 2023 (PMID 38092790)",
+      "Mazdutida Fase 3 GLORY-1 NEJM 2025 monoterapia — N Engl J Med 2025 (PMID 40421736)",
+      "Alertas clínicos de taquicardia sinusal e intolerância GI de classe incretínica"
     ],
     "h4_4_pendency_flag": "Item 7: Contraindicação por arritmias fatais sem comprovação direta em humanos",
     "reviewedAt": "2026-11-08"
@@ -5211,10 +5329,11 @@
       "AVISO EPISTÊMICO: Não existem ensaios clínicos controlados avaliando a combinação simultânea dos quatro peptídeos em humanos. As propriedades terapêuticas decorrem de extrapolação teórica de cada componente isolado."
     ],
     "sources": [
-      "Int J Mol Sci 2018 (PMID 29986520)",
-      "Curr Pharm Des 2020 (PMID 32241280)",
-      "Expert Opin Biol Ther 2012 (PMID 22074294)",
-      "Peptides 2005 (PMID 15792610)"
+      "GHK-Cu revisão isolada — combinação KLOW sem ensaio ICH Q1A ou clínico — Int J Mol Sci 2018 (PMID 29986520)",
+      "BPC-157 revisão sistemática 2025 — HSS J 2025 (PMID 40756949)",
+      "TB-500 revisão isolada — Expert Opin Biol Ther 2012 (PMID 22074294)",
+      "KPV colite murina isolado — Gastroenterology 2008 (PMID 18061177)",
+      "Nota epistêmica: fontes referentes apenas aos componentes isolados (0 ensaios clínicos combinados; blends comerciais sem ensaio ICH Q1A)."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"

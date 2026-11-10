@@ -6,6 +6,7 @@ import re
 import socketserver
 import sys
 import threading
+import tempfile
 from playwright.async_api import async_playwright
 
 sys.stdout.reconfigure(encoding='utf-8', errors='replace', line_buffering=True)
@@ -166,11 +167,15 @@ async def run_e2e():
                 # Close modal: test Escape key on tablet, close button on desktop/mobile
                 if vp_name == "tablet":
                     await page.keyboard.press("Escape")
-                    await page.wait_for_timeout(20)
-                    is_closed = not (await modal.is_visible())
+                    try:
+                        await modal.wait_for(state="hidden", timeout=1500)
+                        is_closed = True
+                    except Exception:
+                        is_closed = False
                     execution_results["peptides"][pid]["escape_close"] = "PASS" if is_closed else "FAIL"
                     if not is_closed:
                         await page.locator("#modal-close-x").click()
+                        await modal.wait_for(state="hidden", timeout=1500)
                 else:
                     await page.locator("#modal-close-x").click()
                     await page.wait_for_timeout(15)
@@ -193,7 +198,9 @@ async def run_e2e():
             else:
                 r["status"] = "FAIL"
 
-        print(f"\n[PASS] Todos os 114 peptídeos validados nos 3 viewports com cliques físicos e tecla Escape.")
+        pep_pass_check = sum(1 for r in execution_results["peptides"].values() if r["status"] == "PASS")
+        assert pep_pass_check == len(peptides), f"Falha E2E em peptídeos: apenas {pep_pass_check}/{len(peptides)} PASS"
+        print(f"\n[PASS] Todos os {len(peptides)} peptídeos validados nos 3 viewports com cliques físicos e tecla Escape ({pep_pass_check}/{len(peptides)}).")
 
         # 2. Test All 70 Studies Across Viewports & 20 Relationships
         for vp in viewports:
@@ -254,11 +261,15 @@ async def run_e2e():
                     # Close study modal: test Escape on tablet, close button otherwise
                     if vp_name == "tablet":
                         await page.keyboard.press("Escape")
-                        await page.wait_for_timeout(20)
-                        is_closed = not (await smodal.is_visible())
+                        try:
+                            await smodal.wait_for(state="hidden", timeout=1500)
+                            is_closed = True
+                        except Exception:
+                            is_closed = False
                         execution_results["studies"][sid]["escape_close"] = "PASS" if is_closed else "FAIL"
                         if not is_closed:
                             await page.locator("#study-modal-close-btn").click()
+                            await smodal.wait_for(state="hidden", timeout=1500)
                     else:
                         await page.locator("#study-modal-close-btn").click()
                         await page.wait_for_timeout(15)
@@ -352,11 +363,24 @@ async def run_e2e():
         "viewports_tested": ["Desktop (1440x900)", "Tablet (768x1024)", "Mobile (390x844)"]
     }
 
-    out_json = os.path.join(repo_root, "tests", "e2e_execution_results.json")
-    with open(out_json, "w", encoding="utf-8") as f:
-        json.dump(execution_results, f, ensure_ascii=False, indent=2)
-    print(f"\nSalvo resultados da execução real em: {out_json}")
-    print(f"Resumo da Execução: Peptídeos {pep_pass}/114 PASS | Estudos {stud_pass}/70 PASS | Relacionamentos {rel_pass}/20 PASS")
+    if os.environ.get("PEPTIPEDIA_WRITE_REPO_ARTIFACTS") == "1":
+        out_json = os.path.join(repo_root, "tests", "e2e_execution_results.json")
+        with open(out_json, "w", encoding="utf-8", newline="\n") as f:
+            json.dump(execution_results, f, ensure_ascii=False, indent=2)
+            f.write("\n")
+        print(f"\nSalvo resultados da execução real em: {out_json}")
+    else:
+        with tempfile.TemporaryDirectory(prefix="peptipedia_e2e_") as tmpdir:
+            out_dir = os.environ.get("PEPTIPEDIA_E2E_OUT_DIR") or tmpdir
+            out_json = os.path.join(out_dir, "e2e_execution_results.json")
+            with open(out_json, "w", encoding="utf-8", newline="\n") as f:
+                json.dump(execution_results, f, ensure_ascii=False, indent=2)
+                f.write("\n")
+            print(f"\nResultados E2E verificados em diretório isolado (git status preservado): {out_json}")
+    print(f"Resumo da Execução: Peptídeos {pep_pass}/{len(peptides)} PASS | Estudos {stud_pass}/{len(studies)} PASS | Relacionamentos {rel_pass}/20 PASS")
+    assert pep_pass == len(peptides), f"Esperado {len(peptides)}/{len(peptides)} peptídeos PASS, obtido {pep_pass}"
+    assert stud_pass == len(studies), f"Esperado {len(studies)}/{len(studies)} estudos PASS, obtido {stud_pass}"
+    assert rel_pass == 20, f"Esperado 20/20 relacionamentos PASS, obtido {rel_pass}"
 
 if __name__ == "__main__":
     asyncio.run(run_e2e())

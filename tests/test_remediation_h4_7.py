@@ -185,14 +185,16 @@ class TestRemediationH47(unittest.TestCase):
             else:
                 self.assertIn(p["stackId"], stack_ids)
 
-    # Dimension 11: Setmelanotide Evidence Sources
+    # Dimension 11: Setmelanotide Evidence Sources (updated H4.17 verified Lancet Diabetes Endocrinol PMIDs)
     def test_setmelanotide_evidence_sources(self):
         c_map = {c["id"]: c for c in self.compounds_store}
         setm = c_map["setmelanotide"]
         sources_str = json.dumps(setm.get("sources", []))
-        
+
         self.assertTrue("NDA 213793" in sources_str or "213793" in sources_str)
-        self.assertIn("33129759", sources_str)
+        self.assertIn("33137293", sources_str)
+        self.assertIn("36356613", sources_str)
+        self.assertNotIn("33129759", sources_str)
 
     # Dimension 12: DomainEngine Extensibility & Factory
     def test_domain_engine_extensibility_and_factory(self):

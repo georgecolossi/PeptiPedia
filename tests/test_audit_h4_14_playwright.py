@@ -10,16 +10,17 @@ import sys
 import os
 import asyncio
 import csv
+import tempfile
 from pathlib import Path
 from playwright.async_api import async_playwright
 
 # Descoberta dinâmica absoluta da raiz do repositório
 REPO_ROOT = Path(__file__).resolve().parent.parent
 PUBLIC_INDEX = REPO_ROOT / "public" / "index.html"
-ARTIFACTS_DIR = REPO_ROOT / "tests" / "artifacts"
-ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
-LOG_FILE = REPO_ROOT / "tests" / "h4_14_playwright_execution.log"
-CSV_REPORT = REPO_ROOT / "research" / "evidence" / "MATRIZ_PLAYWRIGHT_H4_14.csv"
+# H4.17 Frente E: por padrão escreve apenas em diretório temporário isolado, preservando artefatos versionados em git status.
+ARTIFACTS_DIR = None
+LOG_FILE = None
+CSV_REPORT = None
 
 # Global log buffer
 log_entries = []
@@ -740,15 +741,15 @@ async def run_audit():
         await neg_ctx.close()
         await browser.close()
 
-    # Gravação do log de execução
-    with open(LOG_FILE, "w", encoding="utf-8") as f:
+    # Gravação do log de execução (em diretório temporário por padrão)
+    with open(LOG_FILE, "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(log_entries) + "\n")
     log(f"Log salvo com sucesso em: {LOG_FILE}")
 
-    # Gravação da matriz CSV de resultados Playwright H4.14
+    # Gravação da matriz CSV de resultados Playwright H4.14 (padrão LF explícito)
     csv_fields = ["testId", "viewport", "component", "action", "expectedBehavior", "observedBehavior", "horizontalOverflow", "consoleErrors", "auditStatus"]
-    with open(CSV_REPORT, "w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=csv_fields, quoting=csv.QUOTE_ALL)
+    with open(CSV_REPORT, "w", encoding="utf-8", newline="\n") as f:
+        writer = csv.DictWriter(f, fieldnames=csv_fields, quoting=csv.QUOTE_ALL, lineterminator="\n")
         writer.writeheader()
         writer.writerows(ui_results)
     log(f"Matriz CSV salva com sucesso em: {CSV_REPORT}")
@@ -761,5 +762,24 @@ async def run_audit():
     if failed_tests > 0:
         sys.exit(1)
 
+
+async def _main_isolated():
+    global ARTIFACTS_DIR, LOG_FILE, CSV_REPORT
+    if os.environ.get("PEPTIPEDIA_WRITE_REPO_ARTIFACTS") == "1":
+        ARTIFACTS_DIR = REPO_ROOT / "tests" / "artifacts"
+        ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
+        LOG_FILE = REPO_ROOT / "tests" / "h4_14_playwright_execution.log"
+        CSV_REPORT = REPO_ROOT / "research" / "evidence" / "MATRIZ_PLAYWRIGHT_H4_14.csv"
+        await run_audit()
+    else:
+        with tempfile.TemporaryDirectory(prefix="peptipedia_h4_14_e2e_") as tmpdir:
+            base = Path(os.environ.get("PEPTIPEDIA_E2E_OUT_DIR") or tmpdir)
+            ARTIFACTS_DIR = base / "artifacts"
+            ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
+            LOG_FILE = base / "h4_14_playwright_execution.log"
+            CSV_REPORT = base / "MATRIZ_PLAYWRIGHT_H4_14.csv"
+            await run_audit()
+
+
 if __name__ == "__main__":
-    asyncio.run(run_audit())
+    asyncio.run(_main_isolated())

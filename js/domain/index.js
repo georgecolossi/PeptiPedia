@@ -154,13 +154,15 @@
           },
           unitConventions: c.unitConventions || {},
           sources: c.sources || [],
-          clinicalStudies: (c.sources || []).map(s => ({
-            title: s.title,
-            journal: s.journal || 'PubMed Reference',
-            year: s.year || '',
-            pmid: s.pmid,
-            url: s.url || (s.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${s.pmid}/` : '')
-          }))
+          clinicalStudies: (c.sources || [])
+            .filter(s => s && s.type !== 'reference' && (s.title || s.pmid))
+            .map(s => ({
+              title: s.title,
+              journal: s.journal || (s.type === 'label' ? 'Bula Regulatória Oficial' : 'PubMed Reference'),
+              year: s.year || '',
+              pmid: s.pmid || s.reference || 'Documento Oficial',
+              url: s.url || (s.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${s.pmid}/` : '')
+            }))
         };
       });
     }

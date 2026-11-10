@@ -31,7 +31,7 @@
         "unit": "mcg",
         "ratio": "50% (5 mg)",
         "isFixedRatio": true,
-        "source": "Curr Pharm Des 2020 (PMID 32241280)"
+        "source": "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)"
       },
       {
         "compoundId": "tb-500",
@@ -40,7 +40,7 @@
         "unit": "mg",
         "ratio": "50% (5 mg)",
         "isFixedRatio": true,
-        "source": "Ann N Y Acad Sci 2010 (PMID 20557467)"
+        "source": "TB-500 revisão isolada — Expert Opin Biol Ther 2012 (PMID 22074294)"
       }
     ],
     "compositionType": "commercial_fixed_blend",
@@ -69,9 +69,10 @@
     "stabilityEvidence": "Manter refrigerado a 2-8°C ao abrigo de luz.",
     "regulatoryStatus": "RUO / Unapproved Combination",
     "sources": [
-      "Curr Pharm Des 2020 (PMID 32241280)",
-      "Ann N Y Acad Sci 2010 (PMID 20557467)",
-      "https://peptidepedia.org/all-peptides"
+      "BPC-157 monoterapia pré-clínica — PubMed 2011 (PMID 21030672)",
+      "BPC-157 revisão sistemática — HSS J 2025 (PMID 40756949)",
+      "TB-500 revisão isolada — Expert Opin Biol Ther 2012 (PMID 22074294)",
+      "Nota epistêmica: fontes referentes apenas aos componentes isolados (0 ensaios clínicos combinados; blends comerciais sem ensaio ICH Q1A)."
     ],
     "auditConfirmationStatus": "h4_4_allegations_pending_independent_confirmation",
     "createdAt": "2026-10-28T00:00:00Z",
@@ -146,7 +147,7 @@
         "unit": "mg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Bull Exp Biol Med 2003 (PMID 12822002)"
+        "source": "Epitalon in vitro isolado — PubMed 2004 (PMID 15455129)"
       },
       {
         "compoundId": "ghk-cu",
@@ -155,7 +156,7 @@
         "unit": "mg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Oxid Med Cell Longev 2012 (PMID 23193437)"
+        "source": "GHK-Cu revisão isolada — Int J Mol Sci 2018 (PMID 29986520)"
       },
       {
         "compoundId": "thymosin-alpha-1",
@@ -164,7 +165,7 @@
         "unit": "mg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Expert Opin Biol Ther 2018 (PMID 29649919)"
+        "source": "Timosina Alfa-1 ETASS isolado — Crit Care 2013 (PMID 23327199)"
       }
     ],
     "compositionType": "independent_administration",
@@ -181,9 +182,9 @@
     "stabilityEvidence": "Manter refrigerado a 2-8°C ao abrigo de luz.",
     "regulatoryStatus": "RUO / Unapproved Combination",
     "sources": [
-      "Bull Exp Biol Med 2003 (PMID 12822002)",
-      "Oxid Med Cell Longev 2012 (PMID 23193437)",
-      "Expert Opin Biol Ther 2018 (PMID 29649919)"
+      "Epitalon in vitro isolado — PubMed 2004 (PMID 15455129)",
+      "GHK-Cu revisão isolada — Int J Mol Sci 2018 (PMID 29986520)",
+      "Timosina Alfa-1 estudo isolado — Crit Care 2013 (PMID 23327199)"
     ],
     "auditConfirmationStatus": "homologated_as_reported",
     "createdAt": "2026-10-28T00:00:00Z",
@@ -207,7 +208,7 @@
         "unit": "mcg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Bull Exp Biol Med 2008 (PMID 18528574)"
+        "source": "Semax pré-clínico BDNF isolado — PubMed 2006 (PMID 16996037)"
       },
       {
         "compoundId": "selank",
@@ -216,7 +217,7 @@
         "unit": "mcg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Zh Nevrol Psikhiatr 2010 (PMID 20689487)"
+        "source": "Selank clínico isolado — Zh Nevrol Psikhiatr Im S S Korsakova 2008 (PMID 18454096)"
       }
     ],
     "compositionType": "independent_administration",
@@ -233,8 +234,8 @@
     "stabilityEvidence": "Manter refrigerado a 2-8°C ao abrigo de luz.",
     "regulatoryStatus": "RUO / Unapproved Combination",
     "sources": [
-      "Bull Exp Biol Med 2008 (PMID 18528574)",
-      "Zh Nevrol Psikhiatr 2010 (PMID 20689487)"
+      "Semax pré-clínico BDNF isolado — PubMed 2006 (PMID 16996037)",
+      "Selank clínico isolado — Zh Nevrol Psikhiatr Im S S Korsakova 2008 (PMID 18454096)"
     ],
     "auditConfirmationStatus": "homologated_as_reported",
     "createdAt": "2026-10-28T00:00:00Z",
@@ -258,7 +259,7 @@
         "unit": "mg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Circ Heart Fail 2016 (PMID 27655866)"
+        "source": "SS-31 MMPOWER-3 isolado — PubMed 2023 (PMID 37268435)"
       },
       {
         "compoundId": "mots-c",
@@ -267,7 +268,7 @@
         "unit": "mg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Cell Metab 2015 (PMID 25738459)"
+        "source": "MOTS-c pré-clínico isolado — Cell Metab 2015 (PMID 25738459)"
       }
     ],
     "compositionType": "independent_administration",
@@ -284,8 +285,8 @@
     "stabilityEvidence": "Manter refrigerado a 2-8°C ao abrigo de luz.",
     "regulatoryStatus": "RUO / Unapproved Combination",
     "sources": [
-      "Circ Heart Fail 2016 (PMID 27655866)",
-      "Cell Metab 2015 (PMID 25738459)"
+      "SS-31/Elamipretida MMPOWER-3 isolado — PubMed 2023 (PMID 37268435)",
+      "MOTS-c pré-clínico isolado — Cell Metab 2015 (PMID 25738459)"
     ],
     "auditConfirmationStatus": "homologated_as_reported",
     "createdAt": "2026-10-28T00:00:00Z",
@@ -309,7 +310,7 @@
         "unit": "mcg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "J Physiol Pharmacol 2010 (PMID 21191146)"
+        "source": "BPC-157 revisão mecanismos isolado — Front Pharmacol 2021 (PMID 34267654)"
       },
       {
         "compoundId": "kpv",
@@ -318,7 +319,7 @@
         "unit": "mcg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Peptides 2005 (PMID 15792610)"
+        "source": "KPV pré-clínico isolado — Gastroenterology 2008 (PMID 18061177)"
       }
     ],
     "compositionType": "independent_administration",
@@ -335,8 +336,8 @@
     "stabilityEvidence": "Manter refrigerado a 2-8°C ao abrigo de luz.",
     "regulatoryStatus": "RUO / Unapproved Combination",
     "sources": [
-      "J Physiol Pharmacol 2010 (PMID 21191146)",
-      "Peptides 2005 (PMID 15792610)"
+      "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)",
+      "KPV colite murina isolado — Gastroenterology 2008 (PMID 18061177)"
     ],
     "auditConfirmationStatus": "homologated_as_reported",
     "createdAt": "2026-10-28T00:00:00Z",
@@ -360,7 +361,7 @@
         "unit": "mcg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Eur Neurol 1984 (PMID 6705820)"
+        "source": "DSIP clínico insônia isolado — Eur Neurol 1984 (PMID 6391925)"
       },
       {
         "compoundId": "sermorelin",
@@ -369,7 +370,7 @@
         "unit": "mcg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Growth Horm IGF Res 2006 (PMID 16843020)"
+        "source": "Sermorelin clínico isolado — J Clin Endocrinol Metab 1997 (PMID 9141536)"
       },
       {
         "compoundId": "ipamorelin",
@@ -378,7 +379,7 @@
         "unit": "mcg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Eur J Endocrinol 1998 (PMID 9849822)"
+        "source": "Ipamorelin seletividade isolado — Eur J Endocrinol 1998 (PMID 9849822)"
       }
     ],
     "compositionType": "independent_administration",
@@ -395,8 +396,9 @@
     "stabilityEvidence": "Manter refrigerado a 2-8°C ao abrigo de luz.",
     "regulatoryStatus": "RUO / Unapproved Combination",
     "sources": [
-      "Eur Neurol 1984 (PMID 6705820)",
-      "Growth Horm IGF Res 2006 (PMID 16843020)"
+      "DSIP clínico insônia isolado — Eur Neurol 1984 (PMID 6391925)",
+      "GHRH(1-29)/Sermorelin clínico isolado — J Clin Endocrinol Metab 1997 (PMID 9141536)",
+      "Ipamorelin seletividade GH isolado — Eur J Endocrinol 1998 (PMID 9849822)"
     ],
     "auditConfirmationStatus": "homologated_as_reported",
     "createdAt": "2026-10-28T00:00:00Z",
@@ -420,7 +422,7 @@
         "unit": "mcg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Bull Exp Biol Med 2008 (PMID 18528574)"
+        "source": "Semax pré-clínico BDNF isolado — PubMed 2006 (PMID 16996037)"
       },
       {
         "compoundId": "cerebrolysin",
@@ -429,7 +431,7 @@
         "unit": "mL",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Cochrane Database Syst Rev 2020 (CD007026)"
+        "source": "Cerebrolysin CARS isolado — Stroke 2016 (PMID 26564102)"
       }
     ],
     "compositionType": "independent_administration",
@@ -446,8 +448,9 @@
     "stabilityEvidence": "Manter refrigerado a 2-8°C ao abrigo de luz.",
     "regulatoryStatus": "RUO / Unapproved Combination",
     "sources": [
-      "Cochrane Database Syst Rev 2020 (CD007026)",
-      "Stroke 2016 (PMID 27233792)"
+      "Semax AVC clínico isolado — Zh Nevrol Psikhiatr Im S S Korsakova 2018 (PMID 29798983)",
+      "Cerebrolysin CARS clínico isolado — Stroke 2016 (PMID 26564102)",
+      "Cerebrolysin revisão Cochrane 2023 — Cochrane Database Syst Rev 2023 (PMID 37818733)"
     ],
     "auditConfirmationStatus": "homologated_as_reported",
     "createdAt": "2026-10-28T00:00:00Z",
@@ -462,7 +465,7 @@
     "category": "Metabolismo & Perda de Peso",
     "categoryId": "general",
     "description": "Combinação de duplo agonista incretínico (GLP-1/GIP) com análogo de amilina de ação prolongada para perda de peso acentuada e controle glicêmico.",
-    "synergyRationale": "Tirzepatide estimula saciedade e sensibilidade insulínica via GLP-1/GIP; Cagrilintide atua em receptores centrais de amilina na área postrema, desacelerando o esvaziamento gástrico por via complementar.",
+    "synergyRationale": "Tirzepatida atua como co-agonista GIP/GLP-1 (SURMOUNT-1, PMID 35658024) e cagrilintida como análogo de amilina (Fase 2 monoterapia NCT03856047, PMID 34798060). IMPORTANTE: inexistem ensaios clínicos randomizados da combinação específica tirzepatida + cagrilintida; os ensaios combinados publicados (Fase 2 PMID 37364590; REDEFINE 1/2 PMID 40544433/40544432) avaliaram exclusivamente semaglutida + cagrilintida (CagriSema).",
     "components": [
       {
         "compoundId": "tirzepatide",
@@ -471,7 +474,7 @@
         "unit": "mg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "N Engl J Med 2022 (PMID 35658002)"
+        "source": "Tirzepatide SURMOUNT-1 isolado — PubMed 2022 (PMID 35658024)"
       },
       {
         "compoundId": "cagrilintide",
@@ -480,7 +483,7 @@
         "unit": "mg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Lancet 2021 (PMID 34480838)"
+        "source": "Cagrilintide Fase 2 monoterapia — Lancet 2021 (PMID 34798060)"
       }
     ],
     "compositionType": "independent_administration",
@@ -497,8 +500,9 @@
     "stabilityEvidence": "Manter refrigerado a 2-8°C ao abrigo de luz.",
     "regulatoryStatus": "RUO / Unapproved Combination",
     "sources": [
-      "N Engl J Med 2022 (PMID 35658002)",
-      "Lancet 2021 (PMID 34480838)"
+      "Tirzepatide SURMOUNT-1 monoterapia — PubMed 2022 (PMID 35658024)",
+      "Cagrilintide Fase 2 monoterapia NCT03856047 — Lancet 2021 (PMID 34798060)",
+      "Referência comparativa CagriSema Fase 2 semaglutida+cagrilintida — Lancet 2023 (PMID 37364590)"
     ],
     "auditConfirmationStatus": "homologated_as_reported",
     "createdAt": "2026-10-28T00:00:00Z",
@@ -522,7 +526,7 @@
         "unit": "mg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Front Immunol 2020 (PMID 32582155)"
+        "source": "Timosina Alfa-1 ETASS isolado — Crit Care 2013 (PMID 23327199)"
       },
       {
         "compoundId": "ll-37",
@@ -531,7 +535,7 @@
         "unit": "mcg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Antimicrob Agents Chemother 2014 (PMID 24982074)"
+        "source": "LL-37 revisão isolada — PubMed 2012 (PMID 23246832)"
       }
     ],
     "compositionType": "independent_administration",
@@ -548,8 +552,8 @@
     "stabilityEvidence": "Manter refrigerado a 2-8°C ao abrigo de luz.",
     "regulatoryStatus": "RUO / Unapproved Combination",
     "sources": [
-      "Front Immunol 2020 (PMID 32582155)",
-      "Antimicrob Agents Chemother 2014 (PMID 24982074)"
+      "Timosina Alfa-1 ETASS isolado — Crit Care 2013 (PMID 23327199)",
+      "LL-37 revisão isolada — PubMed 2012 (PMID 23246832)"
     ],
     "auditConfirmationStatus": "homologated_as_reported",
     "createdAt": "2026-10-28T00:00:00Z",
@@ -573,7 +577,7 @@
         "unit": "mcg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Endocr Rev 2009 (PMID 19602534)"
+        "source": "IGF-1 LR3 experimental isolado — J Neurobiol 1993 (PMID 8301266)"
       },
       {
         "compoundId": "bpc-157",
@@ -582,7 +586,7 @@
         "unit": "mcg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Curr Pharm Des 2020 (PMID 32241280)"
+        "source": "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)"
       }
     ],
     "compositionType": "independent_administration",
@@ -599,7 +603,8 @@
     "stabilityEvidence": "Manter refrigerado a 2-8°C ao abrigo de luz.",
     "regulatoryStatus": "RUO / Unapproved Combination",
     "sources": [
-      "Endocr Rev 2009 (PMID 19602534)",
+      "IGF-1 LR3 experimental isolado — J Neurobiol 1993 (PMID 8301266)",
+      "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)",
       "WADA Prohibited List Class S2"
     ],
     "auditConfirmationStatus": "homologated_as_reported",
@@ -624,7 +629,7 @@
         "unit": "mg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Oxid Med Cell Longev 2012 (PMID 23193437)"
+        "source": "GHK-Cu revisão isolada — Int J Mol Sci 2018 (PMID 29986520)"
       },
       {
         "compoundId": "bpc-157",
@@ -633,7 +638,7 @@
         "unit": "mcg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Burns 2003 (PMID 12788506)"
+        "source": "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)"
       }
     ],
     "compositionType": "independent_administration",
@@ -650,8 +655,9 @@
     "stabilityEvidence": "Manter refrigerado a 2-8°C ao abrigo de luz.",
     "regulatoryStatus": "RUO / Unapproved Combination",
     "sources": [
-      "Oxid Med Cell Longev 2012 (PMID 23193437)",
-      "Burns 2003 (PMID 12788506)"
+      "GHK-Cu revisão isolada — Int J Mol Sci 2018 (PMID 29986520)",
+      "GHK-Cu tópico pós-laser — Arch Facial Plast Surg 2006 (PMID 16847171)",
+      "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)"
     ],
     "auditConfirmationStatus": "homologated_as_reported",
     "createdAt": "2026-10-28T00:00:00Z",
@@ -675,7 +681,7 @@
         "unit": "%",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Int J Cosmet Sci 2002 (PMID 18498523)"
+        "source": "Argireline tópico isolado — PubMed 2002 (PMID 18498523)"
       },
       {
         "compoundId": "snap-8",
@@ -684,7 +690,7 @@
         "unit": "%",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "J Cosmet Laser Ther 2013 (PMID 23441963)"
+        "source": "Sem ensaios clínicos indexados no PubMed (lacuna documentada)"
       }
     ],
     "compositionType": "topical_serum",
@@ -701,8 +707,8 @@
     "stabilityEvidence": "Manter refrigerado a 2-8°C ao abrigo de luz.",
     "regulatoryStatus": "RUO / Unapproved Combination",
     "sources": [
-      "Int J Cosmet Sci 2002 (PMID 18498523)",
-      "J Cosmet Laser Ther 2013 (PMID 23441963)"
+      "Argireline tópico isolado — PubMed 2002 (PMID 18498523)",
+      "Argireline analítico tópico isolado — Chem Biodivers 2021 (PMID 33482052)"
     ],
     "auditConfirmationStatus": "homologated_as_reported",
     "createdAt": "2026-10-28T00:00:00Z",
@@ -726,7 +732,7 @@
         "unit": "mcg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Gastroenterology 2015 (PMID 26071922)"
+        "source": "Larazotide Fase 2b celíaca isolado — Gastroenterology 2015 (PMID 25683116)"
       },
       {
         "compoundId": "bpc-157-arginate",
@@ -735,7 +741,7 @@
         "unit": "mcg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "J Physiol Pharmacol 2010 (PMID 21191146)"
+        "source": "BPC-157 revisão mecanismos isolado — Front Pharmacol 2021 (PMID 34267654)"
       },
       {
         "compoundId": "kpv",
@@ -744,7 +750,7 @@
         "unit": "mcg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Peptides 2005 (PMID 15792610)"
+        "source": "KPV pré-clínico isolado — Gastroenterology 2008 (PMID 18061177)"
       }
     ],
     "compositionType": "independent_administration",
@@ -761,8 +767,9 @@
     "stabilityEvidence": "Manter refrigerado a 2-8°C ao abrigo de luz.",
     "regulatoryStatus": "RUO / Unapproved Combination",
     "sources": [
-      "Gastroenterology 2015 (PMID 26071922)",
-      "J Physiol Pharmacol 2010 (PMID 21191146)"
+      "Larazotide doença celíaca isolado — Gastroenterology 2015 (PMID 25683116)",
+      "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)",
+      "KPV pré-clínico isolado — Gastroenterology 2008 (PMID 18061177)"
     ],
     "auditConfirmationStatus": "homologated_as_reported",
     "createdAt": "2026-10-28T00:00:00Z",
@@ -786,7 +793,7 @@
         "unit": "mg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Cell Metab 2015 (PMID 25738459)"
+        "source": "MOTS-c pré-clínico isolado — Cell Metab 2015 (PMID 25738459)"
       },
       {
         "compoundId": "ss-31",
@@ -795,7 +802,7 @@
         "unit": "mg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Circ Heart Fail 2016 (PMID 27655866)"
+        "source": "SS-31 MMPOWER-3 isolado — PubMed 2023 (PMID 37268435)"
       },
       {
         "compoundId": "5-amino-1mq",
@@ -804,7 +811,7 @@
         "unit": "mg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Biochem Pharmacol 2018 (PMID 29474868)"
+        "source": "5-Amino-1MQ pré-clínico isolado — Biochem Pharmacol 2018 (PMID 29155147)"
       }
     ],
     "compositionType": "independent_administration",
@@ -821,8 +828,9 @@
     "stabilityEvidence": "Manter refrigerado a 2-8°C ao abrigo de luz.",
     "regulatoryStatus": "RUO / Unapproved Combination",
     "sources": [
-      "Biochem Pharmacol 2018 (PMID 29474868)",
-      "Cell Metab 2015 (PMID 25738459)"
+      "MOTS-c pré-clínico isolado — Cell Metab 2015 (PMID 25738459)",
+      "SS-31/Elamipretida coração isolado — PubMed 2017 (PMID 29217757)",
+      "5-Amino-1MQ pré-clínico isolado — Biochem Pharmacol 2018 (PMID 29155147)"
     ],
     "auditConfirmationStatus": "homologated_as_reported",
     "createdAt": "2026-10-28T00:00:00Z",
@@ -846,7 +854,7 @@
         "unit": "mg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "JAMA Netw Open 2019 (PMID 31580407); Bula FDA Vyleesi"
+        "source": "PT-141 RECONNECT isolado — Obstet Gynecol 2019 (PMID 31599840)"
       },
       {
         "compoundId": "kisspeptin",
@@ -855,7 +863,7 @@
         "unit": "mcg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "J Clin Invest 2018 (PMID 29617277)"
+        "source": "Kisspeptin-10 homens isolado — J Clin Endocrinol Metab 2011 (PMID 21632807)"
       }
     ],
     "compositionType": "independent_administration",
@@ -872,8 +880,9 @@
     "stabilityEvidence": "Manter refrigerado a 2-8°C ao abrigo de luz.",
     "regulatoryStatus": "RUO / Unapproved Combination",
     "sources": [
-      "JAMA Netw Open 2019 (PMID 31580407)",
-      "Bula FDA Vyleesi (NDA 210595)"
+      "PT-141/Bremelanotida RECONNECT isolado — Obstet Gynecol 2019 (PMID 31599840)",
+      "Kisspeptin-10 homens isolado — J Clin Endocrinol Metab 2011 (PMID 21632807)",
+      "Bula FDA Vyleesi (NDA 210595) — PT-141 isolado"
     ],
     "auditConfirmationStatus": "homologated_as_reported",
     "createdAt": "2026-10-28T00:00:00Z",
@@ -897,7 +906,7 @@
         "unit": "mg",
         "ratio": "71,4% (50 mg)",
         "isFixedRatio": true,
-        "source": "Oxid Med Cell Longev 2012 (PMID 23193437)"
+        "source": "GHK-Cu revisão isolada — Int J Mol Sci 2018 (PMID 29986520)"
       },
       {
         "compoundId": "bpc-157",
@@ -906,7 +915,7 @@
         "unit": "mcg",
         "ratio": "14,3% (10 mg)",
         "isFixedRatio": true,
-        "source": "Curr Pharm Des 2020 (PMID 32241280)"
+        "source": "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)"
       },
       {
         "compoundId": "tb-500",
@@ -915,7 +924,7 @@
         "unit": "mg",
         "ratio": "14,3% (10 mg)",
         "isFixedRatio": true,
-        "source": "Ann N Y Acad Sci 2010 (PMID 20557467)"
+        "source": "TB-500 revisão isolada — Expert Opin Biol Ther 2012 (PMID 22074294)"
       }
     ],
     "compositionType": "commercial_fixed_blend",
@@ -940,15 +949,16 @@
     "documentationGrade": "Grau D",
     "riskLevel": "moderate",
     "knownInteractions": [
-      "Dor local intensa pelo cobre. Conflito cinético em blends comerciais prontos. Cicatrizes fibróticas antigas maduras não respondem de forma homogênea."
+      "Dor local intensa pelo cobre. Conflito cinético em blends comerciais prontos. Cicatrizes fibróticas antigas maduras não respondem de forma homogênea. Hipótese teórica de clivagem oxidativa por Cu2+ sem ensaios experimentais HPLC/MS ou estabilidade ICH Q1A para a mistura GLOW."
     ],
     "compatibilityEvidence": "Risco moderado de clivagem catalítica de ligações peptídicas por íons Cu2+ livres sob luz e calor.",
     "stabilityEvidence": "Manter refrigerado a 2-8°C ao abrigo de luz.",
     "regulatoryStatus": "RUO / Unapproved Combination",
     "sources": [
-      "Oxid Med Cell Longev 2012 (PMID 23193437)",
-      "Curr Pharm Des 2020 (PMID 32241280)",
-      "https://peptidepedia.org/all-peptides"
+      "GHK-Cu revisão isolada — sem ensaio HPLC/MS da mistura tríplice GLOW — Int J Mol Sci 2018 (PMID 29986520)",
+      "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)",
+      "TB-500 revisão isolada — Expert Opin Biol Ther 2012 (PMID 22074294)",
+      "Nota epistêmica: fontes referentes apenas aos componentes isolados (0 ensaios clínicos combinados; blends comerciais sem ensaio ICH Q1A)."
     ],
     "auditConfirmationStatus": "h4_4_allegations_pending_independent_confirmation",
     "createdAt": "2026-10-28T00:00:00Z",
@@ -972,7 +982,7 @@
         "unit": "mg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "N Engl J Med 2023 (PMID 37366315)"
+        "source": "Retatrutida Fase 2 NEJM 2023 isolado — PubMed 2023 (PMID 37366315)"
       },
       {
         "compoundId": "mazdutide",
@@ -981,7 +991,7 @@
         "unit": "mg",
         "ratio": "Variável",
         "isFixedRatio": false,
-        "source": "Diabetes Care 2024 (PMID 38198592)"
+        "source": "Mazdutida Fase 2 Nat Commun 2023 isolado — Nat Commun 2023 (PMID 38092790)"
       }
     ],
     "compositionType": "independent_administration",
@@ -992,20 +1002,21 @@
     "documentationGrade": "Grau D",
     "riskLevel": "contraindicated",
     "knownInteractions": [
-      "RISCO CARDIOVASCULAR SEVERO: A estimulação redundante do receptor de glucagon pode provocar taquicardia sinusal excessiva, arritmias ventriculares, náuseas severas e desidratação crítica."
+      "RISCO CARDIOVASCULAR E AUTONÔMICO ELEVADO: A sobreposição redundante de agonismo do receptor de glucagon pode induzir taquicardia sinusal dose-dependente acentuada (observada em monoterapia com retatrutida no Fase 2, NEJM 2023 PMID 37366315), desconforto cardiovascular autonômico, náuseas graves e desidratação. Risco de arritmia ventricular não estabelecido diretamente por ensaios desta combinação específica."
     ],
     "compatibilityEvidence": "Frascos separados recomendados",
     "stabilityEvidence": "Manter refrigerado a 2-8°C ao abrigo de luz.",
     "regulatoryStatus": "RUO / Unapproved Combination",
     "sources": [
-      "N Engl J Med 2023 (PMID 37366315)",
-      "Diabetes Care 2024 (PMID 38198592)",
-      "Alertas de Farmacovigilância FDA/EMA"
+      "Retatrutida Fase 2 NEJM 2023 monoterapia (taquicardia sinusal dose-dependente) — PubMed 2023 (PMID 37366315)",
+      "Mazdutida Fase 2 Nat Commun 2023 monoterapia — Nat Commun 2023 (PMID 38092790)",
+      "Mazdutida Fase 3 GLORY-1 NEJM 2025 monoterapia — N Engl J Med 2025 (PMID 40421736)",
+      "Alertas clínicos de taquicardia sinusal e intolerância GI de classe incretínica"
     ],
     "auditConfirmationStatus": "contraindicated_cardiovascular_risk_pending_direct_fatal_arrhythmia_trial",
     "createdAt": "2026-10-28T00:00:00Z",
     "updatedAt": "2026-11-08T19:00:00Z",
-    "safetyAlert": "Alto risco de taquicardia sinusal excessiva, sobrecarga cardiovascular autonômica e intolerância gastrointestinal severa decorrente de superestimulação redundante de receptores GLP-1/Glucagon."
+    "safetyAlert": "Alto risco de taquicardia sinusal excessiva, sobrecarga autonômica e intolerância gastrointestinal severa decorrente de superestimulação redundante GLP-1/Glucagon (PMID 37366315 / PMID 38092790)."
   },
   {
     "id": "klow-barrier-repair-stack",
@@ -1024,28 +1035,32 @@
         "role": "remodeling",
         "amount": "2 mg",
         "unit": "mg",
-        "ratio": "62,5% (50 mg)"
+        "ratio": "62,5% (50 mg)",
+        "source": "GHK-Cu revisão isolada — Int J Mol Sci 2018 (PMID 29986520)"
       },
       {
         "compoundId": "bpc-157",
         "role": "angiogenic",
         "amount": "250 mcg",
         "unit": "mcg",
-        "ratio": "12,5% (10 mg)"
+        "ratio": "12,5% (10 mg)",
+        "source": "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)"
       },
       {
         "compoundId": "tb-500",
         "role": "cell_migration",
         "amount": "500 mcg",
         "unit": "mcg",
-        "ratio": "12,5% (10 mg)"
+        "ratio": "12,5% (10 mg)",
+        "source": "TB-500 revisão isolada — Expert Opin Biol Ther 2012 (PMID 22074294)"
       },
       {
         "compoundId": "kpv",
         "role": "anti_inflammatory",
         "amount": "250 mcg",
         "unit": "mcg",
-        "ratio": "12,5% (10 mg)"
+        "ratio": "12,5% (10 mg)",
+        "source": "KPV pré-clínico isolado — Gastroenterology 2008 (PMID 18061177)"
       }
     ],
     "commercialFormulations": {
@@ -1072,12 +1087,11 @@
       "Prazo operacional de descarte pós-perfuração (in-use time) de até 28 dias aplicável a frascos multidose com conservante (regido por diretrizes CDC Safe Injection Practices, USP <797> Seção 15.2 para recipientes comercializados convencionalmente e Seção 16.1 para CSPs manipulados, salvo especificação contrária do fabricante), o qual não constitui Beyond-Use Date (BUD) da preparação manipulada (cuja Categoria 3 sob USP <797> Seção 14 e Tabela 14 prevê limites máximos de BUD de 60/90/120 dias para processamento asséptico e 90/120/180 dias para esterilização terminal, condicionados a testes de esterilidade e sem dispensar estabilidade físico-química), não decorre do ensaio de eficácia de conservantes USP <51>, não devendo ser confundido com estabilidade físico-química ou integridade molecular da mistura peptídica (a qual carece de ensaios analíticos publicados sob diretrizes ICH Q1A). No Brasil, preparações estéreis seguem regulamentação da ANVISA (RDC 67/2007, Anexo IV: Boas Práticas de Manipulação de Preparações Estéreis)."
     ],
     "sources": [
-      "Int J Mol Sci 2018 (PMID 29986520)",
-      "Curr Pharm Des 2020 (PMID 32241280)",
-      "Expert Opin Biol Ther 2012 (PMID 22074294)",
-      "Peptides 2005 (PMID 15792610)",
-      "https://peptidepedia.org/all-peptides",
-      "https://www.arcana-labs.app/peptideos"
+      "GHK-Cu revisão isolada — combinação KLOW sem ensaio ICH Q1A ou clínico — Int J Mol Sci 2018 (PMID 29986520)",
+      "BPC-157 revisão sistemática 2025 — HSS J 2025 (PMID 40756949)",
+      "TB-500 revisão isolada — Expert Opin Biol Ther 2012 (PMID 22074294)",
+      "KPV colite murina isolado — Gastroenterology 2008 (PMID 18061177)",
+      "Nota epistêmica: fontes referentes apenas aos componentes isolados (0 ensaios clínicos combinados; blends comerciais sem ensaio ICH Q1A)."
     ],
     "createdAt": "2026-11-08T22:00:00Z",
     "updatedAt": "2026-11-08T22:00:00Z",

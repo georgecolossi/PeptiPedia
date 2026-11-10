@@ -92,8 +92,10 @@ class TestAuditH48(unittest.TestCase):
         setm = self.c_map.get("setmelanotide")
         sources_str = json.dumps(setm.get("sources", []))
         self.assertTrue("NDA 213793" in sources_str or "213793" in sources_str)
-        self.assertIn("33129759", sources_str)
-        self.assertIn("37889758", sources_str)
+        self.assertIn("33137293", sources_str)
+        self.assertIn("36356613", sources_str)
+        self.assertNotIn("33129759", sources_str)
+        self.assertNotIn("37889758", sources_str)
 
     def test_h4_8_zero_cosmetic_boilerplate(self):
         cosmetic_markers = [

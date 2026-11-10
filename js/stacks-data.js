@@ -39,7 +39,7 @@ const RESEARCH_STACKS = [
         "frequency": "1 a 2x ao dia",
         "timing": "Manhã / Noite",
         "evidenceCategory": "preclinical_empirical",
-        "sourceReference": "Curr Pharm Des 2020 (PMID 32241280)"
+        "sourceReference": "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)"
       },
       {
         "peptideId": "tb-500",
@@ -51,7 +51,7 @@ const RESEARCH_STACKS = [
         "frequency": "2x por semana",
         "timing": "Dias alternados em bolus",
         "evidenceCategory": "clinical_phase2_isolated",
-        "sourceReference": "Ann N Y Acad Sci 2010 (PMID 20557467)"
+        "sourceReference": "TB-500 revisão isolada — Expert Opin Biol Ther 2012 (PMID 22074294)"
       }
     ],
     "blendDetails": {
@@ -68,9 +68,10 @@ const RESEARCH_STACKS = [
       "physicochemicalRisk": "Compatibilidade satisfatória em pH neutro (6,0-7,2) refrigerado a 2-8°C em BAC."
     },
     "primarySources": [
-      "Curr Pharm Des 2020 (PMID 32241280)",
-      "Ann N Y Acad Sci 2010 (PMID 20557467)",
-      "https://peptidepedia.org/all-peptides"
+      "BPC-157 monoterapia pré-clínica — PubMed 2011 (PMID 21030672)",
+      "BPC-157 revisão sistemática — HSS J 2025 (PMID 40756949)",
+      "TB-500 revisão isolada — Expert Opin Biol Ther 2012 (PMID 22074294)",
+      "Monoterapia isolada nos componentes — 0 ensaios clínicos ou ICH Q1A da mistura"
     ],
     "auditDate": "2026-11-08"
   },
@@ -164,7 +165,7 @@ const RESEARCH_STACKS = [
         "frequency": "1x ao dia (noite)",
         "timing": "Antes de dormir",
         "evidenceCategory": "preclinical_and_pilot_russian",
-        "sourceReference": "Bull Exp Biol Med 2003 (PMID 12822002)"
+        "sourceReference": "Epitalon in vitro isolado — PubMed 2004 (PMID 15455129)"
       },
       {
         "peptideId": "ghk-cu",
@@ -176,7 +177,7 @@ const RESEARCH_STACKS = [
         "frequency": "1x ao dia",
         "timing": "Manhã",
         "evidenceCategory": "preclinical_and_topical_clinical",
-        "sourceReference": "Oxid Med Cell Longev 2012 (PMID 23193437)"
+        "sourceReference": "GHK-Cu revisão isolada — Int J Mol Sci 2018 (PMID 29986520)"
       },
       {
         "peptideId": "thymosin-alpha-1",
@@ -188,13 +189,13 @@ const RESEARCH_STACKS = [
         "frequency": "2x por semana",
         "timing": "Manhã",
         "evidenceCategory": "approved_drug_international",
-        "sourceReference": "Expert Opin Biol Ther 2018 (PMID 29649919)"
+        "sourceReference": "Timosina Alfa-1 ETASS isolado — Crit Care 2013 (PMID 23327199)"
       }
     ],
     "primarySources": [
-      "Bull Exp Biol Med 2003 (PMID 12822002)",
-      "Oxid Med Cell Longev 2012 (PMID 23193437)",
-      "Expert Opin Biol Ther 2018 (PMID 29649919)"
+      "Epitalon in vitro isolado — PubMed 2004 (PMID 15455129)",
+      "GHK-Cu revisão isolada — Int J Mol Sci 2018 (PMID 29986520)",
+      "Timosina Alfa-1 estudo isolado — Crit Care 2013 (PMID 23327199)"
     ],
     "auditDate": "2026-11-08"
   },
@@ -232,7 +233,7 @@ const RESEARCH_STACKS = [
         "frequency": "1 a 2x ao dia",
         "timing": "Manhã / Tarde",
         "evidenceCategory": "approved_drug_russia",
-        "sourceReference": "Bull Exp Biol Med 2008 (PMID 18528574)"
+        "sourceReference": "Semax pré-clínico BDNF isolado — PubMed 2006 (PMID 16996037)"
       },
       {
         "peptideId": "selank",
@@ -244,12 +245,12 @@ const RESEARCH_STACKS = [
         "frequency": "1 a 2x ao dia",
         "timing": "Tarde / Noite",
         "evidenceCategory": "approved_drug_russia",
-        "sourceReference": "Zh Nevrol Psikhiatr 2010 (PMID 20689487)"
+        "sourceReference": "Selank clínico isolado — Zh Nevrol Psikhiatr Im S S Korsakova 2008 (PMID 18454096)"
       }
     ],
     "primarySources": [
-      "Bull Exp Biol Med 2008 (PMID 18528574)",
-      "Zh Nevrol Psikhiatr 2010 (PMID 20689487)"
+      "Semax pré-clínico BDNF isolado — PubMed 2006 (PMID 16996037)",
+      "Selank clínico isolado — Zh Nevrol Psikhiatr Im S S Korsakova 2008 (PMID 18454096)"
     ],
     "auditDate": "2026-11-08"
   },
@@ -287,7 +288,7 @@ const RESEARCH_STACKS = [
         "frequency": "1x ao dia",
         "timing": "Manhã",
         "evidenceCategory": "clinical_phase2_isolated",
-        "sourceReference": "Circ Heart Fail 2016 (PMID 27655866)"
+        "sourceReference": "SS-31 MMPOWER-3 isolado — PubMed 2023 (PMID 37268435)"
       },
       {
         "peptideId": "mots-c",
@@ -299,12 +300,12 @@ const RESEARCH_STACKS = [
         "frequency": "2 a 3x por semana",
         "timing": "Manhã",
         "evidenceCategory": "preclinical_and_phase1",
-        "sourceReference": "Cell Metab 2015 (PMID 25738459)"
+        "sourceReference": "MOTS-c pré-clínico isolado — Cell Metab 2015 (PMID 25738459)"
       }
     ],
     "primarySources": [
-      "Circ Heart Fail 2016 (PMID 27655866)",
-      "Cell Metab 2015 (PMID 25738459)"
+      "SS-31/Elamipretida MMPOWER-3 isolado — PubMed 2023 (PMID 37268435)",
+      "MOTS-c pré-clínico isolado — Cell Metab 2015 (PMID 25738459)"
     ],
     "auditDate": "2026-11-08"
   },
@@ -342,7 +343,7 @@ const RESEARCH_STACKS = [
         "frequency": "2x ao dia",
         "timing": "Antes das refeições em jejum",
         "evidenceCategory": "preclinical_empirical",
-        "sourceReference": "J Physiol Pharmacol 2010 (PMID 21191146)"
+        "sourceReference": "BPC-157 revisão mecanismos isolado — Front Pharmacol 2021 (PMID 34267654)"
       },
       {
         "peptideId": "kpv",
@@ -354,12 +355,12 @@ const RESEARCH_STACKS = [
         "frequency": "2x ao dia",
         "timing": "Antes das refeições",
         "evidenceCategory": "preclinical_empirical",
-        "sourceReference": "Peptides 2005 (PMID 15792610)"
+        "sourceReference": "KPV pré-clínico isolado — Gastroenterology 2008 (PMID 18061177)"
       }
     ],
     "primarySources": [
-      "J Physiol Pharmacol 2010 (PMID 21191146)",
-      "Peptides 2005 (PMID 15792610)"
+      "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)",
+      "KPV colite murina isolado — Gastroenterology 2008 (PMID 18061177)"
     ],
     "auditDate": "2026-11-08"
   },
@@ -398,7 +399,7 @@ const RESEARCH_STACKS = [
         "frequency": "1x ao dia (noite)",
         "timing": "Antes de dormir",
         "evidenceCategory": "clinical_pilot_historical",
-        "sourceReference": "Eur Neurol 1984 (PMID 6705820)"
+        "sourceReference": "DSIP clínico insônia isolado — Eur Neurol 1984 (PMID 6391925)"
       },
       {
         "peptideId": "sermorelin",
@@ -410,7 +411,7 @@ const RESEARCH_STACKS = [
         "frequency": "1x ao dia (noite)",
         "timing": "Antes de dormir",
         "evidenceCategory": "approved_drug_historical_fda",
-        "sourceReference": "Growth Horm IGF Res 2006 (PMID 16843020)"
+        "sourceReference": "Sermorelin clínico isolado — J Clin Endocrinol Metab 1997 (PMID 9141536)"
       },
       {
         "peptideId": "ipamorelin",
@@ -422,12 +423,13 @@ const RESEARCH_STACKS = [
         "frequency": "1x ao dia (noite)",
         "timing": "Antes de dormir",
         "evidenceCategory": "clinical_phase2_isolated",
-        "sourceReference": "Eur J Endocrinol 1998 (PMID 9849822)"
+        "sourceReference": "Ipamorelin seletividade isolado — Eur J Endocrinol 1998 (PMID 9849822)"
       }
     ],
     "primarySources": [
-      "Eur Neurol 1984 (PMID 6705820)",
-      "Growth Horm IGF Res 2006 (PMID 16843020)"
+      "DSIP clínico insônia isolado — Eur Neurol 1984 (PMID 6391925)",
+      "GHRH(1-29)/Sermorelin clínico isolado — J Clin Endocrinol Metab 1997 (PMID 9141536)",
+      "Ipamorelin seletividade GH isolado — Eur J Endocrinol 1998 (PMID 9849822)"
     ],
     "auditDate": "2026-11-08"
   },
@@ -465,7 +467,7 @@ const RESEARCH_STACKS = [
         "frequency": "1x ao dia",
         "timing": "Manhã",
         "evidenceCategory": "approved_drug_russia",
-        "sourceReference": "Bull Exp Biol Med 2008 (PMID 18528574)"
+        "sourceReference": "Semax pré-clínico BDNF isolado — PubMed 2006 (PMID 16996037)"
       },
       {
         "peptideId": "cerebrolysin",
@@ -477,12 +479,13 @@ const RESEARCH_STACKS = [
         "frequency": "1x ao dia",
         "timing": "Manhã ou tarde (parenteral estrita)",
         "evidenceCategory": "clinical_multicenter_approved",
-        "sourceReference": "Cochrane Database Syst Rev 2020 (CD007026)"
+        "sourceReference": "Cerebrolysin CARS isolado — Stroke 2016 (PMID 26564102)"
       }
     ],
     "primarySources": [
-      "Cochrane Database Syst Rev 2020 (CD007026)",
-      "Stroke 2016 (PMID 27233792)"
+      "Semax AVC clínico isolado — Zh Nevrol Psikhiatr Im S S Korsakova 2018 (PMID 29798983)",
+      "Cerebrolysin CARS clínico isolado — Stroke 2016 (PMID 26564102)",
+      "Cerebrolysin revisão Cochrane 2023 — Cochrane Database Syst Rev 2023 (PMID 37818733)"
     ],
     "auditDate": "2026-11-08"
   },
@@ -496,7 +499,7 @@ const RESEARCH_STACKS = [
       "cagrilintide"
     ],
     "summary": "Combinação de duplo agonista incretínico (GLP-1/GIP) com análogo de amilina de ação prolongada para perda de peso acentuada e controle glicêmico.",
-    "synergyRationale": "Tirzepatide estimula saciedade e sensibilidade insulínica via GLP-1/GIP; Cagrilintide atua em receptores centrais de amilina na área postrema, desacelerando o esvaziamento gástrico por via complementar.",
+    "synergyRationale": "Tirzepatida atua como co-agonista GIP/GLP-1 (SURMOUNT-1, PMID 35658024) e cagrilintida como análogo de amilina (Fase 2 monoterapia NCT03856047, PMID 34798060). IMPORTANTE: inexistem ensaios clínicos randomizados da combinação específica tirzepatida + cagrilintida; os ensaios combinados publicados (Fase 2 PMID 37364590; REDEFINE 1/2 PMID 40544433/40544432) avaliaram exclusivamente semaglutida + cagrilintida (CagriSema).",
     "protocolSchedule": {
       "duration": "Tratamento contínuo sob supervisão médica",
       "morning": "Não diário (posologia semanal)",
@@ -520,7 +523,7 @@ const RESEARCH_STACKS = [
         "frequency": "1x por semana",
         "timing": "Mesmo dia a cada semana",
         "evidenceCategory": "approved_drug_fda",
-        "sourceReference": "N Engl J Med 2022 (PMID 35658002)"
+        "sourceReference": "Tirzepatide SURMOUNT-1 isolado — PubMed 2022 (PMID 35658024)"
       },
       {
         "peptideId": "cagrilintide",
@@ -532,12 +535,13 @@ const RESEARCH_STACKS = [
         "frequency": "1x por semana",
         "timing": "Mesmo dia a cada semana",
         "evidenceCategory": "clinical_phase3_isolated",
-        "sourceReference": "Lancet 2021 (PMID 34480838)"
+        "sourceReference": "Cagrilintide Fase 2 monoterapia — Lancet 2021 (PMID 34798060)"
       }
     ],
     "primarySources": [
-      "N Engl J Med 2022 (PMID 35658002)",
-      "Lancet 2021 (PMID 34480838)"
+      "Tirzepatide SURMOUNT-1 monoterapia — PubMed 2022 (PMID 35658024)",
+      "Cagrilintide Fase 2 monoterapia NCT03856047 — Lancet 2021 (PMID 34798060)",
+      "Referência comparativa CagriSema Fase 2 semaglutida+cagrilintida — Lancet 2023 (PMID 37364590)"
     ],
     "auditDate": "2026-11-08"
   },
@@ -575,7 +579,7 @@ const RESEARCH_STACKS = [
         "frequency": "2x por semana",
         "timing": "Manhã",
         "evidenceCategory": "approved_drug_international",
-        "sourceReference": "Front Immunol 2020 (PMID 32582155)"
+        "sourceReference": "Timosina Alfa-1 ETASS isolado — Crit Care 2013 (PMID 23327199)"
       },
       {
         "peptideId": "ll-37",
@@ -587,12 +591,12 @@ const RESEARCH_STACKS = [
         "frequency": "1x ao dia (máximo 14 dias)",
         "timing": "Noite",
         "evidenceCategory": "preclinical_empirical",
-        "sourceReference": "Antimicrob Agents Chemother 2014 (PMID 24982074)"
+        "sourceReference": "LL-37 revisão isolada — PubMed 2012 (PMID 23246832)"
       }
     ],
     "primarySources": [
-      "Front Immunol 2020 (PMID 32582155)",
-      "Antimicrob Agents Chemother 2014 (PMID 24982074)"
+      "Timosina Alfa-1 ETASS isolado — Crit Care 2013 (PMID 23327199)",
+      "LL-37 revisão isolada — PubMed 2012 (PMID 23246832)"
     ],
     "auditDate": "2026-11-08"
   },
@@ -630,7 +634,7 @@ const RESEARCH_STACKS = [
         "frequency": "1x ao dia pós-treino",
         "timing": "Pós-treino imediato",
         "evidenceCategory": "research_only_unapproved",
-        "sourceReference": "Endocr Rev 2009 (PMID 19602534)"
+        "sourceReference": "IGF-1 LR3 experimental isolado — J Neurobiol 1993 (PMID 8301266)"
       },
       {
         "peptideId": "bpc-157",
@@ -642,11 +646,12 @@ const RESEARCH_STACKS = [
         "frequency": "1x ao dia",
         "timing": "Manhã",
         "evidenceCategory": "preclinical_empirical",
-        "sourceReference": "Curr Pharm Des 2020 (PMID 32241280)"
+        "sourceReference": "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)"
       }
     ],
     "primarySources": [
-      "Endocr Rev 2009 (PMID 19602534)",
+      "IGF-1 LR3 experimental isolado — J Neurobiol 1993 (PMID 8301266)",
+      "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)",
       "WADA Prohibited List Class S2"
     ],
     "auditDate": "2026-11-08"
@@ -685,7 +690,7 @@ const RESEARCH_STACKS = [
         "frequency": "1x ao dia",
         "timing": "Manhã",
         "evidenceCategory": "preclinical_and_topical_clinical",
-        "sourceReference": "Oxid Med Cell Longev 2012 (PMID 23193437)"
+        "sourceReference": "GHK-Cu revisão isolada — Int J Mol Sci 2018 (PMID 29986520)"
       },
       {
         "peptideId": "bpc-157",
@@ -697,12 +702,13 @@ const RESEARCH_STACKS = [
         "frequency": "1x ao dia",
         "timing": "Noite",
         "evidenceCategory": "preclinical_empirical",
-        "sourceReference": "Burns 2003 (PMID 12788506)"
+        "sourceReference": "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)"
       }
     ],
     "primarySources": [
-      "Oxid Med Cell Longev 2012 (PMID 23193437)",
-      "Burns 2003 (PMID 12788506)"
+      "GHK-Cu revisão isolada — Int J Mol Sci 2018 (PMID 29986520)",
+      "GHK-Cu tópico pós-laser — Arch Facial Plast Surg 2006 (PMID 16847171)",
+      "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)"
     ],
     "auditDate": "2026-11-08"
   },
@@ -741,7 +747,7 @@ const RESEARCH_STACKS = [
         "frequency": "1 a 2x ao dia",
         "timing": "Manhã / Noite",
         "evidenceCategory": "clinical_topical_trials",
-        "sourceReference": "Int J Cosmet Sci 2002 (PMID 18498523)"
+        "sourceReference": "Argireline tópico isolado — PubMed 2002 (PMID 18498523)"
       },
       {
         "peptideId": "snap-8",
@@ -753,12 +759,12 @@ const RESEARCH_STACKS = [
         "frequency": "1 a 2x ao dia",
         "timing": "Manhã / Noite",
         "evidenceCategory": "cosmetic_literature",
-        "sourceReference": "J Cosmet Laser Ther 2013 (PMID 23441963)"
+        "sourceReference": "Sem ensaios clínicos indexados no PubMed (lacuna documentada)"
       }
     ],
     "primarySources": [
-      "Int J Cosmet Sci 2002 (PMID 18498523)",
-      "J Cosmet Laser Ther 2013 (PMID 23441963)"
+      "Argireline tópico isolado — PubMed 2002 (PMID 18498523)",
+      "Argireline analítico tópico isolado — Chem Biodivers 2021 (PMID 33482052)"
     ],
     "auditDate": "2026-11-08"
   },
@@ -797,7 +803,7 @@ const RESEARCH_STACKS = [
         "frequency": "2 a 3x ao dia",
         "timing": "15 min antes das refeições",
         "evidenceCategory": "clinical_phase3_isolated",
-        "sourceReference": "Gastroenterology 2015 (PMID 26071922)"
+        "sourceReference": "Larazotide Fase 2b celíaca isolado — Gastroenterology 2015 (PMID 25683116)"
       },
       {
         "peptideId": "bpc-157-arginate",
@@ -809,7 +815,7 @@ const RESEARCH_STACKS = [
         "frequency": "2x ao dia",
         "timing": "Antes das refeições",
         "evidenceCategory": "preclinical_empirical",
-        "sourceReference": "J Physiol Pharmacol 2010 (PMID 21191146)"
+        "sourceReference": "BPC-157 revisão mecanismos isolado — Front Pharmacol 2021 (PMID 34267654)"
       },
       {
         "peptideId": "kpv",
@@ -821,12 +827,13 @@ const RESEARCH_STACKS = [
         "frequency": "2x ao dia",
         "timing": "Antes das refeições",
         "evidenceCategory": "preclinical_empirical",
-        "sourceReference": "Peptides 2005 (PMID 15792610)"
+        "sourceReference": "KPV pré-clínico isolado — Gastroenterology 2008 (PMID 18061177)"
       }
     ],
     "primarySources": [
-      "Gastroenterology 2015 (PMID 26071922)",
-      "J Physiol Pharmacol 2010 (PMID 21191146)"
+      "Larazotide doença celíaca isolado — Gastroenterology 2015 (PMID 25683116)",
+      "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)",
+      "KPV pré-clínico isolado — Gastroenterology 2008 (PMID 18061177)"
     ],
     "auditDate": "2026-11-08"
   },
@@ -865,7 +872,7 @@ const RESEARCH_STACKS = [
         "frequency": "2x por semana",
         "timing": "Manhã",
         "evidenceCategory": "preclinical_and_phase1",
-        "sourceReference": "Cell Metab 2015 (PMID 25738459)"
+        "sourceReference": "MOTS-c pré-clínico isolado — Cell Metab 2015 (PMID 25738459)"
       },
       {
         "peptideId": "ss-31",
@@ -877,7 +884,7 @@ const RESEARCH_STACKS = [
         "frequency": "1x ao dia",
         "timing": "Manhã",
         "evidenceCategory": "clinical_phase2_isolated",
-        "sourceReference": "Circ Heart Fail 2016 (PMID 27655866)"
+        "sourceReference": "SS-31 MMPOWER-3 isolado — PubMed 2023 (PMID 37268435)"
       },
       {
         "peptideId": "5-amino-1mq",
@@ -889,12 +896,13 @@ const RESEARCH_STACKS = [
         "frequency": "1 a 2x ao dia",
         "timing": "Manhã em jejum",
         "evidenceCategory": "preclinical_isolated",
-        "sourceReference": "Biochem Pharmacol 2018 (PMID 29474868)"
+        "sourceReference": "5-Amino-1MQ pré-clínico isolado — Biochem Pharmacol 2018 (PMID 29155147)"
       }
     ],
     "primarySources": [
-      "Biochem Pharmacol 2018 (PMID 29474868)",
-      "Cell Metab 2015 (PMID 25738459)"
+      "MOTS-c pré-clínico isolado — Cell Metab 2015 (PMID 25738459)",
+      "SS-31/Elamipretida coração isolado — PubMed 2017 (PMID 29217757)",
+      "5-Amino-1MQ pré-clínico isolado — Biochem Pharmacol 2018 (PMID 29155147)"
     ],
     "auditDate": "2026-11-08"
   },
@@ -933,7 +941,7 @@ const RESEARCH_STACKS = [
         "frequency": "Sob demanda",
         "timing": "1h a 2h antes",
         "evidenceCategory": "approved_drug_fda",
-        "sourceReference": "JAMA Netw Open 2019 (PMID 31580407); Bula FDA Vyleesi"
+        "sourceReference": "PT-141 RECONNECT isolado — Obstet Gynecol 2019 (PMID 31599840)"
       },
       {
         "peptideId": "kisspeptin",
@@ -945,12 +953,13 @@ const RESEARCH_STACKS = [
         "frequency": "Sob demanda",
         "timing": "1h a 2h antes",
         "evidenceCategory": "clinical_phase1_2",
-        "sourceReference": "J Clin Invest 2018 (PMID 29617277)"
+        "sourceReference": "Kisspeptin-10 homens isolado — J Clin Endocrinol Metab 2011 (PMID 21632807)"
       }
     ],
     "primarySources": [
-      "JAMA Netw Open 2019 (PMID 31580407)",
-      "Bula FDA Vyleesi (NDA 210595)"
+      "PT-141/Bremelanotida RECONNECT isolado — Obstet Gynecol 2019 (PMID 31599840)",
+      "Kisspeptin-10 homens isolado — J Clin Endocrinol Metab 2011 (PMID 21632807)",
+      "Bula FDA Vyleesi (NDA 210595) — PT-141 isolado"
     ],
     "auditDate": "2026-11-08"
   },
@@ -989,7 +998,7 @@ const RESEARCH_STACKS = [
         "frequency": "1x ao dia",
         "timing": "Manhã",
         "evidenceCategory": "preclinical_and_topical_clinical",
-        "sourceReference": "Oxid Med Cell Longev 2012 (PMID 23193437)"
+        "sourceReference": "GHK-Cu revisão isolada — Int J Mol Sci 2018 (PMID 29986520)"
       },
       {
         "peptideId": "bpc-157",
@@ -1001,7 +1010,7 @@ const RESEARCH_STACKS = [
         "frequency": "1 a 2x ao dia",
         "timing": "Manhã / Noite",
         "evidenceCategory": "preclinical_empirical",
-        "sourceReference": "Curr Pharm Des 2020 (PMID 32241280)"
+        "sourceReference": "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)"
       },
       {
         "peptideId": "tb-500",
@@ -1013,7 +1022,7 @@ const RESEARCH_STACKS = [
         "frequency": "2x por semana",
         "timing": "Dias alternados",
         "evidenceCategory": "clinical_phase2_isolated",
-        "sourceReference": "Ann N Y Acad Sci 2010 (PMID 20557467)"
+        "sourceReference": "TB-500 revisão isolada — Expert Opin Biol Ther 2012 (PMID 22074294)"
       }
     ],
     "blendDetails": {
@@ -1031,9 +1040,10 @@ const RESEARCH_STACKS = [
       "physicochemicalRisk": "Risco moderado de clivagem catalítica de ligações peptídicas por íons Cu2+ livres sob luz e calor."
     },
     "primarySources": [
-      "Oxid Med Cell Longev 2012 (PMID 23193437)",
-      "Curr Pharm Des 2020 (PMID 32241280)",
-      "https://peptidepedia.org/all-peptides"
+      "GHK-Cu revisão isolada — sem ensaio HPLC/MS da mistura tríplice GLOW — Int J Mol Sci 2018 (PMID 29986520)",
+      "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)",
+      "TB-500 revisão isolada — Expert Opin Biol Ther 2012 (PMID 22074294)",
+      "Monoterapia isolada nos componentes — 0 ensaios clínicos ou ICH Q1A da mistura"
     ],
     "auditDate": "2026-11-08"
   },
@@ -1055,7 +1065,7 @@ const RESEARCH_STACKS = [
       "weeklyNotes": "Inexistem protocolos validados de segurança para coadministração de múltiplos agonistas de glucagon.",
       "washout": "Descontinuar imediatamente."
     },
-    "safetyAlert": "RISCO CARDIOVASCULAR SEVERO: A estimulação redundante do receptor de glucagon pode provocar taquicardia sinusal excessiva, arritmias ventriculares, náuseas severas e desidratação crítica.",
+    "safetyAlert": "RISCO CARDIOVASCULAR E AUTONÔMICO ELEVADO: A estimulação redundante do receptor de glucagon pode provocar taquicardia sinusal dose-dependente acentuada (documentada em monoterapia com retatrutida no NEJM 2023, PMID 37366315), náuseas severas e desidratação crítica.",
     "evidenceCategory": "unverified_combination",
     "riskLevel": "contraindicated",
     "administrationParadigm": "independent_vials",
@@ -1071,7 +1081,7 @@ const RESEARCH_STACKS = [
         "frequency": "1x por semana",
         "timing": "Contraindicado em combinação",
         "evidenceCategory": "clinical_phase3_isolated",
-        "sourceReference": "N Engl J Med 2023 (PMID 37366315)"
+        "sourceReference": "Retatrutida Fase 2 NEJM 2023 isolado — PubMed 2023 (PMID 37366315)"
       },
       {
         "peptideId": "mazdutide",
@@ -1083,13 +1093,14 @@ const RESEARCH_STACKS = [
         "frequency": "1x por semana",
         "timing": "Contraindicado em combinação",
         "evidenceCategory": "clinical_phase3_isolated",
-        "sourceReference": "Diabetes Care 2024 (PMID 38198592)"
+        "sourceReference": "Mazdutida Fase 2 Nat Commun 2023 isolado — Nat Commun 2023 (PMID 38092790)"
       }
     ],
     "primarySources": [
-      "N Engl J Med 2023 (PMID 37366315)",
-      "Diabetes Care 2024 (PMID 38198592)",
-      "Alertas de Farmacovigilância FDA/EMA"
+      "Retatrutida Fase 2 NEJM 2023 monoterapia (taquicardia sinusal dose-dependente) — PubMed 2023 (PMID 37366315)",
+      "Mazdutida Fase 2 Nat Commun 2023 monoterapia — Nat Commun 2023 (PMID 38092790)",
+      "Mazdutida Fase 3 GLORY-1 NEJM 2025 monoterapia — N Engl J Med 2025 (PMID 40421736)",
+      "Monitoramento de taquicardia sinusal e intolerância GI de classe incretínica"
     ],
     "auditDate": "2026-11-08"
   }

@@ -9,6 +9,7 @@ import sys
 import time
 import socket
 import threading
+import tempfile
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from playwright.sync_api import sync_playwright
 
@@ -256,9 +257,15 @@ def run_e2e_tests():
         else:
             page.evaluate("window.location.hash = '#stability'")
         page.wait_for_timeout(800)
-        screenshot_path = os.path.join(REPO_ROOT, "tests", "evidence_stability_v1_remediation.png")
-        page.screenshot(path=screenshot_path, full_page=True)
-        print(f"[TEST RUNNER] Screenshot salvo em: {screenshot_path}")
+        if os.environ.get("PEPTIPEDIA_WRITE_REPO_ARTIFACTS") == "1":
+            screenshot_path = os.path.join(REPO_ROOT, "tests", "evidence_stability_v1_remediation.png")
+            page.screenshot(path=screenshot_path, full_page=True)
+            print(f"[TEST RUNNER] Screenshot salvo em: {screenshot_path}")
+        else:
+            with tempfile.TemporaryDirectory(prefix="peptipedia_stab_e2e_") as tmpdir:
+                screenshot_path = os.path.join(tmpdir, "evidence_stability_v1_remediation.png")
+                page.screenshot(path=screenshot_path, full_page=True)
+                print(f"[TEST RUNNER] Screenshot verificado em modo isolado (git status preservado): {screenshot_path}")
 
         browser.close()
 
