@@ -15,12 +15,12 @@
 | **Frente C** | Defeitos auxiliares (`orforglipron`, `mazdutide`, `incretin-triple-burn`, `snap-8`, `10.1000/fda-*`, 25/70 estudos, varredura 227->223 PMIDs, testes legados) | `RELATORIO_AUDITORIA_AUXILIAR_H4_17.md`, `MATRIZ_BIBLIOGRAFICA_H4_17.csv` | **105 PMIDs espúrios expurgados**, 24 estudos reparados + `study-snap8-efficacy` substituído por `study-ghrp2-pk-pd` (`9543135`) |
 | **Frente D** | Auditoria profunda ClinicalTrials.gov (`Hudson Biotech` x8 + ensaios indústria) | `RELATORIO_CONFIABILIDADE_CLINICALTRIALS_H4_17.md`, `MATRIZ_CONFIABILIDADE_CLINICALTRIALS_H4_17.csv` | Classificação proporcional: 3 autodeclarados exemplo/ficcional, 2 clones anômalos Lilly, 3 `REGISTRO_EXISTENTE_EXECUCAO_NAO_VERIFICADA` (0 elegíveis como prova clínica); 7 indústria confiáveis |
 | **Frente E** | Imutabilidade de manifestos H4.14–H4.16, isolamento de escrita, taxonomia, EOL UTF-8 LF | `tests/git_manifest_verifier.py`, `tests/run_suite_taxonomy.py`, suítes isoladas e atualizadas | `unittest discover` passa **Exit Code 0** com `git status` inteiramente limpo e zero CRLF |
-| **Frente F** | Clone limpo, manifesto `MANIFESTO_ARQUIVOS_H4_17.csv`, `test_manifest_h4_17.py`, `test_audit_h4_17.py` | `RELATORIO_REPRODUTIBILIDADE_H4_17.md`, `tests/h4_17_clean_clone_execution.log` | *(Finalizado após execução verbatim em clone limpo na etapa de fechamento)* |
+| **Frente F** | Clone limpo, manifesto `MANIFESTO_ARQUIVOS_H4_17.csv`, `test_manifest_h4_17.py`, `test_audit_h4_17.py` | `RELATORIO_REPRODUTIBILIDADE_H4_17.md`, `tests/h4_17_clean_clone_execution.log`, `MANIFESTO_ARQUIVOS_H4_17.csv` | Clone limpo de `e5bb2ed` aprovou Stages 0–4 (`Exit Code 0`, `139/139 unittest`, `114/114+70/70+20/20 E2E`, `CLEAN WORKING TREE`) |
 | **Frente G** | Preservação honesta de lacunas analíticas (`0010`, `0014`, `0016`) e literatura (`snap-8`) | `BACKLOG_REMANESCENTE_H4_17.md` | **Sem falsa homologação científica integral**; lacunas experimentais de bancada documentadas explicitamente |
 
 ---
 
-### 2. DECLARAÇÃO EPISTEMOLÓGICA FINAL (PRELIMINAR PRÉ-CLONE FINAL)
+### 2. DECLARAÇÃO EPISTEMOLÓGICA FINAL
 
-1. **Classificação vigente da fase:** **`PARCIALMENTE_VALIDADA_EM_HOMOLOGACAO_BIBLIOGRAFICA`** (não homologada cientificamente em caráter integral em virtude das lacunas experimentais intransponíveis por edição de código em **`FIND-H46-0010`**, **`FIND-H46-0014`**, **`FIND-H46-0016`** e **`snap-8`**).
-2. **Garantia anti-regressão:** Todos os 105 PMIDs expurgados e o identificador sintético `10.1000/fda-*` são bloqueados ativamente em `tests/test_audit_h4_17.py` em toda a árvore JS e espelhos `public/js/`.
+1. **Classificação final da fase H4.17:** **`PARCIALMENTE_VALIDADA_EM_HOMOLOGACAO_BIBLIOGRAFICA`** (não homologada cientificamente em caráter integral em virtude das lacunas experimentais intransponíveis por edição de código em **`FIND-H46-0010`**, **`FIND-H46-0014`**, **`FIND-H46-0016`** e **`snap-8`**).
+2. **Garantia anti-regressão:** Todos os 105 PMIDs expurgados e o identificador sintético `10.1000/fda-*` são bloqueados ativamente em `tests/test_audit_h4_17.py` em toda a árvore JS e espelhos `public/js/`, enquanto o adaptador `js/domain/index.js` impede geração de entradas sem `title`/`pmid`.
