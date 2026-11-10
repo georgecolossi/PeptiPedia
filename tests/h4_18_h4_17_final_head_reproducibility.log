@@ -1,0 +1,685 @@
+==================================================================================
+PEPTIPEDIA - H4.18 FRENTE A: CLEAN REMOTE CLONE REPRODUCIBILITY OF FINAL H4.17 HEAD
+==================================================================================
+Execution Timestamp (UTC) : 2026-11-10T22:35:36.217737+00:00
+Remote Repository URL     : https://github.com/georgecolossi/PeptiPedia.git
+Target Branch             : audit/bibliographic-remediation-h4-17
+Clone Directory           : C:\Users\georg\AppData\Local\Temp\peptipedia_h4_18_repro_h4_17_20261110_193511
+Clone Duration            : 5.981s
+Shallow Repository?       : false
+Expected Target SHA       : f992218cea8238544ed5a39ee6e825b938ba86f2
+Actual Checked-Out SHA    : f992218cea8238544ed5a39ee6e825b938ba86f2
+SHA Match                 : True
+Pre-run git status        : CLEAN WORKING TREE
+Python Version            : Python 3.14.5
+Playwright Package        : playwright==1.64.1
+Browser Engine            : chromium(channel=chrome) version=157.0.8103.38
+Installed Packages        : cryptg==0.6.0, greenlet==3.5.6, pip==26.1.1, playwright==1.64.1, pyaes==1.6.1, pyasn1==0.6.3, pyee==14.0.0, python-dotenv==1.1.1, rsa==4.9.1, Telethon==1.44.0, typing_extensions==4.16.0
+==================================================================================
+
+>>> SUITE 1 (Manifest H4.17 strict parity)
+Command : C:\Users\georg\AppData\Local\Python\pythoncore-3.14-64\python.exe tests/test_manifest_h4_17.py
+ExitCode: 0 | Duration: 1.530s
+--- STDERR ---
+test_all_git_tracked_files_cataloged_with_strict_lf_sha256 (__main__.TestManifestH417.test_all_git_tracked_files_cataloged_with_strict_lf_sha256)
+Valida paridade estrita SHA-256 + tamanhoBytes com zero tolerância a CRLF sobre todos os tracked files. ... ok
+test_historical_h414_to_h416_artifacts_preserved (__main__.TestManifestH417.test_historical_h414_to_h416_artifacts_preserved)
+Confirma preservação integral de manifestos e relatórios históricos H4.14–H4.16. ... ok
+test_manifest_file_exists_and_no_duplicates_or_self_ref (__main__.TestManifestH417.test_manifest_file_exists_and_no_duplicates_or_self_ref)
+Verifica existência do manifesto H4.17, unicidade de caminhos e exclusão da autorreferência. ... ok
+test_negative_failure_on_crlf_hash_duplicate_and_uncataloged_drift (__main__.TestManifestH417.test_negative_failure_on_crlf_hash_duplicate_and_uncataloged_drift)
+Testes negativos reais em diretório temporário: rejeita CRLF, divergência de hash, duplicata e não-catalogado. ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.329s
+
+OK
+
+>>> SUITE 2 (Full unittest discover)
+Command : C:\Users\georg\AppData\Local\Python\pythoncore-3.14-64\python.exe -m unittest discover -s tests -p test_*.py -v
+ExitCode: 0 | Duration: 6.095s
+--- STDERR ---
+test_114_peptides_traceability_and_snapshot_parity (test_114_peptides_traceability.Test114PeptidesTraceability.test_114_peptides_traceability_and_snapshot_parity) ... ok
+test_70_studies_and_snapshot_parity (test_70_studies_integrity.Test70StudiesIntegrity.test_70_studies_and_snapshot_parity) ... ok
+test_h4_10_bibliographic_matrix (test_audit_h4_10.TestAuditH410.test_h4_10_bibliographic_matrix) ... ok
+test_h4_10_catalog_and_stores_integrity (test_audit_h4_10.TestAuditH410.test_h4_10_catalog_and_stores_integrity) ... ok
+test_h4_10_pharmacotechnical_matrix (test_audit_h4_10.TestAuditH410.test_h4_10_pharmacotechnical_matrix) ... ok
+test_h4_10_playwright_matrix_and_artifacts (test_audit_h4_10.TestAuditH410.test_h4_10_playwright_matrix_and_artifacts) ... ok
+test_h4_10_posological_matrix (test_audit_h4_10.TestAuditH410.test_h4_10_posological_matrix) ... ok
+test_h4_10_reconciliation_60_findings (test_audit_h4_10.TestAuditH410.test_h4_10_reconciliation_60_findings) ... ok
+test_60_findings_reconciliation_h4_11 (test_audit_h4_11.TestAuditH411.test_60_findings_reconciliation_h4_11)
+Valida os 60 achados da auditoria e garante ausencia de resolucao 100% artificial. ... ok
+test_bibliographic_matrix_integrity_h4_11 (test_audit_h4_11.TestAuditH411.test_bibliographic_matrix_integrity_h4_11)
+Valida que os 13 casos bibliograficos estao estritamente corrigidos e alinhados ao PubMed. ... ok
+test_calculator_elements_and_logic_h4_11 (test_audit_h4_11.TestAuditH411.test_calculator_elements_and_logic_h4_11)
+Valida seletores reais e comportamento matematico estrito da Calculadora no DOM. ... ok
+test_domain_synchronization_h4_11 (test_audit_h4_11.TestAuditH411.test_domain_synchronization_h4_11)
+Valida que os arquivos em js/domain/ e public/js/domain/ sao 100% identicos byte a byte. ... ok
+test_pharmacotechnical_matrix_integrity_h4_11 (test_audit_h4_11.TestAuditH411.test_pharmacotechnical_matrix_integrity_h4_11)
+Valida a matriz farmacotecnica de 10 parametros com as 6 classes epistemologicas estritas. ... ok
+test_posological_matrix_integrity_h4_11 (test_audit_h4_11.TestAuditH411.test_posological_matrix_integrity_h4_11)
+Valida que os 25 registros posologicos contem data de consulta e classificacao regulatoria correta. ... ok
+test_60_findings_reconciliation_h4_12 (test_audit_h4_12.TestAuditH412Integrity.test_60_findings_reconciliation_h4_12)
+Valida a reauditoria dos 60 achados na H4.12, atestando rigor epistemológico e ausência de 100% artificial. ... ok
+test_domain_byte_synchronization_h4_12 (test_audit_h4_12.TestAuditH412Integrity.test_domain_byte_synchronization_h4_12)
+Verifica que todos os arquivos de domínio em js/domain/ e public/js/domain/ são 100% idênticos byte-a-byte. ... ok
+test_pharmacotechnical_matrix_integrity_h4_12 (test_audit_h4_12.TestAuditH412Integrity.test_pharmacotechnical_matrix_integrity_h4_12)
+Valida a matriz farmacotécnica H4.12: 10 parâmetros, distinção rigorosa de USP <51> vs <797>, e eliminação de recomendações não medidas de diluição. ... ok
+test_posological_reconciliation_matrix_h4_12 (test_audit_h4_12.TestAuditH412Integrity.test_posological_reconciliation_matrix_h4_12)
+Valida a matriz de reconciliação posológica H4.12: 29 registros (25 protocolos auditados + 4 segregações explícitas de BPC-157, TB-500, Epitalon, Dihexa). ... ok
+test_stacks_usp_normative_attribution_h4_12 (test_audit_h4_12.TestAuditH412Integrity.test_stacks_usp_normative_attribution_h4_12)
+Verifica se a linha 1072 de stacks.js cita com precisão USP <797> e CDC para o descarte de frascos multidose e USP <51> para eficácia de conservantes. ... ok
+test_canonical_domain_parity (test_audit_h4_13.TestAuditH413.test_canonical_domain_parity)
+Valida a correspondência byte a byte dos arquivos js/domain e public/js/domain. ... ok
+test_findings_60_sanitization_integrity (test_audit_h4_13.TestAuditH413.test_findings_60_sanitization_integrity)
+Valida que todos os 60 achados estao livres de contaminacao cruzada (Playwright, Dihexa, USP 51 em PMIDs). ... ok
+test_normative_matrix_integrity (test_audit_h4_13.TestAuditH413.test_normative_matrix_integrity)
+Valida a matriz normativa H4.13: 8 registros delimitando USP <51>, USP <797>, CDC, BUD e ANVISA. ... ok
+test_playwright_matrix_results (test_audit_h4_13.TestAuditH413.test_playwright_matrix_results)
+Valida que a matriz de Playwright H4.13 possui 22 testes 100% aprovados, incluindo 7 testes negativos. ... ok
+test_posological_revalidation_matrix (test_audit_h4_13.TestAuditH413.test_posological_revalidation_matrix)
+Valida a matriz posológica H4.13: 29 registros (20 aprovados, 1 regional, 3 IND, 1 cosmético, 4 segregados). ... ok
+test_stacks_normative_wording (test_audit_h4_13.TestAuditH413.test_stacks_normative_wording)
+Valida se o texto de stacks.js contem a distincao rigorosa entre USP <797>, CDC, USP <51> e ANVISA. ... ok
+test_h414_bac_water_semantic_property (test_audit_h4_14.TestAuditH414.test_h414_bac_water_semantic_property)
+Valida que água bacteriostática possui inUseDays: 28 e budDays: null. ... ok
+test_h414_canonical_parity (test_audit_h4_14.TestAuditH414.test_h414_canonical_parity)
+Valida que os arquivos em js/domain e public/js/domain são idênticos byte a byte. ... ok
+test_h414_domain_stacks_normative_wording (test_audit_h4_14.TestAuditH414.test_h414_domain_stacks_normative_wording)
+Valida que stacks.js referencia o Anexo IV da RDC 67/2007 e não contém Anexo VI nem RDC 584/2021. ... ok
+test_h414_normative_matrix_rdc67_anexo_iv (test_audit_h4_14.TestAuditH414.test_h414_normative_matrix_rdc67_anexo_iv)
+Valida que a matriz normativa H4.14 referencia o Anexo IV da RDC 67/2007 e expurga a RDC 584/2021. ... ok
+test_h414_playwright_matrix_results (test_audit_h4_14.TestAuditH414.test_h414_playwright_matrix_results)
+Valida que a matriz Playwright H4.14 possui 22 testes 100% aprovados com 7 testes negativos. ... ok
+test_h414_posological_revalidation_matrix (test_audit_h4_14.TestAuditH414.test_h414_posological_revalidation_matrix)
+Valida que Zenagamtide e Eloralintide refletem o estado clínico de Fase 3 e os demais registros estão conformes. ... ok
+test_h414_reconciliation_60_findings_semantic_integrity (test_audit_h4_14.TestAuditH414.test_h414_reconciliation_60_findings_semantic_integrity)
+Valida a pureza semântica e ausência de contaminação cruzada nos 60 achados. ... ok
+test_h414_search_log_integrity (test_audit_h4_14.TestAuditH414.test_h414_search_log_integrity)
+Valida que o log de busca bibliográfica possui 6 consultas documentadas com zero resultados. ... ok
+test_60_findings_reconciliation_matrix_h4_15 (test_audit_h4_15.TestAuditH415.test_60_findings_reconciliation_matrix_h4_15)
+Valida que os 60 achados foram individualmente auditados com testes existentes e sem incongruências. ... ok
+test_bibliographic_matrix_h4_15 (test_audit_h4_15.TestAuditH415.test_bibliographic_matrix_h4_15)
+Valida a correspondência exata dos PMIDs auditados em MATRIZ_BIBLIOGRAFICA_H4_15.csv. ... ok
+test_bibliographic_search_log_h4_15 (test_audit_h4_15.TestAuditH415.test_bibliographic_search_log_h4_15)
+Valida que o log de busca possui as 10 queries com rastreabilidade completa. ... ok
+test_matriz_normativa_h4_15_structure (test_audit_h4_15.TestAuditH415.test_matriz_normativa_h4_15_structure)
+Valida que MATRIZ_NORMATIVA_H4_15.csv discrimina Seção 14, 15.2 e 16.1 e Anexo IV. ... ok
+test_no_spurious_pmids_in_catalog (test_audit_h4_15.TestAuditH415.test_no_spurious_pmids_in_catalog)
+Garante que PMIDs de estudos alheios (39255410, 24043743) não estão no catálogo ativo. ... ok
+test_usp797_normative_differentiation_in_code (test_audit_h4_15.TestAuditH415.test_usp797_normative_differentiation_in_code)
+Valida a separação estrita entre Seção 14 (BUD), Seção 15.2 e Seção 16.1 (in-use time). ... ok
+test_h416_60_findings_counts_and_report_consistency (test_audit_h4_16.TestAuditH416.test_h416_60_findings_counts_and_report_consistency)
+Valida consistência integral entre MATRIZ_RECONCILIACAO_60_ACHADOS_H4_16.csv, relatório e métodos AST reais. ... ok
+test_h416_clinicaltrials_bibliographic_and_epistemological_proportionality (test_audit_h4_16.TestAuditH416.test_h416_clinicaltrials_bibliographic_and_epistemological_proportionality)
+Valida logs separados de ClinicalTrials.gov API v2 e PubMed, correção de contagens e ausência de overclaims. ... ok
+test_h416_final_master_report_and_governance_honesty (test_audit_h4_16.TestAuditH416.test_h416_final_master_report_and_governance_honesty)
+Assegura que o relatório mestre H4.16 existe e NÃO declara homologação integral fraudulenta diante do backlog. ... ok
+test_h416_items_reclassification_and_sources (test_audit_h4_16.TestAuditH416.test_h416_items_reclassification_and_sources)
+Valida contagens reais do domínio (114 compostos, 19 stacks, 111 protocolos) e reclassificações FIND-0011..0019. ... ok
+test_h416_ll37_remediation_and_absence_of_purged_pmids (test_audit_h4_16.TestAuditH416.test_h416_ll37_remediation_and_absence_of_purged_pmids)
+Valida expurgo dos PMIDs espúrios de LL-37/ativos, paridade public/js e matriz bibliográfica LL-37. ... ok
+test_h416_verified_pmids_and_honest_backlog_findings (test_audit_h4_16.TestAuditH416.test_h416_verified_pmids_and_honest_backlog_findings)
+Confirma os 6 PMIDs válidos em 0020..0060 e garante que todos os 29 não-resolvidos e 14 parciais estão no backlog. ... ok
+test_h417_11_partial_remediation_pubchem_and_cagrilintide_and_bioregulators (test_audit_h4_17.TestAuditH417.test_h417_11_partial_remediation_pubchem_and_cagrilintide_and_bioregulators)
+Valida correções de PubChem (Orforglipron/SLU-PP), CagriSema/Cagrilintida e metadados literais de biorreguladores. ... ok
+test_h417_29_purged_pmids_absent_and_global_ban_enforced (test_audit_h4_17.TestAuditH417.test_h417_29_purged_pmids_absent_and_global_ban_enforced)
+Garante expurgo absoluto de todos os PMIDs espúrios/NOT_IN_PUBMED (29+auxiliares) e DOIs 10.1000/fda-*. ... ok
+test_h417_domain_engine_runtime_clinical_studies_no_undefined (test_audit_h4_17.TestAuditH417.test_h417_domain_engine_runtime_clinical_studies_no_undefined)
+Verifica em runtime (Node quando disponível) ou parser que DomainEngine não gera study sem título/pmid. ... ok
+test_h417_js_public_parity_and_zero_crlf (test_audit_h4_17.TestAuditH417.test_h417_js_public_parity_and_zero_crlf)
+Confirma paridade bit a bit entre js/ e public/js/ com zero CRLF nos stores e artefatos H4.17. ... ok
+test_h417_matrices_and_clinicaltrials_proportional_judgment_and_frente_g (test_audit_h4_17.TestAuditH417.test_h417_matrices_and_clinicaltrials_proportional_judgment_and_frente_g)
+Confirma integridade das 3 matrizes H4.17, juízo proporcional ClinicalTrials.gov e preservação da Frente G. ... ok
+test_h417_mazdutide_incretin_safety_and_snap8_gap (test_audit_h4_17.TestAuditH417.test_h417_mazdutide_incretin_safety_and_snap8_gap)
+Valida remoção de -18.6% em mazdutide, remoção de 'arritmias ventriculares' e lacuna PubMed de SNAP-8. ... ok
+test_h417_verified_replacement_pmids_present_and_cross_contamination_eliminated (test_audit_h4_17.TestAuditH417.test_h417_verified_replacement_pmids_present_and_cross_contamination_eliminated)
+Valida presença das fontes primárias substitutas e erradicação de vazamentos cruzados (PEG-MGF / GHRP-2). ... ok
+test_clean_store_baseline_integrity (test_audit_h4_6_negative_integrity.TestAuditH46NegativeIntegrity.test_clean_store_baseline_integrity)
+Verifica que o repositório canônico atual não possui violações. ... ok
+test_negative_protocol_both_null (test_audit_h4_6_negative_integrity.TestAuditH46NegativeIntegrity.test_negative_protocol_both_null)
+Rejeita protocolo com compoundId e stackId simultaneamente nulos. ... ok
+test_negative_protocol_both_populated (test_audit_h4_6_negative_integrity.TestAuditH46NegativeIntegrity.test_negative_protocol_both_populated)
+Rejeita protocolo com compoundId e stackId simultaneamente preenchidos. ... ok
+test_negative_protocol_mismatched_compound_type (test_audit_h4_6_negative_integrity.TestAuditH46NegativeIntegrity.test_negative_protocol_mismatched_compound_type)
+Rejeita protocolo com subjectType='compound' mas com stackId preenchido e compoundId nulo. ... ok
+test_negative_protocol_mismatched_stack_type (test_audit_h4_6_negative_integrity.TestAuditH46NegativeIntegrity.test_negative_protocol_mismatched_stack_type)
+Rejeita protocolo com subjectType='stack' mas com compoundId preenchido e stackId nulo. ... ok
+test_negative_protocol_orphan_compound (test_audit_h4_6_negative_integrity.TestAuditH46NegativeIntegrity.test_negative_protocol_orphan_compound)
+Rejeita protocolo referenciando compoundId inexistente. ... ok
+test_negative_protocol_orphan_stack (test_audit_h4_6_negative_integrity.TestAuditH46NegativeIntegrity.test_negative_protocol_orphan_stack)
+Rejeita protocolo referenciando stackId inexistente. ... ok
+test_negative_protocol_unknown_subject_type (test_audit_h4_6_negative_integrity.TestAuditH46NegativeIntegrity.test_negative_protocol_unknown_subject_type)
+Rejeita protocolo com subjectType não reconhecido. ... ok
+test_negative_stack_orphan_component (test_audit_h4_6_negative_integrity.TestAuditH46NegativeIntegrity.test_negative_stack_orphan_component)
+Rejeita stack cujo componente referencia compoundId inexistente. ... ok
+test_h4_8_13_pmids_validation (test_audit_h4_8.TestAuditH48.test_h4_8_13_pmids_validation) ... ok
+test_h4_8_25_clinical_doses_validation (test_audit_h4_8.TestAuditH48.test_h4_8_25_clinical_doses_validation) ... ok
+test_h4_8_all_60_findings_reconciled (test_audit_h4_8.TestAuditH48.test_h4_8_all_60_findings_reconciled) ... ok
+test_h4_8_domain_engine_runtime (test_audit_h4_8.TestAuditH48.test_h4_8_domain_engine_runtime) ... ok
+test_h4_8_glow_stoichiometry_reconciliation (test_audit_h4_8.TestAuditH48.test_h4_8_glow_stoichiometry_reconciliation) ... ok
+test_h4_8_klow_composition_and_sources (test_audit_h4_8.TestAuditH48.test_h4_8_klow_composition_and_sources) ... ok
+test_h4_8_molecular_classifications (test_audit_h4_8.TestAuditH48.test_h4_8_molecular_classifications) ... ok
+test_h4_8_setmelanotide_nda_and_trials (test_audit_h4_8.TestAuditH48.test_h4_8_setmelanotide_nda_and_trials) ... ok
+test_h4_8_ui_matrix_checks (test_audit_h4_8.TestAuditH48.test_h4_8_ui_matrix_checks) ... ok
+test_h4_8_zero_cosmetic_boilerplate (test_audit_h4_8.TestAuditH48.test_h4_8_zero_cosmetic_boilerplate) ... ok
+test_h4_9_pmids_rebuilding_matrix (test_audit_h4_9.TestAuditH49.test_h4_9_pmids_rebuilding_matrix) ... ok
+test_h4_9_posological_matrix (test_audit_h4_9.TestAuditH49.test_h4_9_posological_matrix) ... ok
+test_h4_9_reconciliation_60_findings (test_audit_h4_9.TestAuditH49.test_h4_9_reconciliation_60_findings) ... ok
+test_h4_9_stability_glow_klow_matrix (test_audit_h4_9.TestAuditH49.test_h4_9_stability_glow_klow_matrix) ... ok
+test_h4_9_ui_validation_and_screenshots (test_audit_h4_9.TestAuditH49.test_h4_9_ui_validation_and_screenshots) ... ok
+test_acetic_acid_stability (test_calculator_stability.TestCalculatorStability.test_acetic_acid_stability) ... ok
+test_igf1_lr3_stability_level_b (test_calculator_stability.TestCalculatorStability.test_igf1_lr3_stability_level_b) ... ok
+test_popular_presets_sanitized (test_calculator_stability.TestCalculatorStability.test_popular_presets_sanitized) ... ok
+test_retatrutide_presets (test_calculator_stability.TestCalculatorStability.test_retatrutide_presets) ... ok
+test_114_peptides_core_fields (test_data_integrity.TestDataIntegrity.test_114_peptides_core_fields) ... ok
+test_orforglipron_and_retatrutide_protocols (test_data_integrity.TestDataIntegrity.test_orforglipron_and_retatrutide_protocols) ... ok
+test_somatropin_ss31_studies_calculator_and_stability (test_data_integrity.TestDataIntegrity.test_somatropin_ss31_studies_calculator_and_stability) ... ok
+test_tesamorelin_egrifta_wr_sv_historical (test_data_integrity.TestDataIntegrity.test_tesamorelin_egrifta_wr_sv_historical) ... ok
+test_01_compounds_store_integrity (test_domain_normalization.TestDomainNormalization.test_01_compounds_store_integrity)
+Valida que COMPOUNDS_STORE possui 114 compostos canônicos com campos obrigatórios. ... ok
+test_02_stacks_store_referential_integrity (test_domain_normalization.TestDomainNormalization.test_02_stacks_store_referential_integrity)
+Valida que STACKS_STORE referencia apenas compoundIds válidos (zero referências órfãs). ... ok
+test_03_protocols_store_strict_single_parent (test_domain_normalization.TestDomainNormalization.test_03_protocols_store_strict_single_parent)
+Valida que todo PROTOCOL possui exatamente UM vínculo (compoundId OU stackId). ... ok
+test_04_unit_preservation_and_iu_distinction (test_domain_normalization.TestDomainNormalization.test_04_unit_preservation_and_iu_distinction)
+Valida preservação estrita de unidades originais e separação UI vs seringa U-100. ... ok
+test_05_section12_h4_4_pendencies_traceability (test_domain_normalization.TestDomainNormalization.test_05_section12_h4_4_pendencies_traceability)
+Valida que as 8 pendências da Seção 12 estão explicitamente identificadas. ... ok
+test_06_migration_matrices_csv_validation (test_domain_normalization.TestDomainNormalization.test_06_migration_matrices_csv_validation)
+Valida as três matrizes de migração em CSV quanto a formato, contagem e integridade. ... ok
+test_07_cryptographic_parity_domain_files (test_domain_normalization.TestDomainNormalization.test_07_cryptographic_parity_domain_files)
+Valida identidade criptográfica exata (SHA-256) entre js/domain/ e public/js/domain/. ... ok
+test_08_backward_compatibility_adapters (test_domain_normalization.TestDomainNormalization.test_08_backward_compatibility_adapters)
+Valida que os adaptadores reconstroem fielmente os formatos legados para o frontend. ... ok
+test_historical_manifest_commit_integrity (test_manifest_h4_14.TestManifestH414.test_historical_manifest_commit_integrity)
+Valida manifesto imutável H4.14 contra o commit congelado fb4f6d08a64807137d49a2f53331eb205ae7f577. ... ok
+test_manifest_metadata_integrity (test_manifest_h4_14.TestManifestH414.test_manifest_metadata_integrity)
+Valida que todos os registros do manifesto histórico H4.14 contêm metadados obrigatórios íntegros. ... ok
+test_historical_manifest_commit_integrity (test_manifest_h4_15.TestManifestH415.test_historical_manifest_commit_integrity)
+Audita H4.15 contra o SHA congelado 86f9e0b6c242722b75f291ebd10495b1dc236eef sem mutar disco. ... ok
+test_manifest_file_exists_and_populated (test_manifest_h4_15.TestManifestH415.test_manifest_file_exists_and_populated)
+Verifica existência física do manifesto imutável H4.15 e cobertura de 277 entradas. ... ok
+test_no_duplicate_paths_in_manifest (test_manifest_h4_15.TestManifestH415.test_no_duplicate_paths_in_manifest)
+Garante unicidade absoluta de caminhos no manifesto H4.15. ... ok
+test_strict_sha256_and_size_format (test_manifest_h4_15.TestManifestH415.test_strict_sha256_and_size_format)
+Valida formato estrito SHA-256 (64 hex) e tamanho inteiro positivo no H4.15. ... ok
+test_all_git_tracked_files_cataloged_and_canonical_lf_parity (test_manifest_h4_16.TestManifestH416.test_all_git_tracked_files_cataloged_and_canonical_lf_parity)
+Audita H4.16 contra o SHA congelado 0d4f9ebdee87756da0487860aa6b9c854766f21a com 0 tolerância a CRLF. ... ok
+test_manifest_file_exists_and_populated (test_manifest_h4_16.TestManifestH416.test_manifest_file_exists_and_populated)
+Verifica existência física do manifesto imutável H4.16 e cobertura exata de 293 arquivos. ... ok
+test_negative_failure_on_size_hash_duplicate_and_uncataloged_drift (test_manifest_h4_16.TestManifestH416.test_negative_failure_on_size_hash_duplicate_and_uncataloged_drift)
+Testes negativos reais em diretório temporário: rejeita CRLF, divergência de hash, duplicata e não-catalogado. ... ok
+test_no_duplicate_paths_or_self_reference (test_manifest_h4_16.TestManifestH416.test_no_duplicate_paths_or_self_reference)
+Garante unicidade absoluta de caminhos e exclusão exclusiva da autorreferência. ... ok
+test_strict_sha256_and_positive_byte_size_format (test_manifest_h4_16.TestManifestH416.test_strict_sha256_and_positive_byte_size_format)
+Valida formato estrito SHA-256 (64 caracteres hex minúsculos) e tamanho inteiro positivo. ... ok
+test_all_git_tracked_files_cataloged_with_strict_lf_sha256 (test_manifest_h4_17.TestManifestH417.test_all_git_tracked_files_cataloged_with_strict_lf_sha256)
+Valida paridade estrita SHA-256 + tamanhoBytes com zero tolerância a CRLF sobre todos os tracked files. ... ok
+test_historical_h414_to_h416_artifacts_preserved (test_manifest_h4_17.TestManifestH417.test_historical_h414_to_h416_artifacts_preserved)
+Confirma preservação integral de manifestos e relatórios históricos H4.14–H4.16. ... ok
+test_manifest_file_exists_and_no_duplicates_or_self_ref (test_manifest_h4_17.TestManifestH417.test_manifest_file_exists_and_no_duplicates_or_self_ref)
+Verifica existência do manifesto H4.17, unicidade de caminhos e exclusão da autorreferência. ... ok
+test_negative_failure_on_crlf_hash_duplicate_and_uncataloged_drift (test_manifest_h4_17.TestManifestH417.test_negative_failure_on_crlf_hash_duplicate_and_uncataloged_drift)
+Testes negativos reais em diretório temporário: rejeita CRLF, divergência de hash, duplicata e não-catalogado. ... ok
+test_backward_compatibility_rebuild (test_remediation_h4_7.TestRemediationH47.test_backward_compatibility_rebuild) ... ok
+test_compounds_integrity (test_remediation_h4_7.TestRemediationH47.test_compounds_integrity) ... ok
+test_domain_engine_extensibility_and_factory (test_remediation_h4_7.TestRemediationH47.test_domain_engine_extensibility_and_factory) ... ok
+test_evidence_csv_registries_exist (test_remediation_h4_7.TestRemediationH47.test_evidence_csv_registries_exist) ... ok
+test_file_parity_root_and_public (test_remediation_h4_7.TestRemediationH47.test_file_parity_root_and_public) ... ok
+test_glow_mathematical_reconciliation (test_remediation_h4_7.TestRemediationH47.test_glow_mathematical_reconciliation) ... ok
+test_incretin_triple_alert_moderation (test_remediation_h4_7.TestRemediationH47.test_incretin_triple_alert_moderation) ... ok
+test_klow_barrier_repair_stack (test_remediation_h4_7.TestRemediationH47.test_klow_barrier_repair_stack) ... ok
+test_molecular_classification_remediation (test_remediation_h4_7.TestRemediationH47.test_molecular_classification_remediation) ... ok
+test_protocols_store_and_decommissioning (test_remediation_h4_7.TestRemediationH47.test_protocols_store_and_decommissioning) ... ok
+test_setmelanotide_evidence_sources (test_remediation_h4_7.TestRemediationH47.test_setmelanotide_evidence_sources) ... ok
+test_stacks_store_count_and_integrity (test_remediation_h4_7.TestRemediationH47.test_stacks_store_count_and_integrity) ... ok
+test_ui_domain_integration (test_remediation_h4_7.TestRemediationH47.test_ui_domain_integration) ... ok
+test_zero_cosmetic_boilerplate_systemic_compounds (test_remediation_h4_7.TestRemediationH47.test_zero_cosmetic_boilerplate_systemic_compounds) ... ok
+test_zero_cross_compound_bibliographic_collisions (test_remediation_h4_7.TestRemediationH47.test_zero_cross_compound_bibliographic_collisions) ... ok
+test_apraglutide_and_motsc_classification (test_stability_v1_remediation.TestStabilityV1Remediation.test_apraglutide_and_motsc_classification) ... ok
+test_freezing_and_microbiology_sanitation (test_stability_v1_remediation.TestStabilityV1Remediation.test_freezing_and_microbiology_sanitation) ... ok
+test_mandatory_peptide_sequence_lengths (test_stability_v1_remediation.TestStabilityV1Remediation.test_mandatory_peptide_sequence_lengths) ... ok
+test_mathematical_model_edge_cases (test_stability_v1_remediation.TestStabilityV1Remediation.test_mathematical_model_edge_cases) ... ok
+test_neutral_terminology_in_ui (test_stability_v1_remediation.TestStabilityV1Remediation.test_neutral_terminology_in_ui) ... ok
+test_platform_catalog_counts (test_stability_v1_remediation.TestStabilityV1Remediation.test_platform_catalog_counts) ... ok
+test_solvents_factors_unity (test_stability_v1_remediation.TestStabilityV1Remediation.test_solvents_factors_unity) ... ok
+test_specific_chemical_alerts_preserved (test_stability_v1_remediation.TestStabilityV1Remediation.test_specific_chemical_alerts_preserved) ... ok
+test_01_matriz_114_unidades_farmacologicas (test_stacks_and_units_integrity.TestStacksAndUnitsIntegrity.test_01_matriz_114_unidades_farmacologicas)
+Valida cobertura total dos 114 compostos e coerência farmacológica de unidades. ... ok
+test_02_matriz_18_stacks_revisados (test_stacks_and_units_integrity.TestStacksAndUnitsIntegrity.test_02_matriz_18_stacks_revisados)
+Valida que todos os 18 stacks foram auditados individualmente e sanitizados. ... ok
+test_03_matriz_comparacao_glow_klow_wolverine (test_stacks_and_units_integrity.TestStacksAndUnitsIntegrity.test_03_matriz_comparacao_glow_klow_wolverine)
+Valida a matriz comparativa detalhada dos blends GLOW, KLOW e Wolverine. ... ok
+test_04_lista_stacks_novos_graus (test_stacks_and_units_integrity.TestStacksAndUnitsIntegrity.test_04_lista_stacks_novos_graus)
+Valida a lista de stacks novos e sua classificação documental de A a E. ... ok
+test_05_matriz_compatibilidade_blends (test_stacks_and_units_integrity.TestStacksAndUnitsIntegrity.test_05_matriz_compatibilidade_blends)
+Valida que a matriz de estabilidade cobre riscos de quelação, pH e conflitos cinéticos. ... ok
+test_06_alegacoes_rejeitadas (test_stacks_and_units_integrity.TestStacksAndUnitsIntegrity.test_06_alegacoes_rejeitadas)
+Valida o registro de alegações expurgadas e fundamentação científica. ... ok
+test_07_relatorios_obrigatorios_presentes (test_stacks_and_units_integrity.TestStacksAndUnitsIntegrity.test_07_relatorios_obrigatorios_presentes)
+Valida que todos os 5 relatórios em markdown foram gerados e possuem conteúdo substancial. ... ok
+test_08_schema_v2_and_parity_stacks_data (test_stacks_and_units_integrity.TestStacksAndUnitsIntegrity.test_08_schema_v2_and_parity_stacks_data)
+Valida schema v2, ausência de termos de marketing proibidos e paridade exata de sha256. ... ok
+test_calculator_and_stability_v8_engine (test_unit_logic.TestUnitLogicV8.test_calculator_and_stability_v8_engine) ... ok
+
+----------------------------------------------------------------------
+Ran 139 tests in 5.558s
+
+OK
+
+>>> SUITE 3 (Targeted Audit H4.17)
+Command : C:\Users\georg\AppData\Local\Python\pythoncore-3.14-64\python.exe tests/test_audit_h4_17.py
+ExitCode: 0 | Duration: 1.455s
+--- STDERR ---
+test_h417_11_partial_remediation_pubchem_and_cagrilintide_and_bioregulators (__main__.TestAuditH417.test_h417_11_partial_remediation_pubchem_and_cagrilintide_and_bioregulators)
+Valida correções de PubChem (Orforglipron/SLU-PP), CagriSema/Cagrilintida e metadados literais de biorreguladores. ... ok
+test_h417_29_purged_pmids_absent_and_global_ban_enforced (__main__.TestAuditH417.test_h417_29_purged_pmids_absent_and_global_ban_enforced)
+Garante expurgo absoluto de todos os PMIDs espúrios/NOT_IN_PUBMED (29+auxiliares) e DOIs 10.1000/fda-*. ... ok
+test_h417_domain_engine_runtime_clinical_studies_no_undefined (__main__.TestAuditH417.test_h417_domain_engine_runtime_clinical_studies_no_undefined)
+Verifica em runtime (Node quando disponível) ou parser que DomainEngine não gera study sem título/pmid. ... ok
+test_h417_js_public_parity_and_zero_crlf (__main__.TestAuditH417.test_h417_js_public_parity_and_zero_crlf)
+Confirma paridade bit a bit entre js/ e public/js/ com zero CRLF nos stores e artefatos H4.17. ... ok
+test_h417_matrices_and_clinicaltrials_proportional_judgment_and_frente_g (__main__.TestAuditH417.test_h417_matrices_and_clinicaltrials_proportional_judgment_and_frente_g)
+Confirma integridade das 3 matrizes H4.17, juízo proporcional ClinicalTrials.gov e preservação da Frente G. ... ok
+test_h417_mazdutide_incretin_safety_and_snap8_gap (__main__.TestAuditH417.test_h417_mazdutide_incretin_safety_and_snap8_gap)
+Valida remoção de -18.6% em mazdutide, remoção de 'arritmias ventriculares' e lacuna PubMed de SNAP-8. ... ok
+test_h417_verified_replacement_pmids_present_and_cross_contamination_eliminated (__main__.TestAuditH417.test_h417_verified_replacement_pmids_present_and_cross_contamination_eliminated)
+Valida presença das fontes primárias substitutas e erradicação de vazamentos cruzados (PEG-MGF / GHRP-2). ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.264s
+
+OK
+
+>>> SUITE 4 (Full Taxonomy + Isolated E2E Playwright)
+Command : C:\Users\georg\AppData\Local\Python\pythoncore-3.14-64\python.exe tests/run_suite_taxonomy.py --include-e2e
+ExitCode: 0 | Duration: 161.035s
+--- STDOUT ---
+
+=== TAXONOMIA [ATIVAS] ===
+
+=== TAXONOMIA [HISTORICAS] ===
+
+=== TAXONOMIA [REGRESSAO] ===
+
+=== TAXONOMIA [E2E] ===
+-> Executando tests/test_audit_h4_14_playwright.py (modo isolado)...
+[87165.822] === INICIANDO MASTER SUÍTE E2E PLAYWRIGHT H4.14 ===
+[87165.822] Repositório: C:\Users\georg\AppData\Local\Temp\peptipedia_h4_18_repro_h4_17_20261110_193511
+[87165.822] Arquivo alvo: C:\Users\georg\AppData\Local\Temp\peptipedia_h4_18_repro_h4_17_20261110_193511\public\index.html
+[87166.484] [Playwright] Chromium iniciado via canal 'chrome'.
+[87166.484] 
+--- INICIANDO BATERIA DE TESTES FUNCIONAIS (15 CENÁRIOS) ---
+[87169.052] 
+--- TESTE 1: CATÁLOGO DESKTOP (1280x800) ---
+[87169.128] 
+--- TESTE 2A: BUSCA EXATA 'Epitalon' ---
+[87169.546] 
+--- TESTE 2B: BUSCA PARCIAL 'BPC-157' ---
+[87169.964] 
+--- TESTE 2C: BUSCA ESPECÍFICA 'BPC-157 Arginato' ---
+[87170.379] 
+--- TESTE 2D: BUSCA INEXISTENTE ---
+[87170.791] 
+--- TESTE 2E: LIMPEZA DA BUSCA ---
+[87171.210] 
+--- TESTE 2F: UNICIDADE DOS 114 COMPOSTOS ---
+[87171.212] 
+--- TESTE 3: MODAL SEMAX ---
+[87172.411] 
+--- TESTE 4: ABA STACKS & BLEND KLOW ---
+[87173.120] 
+--- TESTE 5: CALCULADORA DE RECONSTITUIÇÃO ---
+[87174.405] 
+--- TESTE 6: REJEIÇÃO DE ENTRADAS INVÁLIDAS ---
+[87174.739] 
+--- TESTE 7: PERSISTÊNCIA DE ESTADO DA CALCULADORA ---
+[87175.963] 
+--- TESTE 8: TABLET VIEWPORT (768x1024) ---
+[87178.239] 
+--- TESTE 9: MOBILE VIEWPORT (375x667) ---
+[87180.512] 
+--- TESTE 10: DOMAINENGINE CANÔNICO ---
+[87182.001] 
+=== INICIANDO BATERIA DE TESTES NEGATIVOS REAIS (FRENTE D) ===
+[87183.811] 
+--- TESTE NEG-01: INJEÇÃO REAL DE JS ERROR ---
+[87184.116] NEG-01: Erro capturado=True, Gate reprovou=True
+[87184.116] 
+--- TESTE NEG-02: MUTAÇÃO REAL DO DOM (REMOÇÃO DE 5 CARDS) ---
+[87184.333] NEG-02: Gate reprovou contagem divergente (109 != 114): True
+[87184.333] 
+--- TESTE NEG-03: INJEÇÃO REAL DE CARD DUPLICADO NO DOM ---
+[87184.572] NEG-03: Gate reprovou duplicata real de ID ('semax' in dups): True
+[87184.572] 
+--- TESTE NEG-04: SIMULAÇÃO REAL DE CATÁLOGO VAZIO NO DOM E STORE ---
+[87184.784] NEG-04: Gate reprovou estado vazio de DOM e Store: True
+[87184.784] 
+--- TESTE NEG-05: INJEÇÃO REAL DE ELEMENTO DE 5000px NO DOM ---
+[87184.996] NEG-05: Gate reprovou overflow real de 5000px: True
+[87184.996] 
+--- TESTE NEG-06: INJEÇÃO DE REFERÊNCIA CORROMPIDA NO DOMAINENGINE ---
+[87184.998] NEG-06: Gate reprovou stack corrompido: True (erros=["Stack [corrupt-stack-h414] referencia compoundId inexistente: 'non-existent-comp-h414'"])
+[87184.998] 
+--- TESTE NEG-07: BUSCA REAL COM REJEIÇÃO POR EXPECTATIVA DIVERGENTE ---
+[87185.415] NEG-07: Gate reprovou divergência de expectativa ('Epitalon' != 'BPC-157'): True
+[87185.553] Log salvo com sucesso em: C:\Users\georg\AppData\Local\Temp\peptipedia_h4_14_e2e__i25x0ku\h4_14_playwright_execution.log
+[87185.554] Matriz CSV salva com sucesso em: C:\Users\georg\AppData\Local\Temp\peptipedia_h4_14_e2e__i25x0ku\MATRIZ_PLAYWRIGHT_H4_14.csv
+[87185.554] 
+=== RESULTADOS FINAIS H4.14: Total=22, Aprovados=22, Falhas=0 ===
+-> Executando tests/test_stability_playwright.py (modo isolado)...
+[TEST RUNNER] Servidor HTTP local ativo em http://127.0.0.1:61440
+[TEST RUNNER] Navegando para http://127.0.0.1:61440/index.html...
+[TEST 1] Navegação para a aba de Estabilidade Molecular...
+[TEST 2] Verificação do Banner Permanente Obrigatório...
+[TEST 3] Verificação dos cards e parâmetros para Tirzepatida...
+[TEST 4] Teste da Apraglutida: status estritamente Investigacional...
+[TEST 5] Teste da Ziconotida: 25 resíduos e alertas específicos...
+[TEST 6] Teste da Octreotida: octapeptídeo cíclico...
+[TEST 7] Teste do MOTS-c: relatório de terceiros exploratório...
+[TEST 8] Teste da Zenagamtida: estrutura sob sigilo industrial...
+[TEST 9] Teste de GHK-Cu: complexo metálico...
+[TEST 10] Teste da Teriparatida: oxidação de Met8 e Met18...
+[TEST 11] Verificação de ausência de multiplicadores cinéticos nos solventes...
+[TEST 12] Verificação do Gráfico SVG gerado...
+[TEST 13] Verificação da calculadora fail-closed para Apraglutida no catálogo/modal...
+[TEST 14] Retorno para a aba de Estabilidade e captura de evidência visual...
+[TEST 15] Verificação dos links das referências oficiais (DailyMed, ICH, FDA, etc.)...
+[TEST RUNNER] Screenshot verificado em modo isolado (git status preservado): C:\Users\georg\AppData\Local\Temp\peptipedia_stab_e2e_kfu7q8hx\evidence_stability_v1_remediation.png
+
+=======================================================
+SUCESSO: TODOS OS 15 TESTES E2E DO PLAYWRIGHT PASSARAM!
+=======================================================
+-> Executando tests/test_e2e_reproducible.py (modo isolado)...
+=== SERVIDOR HTTP LOCAL INICIADO EM: http://127.0.0.1:50968/index.html (Servindo 'public/') ===
+[Playwright] Falha com canal 'None', testando alternativa...
+[Playwright] Navegador conectado com sucesso (canal: chrome)
+
+--- [VIEWPORT: DESKTOP (1440x900)] Testando 114 Dossiês com Cliques Reais ---
+  [38/114] Verificados no viewport desktop (último: ghrp-2)
+  [76/114] Verificados no viewport desktop (último: cardiogen)
+  [114/114] Verificados no viewport desktop (último: zenagamtide)
+
+--- [VIEWPORT: TABLET (768x1024)] Testando 114 Dossiês com Cliques Reais ---
+  [38/114] Verificados no viewport tablet (último: ghrp-2)
+  [76/114] Verificados no viewport tablet (último: cardiogen)
+  [114/114] Verificados no viewport tablet (último: zenagamtide)
+
+--- [VIEWPORT: MOBILE (390x844)] Testando 114 Dossiês com Cliques Reais ---
+  [38/114] Verificados no viewport mobile (último: ghrp-2)
+  [76/114] Verificados no viewport mobile (último: cardiogen)
+  [114/114] Verificados no viewport mobile (último: zenagamtide)
+
+[PASS] Todos os 114 peptídeos validados nos 3 viewports com cliques físicos e tecla Escape (114/114).
+
+--- [VIEWPORT: DESKTOP] Testando 70 Estudos e Navegação Cruzada ---
+  [35/70] Estudos verificados no viewport desktop (último: study-humanin-neuroprotection)
+  [70/70] Estudos verificados no viewport desktop (último: study-zenagamtide-phase2-oral)
+
+--- [VIEWPORT: TABLET] Testando 70 Estudos e Navegação Cruzada ---
+  [35/70] Estudos verificados no viewport tablet (último: study-humanin-neuroprotection)
+  [70/70] Estudos verificados no viewport tablet (último: study-zenagamtide-phase2-oral)
+
+--- [VIEWPORT: MOBILE] Testando 70 Estudos e Navegação Cruzada ---
+  [35/70] Estudos verificados no viewport mobile (último: study-humanin-neuroprotection)
+  [70/70] Estudos verificados no viewport mobile (último: study-zenagamtide-phase2-oral)
+
+[PASS] Todos os 70 estudos validados nos 3 viewports e todos os 20 relacionamentos alvo navegados com sucesso.
+
+--- Testando Regressões P5 (Filtros, Estabilidade e Calculadora) ---
+[PASS] Regressão P5: Filtro rhgh-biologics isola exclusivamente Somatropina.
+[PASS] Regressão P5: Filtro gh-secretagogues isola os 8 secretagogos sem rhGH.
+[PASS] Regressão P5: Relógio de estabilidade com ácido acético sem 28 dias.
+[PASS] Regressão P5: IGF-1 LR3 + ácido acético em Nível B.
+[PASS] Regressão P5: Rótulo da calculadora neutro e desacoplado.
+
+[SUCESSO ABSOLUTO] Total de erros JavaScript: 0
+
+Resultados E2E verificados em diretório isolado (git status preservado): C:\Users\georg\AppData\Local\Temp\peptipedia_e2e_7ylc9dvz\e2e_execution_results.json
+Resumo da Execução: Peptídeos 114/114 PASS | Estudos 70/70 PASS | Relacionamentos 20/20 PASS
+--- STDERR ---
+test_h417_11_partial_remediation_pubchem_and_cagrilintide_and_bioregulators (tests.test_audit_h4_17.TestAuditH417.test_h417_11_partial_remediation_pubchem_and_cagrilintide_and_bioregulators)
+Valida correções de PubChem (Orforglipron/SLU-PP), CagriSema/Cagrilintida e metadados literais de biorreguladores. ... ok
+test_h417_29_purged_pmids_absent_and_global_ban_enforced (tests.test_audit_h4_17.TestAuditH417.test_h417_29_purged_pmids_absent_and_global_ban_enforced)
+Garante expurgo absoluto de todos os PMIDs espúrios/NOT_IN_PUBMED (29+auxiliares) e DOIs 10.1000/fda-*. ... ok
+test_h417_domain_engine_runtime_clinical_studies_no_undefined (tests.test_audit_h4_17.TestAuditH417.test_h417_domain_engine_runtime_clinical_studies_no_undefined)
+Verifica em runtime (Node quando disponível) ou parser que DomainEngine não gera study sem título/pmid. ... ok
+test_h417_js_public_parity_and_zero_crlf (tests.test_audit_h4_17.TestAuditH417.test_h417_js_public_parity_and_zero_crlf)
+Confirma paridade bit a bit entre js/ e public/js/ com zero CRLF nos stores e artefatos H4.17. ... ok
+test_h417_matrices_and_clinicaltrials_proportional_judgment_and_frente_g (tests.test_audit_h4_17.TestAuditH417.test_h417_matrices_and_clinicaltrials_proportional_judgment_and_frente_g)
+Confirma integridade das 3 matrizes H4.17, juízo proporcional ClinicalTrials.gov e preservação da Frente G. ... ok
+test_h417_mazdutide_incretin_safety_and_snap8_gap (tests.test_audit_h4_17.TestAuditH417.test_h417_mazdutide_incretin_safety_and_snap8_gap)
+Valida remoção de -18.6% em mazdutide, remoção de 'arritmias ventriculares' e lacuna PubMed de SNAP-8. ... ok
+test_h417_verified_replacement_pmids_present_and_cross_contamination_eliminated (tests.test_audit_h4_17.TestAuditH417.test_h417_verified_replacement_pmids_present_and_cross_contamination_eliminated)
+Valida presença das fontes primárias substitutas e erradicação de vazamentos cruzados (PEG-MGF / GHRP-2). ... ok
+test_all_git_tracked_files_cataloged_with_strict_lf_sha256 (tests.test_manifest_h4_17.TestManifestH417.test_all_git_tracked_files_cataloged_with_strict_lf_sha256)
+Valida paridade estrita SHA-256 + tamanhoBytes com zero tolerância a CRLF sobre todos os tracked files. ... ok
+test_historical_h414_to_h416_artifacts_preserved (tests.test_manifest_h4_17.TestManifestH417.test_historical_h414_to_h416_artifacts_preserved)
+Confirma preservação integral de manifestos e relatórios históricos H4.14–H4.16. ... ok
+test_manifest_file_exists_and_no_duplicates_or_self_ref (tests.test_manifest_h4_17.TestManifestH417.test_manifest_file_exists_and_no_duplicates_or_self_ref)
+Verifica existência do manifesto H4.17, unicidade de caminhos e exclusão da autorreferência. ... ok
+test_negative_failure_on_crlf_hash_duplicate_and_uncataloged_drift (tests.test_manifest_h4_17.TestManifestH417.test_negative_failure_on_crlf_hash_duplicate_and_uncataloged_drift)
+Testes negativos reais em diretório temporário: rejeita CRLF, divergência de hash, duplicata e não-catalogado. ... ok
+test_114_peptides_traceability_and_snapshot_parity (tests.test_114_peptides_traceability.Test114PeptidesTraceability.test_114_peptides_traceability_and_snapshot_parity) ... ok
+test_70_studies_and_snapshot_parity (tests.test_70_studies_integrity.Test70StudiesIntegrity.test_70_studies_and_snapshot_parity) ... ok
+test_114_peptides_core_fields (tests.test_data_integrity.TestDataIntegrity.test_114_peptides_core_fields) ... ok
+test_orforglipron_and_retatrutide_protocols (tests.test_data_integrity.TestDataIntegrity.test_orforglipron_and_retatrutide_protocols) ... ok
+test_somatropin_ss31_studies_calculator_and_stability (tests.test_data_integrity.TestDataIntegrity.test_somatropin_ss31_studies_calculator_and_stability) ... ok
+test_tesamorelin_egrifta_wr_sv_historical (tests.test_data_integrity.TestDataIntegrity.test_tesamorelin_egrifta_wr_sv_historical) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.660s
+
+OK
+test_historical_manifest_commit_integrity (tests.test_manifest_h4_14.TestManifestH414.test_historical_manifest_commit_integrity)
+Valida manifesto imutável H4.14 contra o commit congelado fb4f6d08a64807137d49a2f53331eb205ae7f577. ... ok
+test_manifest_metadata_integrity (tests.test_manifest_h4_14.TestManifestH414.test_manifest_metadata_integrity)
+Valida que todos os registros do manifesto histórico H4.14 contêm metadados obrigatórios íntegros. ... ok
+test_historical_manifest_commit_integrity (tests.test_manifest_h4_15.TestManifestH415.test_historical_manifest_commit_integrity)
+Audita H4.15 contra o SHA congelado 86f9e0b6c242722b75f291ebd10495b1dc236eef sem mutar disco. ... ok
+test_manifest_file_exists_and_populated (tests.test_manifest_h4_15.TestManifestH415.test_manifest_file_exists_and_populated)
+Verifica existência física do manifesto imutável H4.15 e cobertura de 277 entradas. ... ok
+test_no_duplicate_paths_in_manifest (tests.test_manifest_h4_15.TestManifestH415.test_no_duplicate_paths_in_manifest)
+Garante unicidade absoluta de caminhos no manifesto H4.15. ... ok
+test_strict_sha256_and_size_format (tests.test_manifest_h4_15.TestManifestH415.test_strict_sha256_and_size_format)
+Valida formato estrito SHA-256 (64 hex) e tamanho inteiro positivo no H4.15. ... ok
+test_all_git_tracked_files_cataloged_and_canonical_lf_parity (tests.test_manifest_h4_16.TestManifestH416.test_all_git_tracked_files_cataloged_and_canonical_lf_parity)
+Audita H4.16 contra o SHA congelado 0d4f9ebdee87756da0487860aa6b9c854766f21a com 0 tolerância a CRLF. ... ok
+test_manifest_file_exists_and_populated (tests.test_manifest_h4_16.TestManifestH416.test_manifest_file_exists_and_populated)
+Verifica existência física do manifesto imutável H4.16 e cobertura exata de 293 arquivos. ... ok
+test_negative_failure_on_size_hash_duplicate_and_uncataloged_drift (tests.test_manifest_h4_16.TestManifestH416.test_negative_failure_on_size_hash_duplicate_and_uncataloged_drift)
+Testes negativos reais em diretório temporário: rejeita CRLF, divergência de hash, duplicata e não-catalogado. ... ok
+test_no_duplicate_paths_or_self_reference (tests.test_manifest_h4_16.TestManifestH416.test_no_duplicate_paths_or_self_reference)
+Garante unicidade absoluta de caminhos e exclusão exclusiva da autorreferência. ... ok
+test_strict_sha256_and_positive_byte_size_format (tests.test_manifest_h4_16.TestManifestH416.test_strict_sha256_and_positive_byte_size_format)
+Valida formato estrito SHA-256 (64 caracteres hex minúsculos) e tamanho inteiro positivo. ... ok
+test_backward_compatibility_rebuild (tests.test_remediation_h4_7.TestRemediationH47.test_backward_compatibility_rebuild) ... ok
+test_compounds_integrity (tests.test_remediation_h4_7.TestRemediationH47.test_compounds_integrity) ... ok
+test_domain_engine_extensibility_and_factory (tests.test_remediation_h4_7.TestRemediationH47.test_domain_engine_extensibility_and_factory) ... ok
+test_evidence_csv_registries_exist (tests.test_remediation_h4_7.TestRemediationH47.test_evidence_csv_registries_exist) ... ok
+test_file_parity_root_and_public (tests.test_remediation_h4_7.TestRemediationH47.test_file_parity_root_and_public) ... ok
+test_glow_mathematical_reconciliation (tests.test_remediation_h4_7.TestRemediationH47.test_glow_mathematical_reconciliation) ... ok
+test_incretin_triple_alert_moderation (tests.test_remediation_h4_7.TestRemediationH47.test_incretin_triple_alert_moderation) ... ok
+test_klow_barrier_repair_stack (tests.test_remediation_h4_7.TestRemediationH47.test_klow_barrier_repair_stack) ... ok
+test_molecular_classification_remediation (tests.test_remediation_h4_7.TestRemediationH47.test_molecular_classification_remediation) ... ok
+test_protocols_store_and_decommissioning (tests.test_remediation_h4_7.TestRemediationH47.test_protocols_store_and_decommissioning) ... ok
+test_setmelanotide_evidence_sources (tests.test_remediation_h4_7.TestRemediationH47.test_setmelanotide_evidence_sources) ... ok
+test_stacks_store_count_and_integrity (tests.test_remediation_h4_7.TestRemediationH47.test_stacks_store_count_and_integrity) ... ok
+test_ui_domain_integration (tests.test_remediation_h4_7.TestRemediationH47.test_ui_domain_integration) ... ok
+test_zero_cosmetic_boilerplate_systemic_compounds (tests.test_remediation_h4_7.TestRemediationH47.test_zero_cosmetic_boilerplate_systemic_compounds) ... ok
+test_zero_cross_compound_bibliographic_collisions (tests.test_remediation_h4_7.TestRemediationH47.test_zero_cross_compound_bibliographic_collisions) ... ok
+test_h4_8_13_pmids_validation (tests.test_audit_h4_8.TestAuditH48.test_h4_8_13_pmids_validation) ... ok
+test_h4_8_25_clinical_doses_validation (tests.test_audit_h4_8.TestAuditH48.test_h4_8_25_clinical_doses_validation) ... ok
+test_h4_8_all_60_findings_reconciled (tests.test_audit_h4_8.TestAuditH48.test_h4_8_all_60_findings_reconciled) ... ok
+test_h4_8_domain_engine_runtime (tests.test_audit_h4_8.TestAuditH48.test_h4_8_domain_engine_runtime) ... ok
+test_h4_8_glow_stoichiometry_reconciliation (tests.test_audit_h4_8.TestAuditH48.test_h4_8_glow_stoichiometry_reconciliation) ... ok
+test_h4_8_klow_composition_and_sources (tests.test_audit_h4_8.TestAuditH48.test_h4_8_klow_composition_and_sources) ... ok
+test_h4_8_molecular_classifications (tests.test_audit_h4_8.TestAuditH48.test_h4_8_molecular_classifications) ... ok
+test_h4_8_setmelanotide_nda_and_trials (tests.test_audit_h4_8.TestAuditH48.test_h4_8_setmelanotide_nda_and_trials) ... ok
+test_h4_8_ui_matrix_checks (tests.test_audit_h4_8.TestAuditH48.test_h4_8_ui_matrix_checks) ... ok
+test_h4_8_zero_cosmetic_boilerplate (tests.test_audit_h4_8.TestAuditH48.test_h4_8_zero_cosmetic_boilerplate) ... ok
+test_h4_9_pmids_rebuilding_matrix (tests.test_audit_h4_9.TestAuditH49.test_h4_9_pmids_rebuilding_matrix) ... ok
+test_h4_9_posological_matrix (tests.test_audit_h4_9.TestAuditH49.test_h4_9_posological_matrix) ... ok
+test_h4_9_reconciliation_60_findings (tests.test_audit_h4_9.TestAuditH49.test_h4_9_reconciliation_60_findings) ... ok
+test_h4_9_stability_glow_klow_matrix (tests.test_audit_h4_9.TestAuditH49.test_h4_9_stability_glow_klow_matrix) ... ok
+test_h4_9_ui_validation_and_screenshots (tests.test_audit_h4_9.TestAuditH49.test_h4_9_ui_validation_and_screenshots) ... ok
+test_h4_10_bibliographic_matrix (tests.test_audit_h4_10.TestAuditH410.test_h4_10_bibliographic_matrix) ... ok
+test_h4_10_catalog_and_stores_integrity (tests.test_audit_h4_10.TestAuditH410.test_h4_10_catalog_and_stores_integrity) ... ok
+test_h4_10_pharmacotechnical_matrix (tests.test_audit_h4_10.TestAuditH410.test_h4_10_pharmacotechnical_matrix) ... ok
+test_h4_10_playwright_matrix_and_artifacts (tests.test_audit_h4_10.TestAuditH410.test_h4_10_playwright_matrix_and_artifacts) ... ok
+test_h4_10_posological_matrix (tests.test_audit_h4_10.TestAuditH410.test_h4_10_posological_matrix) ... ok
+test_h4_10_reconciliation_60_findings (tests.test_audit_h4_10.TestAuditH410.test_h4_10_reconciliation_60_findings) ... ok
+test_60_findings_reconciliation_h4_11 (tests.test_audit_h4_11.TestAuditH411.test_60_findings_reconciliation_h4_11)
+Valida os 60 achados da auditoria e garante ausencia de resolucao 100% artificial. ... ok
+test_bibliographic_matrix_integrity_h4_11 (tests.test_audit_h4_11.TestAuditH411.test_bibliographic_matrix_integrity_h4_11)
+Valida que os 13 casos bibliograficos estao estritamente corrigidos e alinhados ao PubMed. ... ok
+test_calculator_elements_and_logic_h4_11 (tests.test_audit_h4_11.TestAuditH411.test_calculator_elements_and_logic_h4_11)
+Valida seletores reais e comportamento matematico estrito da Calculadora no DOM. ... ok
+test_domain_synchronization_h4_11 (tests.test_audit_h4_11.TestAuditH411.test_domain_synchronization_h4_11)
+Valida que os arquivos em js/domain/ e public/js/domain/ sao 100% identicos byte a byte. ... ok
+test_pharmacotechnical_matrix_integrity_h4_11 (tests.test_audit_h4_11.TestAuditH411.test_pharmacotechnical_matrix_integrity_h4_11)
+Valida a matriz farmacotecnica de 10 parametros com as 6 classes epistemologicas estritas. ... ok
+test_posological_matrix_integrity_h4_11 (tests.test_audit_h4_11.TestAuditH411.test_posological_matrix_integrity_h4_11)
+Valida que os 25 registros posologicos contem data de consulta e classificacao regulatoria correta. ... ok
+test_60_findings_reconciliation_h4_12 (tests.test_audit_h4_12.TestAuditH412Integrity.test_60_findings_reconciliation_h4_12)
+Valida a reauditoria dos 60 achados na H4.12, atestando rigor epistemológico e ausência de 100% artificial. ... ok
+test_domain_byte_synchronization_h4_12 (tests.test_audit_h4_12.TestAuditH412Integrity.test_domain_byte_synchronization_h4_12)
+Verifica que todos os arquivos de domínio em js/domain/ e public/js/domain/ são 100% idênticos byte-a-byte. ... ok
+test_pharmacotechnical_matrix_integrity_h4_12 (tests.test_audit_h4_12.TestAuditH412Integrity.test_pharmacotechnical_matrix_integrity_h4_12)
+Valida a matriz farmacotécnica H4.12: 10 parâmetros, distinção rigorosa de USP <51> vs <797>, e eliminação de recomendações não medidas de diluição. ... ok
+test_posological_reconciliation_matrix_h4_12 (tests.test_audit_h4_12.TestAuditH412Integrity.test_posological_reconciliation_matrix_h4_12)
+Valida a matriz de reconciliação posológica H4.12: 29 registros (25 protocolos auditados + 4 segregações explícitas de BPC-157, TB-500, Epitalon, Dihexa). ... ok
+test_stacks_usp_normative_attribution_h4_12 (tests.test_audit_h4_12.TestAuditH412Integrity.test_stacks_usp_normative_attribution_h4_12)
+Verifica se a linha 1072 de stacks.js cita com precisão USP <797> e CDC para o descarte de frascos multidose e USP <51> para eficácia de conservantes. ... ok
+test_canonical_domain_parity (tests.test_audit_h4_13.TestAuditH413.test_canonical_domain_parity)
+Valida a correspondência byte a byte dos arquivos js/domain e public/js/domain. ... ok
+test_findings_60_sanitization_integrity (tests.test_audit_h4_13.TestAuditH413.test_findings_60_sanitization_integrity)
+Valida que todos os 60 achados estao livres de contaminacao cruzada (Playwright, Dihexa, USP 51 em PMIDs). ... ok
+test_normative_matrix_integrity (tests.test_audit_h4_13.TestAuditH413.test_normative_matrix_integrity)
+Valida a matriz normativa H4.13: 8 registros delimitando USP <51>, USP <797>, CDC, BUD e ANVISA. ... ok
+test_playwright_matrix_results (tests.test_audit_h4_13.TestAuditH413.test_playwright_matrix_results)
+Valida que a matriz de Playwright H4.13 possui 22 testes 100% aprovados, incluindo 7 testes negativos. ... ok
+test_posological_revalidation_matrix (tests.test_audit_h4_13.TestAuditH413.test_posological_revalidation_matrix)
+Valida a matriz posológica H4.13: 29 registros (20 aprovados, 1 regional, 3 IND, 1 cosmético, 4 segregados). ... ok
+test_stacks_normative_wording (tests.test_audit_h4_13.TestAuditH413.test_stacks_normative_wording)
+Valida se o texto de stacks.js contem a distincao rigorosa entre USP <797>, CDC, USP <51> e ANVISA. ... ok
+test_h414_bac_water_semantic_property (tests.test_audit_h4_14.TestAuditH414.test_h414_bac_water_semantic_property)
+Valida que água bacteriostática possui inUseDays: 28 e budDays: null. ... ok
+test_h414_canonical_parity (tests.test_audit_h4_14.TestAuditH414.test_h414_canonical_parity)
+Valida que os arquivos em js/domain e public/js/domain são idênticos byte a byte. ... ok
+test_h414_domain_stacks_normative_wording (tests.test_audit_h4_14.TestAuditH414.test_h414_domain_stacks_normative_wording)
+Valida que stacks.js referencia o Anexo IV da RDC 67/2007 e não contém Anexo VI nem RDC 584/2021. ... ok
+test_h414_normative_matrix_rdc67_anexo_iv (tests.test_audit_h4_14.TestAuditH414.test_h414_normative_matrix_rdc67_anexo_iv)
+Valida que a matriz normativa H4.14 referencia o Anexo IV da RDC 67/2007 e expurga a RDC 584/2021. ... ok
+test_h414_playwright_matrix_results (tests.test_audit_h4_14.TestAuditH414.test_h414_playwright_matrix_results)
+Valida que a matriz Playwright H4.14 possui 22 testes 100% aprovados com 7 testes negativos. ... ok
+test_h414_posological_revalidation_matrix (tests.test_audit_h4_14.TestAuditH414.test_h414_posological_revalidation_matrix)
+Valida que Zenagamtide e Eloralintide refletem o estado clínico de Fase 3 e os demais registros estão conformes. ... ok
+test_h414_reconciliation_60_findings_semantic_integrity (tests.test_audit_h4_14.TestAuditH414.test_h414_reconciliation_60_findings_semantic_integrity)
+Valida a pureza semântica e ausência de contaminação cruzada nos 60 achados. ... ok
+test_h414_search_log_integrity (tests.test_audit_h4_14.TestAuditH414.test_h414_search_log_integrity)
+Valida que o log de busca bibliográfica possui 6 consultas documentadas com zero resultados. ... ok
+test_60_findings_reconciliation_matrix_h4_15 (tests.test_audit_h4_15.TestAuditH415.test_60_findings_reconciliation_matrix_h4_15)
+Valida que os 60 achados foram individualmente auditados com testes existentes e sem incongruências. ... ok
+test_bibliographic_matrix_h4_15 (tests.test_audit_h4_15.TestAuditH415.test_bibliographic_matrix_h4_15)
+Valida a correspondência exata dos PMIDs auditados em MATRIZ_BIBLIOGRAFICA_H4_15.csv. ... ok
+test_bibliographic_search_log_h4_15 (tests.test_audit_h4_15.TestAuditH415.test_bibliographic_search_log_h4_15)
+Valida que o log de busca possui as 10 queries com rastreabilidade completa. ... ok
+test_matriz_normativa_h4_15_structure (tests.test_audit_h4_15.TestAuditH415.test_matriz_normativa_h4_15_structure)
+Valida que MATRIZ_NORMATIVA_H4_15.csv discrimina Seção 14, 15.2 e 16.1 e Anexo IV. ... ok
+test_no_spurious_pmids_in_catalog (tests.test_audit_h4_15.TestAuditH415.test_no_spurious_pmids_in_catalog)
+Garante que PMIDs de estudos alheios (39255410, 24043743) não estão no catálogo ativo. ... ok
+test_usp797_normative_differentiation_in_code (tests.test_audit_h4_15.TestAuditH415.test_usp797_normative_differentiation_in_code)
+Valida a separação estrita entre Seção 14 (BUD), Seção 15.2 e Seção 16.1 (in-use time). ... ok
+test_h416_60_findings_counts_and_report_consistency (tests.test_audit_h4_16.TestAuditH416.test_h416_60_findings_counts_and_report_consistency)
+Valida consistência integral entre MATRIZ_RECONCILIACAO_60_ACHADOS_H4_16.csv, relatório e métodos AST reais. ... ok
+test_h416_clinicaltrials_bibliographic_and_epistemological_proportionality (tests.test_audit_h4_16.TestAuditH416.test_h416_clinicaltrials_bibliographic_and_epistemological_proportionality)
+Valida logs separados de ClinicalTrials.gov API v2 e PubMed, correção de contagens e ausência de overclaims. ... ok
+test_h416_final_master_report_and_governance_honesty (tests.test_audit_h4_16.TestAuditH416.test_h416_final_master_report_and_governance_honesty)
+Assegura que o relatório mestre H4.16 existe e NÃO declara homologação integral fraudulenta diante do backlog. ... ok
+test_h416_items_reclassification_and_sources (tests.test_audit_h4_16.TestAuditH416.test_h416_items_reclassification_and_sources)
+Valida contagens reais do domínio (114 compostos, 19 stacks, 111 protocolos) e reclassificações FIND-0011..0019. ... ok
+test_h416_ll37_remediation_and_absence_of_purged_pmids (tests.test_audit_h4_16.TestAuditH416.test_h416_ll37_remediation_and_absence_of_purged_pmids)
+Valida expurgo dos PMIDs espúrios de LL-37/ativos, paridade public/js e matriz bibliográfica LL-37. ... ok
+test_h416_verified_pmids_and_honest_backlog_findings (tests.test_audit_h4_16.TestAuditH416.test_h416_verified_pmids_and_honest_backlog_findings)
+Confirma os 6 PMIDs válidos em 0020..0060 e garante que todos os 29 não-resolvidos e 14 parciais estão no backlog. ... ok
+
+----------------------------------------------------------------------
+Ran 84 tests in 1.668s
+
+OK
+test_01_compounds_store_integrity (tests.test_domain_normalization.TestDomainNormalization.test_01_compounds_store_integrity)
+Valida que COMPOUNDS_STORE possui 114 compostos canônicos com campos obrigatórios. ... ok
+test_02_stacks_store_referential_integrity (tests.test_domain_normalization.TestDomainNormalization.test_02_stacks_store_referential_integrity)
+Valida que STACKS_STORE referencia apenas compoundIds válidos (zero referências órfãs). ... ok
+test_03_protocols_store_strict_single_parent (tests.test_domain_normalization.TestDomainNormalization.test_03_protocols_store_strict_single_parent)
+Valida que todo PROTOCOL possui exatamente UM vínculo (compoundId OU stackId). ... ok
+test_04_unit_preservation_and_iu_distinction (tests.test_domain_normalization.TestDomainNormalization.test_04_unit_preservation_and_iu_distinction)
+Valida preservação estrita de unidades originais e separação UI vs seringa U-100. ... ok
+test_05_section12_h4_4_pendencies_traceability (tests.test_domain_normalization.TestDomainNormalization.test_05_section12_h4_4_pendencies_traceability)
+Valida que as 8 pendências da Seção 12 estão explicitamente identificadas. ... ok
+test_06_migration_matrices_csv_validation (tests.test_domain_normalization.TestDomainNormalization.test_06_migration_matrices_csv_validation)
+Valida as três matrizes de migração em CSV quanto a formato, contagem e integridade. ... ok
+test_07_cryptographic_parity_domain_files (tests.test_domain_normalization.TestDomainNormalization.test_07_cryptographic_parity_domain_files)
+Valida identidade criptográfica exata (SHA-256) entre js/domain/ e public/js/domain/. ... ok
+test_08_backward_compatibility_adapters (tests.test_domain_normalization.TestDomainNormalization.test_08_backward_compatibility_adapters)
+Valida que os adaptadores reconstroem fielmente os formatos legados para o frontend. ... ok
+test_01_matriz_114_unidades_farmacologicas (tests.test_stacks_and_units_integrity.TestStacksAndUnitsIntegrity.test_01_matriz_114_unidades_farmacologicas)
+Valida cobertura total dos 114 compostos e coerência farmacológica de unidades. ... ok
+test_02_matriz_18_stacks_revisados (tests.test_stacks_and_units_integrity.TestStacksAndUnitsIntegrity.test_02_matriz_18_stacks_revisados)
+Valida que todos os 18 stacks foram auditados individualmente e sanitizados. ... ok
+test_03_matriz_comparacao_glow_klow_wolverine (tests.test_stacks_and_units_integrity.TestStacksAndUnitsIntegrity.test_03_matriz_comparacao_glow_klow_wolverine)
+Valida a matriz comparativa detalhada dos blends GLOW, KLOW e Wolverine. ... ok
+test_04_lista_stacks_novos_graus (tests.test_stacks_and_units_integrity.TestStacksAndUnitsIntegrity.test_04_lista_stacks_novos_graus)
+Valida a lista de stacks novos e sua classificação documental de A a E. ... ok
+test_05_matriz_compatibilidade_blends (tests.test_stacks_and_units_integrity.TestStacksAndUnitsIntegrity.test_05_matriz_compatibilidade_blends)
+Valida que a matriz de estabilidade cobre riscos de quelação, pH e conflitos cinéticos. ... ok
+test_06_alegacoes_rejeitadas (tests.test_stacks_and_units_integrity.TestStacksAndUnitsIntegrity.test_06_alegacoes_rejeitadas)
+Valida o registro de alegações expurgadas e fundamentação científica. ... ok
+test_07_relatorios_obrigatorios_presentes (tests.test_stacks_and_units_integrity.TestStacksAndUnitsIntegrity.test_07_relatorios_obrigatorios_presentes)
+Valida que todos os 5 relatórios em markdown foram gerados e possuem conteúdo substancial. ... ok
+test_08_schema_v2_and_parity_stacks_data (tests.test_stacks_and_units_integrity.TestStacksAndUnitsIntegrity.test_08_schema_v2_and_parity_stacks_data)
+Valida schema v2, ausência de termos de marketing proibidos e paridade exata de sha256. ... ok
+test_acetic_acid_stability (tests.test_calculator_stability.TestCalculatorStability.test_acetic_acid_stability) ... ok
+test_igf1_lr3_stability_level_b (tests.test_calculator_stability.TestCalculatorStability.test_igf1_lr3_stability_level_b) ... ok
+test_popular_presets_sanitized (tests.test_calculator_stability.TestCalculatorStability.test_popular_presets_sanitized) ... ok
+test_retatrutide_presets (tests.test_calculator_stability.TestCalculatorStability.test_retatrutide_presets) ... ok
+test_apraglutide_and_motsc_classification (tests.test_stability_v1_remediation.TestStabilityV1Remediation.test_apraglutide_and_motsc_classification) ... ok
+test_freezing_and_microbiology_sanitation (tests.test_stability_v1_remediation.TestStabilityV1Remediation.test_freezing_and_microbiology_sanitation) ... ok
+test_mandatory_peptide_sequence_lengths (tests.test_stability_v1_remediation.TestStabilityV1Remediation.test_mandatory_peptide_sequence_lengths) ... ok
+test_mathematical_model_edge_cases (tests.test_stability_v1_remediation.TestStabilityV1Remediation.test_mathematical_model_edge_cases) ... ok
+test_neutral_terminology_in_ui (tests.test_stability_v1_remediation.TestStabilityV1Remediation.test_neutral_terminology_in_ui) ... ok
+test_platform_catalog_counts (tests.test_stability_v1_remediation.TestStabilityV1Remediation.test_platform_catalog_counts) ... ok
+test_solvents_factors_unity (tests.test_stability_v1_remediation.TestStabilityV1Remediation.test_solvents_factors_unity) ... ok
+test_specific_chemical_alerts_preserved (tests.test_stability_v1_remediation.TestStabilityV1Remediation.test_specific_chemical_alerts_preserved) ... ok
+test_clean_store_baseline_integrity (tests.test_audit_h4_6_negative_integrity.TestAuditH46NegativeIntegrity.test_clean_store_baseline_integrity)
+Verifica que o repositório canônico atual não possui violações. ... ok
+test_negative_protocol_both_null (tests.test_audit_h4_6_negative_integrity.TestAuditH46NegativeIntegrity.test_negative_protocol_both_null)
+Rejeita protocolo com compoundId e stackId simultaneamente nulos. ... ok
+test_negative_protocol_both_populated (tests.test_audit_h4_6_negative_integrity.TestAuditH46NegativeIntegrity.test_negative_protocol_both_populated)
+Rejeita protocolo com compoundId e stackId simultaneamente preenchidos. ... ok
+test_negative_protocol_mismatched_compound_type (tests.test_audit_h4_6_negative_integrity.TestAuditH46NegativeIntegrity.test_negative_protocol_mismatched_compound_type)
+Rejeita protocolo com subjectType='compound' mas com stackId preenchido e compoundId nulo. ... ok
+test_negative_protocol_mismatched_stack_type (tests.test_audit_h4_6_negative_integrity.TestAuditH46NegativeIntegrity.test_negative_protocol_mismatched_stack_type)
+Rejeita protocolo com subjectType='stack' mas com compoundId preenchido e stackId nulo. ... ok
+test_negative_protocol_orphan_compound (tests.test_audit_h4_6_negative_integrity.TestAuditH46NegativeIntegrity.test_negative_protocol_orphan_compound)
+Rejeita protocolo referenciando compoundId inexistente. ... ok
+test_negative_protocol_orphan_stack (tests.test_audit_h4_6_negative_integrity.TestAuditH46NegativeIntegrity.test_negative_protocol_orphan_stack)
+Rejeita protocolo referenciando stackId inexistente. ... ok
+test_negative_protocol_unknown_subject_type (tests.test_audit_h4_6_negative_integrity.TestAuditH46NegativeIntegrity.test_negative_protocol_unknown_subject_type)
+Rejeita protocolo com subjectType não reconhecido. ... ok
+test_negative_stack_orphan_component (tests.test_audit_h4_6_negative_integrity.TestAuditH46NegativeIntegrity.test_negative_stack_orphan_component)
+Rejeita stack cujo componente referencia compoundId inexistente. ... ok
+test_calculator_and_stability_v8_engine (tests.test_unit_logic.TestUnitLogicV8.test_calculator_and_stability_v8_engine) ... ok
+
+----------------------------------------------------------------------
+Ran 38 tests in 2.589s
+
+OK
+
+==================================================================================
+Post-run git status       : CLEAN WORKING TREE
+Working/Index CRLF/mixed  : 0
+Overall Frente A Verdict  : PASS_ALL_SUITES_EXIT_0
+==================================================================================
