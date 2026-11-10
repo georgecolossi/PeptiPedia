@@ -1,0 +1,6 @@
+# PeptiPedia - Git Attributes for Cross-Platform Parity
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.ico binary
+*.log text eol=lf

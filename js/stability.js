@@ -191,9 +191,10 @@ class PeptideStabilityClock {
       ionicStrength: "Baixa / Não iônico",
       inUseDays: 28,
       budDays: null,
-      budSummary: "CDC / USP <797> Seção 14: até 28 dias pós-perfuração (in-use time)",
+      inUseSummary: "CDC / USP <797> Seções 15.2 e 16.1: até 28 dias pós-perfuração (in-use time)",
+      budSummary: "BUD atribuído por Seção 14; in-use time de até 28 dias pós-perfuração (CDC / USP <797> Seções 15.2 e 16.1)",
       chemicalKineticsNote: "Veículo multidose padrão. A presença de conservante protege contra patógenos oportunistas, sem alterar a taxa de hidrólise química intrínseca.",
-      description: "Veículo de conservação com álcool benzílico para contenção microbiológica sob CDC e USP <797> Seção 14 (in-use time)."
+      description: "Veículo de conservação com álcool benzílico para contenção microbiológica sob CDC e USP <797> Seções 15.2 e 16.1 (in-use time)."
     };
   }
 

@@ -5754,7 +5754,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const solvBud = document.getElementById('stab-solvent-bud');
 
-      if (solvBud) solvBud.textContent = res.solvent.budSummary || (res.solvent.inUseDays === 28 || res.solvent.budDays === 28 ? 'CDC / USP <797> Seção 14: até 28 dias pós-perfuração (in-use time)' : 'Uso imediato');
+      if (solvBud) solvBud.textContent = res.solvent.budSummary || (res.solvent.inUseDays === 28 ? 'CDC / USP <797> Seções 15.2 e 16.1: até 28 dias pós-perfuração (in-use time)' : 'Uso imediato');
 
 
 

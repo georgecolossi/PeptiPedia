@@ -84,13 +84,13 @@ const STABILITY_SOLVENTS = [
     ionicStrength: "Baixa (não iônico / sem eletrólitos)",
     inUseDays: 28,
     budDays: null,
-    budSummary: "CDC / USP <797> Seção 14: até 28 dias pós-perfuração (in-use time)",
-    postPunctureBUD: "Até 28 dias pós-punção inicial para recipientes multidose contendo agente antimicrobiano (álcool benzílico 0,9%), salvo especificação em contrário do fabricante (USP <797>).",
+    budSummary: "BUD atribuído por Seção 14; in-use time de até 28 dias pós-perfuração (CDC / USP <797> Seções 15.2 e 16.1)",
+    inUseSummary: "Até 28 dias pós-perfuração inicial para recipientes multidose contendo conservante (álcool benzílico 0,9%), regido por CDC e USP <797> Seção 15.2 (frasco comercial) e Seção 16.1 (CSP manipulado), salvo especificação contrária do fabricante.",
     microbiologicalValidity: "O agente conservante inibe a proliferação bacteriana introduzida por punções repetidas. ATENÇÃO: Essa contenção microbiológica NÃO retarda a degradação química intrínseca (hidrólise, desamidação, oxidação) da molécula nem assegura a manutenção de sua potência biológica ao longo do tempo.",
-    chemicalKineticsNote: "A taxa de degradação térmica intrínseca (hidrólise, desamidação, oxidação) é governada pela sequência primária e temperatura. O álcool benzílico protege contra patógenos oportunistas introduzidos por múltiplas punções (USP <797>), mas não altera a cinética química de degradação térmica intrínseca.",
-    description: "Água estéril contendo álcool benzílico a 0,9% para inibição de crescimento microbiano em recipientes multidose puncionados. A farmacopeia USP <797> estabelece até 28 dias como prazo limite padrão pós-punção para frascos multidose conservados, a menos que especificado de forma diferente pelo fabricante em rotulagem oficial. Contenção antimicrobiana NÃO constitui garantia de esterilidade permanente e NÃO assegura integridade química nem potência biológica da molécula — propriedades farmacêuticas completamente distintas.",
+    chemicalKineticsNote: "A taxa de degradação térmica intrínseca (hidrólise, desamidação, oxidação) é governada pela sequência primária e temperatura. O álcool benzílico protege contra patógenos oportunistas introduzidos por múltiplas punções sob CDC e USP <797> Seções 15.2 e 16.1, mas não altera a cinética química de degradação térmica intrínseca.",
+    description: "Água estéril contendo álcool benzílico a 0,9% para inibição de crescimento microbiano em recipientes multidose puncionados. A farmacopeia USP <797> rege o in-use time pós-perfuração na Seção 15.2 (para produtos comercializados convencionalmente) e na Seção 16.1 (para CSPs manipulados multidose), limitando o prazo padrão a 28 dias (ou o BUD remanescente da Seção 14, se menor), alinhado às diretrizes do CDC. A atribuição de BUD segue a Seção 14 (com limites máximos de Categoria 3 na Tabela 14). Contenção antimicrobiana NÃO constitui garantia de esterilidade permanente e NÃO assegura integridade química nem potência biológica da molécula — propriedades farmacêuticas completamente distintas.",
     isReference: true,
-    microbialRisk: "Descarte recomendado em até 28 dias pós-perfuração (in-use time sob CDC e USP <797> Seção 14) para frascos multidose conservados; não garante integridade química nem potência biológica contínua."
+    microbialRisk: "Descarte recomendado em até 28 dias pós-perfuração (in-use time sob CDC e USP <797> Seções 15.2 e 16.1) para frascos multidose conservados; não garante integridade química nem potência biológica contínua."
   },
   {
     id: "sterile_water",
@@ -102,7 +102,7 @@ const STABILITY_SOLVENTS = [
     ionicStrength: "Muito baixa (água ultrapura desionizada)",
     budDays: null,
     budSummary: "Sem conservante — preparo para uso imediato",
-    postPunctureBUD: "Uso imediato / descarte após abertura (veículo estéril sem agente antimicrobiano sob USP <797>).",
+    inUseSummary: "Uso imediato / descarte após abertura (recipiente de dose única sem conservante sob USP <797> Seção 15.1/16.1).",
     microbiologicalValidity: "Veículo estéril isento de agente antimicrobiano. Uma vez aberto fora de ambiente controlado ISO 5, não possui barreira protetora contra proliferação bacteriana.",
     chemicalKineticsNote: "Veículo puro sem eletrólitos. A ausência de conservante exige uso imediato ou técnica estritamente asséptica. A cinética química intrínseca de degradação térmica permanece inalterada em relação à água pura.",
     description: "Veículo estéril isento de qualquer agente antimicrobiano ou conservante. Diretrizes farmacopeicas recomendam uso imediato; inexiste prazo genérico universal de armazenamento de 24 horas para qualquer preparação, devendo-se seguir a validação específica de cada bula homologada. Estabilidade química, esterilidade microbiológica e potência biológica são grandezas farmacêuticas completamente distintas e independentes.",
@@ -119,7 +119,7 @@ const STABILITY_SOLVENTS = [
     ionicStrength: "Alta (154 mM Na+, 154 mM Cl- / isotônico ~308 mOsm/L)",
     budDays: null,
     budSummary: "Sem conservante — preparo para uso imediato",
-    postPunctureBUD: "Uso imediato / descarte após abertura (solução salina sem conservante sob USP <797>).",
+    inUseSummary: "Uso imediato / descarte após abertura (solução salina sem conservante sob USP <797> Seção 15.1/16.1).",
     microbiologicalValidity: "Veículo isotônico isento de agentes antimicrobianos. A força iônica não confere proteção contra contaminação microbiológica pós-punção.",
     chemicalKineticsNote: "A força iônica dos íons Na+ e Cl- modula a camada de solvatação e o potencial zeta superficial, influenciando solubilidade e agregação conformacional, mas não altera a taxa de clivagem térmica intrínseca sem teste específico de HPLC.",
     description: "Veículo isotônico isento de agentes antimicrobianos. A força iônica dos íons Na+ e Cl- modula a camada de solvatação e o potencial eletrostático superficial, podendo influenciar a solubilidade de sequências com cargas concentradas. Não possui multiplicador cinético geral demonstrado para todos os peptídeos. Inexiste regra de descarte universal em 24 horas para qualquer preparação; a validade microbiológica pós-abertura depende do produto, apresentação, técnica asséptica e rotulagem aplicável.",
@@ -136,7 +136,7 @@ const STABILITY_SOLVENTS = [
     ionicStrength: "Baixa (ácido fraco fracamente ionizado)",
     budDays: null,
     budSummary: "Sem conservante validado — preparo para uso imediato em pesquisa",
-    postPunctureBUD: "Não aplicável — veículo isento de agente antimicrobiano com eficácia testada (USP <51>). Não confere proteção microbiológica multidose de 28 dias sob USP <797>.",
+    inUseSummary: "Não aplicável — veículo isento de agente antimicrobiano com eficácia testada (USP <51>). Não confere proteção microbiológica multidose sob USP <797> Seções 15.2 e 16.1.",
     microbiologicalValidity: "Preparo estéril manipulado para uso imediato em protocolos de pesquisa ou descarte após a sessão experimental, salvo manipulação em cabine de segurança biológica ISO 5 com controle de esterilidade validado.",
     chemicalKineticsNote: "O pH ácido (~3,5 a 4,0) mantém resíduos básicos protonados, prevenindo agregação física imediata em sequências com pI elevado (ex.: IGF-1 LR3). Essa compatibilidade de solubilização NÃO retarda a hidrólise química universal nem altera a cinética térmica intrínseca sem cromatografia quantitativa associada.",
     description: "Solvente de pH ácido fraco empregado em protocolos laboratoriais especializados para peptídeos com ponto isoelétrico próximo à neutralidade (ex.: IGF-1 LR3), mantendo a carga líquida positiva para mitigar agregação hidrofóbica prematura. Não contém agente antimicrobiano com eficácia validada sob USP <51>. A contenção antimicrobiana, a estabilidade físico-química e a potência biológica são propriedades farmacêuticas independentes: solubilizar o peptídeo não equivale a prolongar sua validade microbiológica ou integridade térmica.",
@@ -1026,7 +1026,7 @@ const CONCEPTUAL_DISTINCTIONS = [
     icon: "shield-alert",
     color: "rose",
     definition: "Comprovação laboratorial da ausência de microrganismos viáveis (bactérias aeróbias/anaeróbias e fungos) e níveis de endotoxinas pirogênicas conformes.",
-    caveat: "O teto de 28 dias para água bacteriostática sob USP <797> é uma recomendação de salvaguarda microbiológica e NÃO assegura integridade química."
+    caveat: "O in-use time de até 28 dias pós-perfuração sob CDC e USP <797> Seções 15.2 e 16.1 é uma salvaguarda microbiológica para recipientes multidose conservados e NÃO assegura integridade química nem potência biológica."
   },
   {
     term: "Prazo de Validade Homologado (Shelf-Life)",
