@@ -1,0 +1,83 @@
+=== INICIANDO AUDITORIA RIGOROSA E2E COM PLAYWRIGHT CHROMIUM (H4.13) ===
+Ambiente: Python 3.14.5 | Repositorio Dinamico: C:\Users\georg\Documents\PeptiPedia\repo
+Diretorio Publico: C:\Users\georg\Documents\PeptiPedia\repo\public
+Diretorio de Artefatos: C:\Users\georg\Documents\PeptiPedia\repo\tests\artifacts
+Servidor HTTP estatico iniciado em http://127.0.0.1:55410/index.html
+[Playwright] Chromium iniciado via canal 'chrome'.
+
+--- TESTE 1: DESKTOP VIEWPORT (1280x800) & CATALOGO ---
+Status HTTP: 200 em 1735ms
+DomainEngine: True | Compostos: 114 | Stacks: 19
+Overflow horizontal Desktop: False
+Screenshot salvo: C:\Users\georg\Documents\PeptiPedia\repo\tests\artifacts\h4_13_audit_desktop_catalog.png
+
+--- TESTE 2A: BUSCA EXATA VALIDA (Epitalon) ---
+Busca 'Epitalon' -> Retornou 1 card(s): ['Epitalon']
+
+--- TESTE 2B: BUSCA PARCIAL/SUBSTRING ('BPC-157') ---
+Busca 'BPC-157' -> Retornou 2 card(s): ['BPC-157', 'BPC-157 Arginato']
+
+--- TESTE 2C: BUSCA ESPECIFICA POR VARIANTE ('BPC-157 Arginato') ---
+Busca 'BPC-157 Arginato' -> Retornou 1 card(s): ['BPC-157 Arginato']
+
+--- TESTE 2D: BUSCA NEGATIVA (Termo Inexistente) ---
+Busca inexistente -> 0 cards visiveis (vazio=True)
+
+--- TESTE 2E: LIMPEZA DE BUSCA ---
+Limpeza de busca -> Restaurou 114 cards
+
+--- TESTE 2F: UNICIDADE DE IDS NO DOM ---
+Total IDs DOM: 114 | IDs Unicos: 114 | Sem Duplicatas: True
+
+--- TESTE 3: MODAL DE COMPOSTO (Semax) E FECHAMENTO VIA ESC ---
+Modal aberto: True | Contem dados Semax/PMID 16996037: True
+Screenshot salvo: C:\Users\georg\Documents\PeptiPedia\repo\tests\artifacts\h4_13_audit_desktop_modal_semax.png
+Modal fechado via tecla ESC: True
+
+--- TESTE 4: NAVEGACAO PARA ABA STACKS & CARD KLOW ---
+Aba Stacks visivel: True | KLOW presente: True
+Screenshot salvo: C:\Users\georg\Documents\PeptiPedia\repo\tests\artifacts\h4_13_audit_desktop_stacks.png
+
+--- TESTE 5: CALCULADORA DE RECONSTITUICAO ---
+Calculadora: '10.0 UI' | '0.100 mL' | '2.50 mg/mL (2500 mcg/mL)'
+Screenshot salvo: C:\Users\georg\Documents\PeptiPedia\repo\tests\artifacts\h4_13_audit_desktop_calculator.png
+
+--- TESTE 6: CALCULADORA - ENTRADAS INVALIDAS & MENSAGEM DE ERRO ---
+Mensagem de erro exibida: 'A dose solicitada (10 mg) excede a quantidade total de peptídeo contida no frasco (5 mg = 5000 mcg). Cálculo impossível: dose maior que a massa total do frasco.'
+
+--- TESTE 7: CALCULADORA - PRESERVACAO DE ESTADO APOS ALTERNANCIA DE ABAS ---
+Valores nos campos apos alternancia: vial=5, water=2, dose=250
+
+--- TESTE 8: TABLET VIEWPORT (768x1024) ---
+Overflow horizontal em Tablet: False | Erros: console=0, page=0
+Screenshot salvo: C:\Users\georg\Documents\PeptiPedia\repo\tests\artifacts\h4_13_audit_tablet_catalog.png
+
+--- TESTE 9: MOBILE VIEWPORT (375x667) ---
+Overflow horizontal em Mobile: False | Erros: console=0, page=0
+Screenshot salvo: C:\Users\georg\Documents\PeptiPedia\repo\tests\artifacts\h4_13_audit_mobile_catalog.png
+
+--- TESTE 10: TESTE FAIL-CLOSED NO DOMAINENGINE ---
+DomainEngine rejeita referencia corrompida (fail-closed): True
+
+=== INICIANDO BATERIA DE TESTES NEGATIVOS CONTROLADOS (SECAO 5.4) ===
+
+--- TESTE NEG-01: CAPTURA DE JS ERROR ---
+Listener capturou excecao de JS com sucesso: True (total erros: 1)
+
+--- TESTE NEG-02: FALHA POR CONTAGEM INCORRETA DE CARDS ---
+Discrepancia detectada (5 != 1): gate reprovaria=True
+
+--- TESTE NEG-03: DETECCAO DE DUPLICACAO DE IDS NO DOM ---
+Verificacao de unicidade detecta duplicata simulada: True
+
+--- TESTE NEG-04: FALHA SE O CATALOGO NAO CARREGAR ---
+Gate reprova catalogo vazio (0 == 114): True
+
+--- TESTE NEG-05: DETECCAO DE OVERFLOW HORIZONTAL FORCADO ---
+Detector de overflow identificou elemento com 5000px: True
+
+--- TESTE NEG-06: DOMAINENGINE REJEITA REFERENCIA INVALIDA ---
+DomainEngine rejeita referencia invalida: True
+
+--- TESTE NEG-07: BUSCA COM RETORNO DE ENTIDADE INCORRETA ---
+Gate rejeita entidade incorreta em busca ('BPC-157' != 'Epitalon'): True

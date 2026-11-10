@@ -190,7 +190,7 @@ class PeptideStabilityClock {
       antimicrobialPreservative: "Álcool benzílico 0,9%",
       ionicStrength: "Baixa / Não iônico",
       budDays: 28,
-      budSummary: "USP <797> BUD: 28 dias",
+      budSummary: "USP <797> / CDC: até 28 dias pós-perfuração (in-use time)",
       chemicalKineticsNote: "Veículo multidose padrão. A presença de conservante protege contra patógenos oportunistas, sem alterar a taxa de hidrólise química intrínseca.",
       description: "Veículo de conservação com álcool benzílico para contenção microbiológica sob USP <797>."
     };

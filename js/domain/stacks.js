@@ -1069,7 +1069,7 @@
     "knownInteractions": [
       "Dor e irritação transitória no local da injeção decorrente do cobre.",
       "Risco de microdosagem diária de TB-500 em blends fixos.",
-      "Prazo de descarte de frasco multidose perfurado de até 28 dias a 2-8°C regido por USP <797> e diretrizes CDC (associado à eficácia antimicrobiana de conservante avaliada sob USP <51>), não devendo ser confundido com estabilidade físico-química ou integridade molecular da mistura peptídica, a qual carece de ensaios analíticos publicados."
+      "Prazo operacional de descarte pós-perfuração (in-use time) de até 28 dias aplicável a frascos multidose com conservante (regido por diretrizes CDC e USP <797>, salvo especificação contrária do fabricante), o qual não constitui Beyond-Use Date (BUD) da preparação manipulada, não decorre do ensaio de eficácia de conservantes USP <51>, não devendo ser confundido com estabilidade físico-química ou integridade molecular da mistura peptídica (a qual carece de ensaios analíticos publicados sob diretrizes ICH Q1A). No Brasil, preparações estéreis seguem regulamentação da ANVISA (RDC 67/2007)."
     ],
     "sources": [
       "Int J Mol Sci 2018 (PMID 29986520)",
