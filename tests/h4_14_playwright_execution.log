@@ -1,0 +1,59 @@
+[23248.159] === INICIANDO MASTER SUÍTE E2E PLAYWRIGHT H4.14 ===
+[23248.159] Repositório: C:\Users\georg\Documents\PeptiPedia\repo
+[23248.159] Arquivo alvo: C:\Users\georg\Documents\PeptiPedia\repo\public\index.html
+[23248.798] [Playwright] Chromium iniciado via canal 'chrome'.
+[23248.798] 
+--- INICIANDO BATERIA DE TESTES FUNCIONAIS (15 CENÁRIOS) ---
+[23251.182] 
+--- TESTE 1: CATÁLOGO DESKTOP (1280x800) ---
+[23251.261] 
+--- TESTE 2A: BUSCA EXATA 'Epitalon' ---
+[23251.681] 
+--- TESTE 2B: BUSCA PARCIAL 'BPC-157' ---
+[23252.103] 
+--- TESTE 2C: BUSCA ESPECÍFICA 'BPC-157 Arginato' ---
+[23252.522] 
+--- TESTE 2D: BUSCA INEXISTENTE ---
+[23252.935] 
+--- TESTE 2E: LIMPEZA DA BUSCA ---
+[23253.351] 
+--- TESTE 2F: UNICIDADE DOS 114 COMPOSTOS ---
+[23253.354] 
+--- TESTE 3: MODAL SEMAX ---
+[23254.588] 
+--- TESTE 4: ABA STACKS & BLEND KLOW ---
+[23255.300] 
+--- TESTE 5: CALCULADORA DE RECONSTITUIÇÃO ---
+[23256.606] 
+--- TESTE 6: REJEIÇÃO DE ENTRADAS INVÁLIDAS ---
+[23256.955] 
+--- TESTE 7: PERSISTÊNCIA DE ESTADO DA CALCULADORA ---
+[23258.201] 
+--- TESTE 8: TABLET VIEWPORT (768x1024) ---
+[23260.399] 
+--- TESTE 9: MOBILE VIEWPORT (375x667) ---
+[23262.560] 
+--- TESTE 10: DOMAINENGINE CANÔNICO ---
+[23263.916] 
+=== INICIANDO BATERIA DE TESTES NEGATIVOS REAIS (FRENTE D) ===
+[23265.629] 
+--- TESTE NEG-01: INJEÇÃO REAL DE JS ERROR ---
+[23265.935] NEG-01: Erro capturado=True, Gate reprovou=True
+[23265.935] 
+--- TESTE NEG-02: MUTAÇÃO REAL DO DOM (REMOÇÃO DE 5 CARDS) ---
+[23266.153] NEG-02: Gate reprovou contagem divergente (109 != 114): True
+[23266.153] 
+--- TESTE NEG-03: INJEÇÃO REAL DE CARD DUPLICADO NO DOM ---
+[23266.384] NEG-03: Gate reprovou duplicata real de ID ('semax' in dups): True
+[23266.384] 
+--- TESTE NEG-04: SIMULAÇÃO REAL DE CATÁLOGO VAZIO NO DOM E STORE ---
+[23266.598] NEG-04: Gate reprovou estado vazio de DOM e Store: True
+[23266.598] 
+--- TESTE NEG-05: INJEÇÃO REAL DE ELEMENTO DE 5000px NO DOM ---
+[23266.813] NEG-05: Gate reprovou overflow real de 5000px: True
+[23266.813] 
+--- TESTE NEG-06: INJEÇÃO DE REFERÊNCIA CORROMPIDA NO DOMAINENGINE ---
+[23266.815] NEG-06: Gate reprovou stack corrompido: True (erros=["Stack [corrupt-stack-h414] referencia compoundId inexistente: 'non-existent-comp-h414'"])
+[23266.815] 
+--- TESTE NEG-07: BUSCA REAL COM REJEIÇÃO POR EXPECTATIVA DIVERGENTE ---
+[23267.232] NEG-07: Gate reprovou divergência de expectativa ('Epitalon' != 'BPC-157'): True

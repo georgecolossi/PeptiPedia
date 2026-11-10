@@ -82,14 +82,15 @@ const STABILITY_SOLVENTS = [
     phRange: "4,5 – 7,0",
     antimicrobialPreservative: "Álcool benzílico 0,9% (conservante antimicrobiano de amplo espectro)",
     ionicStrength: "Baixa (não iônico / sem eletrólitos)",
-    budDays: 28,
-    budSummary: "USP <797> multidose: até 28 dias pós-punção",
+    inUseDays: 28,
+    budDays: null,
+    budSummary: "CDC / USP <797> Seção 14: até 28 dias pós-perfuração (in-use time)",
     postPunctureBUD: "Até 28 dias pós-punção inicial para recipientes multidose contendo agente antimicrobiano (álcool benzílico 0,9%), salvo especificação em contrário do fabricante (USP <797>).",
     microbiologicalValidity: "O agente conservante inibe a proliferação bacteriana introduzida por punções repetidas. ATENÇÃO: Essa contenção microbiológica NÃO retarda a degradação química intrínseca (hidrólise, desamidação, oxidação) da molécula nem assegura a manutenção de sua potência biológica ao longo do tempo.",
     chemicalKineticsNote: "A taxa de degradação térmica intrínseca (hidrólise, desamidação, oxidação) é governada pela sequência primária e temperatura. O álcool benzílico protege contra patógenos oportunistas introduzidos por múltiplas punções (USP <797>), mas não altera a cinética química de degradação térmica intrínseca.",
     description: "Água estéril contendo álcool benzílico a 0,9% para inibição de crescimento microbiano em recipientes multidose puncionados. A farmacopeia USP <797> estabelece até 28 dias como prazo limite padrão pós-punção para frascos multidose conservados, a menos que especificado de forma diferente pelo fabricante em rotulagem oficial. Contenção antimicrobiana NÃO constitui garantia de esterilidade permanente e NÃO assegura integridade química nem potência biológica da molécula — propriedades farmacêuticas completamente distintas.",
     isReference: true,
-    microbialRisk: "BUD padrão de até 28 dias pós-punção (USP <797>) para frascos multidose conservados; não garante integridade química nem potência biológica contínua."
+    microbialRisk: "Descarte recomendado em até 28 dias pós-perfuração (in-use time sob CDC e USP <797> Seção 14) para frascos multidose conservados; não garante integridade química nem potência biológica contínua."
   },
   {
     id: "sterile_water",
