@@ -1,0 +1,227 @@
+==============================================================================
+PEPTIPEDIA - H4.16 REPRODUCIBILITY AUDIT OF H4.15 COMMIT (CLEAN CLONE)
+==============================================================================
+Execution Timestamp (UTC): 2026-11-10T05:55:52.445155+00:00
+Clone Directory: C:\Users\georg\AppData\Local\Temp\peptipedia_clean_clone_h4_16_base
+Target Expected SHA: 86f9e0b6c242722b75f291ebd10495b1dc236eef
+Actual HEAD SHA    : 86f9e0b6c242722b75f291ebd10495b1dc236eef
+Pre-run git status : CLEAN WORKING TREE
+Python Version     : Python 3.14.5
+Playwright Package : playwright==1.64.1
+Browser Engine     : chromium(channel=chrome): 157.0.8103.38
+Installed Packages : cryptg==0.6.0, greenlet==3.5.6, pip==26.1.1, playwright==1.64.1, pyaes==1.6.1, pyasn1==0.6.3, pyee==14.0.0, python-dotenv==1.1.1, rsa==4.9.1, Telethon==1.44.0, typing_extensions==4.16.0
+==============================================================================
+
+>>> SUITE 0 (Pre-discover baseline): python tests/test_manifest_h4_15.py
+Command: python tests/test_manifest_h4_15.py
+ExitCode: 1 | Duration: 0.579s
+--- STDERR ---
+...F.
+======================================================================
+FAIL: test_physical_existence_and_hash_integrity (__main__.TestManifestH415.test_physical_existence_and_hash_integrity)
+Verifica a existência física e a integridade de hash SHA-256 de cada arquivo catalogado.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\georg\AppData\Local\Temp\peptipedia_clean_clone_h4_16_base\tests\test_manifest_h4_15.py", line 95, in test_physical_existence_and_hash_integrity
+    self.assertEqual(len(failures), 0, f"Falhas de integridade física no manifesto H4.15: {failures}")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 6 != 0 : Falhas de integridade física no manifesto H4.15: ['.github/workflows/ci.yml: hash divergente (esperado=2c1f7be94e0bf9200358b581edee99a1c86d6dcfc08fe8eff45d8486302aa8e4, obtido=5f8b1367fd9db257b351a56ef2d394e56c20b640e22b097763856352a753349b)', '.gitignore: hash divergente (esperado=57e1ad8e0a4bc56294411b59ded2cb77ef4c1644f8a02091cfb86097b05c3718, obtido=8aa39e9e9f563ece3e1c0d8b9ea88f1b9e0e81424d343fe41e0f975d83ea5677)', 'Staticfile: hash divergente (esperado=c664318a8453c743bf95cde80cd2c2cd2d5a964c4a12ed37808653c53bdae897, obtido=643b7154d1c6823c790c47b1ed852687eb47d72f941cef79183b1aa53ffccd6e)', 'research/evidence/MATRIZ_PLAYWRIGHT_H4_14.csv: hash divergente (esperado=3e388dfef51f89ca1c98c697bf7711741b52d5a79778cf387343c72443269798, obtido=daa0d8e07cb84752ad151bd0e90003a89de5eaf92fc71d012a1ddf47c6d0e54d)', 'tests/results_114_peptides.json: hash divergente (esperado=0fa55286f3a38362d730c7d9cb8cc69bb351883f83076fe4ae183608804aac2f, obtido=d12b6606d7966c698d0f67661b9d6b6efffbb7ee3ff364bdb820abb53d4ff11c)', 'tests/results_70_studies.json: hash divergente (esperado=3ca36443d3d78dcfec99001a88f8ebd0717e15fb9c7c46b4f7e9c07a87fbfb43, obtido=cd1f5a99f0434d57e3922c8d89902fffc4e0b4478b40fc34d25498b6f7e97ead)']
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.159s
+
+FAILED (failures=1)
+
+>>> SUITE 1: python -m unittest discover -s tests -p "test_*.py"
+Command: python -m unittest discover -s tests -p "test_*.py"
+ExitCode: 1 | Duration: 4.809s
+--- STDOUT ---
+=== TESTE DE RASTREABILIDADE: 114 PEPTÍDEOS REAIS ===
+Total de peptídeos carregados: 114
+[PASS] Somatropina reclassificada para rhgh-biologics
+[PASS] Retatrutida com titulação correta de 2 mg
+[PASS] Todos os 114 peptídeos validados com contraindicações, protocolos estruturados e classificação de segurança.
+Salvo resultados em: C:\Users\georg\AppData\Local\Temp\peptipedia_clean_clone_h4_16_base\tests\results_114_peptides.json
+=== TESTE DE INTEGRIDADE: 70 ESTUDOS CLÍNICOS E 20 RELACIONAMENTOS ===
+Total de estudos carregados: 70
+[PASS] Todos os 70 estudos com referências válidas para peptídeos existentes no catálogo.
+[PASS] Exatamente 20 estudos mapeados para os 30 compostos afetados.
+Salvo resultados em: C:\Users\georg\AppData\Local\Temp\peptipedia_clean_clone_h4_16_base\tests\results_70_studies.json
+=== SUÍTE A: TESTES DE INTEGRIDADE DE DADOS E CONFORMIDADE CIENTÍFICA ===
+Total de peptídeos carregados: 114
+[PASS] Todos os 114 peptídeos contêm IDs, categorias, classificação de segurança, contraindicações e structuredProtocols.
+[PASS] Tesamorelina (H4.3.3): Egrifta WR (11,6 mg / 1,3 mL -> 8 mg/mL nominais, 1,28 mg = 0,16 mL, 7 doses utilizáveis, 20-25°C), Egrifta SV e Histórica validadas e segregadas.
+[PASS] Orforglipron (H4.3.3): Titulação Foundayo em 4 fases (0,8 -> 2,5 -> 5,5 -> até 17,2 mg) com restrição estrita de 9 mg/dia sob inibidores de CYP3A4 e NDA 220934/S-003 validada.
+[PASS] Retatrutida (H4.3.3): Grupos paralelos segregados; expurgada atribuição indevida ao NEJM e contextualizado subestudo Nature Medicine (86,0% MRI-PDFF).
+[PASS] Somatropina: Indicações médicas Classe A segregadas de relatos esportivos Classe C com aviso WADA.
+[PASS] SS-31: Aprovação de Forzinity para síndrome de Barth separada de hipóteses experimentais com menção ao MMPOWER-3.
+[PASS] 70 estudos clínicos validados; Retatrutida retificado com 86,0% MRI-PDFF.
+[PASS] Calculadora: Preset Egrifta WR configurado com 11,6 mg, 1,3 mL, concentração nominal de 8 mg/mL, 7 doses utilizáveis e dose 1,28 mg (0,16 mL).
+[PASS] Solvente ácido acético com BUD nulo e nota estrita USP <797>.
+
+=== TODOS OS TESTES DA SUÍTE A FORAM APROVADOS COM SUCESSO! ===
+=== SUÍTE B: TESTES DE EXECUÇÃO NO MOTOR JAVASCRIPT (V8) DA CALCULADORA ===
+[PASS] popularPresets 100% eliminado do código da calculadora.
+[V8 Runtime] Conectado com sucesso via canal: chrome
+[PASS] Classe PeptideCalculator carregada com sucesso no contexto V8.
+[PASS] Item 1 (V8): Rejeição de dose maior que massa do frasco (errorType: excessive_mass) validada.
+[PASS] Item 2 (V8): Rejeição de volume que ultrapassa seringa (errorType: syringe_capacity_exceeded) validada.
+[PASS] Item 3 (V8): 11 casos de entradas inválidas, zero, negativas e não numéricas rejeitadas.
+[PASS] Item 4 (V8): 4 vetores de cálculo matemático U-100 validados diretamente no motor V8.
+[PASS] Item 5 (V8): Egrifta WR retorna concentração oficial de bula de 8,00 mg/mL (e não 8,92 mg/mL).
+[PASS] Item 6 (V8): Correspondência exata entre 1,28 mg e 0,16 mL (16,0 UI U-100) validada.
+[PASS] Item 7 (V8): Limite de exatamente 7 doses utilizáveis por frasco semanal validado (divisão linear para 9 doses bloqueada).
+[PASS] Item 8 (V8): Desativação estrita do preset oficial ao alterar massa/volume e preservação da matemática teórica em cálculos genéricos.
+[PASS] Item 9 (V8): Regressão completa dos 16 presets (118 combinações avaliadas, 100% de preenchimentos padrão válidos e 0 falhas).
+[PASS] Lógica de estabilidade: IGF-1 LR3 em Nível B com fator neutro 1.0.
+
+=== TODOS OS 9 ITENS MANDATÓRIOS DA SUÍTE B FORAM 100% APROVADOS NO MOTOR V8! ===
+--- STDERR ---
+.........................................................................F.F...F................................
+======================================================================
+FAIL: test_all_manifest_files_exist_and_match_hash_and_size (test_manifest_h4_14.TestManifestH414.test_all_manifest_files_exist_and_match_hash_and_size)
+Verifica existência física, tamanho e hash SHA-256 de cada arquivo catalogado no manifesto.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\georg\AppData\Local\Temp\peptipedia_clean_clone_h4_16_base\tests\test_manifest_h4_14.py", line 59, in test_all_manifest_files_exist_and_match_hash_and_size
+    self.assertEqual(len(size_divergences), 0, f"Divergências de tamanho em bytes: {size_divergences}")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 126 != 0 : Divergências de tamanho em bytes: ['.github/workflows/ci.yml: esperado=831, obtido=797', '.gitignore: esperado=204, obtido=187', '00_HANDOFF/MASTER_BACKLOG.md: esperado=5003, obtido=4946', '00_HANDOFF/MASTER_DECISIONS.md: esperado=7091, obtido=7025', '00_HANDOFF/MASTER_STATE.md: esperado=2783, obtido=2738', '00_HANDOFF/SESSION_LOG.md: esperado=8070, obtido=7982', 'README.md: esperado=6369, obtido=6273', 'Staticfile: esperado=37, obtido=35', 'css/style.css: esperado=12324, obtido=11868', 'harness/independent_verifier.py: esperado=5456, obtido=5326', 'harness/mutation_tester.py: esperado=5384, obtido=5258', 'harness/report_validator.py: esperado=3755, obtido=3656', 'index.html: esperado=102492, obtido=99509', 'js/app.js: esperado=183515, obtido=176939', 'js/calculator.js: esperado=46043, obtido=45230', 'js/domain/compounds.js: esperado=659768, obtido=649153', 'js/domain/index.js: esperado=10470, obtido=10241', 'js/domain/protocols.js: esperado=258952, obtido=253732', 'js/domain/stacks.js: esperado=47679, obtido=46696', 'js/glossary-data.js: esperado=16353, obtido=16161', 'js/peptides-data.js: esperado=914429, obtido=899211', 'js/stability-data.js: esperado=65362, obtido=64654', 'js/stability.js: esperado=19548, obtido=19246', 'js/stacks-data.js: esperado=48225, obtido=47108', 'js/studies-data.js: esperado=120374, obtido=118625', 'public/css/style.css: esperado=12324, obtido=11868', 'public/index.html: esperado=102492, obtido=99509', 'public/js/app.js: esperado=183515, obtido=176939', 'public/js/calculator.js: esperado=46043, obtido=45230', 'public/js/domain/compounds.js: esperado=659768, obtido=649153', 'public/js/domain/index.js: esperado=10470, obtido=10241', 'public/js/domain/protocols.js: esperado=258952, obtido=253732', 'public/js/domain/stacks.js: esperado=47679, obtido=46696', 'public/js/glossary-data.js: esperado=16353, obtido=16161', 'public/js/peptides-data.js: esperado=914429, obtido=899211', 'public/js/stability-data.js: esperado=65362, obtido=64654', 'public/js/stability.js: esperado=19548, obtido=19246', 'public/js/stacks-data.js: esperado=48225, obtido=47108', 'public/js/studies-data.js: esperado=120374, obtido=118625', 'railpack.json: esperado=79, obtido=75', 'reports/QUALITY_DASHBOARD.md: esperado=3053, obtido=3007', 'reports/RELATORIO_AUDITORIA_CIENTIFICA_114.md: esperado=6362, obtido=6300', 'reports/RELATORIO_REAUDITORIA_60_ACHADOS_H4_13.md: esperado=27519, obtido=27419', 'reports/RELATORIO_REPRODUTIBILIDADE_H4_13.md: esperado=6092, obtido=5987', 'reports/RELATORIO_REPRODUTIBILIDADE_H4_14.md: esperado=4334, obtido=4261', 'reports/RELEASE_READINESS.md: esperado=3576, obtido=3523', 'requirements.txt: esperado=20, obtido=19', 'research/evidence/ALEGACOES_STACKS_REJEITADAS.csv: esperado=6165, obtido=6154', 'research/evidence/CLAIMS_REGISTER.csv: esperado=26565, obtido=26517', 'research/evidence/INVENTARIO_AMPLIADO_STACKS.csv: esperado=19063, obtido=19043', 'research/evidence/LISTA_STACKS_NOVOS_GRAUS.csv: esperado=8684, obtido=8671', 'research/evidence/LOG_BUSCA_BIBLIOGRAFICA_H4_14.csv: esperado=5319, obtido=5312', 'research/evidence/MANIFESTO_114_RECONCILIADO.csv: esperado=96229, obtido=96114', 'research/evidence/MANIFESTO_ARQUIVOS_H4_10.csv: esperado=48264, obtido=48096', 'research/evidence/MANIFESTO_ARQUIVOS_H4_11.csv: esperado=54275, obtido=54085', 'research/evidence/MANIFESTO_ARQUIVOS_H4_12.csv: esperado=72292, obtido=72080', 'research/evidence/MANIFESTO_ARQUIVOS_H4_13.csv: esperado=97388, obtido=97152', 'research/evidence/MATRIZ_114_AUDITORIA_CIENTIFICA.csv: esperado=53695, obtido=53580', 'research/evidence/MATRIZ_114_UNIDADES_FARMACOLOGICAS.csv: esperado=60640, obtido=60525', 'research/evidence/MATRIZ_18_STACKS_REVISADOS.csv: esperado=28146, obtido=28127', 'research/evidence/MATRIZ_ACHADOS_H4_6.csv: esperado=27971, obtido=27910', 'research/evidence/MATRIZ_AUDITORIA_COMPOUNDS_H4_6.csv: esperado=94981, obtido=94866', 'research/evidence/MATRIZ_AUDITORIA_FONTES_H4_6.csv: esperado=125066, obtido=124556', 'research/evidence/MATRIZ_AUDITORIA_PROTOCOLS_H4_6.csv: esperado=45856, obtido=45720', 'research/evidence/MATRIZ_AUDITORIA_STACKS_H4_6.csv: esperado=8732, obtido=8713', 'research/evidence/MATRIZ_BIBLIOGRAFICA_H4_10.csv: esperado=14048, obtido=14034', 'research/evidence/MATRIZ_COMPARACAO_GLOW_KLOW_WOLVERINE.csv: esperado=8769, obtido=8764', 'research/evidence/MATRIZ_COMPATIBILIDADE_BLENDS.csv: esperado=12830, obtido=12813', 'research/evidence/MATRIZ_ESTABILIDADE_GLOW_KLOW_H4_9.csv: esperado=7234, obtido=7223', 'research/evidence/MATRIZ_FARMACOTECNICA_H4_10.csv: esperado=11227, obtido=11216', 'research/evidence/MATRIZ_FARMACOTECNICA_H4_11.csv: esperado=12678, obtido=12667', 'research/evidence/MATRIZ_FARMACOTECNICA_H4_12.csv: esperado=14163, obtido=14152', 'research/evidence/MATRIZ_MIGRACAO_COMPOUNDS.csv: esperado=49070, obtido=48955', 'research/evidence/MATRIZ_MIGRACAO_PROTOCOLS.csv: esperado=66825, obtido=66689', 'research/evidence/MATRIZ_MIGRACAO_STACKS.csv: esperado=5918, obtido=5899', 'research/evidence/MATRIZ_NORMATIVA_H4_13.csv: esperado=7841, obtido=7832', 'research/evidence/MATRIZ_NORMATIVA_H4_14.csv: esperado=9955, obtido=9946', 'research/evidence/MATRIZ_PLAYWRIGHT_H4_11.csv: esperado=2683, obtido=2671', 'research/evidence/MATRIZ_PLAYWRIGHT_H4_12.csv: esperado=3574, obtido=3558', 'research/evidence/MATRIZ_PLAYWRIGHT_H4_13.csv: esperado=6093, obtido=6070', 'research/evidence/MATRIZ_PLAYWRIGHT_H4_14.csv: esperado=5970, obtido=5947', 'research/evidence/MATRIZ_POSOLOGICA_H4_11.csv: esperado=24400, obtido=24374', 'research/evidence/MATRIZ_POSOLOGICA_RECONCILIADA_H4_10.csv: esperado=26253, obtido=26227', 'research/evidence/MATRIZ_RECONCILIACAO_60_ACHADOS_H4_10.csv: esperado=37985, obtido=37924', 'research/evidence/MATRIZ_RECONCILIACAO_60_ACHADOS_H4_11.csv: esperado=39061, obtido=39000', 'research/evidence/MATRIZ_RECONCILIACAO_60_ACHADOS_H4_12.csv: esperado=43475, obtido=43414', 'research/evidence/MATRIZ_RECONCILIACAO_60_ACHADOS_H4_13.csv: esperado=41955, obtido=41894', 'research/evidence/MATRIZ_RECONCILIACAO_60_ACHADOS_H4_14.csv: esperado=43354, obtido=43293', 'research/evidence/MATRIZ_RECONCILIACAO_60_ACHADOS_H4_8.csv: esperado=24446, obtido=24385', 'research/evidence/MATRIZ_RECONCILIACAO_60_ACHADOS_H4_9.csv: esperado=29826, obtido=29765', 'research/evidence/MATRIZ_RECONCILIACAO_POSOLOGICA_H4_12.csv: esperado=36622, obtido=36592', 'research/evidence/MATRIZ_REVALIDACAO_POSOLOGICA_H4_13.csv: esperado=27895, obtido=27865', 'research/evidence/MATRIZ_REVALIDACAO_POSOLOGICA_H4_14.csv: esperado=28786, obtido=28756', 'research/evidence/MATRIZ_VALIDACAO_13_PMIDS_H4_8.csv: esperado=5928, obtido=5914', 'research/evidence/MATRIZ_VALIDACAO_25_DOSES_H4_8.csv: esperado=18520, obtido=18494', 'research/evidence/MATRIZ_VALIDACAO_H4_7.csv: esperado=1092, obtido=1081', 'research/evidence/MATRIZ_VALIDACAO_PLAYWRIGHT_H4_10.csv: esperado=2636, obtido=2624', 'research/evidence/MATRIZ_VALIDACAO_PMIDS_H4_9.csv: esperado=9605, obtido=9591', 'research/evidence/MATRIZ_VALIDACAO_POSOLOGICA_H4_9.csv: esperado=22530, obtido=22504', 'research/evidence/MATRIZ_VALIDACAO_UI_H4_8.csv: esperado=3149, obtido=3138', 'research/evidence/MATRIZ_VALIDACAO_UI_H4_9.csv: esperado=2271, obtido=2260', 'research/evidence/REGISTRO_CORRECOES_BIBLIOGRAFICAS_H4_7.csv: esperado=5384, obtido=5369', 'research/evidence/REGISTRO_CORRECOES_COMPOUNDS_H4_7.csv: esperado=22557, obtido=22493', 'research/evidence/REGISTRO_SANEAMENTO_PROTOCOLS_H4_7.csv: esperado=7666, obtido=7640', 'research/evidence/SOURCE_REGISTRY.csv: esperado=3532, obtido=3518', 'tests/MATRIZ_H4_3_1_114_PEPTIDEOS_REAIS.csv: esperado=31742, obtido=31627', 'tests/MATRIZ_H4_3_1_70_ESTUDOS_REAIS.csv: esperado=21485, obtido=21414', 'tests/MATRIZ_H4_3_2_114_PEPTIDEOS_REAIS.csv: esperado=34699, obtido=34584', 'tests/MATRIZ_H4_3_2_70_ESTUDOS_REAIS.csv: esperado=31773, obtido=31702', 'tests/MATRIZ_H4_3_3_114_PEPTIDEOS_REAIS.csv: esperado=28365, obtido=28250', 'tests/MATRIZ_H4_3_3_70_ESTUDOS_REAIS.csv: esperado=31773, obtido=31702', 'tests/e2e_execution_results.json: esperado=51089, obtido=49332', 'tests/generate_deliverable_matrices.py: esperado=8124, obtido=7931', 'tests/h4_13_playwright_execution.log: esperado=3972, obtido=3890', 'tests/run_full_audit.py: esperado=7626, obtido=7439', 'tests/test_114_peptides_traceability.py: esperado=3392, obtido=3315', 'tests/test_70_studies_integrity.py: esperado=3244, obtido=3165', 'tests/test_data_integrity.py: esperado=13284, obtido=13103', 'tests/test_domain_normalization.py: esperado=13944, obtido=13684', 'tests/test_e2e_all_modals.py: esperado=12137, obtido=11900', 'tests/test_e2e_reproducible.py: esperado=17337, obtido=16975', 'tests/test_stability_node.js: esperado=14966, obtido=14728', 'tests/test_stability_playwright.py: esperado=13774, obtido=13498', 'tests/test_stability_v1_remediation.py: esperado=13573, obtido=13313', 'tests/test_ui_smoke.py: esperado=1481, obtido=1442', 'tests/test_unit_logic.py: esperado=18097, obtido=17801']
+
+======================================================================
+FAIL: test_no_uncataloged_git_tracked_files (test_manifest_h4_14.TestManifestH414.test_no_uncataloged_git_tracked_files)
+Verifica que todos os arquivos rastreados no Git estão catalogados no manifesto (exceto autorreferência).
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\georg\AppData\Local\Temp\peptipedia_clean_clone_h4_16_base\tests\test_manifest_h4_14.py", line 78, in test_no_uncataloged_git_tracked_files
+    self.assertEqual(len(uncataloged), 0, f"Arquivos rastreados no Git mas não catalogados no manifesto H4.14: {uncataloged}")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 18 != 0 : Arquivos rastreados no Git mas não catalogados no manifesto H4.14: ['.gitattributes', 'reports/BACKLOG_REMANESCENTE_H4_15.md', 'reports/RELATORIO_AUDITORIA_INDEPENDENTE_H4_15.md', 'reports/RELATORIO_BUSCA_BIBLIOGRAFICA_H4_15.md', 'reports/RELATORIO_CORRECAO_BIBLIOGRAFICA_H4_15.md', 'reports/RELATORIO_CORRECAO_NORMATIVA_H4_15.md', 'reports/RELATORIO_INTEGRIDADE_MANIFESTO_H4_15.md', 'reports/RELATORIO_REAUDITORIA_60_ACHADOS_H4_15.md', 'reports/RELATORIO_REPRODUTIBILIDADE_FINAL_H4_15.md', 'research/evidence/LOG_BUSCA_BIBLIOGRAFICA_H4_15.csv', 'research/evidence/MANIFESTO_ARQUIVOS_H4_15.csv', 'research/evidence/MATRIZ_BIBLIOGRAFICA_H4_15.csv', 'research/evidence/MATRIZ_NORMATIVA_H4_15.csv', 'research/evidence/MATRIZ_RECONCILIACAO_60_ACHADOS_H4_15.csv', 'tests/h4_14_playwright_execution.log', 'tests/h4_15_clean_clone_execution.log', 'tests/test_audit_h4_15.py', 'tests/test_manifest_h4_15.py']
+
+======================================================================
+FAIL: test_physical_existence_and_hash_integrity (test_manifest_h4_15.TestManifestH415.test_physical_existence_and_hash_integrity)
+Verifica a existência física e a integridade de hash SHA-256 de cada arquivo catalogado.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\georg\AppData\Local\Temp\peptipedia_clean_clone_h4_16_base\tests\test_manifest_h4_15.py", line 95, in test_physical_existence_and_hash_integrity
+    self.assertEqual(len(failures), 0, f"Falhas de integridade física no manifesto H4.15: {failures}")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 4 != 0 : Falhas de integridade física no manifesto H4.15: ['.github/workflows/ci.yml: hash divergente (esperado=2c1f7be94e0bf9200358b581edee99a1c86d6dcfc08fe8eff45d8486302aa8e4, obtido=5f8b1367fd9db257b351a56ef2d394e56c20b640e22b097763856352a753349b)', '.gitignore: hash divergente (esperado=57e1ad8e0a4bc56294411b59ded2cb77ef4c1644f8a02091cfb86097b05c3718, obtido=8aa39e9e9f563ece3e1c0d8b9ea88f1b9e0e81424d343fe41e0f975d83ea5677)', 'Staticfile: hash divergente (esperado=c664318a8453c743bf95cde80cd2c2cd2d5a964c4a12ed37808653c53bdae897, obtido=643b7154d1c6823c790c47b1ed852687eb47d72f941cef79183b1aa53ffccd6e)', 'research/evidence/MATRIZ_PLAYWRIGHT_H4_14.csv: hash divergente (esperado=3e388dfef51f89ca1c98c697bf7711741b52d5a79778cf387343c72443269798, obtido=daa0d8e07cb84752ad151bd0e90003a89de5eaf92fc71d012a1ddf47c6d0e54d)']
+
+----------------------------------------------------------------------
+Ran 112 tests in 2.109s
+
+FAILED (failures=3)
+
+>>> SUITE 2: python tests/test_audit_h4_15.py
+Command: python tests/test_audit_h4_15.py
+ExitCode: 0 | Duration: 1.427s
+--- STDERR ---
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.015s
+
+OK
+
+>>> SUITE 3 (Post-discover): python tests/test_manifest_h4_15.py
+Command: python tests/test_manifest_h4_15.py
+ExitCode: 1 | Duration: 1.576s
+--- STDERR ---
+...F.
+======================================================================
+FAIL: test_physical_existence_and_hash_integrity (__main__.TestManifestH415.test_physical_existence_and_hash_integrity)
+Verifica a existência física e a integridade de hash SHA-256 de cada arquivo catalogado.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\georg\AppData\Local\Temp\peptipedia_clean_clone_h4_16_base\tests\test_manifest_h4_15.py", line 95, in test_physical_existence_and_hash_integrity
+    self.assertEqual(len(failures), 0, f"Falhas de integridade física no manifesto H4.15: {failures}")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 4 != 0 : Falhas de integridade física no manifesto H4.15: ['.github/workflows/ci.yml: hash divergente (esperado=2c1f7be94e0bf9200358b581edee99a1c86d6dcfc08fe8eff45d8486302aa8e4, obtido=5f8b1367fd9db257b351a56ef2d394e56c20b640e22b097763856352a753349b)', '.gitignore: hash divergente (esperado=57e1ad8e0a4bc56294411b59ded2cb77ef4c1644f8a02091cfb86097b05c3718, obtido=8aa39e9e9f563ece3e1c0d8b9ea88f1b9e0e81424d343fe41e0f975d83ea5677)', 'Staticfile: hash divergente (esperado=c664318a8453c743bf95cde80cd2c2cd2d5a964c4a12ed37808653c53bdae897, obtido=643b7154d1c6823c790c47b1ed852687eb47d72f941cef79183b1aa53ffccd6e)', 'research/evidence/MATRIZ_PLAYWRIGHT_H4_14.csv: hash divergente (esperado=3e388dfef51f89ca1c98c697bf7711741b52d5a79778cf387343c72443269798, obtido=daa0d8e07cb84752ad151bd0e90003a89de5eaf92fc71d012a1ddf47c6d0e54d)']
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.155s
+
+FAILED (failures=1)
+
+>>> SUITE 4: python tests/test_audit_h4_14_playwright.py
+Command: python tests/test_audit_h4_14_playwright.py
+ExitCode: 0 | Duration: 20.750s
+--- STDOUT ---
+[27184.181] === INICIANDO MASTER SUÍTE E2E PLAYWRIGHT H4.14 ===
+[27184.181] Repositório: C:\Users\georg\AppData\Local\Temp\peptipedia_clean_clone_h4_16_base
+[27184.181] Arquivo alvo: C:\Users\georg\AppData\Local\Temp\peptipedia_clean_clone_h4_16_base\public\index.html
+[27184.806] [Playwright] Chromium iniciado via canal 'chrome'.
+[27184.806] 
+--- INICIANDO BATERIA DE TESTES FUNCIONAIS (15 CENÁRIOS) ---
+[27187.402] 
+--- TESTE 1: CATÁLOGO DESKTOP (1280x800) ---
+[27187.480] 
+--- TESTE 2A: BUSCA EXATA 'Epitalon' ---
+[27187.897] 
+--- TESTE 2B: BUSCA PARCIAL 'BPC-157' ---
+[27188.317] 
+--- TESTE 2C: BUSCA ESPECÍFICA 'BPC-157 Arginato' ---
+[27188.731] 
+--- TESTE 2D: BUSCA INEXISTENTE ---
+[27189.143] 
+--- TESTE 2E: LIMPEZA DA BUSCA ---
+[27189.556] 
+--- TESTE 2F: UNICIDADE DOS 114 COMPOSTOS ---
+[27189.558] 
+--- TESTE 3: MODAL SEMAX ---
+[27190.737] 
+--- TESTE 4: ABA STACKS & BLEND KLOW ---
+[27191.444] 
+--- TESTE 5: CALCULADORA DE RECONSTITUIÇÃO ---
+[27192.751] 
+--- TESTE 6: REJEIÇÃO DE ENTRADAS INVÁLIDAS ---
+[27193.092] 
+--- TESTE 7: PERSISTÊNCIA DE ESTADO DA CALCULADORA ---
+[27194.309] 
+--- TESTE 8: TABLET VIEWPORT (768x1024) ---
+[27196.582] 
+--- TESTE 9: MOBILE VIEWPORT (375x667) ---
+[27198.694] 
+--- TESTE 10: DOMAINENGINE CANÔNICO ---
+[27200.026] 
+=== INICIANDO BATERIA DE TESTES NEGATIVOS REAIS (FRENTE D) ===
+[27201.705] 
+--- TESTE NEG-01: INJEÇÃO REAL DE JS ERROR ---
+[27202.008] NEG-01: Erro capturado=True, Gate reprovou=True
+[27202.008] 
+--- TESTE NEG-02: MUTAÇÃO REAL DO DOM (REMOÇÃO DE 5 CARDS) ---
+[27202.224] NEG-02: Gate reprovou contagem divergente (109 != 114): True
+[27202.224] 
+--- TESTE NEG-03: INJEÇÃO REAL DE CARD DUPLICADO NO DOM ---
+[27202.452] NEG-03: Gate reprovou duplicata real de ID ('semax' in dups): True
+[27202.452] 
+--- TESTE NEG-04: SIMULAÇÃO REAL DE CATÁLOGO VAZIO NO DOM E STORE ---
+[27202.665] NEG-04: Gate reprovou estado vazio de DOM e Store: True
+[27202.665] 
+--- TESTE NEG-05: INJEÇÃO REAL DE ELEMENTO DE 5000px NO DOM ---
+[27202.878] NEG-05: Gate reprovou overflow real de 5000px: True
+[27202.878] 
+--- TESTE NEG-06: INJEÇÃO DE REFERÊNCIA CORROMPIDA NO DOMAINENGINE ---
+[27202.880] NEG-06: Gate reprovou stack corrompido: True (erros=["Stack [corrupt-stack-h414] referencia compoundId inexistente: 'non-existent-comp-h414'"])
+[27202.880] 
+--- TESTE NEG-07: BUSCA REAL COM REJEIÇÃO POR EXPECTATIVA DIVERGENTE ---
+[27203.295] NEG-07: Gate reprovou divergência de expectativa ('Epitalon' != 'BPC-157'): True
+[27203.429] Log salvo com sucesso em: C:\Users\georg\AppData\Local\Temp\peptipedia_clean_clone_h4_16_base\tests\h4_14_playwright_execution.log
+[27203.430] Matriz CSV salva com sucesso em: C:\Users\georg\AppData\Local\Temp\peptipedia_clean_clone_h4_16_base\research\evidence\MATRIZ_PLAYWRIGHT_H4_14.csv
+[27203.430] 
+=== RESULTADOS FINAIS H4.14: Total=22, Aprovados=22, Falhas=0 ===
+
+==============================================================================
+POST-RUN GIT STATUS IN CLEAN CLONE:
+M research/evidence/MATRIZ_PLAYWRIGHT_H4_14.csv
+ M tests/h4_14_playwright_execution.log
+ M tests/results_114_peptides.json
+ M tests/results_70_studies.json
+
+H4.16 REPRODUCIBILITY SUMMARY:
+  [FAIL] SUITE 0 (Pre-discover baseline): python tests/test_manifest_h4_15.py -> ExitCode 1 (0.579s)
+  [FAIL] SUITE 1: python -m unittest discover -s tests -p "test_*.py" -> ExitCode 1 (4.809s)
+  [PASS] SUITE 2: python tests/test_audit_h4_15.py -> ExitCode 0 (1.427s)
+  [FAIL] SUITE 3 (Post-discover): python tests/test_manifest_h4_15.py -> ExitCode 1 (1.576s)
+  [PASS] SUITE 4: python tests/test_audit_h4_14_playwright.py -> ExitCode 0 (20.750s)
+==============================================================================

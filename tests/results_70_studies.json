@@ -288,14 +288,14 @@
   {
     "num": 23,
     "id": "study-ll37-wound",
-    "title": "Human antimicrobial peptide LL-37 accelerates re-epithelialization in skin wounds",
-    "pmid": "18288188",
-    "doi": "10.1038/jid.2008.20",
+    "title": "In vitro and in vivo wound healing-promoting activities of human cathelicidin LL-37",
+    "pmid": "17805349",
+    "doi": "10.1038/sj.jid.5701043",
     "peptideId": "ll-37",
     "peptideName": "LL-37",
     "is_target_30_relationship": true,
-    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18288188/",
-    "doi_url": "https://doi.org/10.1038/jid.2008.20",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17805349/",
+    "doi_url": "https://doi.org/10.1038/sj.jid.5701043",
     "status": "PASS"
   },
   {

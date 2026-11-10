@@ -1400,13 +1400,16 @@
       "Potencial citotóxico em doses suprafisiológicas elevadas"
     ],
     "limitations": [
-      "AVISO CIENTÍFICO: A dosagem de 100 a 250 mcg SC em dias alternados é uma prática empírica de pesquisa em imunomodulação. LL-37 é um desestabilizador de biofilmes bacterianos. NÃO há estudos controlados de segurança fase 3 aprovando uso sistêmico recreativo."
+      "AVISO CIENTÍFICO: A dosagem de 100 a 250 mcg SC em dias alternados é uma prática empírica de pesquisa em imunomodulação. O peptídeo humano LL-37 (carga líquida +6 em pH fisiológico) apresenta transição conformacional para alfa-hélice e oligomerização reguladas por concentração peptídica, pH (desordenado em pH 2) e força iônica/ânions como HCO3-, SO4^2- e Cl-, com inibição de atividade por soro humano (Johansson et al., 1998, PMID 9452503; agregação em membranas em Bonucci et al., 2015, PMID 26502164). Estudos recentes em LL-37 integral (Szarszoń et al., 2026, PMID 42708248) demonstram coordenação solúvel com Cu(II) e Zn(II) via amina N-terminal e carboxilato (complexos 4N com Cu(II) em pH alcalino) mantendo hélice alfa e atividade antibiofilme, sem comprovar precipitação macroscópica por GHK-Cu. Resultados obtidos apenas em fragmentos curtos (Brzeski et al., 2022, PMID 36047059 em hCAP(134-145) com Mn(II)/Zn(II); Brzeski et al., 2024, PMID 38809157 em KR-12 com Cu(II)) não devem ser extrapolados diretamente para LL-37 integral sem validação. No GHK-Cu, o Cu(II) forma complexo quelato de alta afinidade em pH fisiológico (Lau & Sarkar, 1981, PMID 7340824; Conato et al., 2001, PMID 11325542; Pickart & Margolina, 2018, PMID 29986520), não equivalendo a sais de cobre livre em solução. Recomenda-se reconstituição e aplicação isoladas por princípio de precaução físico-química e ausência de estudos analíticos da mistura sob ICH Q1A."
     ],
     "sources": [
-      "Human antimicrobial peptide LL-37 accelerates re-epithelialization in skin wounds"
+      "Vandamme D, et al. A comprehensive summary of LL-37, the factotum human cathelicidin peptide. Cell Immunol. 2012 (PMID 23246832)",
+      "Johansson J, et al. Conformation-dependent antibacterial activity of the naturally occurring human peptide LL-37. J Biol Chem. 1998 (PMID 9452503)",
+      "Szarszoń K, et al. Coordination chemistry and antimicrobial activity of LL-37, its C-terminal fragment, and a peptidomimetic analogue. Dalton Trans. 2026 (PMID 42708248)",
+      "Lau SJ, Sarkar B. The interaction of copper(II) and glycyl-L-histidyl-L-lysine. Biochem J. 1981 (PMID 7340824)"
     ],
-    "h4_4_pendency_flag": "Item 5/6: Precipitação de quelatos e limite temporal de 10-14 dias pendentes de ensaios toxicológicos",
-    "reviewedAt": "2026-11-08"
+    "h4_4_pendency_flag": "Item 5/6: Revisado na H4.16: coordenação solúvel de LL-37 integral com Cu(II)/Zn(II) (PMID 42708248) e dependência de força iônica/ânions/pH (PMID 9452503) separadas de estudos em fragmentos; ausência de prova de precipitação por GHK-Cu e caráter empírico do limite de 10-14 dias mantidos sob precaução analítica.",
+    "reviewedAt": "2026-11-10"
   },
   {
     "id": "proto-comp-vip-standard",
@@ -1816,7 +1819,7 @@
       "Desaconselhado para uso contínuo crônico sem monitoramento de saúde"
     ],
     "limitations": [
-      "AVISO CIENTÍFICO OBRIGATÓRIO: A dosagem oral de 5 a 20 mg diários é uma prática empírica de biohacking. Dihexa potencializa a via c-Met do HGF com formação massiva de novas sinapses (PMID: 23075218). NÃO possui ensaios clínicos fase 3 em humanos; cautela extrema contra uso em pacientes com risco oncológico oculto devido à via HGF/c-Met."
+      "AVISO CIENTÍFICO OBRIGATÓRIO: A dosagem oral de 5 a 20 mg diários é uma prática empírica de biohacking. O estudo original (McCoy et al., 2013; PMID 23055539) permanece sob Notice of Concern (PMID 34551989) e o artigo de mecanismo via c-Met (Benoist et al., 2014) foi RETRATADO formalmente (PMID 40312093). NÃO possui ensaios clínicos fase 3 em humanos."
     ],
     "sources": [
       "The novel angiotensin IV analog Dihexa promotes spinogenesis and facilitates synaptogenesis in hippocampal neurons"
@@ -5210,7 +5213,7 @@
     "sources": [
       "Int J Mol Sci 2018 (PMID 29986520)",
       "Curr Pharm Des 2020 (PMID 32241280)",
-      "Expert Opin Biol Ther 2012 (PMID 23075218)",
+      "Expert Opin Biol Ther 2012 (PMID 22074294)",
       "Peptides 2005 (PMID 15792610)"
     ],
     "h4_4_pendency_flag": "none",

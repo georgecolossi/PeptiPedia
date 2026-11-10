@@ -278,10 +278,12 @@ window.COMPOUNDS_STORE = (function () {
             },
             {
                 "type": "study",
-                "title": "Thymosin beta-4: a key player in wound healing and tissue regeneration",
-                "authors": "",
-                "year": "",
-                "pmid": "23075218"
+                "title": "Thymosin β4: a multi-functional regenerative peptide. Basic properties and clinical applications",
+                "authors": "Goldstein AL, Hannappel E, Sosne G, Kleinman HK",
+                "year": 2012,
+                "journal": "Expert Opin Biol Ther. 2012;12(1):37-51",
+                "doi": "10.1517/14712598.2012.634793",
+                "pmid": "22074294"
             },
             {
                 "type": "reference",
@@ -289,7 +291,7 @@ window.COMPOUNDS_STORE = (function () {
             },
             {
                 "type": "reference",
-                "citation": "Goldstein AL, et al. Thymosin beta-4 tissue regeneration. Expert Opin Biol Ther. 2012. PMID: 23075218"
+                "citation": "Goldstein AL, et al. Thymosin beta-4: a multi-functional regenerative peptide. Expert Opin Biol Ther. 2012. PMID: 22074294"
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
@@ -2645,12 +2647,33 @@ window.COMPOUNDS_STORE = (function () {
             },
             {
                 "type": "study",
-                "title": "Cutaneous injury induces the release of cathelicidin anti-microbial peptides",
-                "authors": "Dorschner RA, Pestonjamasp VK, Tamakuwala S, et al.",
+                "title": "Cutaneous injury induces the release of cathelicidin anti-microbial peptides active against group A Streptococcus",
+                "authors": "Dorschner RA, Pestonjamasp VK, Tamakuwala S, Ohtake T, Rudisill J, et al.",
                 "year": 2001,
-                "journal": "Lancet. 2001 Jun 23;357(9273):2024-5",
-                "pmid": "11462002",
-                "url": "https://pubmed.ncbi.nlm.nih.gov/11462002/"
+                "journal": "J Invest Dermatol. 2001 Jul;117(1):91-7",
+                "doi": "10.1046/j.1523-1747.2001.01340.x",
+                "pmid": "11442754",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/11442754/"
+            },
+            {
+                "type": "study",
+                "title": "Conformation-dependent antibacterial activity of the naturally occurring human peptide LL-37",
+                "authors": "Johansson J, Gudmundsson GH, Rottenberg ME, Berndt KD, Agerberth B",
+                "year": 1998,
+                "journal": "J Biol Chem. 1998 Feb 6;273(6):3718-24",
+                "doi": "10.1074/jbc.273.6.3718",
+                "pmid": "9452503",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/9452503/"
+            },
+            {
+                "type": "study",
+                "title": "Coordination chemistry and antimicrobial activity of LL-37, its C-terminal fragment, and a peptidomimetic analogue",
+                "authors": "Szarszoń K, et al.",
+                "year": 2026,
+                "journal": "Dalton Trans. 2026",
+                "doi": "10.1039/d6dt01638c",
+                "pmid": "42708248",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/42708248/"
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
@@ -3442,7 +3465,7 @@ window.COMPOUNDS_STORE = (function () {
             "score": 85,
             "popularityScore": 88,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO OBRIGATÓRIO: A dosagem oral de 5 a 20 mg diários é uma prática empírica de biohacking. Dihexa potencializa a via c-Met do HGF com formação massiva de novas sinapses (PMID: 23075218). NÃO possui ensaios clínicos fase 3 em humanos; cautela extrema contra uso em pacientes com risco oncológico oculto devido à via HGF/c-Met."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO OBRIGATÓRIO: A dosagem oral de 5 a 20 mg diários é uma prática empírica de biohacking. O estudo original (McCoy et al., 2013; PMID 23055539) permanece sob Notice of Concern (PMID 34551989) e o artigo de mecanismo via c-Met (Benoist et al., 2014) foi RETRATADO formalmente (PMID 40312093). NÃO possui ensaios clínicos fase 3 em humanos; bioatividade sinaptogênica não validada por pares."
         },
         "sources": [
             {

@@ -1074,7 +1074,7 @@
     "sources": [
       "Int J Mol Sci 2018 (PMID 29986520)",
       "Curr Pharm Des 2020 (PMID 32241280)",
-      "Expert Opin Biol Ther 2012 (PMID 23075218)",
+      "Expert Opin Biol Ther 2012 (PMID 22074294)",
       "Peptides 2005 (PMID 15792610)",
       "https://peptidepedia.org/all-peptides",
       "https://www.arcana-labs.app/peptideos"

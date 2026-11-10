@@ -370,16 +370,16 @@ const PEPTIDES_DATABASE = [
         "url": "https://pubmed.ncbi.nlm.nih.gov/15130753/"
       },
       {
-        "title": "Thymosin beta-4: a key player in wound healing and tissue regeneration",
+        "title": "Thymosin β4: a multi-functional regenerative peptide. Basic properties and clinical applications",
         "journal": "Expert Opinion on Biological Therapy (2012)",
-        "pmid": "23075218",
-        "doi": "10.1517/14712598.2012.730514",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/23075218/"
+        "pmid": "22074294",
+        "doi": "10.1517/14712598.2012.634793",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/22074294/"
       }
     ],
     "scientificReferences": [
       "Philp D, et al. Thymosin beta4 accelerates wound healing. Ann N Y Acad Sci. 2007. PMID: 15130753",
-      "Goldstein AL, et al. Thymosin beta-4 tissue regeneration. Expert Opin Biol Ther. 2012. PMID: 23075218"
+      "Goldstein AL, et al. Thymosin beta-4: a multi-functional regenerative peptide. Expert Opin Biol Ther. 2012. PMID: 22074294"
     ],
     "clinicalStudies": [
       {
@@ -4074,27 +4074,44 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Human Cathelicidin LL-37 in Host Defense and Chronic Inflammation",
-        "journal": "Frontiers in Immunology",
-        "year": "2019",
-        "pmid": "31503166",
-        "doi": "10.3389/fimmu.2019.01974",
-        "link": "https://pubmed.ncbi.nlm.nih.gov/31503166/",
-        "phase": "Revisão Mecanística",
-        "participants": "Estudos pré-clínicos",
-        "keyFindings": "LL-37 demonstrou potente erradicação de biofilmes microbianos e regulação de receptores toll-like (TLR) com propriedades de fechamento de feridas."
+        "title": "A comprehensive summary of LL-37, the factotum human cathelicidin peptide",
+        "journal": "Cell Immunol",
+        "year": "2012",
+        "pmid": "23246832",
+        "doi": "10.1016/j.cellimm.2012.11.009",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/23246832/",
+        "phase": "Revisão Narrativa / Mecanística",
+        "participants": "Revisão de estudos in vitro e pré-clínicos em catelicidina LL-37",
+        "keyFindings": "Sintetiza funções antimicrobianas, quimiotáticas, imunomoduladoras e angiogênicas de LL-37; não constitui prova experimental direta de precipitação com GHK-Cu."
       }
     ],
     "scientificReferences": [
-      "Vandamme D, et al. LL-37 in Host Defense. Front Immunol. 2019. PMID: 31503166"
+      "Vandamme D, Landuyt B, Luyten W, Schoofs L. A comprehensive summary of LL-37, the factotum human cathelicidin peptide. Cell Immunol. 2012;280(1):22-35. PMID: 23246832",
+      "Johansson J, Gudmundsson GH, Rottenberg ME, Berndt KD, Agerberth B. Conformation-dependent antibacterial activity of the naturally occurring human peptide LL-37. J Biol Chem. 1998;273(6):3718-24. PMID: 9452503",
+      "Szarszoń K, et al. Coordination chemistry and antimicrobial activity of LL-37, its C-terminal fragment, and a peptidomimetic analogue. Dalton Trans. 2026. PMID: 42708248",
+      "Dorschner RA, Pestonjamasp VK, Tamakuwala S, Ohtake T, Rudisill J, et al. Cutaneous injury induces the release of cathelicidin anti-microbial peptides active against group A Streptococcus. J Invest Dermatol. 2001;117(1):91-7. PMID: 11442754"
     ],
     "fullTextStudies": [
       {
-        "title": "Human antimicrobial peptide LL-37 accelerates re-epithelialization in skin wounds",
+        "title": "In vitro and in vivo wound healing-promoting activities of human cathelicidin LL-37",
         "journal": "Journal of Investigative Dermatology (2008)",
-        "pmid": "18288188",
-        "doi": "10.1038/jid.2008.20",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/18288188/"
+        "pmid": "17805349",
+        "doi": "10.1038/sj.jid.5701043",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/17805349/"
+      },
+      {
+        "title": "Induction of keratinocyte migration via transactivation of the epidermal growth factor receptor by the antimicrobial peptide LL-37",
+        "journal": "Journal of Immunology (2005)",
+        "pmid": "16177113",
+        "doi": "10.4049/jimmunol.175.7.4662",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/16177113/"
+      },
+      {
+        "title": "The cathelicidin anti-microbial peptide LL-37 is involved in re-epithelialization of human skin wounds and is lacking in chronic ulcer epithelium",
+        "journal": "Journal of Investigative Dermatology (2003)",
+        "pmid": "12603850",
+        "doi": "10.1046/j.1523-1747.2003.12069.x",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/12603850/"
       }
     ],
     "popularityScore": 84,
@@ -5207,7 +5224,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Pré-Clínico de Alta Potência (Neurociência)",
     "evidenceScore": 85,
     "protocolEvidenceType": "preclinical_empirical",
-    "protocolEvidenceNote": "AVISO CIENTÍFICO OBRIGATÓRIO: A dosagem oral de 5 a 20 mg diários é uma prática empírica de biohacking. Dihexa potencializa a via c-Met do HGF com formação massiva de novas sinapses (PMID: 23075218). NÃO possui ensaios clínicos fase 3 em humanos; cautela extrema contra uso em pacientes com risco oncológico oculto devido à via HGF/c-Met.",
+    "protocolEvidenceNote": "AVISO CIENTÍFICO OBRIGATÓRIO: A dosagem oral de 5 a 20 mg diários é uma prática empírica de biohacking. O estudo original (McCoy et al., 2013; PMID 23055539) permanece sob Notice of Concern (PMID 34551989) e o artigo de mecanismo via c-Met (Benoist et al., 2014) foi RETRATADO formalmente (PMID 40312093). NÃO possui ensaios clínicos fase 3 em humanos; bioatividade sinaptogênica não validada por pares.",
     "structure": "Derivado oligopeptídico lipofílico sintético da angiotensina IV",
     "sequence": "N-hexanoic-Tyr-Ile-(6)-aminohexanoic amide",
     "molecularWeight": "505.7 g/mol",
@@ -5249,24 +5266,25 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "The Angiotensin IV Analog Dihexa Facilitates Synaptogenesis and Augments Memory in Preclinical Models",
+        "title": "Evaluation of metabolically stabilized angiotensin IV analogs as procognitive/antidementia agents",
         "journal": "Journal of Pharmacology and Experimental Therapeutics",
-        "year": "2012",
-        "pmid": "23075218",
+        "year": "2013",
+        "pmid": "23055539",
         "doi": "10.1124/jpet.112.199497",
-        "link": "https://pubmed.ncbi.nlm.nih.gov/23075218/",
-        "phase": "Pré-clínico Robusto",
-        "participants": "Culturas hipocampais e modelos murinos de demência",
-        "keyFindings": "Dihexa reverteu com sucesso déficits cognitivos em modelos animais com eficácia sinaptogênica sete ordens de magnitude superior ao fator neurotrófico BDNF."
+        "link": "https://pubmed.ncbi.nlm.nih.gov/23055539/",
+        "phase": "Pré-clínico (sob Notice of Concern: PMID 34551989)",
+        "participants": "Modelos murinos tratados com escopolamina e animais idosos",
+        "keyFindings": "Estudo pré-clínico original objeto de Notice of Concern (PMID 34551989); o artigo mecanístico subsequente de via c-Met (Benoist et al., 2014) foi formalmente retratado (PMID 40312093)."
       }
     ],
     "scientificReferences": [
-      "McCoy AT, et al. Dihexa Facilitates Synaptogenesis. J Pharmacol Exp Ther. 2012. PMID: 23075218"
+      "McCoy AT, et al. Evaluation of metabolically stabilized angiotensin IV analogs as procognitive/antidementia agents. J Pharmacol Exp Ther. 2013;344(1):141-54. PMID: 23055539 (Notice of Concern: PMID 34551989)",
+      "Retraction notice (Benoist CC et al., 2014): J Pharmacol Exp Ther. 2025. PMID: 40312093"
     ],
     "fullTextStudies": [
       {
-        "title": "The novel angiotensin IV analog Dihexa promotes spinogenesis and facilitates synaptogenesis in hippocampal neurons",
-        "journal": "Journal of Pharmacology and Experimental Therapeutics (2012)",
+        "title": "Evaluation of metabolically stabilized angiotensin IV analogs as procognitive/antidementia agents",
+        "journal": "Journal of Pharmacology and Experimental Therapeutics (2013; Notice of Concern 2021: PMID 34551989)",
         "pmid": "23055539",
         "doi": "10.1124/jpet.112.199497",
         "url": "https://pubmed.ncbi.nlm.nih.gov/23055539/"

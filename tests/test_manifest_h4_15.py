@@ -64,7 +64,7 @@ class TestManifestH415(unittest.TestCase):
         self.assertEqual(len(uncataloged), 0, f"Arquivos rastreados no Git mas não catalogados no manifesto H4.15: {uncataloged}")
 
     def test_physical_existence_and_hash_integrity(self):
-        """Verifica a existência física e a integridade de hash SHA-256 de cada arquivo catalogado."""
+        """Verifica a existência física, tamanho exato em bytes e integridade de hash SHA-256 sem fallback silencioso."""
         failures = []
         with open(self.manifest_full_path, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
@@ -84,12 +84,10 @@ class TestManifestH415(unittest.TestCase):
                 actual_hash = hashlib.sha256(data).hexdigest().lower()
                 actual_size = len(data)
 
-                # Se houver divergência por quebra de linha CRLF/LF no Windows, testa hash normalizado LF
+                if actual_size != expected_size:
+                    failures.append(f"{rel_path}: tamanho divergente (esperado={expected_size}, obtido={actual_size})")
+
                 if actual_hash != expected_hash:
-                    normalized_data = data.replace(b'\r\n', b'\n')
-                    norm_hash = hashlib.sha256(normalized_data).hexdigest().lower()
-                    if norm_hash == expected_hash:
-                        continue
                     failures.append(f"{rel_path}: hash divergente (esperado={expected_hash}, obtido={actual_hash})")
 
         self.assertEqual(len(failures), 0, f"Falhas de integridade física no manifesto H4.15: {failures}")

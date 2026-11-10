@@ -73,7 +73,7 @@ print(f"[PASS] Exatamente {target_30_count} estudos mapeados para os 30 composto
 assert target_30_count == 20, f"Esperado 20 relacionamentos com compostos afetados, obtido {target_30_count}"
 
 out_json = os.path.join(repo_root, "tests", "results_70_studies.json")
-with open(out_json, "w", encoding="utf-8") as f:
+with open(out_json, "w", encoding="utf-8", newline="\n") as f:
     json.dump(results, f, ensure_ascii=False, indent=2)
 
 print(f"Salvo resultados em: {out_json}")

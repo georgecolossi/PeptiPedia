@@ -71,7 +71,7 @@ print(f"[PASS] Todos os 114 peptídeos validados com contraindicações, protoco
 
 # Output json results
 out_json = os.path.join(repo_root, "tests", "results_114_peptides.json")
-with open(out_json, "w", encoding="utf-8") as f:
+with open(out_json, "w", encoding="utf-8", newline="\n") as f:
     json.dump(results, f, ensure_ascii=False, indent=2)
 
 print(f"Salvo resultados em: {out_json}")
