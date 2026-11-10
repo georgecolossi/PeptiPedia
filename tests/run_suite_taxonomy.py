@@ -1,9 +1,9 @@
 """
-PeptiPedia - Runner Explícito e Taxonomia Formal das Suítes de Teste (H4.17 Frente E)
+PeptiPedia - Runner Explícito e Taxonomia Formal das Suítes de Teste (H4.18 Frente H)
 
 Categorias formais:
-  1. ATIVAS     - Verificação ativa da árvore H4.17 (bibliografia, domínio, estudos, manifesto H4.17).
-  2. HISTÓRICAS - Auditorias de governança H4.6-H4.16 e manifestos históricos por SHA congelado no Git.
+  1. ATIVAS     - Verificação ativa da árvore H4.18 (auditoria semântica, rastreabilidade NCBI, domínio, estudos, manifesto H4.18).
+  2. HISTÓRICAS - Auditorias de governança H4.6-H4.17 e manifestos históricos por SHA congelado no Git.
   3. REGRESSAO  - Calculadora, estabilidade físico-química, motor V8, unidades, normalização de domínio.
   4. E2E        - Verificações Playwright/browser headless em diretório temporário (sem sujar git status).
 
@@ -21,8 +21,8 @@ import unittest
 
 SUITE_TAXONOMY = {
     "ATIVAS": [
-        "tests.test_audit_h4_17",
-        "tests.test_manifest_h4_17",
+        "tests.test_audit_h4_18",
+        "tests.test_manifest_h4_18",
         "tests.test_114_peptides_traceability",
         "tests.test_70_studies_integrity",
         "tests.test_data_integrity",
@@ -31,6 +31,7 @@ SUITE_TAXONOMY = {
         "tests.test_manifest_h4_14",
         "tests.test_manifest_h4_15",
         "tests.test_manifest_h4_16",
+        "tests.test_manifest_h4_17",
         "tests.test_remediation_h4_7",
         "tests.test_audit_h4_8",
         "tests.test_audit_h4_9",
@@ -41,6 +42,7 @@ SUITE_TAXONOMY = {
         "tests.test_audit_h4_14",
         "tests.test_audit_h4_15",
         "tests.test_audit_h4_16",
+        "tests.test_audit_h4_17",
     ],
     "REGRESSAO": [
         "tests.test_domain_normalization",

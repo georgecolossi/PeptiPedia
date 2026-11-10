@@ -1427,7 +1427,7 @@
       "Potencial citotóxico em doses suprafisiológicas elevadas"
     ],
     "limitations": [
-      "AVISO CIENTÍFICO: A dosagem de 100 a 250 mcg SC em dias alternados é prática empírica sem validação por ECR fase 3. LL-37 integral apresenta transição alfa-hélice e oligomerização reguladas por pH/força iônica (PMID 9452503; PMID 26502164). Em bioinorgânica recente (Szarszoń et al., Dalton Trans 2026;55(37):13426-13445, PMID 42708248), LL-37 formou complexos solúveis exclusivamente com Cu(II) e Zn(II) em solução (NÃO Ni(II)); contudo, isso NÃO valida mistura física ou compatibilidade clínica com GHK-Cu (Lau & Sarkar, 1981, PMID 7340824; Conato et al., 2001, PMID 11325542; Pickart & Margolina, 2018, PMID 29986520) nem substitui ensaios de estabilidade ICH Q1A. Reconstituir e administrar em frascos/seringas isolados."
+      "AVISO CIENTÍFICO: A dosagem de 100 a 250 mcg SC em dias alternados é prática empírica sem validação por ECR fase 3. LL-37 integral apresenta transição alfa-hélice e oligomerização reguladas por pH/força iônica (PMID 9452503; PMID 26502164). Em bioinorgânica recente (Szarszoń et al., Dalton Trans 2026;55(37):13426-13445, PMID 42708248), LL-37 formou complexos solúveis exclusivamente com Cu(II) e Zn(II) em solução; contudo, isso NÃO valida mistura física ou compatibilidade clínica com GHK-Cu (Lau & Sarkar, 1981, PMID 7340824; Conato et al., 2001, PMID 11325542; Pickart & Margolina, 2018, PMID 29986520) nem substitui ensaios de estabilidade ICH Q1A. Reconstituir e administrar em frascos/seringas isolados."
     ],
     "sources": [
       "Szarszoń K, Luszawska M, Jewgiński M, Janek T, Latajka R, Bellotti D, Wątły J — Dalton Trans 2026;55(37):13426-13445 (PMID 42708248; Cu(II) e Zn(II))",

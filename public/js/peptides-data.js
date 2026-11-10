@@ -4303,7 +4303,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Ensaios Pré-clínicos & In Vitro",
     "evidenceScore": 85,
     "protocolEvidenceType": "preclinical_empirical",
-    "protocolEvidenceNote": "AVISO CIENTÍFICO: A dosagem de 100 a 250 mcg SC em dias alternados é prática empírica sem ECRs fase 3 aprovando uso sistêmico recreativo. O estudo bioinorgânico PMID 42708248 (Dalton Trans 2026;55(37):13426-13445) analisa coordenação solúvel de LL-37 com íons Cu(II) e Zn(II) em solução (NÃO Ni(II)), sem testar ou comprovar compatibilidade química/clínica da mistura LL-37 + GHK-Cu.",
+    "protocolEvidenceNote": "AVISO CIENTÍFICO: A dosagem de 100 a 250 mcg SC em dias alternados é prática empírica sem ECRs fase 3 aprovando uso sistêmico recreativo. O estudo bioinorgânico PMID 42708248 (Dalton Trans 2026;55(37):13426-13445) analisa exclusivamente coordenação solúvel de LL-37 com íons Cu(II) e Zn(II) em solução, sem testar ou comprovar compatibilidade química/clínica da mistura LL-37 + GHK-Cu.",
     "structure": "Peptídeo catiônico alfa-helicoidal de 37 aminoácidos",
     "sequence": "LLGDFFRKSKEKIGKEFKRIVQRIKDFLRNLVPRTES",
     "molecularWeight": "4493.3 g/mol",
@@ -4358,7 +4358,7 @@ const PEPTIDES_DATABASE = [
     "scientificReferences": [
       "Vandamme D, Landuyt B, Luyten W, Schoofs L. A comprehensive summary of LL-37, the factotum human cathelicidin peptide. Cell Immunol. 2012;280(1):22-35. PMID: 23246832",
       "Johansson J, Gudmundsson GH, Rottenberg ME, Berndt KD, Agerberth B. Conformation-dependent antibacterial activity of the naturally occurring human peptide LL-37. J Biol Chem. 1998;273(6):3718-24. PMID: 9452503",
-      "Szarszoń K, Luszawska M, Jewgiński M, Janek T, Latajka R, Bellotti D, Wątły J. Coordination chemistry and antimicrobial activity of LL-37, its C-terminal fragment, and a peptidomimetic analogue. Dalton Trans. 2026 Sep 29;55(37):13426-13445. DOI: 10.1039/d6dt01638c. PMID: 42708248. (Coordenação solúvel com Cu(II) e Zn(II) — NÃO Ni(II); não extrapolar para mistura física LL-37 + GHK-Cu).",
+      "Szarszoń K, Luszawska M, Jewgiński M, Janek T, Latajka R, Bellotti D, Wątły J. Coordination chemistry and antimicrobial activity of LL-37, its C-terminal fragment, and a peptidomimetic analogue. Dalton Trans. 2026 Sep 29;55(37):13426-13445. DOI: 10.1039/d6dt01638c. PMID: 42708248. (Coordenação solúvel com Cu(II) e Zn(II); não extrapolar para mistura física LL-37 + GHK-Cu).",
       "Dorschner RA, Pestonjamasp VK, Tamakuwala S, Ohtake T, Rudisill J, et al. Cutaneous injury induces the release of cathelicidin anti-microbial peptides active against group A Streptococcus. J Invest Dermatol. 2001;117(1):91-7. PMID: 11442754"
     ],
     "fullTextStudies": [

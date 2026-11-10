@@ -3156,7 +3156,7 @@ window.COMPOUNDS_STORE = (function () {
             "score": 85,
             "popularityScore": 84,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO: A dosagem de 100 a 250 mcg SC em dias alternados é uma prática empírica de pesquisa em imunomodulação. LL-37 é um peptídeo antimicrobiano humano sem ensaios clínicos randomizados fase 3 aprovando uso sistêmico recreativo. O estudo bioinorgânico PMID 42708248 (Dalton Trans 2026) avalia exclusivamente coordenação de LL-37 com íons Cu(II) e Zn(II) em solução (não Ni(II)), sem testar ou comprovar compatibilidade físico-química/clínica da combinação LL-37 + GHK-Cu."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO: A dosagem de 100 a 250 mcg SC em dias alternados é uma prática empírica de pesquisa em imunomodulação. LL-37 é um peptídeo antimicrobiano humano sem ensaios clínicos randomizados fase 3 aprovando uso sistêmico recreativo. O estudo bioinorgânico PMID 42708248 (Dalton Trans 2026) avalia exclusivamente coordenação de LL-37 com íons Cu(II) e Zn(II) em solução, sem testar ou comprovar compatibilidade físico-química/clínica da combinação LL-37 + GHK-Cu."
         },
         "sources": [
             {
