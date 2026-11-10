@@ -492,7 +492,7 @@ const RESEARCH_STACKS = [
   {
     "id": "metabolic-extreme-stack",
     "title": "Co-agonismo Incretínico e Amilina (Tirzepatide + Cagrilintide)",
-    "badge": "Pesquisa Clínica Avançada",
+    "badge": "Combinação Não Validada em ECR",
     "category": "Metabolismo & Perda de Peso",
     "peptides": [
       "tirzepatide",
@@ -508,7 +508,7 @@ const RESEARCH_STACKS = [
       "washout": "Titulação gradual conforme tolerabilidade gastrointestinal."
     },
     "safetyAlert": "Náuseas intensas, constipação e vômitos. Não misturar frascos de pesquisa na mesma seringa para prevenir agregação amiloide.",
-    "evidenceCategory": "clinical_combination",
+    "evidenceCategory": "unverified_combination",
     "riskLevel": "moderate",
     "administrationParadigm": "independent_vials",
     "wadaProhibited": false,
@@ -539,9 +539,9 @@ const RESEARCH_STACKS = [
       }
     ],
     "primarySources": [
-      "Tirzepatide SURMOUNT-1 monoterapia — PubMed 2022 (PMID 35658024)",
+      "Tirzepatide SURMOUNT-1 monoterapia — N Engl J Med 2022 (PMID 35658024)",
       "Cagrilintide Fase 2 monoterapia NCT03856047 — Lancet 2021 (PMID 34798060)",
-      "Referência comparativa CagriSema Fase 2 semaglutida+cagrilintida — Lancet 2023 (PMID 37364590)"
+      "Nota epistêmica comparativa: ensaios CagriSema (PMID 37364590 / REDEFINE 40544433 / 40544432) testaram SEMAGLUTIDA + cagrilintida e NÃO comprovam a combinação tirzepatida + cagrilintida."
     ],
     "auditDate": "2026-11-08"
   },

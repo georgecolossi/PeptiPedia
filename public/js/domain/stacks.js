@@ -490,8 +490,8 @@
     "fixedRatio": false,
     "commercialFormulations": {},
     "intendedPurpose": "Metabolismo & Perda de Peso",
-    "evidenceCategory": "clinical_combination",
-    "documentationGrade": "Grau A",
+    "evidenceCategory": "unverified_combination",
+    "documentationGrade": "Grau D",
     "riskLevel": "moderate",
     "knownInteractions": [
       "Náuseas intensas, constipação e vômitos. Não misturar frascos de pesquisa na mesma seringa para prevenir agregação amiloide."
@@ -500,9 +500,9 @@
     "stabilityEvidence": "Manter refrigerado a 2-8°C ao abrigo de luz.",
     "regulatoryStatus": "RUO / Unapproved Combination",
     "sources": [
-      "Tirzepatide SURMOUNT-1 monoterapia — PubMed 2022 (PMID 35658024)",
+      "Tirzepatide SURMOUNT-1 monoterapia — N Engl J Med 2022 (PMID 35658024)",
       "Cagrilintide Fase 2 monoterapia NCT03856047 — Lancet 2021 (PMID 34798060)",
-      "Referência comparativa CagriSema Fase 2 semaglutida+cagrilintida — Lancet 2023 (PMID 37364590)"
+      "Nota epistêmica comparativa: ensaios CagriSema (PMID 37364590 / REDEFINE 40544433 / 40544432) testaram SEMAGLUTIDA + cagrilintida e NÃO comprovam a combinação tirzepatida + cagrilintida."
     ],
     "auditConfirmationStatus": "homologated_as_reported",
     "createdAt": "2026-10-28T00:00:00Z",

@@ -2,7 +2,7 @@
   {
     "num": 1,
     "id": "study-semaglutide-step1",
-    "title": "Once-Weekly Semaglutide in Adults with Overweight or Obesity (Ensaio STEP-1)",
+    "title": "Once-Weekly Semaglutide in Adults with Overweight or Obesity",
     "pmid": "33567185",
     "doi": "10.1056/NEJMoa2032183",
     "peptideId": "semaglutide",
@@ -15,7 +15,7 @@
   {
     "num": 2,
     "id": "study-semaglutide-select",
-    "title": "Semaglutide and Cardiovascular Outcomes in Obesity without Diabetes (Ensaio SELECT)",
+    "title": "Semaglutide and Cardiovascular Outcomes in Obesity without Diabetes",
     "pmid": "37952131",
     "doi": "10.1056/NEJMoa2307563",
     "peptideId": "semaglutide",
@@ -28,7 +28,7 @@
   {
     "num": 3,
     "id": "study-tirzepatide-surmount1",
-    "title": "Tirzepatide Once Weekly for the Treatment of Obesity (Ensaio SURMOUNT-1)",
+    "title": "Tirzepatide Once Weekly for the Treatment of Obesity",
     "pmid": "35658024",
     "doi": "10.1056/NEJMoa2206038",
     "peptideId": "tirzepatide",
@@ -41,7 +41,7 @@
   {
     "num": 4,
     "id": "study-tirzepatide-surmount-osa",
-    "title": "Tirzepatide for the Treatment of Obstructive Sleep Apnea and Obesity (SURMOUNT-OSA)",
+    "title": "Tirzepatide for the Treatment of Obstructive Sleep Apnea and Obesity",
     "pmid": "38912654",
     "doi": "10.1056/NEJMoa2404881",
     "peptideId": "tirzepatide",
@@ -54,7 +54,7 @@
   {
     "num": 5,
     "id": "study-retatrutide-phase2",
-    "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+    "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity - A Phase 2 Trial",
     "pmid": "37366315",
     "doi": "10.1056/NEJMoa2301972",
     "peptideId": "retatrutide",
@@ -67,7 +67,7 @@
   {
     "num": 6,
     "id": "study-cagrilintide-phase2",
-    "title": "Once-weekly cagrilintide for weight management in people with overweight and obesity: a multicentre, randomised, double-blind, placebo-controlled and active-controlled, dose-finding phase 2 trial (NCT03856047)",
+    "title": "Once-weekly cagrilintide for weight management in people with overweight and obesity: a multicentre, randomised, double-blind, placebo-controlled and active-controlled, dose-finding phase 2 trial",
     "pmid": "34798060",
     "doi": "10.1016/S0140-6736(21)01751-7",
     "peptideId": "cagrilintide",
@@ -184,7 +184,7 @@
   {
     "num": 15,
     "id": "study-tb500-cornea",
-    "title": "Thymosin beta 4 ophthalmic solution for dry eye: a randomized, placebo-controlled, Phase II clinical trial conducted using the controlled adverse environment (CAE) model",
+    "title": "Thymosin beta 4 ophthalmic solution for dry eye: a randomized, placebo-controlled, Phase II clinical trial conducted using the controlled adverse environment (CAE™) model",
     "pmid": "26056426",
     "doi": "10.2147/OPTH.S80954",
     "peptideId": "tb-500",
@@ -236,7 +236,7 @@
   {
     "num": 19,
     "id": "study-larazotide-celiac",
-    "title": "Larazotide acetate for persistent symptoms in patients with celiac disease on a gluten-free diet: a randomized controlled trial",
+    "title": "Larazotide acetate for persistent symptoms of celiac disease despite a gluten-free diet: a randomized controlled trial",
     "pmid": "25683116",
     "doi": "10.1053/j.gastro.2015.02.008",
     "peptideId": "larazotide",
@@ -288,7 +288,7 @@
   {
     "num": 23,
     "id": "study-tesamorelin-vat",
-    "title": "Effects of Tesamorelin, a Growth Hormone-Releasing Factor Analog, in Patients with Abdominal Fat Accumulation",
+    "title": "Metabolic effects of a growth hormone-releasing factor in patients with HIV",
     "pmid": "18057338",
     "doi": "10.1056/NEJMoa072375",
     "peptideId": "tesamorelin",
@@ -405,7 +405,7 @@
   {
     "num": 32,
     "id": "study-motsc-metabolism",
-    "title": "The Mitochondrial-Derived Peptide MOTS-c Promotes Metabolic Homeostasis and Reduces Diet-Induced Obesity",
+    "title": "The mitochondrial-derived peptide MOTS-c promotes metabolic homeostasis and reduces obesity and insulin resistance",
     "pmid": "25738459",
     "doi": "10.1016/j.cmet.2015.02.009",
     "peptideId": "mots-c",
@@ -418,7 +418,7 @@
   {
     "num": 33,
     "id": "study-motsc-exercise",
-    "title": "MOTS-c is an exercise-induced mitochondrial-encoded regulator of physical capacity and performance",
+    "title": "MOTS-c is an exercise-induced mitochondrial-encoded regulator of age-dependent physical decline and muscle homeostasis",
     "pmid": "33473109",
     "doi": "10.1038/s41467-020-20790-0",
     "peptideId": "mots-c",
@@ -457,7 +457,7 @@
   {
     "num": 36,
     "id": "study-nad-mitochondria",
-    "title": "Declining NAD+ induces a pseudohypoxic state disrupting nuclear-mitochondrial communication during aging",
+    "title": "Declining NAD(+) induces a pseudohypoxic state disrupting nuclear-mitochondrial communication during aging",
     "pmid": "24360282",
     "doi": "10.1016/j.cell.2013.11.037",
     "peptideId": "nad-plus",
@@ -470,7 +470,7 @@
   {
     "num": 37,
     "id": "study-semax-bdnf",
-    "title": "Semax, an ACTH(4-10) analogue with nootropic properties, activates BDNF expression and TrkB neurotrophic signalling in the rat hippocampus",
+    "title": "Semax, an analog of ACTH(4-10) with cognitive effects, regulates BDNF and trkB expression in the rat hippocampus",
     "pmid": "16996037",
     "doi": "10.1016/j.brainres.2006.07.108",
     "peptideId": "semax",
@@ -535,7 +535,7 @@
   {
     "num": 42,
     "id": "study-dihexa-synaptogenesis",
-    "title": "The novel angiotensin IV analog Dihexa promotes spinogenesis and facilitates synaptogenesis in hippocampal neurons",
+    "title": "Evaluation of metabolically stabilized angiotensin IV analogs as procognitive/antidementia agents",
     "pmid": "23055539",
     "doi": "10.1124/jpet.112.199497",
     "peptideId": "dihexa",
@@ -587,7 +587,7 @@
   {
     "num": 46,
     "id": "study-pt141-reconnect",
-    "title": "Bremelanotide for the Treatment of Hypoactive Sexual Desire Disorder: Two Randomized Phase 3 Trials (RECONNECT)",
+    "title": "Bremelanotide for the Treatment of Hypoactive Sexual Desire Disorder: Two Randomized Phase 3 Trials",
     "pmid": "31599840",
     "doi": "10.1097/AOG.0000000000003500",
     "peptideId": "pt-141",
@@ -665,7 +665,7 @@
   {
     "num": 52,
     "id": "study-liraglutide-leader",
-    "title": "Liraglutide and Cardiovascular Outcomes in Type 2 Diabetes (Ensaio LEADER)",
+    "title": "Liraglutide and Cardiovascular Outcomes in Type 2 Diabetes",
     "pmid": "27295427",
     "doi": "10.1056/NEJMoa1603827",
     "peptideId": "liraglutide",
@@ -678,7 +678,7 @@
   {
     "num": 53,
     "id": "study-liraglutide-scale",
-    "title": "A Randomized, Controlled Trial of 3.0 mg of Liraglutide in Weight Management (Ensaio SCALE Obesidade e Pré-Diabetes)",
+    "title": "A Randomized, Controlled Trial of 3.0 mg of Liraglutide in Weight Management",
     "pmid": "26132939",
     "doi": "10.1056/NEJMoa1411892",
     "peptideId": "liraglutide",
@@ -691,7 +691,7 @@
   {
     "num": 54,
     "id": "study-teduglutide-steps",
-    "title": "Teduglutide reduces need for parenteral support among patients with short bowel syndrome with intestinal failure (Ensaio STEPS)",
+    "title": "Teduglutide reduces need for parenteral support among patients with short bowel syndrome with intestinal failure",
     "pmid": "22982184",
     "doi": "10.1053/j.gastro.2012.09.007",
     "peptideId": "teduglutide",
@@ -717,7 +717,7 @@
   {
     "num": 56,
     "id": "study-setmelanotide-pomc-lepr",
-    "title": "Efficacy and safety of the melanocortin-4 receptor agonist setmelanotide in POMC and LEPR deficiency obesity: a multicentre, open-label, phase 3 trial",
+    "title": "Efficacy and safety of setmelanotide, an MC4R agonist, in individuals with severe obesity due to LEPR or POMC deficiency: single-arm, open-label, multicentre, phase 3 trials",
     "pmid": "33137293",
     "doi": "10.1016/S2213-8587(20)30364-8",
     "peptideId": "setmelanotide",
@@ -730,7 +730,7 @@
   {
     "num": 57,
     "id": "study-setmelanotide-bbs",
-    "title": "Efficacy and safety of setmelanotide in individuals with Bardet-Biedl syndrome or Alström syndrome: a phase 3, randomised, double-blind, placebo-controlled trial",
+    "title": "Efficacy and safety of setmelanotide, a melanocortin-4 receptor agonist, in patients with Bardet-Biedl syndrome and Alström syndrome: a multicentre, randomised, double-blind, placebo-controlled, phase 3 trial with an open-label period",
     "pmid": "36356613",
     "doi": "10.1016/S2213-8587(22)00277-7",
     "peptideId": "setmelanotide",
@@ -860,7 +860,7 @@
   {
     "num": 67,
     "id": "study-apraglutide-stars-phase3",
-    "title": "STARS Phase 3 Trial: Once-Weekly Apraglutide Reduces Parenteral Support in Short Bowel Syndrome-Intestinal Failure.",
+    "title": "STARS Phase 3 Trial: Once-Weekly Apraglutide Reduces Parenteral Support in Short Bowel Syndrome-Intestinal Failure",
     "pmid": "42692160",
     "doi": "10.1016/j.cgh.2026.08.026",
     "peptideId": "apraglutide",

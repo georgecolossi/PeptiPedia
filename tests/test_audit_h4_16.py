@@ -219,7 +219,15 @@ class TestAuditH416(unittest.TestCase):
         self.assertEqual(sum(1 for p in protocols if p.get("subjectType") == "stack"), 19)
 
         from collections import Counter
-        stk_cats = Counter(s.get("evidenceCategory") for s in stacks)
+        import subprocess
+        # Em H4.18, metabolic-extreme-stack (Tirzepatida + Cagrilintida) foi reclassificado na arvore ativa
+        # de clinical_combination para unverified_combination; aqui verificamos o estado congelado da H4.16 (0d4f9eb).
+        h416_stacks_txt = subprocess.run(
+            ["git", "show", "0d4f9ebdee87756da0487860aa6b9c854766f21a:js/domain/stacks.js"],
+            cwd=REPO_ROOT, capture_output=True, text=True, encoding="utf-8", check=True,
+        ).stdout
+        h416_stacks = json.loads(h416_stacks_txt[h416_stacks_txt.index("return [") + 7 : h416_stacks_txt.rindex("];") + 1])
+        stk_cats = Counter(s.get("evidenceCategory") for s in h416_stacks)
         self.assertEqual(stk_cats["community_reported_stack"], 13)
         self.assertEqual(stk_cats["commercial_blend"], 4)
         self.assertEqual(stk_cats["unverified_combination"], 1)
@@ -227,6 +235,7 @@ class TestAuditH416(unittest.TestCase):
 
         proto_map = {p["id"]: p for p in protocols}
         stack_map = {s["id"]: s for s in stacks}
+        h416_stack_map = {s["id"]: s for s in h416_stacks}
 
         tb_proto_s = json.dumps(proto_map["proto-comp-tb-500-standard"], ensure_ascii=False).lower()
         self.assertIn("preclinical_empirical", tb_proto_s)
@@ -242,7 +251,7 @@ class TestAuditH416(unittest.TestCase):
         self.assertIn("Item 8", cagri_s)
         self.assertIn("REDEFINE", cagri_s)
         self.assertNotIn("cagrilintide-semaglutide-cagrisema", stack_map)
-        self.assertEqual(stack_map["metabolic-extreme-stack"]["evidenceCategory"], "clinical_combination")
+        self.assertEqual(h416_stack_map["metabolic-extreme-stack"]["evidenceCategory"], "clinical_combination")
 
     def test_h416_verified_pmids_and_honest_backlog_findings(self):
         """Confirma os 6 PMIDs válidos em 0020..0060 e garante que todos os 29 não-resolvidos e 14 parciais estão no backlog."""

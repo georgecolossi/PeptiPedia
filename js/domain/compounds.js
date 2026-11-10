@@ -1361,11 +1361,11 @@ window.COMPOUNDS_STORE = (function () {
             ]
         },
         "evidenceSummary": {
-            "level": "Ensaios Clínicos Fase 2 (Austrália) / Pré-Clínico Cartilaginoso",
+            "level": "Pré-Clínico em Roedores & Ensaios Analíticos (Desenvolvimento Clínico Descontinuado)",
             "score": 84,
             "popularityScore": 89,
-            "protocolEvidenceType": "clinical_pilot",
-            "protocolEvidenceNote": "ENSAIOS FASE 2: Testado em mais de 900 pacientes em ensaios clínicos australianos para perda de peso. Apresenta excelente perfil de segurança por não estimular receptores de IGF-1 nem elevar glicemia. A aplicação intra-articular para osteoartrite é apoiada por estudos pré-clínicos."
+            "protocolEvidenceType": "preclinical_empirical",
+            "protocolEvidenceNote": "AVISO EPISTÊMICO E REGULATÓRIO: As fontes PubMed indexadas nesta base correspondem exclusivamente a modelos murinos (camundongos ob/ob em Heffernan 2001, PMID 11673763; ratos Zucker em Ng 2000, PMID 11146367) e ensaio analítico/metabólico antidoping in vitro em urina (Cox et al. 2015, PMID 25208511). Programas clínicos históricos não resultaram em aprovação regulatória por FDA, EMA ou Anvisa para emagrecimento ou osteoartrite."
         },
         "sources": [
             {
@@ -1483,7 +1483,7 @@ window.COMPOUNDS_STORE = (function () {
             "level": "Estudos Experimentais In Vitro e Pré-Clínicos (Ativação Telomérica)",
             "score": 90,
             "popularityScore": 96,
-            "protocolEvidenceType": "clinical_pilot",
+            "protocolEvidenceType": "preclinical_empirical",
             "protocolEvidenceNote": "EVIDÊNCIA EXPERIMENTAL E HISTÓRICA: Desenvolvido pelo Prof. Vladimir Khavinson (Instituto de São Petersburgo). Estudos primários indexados com dados verificáveis demonstram ativação de telomerase e aumento replicativo in vitro em culturas celulares humanas e modelos murinos. Relatos de acompanhamento clínico humano de 12 anos e posologias empíricas de 5 a 10 mg/dia provêm de monografias e publicações soviéticas/russas, carecendo de ensaios clínicos controlados randomizados de fase 3 indexados para validação formal de longevidade ou segurança oncológica humana."
         },
         "sources": [
@@ -3156,7 +3156,7 @@ window.COMPOUNDS_STORE = (function () {
             "score": 85,
             "popularityScore": 84,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO: A dosagem de 100 a 250 mcg SC em dias alternados é uma prática empírica de pesquisa em imunomodulação. LL-37 é um desestabilizador de biofilmes bacterianos. NÃO há estudos controlados de segurança fase 3 aprovando uso sistêmico recreativo."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO: A dosagem de 100 a 250 mcg SC em dias alternados é uma prática empírica de pesquisa em imunomodulação. LL-37 é um peptídeo antimicrobiano humano sem ensaios clínicos randomizados fase 3 aprovando uso sistêmico recreativo. O estudo bioinorgânico PMID 42708248 (Dalton Trans 2026) avalia exclusivamente coordenação de LL-37 com íons Cu(II) e Zn(II) em solução (não Ni(II)), sem testar ou comprovar compatibilidade físico-química/clínica da combinação LL-37 + GHK-Cu."
         },
         "sources": [
             {
@@ -3192,9 +3192,9 @@ window.COMPOUNDS_STORE = (function () {
             {
                 "type": "study",
                 "title": "Coordination chemistry and antimicrobial activity of LL-37, its C-terminal fragment, and a peptidomimetic analogue",
-                "authors": "Szarszoń K, et al.",
+                "authors": "Szarszoń K, Luszawska M, Jewgiński M, Janek T, Latajka R, Bellotti D, Wątły J",
                 "year": 2026,
-                "journal": "Dalton Trans. 2026",
+                "journal": "Dalton Trans. 2026 Sep 29;55(37):13426-13445",
                 "doi": "10.1039/d6dt01638c",
                 "pmid": "42708248",
                 "url": "https://pubmed.ncbi.nlm.nih.gov/42708248/"
@@ -3595,16 +3595,26 @@ window.COMPOUNDS_STORE = (function () {
             ]
         },
         "evidenceSummary": {
-            "level": "Ensaios Clínicos Extensos & Uso Terapêutico",
+            "level": "Ensaio Clínico Randomizado Oral (Estoques Séricos) & Uso Terapêutico Específico",
             "score": 96,
             "popularityScore": 92,
             "protocolEvidenceType": "clinical_proven",
-            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Aprovado em farmacopeias internacionais e extensamente estudado em ensaios clínicos humanos de medicina regenerativa (PMID: 24791752). Dosagem injetável comum de 200 a 600 mg IM ou IV lento 1 a 2x/semana."
+            "protocolEvidenceNote": "ESCOPO CLÍNICO VERIFICADO: O ECR indexado nesta base (Richie et al., Eur J Nutr 2015, PMID 24791752, n=54 adultos saudáveis) demonstrou elevação de estoques celulares de GSH apenas com suplementação ORAL (250 ou 1.000 mg/dia por 6 meses). Uso injetável IM/IV (200-600 mg) ou indicações fora de farmacopeia/antidoto clínico específico (como cistite/hepatopatia empírica) não são comprovados diretamente por este ECR."
         },
         "sources": [
             {
+                "type": "study",
+                "title": "Randomized controlled trial of oral glutathione supplementation on body stores of glutathione",
+                "authors": "Richie JP, Nichenametla S, Neidig W, Calcagnotto A, Haley JS, Schell TD, Muscat JE",
+                "year": "2015",
+                "journal": "Eur J Nutr",
+                "pmid": "24791752",
+                "doi": "10.1007/s00394-014-0706-z",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/24791752/"
+            },
+            {
                 "type": "reference",
-                "citation": "Richie JP, et al. Enhanced Glutathione Stores in Humans. Eur J Nutr. 2015. PMID: 24791752"
+                "citation": "Richie JP, et al. Randomized controlled trial of oral glutathione supplementation on body stores of glutathione. Eur J Nutr. 2015. DOI: 10.1007/s00394-014-0706-z. PMID: 24791752."
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
@@ -3683,11 +3693,11 @@ window.COMPOUNDS_STORE = (function () {
             ]
         },
         "evidenceSummary": {
-            "level": "Ensaios Clínicos de Longevidade Humana",
+            "level": "Pré-Clínico Murino (NAD+ Direto) & ECRs Orais de Precursores (NR/NMN)",
             "score": 93,
             "popularityScore": 94,
-            "protocolEvidenceType": "clinical_pilot",
-            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Avaliado em ensaios clínicos para bioenergética mitocondrial e senescência (PMID: 24360282). Protocolos de aplicação subcutânea diária fracionada de 50 a 100 mg ou infusões intravenosas lentas de 250 a 500 mg."
+            "protocolEvidenceType": "preclinical_empirical",
+            "protocolEvidenceNote": "AVISO EPISTÊMICO: O estudo citado de Gomes et al. (Cell 2013, PMID 24360282) é estritamente pré-clínico em modelos murinos e NÃO um ensaio clínico humano. Os ensaios clínicos randomizados indexados (Martens et al., Nat Commun 2018, PMID 29599478; Yoshino et al., Science 2021, PMID 33888596) avaliaram os precursores ORAIS nicotinamida ribosídeo (NR) e nicotinamida mononucleotídeo (NMN), NÃO a administração subcutânea (SC) ou intravenosa (IV) de NAD+ livre, cujos protocolos parenterais (50-100 mg SC ou 250-500 mg IV) permanecem empíricos e carecem de ECRs fase 3 publicados nesta base."
         },
         "sources": [
             {
@@ -3933,16 +3943,25 @@ window.COMPOUNDS_STORE = (function () {
             ]
         },
         "evidenceSummary": {
-            "level": "Ensaios Clínicos Longitudinais (Rússia)",
+            "level": "Revisão Observacional Histórica (Rússia; Sem ECR Monoterapia)",
             "score": 88,
             "popularityScore": 87,
-            "protocolEvidenceType": "clinical_pilot",
-            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO: Biorregulador timocítico do Prof. Vladimir Khavinson documentado em estudos longitudinais de extensão de expectativa de vida em humanos (PMID: 12577695). Posologia clássica em cursos curtos de 10 mg diários por 10 dias (1 ou 2x ao ano)."
+            "protocolEvidenceType": "preclinical_empirical",
+            "protocolEvidenceNote": "AVISO EPISTÊMICO E DOCUMENTAL: O único registro PubMed ativo (Khavinson & Morozov, Adv Gerontol 2002;10:74-84, PMID 12577695, sem DOI indexado no XML) é uma revisão narrativa em russo descrevendo seguimento observacional regional de Timalina associada a Epitalamina (não um ECR cego de monoterapia em padrões ICH/GCP). Posologias empíricas de 10 mg/dia por 10 dias não possuem validação por ensaios clínicos randomizados controlados modernos nem aprovação por FDA, EMA ou Anvisa."
         },
         "sources": [
             {
+                "type": "study",
+                "title": "[Geroprotective effect of thymalin and epithalamin]",
+                "authors": "Khavinson VKh, Morozov VG",
+                "year": "2002",
+                "journal": "Adv Gerontol",
+                "pmid": "12577695",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/12577695/"
+            },
+            {
                 "type": "reference",
-                "citation": "Khavinson VK, et al. Peptide Bioregulators and Life Expectancy. Gerontology. 2003. PMID: 12577695"
+                "citation": "Khavinson VKh, Morozov VG. [Geroprotective effect of thymalin and epithalamin]. Adv Gerontol. 2002;(10):74-84. PMID: 12577695. (Publication Type: Review; sem DOI no registro NCBI XML)."
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
@@ -4015,11 +4034,11 @@ window.COMPOUNDS_STORE = (function () {
             ]
         },
         "evidenceSummary": {
-            "level": "Ensaios Clínicos Piloto (Rússia)",
+            "level": "Pré-Clínico Celular In Vitro e em Roedores (Sem ECR Humano)",
             "score": 86,
             "popularityScore": 87,
-            "protocolEvidenceType": "clinical_pilot",
-            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO: Tripeptídeo sintético formulado por Khavinson avaliado em ensaios clínicos para astenia, fadiga cognitiva e proteção do tecido cortical contra estresse oxidativo e hipóxia (PMID: 21978084). Dose comum de 2 a 5 mg SC ou oral diária por 20 a 30 dias."
+            "protocolEvidenceType": "preclinical_empirical",
+            "protocolEvidenceNote": "AVISO EPISTÊMICO: Os estudos PubMed indexados para Pinealon (Khavinson et al., Rejuvenation Res 2011, PMID 21978084 em cultura de neurônios cerebelares/PC12; Arutjunyan et al., Int J Clin Exp Med 2012, PMID 22567179 em prole de ratas com hiper-homocisteinemia pré-natal) são exclusivamente pré-clínicos in vitro e em roedores. Não existem ensaios clínicos randomizados em humanos na literatura ativa comprovando eficácia cognitiva ou validando doses de 2 a 5 mg SC/oral."
         },
         "sources": [
             {
@@ -5418,11 +5437,11 @@ window.COMPOUNDS_STORE = (function () {
             ]
         },
         "evidenceSummary": {
-            "level": "Ensaios Clínicos Dermatológicos Publicados",
+            "level": "Cosmético Tópico (Estudo Exploratório em Voluntárias e Mecanístico In Vitro)",
             "score": 91,
             "popularityScore": 90,
-            "protocolEvidenceType": "clinical_proven",
-            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Eficácia anti-rugas comprovada em ensaios dermatológicos humanos duplo-cegos (PMID: 18498523, PMID: 18498523). Formulações tópicas de 5% a 10% demonstram redução estatisticamente significativa na profundidade das rugas de expressão facial em 15 a 30 dias."
+            "protocolEvidenceType": "clinical_pilot",
+            "protocolEvidenceNote": "CLASSIFICAÇÃO COSMÉTICA: Uso exclusivamente TÓPICO em creme/sérum cosmético. Blanes-Mira et al. (Int J Cosmet Sci 2002, PMID 18498523) avaliaram mecanisticamente a inibição do complexo SNARE e realizaram teste topográfico tópico exploratório em voluntárias (emulsão 10% por 30 dias), sem descrição no resumo PubMed de ensaio clínico randomizado duplo-cego fase 3; Kluczyk et al. (Chem Biodivers 2021, PMID 33482052) trata apenas de análise química RP-HPLC/MS. NÃO possui aprovação ou indicação para administração injetável."
         },
         "sources": [
             {
@@ -5430,7 +5449,7 @@ window.COMPOUNDS_STORE = (function () {
                 "title": "A synthetic hexapeptide (Argireline) with antiwrinkle activity",
                 "authors": "Blanes-Mira C, Clemente J, Jodas G, Gil A, Fernández-Ballester G",
                 "year": "2002",
-                "journal": "",
+                "journal": "Int J Cosmet Sci",
                 "pmid": "18498523",
                 "url": "https://pubmed.ncbi.nlm.nih.gov/18498523/",
                 "doi": "10.1046/j.1467-2494.2002.00153.x"
@@ -9299,10 +9318,10 @@ window.COMPOUNDS_STORE = (function () {
         "sources": [
             {
                 "type": "study",
-                "title": "[The use of prostatilen in treating patients with chronic prostatitis] (referente ao extrato prostático prostatilen, não ao tetrapeptídeo sintético Prostamax)",
+                "title": "[The use of prostatilen in treating patients with chronic prostatitis]",
                 "authors": "Tkachuk VN, Gorbachev AG, Khavinson VKh",
                 "year": 1991,
-                "journal": "Urol Nefrol (Mosk). 1991 Nov-Dec;(6):40-3",
+                "journal": "Urol Nefrol (Mosk) (1991;(6):40-43 — nota epistêmica: refere-se ao extrato prostático prostatilen, não ao tetrapeptídeo sintético Prostamax)",
                 "pmid": "1823682",
                 "url": "https://pubmed.ncbi.nlm.nih.gov/1823682/"
             },

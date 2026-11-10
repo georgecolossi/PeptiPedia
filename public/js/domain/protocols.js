@@ -637,7 +637,7 @@
     "stackId": null,
     "protocolName": "AOD-9604 — Protocolo Documentado de Pesquisa",
     "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "clinical_pilot",
+    "evidenceCategory": "preclinical_empirical",
     "verificationStatus": "preclinical_model",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "emagrecimento",
@@ -666,7 +666,7 @@
       "Rubor transitório no local da injeção"
     ],
     "limitations": [
-      "ENSAIOS FASE 2: Testado em mais de 900 pacientes em ensaios clínicos australianos para perda de peso. Apresenta excelente perfil de segurança por não estimular receptores de IGF-1 nem elevar glicemia. A aplicação intra-articular para osteoartrite é apoiada por estudos pré-clínicos."
+      "AVISO EPISTÊMICO: Os PMIDs ativos são estudos murinos (PMID 11673763; PMID 11146367) e ensaio analítico antidoping in vitro (PMID 25208511), sem aprovação regulatória humana vigente ou ECR positivo indexado na base."
     ],
     "sources": [
       "Heffernan MA, et al. Increase of fat oxidation and weight loss in obese mice caused by chronic treatment with human growth hormone or a modified C-terminal fragment. Int J Obes Relat Metab Disord. 2001. DOI: 10.1038/sj.ijo.0801740. PMID: 11673763.",
@@ -683,7 +683,7 @@
     "stackId": null,
     "protocolName": "Epitalon — Protocolo Documentado de Pesquisa",
     "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "clinical_pilot",
+    "evidenceCategory": "preclinical_empirical",
     "verificationStatus": "preclinical_model",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "anti-aging",
@@ -1427,13 +1427,15 @@
       "Potencial citotóxico em doses suprafisiológicas elevadas"
     ],
     "limitations": [
-      "AVISO CIENTÍFICO: A dosagem de 100 a 250 mcg SC em dias alternados é uma prática empírica de pesquisa em imunomodulação. O peptídeo humano LL-37 (carga líquida +6 em pH fisiológico) apresenta transição conformacional para alfa-hélice e oligomerização reguladas por concentração peptídica, pH (desordenado em pH 2) e força iônica/ânions como HCO3-, SO4^2- e Cl-, com inibição de atividade por soro humano (Johansson et al., 1998, PMID 9452503; agregação em membranas em Bonucci et al., 2015, PMID 26502164). Estudos recentes em LL-37 integral (Szarszoń et al., 2026, PMID 42708248) demonstram coordenação solúvel com Cu(II) e Zn(II) via amina N-terminal e carboxilato (complexos 4N com Cu(II) em pH alcalino) mantendo hélice alfa e atividade antibiofilme, sem comprovar precipitação macroscópica por GHK-Cu. Resultados obtidos apenas em fragmentos curtos (Brzeski et al., 2022, PMID 36047059 em hCAP(134-145) com Mn(II)/Zn(II); Brzeski et al., 2024, PMID 38809157 em KR-12 com Cu(II)) não devem ser extrapolados diretamente para LL-37 integral sem validação. No GHK-Cu, o Cu(II) forma complexo quelato de alta afinidade em pH fisiológico (Lau & Sarkar, 1981, PMID 7340824; Conato et al., 2001, PMID 11325542; Pickart & Margolina, 2018, PMID 29986520), não equivalendo a sais de cobre livre em solução. Recomenda-se reconstituição e aplicação isoladas por princípio de precaução físico-química e ausência de estudos analíticos da mistura sob ICH Q1A."
+      "AVISO CIENTÍFICO: A dosagem de 100 a 250 mcg SC em dias alternados é prática empírica sem validação por ECR fase 3. LL-37 integral apresenta transição alfa-hélice e oligomerização reguladas por pH/força iônica (PMID 9452503; PMID 26502164). Em bioinorgânica recente (Szarszoń et al., Dalton Trans 2026;55(37):13426-13445, PMID 42708248), LL-37 formou complexos solúveis exclusivamente com Cu(II) e Zn(II) em solução (NÃO Ni(II)); contudo, isso NÃO valida mistura física ou compatibilidade clínica com GHK-Cu (Lau & Sarkar, 1981, PMID 7340824; Conato et al., 2001, PMID 11325542; Pickart & Margolina, 2018, PMID 29986520) nem substitui ensaios de estabilidade ICH Q1A. Reconstituir e administrar em frascos/seringas isolados."
     ],
     "sources": [
-      "Vandamme D, et al. A comprehensive summary of LL-37, the factotum human cathelicidin peptide. Cell Immunol. 2012 (PMID 23246832)",
-      "Johansson J, et al. Conformation-dependent antibacterial activity of the naturally occurring human peptide LL-37. J Biol Chem. 1998 (PMID 9452503)",
-      "Szarszoń K, et al. Coordination chemistry and antimicrobial activity of LL-37, its C-terminal fragment, and a peptidomimetic analogue. Dalton Trans. 2026 (PMID 42708248)",
-      "Lau SJ, Sarkar B. The interaction of copper(II) and glycyl-L-histidyl-L-lysine. Biochem J. 1981 (PMID 7340824)"
+      "Szarszoń K, Luszawska M, Jewgiński M, Janek T, Latajka R, Bellotti D, Wątły J — Dalton Trans 2026;55(37):13426-13445 (PMID 42708248; Cu(II) e Zn(II))",
+      "Vandamme D et al. — Cell Immunol 2012 (PMID 23246832)",
+      "Johansson J et al. — J Biol Chem 1998 (PMID 9452503)",
+      "Bonucci A et al. — Biochim Biophys Acta 2015 (PMID 26502164)",
+      "Brzeski J et al. — J Phys Chem B 2022 (PMID 36047059, fragmentos hCAP)",
+      "Brzeski J et al. — Dalton Trans 2024 (PMID 38809157, fragmento KR-12)"
     ],
     "h4_4_pendency_flag": "Item 5/6: Revisado na H4.16: coordenação solúvel de LL-37 integral com Cu(II)/Zn(II) (PMID 42708248) e dependência de força iônica/ânions/pH (PMID 9452503) separadas de estudos em fragmentos; ausência de prova de precipitação por GHK-Cu e caráter empírico do limite de 10-14 dias mantidos sob precaução analítica.",
     "reviewedAt": "2026-11-10"
@@ -1621,7 +1623,7 @@
       "Segurança clínica excelente quando administrada com esterilidade"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA: Aprovado em farmacopeias internacionais e extensamente estudado em ensaios clínicos humanos de medicina regenerativa (PMID: 24791752). Dosagem injetável comum de 200 a 600 mg IM ou IV lento 1 a 2x/semana."
+      "ESCOPO VERIFICADO: O ECR indexado PMID 24791752 (Richie et al., Eur J Nutr 2015, n=54) avaliou glutationa ORAL sobre estoques sanguíneos em adultos saudáveis; formulações injetáveis SC/IV permanecem sem ECR comparável nesta base."
     ],
     "sources": [],
     "h4_4_pendency_flag": "none",
@@ -1633,9 +1635,9 @@
     "compoundId": "nad-plus",
     "stackId": null,
     "protocolName": "NAD+ — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "clinical_documented",
-    "evidenceCategory": "clinical_pilot",
-    "verificationStatus": "homologated_clinical",
+    "protocolCategory": "preclinical_empirical",
+    "evidenceCategory": "preclinical_empirical",
+    "verificationStatus": "preclinical_model",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "anti-aging",
     "route": "Subcutânea (SC)",
@@ -1666,7 +1668,7 @@
       "Atenuado completamente com injeção subcutânea lenta e fracionada"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA: Avaliado em ensaios clínicos para bioenergética mitocondrial e senescência (fonte primária verificada: PMID 24360282). Protocolos de aplicação subcutânea diária fracionada de 50 a 100 mg ou infusões intravenosas lentas de 250 a 500 mg."
+      "AVISO EPISTÊMICO: O estudo citado PMID 24360282 (Gomes et al., Cell 2013) é estritamente pré-clínico em camundongos (NÃO é ensaio clínico humano). Os ECRs humanos ativos na base (PMID 29599478, Martens 2018; PMID 33888596, Yoshino 2021) testaram exclusivamente os precursores ORAIS NR e NMN; protocolos injetáveis de NAD+ SC (50-100 mg) ou IV (250-500 mg) permanecem sem validação em ECRs de fase 3."
     ],
     "sources": [
       "Gomes AP, et al. Declining NAD(+) induces a pseudohypoxic state disrupting nuclear-mitochondrial communication during aging. Cell. 2013. DOI: 10.1016/j.cell.2013.11.037. PMID: 24360282.",
@@ -1732,9 +1734,9 @@
     "compoundId": "thymalin",
     "stackId": null,
     "protocolName": "Timalina — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "clinical_documented",
-    "evidenceCategory": "clinical_pilot",
-    "verificationStatus": "homologated_clinical",
+    "protocolCategory": "preclinical_empirical",
+    "evidenceCategory": "preclinical_empirical",
+    "verificationStatus": "preclinical_model",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "imunidade",
     "route": "Subcutânea (SC)",
@@ -1764,9 +1766,11 @@
       "Potencial teórico raro de sensibilidade imunológica alérgica a derivados de timo bovino"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA PILOTO: Biorregulador timocítico do Prof. Vladimir Khavinson documentado em estudos longitudinais de extensão de expectativa de vida em humanos (PMID: 12577695). Posologia clássica em cursos curtos de 10 mg diários por 10 dias (1 ou 2x ao ano)."
+      "AVISO EPISTÊMICO: O único registro PubMed ativo (Khavinson & Morozov, Adv Gerontol 2002;10:74-84, PMID 12577695, sem DOI) é uma revisão narrativa russa de coorte observacional combinada (timalina + epitalamina), não um ECR cego de monoterapia em padrões ICH/GCP."
     ],
-    "sources": [],
+    "sources": [
+      "Khavinson VKh, Morozov VG — Adv Gerontol 2002;(10):74-84 (PMID 12577695; Review)"
+    ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
   },
@@ -1777,7 +1781,7 @@
     "stackId": null,
     "protocolName": "Pinealon — Protocolo Documentado de Pesquisa",
     "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "clinical_pilot",
+    "evidenceCategory": "preclinical_empirical",
     "verificationStatus": "preclinical_model",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "cognicao",
@@ -1808,7 +1812,7 @@
       "Sem alterações de pressão arterial ou sonolência residual"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA PILOTO: Tripeptídeo sintético formulado por Khavinson avaliado em ensaios clínicos para astenia, fadiga cognitiva e proteção do tecido cortical contra estresse oxidativo e hipóxia (fonte primária verificada: PMID 21978084). Dose comum de 2 a 5 mg SC ou oral diária por 20 a 30 dias."
+      "AVISO EPISTÊMICO: As referências PubMed indexadas (PMID 21978084 in vitro; PMID 22567179 roedores) são exclusivamente pré-clínicas, sem ensaios clínicos randomizados humanos publicados nesta base."
     ],
     "sources": [
       "Khavinson V, et al. Pinealon increases cell viability by suppression of free radical levels and activating proliferative processes. Rejuvenation Res. 2011. DOI: 10.1089/rej.2011.1172. PMID: 21978084.",
@@ -2409,7 +2413,7 @@
     "stackId": null,
     "protocolName": "Argireline — Protocolo Documentado de Pesquisa",
     "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "clinical_proven",
+    "evidenceCategory": "clinical_pilot",
     "verificationStatus": "preclinical_model",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "anti-aging",
@@ -2440,7 +2444,7 @@
       "Raríssima irritação de contato ou hiperemia transitória em indivíduos hipersensíveis"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA: Eficácia anti-rugas comprovada em ensaios dermatológicos humanos duplo-cegos (fonte primária verificada: PMID 18498523). Formulações tópicas de 5% a 10% demonstram redução estatisticamente significativa na profundidade das rugas de expressão facial em 15 a 30 dias."
+      "USO EXCLUSIVAMENTE COSMÉTICO TÓPICO: Blanes-Mira et al. (Int J Cosmet Sci 2002, PMID 18498523) combina ensaio mecanístico SNARE in vitro e avaliação topográfica exploratória tópica em voluntárias (sem relato de ECR duplo-cego no resumo XML); Kluczyk et al. (2021, PMID 33482052) refere-se à análise química RP-HPLC/MS. Contraindicado para uso parenteral."
     ],
     "sources": [
       "Blanes-Mira C, et al. A synthetic hexapeptide (Argireline) with antiwrinkle activity. PubMed. 2002. DOI: 10.1046/j.1467-2494.2002.00153.x. PMID: 18498523.",
@@ -4473,7 +4477,7 @@
     "protocolCategory": "community_reported",
     "evidenceCategory": "commercial_blend",
     "verificationStatus": "community_unvalidated",
-    "population": "Participantes de ensaios clínicos (CagriSema) ou comunidade de biohacking",
+    "population": "Protocolos empíricos reportados em pesquisa exploratória (sem validação clínica combinada da mistura)",
     "indication": "Regeneração & Tecidos",
     "route": "Subcutânea (SC)",
     "dose": "Composta",
@@ -4500,7 +4504,7 @@
       "Desconforto gástrico transitório"
     ],
     "limitations": [
-      "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
+      "Inexistem ensaios clínicos controlados avaliando a combinação completa destes compostos; as referências indexadas referem-se apenas aos monocomponentes isolados."
     ],
     "sources": [
       "BPC-157 monoterapia pré-clínica — PubMed 2011 (PMID 21030672)",
@@ -4520,7 +4524,7 @@
     "protocolCategory": "community_reported",
     "evidenceCategory": "community_reported_stack",
     "verificationStatus": "community_unvalidated",
-    "population": "Participantes de ensaios clínicos (CagriSema) ou comunidade de biohacking",
+    "population": "Protocolos empíricos reportados em pesquisa exploratória (sem validação clínica combinada da mistura)",
     "indication": "Secretagogos de GH",
     "route": "Subcutânea (SC)",
     "dose": "Composta",
@@ -4547,7 +4551,7 @@
       "Desconforto gástrico transitório"
     ],
     "limitations": [
-      "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
+      "Inexistem ensaios clínicos controlados avaliando a combinação completa destes compostos; as referências indexadas referem-se apenas aos monocomponentes isolados."
     ],
     "sources": [
       "J Clin Endocrinol Metab 2006 (PMID 16352683)",
@@ -4565,7 +4569,7 @@
     "protocolCategory": "community_reported",
     "evidenceCategory": "community_reported_stack",
     "verificationStatus": "community_unvalidated",
-    "population": "Participantes de ensaios clínicos (CagriSema) ou comunidade de biohacking",
+    "population": "Protocolos empíricos reportados em pesquisa exploratória (sem validação clínica combinada da mistura)",
     "indication": "Longevidade & Mitocôndria",
     "route": "Subcutânea (SC)",
     "dose": "Composta",
@@ -4592,7 +4596,7 @@
       "Desconforto gástrico transitório"
     ],
     "limitations": [
-      "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
+      "Inexistem ensaios clínicos controlados avaliando a combinação completa destes compostos; as referências indexadas referem-se apenas aos monocomponentes isolados."
     ],
     "sources": [
       "Epitalon in vitro isolado — PubMed 2004 (PMID 15455129)",
@@ -4611,7 +4615,7 @@
     "protocolCategory": "community_reported",
     "evidenceCategory": "community_reported_stack",
     "verificationStatus": "community_unvalidated",
-    "population": "Participantes de ensaios clínicos (CagriSema) ou comunidade de biohacking",
+    "population": "Protocolos empíricos reportados em pesquisa exploratória (sem validação clínica combinada da mistura)",
     "indication": "Nootrópicos & Cognição",
     "route": "Subcutânea (SC)",
     "dose": "Composta",
@@ -4638,7 +4642,7 @@
       "Desconforto gástrico transitório"
     ],
     "limitations": [
-      "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
+      "Inexistem ensaios clínicos controlados avaliando a combinação completa destes compostos; as referências indexadas referem-se apenas aos monocomponentes isolados."
     ],
     "sources": [
       "Semax pré-clínico BDNF isolado — PubMed 2006 (PMID 16996037)",
@@ -4656,7 +4660,7 @@
     "protocolCategory": "community_reported",
     "evidenceCategory": "community_reported_stack",
     "verificationStatus": "community_unvalidated",
-    "population": "Participantes de ensaios clínicos (CagriSema) ou comunidade de biohacking",
+    "population": "Protocolos empíricos reportados em pesquisa exploratória (sem validação clínica combinada da mistura)",
     "indication": "Longevidade & Mitocôndria",
     "route": "Subcutânea (SC)",
     "dose": "Composta",
@@ -4683,7 +4687,7 @@
       "Desconforto gástrico transitório"
     ],
     "limitations": [
-      "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
+      "Inexistem ensaios clínicos controlados avaliando a combinação completa destes compostos; as referências indexadas referem-se apenas aos monocomponentes isolados."
     ],
     "sources": [
       "SS-31/Elamipretida MMPOWER-3 isolado — PubMed 2023 (PMID 37268435)",
@@ -4701,7 +4705,7 @@
     "protocolCategory": "community_reported",
     "evidenceCategory": "community_reported_stack",
     "verificationStatus": "community_unvalidated",
-    "population": "Participantes de ensaios clínicos (CagriSema) ou comunidade de biohacking",
+    "population": "Protocolos empíricos reportados em pesquisa exploratória (sem validação clínica combinada da mistura)",
     "indication": "Regeneração & Tecidos",
     "route": "Subcutânea (SC)",
     "dose": "Composta",
@@ -4728,7 +4732,7 @@
       "Desconforto gástrico transitório"
     ],
     "limitations": [
-      "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
+      "Inexistem ensaios clínicos controlados avaliando a combinação completa destes compostos; as referências indexadas referem-se apenas aos monocomponentes isolados."
     ],
     "sources": [
       "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)",
@@ -4746,7 +4750,7 @@
     "protocolCategory": "community_reported",
     "evidenceCategory": "community_reported_stack",
     "verificationStatus": "community_unvalidated",
-    "population": "Participantes de ensaios clínicos (CagriSema) ou comunidade de biohacking",
+    "population": "Protocolos empíricos reportados em pesquisa exploratória (sem validação clínica combinada da mistura)",
     "indication": "Secretagogos de GH",
     "route": "Subcutânea (SC)",
     "dose": "Composta",
@@ -4773,7 +4777,7 @@
       "Desconforto gástrico transitório"
     ],
     "limitations": [
-      "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
+      "Inexistem ensaios clínicos controlados avaliando a combinação completa destes compostos; as referências indexadas referem-se apenas aos monocomponentes isolados."
     ],
     "sources": [
       "DSIP clínico insônia isolado — Eur Neurol 1984 (PMID 6391925)",
@@ -4792,7 +4796,7 @@
     "protocolCategory": "community_reported",
     "evidenceCategory": "community_reported_stack",
     "verificationStatus": "community_unvalidated",
-    "population": "Participantes de ensaios clínicos (CagriSema) ou comunidade de biohacking",
+    "population": "Protocolos empíricos reportados em pesquisa exploratória (sem validação clínica combinada da mistura)",
     "indication": "Nootrópicos & Cognição",
     "route": "Subcutânea (SC)",
     "dose": "Composta",
@@ -4819,7 +4823,7 @@
       "Desconforto gástrico transitório"
     ],
     "limitations": [
-      "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
+      "Inexistem ensaios clínicos controlados avaliando a combinação completa destes compostos; as referências indexadas referem-se apenas aos monocomponentes isolados."
     ],
     "sources": [
       "Semax AVC clínico isolado — Zh Nevrol Psikhiatr Im S S Korsakova 2018 (PMID 29798983)",
@@ -4835,10 +4839,10 @@
     "compoundId": null,
     "stackId": "metabolic-extreme-stack",
     "protocolName": "Co-agonismo Incretínico e Amilina (Tirzepatide + Cagrilintide) — Protocolo de Administração",
-    "protocolCategory": "clinical_trial",
-    "evidenceCategory": "clinical_combination",
-    "verificationStatus": "clinical_trial",
-    "population": "Participantes de ensaios clínicos (CagriSema) ou comunidade de biohacking",
+    "protocolCategory": "community_reported",
+    "evidenceCategory": "unverified_combination",
+    "verificationStatus": "community_unvalidated",
+    "population": "Protocolos empíricos reportados em comunidade de pesquisa (sem ECR da mistura)",
     "indication": "Metabolismo & Perda de Peso",
     "route": "Subcutânea (SC)",
     "dose": "Composta",
@@ -4865,12 +4869,12 @@
       "Desconforto gástrico transitório"
     ],
     "limitations": [
-      "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
+      "Inexistem ensaios clínicos randomizados avaliando a combinação tirzepatida + cagrilintida; o estudo PMID 37364590 (assim como REDEFINE 1/2 PMID 40544433/40544432) avaliou exclusivamente semaglutida + cagrilintida (CagriSema) e NÃO comprova esta combinação."
     ],
     "sources": [
-      "Tirzepatide SURMOUNT-1 monoterapia — PubMed 2022 (PMID 35658024)",
+      "Tirzepatide SURMOUNT-1 monoterapia — N Engl J Med 2022 (PMID 35658024)",
       "Cagrilintide Fase 2 monoterapia NCT03856047 — Lancet 2021 (PMID 34798060)",
-      "Referência comparativa CagriSema Fase 2 semaglutida+cagrilintida — Lancet 2023 (PMID 37364590)"
+      "Referência comparativa CagriSema (semaglutida+cagrilintida, composto distinto) — Lancet 2023 (PMID 37364590)"
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -4884,7 +4888,7 @@
     "protocolCategory": "community_reported",
     "evidenceCategory": "community_reported_stack",
     "verificationStatus": "community_unvalidated",
-    "population": "Participantes de ensaios clínicos (CagriSema) ou comunidade de biohacking",
+    "population": "Protocolos empíricos reportados em pesquisa exploratória (sem validação clínica combinada da mistura)",
     "indication": "Imunidade & Defesa",
     "route": "Subcutânea (SC)",
     "dose": "Composta",
@@ -4911,7 +4915,7 @@
       "Desconforto gástrico transitório"
     ],
     "limitations": [
-      "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
+      "Inexistem ensaios clínicos controlados avaliando a combinação completa destes compostos; as referências indexadas referem-se apenas aos monocomponentes isolados."
     ],
     "sources": [
       "Timosina Alfa-1 ETASS isolado — Crit Care 2013 (PMID 23327199)",
@@ -4929,7 +4933,7 @@
     "protocolCategory": "community_reported",
     "evidenceCategory": "community_reported_stack",
     "verificationStatus": "community_unvalidated",
-    "population": "Participantes de ensaios clínicos (CagriSema) ou comunidade de biohacking",
+    "population": "Protocolos empíricos reportados em pesquisa exploratória (sem validação clínica combinada da mistura)",
     "indication": "Regeneração & Tecidos",
     "route": "Subcutânea (SC)",
     "dose": "Composta",
@@ -4956,7 +4960,7 @@
       "Desconforto gástrico transitório"
     ],
     "limitations": [
-      "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
+      "Inexistem ensaios clínicos controlados avaliando a combinação completa destes compostos; as referências indexadas referem-se apenas aos monocomponentes isolados."
     ],
     "sources": [
       "IGF-1 LR3 experimental isolado — J Neurobiol 1993 (PMID 8301266)",
@@ -4975,7 +4979,7 @@
     "protocolCategory": "community_reported",
     "evidenceCategory": "community_reported_stack",
     "verificationStatus": "community_unvalidated",
-    "population": "Participantes de ensaios clínicos (CagriSema) ou comunidade de biohacking",
+    "population": "Protocolos empíricos reportados em pesquisa exploratória (sem validação clínica combinada da mistura)",
     "indication": "Regeneração & Tecidos",
     "route": "Subcutânea (SC)",
     "dose": "Composta",
@@ -5002,7 +5006,7 @@
       "Desconforto gástrico transitório"
     ],
     "limitations": [
-      "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
+      "Inexistem ensaios clínicos controlados avaliando a combinação completa destes compostos; as referências indexadas referem-se apenas aos monocomponentes isolados."
     ],
     "sources": [
       "GHK-Cu revisão isolada — Int J Mol Sci 2018 (PMID 29986520)",
@@ -5021,7 +5025,7 @@
     "protocolCategory": "community_reported",
     "evidenceCategory": "commercial_blend",
     "verificationStatus": "community_unvalidated",
-    "population": "Participantes de ensaios clínicos (CagriSema) ou comunidade de biohacking",
+    "population": "Protocolos empíricos reportados em pesquisa exploratória (sem validação clínica combinada da mistura)",
     "indication": "Regeneração & Tecidos",
     "route": "Tópica",
     "dose": "Composta",
@@ -5048,7 +5052,7 @@
       "Desconforto gástrico transitório"
     ],
     "limitations": [
-      "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
+      "Inexistem ensaios clínicos controlados avaliando a combinação completa destes compostos; as referências indexadas referem-se apenas aos monocomponentes isolados."
     ],
     "sources": [
       "Argireline tópico isolado — PubMed 2002 (PMID 18498523)",
@@ -5066,7 +5070,7 @@
     "protocolCategory": "community_reported",
     "evidenceCategory": "community_reported_stack",
     "verificationStatus": "community_unvalidated",
-    "population": "Participantes de ensaios clínicos (CagriSema) ou comunidade de biohacking",
+    "population": "Protocolos empíricos reportados em pesquisa exploratória (sem validação clínica combinada da mistura)",
     "indication": "Regeneração & Tecidos",
     "route": "Subcutânea (SC)",
     "dose": "Composta",
@@ -5093,7 +5097,7 @@
       "Desconforto gástrico transitório"
     ],
     "limitations": [
-      "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
+      "Inexistem ensaios clínicos controlados avaliando a combinação completa destes compostos; as referências indexadas referem-se apenas aos monocomponentes isolados."
     ],
     "sources": [
       "Larazotide doença celíaca isolado — Gastroenterology 2015 (PMID 25683116)",
@@ -5112,7 +5116,7 @@
     "protocolCategory": "community_reported",
     "evidenceCategory": "community_reported_stack",
     "verificationStatus": "community_unvalidated",
-    "population": "Participantes de ensaios clínicos (CagriSema) ou comunidade de biohacking",
+    "population": "Protocolos empíricos reportados em pesquisa exploratória (sem validação clínica combinada da mistura)",
     "indication": "Longevidade & Mitocôndria",
     "route": "Subcutânea (SC)",
     "dose": "Composta",
@@ -5139,7 +5143,7 @@
       "Desconforto gástrico transitório"
     ],
     "limitations": [
-      "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
+      "Inexistem ensaios clínicos controlados avaliando a combinação completa destes compostos; as referências indexadas referem-se apenas aos monocomponentes isolados."
     ],
     "sources": [
       "MOTS-c pré-clínico isolado — Cell Metab 2015 (PMID 25738459)",
@@ -5158,7 +5162,7 @@
     "protocolCategory": "community_reported",
     "evidenceCategory": "community_reported_stack",
     "verificationStatus": "community_unvalidated",
-    "population": "Participantes de ensaios clínicos (CagriSema) ou comunidade de biohacking",
+    "population": "Protocolos empíricos reportados em pesquisa exploratória (sem validação clínica combinada da mistura)",
     "indication": "Libido & Melanocortinas",
     "route": "Subcutânea (SC)",
     "dose": "Composta",
@@ -5185,7 +5189,7 @@
       "Desconforto gástrico transitório"
     ],
     "limitations": [
-      "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
+      "Inexistem ensaios clínicos controlados avaliando a combinação completa destes compostos; as referências indexadas referem-se apenas aos monocomponentes isolados."
     ],
     "sources": [
       "PT-141/Bremelanotida RECONNECT isolado — Obstet Gynecol 2019 (PMID 31599840)",
@@ -5204,7 +5208,7 @@
     "protocolCategory": "community_reported",
     "evidenceCategory": "commercial_blend",
     "verificationStatus": "community_unvalidated",
-    "population": "Participantes de ensaios clínicos (CagriSema) ou comunidade de biohacking",
+    "population": "Protocolos empíricos reportados em pesquisa exploratória (sem validação clínica combinada da mistura)",
     "indication": "Regeneração & Tecidos",
     "route": "Subcutânea (SC)",
     "dose": "Composta",
@@ -5231,7 +5235,7 @@
       "Desconforto gástrico transitório"
     ],
     "limitations": [
-      "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
+      "Inexistem ensaios clínicos controlados avaliando a combinação completa destes compostos; as referências indexadas referem-se apenas aos monocomponentes isolados."
     ],
     "sources": [
       "GHK-Cu revisão isolada — sem ensaio HPLC/MS da mistura tríplice GLOW — Int J Mol Sci 2018 (PMID 29986520)",
@@ -5251,7 +5255,7 @@
     "protocolCategory": "community_reported",
     "evidenceCategory": "unverified_combination",
     "verificationStatus": "contraindicated",
-    "population": "Participantes de ensaios clínicos (CagriSema) ou comunidade de biohacking",
+    "population": "Protocolos empíricos reportados em pesquisa exploratória (sem validação clínica combinada da mistura)",
     "indication": "Metabolismo & Perda de Peso",
     "route": "Subcutânea (SC)",
     "dose": "Composta",
@@ -5278,7 +5282,7 @@
       "Desconforto gástrico transitório"
     ],
     "limitations": [
-      "Inexistem ensaios clínicos da combinação completa, exceto CagriSema."
+      "Inexistem ensaios clínicos controlados avaliando a combinação completa destes compostos; as referências indexadas referem-se apenas aos monocomponentes isolados."
     ],
     "sources": [
       "Retatrutida Fase 2 NEJM 2023 monoterapia (taquicardia sinusal dose-dependente) — PubMed 2023 (PMID 37366315)",

@@ -17,8 +17,12 @@ TESTS_DIR = os.path.dirname(os.path.abspath(__file__))
 if TESTS_DIR not in sys.path:
     sys.path.insert(0, TESTS_DIR)
 
-from git_manifest_verifier import validate_active_manifest_directory
+from git_manifest_verifier import (
+    validate_active_manifest_directory,
+    verify_historical_manifest_at_commit,
+)
 
+H4_17_COMMIT_SHA = "f992218cea8238544ed5a39ee6e825b938ba86f2"
 REPO_ROOT = os.path.abspath(os.path.join(TESTS_DIR, ".."))
 MANIFEST_REL_PATH = "research/evidence/MANIFESTO_ARQUIVOS_H4_17.csv"
 MANIFEST_FULL_PATH = os.path.join(REPO_ROOT, MANIFEST_REL_PATH)
@@ -50,27 +54,21 @@ class TestManifestH417(unittest.TestCase):
             self.assertGreater(int(row["tamanhoBytes"].strip()), 0, f"tamanhoBytes <= 0 para {rel_path}")
 
     def test_all_git_tracked_files_cataloged_with_strict_lf_sha256(self):
-        """Valida paridade estrita SHA-256 + tamanhoBytes com zero tolerância a CRLF sobre todos os tracked files."""
-        rows = validate_active_manifest_directory(REPO_ROOT, MANIFEST_REL_PATH)
-        self.assertGreaterEqual(len(rows), 295)
-
-        res = subprocess.run(
-            ["git", "ls-files", "--eol"],
-            cwd=REPO_ROOT,
-            capture_output=True,
-            text=True,
-            check=True,
+        """Audita H4.17 contra o SHA congelado f992218cea8238544ed5a39ee6e825b938ba86f2 com 0 tolerância a CRLF."""
+        summary = verify_historical_manifest_at_commit(
+            REPO_ROOT,
+            H4_17_COMMIT_SHA,
+            MANIFEST_REL_PATH,
+            path_col="caminhoRelativo",
+            size_col="tamanhoBytes",
+            hash_col="hashSha256",
+            expected_crlf_paths=(),
+            expected_1byte_mixed_paths=(),
+            expected_uncataloged_paths=(),
+            require_zero_crlf_in_git_tree=True,
         )
-        crlf_or_mixed = []
-        for line in res.stdout.splitlines():
-            if not line.strip():
-                continue
-            parts = line.split("\t", 1)
-            meta = parts[0]
-            fname = parts[1] if len(parts) > 1 else ""
-            if "w/crlf" in meta or "w/mixed" in meta or "i/crlf" in meta or "i/mixed" in meta:
-                crlf_or_mixed.append(f"{fname} ({meta.strip()})")
-        self.assertEqual(len(crlf_or_mixed), 0, f"Arquivos com CRLF/mixed detectados em git ls-files --eol: {crlf_or_mixed}")
+        self.assertEqual(summary["rows"], 309)
+        self.assertEqual(summary["exact_matches"], 309)
 
     def test_historical_h414_to_h416_artifacts_preserved(self):
         """Confirma preservação integral de manifestos e relatórios históricos H4.14–H4.16."""

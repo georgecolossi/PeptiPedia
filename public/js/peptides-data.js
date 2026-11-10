@@ -1329,13 +1329,14 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Once-Weekly Semaglutide in Adults with Overweight or Obesity (Ensaio STEP-1)",
+        "title": "Once-Weekly Semaglutide in Adults with Overweight or Obesity",
         "journal": "The New England Journal of Medicine (NEJM)",
         "year": "2021",
         "pmid": "33567185",
         "phase": "Ensaio Clínico Randomizado, Duplo-Cego, Controlado por Placebo (Fase 3)",
         "participants": "1.961 adultos em 129 centros clínicos em 16 países",
-        "keyFindings": "A redução média de peso corporal com a Semaglutida foi de -14,9% comparado a apenas -2,4% no grupo placebo (diferença estimada de -12,4 pontos percentuais). 86,4% dos pacientes alcançaram perda de peso ≥5% e 50,5% alcançaram perda ≥15%."
+        "keyFindings": "A redução média de peso corporal com a Semaglutida foi de -14,9% comparado a apenas -2,4% no grupo placebo (diferença estimada de -12,4 pontos percentuais). 86,4% dos pacientes alcançaram perda de peso ≥5% e 50,5% alcançaram perda ≥15%.",
+        "doi": "10.1056/NEJMoa2032183"
       }
     ],
     "popularityScore": 100,
@@ -1502,13 +1503,14 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Tirzepatide Once Weekly for the Treatment of Obesity (Ensaio SURMOUNT-1)",
+        "title": "Tirzepatide Once Weekly for the Treatment of Obesity",
         "journal": "The New England Journal of Medicine (NEJM)",
         "year": "2022",
         "pmid": "35658024",
         "phase": "Ensaio Clínico Randomizado, Duplo-Cego, Controlado por Placebo (Fase 3)",
         "participants": "2.539 adultos com IMC ≥30 (ou ≥27 com comorbidades)",
-        "keyFindings": "A perda média de peso corporal na semana 72 foi de -15,0% (dose de 5 mg), -19,5% (dose de 10 mg) e extraordinários -20,9% (dose de 15 mg), contra -3,1% no placebo. Impressionantes 63% dos indivíduos na dose de 15 mg alcançaram perda ≥20% de peso corporal."
+        "keyFindings": "A perda média de peso corporal na semana 72 foi de -15,0% (dose de 5 mg), -19,5% (dose de 10 mg) e extraordinários -20,9% (dose de 15 mg), contra -3,1% no placebo. Impressionantes 63% dos indivíduos na dose de 15 mg alcançaram perda ≥20% de peso corporal.",
+        "doi": "10.1056/NEJMoa2206038"
       }
     ],
     "popularityScore": 99,
@@ -1669,13 +1671,14 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+        "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity - A Phase 2 Trial",
         "journal": "The New England Journal of Medicine (NEJM)",
         "year": "2023",
         "pmid": "37366315",
         "phase": "Ensaio Clínico Randomizado, Duplo-Cego, Controlado por Placebo (Fase 2)",
         "participants": "338 adultos com obesidade ou sobrepeso com comorbidades",
-        "keyFindings": "No ensaio NEJM 2023 (Jastreboff et al., PMID 37366315), a redução média de peso com Retatrutida atingiu -24,2% na dose mais alta (12 mg às 48 semanas), com 100% dos pacientes no grupo de 12 mg atingindo perda ≥5% e 26% atingindo perda ≥30%. Em subestudo paralelo de pacientes com MASLD publicado na Nature Medicine (Sanyal et al. 2024, DOI: 10.1038/s41591-024-03018-2), a retatrutida 12 mg promoveu redução relativa média de 86,0% da gordura hepática mensurada por MRI-PDFF às 48 semanas, o que não equivale a resolução clínica de esteatose em 86% dos participantes."
+        "keyFindings": "No ensaio NEJM 2023 (Jastreboff et al., PMID 37366315), a redução média de peso com Retatrutida atingiu -24,2% na dose mais alta (12 mg às 48 semanas), com 100% dos pacientes no grupo de 12 mg atingindo perda ≥5% e 26% atingindo perda ≥30%. Em subestudo paralelo de pacientes com MASLD publicado na Nature Medicine (Sanyal et al. 2024, DOI: 10.1038/s41591-024-03018-2), a retatrutida 12 mg promoveu redução relativa média de 86,0% da gordura hepática mensurada por MRI-PDFF às 48 semanas, o que não equivale a resolução clínica de esteatose em 86% dos participantes.",
+        "doi": "10.1056/NEJMoa2301972"
       }
     ],
     "popularityScore": 98,
@@ -1833,10 +1836,10 @@ const PEPTIDES_DATABASE = [
     ],
     "status": "Investigacional",
     "statusType": "investigational",
-    "evidenceLevel": "Ensaios Clínicos Fase 2 (Austrália) / Pré-Clínico Cartilaginoso",
+    "evidenceLevel": "Pré-Clínico em Roedores & Ensaios Analíticos (Desenvolvimento Clínico Descontinuado)",
     "evidenceScore": 84,
-    "protocolEvidenceType": "clinical_pilot",
-    "protocolEvidenceNote": "ENSAIOS FASE 2: Testado em mais de 900 pacientes em ensaios clínicos australianos para perda de peso. Apresenta excelente perfil de segurança por não estimular receptores de IGF-1 nem elevar glicemia. A aplicação intra-articular para osteoartrite é apoiada por estudos pré-clínicos.",
+    "protocolEvidenceType": "preclinical_empirical",
+    "protocolEvidenceNote": "AVISO EPISTÊMICO E REGULATÓRIO: Os 3 registros PubMed ativos avaliam modelos murinos (PMID 11673763; PMID 11146367) e detecção analítica antidoping in vitro em urina (PMID 25208511), inexistindo aprovação regulatória humana vigente ou ECR clínico positivo indexado na base.",
     "structure": "Peptídeo de 16 aminoácidos (fragmento C-terminal de hGH estabilizado com ponte dissulfeto)",
     "sequence": "Tyr-Leu-Arg-Ile-Val-Gln-Cys-Arg-Ser-Val-Glu-Gly-Ser-Cys-Gly-Phe",
     "molecularWeight": "1815.1 g/mol",
@@ -1972,7 +1975,7 @@ const PEPTIDES_DATABASE = [
     "statusType": "investigational",
     "evidenceLevel": "Estudos Experimentais In Vitro e Pré-Clínicos (Ativação Telomérica)",
     "evidenceScore": 90,
-    "protocolEvidenceType": "clinical_pilot",
+    "protocolEvidenceType": "preclinical_empirical",
     "protocolEvidenceNote": "EVIDÊNCIA EXPERIMENTAL E HISTÓRICA: Desenvolvido pelo Prof. Vladimir Khavinson (Instituto de São Petersburgo). Estudos primários indexados com dados verificáveis demonstram ativação de telomerase e aumento replicativo in vitro em culturas celulares humanas e modelos murinos. Relatos de acompanhamento clínico humano de 12 anos e posologias empíricas de 5 a 10 mg/dia provêm de monografias e publicações soviéticas/russas, carecendo de ensaios clínicos controlados randomizados de fase 3 indexados para validação formal de longevidade ou segurança oncológica humana.",
     "structure": "Tetrapeptídeo biorregulador epifisário",
     "sequence": "Ala-Glu-Asp-Gly",
@@ -2339,7 +2342,8 @@ const PEPTIDES_DATABASE = [
         "pmid": "37268435",
         "phase": "Ensaio Clínico Fase 3 Randomizado, Duplo-Cego, Controlado por Placebo (MMPOWER-3)",
         "participants": "218 participantes com miopatia mitocondrial primária geneticamente confirmada (109 elamipretida, 109 placebo)",
-        "keyFindings": "O ensaio MMPOWER-3 não atingiu seus dois desfechos primários de eficácia clínica: não houve diferença estatisticamente significativa entre elamipretida e placebo na distância do teste de caminhada de 6 minutos (6MWT) (diferença de -3,2 metros, IC 95% de -18,7 a 12,3, p=0,69), e o desfecho primário de fadiga (escore PMMSA Total Fatigue) não apresentou melhora estatisticamente significativa em relação ao placebo. O perfil de segurança foi favorável, predominando reações no local da injeção."
+        "keyFindings": "O ensaio MMPOWER-3 não atingiu seus dois desfechos primários de eficácia clínica: não houve diferença estatisticamente significativa entre elamipretida e placebo na distância do teste de caminhada de 6 minutos (6MWT) (diferença de -3,2 metros, IC 95% de -18,7 a 12,3, p=0,69), e o desfecho primário de fadiga (escore PMMSA Total Fatigue) não apresentou melhora estatisticamente significativa em relação ao placebo. O perfil de segurança foi favorável, predominando reações no local da injeção.",
+        "doi": "10.1212/WNL.0000000000207402"
       }
     ],
     "popularityScore": 88,
@@ -4299,7 +4303,7 @@ const PEPTIDES_DATABASE = [
     "evidenceLevel": "Ensaios Pré-clínicos & In Vitro",
     "evidenceScore": 85,
     "protocolEvidenceType": "preclinical_empirical",
-    "protocolEvidenceNote": "AVISO CIENTÍFICO: A dosagem de 100 a 250 mcg SC em dias alternados é uma prática empírica de pesquisa em imunomodulação. LL-37 é um desestabilizador de biofilmes bacterianos. NÃO há estudos controlados de segurança fase 3 aprovando uso sistêmico recreativo.",
+    "protocolEvidenceNote": "AVISO CIENTÍFICO: A dosagem de 100 a 250 mcg SC em dias alternados é prática empírica sem ECRs fase 3 aprovando uso sistêmico recreativo. O estudo bioinorgânico PMID 42708248 (Dalton Trans 2026;55(37):13426-13445) analisa coordenação solúvel de LL-37 com íons Cu(II) e Zn(II) em solução (NÃO Ni(II)), sem testar ou comprovar compatibilidade química/clínica da mistura LL-37 + GHK-Cu.",
     "structure": "Peptídeo catiônico alfa-helicoidal de 37 aminoácidos",
     "sequence": "LLGDFFRKSKEKIGKEFKRIVQRIKDFLRNLVPRTES",
     "molecularWeight": "4493.3 g/mol",
@@ -4354,7 +4358,7 @@ const PEPTIDES_DATABASE = [
     "scientificReferences": [
       "Vandamme D, Landuyt B, Luyten W, Schoofs L. A comprehensive summary of LL-37, the factotum human cathelicidin peptide. Cell Immunol. 2012;280(1):22-35. PMID: 23246832",
       "Johansson J, Gudmundsson GH, Rottenberg ME, Berndt KD, Agerberth B. Conformation-dependent antibacterial activity of the naturally occurring human peptide LL-37. J Biol Chem. 1998;273(6):3718-24. PMID: 9452503",
-      "Szarszoń K, et al. Coordination chemistry and antimicrobial activity of LL-37, its C-terminal fragment, and a peptidomimetic analogue. Dalton Trans. 2026. PMID: 42708248",
+      "Szarszoń K, Luszawska M, Jewgiński M, Janek T, Latajka R, Bellotti D, Wątły J. Coordination chemistry and antimicrobial activity of LL-37, its C-terminal fragment, and a peptidomimetic analogue. Dalton Trans. 2026 Sep 29;55(37):13426-13445. DOI: 10.1039/d6dt01638c. PMID: 42708248. (Coordenação solúvel com Cu(II) e Zn(II) — NÃO Ni(II); não extrapolar para mistura física LL-37 + GHK-Cu).",
       "Dorschner RA, Pestonjamasp VK, Tamakuwala S, Ohtake T, Rudisill J, et al. Cutaneous injury induces the release of cathelicidin anti-microbial peptides active against group A Streptococcus. J Invest Dermatol. 2001;117(1):91-7. PMID: 11442754"
     ],
     "fullTextStudies": [
@@ -4863,10 +4867,10 @@ const PEPTIDES_DATABASE = [
     ],
     "status": "Aprovado / Farmacopeia Oficial",
     "statusType": "approved",
-    "evidenceLevel": "Ensaios Clínicos Extensos & Uso Terapêutico",
+    "evidenceLevel": "Ensaio Clínico Randomizado Oral (Estoques Séricos) & Uso Terapêutico Específico",
     "evidenceScore": 96,
     "protocolEvidenceType": "clinical_proven",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Aprovado em farmacopeias internacionais e extensamente estudado em ensaios clínicos humanos de medicina regenerativa (PMID: 24791752). Dosagem injetável comum de 200 a 600 mg IM ou IV lento 1 a 2x/semana.",
+    "protocolEvidenceNote": "ESCOPO CLÍNICO VERIFICADO: O ECR indexado nesta base (Richie et al., Eur J Nutr 2015, PMID 24791752, n=54) demonstrou elevação de estoques celulares de GSH apenas com suplementação ORAL (250 ou 1.000 mg/dia por 6 meses); uso parenteral (IM/IV 200-600 mg) ou indicações não contempladas neste estudo não possuem comprovação direta no artigo citado.",
     "structure": "Tripeptídeo sulfidrílico (gamma-L-glutamil-L-cisteinilglicina)",
     "sequence": "gamma-Glu-Cys-Gly",
     "molecularWeight": "307.3 g/mol",
@@ -4966,7 +4970,16 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "fullTextStudies": [
+      {
+        "title": "Randomized controlled trial of oral glutathione supplementation on body stores of glutathione",
+        "journal": "Eur J Nutr (2015)",
+        "pmid": "24791752",
+        "doi": "10.1007/s00394-014-0706-z",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/24791752/"
+      }
+    ]
   },
   {
     "id": "nad-plus",
@@ -4981,10 +4994,10 @@ const PEPTIDES_DATABASE = [
     ],
     "status": "Uso Clínico Integrativo / Farmacopeia",
     "statusType": "approved",
-    "evidenceLevel": "Ensaios Clínicos de Longevidade Humana",
+    "evidenceLevel": "Pré-Clínico Murino (NAD+ Direto) & ECRs Orais de Precursores (NR/NMN)",
     "evidenceScore": 93,
-    "protocolEvidenceType": "clinical_pilot",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Avaliado em ensaios clínicos para bioenergética mitocondrial e senescência (PMID: 24360282). Protocolos de aplicação subcutânea diária fracionada de 50 a 100 mg ou infusões intravenosas lentas de 250 a 500 mg.",
+    "protocolEvidenceType": "preclinical_empirical",
+    "protocolEvidenceNote": "AVISO EPISTÊMICO: O estudo citado de Gomes et al. (Cell 2013, PMID 24360282) é estritamente pré-clínico em modelos murinos e NÃO um ensaio clínico humano. Os ECRs humanos ativos (Martens et al. 2018 NR, PMID 29599478; Yoshino et al. 2021 NMN, PMID 33888596) avaliaram precursores ORAIS, e NÃO a administração subcutânea/IV de NAD+.",
     "structure": "Dinucleotídeo de coenzima redox (adenina ligada a nicotinamida)",
     "sequence": "Composto químico dinucleotídeo (C21H27N7O14P2)",
     "molecularWeight": "663.4 g/mol",
@@ -5043,9 +5056,9 @@ const PEPTIDES_DATABASE = [
         "pmid": "24360282",
         "doi": "10.1016/j.cell.2013.11.037",
         "link": "https://pubmed.ncbi.nlm.nih.gov/24360282/",
-        "phase": "Ensaio Clínico Fase 1/2",
-        "participants": "140 adultos de meia-idade e idosos",
-        "keyFindings": "Ever since eukaryotes subsumed the bacterial ancestor of mitochondria, the nuclear and mitochondrial genomes have had to closely coordinate their activities, as each encode different subunits of the oxidative phosphorylation (OXPHOS) system. Mitochondrial dysfunction is a hallmark of aging, but its causes are debated. We show that, during aging, there is a specific loss of mitochondrial, but not nuclear, encoded OXPH..."
+        "phase": "Estudo Mecanístico Pré-Clínico em Camundongos (Não é Ensaio Clínico Humano)",
+        "participants": "Camundongos jovens e senescentes e culturas celulares (musculatura esquelética)",
+        "keyFindings": "Em camundongos, o declínio nuclear de NAD+ induz estado pseudo-hipóxico com acúmulo de HIF-1alpha e perda de subunidades mitocondriais OXPHOS codificadas pelo mtDNA, revertido experimentalmente via precursores/SIRT1. Os ECRs humanos indexados em Referências testaram NR oral (PMID 29599478) e NMN oral (PMID 33888596), não NAD+ parenteral."
       }
     ],
     "scientificReferences": [
@@ -5244,10 +5257,10 @@ const PEPTIDES_DATABASE = [
     ],
     "status": "Farmacopeia Russa / Longevidade",
     "statusType": "approved",
-    "evidenceLevel": "Ensaios Clínicos Longitudinais (Rússia)",
+    "evidenceLevel": "Revisão Observacional Histórica (Rússia; Sem ECR Monoterapia)",
     "evidenceScore": 88,
-    "protocolEvidenceType": "clinical_pilot",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO: Biorregulador timocítico do Prof. Vladimir Khavinson documentado em estudos longitudinais de extensão de expectativa de vida em humanos (PMID: 12577695). Posologia clássica em cursos curtos de 10 mg diários por 10 dias (1 ou 2x ao ano).",
+    "protocolEvidenceType": "preclinical_empirical",
+    "protocolEvidenceNote": "AVISO EPISTÊMICO E DOCUMENTAL: O único registro PubMed ativo (Khavinson & Morozov, Adv Gerontol 2002;10:74-84, PMID 12577695, sem DOI no XML NCBI) é uma revisão narrativa em russo descrevendo seguimento observacional de timalina + epitalamina associadas (não é ECR cego de monoterapia). Sem aprovação FDA/EMA/Anvisa.",
     "structure": "Complexo polipeptídico natural purificado do timo de bezerros",
     "sequence": "Fração peptídica natural de baixo peso molecular (<10 kDa)",
     "molecularWeight": "Variável (oligopeptídeos de 2 a 10 aminoácidos)",
@@ -5294,18 +5307,17 @@ const PEPTIDES_DATABASE = [
     "clinicalStudies": [
       {
         "title": "[Geroprotective effect of thymalin and epithalamin]",
-        "journal": "Gerontology",
-        "year": "2003",
+        "journal": "Adv Gerontol",
+        "year": "2002",
         "pmid": "12577695",
-        "doi": "10.1159/000067954",
         "link": "https://pubmed.ncbi.nlm.nih.gov/12577695/",
-        "phase": "Estudo Clínico Longitudinal de 6 a 8 anos",
-        "participants": "Idosos acompanhados por até 8 anos",
-        "keyFindings": "A administração anual cíclica de Timalina associada a Epitalon gerou redução de 2 a 4 vezes na mortalidade por causas gerais e normalização dos parâmetros imunes."
+        "phase": "Revisão Narrativa / Síntese de Coorte Observacional Regional (Thymalin + Epithalamin em associação; Review)",
+        "participants": "Relato observacional histórico em 266 idosos (>60 anos) recebendo terapia combinada (não é ECR monoterapia)",
+        "keyFindings": "Artigo de revisão em russo (Adv Gerontol 2002;10:74-84, sem DOI no PubMed) sintetizando seguimento de 6-8 anos com administração combinada de timalina e epitalamina; carece de ECRs modernos duplo-cegos e validação por FDA/EMA/Anvisa."
       }
     ],
     "scientificReferences": [
-      "Khavinson VK, et al. Peptide Bioregulators and Life Expectancy. Gerontology. 2003. PMID: 12577695"
+      "Khavinson VKh, Morozov VG. [Geroprotective effect of thymalin and epithalamin]. Adv Gerontol. 2002;(10):74-84. PMID: 12577695."
     ],
     "popularityScore": 87,
     "contraindications": [
@@ -5358,7 +5370,16 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "fullTextStudies": [
+      {
+        "title": "[Geroprotective effect of thymalin and epithalamin]",
+        "journal": "Advances in gerontology = Uspekhi gerontologii (2002;10:74-84)",
+        "pmid": "12577695",
+        "doi": null,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/12577695/"
+      }
+    ]
   },
   {
     "id": "pinealon",
@@ -5372,10 +5393,10 @@ const PEPTIDES_DATABASE = [
     ],
     "status": "Investigacional / Biorregulador",
     "statusType": "investigational",
-    "evidenceLevel": "Ensaios Clínicos Piloto (Rússia)",
+    "evidenceLevel": "Pré-Clínico Celular In Vitro e em Roedores (Sem ECR Humano)",
     "evidenceScore": 86,
-    "protocolEvidenceType": "clinical_pilot",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO: Tripeptídeo sintético formulado por Khavinson avaliado em ensaios clínicos para astenia, fadiga cognitiva e proteção do tecido cortical contra estresse oxidativo e hipóxia (PMID: 21978084). Dose comum de 2 a 5 mg SC ou oral diária por 20 a 30 dias.",
+    "protocolEvidenceType": "preclinical_empirical",
+    "protocolEvidenceNote": "AVISO EPISTÊMICO: Os estudos indexados (PMID 21978084 em neurônios cerebelares/células PC12; PMID 22567179 em prole de ratas) são estritamente pré-clínicos in vitro e em roedores. Inexistem ECRs clínicos em humanos nesta base validando posologia de 2 a 5 mg.",
     "structure": "Tripeptídeo sintético linear (Glu-Asp-Arg)",
     "sequence": "Glu-Asp-Arg",
     "molecularWeight": "432.4 g/mol",
@@ -5816,9 +5837,9 @@ const PEPTIDES_DATABASE = [
         "pmid": "7920995",
         "doi": "10.1515/jpem.1993.6.3-4.283",
         "link": "https://pubmed.ncbi.nlm.nih.gov/7920995/",
-        "phase": "Ensaio Clínico",
-        "participants": "Adultos voluntários",
-        "keyFindings": "Growth hormone (GH) secretion is regulated by a complex system of central and peripheral signals. Recently, a new GH-releasing hexapeptide (His-D-Trp-Ala-Trp-D-Phe-Lys-NH2) called GHRP-6 which specifically releases GH has been studied. In the present work the mechanism of action of GHRP-6 has been addressed in experimental animal models as well as in obese subjects. GHRP-6 releases GH independently of the hypothalami..."
+        "phase": "Revisão Farmacológica e Endocrinológica (Review; estudos diagnósticos/clamp humanos em PMID 14693411 / 8887178)",
+        "participants": "Revisão comparativa abrangendo modelos experimentais animais e indivíduos obesos",
+        "keyFindings": "Artigo de revisão (Micic et al., J Pediatr Endocrinol 1993) sintetizando a secreção de GH pelo hexapeptídeo GHRP-6 via mecanismo independente de GHRH e somatostatina em modelos experimentais e indivíduos obesos; dados clínicos de clamp euglicêmico/hiperglicêmico em diabetes tipo 2 com GHRH+GHRP-6 constam separadamente em Micic et al. 2004 (PMID 14693411)."
       }
     ],
     "scientificReferences": [
@@ -7029,10 +7050,10 @@ const PEPTIDES_DATABASE = [
     ],
     "status": "Aprovado em Cosmecêuticos Globais",
     "statusType": "investigational",
-    "evidenceLevel": "Ensaios Clínicos Dermatológicos Publicados",
+    "evidenceLevel": "Cosmético Tópico (Estudo Exploratório em Voluntárias e Mecanístico In Vitro)",
     "evidenceScore": 91,
-    "protocolEvidenceType": "clinical_proven",
-    "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Eficácia anti-rugas comprovada em ensaios dermatológicos humanos duplo-cegos (PMID: 18498523, PMID: 18498523). Formulações tópicas de 5% a 10% demonstram redução estatisticamente significativa na profundidade das rugas de expressão facial em 15 a 30 dias.",
+    "protocolEvidenceType": "clinical_pilot",
+    "protocolEvidenceNote": "CLASSIFICAÇÃO COSMÉTICA: Uso exclusivamente TÓPICO. Blanes-Mira et al. (Int J Cosmet Sci 2002, PMID 18498523) investigaram inibição mecanística de SNARE in vitro e topografia cutânea exploratória tópica em voluntárias saudáveis por 30 dias (sem descrição de ECR duplo-cego no resumo XML); Kluczyk et al. (Chem Biodivers 2021, PMID 33482052) trata apenas de método analítico RP-HPLC/MS. Contraindicado para injeção.",
     "structure": "Hexapeptídeo sintético acetilado (análogo do N-terminal da proteína SNAP-25)",
     "sequence": "Ac-Glu-Glu-Met-Gln-Arg-Arg-NH2",
     "molecularWeight": "888.99 g/mol",
@@ -7083,13 +7104,13 @@ const PEPTIDES_DATABASE = [
     "clinicalStudies": [
       {
         "title": "A synthetic hexapeptide (Argireline) with antiwrinkle activity",
-        "journal": "PubMed",
+        "journal": "Int J Cosmet Sci",
         "year": "2002",
         "pmid": "18498523",
         "doi": "10.1046/j.1467-2494.2002.00153.x",
         "link": "https://pubmed.ncbi.nlm.nih.gov/18498523/",
-        "phase": "Ensaio Clínico em Humanos",
-        "participants": "Voluntárias femininas com rugas faciais",
+        "phase": "Estudo Cosmético Tópico Exploratório e Mecanístico In Vitro (Sem ECR duplo-cego descrito no resumo)",
+        "participants": "Voluntárias femininas saudáveis em avaliação tópica exploratória (O/W 10%, 30 dias) e ensaios celulares SNARE",
         "keyFindings": "Botulinum neurotoxins (BoNTs) represent a revolution in cosmetic science because of their remarkable and long-lasting antiwrinkle activity. However, their high neurotoxicity seriously limits their use. Thus, there is a need to design and validate non-toxic molecules that mimic the action of BoNTs. The hexapeptide Ac-EEMQRR-NH(2) (coined Argireline) was identified as a result of a rational design programme. Noteworthy..."
       }
     ],
@@ -7100,7 +7121,7 @@ const PEPTIDES_DATABASE = [
     "fullTextStudies": [
       {
         "title": "A synthetic hexapeptide (Argireline) with antiwrinkle activity",
-        "journal": "PubMed (2002)",
+        "journal": "Int J Cosmet Sci (2002)",
         "pmid": "18498523",
         "doi": "10.1046/j.1467-2494.2002.00153.x",
         "url": "https://pubmed.ncbi.nlm.nih.gov/18498523/"
@@ -7965,7 +7986,7 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Ensaio LEADER: Desfechos Cardiovasculares com Liraglutida no Diabetes Tipo 2",
+        "title": "Liraglutide and Cardiovascular Outcomes in Type 2 Diabetes",
         "journal": "The New England Journal of Medicine",
         "year": "2016",
         "pmid": "27295427",
@@ -7975,7 +7996,7 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "Redução de 13% no risco de desfecho cardiovascular composto de 3 pontos (MACE: morte cardiovascular, IAM não fatal, AVC não fatal; HR 0,87; IC 95% 0,78-0,97; p<0,001 para não inferioridade; p=0,01 para superioridade) e redução de 22% na mortalidade por causas cardiovasculares (HR 0,78; IC 95% 0,66-0,93; p=0,007)."
       },
       {
-        "title": "Ensaio SCALE Obesidade e Pré-Diabetes: Liraglutida 3,0 mg no Manejo Ponderal",
+        "title": "A Randomized, Controlled Trial of 3.0 mg of Liraglutide in Weight Management",
         "journal": "The New England Journal of Medicine",
         "year": "2015",
         "pmid": "26132939",
@@ -8176,7 +8197,7 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Ensaio STEPS: Eficácia da Teduglutida na Redução do Suporte Parenteral na Síndrome do Intestino Curto",
+        "title": "Teduglutide reduces need for parenteral support among patients with short bowel syndrome with intestinal failure",
         "journal": "Gastroenterology",
         "year": "2012",
         "pmid": "22982184",
@@ -8186,7 +8207,7 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "63% (27/43) dos pacientes no grupo teduglutida atingiram resposta clínica (redução ≥20% no volume de suporte parenteral) versus 30% (13/43) no grupo placebo (p=0,002). Redução média de 4,4 L/semana no suporte parenteral com teduglutida vs 2,3 L/semana no placebo (p<0,001). 54% dos pacientes tratados conseguiram eliminar pelo menos 1 dia por semana de suporte parenteral."
       },
       {
-        "title": "Ensaio Clínico Fase 3 com Escalonamento de Doses: Adaptação Intestinal com Teduglutida",
+        "title": "Randomised placebo-controlled trial of teduglutide in reducing parenteral nutrition and/or intravenous fluid requirements in patients with short bowel syndrome",
         "journal": "Gut",
         "year": "2011",
         "pmid": "21317170",
@@ -8347,7 +8368,7 @@ const PEPTIDES_DATABASE = [
     "pediatricAgeLimits": "Segurança e eficácia não estabelecidas em menores de 2 anos (BBS e deficiência de POMC/PCSK1/LEPR) e em menores de 4 anos (Obesidade Hipotalâmica Adquirida).",
     "clinicalStudies": [
       {
-        "title": "Efficacy and safety of the melanocortin-4 receptor agonist setmelanotide in POMC and LEPR deficiency obesity: a multicentre, open-label, phase 3 trial",
+        "title": "Efficacy and safety of setmelanotide, an MC4R agonist, in individuals with severe obesity due to LEPR or POMC deficiency: single-arm, open-label, multicentre, phase 3 trials",
         "journal": "The Lancet Diabetes & Endocrinology",
         "year": "2020",
         "pmid": "33137293",
@@ -8357,7 +8378,7 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "Desfecho primário: perda de peso corporal ≥10% em aproximadamente 1 ano de tratamento foi atingida por 80% (8 de 10) dos pacientes com deficiência de POMC/PCSK1 (perda média de -25,6% do peso; p < 0,0001) e por 45% (5 de 11) dos pacientes com deficiência de LEPR (perda média de -12,5% do peso; p = 0,00051). A relação causal do agonismo de MC4R foi demonstrada no período de retirada duplo-cega: os pacientes comutados para placebo recuperaram peso rapidamente (+5,0 kg em POMC e +4,8 kg em LEPR) com retorno imediato da hiperfagia severa, que foram prontamente revertidos ao reassumir a droga ativa. Os estudos foram predominantemente abertos com período embutido de retirada controlada, e não ensaios paralelos duplo-cegos durante todo o ano."
       },
       {
-        "title": "Efficacy and safety of setmelanotide in individuals with Bardet-Biedl syndrome or Alström syndrome: a phase 3, randomised, double-blind, placebo-controlled trial",
+        "title": "Efficacy and safety of setmelanotide, a melanocortin-4 receptor agonist, in patients with Bardet-Biedl syndrome and Alström syndrome: a multicentre, randomised, double-blind, placebo-controlled, phase 3 trial with an open-label period",
         "journal": "The Lancet Diabetes & Endocrinology",
         "year": "2022",
         "pmid": "36356613",
@@ -9272,7 +9293,7 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Targeted Apoptosis of Senescent Cells Restores Tissue Homeostasis in Response to Aging",
+        "title": "Targeted Apoptosis of Senescent Cells Restores Tissue Homeostasis in Response to Chemotoxicity and Aging",
         "journal": "Cell",
         "year": "2017",
         "pmid": "28340339",
@@ -10098,9 +10119,9 @@ const PEPTIDES_DATABASE = [
         "pmid": "30291907",
         "doi": "10.1016/j.pharmthera.2018.10.003",
         "link": "https://pubmed.ncbi.nlm.nih.gov/30291907/",
-        "phase": "Estudo Pré-Clínico Fundamental In Vivo",
-        "participants": "Camundongos submetidos a testes comportamentais de nado forçado e suspensão pela cauda",
-        "keyFindings": "Depression is a devastating mood disorder and a leading cause of disability worldwide. Depression affects approximately one in five individuals in the world and represents heavy economic and social burdens. The neurobiological mechanisms of depression are not fully understood, but evidence highlights the role of monoamine neurotransmitter balance. Several antidepressants (ADs) are marketed to treat depression and rel..."
+        "phase": "Revisão Farmacológica sobre Spadin / Bloqueadores TREK-1 (Review; modelo murino primário PMID 21807005)",
+        "participants": "Revisão da literatura pré-clínica em roedores (0 ensaios clínicos em humanos)",
+        "keyFindings": "Revisão narrativa (Djillani et al., Pharmacol Ther 2019) sobre bloqueadores dos canais K2P TREK-1 (spadin e análogos como PE-22-28) em modelos pré-clínicos de depressão; dados experimentais primários de ausência de toxicidade cardíaca/convulsiva em roedores constam em Moha Ou Maati et al. 2012 (PMID 21807005)."
       }
     ],
     "popularityScore": 78,
@@ -15537,7 +15558,7 @@ const PEPTIDES_DATABASE = [
     ],
     "clinicalStudies": [
       {
-        "title": "Efficacy and safety of once-weekly subcutaneous zenagamtide in type 2 diabetes",
+        "title": "Efficacy and safety of once-weekly subcutaneous zenagamtide, a novel unimolecular GLP-1 and amylin receptor agonist, in type 2 diabetes: a multicentre, randomised, parallel, double-blind, placebo-controlled, dose-finding, phase 2 trial",
         "journal": "The Lancet",
         "year": "2026",
         "pmid": "42532080",
@@ -15547,7 +15568,7 @@ const PEPTIDES_DATABASE = [
         "keyFindings": "Na semana 36, doses de zenagamtida SC semanal reduziram a HbA1c em até -1,71 pontos percentuais na dose de 40 mg (ETD vs placebo: -1,56 pontos percentuais, IC 95% -2,05 a -1,07, P < 0,0001) e o peso corporal em 14,6% vs 2,1% no placebo (ETD -12,4%, P < 0,0001)."
       },
       {
-        "title": "Efficacy and safety of once-daily oral zenagamtide in adults with type 2 diabetes",
+        "title": "Efficacy and safety of once-daily oral zenagamtide, a novel unimolecular GLP-1 and amylin receptor agonist, in adults with type 2 diabetes: a multicentre, randomised, parallel, double-blind, placebo-controlled, dose-finding, phase 2 trial",
         "journal": "The Lancet",
         "year": "2026",
         "pmid": "42532079",
