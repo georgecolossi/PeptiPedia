@@ -1069,7 +1069,7 @@
     "knownInteractions": [
       "Dor e irritação transitória no local da injeção decorrente do cobre.",
       "Risco de microdosagem diária de TB-500 em blends fixos.",
-      "Limite microbiológico do conservante bacteriostático (USP <51>) de até 28 dias a 2-8°C após perfuração do septo (não confundir com estabilidade físico-química da mistura peptídica, a qual carece de ensaios analíticos publicados)."
+      "Prazo de descarte de frasco multidose perfurado de até 28 dias a 2-8°C regido por USP <797> e diretrizes CDC (associado à eficácia antimicrobiana de conservante avaliada sob USP <51>), não devendo ser confundido com estabilidade físico-química ou integridade molecular da mistura peptídica, a qual carece de ensaios analíticos publicados."
     ],
     "sources": [
       "Int J Mol Sci 2018 (PMID 29986520)",
