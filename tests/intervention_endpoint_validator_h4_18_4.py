@@ -320,10 +320,10 @@ def _split_xml_buckets(xml_rec: dict) -> dict[str, str]:
                 methods_parts.append(txt)
             elif any(k in lbl for k in ["RESULT", "FINDING", "OUTCOME"]):
                 results_parts.append(txt)
-            elif any(k in lbl for k in ["CONCLUSION", "INTERPRETATION", "DISCUSSION", "RELEVANCE"]):
+            elif any(k in lbl for k in ["CONCLUSION", "INTERPRETATION", "DISCUSSION", "RELEVANCE", "REFERENCE", "FUNDING", "TRIAL REGISTRATION", "ACKNOWLEDGMENT", "DISCLOSURE", "CONFLICT"]):
                 discussion_parts.append(txt)
             else:
-                methods_parts.append(txt)
+                intro_parts.append(txt)
     elif abstract.strip():
         sents = re.split(r"(?<=[.!?])\s+", abstract.strip())
         for idx, s in enumerate(sents):
@@ -1148,6 +1148,15 @@ def validate_endpoint_and_outcome_h4_18_4(link_rec: dict, xml_rec: dict | None, 
     decl_ind_norm = normalize_text(decl_ind)
     is_efficacy_claim = not any(w in decl_norm for w in ["seguranca", "safety", "tolerab", "pk", "farmacocin", "farmacodin", "biomarcador"])
 
+    # Regra: estudo exploratorio apresentado como endpoint primario confirmatorio
+    if info["studyEndpointNature"] == "EXPLORATORIO" and any(w in decl_norm for w in ["primario", "primary", "confirmatorio", "aprovacao"]):
+        return {
+            "declaredEndpoint": decl_ep or decl_purpose,
+            "endpointMatch": "ENDPOINT_RELACIONADO_MAS_NAO_EQUIVALENTE",
+            "outcomeResult": info["outcomeResult"],
+            "endpointJustification": "Endpoint de natureza exploratoria no XML nao pode sustentar alegacao de desfecho primario confirmatorio.",
+        }
+
     if not decl_doms or not study_doms:
         if decl_ind_norm and any(w in normalize_text(info["studyEndpointName"]) for w in decl_ind_norm.split() if len(w) > 4):
             match_cls = "ENDPOINT_RELACIONADO_MAS_NAO_EQUIVALENTE"
@@ -1187,15 +1196,6 @@ def validate_endpoint_and_outcome_h4_18_4(link_rec: dict, xml_rec: dict | None, 
             "endpointMatch": "ENDPOINT_RELACIONADO_MAS_NAO_EQUIVALENTE",
             "outcomeResult": info["outcomeResult"],
             "endpointJustification": "Regra B2: desfechos primarios nao atingiram significancia; o achado positivo citado ocorreu apenas em endpoint secundario ou subjetivo.",
-        }
-
-    # Regra: estudo exploratorio apresentado como endpoint primario confirmatorio
-    if info["studyEndpointNature"] == "EXPLORATORIO" and any(w in decl_norm for w in ["primario", "primary", "confirmatorio", "aprovacao"]):
-        return {
-            "declaredEndpoint": decl_ep or decl_purpose,
-            "endpointMatch": "ENDPOINT_RELACIONADO_MAS_NAO_EQUIVALENTE",
-            "outcomeResult": info["outcomeResult"],
-            "endpointJustification": "Endpoint de natureza exploratoria no XML nao pode sustentar alegacao de desfecho primario confirmatorio.",
         }
 
     overlap = decl_doms & study_doms
