@@ -4475,11 +4475,11 @@ window.COMPOUNDS_STORE = (function () {
             ]
         },
         "evidenceSummary": {
-            "level": "Ensaios Clínicos Fase 1/2",
+            "level": "Estudo Clínico Endocrinológico Agudo / Piloto em Voluntários Saudáveis",
             "score": 89,
             "popularityScore": 86,
             "protocolEvidenceType": "clinical_pilot",
-            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO: Hexapeptídeo secretagogo com o maior pico de GH da categoria e propriedades cardioprotetoras exclusivas mediadas pelo receptor CD36 (PMID: 8954038). Sofre dessensibilização rápida; requer ciclos curtos de 2 a 4 semanas."
+            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO LIMITADA: Hexapeptídeo secretagogo de GH (PMID: 8954038 avaliou liberação aguda de GH, prolactina e cortisol em homens adultos saudáveis; não é ensaio terapêutico de cardiopatia isquêmica nem Fase 2 clínica de eficácia). Sofre dessensibilização rápida; requer precaução frente a extrapolação clínica."
         },
         "sources": [
             {
@@ -12101,11 +12101,11 @@ window.COMPOUNDS_STORE = (function () {
             ]
         },
         "evidenceSummary": {
-            "level": "Ensaios Clínicos Randomizados Fase 2 em DM2 e Obesidade (PMIDs 42532080, 42532079, 40550231)",
+            "level": "Ensaios Clínicos Randomizados: Fase 2 em DM2 (The Lancet 2026, PMIDs 42532080 e 42532079) e Fase 1b/2a em Sobrepeso/Obesidade (The Lancet 2025, PMID 40550231)",
             "score": 83,
             "popularityScore": 85,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "STATUS CIENTÍFICO E REGULATÓRIO: Coagonista unimolecular investigacional de GLP-1R e receptores de amilina (anteriormente denominado sob o codinome amycretin / amicretina). Ensaios clínicos randomizados de Fase 2 publicados no The Lancet em 2026 avaliando formas subcutânea (n=262, 36 semanas, PMID 42532080) e oral (n=186, 36 semanas, PMID 42532079), com Fase 3 em andamento. Não possui registro comercial nem aprovação da ANVISA ou FDA. Calculadora bloqueada fail-closed."
+            "protocolEvidenceNote": "STATUS CIENTÍFICO E REGULATÓRIO: Coagonista unimolecular investigacional de GLP-1R e receptores de amilina (anteriormente denominado sob o codinome amycretin / amicretina). Inclui ensaio clínico randomizado de Fase 1b/2a unicêntrico em sobrepeso/obesidade focado primariamente em segurança/tolerabilidade e PK com peso exploratório (The Lancet 2025, n=125, PMID 40550231, NCT06064006), além de ensaios de Fase 2 em DM2 avaliando formas subcutânea (n=262, 36 semanas, The Lancet 2026, PMID 42532080) e oral (n=186, 36 semanas, The Lancet 2026, PMID 42532079), com Fase 3 em andamento. Não possui registro comercial nem aprovação da ANVISA ou FDA. Calculadora bloqueada fail-closed."
         },
         "sources": [
             {

@@ -1176,7 +1176,7 @@ const CLINICAL_STUDIES_DATABASE = [
     "year": 1984,
     "doi": "10.1159/000115714",
     "pmid": "6391925",
-    "studyDesign": "Série de Investigações Clínicas Controladas / Repetidas em Pacientes com Insônia",
+    "studyDesign": "Série de Investigações Clínicas Exploratórias / Repetidas em Pacientes com Insônia",
     "sampleSize": "Pacientes adultos com insônia avaliados após injeção única e administrações repetidas",
     "duration": "Dose única e ciclos repetidos de administração matinal ou noturna",
     "intervention": "DSIP (Delta Sleep-Inducing Peptide) intravenoso na dose de 25 nmol/kg antes de dormir ou pela manhã",
@@ -1680,7 +1680,7 @@ const CLINICAL_STUDIES_DATABASE = [
     "sampleSize": "125 participantes adultos com sobrepeso ou obesidade randomizados (101 tratados com intervenção ativa e 24 controles com placebo)",
     "intervention": "Zenagamtida (sob denominação investigacional amycretin) subcutânea semanal em doses escalonadas vs. placebo, avaliada em coortes com acompanhamento de até 36 semanas",
     "primaryEndpoint": "Incidência, gravidade e perfil de eventos adversos emergentes do tratamento (desfecho primário de segurança e tolerabilidade clínica)",
-    "keyFindings": "O perfil de segurança primário foi consistente com a classe dos coagonistas de GLP-1 e amilina, sem eventos adversos graves inesperados e com predomínio de sintomas gastrointestinais leves a moderados. Como desfecho secundário de eficácia, a redução ponderal foi dose-dependente, atingindo -24,3% de perda de peso corporal às 36 semanas na coorte específica avaliada na dose de manutenção mais elevada (versus placebo).",
+    "keyFindings": "O perfil de segurança primário foi consistente com a classe dos coagonistas de GLP-1 e amilina, sem eventos adversos graves inesperados e com predomínio de sintomas gastrointestinais leves a moderados (embora o estudo relate elevada proporção de descontinuações por razões não relacionadas a eventos adversos). Como desfecho secundário exploratório, a redução ponderal foi dose-dependente, atingindo -24,3% de perda de peso corporal às 36 semanas na coorte específica avaliada na dose de 60 mg (versus -1,1% no placebo).",
     "clinicalSignificance": "Primeiro ensaio clínico em humanos a demonstrar a segurança e tolerabilidade primária do coagonismo unimolecular GLP-1/amilina subcutâneo, reportando secundariamente potente redução ponderal de até -24,3% às 36 semanas na coorte de dose máxima.",
     "tags": [
       "The Lancet",

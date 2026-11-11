@@ -2008,7 +2008,7 @@
       "Sem aumento severo de apetite como ocorre no GHRP-6"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA PILOTO: Hexapeptídeo secretagogo com o maior pico de GH da categoria e propriedades cardioprotetoras exclusivas mediadas pelo receptor CD36 (fonte primária verificada: PMID 8954038). Sofre dessensibilização rápida; requer ciclos curtos de 2 a 4 semanas."
+      "VALIDAÇÃO CLÍNICA PILOTO LIMITADA: Hexapeptídeo secretagogo de GH (fonte primária verificada: PMID 8954038 avaliou resposta endócrina aguda de GH/prolactina/cortisol em voluntários masculinos saudáveis; não comprova eficácia terapêutica de Fase 2 em cardiopatia isquêmica)."
     ],
     "sources": [
       "Massoud AF, et al. Hexarelin-induced growth hormone, cortisol, and prolactin release: a dose-response study. J Clin Endocrinol Metab. 1996. DOI: 10.1210/jcem.81.12.8954038. PMID: 8954038.",
@@ -4458,7 +4458,7 @@
       "Fadiga e cefaleia transitória"
     ],
     "limitations": [
-      "STATUS CIENTÍFICO E REGULATÓRIO: Coagonista unimolecular investigacional de GLP-1R e receptores de amilina (anteriormente denominado sob o codinome amycretin / amicretina). Ensaios clínicos randomizados de Fase 2 publicados no The Lancet em 2026 avaliando formas subcutânea (n=262, 36 semanas, PMID 42532080) e oral (n=186, 36 semanas, PMID 42532079), com Fase 3 em andamento. Não possui registro comercial nem aprovação da ANVISA ou FDA. Calculadora bloqueada fail-closed."
+      "STATUS CIENTÍFICO E REGULATÓRIO: Coagonista unimolecular investigacional de GLP-1R e receptores de amilina (anteriormente denominado sob o codinome amycretin / amicretina). Inclui ensaio clínico randomizado de Fase 1b/2a unicêntrico em sobrepeso/obesidade focado primariamente em segurança/tolerabilidade e PK com peso exploratório (The Lancet 2025, n=125, PMID 40550231, NCT06064006), além de ensaios de Fase 2 em DM2 avaliando formas subcutânea (n=262, 36 semanas, The Lancet 2026, PMID 42532080) e oral (n=186, 36 semanas, The Lancet 2026, PMID 42532079), com Fase 3 em andamento. Não possui registro comercial nem aprovação da ANVISA ou FDA. Calculadora bloqueada fail-closed."
     ],
     "sources": [
       "Efficacy and safety of once-weekly subcutaneous zenagamtide, a novel unimolecular GLP-1 and amylin receptor agonist, in type 2 diabetes: a multicentre, randomised, parallel, double-blind, placebo-controlled, dose-finding, phase 2 trial.",

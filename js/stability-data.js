@@ -290,7 +290,7 @@ const STABILITY_KNOWN_PROFILES = {
     name: "Zenagamtida",
     compoundStatus: COMPOUND_EVIDENCE_STATUS.INVESTIGATIONAL,
     chartOrigin: CHART_DATA_ORIGIN.EXPLORATORY_SIMULATION,
-    regulatoryStorageNotice: "STATUS CIENTÍFICO — COAGONISTA INVESTIGACIONAL EM FASE CLÍNICA 3:\n• Coagonista unimolecular GLP-1/amilina avaliado em ensaios clínicos The Lancet 2026 (PMIDs 42532080, 42532079, 40550231). Sem aprovação comercial ou bula oficial.",
+    regulatoryStorageNotice: "STATUS CIENTÍFICO — COAGONISTA INVESTIGACIONAL (FASE 3 EM ANDAMENTO):\n• Coagonista unimolecular GLP-1/amilina avaliado em ensaio de Fase 1b/2a em sobrepeso/obesidade (The Lancet 2025, PMID 40550231, NCT06064006, desfecho primário de segurança/PK) e em ensaios de Fase 2 em diabetes tipo 2 (The Lancet 2026, PMIDs 42532080 e 42532079). Sem aprovação comercial ou bula oficial.",
     experimentalSummary: "ESTRUTURA PRIMÁRIA SOB SIGILO INDUSTRIAL: A conectividade covalente exata e os modificadores químicos da molécula são mantidos como segredo de patente pela fabricante. Inexistem constantes cinéticas abertas; a análise estrutural automatizada é apresentada como incompleta e a curva exibida é uma simulação matemática puramente exploratória.",
     freezerAssessment: "Condições físico-químicas de conservação sob congelamento desconhecidas por ausência de divulgação da formulação farmacêutica."
   }
