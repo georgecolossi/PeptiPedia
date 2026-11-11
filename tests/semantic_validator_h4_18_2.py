@@ -665,7 +665,8 @@ def audit_catalog_vs_xml_divergences(repo_root: Path) -> list[dict]:
     """
     articles_dir = repo_root / "research" / "evidence" / "ncbi_h4_18" / "articles"
     matrix_path = repo_root / "research" / "evidence" / "MATRIZ_AUDITORIA_SEMANTICA_H4_18.csv"
-    mrows = {r["pmid"].strip(): r for r in csv.DictReader(open(matrix_path, encoding="utf-8"))}
+    with open(matrix_path, "r", encoding="utf-8") as mf:
+        mrows = {r["pmid"].strip(): r for r in csv.DictReader(mf)}
 
     js_refs = extract_catalog_references_non_tautological(repo_root)
     divergences = []
@@ -831,7 +832,9 @@ def audit_catalog_vs_xml_divergences(repo_root: Path) -> list[dict]:
                     ),
                 })
         elif ref.get("declaredPhaseScope") == "compound":
-            if ("fase 2" in decl_phase_l and is_phase1_only_xml) or ("fase 3" in decl_phase_l and (is_phase2_xml or is_phase1_only_xml)):
+            claims_f2 = ("fase 2" in decl_phase_l) and not re.search(r"\bsem\s+(?:ecr\s+)?fase\s*2\b", decl_phase_l)
+            claims_f3 = ("fase 3" in decl_phase_l) and not re.search(r"\bsem\s+(?:ecr\s+)?fase\s*3\b", decl_phase_l)
+            if (claims_f2 and is_phase1_only_xml) or (claims_f3 and (is_phase2_xml or is_phase1_only_xml)):
                 divergences.append({
                     "origem": ref["store"],
                     "entidade": ref["entityId"],
