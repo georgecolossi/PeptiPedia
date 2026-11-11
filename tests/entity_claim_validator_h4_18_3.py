@@ -1191,6 +1191,7 @@ def validate_entity_pmid_claim_h4_18_3(link_rec: dict, xml_rec: dict | None, str
     ind_stat = str(link_rec.get("indicationStructStatus") or ABSENT_MARKER)
     out_stat = str(link_rec.get("outcomeStructStatus") or ABSENT_MARKER)
     parent_ind = str(link_rec.get("parentContextIndication") or ABSENT_MARKER)
+    stack_cat_holder = ["NAO_APLICAVEL_COMPOSTO"]
 
     def _finish(
         *,
@@ -1209,7 +1210,7 @@ def validate_entity_pmid_claim_h4_18_3(link_rec: dict, xml_rec: dict | None, str
         review_required: bool,
         review_reason: str,
         rule_triggered: str = "",
-        stack_cat: str = "NAO_APLICAVEL_COMPOSTO",
+        stack_cat: str | None = None,
         blocking: bool = False,
     ) -> dict:
         assert verdict in ALLOWED_VERDICTS_H4_18_3, f"Veredito invalido: {verdict}"
@@ -1252,7 +1253,7 @@ def validate_entity_pmid_claim_h4_18_3(link_rec: dict, xml_rec: dict | None, str
             "administrationRoute": dec_route,
             "compositionScope": str(link_rec.get("compositionScope") or "monocomponent"),
             "declaredLimitations": str(link_rec.get("declaredLimitations") or ABSENT_MARKER),
-            "stackAuditCategory": stack_cat,
+            "stackAuditCategory": stack_cat if stack_cat is not None else stack_cat_holder[0],
             "antiTransitivityRuleTriggered": rule_triggered or "NENHUMA",
             "errorCode": code,
         }
@@ -1317,6 +1318,7 @@ def validate_entity_pmid_claim_h4_18_3(link_rec: dict, xml_rec: dict | None, str
     xml_hay = f"{title_l} {abst.lower()} {' '.join(xml_rec.get('meshTerms') or []).lower()}"
     ev_type_real = f"{pop_cls}/{real_phase}"
     stack_cat_eval, stack_cat_reason = _evaluate_stack_combination_support(stack_components, xml_hay, pmid, xml_rec) if is_stack else ("NAO_APLICAVEL_COMPOSTO", "")
+    stack_cat_holder[0] = stack_cat_eval
 
     # 1. Criterio F — Integridade Editorial (Retratacao / Expression of Concern)
     is_retracted_or_eoc = (
@@ -1731,9 +1733,9 @@ def validate_entity_pmid_claim_h4_18_3(link_rec: dict, xml_rec: dict | None, str
             route_mismatch = True
 
     if route_mismatch:
-        claims_same_route = bool(strict or link_rec.get("requireExactRouteMatch") or ("protocols.js" in str(link_rec.get("store", ""))))
+        claims_same_route = bool(strict or link_rec.get("requireExactRouteMatch") or ("protocols.js" in str(link_rec.get("store", ""))) or pet == "clinical_proven")
         return _finish(
-            verdict="REFERENCIA_NAO_SUSTENTA_ALEGACAO" if strict else "EVIDENCIA_INDIRETA",
+            verdict="REFERENCIA_NAO_SUSTENTA_ALEGACAO" if (strict or link_rec.get("requireExactRouteMatch") or pet == "clinical_proven") else "EVIDENCIA_INDIRETA",
             code="ROUTE_MISMATCH",
             intervention_match=f"VIA_DIVERGENTE (catalogo={','.join(sorted(cat_routes))} vs XML={','.join(sorted(xml_routes))})",
             indication_match="VIA_INCOMPATIVEL_COM_PROTOCOLO",
