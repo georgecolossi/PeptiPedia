@@ -191,8 +191,8 @@ const CLINICAL_STUDIES_DATABASE = [
     "duration": "48 semanas",
     "intervention": "Survodutide semanal (2.4 mg, 4.8 mg ou 6.0 mg) versus placebo",
     "primaryEndpoint": "Melhora histológica comprovada por biópsia da MASH sem piora da fibrose",
-    "keyFindings": "Até 83,0% dos pacientes tratados com Survodutide alcançaram melhora estatisticamente significativa da MASH sem progressão da fibrose, contra apenas 18,2% no grupo placebo. Além disso, houve redução clinicamente relevante de até 64,5% no conteúdo lipídico intra-hepático por ressonância magnética.",
-    "clinicalSignificance": "Comprova que o agonismo do receptor de glucagon exerce desengorduramento e ação antifibrótica hepática direta em pacientes com risco de cirrose.",
+    "keyFindings": "Na semana 48 do ensaio de Fase 2 (n=293 com MASH e fibrose F1-F3; PMID 38847460), a melhora histológica da MASH sem piora da fibrose (desfecho primário) ocorreu em 47% (2,4 mg), 62% (4,8 mg) e 43% (6,0 mg) versus 14% no grupo placebo (P<0,001). Redução >=30% de gordura hepática ocorreu em 63%/67%/57% vs 14%, e melhora >=1 estágio de fibrose em 34%/36%/34% vs 22%. Náuseas (66% vs 23%), diarreia (49% vs 23%) e vômitos (41% vs 4%) foram mais frequentes com survodutida.",
+    "clinicalSignificance": "Ensaio de Fase 2 comprova prova de conceito histológica em MASH/fibrose na comparação contra placebo, justificando investigação confirmatória em Fase 3 (ainda não aprovado).",
     "tags": [
       "NEJM 2024",
       "MASH",
@@ -457,9 +457,9 @@ const CLINICAL_STUDIES_DATABASE = [
     "sampleSize": "342 pacientes com sintomas persistentes de permeabilidade intestinal",
     "duration": "12 semanas de intervenção ativa",
     "intervention": "Larazotide oral nas doses de 0.5 mg, 1.0 mg ou 2.0 mg 3x/dia vs placebo",
-    "primaryEndpoint": "Redução no escore de sintomas gastrointestinais (CeD-GSRS) e permeabilidade da mucosa",
-    "keyFindings": "A dose de 0.5 mg 3x/dia de Larazotida reduziu de forma altamente significativa os sintomas gastrointestinais e a translocação paracelular de antígenos. Bloqueou a polimerização da actina induzida por zonulina, preservando as junções oclusivas (tight junctions).",
-    "clinicalSignificance": "Consagrou o Larazotide como o peptídeo mais avançado em ensaios mundiais de fase 3 para reversão de hiperpermeabilidade da barreira intestinal ('Leaky Gut').",
+    "primaryEndpoint": "Diferença no escore médio de sintomas gastrointestinais em doença celíaca (CeD-GSRS)",
+    "keyFindings": "Resultados mistos de dose-resposta em 342 pacientes: apenas a dose de 0,5 mg 3x/dia atingiu o desfecho primário no CeD-GSRS frente ao placebo (ANCOVA p=0,022; MMRM p=0,005), enquanto as doses mais elevadas de 1 mg e 2 mg não diferiram estatisticamente do placebo em nenhum desfecho avaliado.",
+    "clinicalSignificance": "Demonstrou sinal sintomático restrito à menor dose (0,5 mg) com falha das doses de 1 mg e 2 mg, permanecendo como agente investigacional sem aprovação regulatória.",
     "tags": [
       "Gastroenterology",
       "Fase 2b",
@@ -883,7 +883,7 @@ const CLINICAL_STUDIES_DATABASE = [
     "peptideName": "Semax",
     "category": "Nootrópicos & Cognição",
     "title": "Semax, an analog of ACTH(4-10) with cognitive effects, regulates BDNF and trkB expression in the rat hippocampus",
-    "journal": "Molecular Genetics and Genomics",
+    "journal": "Brain Research",
     "year": 2006,
     "doi": "10.1016/j.brainres.2006.07.108",
     "pmid": "16996037",
@@ -892,13 +892,13 @@ const CLINICAL_STUDIES_DATABASE = [
     "duration": "Cinética de expressão gênica aos 90 min, 3h, 6h e 24h pós-administração",
     "intervention": "Aplicação intranasal e intraperitoneal de Semax",
     "primaryEndpoint": "Quantificação de mRNA de BDNF e ativação fosforilada do receptor TrkB",
-    "keyFindings": "O Semax induziu um aumento extraordinário de 8 vezes na expressão de RNA mensageiro do Fator Neurotrófico Derivado do Cérebro (BDNF) e ativou a via TrkB no hipocampo, promovendo plasticidade sináptica duradoura e proteção contra excitotoxicidade por glutamato.",
+    "keyFindings": "Aplicação intranasal única de Semax (50 mcg/kg) em ratos induziu aumento máximo de 1,4 vez nos níveis proteicos de BDNF, 1,6 vez na fosforilação em tirosina de TrkB, e elevação de 3 vezes e 2 vezes no mRNA de BDNF (éxon III) e de TrkB no hipocampo, acompanhada de aumento nas reações de esquiva condicionada (modelo pré-clínico animal).",
     "clinicalSignificance": "Desvendou a rota molecular fundamental da ação nootrópica do Semax na consolidação da memória e neurogênese.",
     "tags": [
-      "Mol Gen Genomics",
+      "Brain Research",
       "BDNF",
       "Plasticidade Hipocampal",
-      "Nootrópico"
+      "Pré-Clínico Animal"
     ]
   },
   {
@@ -1153,11 +1153,11 @@ const CLINICAL_STUDIES_DATABASE = [
     "doi": "10.1038/nature03701",
     "pmid": "15931222",
     "studyDesign": "Ensaio Comportamental e Neurobiológico Duplo-Cego Randomizado",
-    "sampleSize": "128 voluntários saudáveis submetidos ao jogo de confiança fiduciária com apostas monetárias reais",
+    "sampleSize": "Participantes humanos adultos do sexo masculino em jogo econômico fiduciário (tamanho amostral detalhado no texto integral do artigo)",
     "duration": "Sessões experimentais laboratoriais padronizadas",
     "intervention": "Ocitocina intranasal (24 UI em dose única) versus spray placebo",
     "primaryEndpoint": "Nível de transferência monetária confiada a um parceiro interpessoal anônimo",
-    "keyFindings": "Indivíduos que receberam ocitocina intranasal exibiram níveis substancialmente superiores de confiança social: 45% dos indivíduos no grupo da ocitocina demonstraram o nível máximo de confiança, comparado a apenas 21% no grupo placebo, sem afetar o julgamento de risco não-social.",
+    "keyFindings": "Administração intranasal de ocitocina produziu aumento substancial no comportamento de confiança interpessoal em jogo financeiro com parceiro humano, sem elevar a propensão geral a assumir riscos não-sociais (dados percentuais específicos de subgrupo residem no texto integral fora do resumo PubMed XML).",
     "clinicalSignificance": "Publicação clássica da Nature demonstrando o papel causal da ocitocina na superação do medo social e consolidação de laços interpessoais.",
     "tags": [
       "Nature",

@@ -615,11 +615,11 @@ window.COMPOUNDS_STORE = (function () {
             ]
         },
         "evidenceSummary": {
-            "level": "Ensaios Clínicos Fase 2 (desenvolvido pela Novo Nordisk)",
+            "level": "Pré-Clínico Animal & Fase 1 PK/PD em Saudáveis (Sem ECR Fase 2 Indexado)",
             "score": 89,
             "popularityScore": 98,
             "protocolEvidenceType": "clinical_pilot",
-            "protocolEvidenceNote": "ENSAIOS FASE 2: Desenvolvido inicialmente pela Novo Nordisk para íleo paralítico pós-operatório. A combinação com Mod GRF 1-29 (100mcg + 100mcg) é prática padrão de pesquisa endocrinológica para pulsos de GH sem pico de prolactina ou cortisol."
+            "protocolEvidenceNote": "ESTUDOS NESTA BASE (SEM FASE 2 INDEXADA): As referências indexadas nesta base limitam-se à caracterização pré-clínica seletiva de GH (PMID 9849822; PMID 10373343) e à modelagem farmacocinética-farmacodinâmica de Fase 1 em adultos saudáveis (PMID 10496658). Ensaios clínicos de Fase 2 em íleo paralítico não integram este pacote XML e o composto não possui aprovação regulatória (FDA/EMA/Anvisa)."
         },
         "sources": [
             {
@@ -842,11 +842,11 @@ window.COMPOUNDS_STORE = (function () {
             ]
         },
         "evidenceSummary": {
-            "level": "Ensaios Clínicos Fase 3 / Aprovado pelo FDA",
+            "level": "Registro Pediátrico Histórico (Descontinuado) / Estudo Piloto Adulto (n=19)",
             "score": 96,
             "popularityScore": 92,
-            "protocolEvidenceType": "clinical_proven",
-            "protocolEvidenceNote": "EVIDÊNCIA CLÍNICA ROBUSTA: Aprovado pelo FDA para o diagnóstico de deficiência hipofisária de somatotrofina e utilizado em clínicas médicas com posologia estabelecida em bula de 0.5 a 1.0 mg ao deitar."
+            "protocolEvidenceType": "clinical_trial_only",
+            "protocolEvidenceNote": "HISTÓRICO REGULATÓRIO PEDIÁTRICO DESCONTINUADO / EVIDÊNCIA ADULTA LIMITADA: Historicamente aprovado pela FDA (Geref) para deficiência pediátrica de GH e posteriormente descontinuado comercialmente. Para uso adulto/envelhecimento, os registros indexados nesta base limitam-se a ensaio piloto pequeno em 19 idosos saudáveis (PMID 9141536, single-blind) e a um editorial sem resumo experimental (PMID 18046908), não sustentando eficácia Fase 3 nem indicação antienvelhecimento confirmada."
         },
         "sources": [
             {
@@ -1274,8 +1274,8 @@ window.COMPOUNDS_STORE = (function () {
             "level": "Ensaios Clínicos Fase 2 Publicados no NEJM (2023)",
             "score": 95,
             "popularityScore": 98,
-            "protocolEvidenceType": "clinical_proven",
-            "protocolEvidenceNote": "ENSAIOS CLÍNICOS FASE 2: Dados clínicos publicados no NEJM em 2023 (Jastreboff et al., N Engl J Med 2023; 389:514-526; PMID: 37366315; DOI: 10.1056/NEJMoa2301972). Os participantes foram randomizados para grupos paralelos com esquemas próprios de escalonamento (coortes de 1 mg, 4 mg, 8 mg e 12 mg), demonstrando perda ponderal média de até 24,2% às 48 semanas na dose teto de 12 mg."
+            "protocolEvidenceType": "clinical_trial_only",
+            "protocolEvidenceNote": "ENSAIOS CLÍNICOS FASE 2 (SEM APROVAÇÃO REGULATÓRIA): Dados clínicos publicados no NEJM em 2023 (Jastreboff et al., N Engl J Med 2023; 389:514-526; PMID: 37366315; DOI: 10.1056/NEJMoa2301972) com esquemas paralelos de escalonamento (coortes 1, 4, 8 e 12 mg), demonstrando perda ponderal média de até 24,2% às 48 semanas no braço de 12 mg. Estudos de Fase 3 em andamento; ainda sem aprovação da FDA, EMA ou Anvisa."
         },
         "sources": [
             {
@@ -1707,7 +1707,7 @@ window.COMPOUNDS_STORE = (function () {
             "level": "Aprovação Acelerada FDA (EUA) / Fase 3 Investigacional",
             "score": 92,
             "popularityScore": 88,
-            "protocolEvidenceType": "clinical_proven",
+            "protocolEvidenceType": "clinical_trial_only",
             "protocolEvidenceNote": "APROVAÇÃO ACELERADA FDA (EUA): A FDA concedeu aprovação acelerada em 19 de setembro de 2025 para Forzinity (elamipretida) exclusivamente para melhora da força muscular em pacientes com síndrome de Barth com peso igual ou superior a 30 kg. Essa aprovação não equivale a aval regulatório para longevidade, cardiomiopatia em geral ou miopatia mitocondrial primária (ensaio pivotal MMPOWER-3 de 2023 não atingiu seus desfechos primários de teste de caminhada ou fadiga frente ao placebo). Não há aprovação confirmada pela ANVISA, EMA ou outras agências regulatórias internacionais para este fármaco."
         },
         "sources": [
@@ -1808,10 +1808,10 @@ window.COMPOUNDS_STORE = (function () {
             ]
         },
         "evidenceSummary": {
-            "level": "Ensaios Clínicos Humanos / Lista de Medicamentos Essenciais na Rússia",
+            "level": "Aprovação Regional (Rússia) / Estudos Clínicos Locais e Modelo Murino BDNF",
             "score": 94,
             "popularityScore": 96,
-            "protocolEvidenceType": "clinical_proven",
+            "protocolEvidenceType": "clinical_trial_only",
             "protocolEvidenceNote": "EVIDÊNCIA CLÍNICA NA RÚSSIA: Aprovado pelo Ministério da Saúde da Federação Russa e incluído na lista oficial de medicamentos vitais. Utilizado clinicamente como gotas nasais 0.1% (nootrópico) e 1.0% (pós-AVC isquêmico)."
         },
         "sources": [
@@ -1941,10 +1941,10 @@ window.COMPOUNDS_STORE = (function () {
             ]
         },
         "evidenceSummary": {
-            "level": "Ensaios Clínicos Humanos / Aprovado como Ansiolítico na Rússia",
+            "level": "Aprovação Regional (Rússia) / Estudos Comparativos Locais e Connectômica fMRI",
             "score": 92,
             "popularityScore": 91,
-            "protocolEvidenceType": "clinical_proven",
+            "protocolEvidenceType": "clinical_trial_only",
             "protocolEvidenceNote": "EVIDÊNCIA CLÍNICA NA RÚSSIA: Aprovado pelo Ministério da Saúde Russo como ansiolítico e nootrópico. Ausência comprovada de efeitos colaterais comuns a benzodiazepínicos (sem sedação, sem tolerância, sem síndrome de abstinência)."
         },
         "sources": [
@@ -2062,11 +2062,11 @@ window.COMPOUNDS_STORE = (function () {
             ]
         },
         "evidenceSummary": {
-            "level": "Ensaios Clínicos Multicêntricos Fase 3 / Cochrane Reviews",
+            "level": "Aprovação Regional (>50 Países) / Evidência Cochrane Incerta e Ensaios Fase 2/3",
             "score": 97,
             "popularityScore": 97,
-            "protocolEvidenceType": "clinical_proven",
-            "protocolEvidenceNote": "EVIDÊNCIA CLÍNICA MÁXIMA: Medicamento biológico aprovado em mais de 50 países para tratamento de AVC agudo, traumatismo cranioencefálico (TCE) e demência vascular (estudos multicêntricos duplo-cegos fase 3 publicados no Stroke e Lancet Neurology)."
+            "protocolEvidenceType": "clinical_trial_only",
+            "protocolEvidenceNote": "USO REGIONAL COM EVIDÊNCIA CLÍNICA CONTROVERSA: Extrato peptídico porcino aprovado regionalmente em >50 países (sem aprovação da FDA). Embora o ensaio CARS de Fase 2 em AVC (PMID 26564102) tenha sugerido melhora motora em 90 dias, a revisão sistemática Cochrane atualizada de 2023 (PMID 37818733; 7 ECRs, n=1773) concluiu que provavelmente não há benefício na mortalidade global (RR 0,96; IC 95% 0,65-1,41) e apontou potencial aumento de eventos adversos graves não fatais (RR 2,39; IC 95% 1,10-5,23)."
         },
         "sources": [
             {
@@ -2168,10 +2168,10 @@ window.COMPOUNDS_STORE = (function () {
             ]
         },
         "evidenceSummary": {
-            "level": "Ensaios Clínicos Fase 3 Globais",
+            "level": "Aprovação Regional (>30 Países) / Estudos Exploratórios em Sepse e COVID-19",
             "score": 98,
             "popularityScore": 97,
-            "protocolEvidenceType": "clinical_proven",
+            "protocolEvidenceType": "clinical_trial_only",
             "protocolEvidenceNote": "APROVAÇÃO REGULATÓRIA INTERNACIONAL: Aprovado em mais de 30 países (Zadaxin) primariamente como adjuvante para hepatite B crônica e imunodeficiências secundárias selecionadas. Seu uso em sepse grave (ensaio ETASS de 2013) e infecções virais agudas (como COVID-19) foi investigado em ensaios clínicos com resultados preliminares ou exploratórios, não constituindo recomendação de eficácia comprovada para essas condições agudas."
         },
         "sources": [
@@ -2740,8 +2740,8 @@ window.COMPOUNDS_STORE = (function () {
             "level": "Ensaios Clínicos de Fase 2 (NEJM 2024)",
             "score": 93,
             "popularityScore": 91,
-            "protocolEvidenceType": "clinical_proven",
-            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Ensaio clínico de fase 2 publicado no New England Journal of Medicine (NEJM 2024; PMID: 38847460) para esteato-hepatite não alcoólica (MASH) e obesidade. Posologia semanal escalonada de 0.6 mg a 4.8 mg."
+            "protocolEvidenceType": "clinical_trial_only",
+            "protocolEvidenceNote": "ENSAIO CLÍNICO FASE 2 (SEM APROVAÇÃO REGULATÓRIA): Dados publicados no NEJM 2024 em MASH/fibrose (PMID 38847460) e no Lancet Diabetes Endocrinol 2024 em obesidade (PMID 38330987), com escalonamento semanal de pesquisa de 0,6 mg a 6,0 mg. Aguarda confirmação em ensaios de Fase 3; sem registro aprovado."
         },
         "sources": [
             {
@@ -3598,7 +3598,7 @@ window.COMPOUNDS_STORE = (function () {
             "level": "Ensaio Clínico Randomizado Oral (Estoques Séricos) & Uso Terapêutico Específico",
             "score": 96,
             "popularityScore": 92,
-            "protocolEvidenceType": "clinical_proven",
+            "protocolEvidenceType": "clinical_trial_only",
             "protocolEvidenceNote": "ESCOPO CLÍNICO VERIFICADO: O ECR indexado nesta base (Richie et al., Eur J Nutr 2015, PMID 24791752, n=54 adultos saudáveis) demonstrou elevação de estoques celulares de GSH apenas com suplementação ORAL (250 ou 1.000 mg/dia por 6 meses). Uso injetável IM/IV (200-600 mg) ou indicações fora de farmacopeia/antidoto clínico específico (como cistite/hepatopatia empírica) não são comprovados diretamente por este ECR."
         },
         "sources": [
@@ -3823,8 +3823,8 @@ window.COMPOUNDS_STORE = (function () {
             "level": "Ensaios Clínicos Humanos Robustos",
             "score": 95,
             "popularityScore": 91,
-            "protocolEvidenceType": "clinical_proven",
-            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Aprovada mundialmente pela FDA/ANVISA para fins obstétricos e amplamente documentada em ensaios duplo-cegos para modulação social e de estresse (PMID: 15931222). Dose intranasal típica em pesquisa: 10 a 24 UI (spray nasal) antes de situações sociais."
+            "protocolEvidenceType": "clinical_trial_only",
+            "protocolEvidenceNote": "APROVAÇÃO OBSTÉTRICA VS USO INTRANASAL INVESTIGACIONAL: Aprovada mundialmente pela FDA/Anvisa para indicações obstétricas e hemorragia pós-parto (PMID 29949473). Protocolos intranasais sociais/comportamentais (10-24 UI, PMID 15931222 em voluntários saudáveis) permanecem investigacionais, e o ensaio multicêntrico de Fase 2 no NEJM em transtorno do espectro autista (SOARS-B, n=290, PMID 34644471) apresentou resultado neutro/negativo no desfecho primário (P=0,61)."
         },
         "sources": [
             {
@@ -5108,11 +5108,11 @@ window.COMPOUNDS_STORE = (function () {
             ]
         },
         "evidenceSummary": {
-            "level": "Ensaios Clínicos em Humanos Fase 1/2",
+            "level": "Ensaios Clínicos de Fase 1/2 (PK/PD em Voluntários Saudáveis)",
             "score": 89,
             "popularityScore": 92,
-            "protocolEvidenceType": "clinical_proven",
-            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Posologia semanal de 30 a 60 mcg/kg administrada via SC foi documentada em humanos em ensaio clínico da ConjuChem publicado no JCEM (PMID: 16352683). O complexo DAC liga-se covalentemente à albumina sérica, estendendo a meia-vida para 6-8 dias."
+            "protocolEvidenceType": "clinical_trial_only",
+            "protocolEvidenceNote": "ENSAIO CLÍNICO PRECOCE / PK-PD EM VOLUNTÁRIOS SAUDÁVEIS: Posologia semanal de 30 a 60 mcg/kg via SC avaliada apenas em adultos saudáveis (PMIDs 16352683 e 17018654; ConjuChem) para cinética de GH e IGF-1 via conjugação covalente à albumina (t1/2 ~6-8 dias). Não há ensaios confirmatórios de Fase 3 nem aprovação regulatória pela FDA, EMA ou Anvisa."
         },
         "sources": [
             {
@@ -5546,7 +5546,7 @@ window.COMPOUNDS_STORE = (function () {
             "level": "Ensaios Clínicos Multicêntricos Fase 2/3 (Lancet)",
             "score": 95,
             "popularityScore": 94,
-            "protocolEvidenceType": "clinical_proven",
+            "protocolEvidenceType": "clinical_trial_only",
             "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Avaliado em ensaio Fase 2 controlado por placebo em Nat Commun 2023 (Ji et al., NCT04904913, PMID 38092790, DOI 10.1038/s41467-023-44067-4, n=248, 24 sem: -6,7% com 3 mg, -10,4% com 4,5 mg e -11,3% com 6 mg vs +1,0% placebo) e em ensaio Fase 3 GLORY-1 no NEJM 2025 (Ji et al., NCT05607680, PMID 40421736, DOI 10.1056/NEJMoa2411528, n=610, 48 sem: -14,01% com 6 mg vs +0,30% placebo). Citação espúria anterior e alegação não comprovada de -18,6% expurgadas na H4.17."
         },
         "sources": [
@@ -5647,10 +5647,10 @@ window.COMPOUNDS_STORE = (function () {
             ]
         },
         "evidenceSummary": {
-            "level": "Ensaios Clínicos Controlados em Neurologia",
+            "level": "Aprovação Regional (Europa Oriental) / Evidência Cochrane Incerta e Comparação Cellex",
             "score": 89,
             "popularityScore": 87,
-            "protocolEvidenceType": "clinical_proven",
+            "protocolEvidenceType": "clinical_trial_only",
             "protocolEvidenceNote": "Ensaios clínicos randomizados conduzidos em AVC isquêmico agudo/recuperação precoce (Belova et al., 2016, PMID 27845314; Khabirov et al., 2020, PMID 33449527) e isquemia cerebral crônica (Fedin et al., 2018, PMID 30335070), além de estudos mecanísticos de neuroproteção/inibição de caspase-8 (PMID 28251948, PMID 34260655). Citações espúrias anteriores expurgadas na H4.17."
         },
         "sources": [
@@ -5743,7 +5743,7 @@ window.COMPOUNDS_STORE = (function () {
         "mechanismOfAction": "Liga-se ao receptor transmembrana de zonulina nos enterócitos, inibindo a polimerização da actina dependente de PKC-alfa. Restaura e preserva a integridade estrutural das junções oclusivas (tight junctions - claudina, ocludina e ZO-1), suprimindo o influxo paracelular de antígenos alimentares e endotoxinas (LPS).",
         "summary": "Octapeptídeo sintetizado especificamente para atuar como antagonista competitivo do receptor de zonulina nas células epiteliais do intestino delgado. Bloqueia a hiperpermeabilidade intestinal ('leaky gut') e impede a passagem de macromoléculas pró-inflamatórias para a lâmina própria.",
         "pharmacologicalClass": "Regeneração & Tecidos",
-        "regulatoryStatus": "Em Ensaios Clínicos Avançados (Fase 3)",
+        "regulatoryStatus": "Investigacional Clínico (Fase 2b Misto / Sem Aprovação)",
         "statusType": "investigational",
         "regulatoryJurisdictions": [
             "Research Use Only (RUO)"
@@ -5792,11 +5792,11 @@ window.COMPOUNDS_STORE = (function () {
             ]
         },
         "evidenceSummary": {
-            "level": "Ensaios Clínicos Randomizados Fase 2b/3 (Aliment Pharmacol Ther)",
+            "level": "Ensaios Clínicos Fase 2/2b (Resultados Mistos; Sem Aprovação)",
             "score": 93,
             "popularityScore": 92,
-            "protocolEvidenceType": "clinical_proven",
-            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Posologia oral de 0.5 mg a 1.0 mg administrada 3 vezes ao dia antes das principais refeições avaliada em ensaios multicêntricos de fase 2b publicados em Gastroenterology e Aliment Pharmacol Ther (PMID: 25683116, PMID: 25683116)."
+            "protocolEvidenceType": "clinical_trial_only",
+            "protocolEvidenceNote": "ENSAIO CLÍNICO FASE 2b COM RESULTADOS MISTOS (SEM APROVAÇÃO): No ensaio multicêntrico Fase 2b em doença celíaca (n=342, PMID 25683116; ver também Fase 2 PMID 23163616), apenas a dose oral de 0,5 mg 3x/dia atingiu o desfecho primário sintomático frente ao placebo (p=0,022), enquanto as doses de 1 mg e 2 mg não diferiram do placebo em nenhum desfecho. Molécula sem aprovação regulatória."
         },
         "sources": [
             {
@@ -5829,7 +5829,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "clinicalStatus": "Investigacional Clínico (Fase 2b Misto / Sem Aprovação)"
     },
     {
         "id": "slu-pp-332",

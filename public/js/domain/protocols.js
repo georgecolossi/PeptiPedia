@@ -248,7 +248,7 @@
       "Leve retenção hídrica nas primeiras duas semanas"
     ],
     "limitations": [
-      "ENSAIOS FASE 2: Desenvolvido inicialmente pela Novo Nordisk para íleo paralítico pós-operatório. A combinação com Mod GRF 1-29 (100mcg + 100mcg) é prática padrão de pesquisa endocrinológica para pulsos de GH sem pico de prolactina ou cortisol."
+      "ESTUDOS NESTA BASE (SEM FASE 2 INDEXADA): As referências indexadas nesta base limitam-se à caracterização pré-clínica seletiva de GH (PMID 9849822; PMID 10373343) e à modelagem farmacocinética-farmacodinâmica de Fase 1 em adultos saudáveis (PMID 10496658). Ensaios clínicos de Fase 2 em íleo paralítico não integram este pacote XML e o composto não possui aprovação regulatória (FDA/EMA/Anvisa)."
     ],
     "sources": [
       "Raun K, et al. Ipamorelin, the first selective growth hormone secretagogue. Eur J Endocrinol. 1998. DOI: 10.1530/eje.0.1390552. PMID: 9849822.",
@@ -311,9 +311,9 @@
     "compoundId": "sermorelin",
     "stackId": null,
     "protocolName": "Sermorelin — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "clinical_documented",
-    "evidenceCategory": "clinical_proven",
-    "verificationStatus": "homologated_clinical",
+    "protocolCategory": "clinical_trial",
+    "evidenceCategory": "clinical_trial_only",
+    "verificationStatus": "clinical_trial",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "anti-aging",
     "route": "Subcutânea (SC)",
@@ -343,7 +343,7 @@
       "Sensação de calor facial momentânea"
     ],
     "limitations": [
-      "EVIDÊNCIA CLÍNICA ROBUSTA: Aprovado pelo FDA para o diagnóstico de deficiência hipofisária de somatotrofina e utilizado em clínicas médicas com posologia estabelecida em bula de 0.5 a 1.0 mg ao deitar."
+      "HISTÓRICO PEDIÁTRICO DESCONTINUADO / PILOTO ADULTO: Antigo registro FDA pediátrico descontinuado; citações adultas nesta base limitam-se a ensaio piloto pequeno (n=19 idosos saudáveis, PMID 9141536) e editorial sem resumo (PMID 18046908). Sem comprovação Fase 3 antienvelhecimento."
     ],
     "sources": [
       "Khorram O, et al. Endocrine and metabolic effects of long-term administration of [Nle27]growth hormone-releasing hormone-(1-29)-NH2 in age-advanced men and women. J Clin Endocrinol Metab. 1997. DOI: 10.1210/jcem.82.5.3943. PMID: 9141536.",
@@ -591,7 +591,7 @@
     "stackId": null,
     "protocolName": "Retatrutida — Protocolo Documentado de Pesquisa",
     "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "clinical_proven",
+    "evidenceCategory": "clinical_trial_only",
     "verificationStatus": "preclinical_model",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "emagrecimento",
@@ -622,7 +622,7 @@
       "Sintomas gastrointestinais semelhantes a outros incretinomiméticos"
     ],
     "limitations": [
-      "ENSAIOS CLÍNICOS FASE 2: Dados clínicos publicados no NEJM em 2023 (Jastreboff et al., N Engl J Med 2023; 389:514-526; PMID: 37366315; DOI: 10.1056/NEJMoa2301972). Os participantes foram randomizados para grupos paralelos com esquemas próprios de escalonamento (coortes de 1 mg, 4 mg, 8 mg e 12 mg), demonstrando perda ponderal média de até 24,2% às 48 semanas na dose teto de 12 mg."
+      "ENSAIO CLÍNICO FASE 2 (SEM APROVAÇÃO REGULATÓRIA): Dados publicados do estudo de Fase 2 no NEJM 2023 (PMID 37366315; DOI 10.1056/NEJMoa2301972). Ensaios de Fase 3 em curso; sem registro sanitário."
     ],
     "sources": [
       "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial"
@@ -775,9 +775,9 @@
     "compoundId": "ss-31",
     "stackId": null,
     "protocolName": "SS-31 (Elamipretide) — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "clinical_documented",
-    "evidenceCategory": "clinical_proven",
-    "verificationStatus": "homologated_clinical",
+    "protocolCategory": "clinical_trial",
+    "evidenceCategory": "clinical_trial_only",
+    "verificationStatus": "clinical_trial",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "anti-aging",
     "route": "Subcutânea (SC)",
@@ -820,9 +820,9 @@
     "compoundId": "semax",
     "stackId": null,
     "protocolName": "Semax — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "clinical_documented",
-    "evidenceCategory": "clinical_proven",
-    "verificationStatus": "homologated_clinical",
+    "protocolCategory": "clinical_trial",
+    "evidenceCategory": "clinical_trial_only",
+    "verificationStatus": "clinical_trial",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "cognicao",
     "route": "Intranasal",
@@ -869,9 +869,9 @@
     "compoundId": "selank",
     "stackId": null,
     "protocolName": "Selank — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "clinical_documented",
-    "evidenceCategory": "clinical_proven",
-    "verificationStatus": "homologated_clinical",
+    "protocolCategory": "clinical_trial",
+    "evidenceCategory": "clinical_trial_only",
+    "verificationStatus": "clinical_trial",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "cognicao",
     "route": "Intranasal",
@@ -916,9 +916,9 @@
     "compoundId": "cerebrolysin",
     "stackId": null,
     "protocolName": "Cerebrolysin — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "clinical_documented",
-    "evidenceCategory": "clinical_proven",
-    "verificationStatus": "homologated_clinical",
+    "protocolCategory": "clinical_trial",
+    "evidenceCategory": "clinical_trial_only",
+    "verificationStatus": "clinical_trial",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "cognicao",
     "route": "Intramuscular (IM)",
@@ -948,7 +948,7 @@
       "Raro: reações alérgicas ou hipertermia transitória"
     ],
     "limitations": [
-      "EVIDÊNCIA CLÍNICA MÁXIMA: Medicamento biológico aprovado em mais de 50 países para tratamento de AVC agudo, traumatismo cranioencefálico (TCE) e demência vascular (estudos multicêntricos duplo-cegos fase 3 publicados no Stroke e Lancet Neurology)."
+      "Extrato peptídico porcino aprovado regionalmente (>50 países, sem aprovação FDA). CARS Fase 2 (PMID 26564102) mostrou melhora motora secundária, porém Cochrane 2023 (PMID 37818733; 7 ECRs, n=1773) indica ausência de benefício em mortalidade (RR 0,96) e potencial aumento de eventos adversos graves não fatais (RR 2,39)."
     ],
     "sources": [
       "Muresanu DF, et al. Cerebrolysin and Recovery After Stroke (CARS): A Randomized, Placebo-Controlled, Double-Blind, Multicenter Trial. Stroke. 2016. DOI: 10.1161/STROKEAHA.115.009416. PMID: 26564102.",
@@ -963,9 +963,9 @@
     "compoundId": "thymosin-alpha-1",
     "stackId": null,
     "protocolName": "Timosina Alfa-1 — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "clinical_documented",
-    "evidenceCategory": "clinical_proven",
-    "verificationStatus": "homologated_clinical",
+    "protocolCategory": "clinical_trial",
+    "evidenceCategory": "clinical_trial_only",
+    "verificationStatus": "clinical_trial",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "imunidade",
     "route": "Subcutânea (SC)",
@@ -1202,7 +1202,7 @@
     "stackId": null,
     "protocolName": "Survodutida — Protocolo Documentado de Pesquisa",
     "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "clinical_proven",
+    "evidenceCategory": "clinical_trial_only",
     "verificationStatus": "preclinical_model",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "emagrecimento",
@@ -1235,7 +1235,7 @@
       "Sensação de plenitude gástrica precoce"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA: Ensaio clínico de fase 2 publicado no New England Journal of Medicine (NEJM 2024; (fonte primária verificada: PMID 38847460)) para esteato-hepatite não alcoólica (MASH) e obesidade. Posologia semanal escalonada de 0.6 mg a 4.8 mg."
+      "ENSAIO CLÍNICO FASE 2 (SEM APROVAÇÃO REGULATÓRIA): Ensaios de Fase 2 publicados no NEJM 2024 (MASH, PMID 38847460) e Lancet Diabetes Endocrinol 2024 (obesidade, PMID 38330987). Sem aprovação sanitária."
     ],
     "sources": [
       "Sanyal AJ, et al. A Phase 2 Randomized Trial of Survodutide in MASH and Fibrosis. N Engl J Med. 2024. DOI: 10.1056/NEJMoa2401755. PMID: 38847460.",
@@ -1590,9 +1590,9 @@
     "compoundId": "glutathione",
     "stackId": null,
     "protocolName": "Glutationa — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "clinical_documented",
-    "evidenceCategory": "clinical_proven",
-    "verificationStatus": "homologated_clinical",
+    "protocolCategory": "clinical_trial",
+    "evidenceCategory": "clinical_trial_only",
+    "verificationStatus": "clinical_trial",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "anti-aging",
     "route": "Intramuscular (IM)",
@@ -1684,9 +1684,9 @@
     "compoundId": "oxytocin",
     "stackId": null,
     "protocolName": "Ocitocina — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "clinical_documented",
-    "evidenceCategory": "clinical_proven",
-    "verificationStatus": "homologated_clinical",
+    "protocolCategory": "clinical_trial",
+    "evidenceCategory": "clinical_trial_only",
+    "verificationStatus": "clinical_trial",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "cognicao",
     "route": "Intranasal (Spray)",
@@ -1718,7 +1718,7 @@
       "Uso contínuo diário desaconselhado para evitar dessensibilização do receptor OXTR"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA: Aprovada mundialmente pela FDA/ANVISA para fins obstétricos e amplamente documentada em ensaios duplo-cegos para modulação social e de estresse (fonte primária verificada: PMID 15931222). Dose intranasal típica em pesquisa: 10 a 24 UI (spray nasal) antes de situações sociais."
+      "USO OBSTÉTRICO APROVADO VS INTRANASAL INVESTIGACIONAL: Aprovação regulatória restrita a obstetrícia (PMID 29949473); ensaios sociais agudos em saudáveis (PMID 15931222) não comprovam eficácia clínica generalizada, e o ensaio Fase 2 no autismo (SOARS-B, NEJM, PMID 34644471) foi neutro/negativo (P=0,61)."
     ],
     "sources": [
       "Kosfeld M, et al. Oxytocin increases trust in humans. Nature. 2005. DOI: 10.1038/nature03701. PMID: 15931222.",
@@ -2265,7 +2265,7 @@
     "stackId": null,
     "protocolName": "CJC-1295 (com DAC) — Protocolo Documentado de Pesquisa",
     "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "clinical_proven",
+    "evidenceCategory": "clinical_trial_only",
     "verificationStatus": "preclinical_model",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "musculo",
@@ -2298,7 +2298,7 @@
       "Possível letargia e aumento do apetite nas primeiras 48h pós-dose"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA: Posologia semanal de 30 a 60 mcg/kg administrada via SC foi documentada em humanos em ensaio clínico da ConjuChem publicado no JCEM (fonte primária verificada: PMID 16352683). O complexo DAC liga-se covalentemente à albumina sérica, estendendo a meia-vida para 6-8 dias."
+      "ENSAIO CLÍNICO PRECOCE / PK-PD EM VOLUNTÁRIOS SAUDÁVEIS: Posologia de 30-60 mcg/kg SC avaliada apenas para farmacocinética GH/IGF-1 em adultos saudáveis (PMID 16352683; PMID 17018654). Sem Fase 3 nem aprovação."
     ],
     "sources": [
       "Teichman SL, et al. Prolonged stimulation of growth hormone (GH) and insulin-like growth factor I secretion by CJC-1295, a long-acting analog of GH-releasing hormone, in healthy adults. J Clin Endocrinol Metab. 2006. DOI: 10.1210/jc.2005-1536. PMID: 16352683.",
@@ -2460,7 +2460,7 @@
     "stackId": null,
     "protocolName": "Mazdutida (IBI362) — Protocolo Documentado de Pesquisa",
     "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "clinical_proven",
+    "evidenceCategory": "clinical_trial_only",
     "verificationStatus": "preclinical_model",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "emagrecimento",
@@ -2508,9 +2508,9 @@
     "compoundId": "cortexin",
     "stackId": null,
     "protocolName": "Cortexin — Protocolo Documentado de Pesquisa",
-    "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "clinical_proven",
-    "verificationStatus": "preclinical_model",
+    "protocolCategory": "clinical_trial",
+    "evidenceCategory": "clinical_trial_only",
+    "verificationStatus": "clinical_trial",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "cognicao",
     "route": "Intramuscular (IM)",
@@ -2559,7 +2559,7 @@
     "stackId": null,
     "protocolName": "Larazotida (AT-1001) — Protocolo Documentado de Pesquisa",
     "protocolCategory": "preclinical_empirical",
-    "evidenceCategory": "clinical_proven",
+    "evidenceCategory": "clinical_trial_only",
     "verificationStatus": "preclinical_model",
     "population": "Modelos experimentais de laboratório / Pesquisa translacional",
     "indication": "gastrointestinal",
@@ -2590,7 +2590,7 @@
       "Raramente discreto desconforto abdominal transitório ou cefaleia leve"
     ],
     "limitations": [
-      "VALIDAÇÃO CLÍNICA: Posologia oral de 0.5 mg a 1.0 mg administrada 3 vezes ao dia antes das principais refeições avaliada em ensaios multicêntricos de fase 2b publicados em Gastroenterology e Aliment Pharmacol Ther (fonte primária verificada: PMID 25683116)."
+      "ENSAIO CLÍNICO FASE 2b MISTO (SEM APROVAÇÃO): No estudo Fase 2b (n=342, PMID 25683116; ver também PMID 23163616), apenas 0,5 mg 3x/dia superou placebo no desfecho sintomático, enquanto 1 mg e 2 mg falharam em todos os desfechos frente ao placebo."
     ],
     "sources": [
       "Leffler DA, et al. Larazotide acetate for persistent symptoms of celiac disease despite a gluten-free diet: a randomized controlled trial. Gastroenterology. 2015. DOI: 10.1053/j.gastro.2015.02.008. PMID: 25683116.",

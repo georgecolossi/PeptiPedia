@@ -1094,6 +1094,7 @@ const STABILITY_SOURCES = [
   },
   {
     category: "Cinética de Degradação Biofarmacêutica de Peptídeos",
+    xmlAuditNote: "Nota H4.18.2: os 4 PMIDs técnicos gerais abaixo (20082128, 15778049, 23615748, 34059716) não integram o pacote XML local de 223 compostos e constam explicitamente na matriz como REFERENCIA_NAO_LOCALIZADA pendente de importação XML.",
     items: [
       {
         num: 4,
