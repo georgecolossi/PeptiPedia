@@ -21,8 +21,8 @@ import unittest
 
 SUITE_TAXONOMY = {
     "ATIVAS": [
-        "tests.test_audit_h4_18",
-        "tests.test_manifest_h4_18",
+        "tests.test_audit_h4_18_1",
+        "tests.test_manifest_h4_18_1",
         "tests.test_114_peptides_traceability",
         "tests.test_70_studies_integrity",
         "tests.test_data_integrity",
@@ -32,6 +32,7 @@ SUITE_TAXONOMY = {
         "tests.test_manifest_h4_15",
         "tests.test_manifest_h4_16",
         "tests.test_manifest_h4_17",
+        "tests.test_manifest_h4_18",
         "tests.test_remediation_h4_7",
         "tests.test_audit_h4_8",
         "tests.test_audit_h4_9",
@@ -43,6 +44,7 @@ SUITE_TAXONOMY = {
         "tests.test_audit_h4_15",
         "tests.test_audit_h4_16",
         "tests.test_audit_h4_17",
+        "tests.test_audit_h4_18",
     ],
     "REGRESSAO": [
         "tests.test_domain_normalization",
