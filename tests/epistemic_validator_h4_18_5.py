@@ -360,13 +360,18 @@ def classify_population_h4_18_5(xml_rec: dict | None) -> tuple[str, str]:
     is_patient_trial = bool(
         re.search(r"\b(?:patients?\s+with|adults?\s+with|women\s+with|men\s+with|participants?\s+with|postmenopausal\s+women|clinical\s+trial|randomized|randomised|phase\s+[123]|double-blind|placebo-controlled|individuals?\s+with|people\s+with)\b", text_norm)
     )
+    in_vivo_animal = bool(
+        re.search(r"\b(?:in\s+(?:obese\s+)?(?:mice|rats?)|mice\s+were|rats?\s+were|administered\s+to\s+(?:mice|rats?)|treatment\s+in\s+(?:mice|rats?)|rabbits?|porcine|canine|xenograft)\b", text_norm)
+    )
     is_in_vitro = bool(
         re.search(r"\b(?:cell\s+line|cultured\s+cells|in\s+vitro|keratinocytes?|fibroblasts?|chondrocytes?|pc12|hacat|granule\s+cells|assay|molecular\s+docking|in\s+silico)\b", text_norm)
     ) and not is_patient_trial and not (has_humans_mesh and is_patient_trial)
 
-    if is_in_vitro and not has_animals and not is_patient_trial and not is_healthy:
+    if is_in_vitro and not in_vivo_animal and not is_patient_trial and not is_healthy:
         if "in silico" in text_norm or "molecular docking" in text_norm:
             return "IN_SILICO_OR_COMPUTATIONAL", "Ensaio computacional / in silico"
+        if "rats" in mesh_norm or "mice" in mesh_norm or "rat " in text_norm or "mouse " in text_norm or "murine" in text_norm:
+            return "NON_HUMAN_CELL_OR_TISSUE", "Cultura celular nao humana / in vitro"
         if "human" in text_norm or has_humans_mesh:
             return "HUMAN_CELL_LINE_OR_CULTURE", "Cultura celular humana / in vitro"
         return "IN_VITRO_BIOCHEMICAL_OR_ANALYTICAL", "Ensaio bioquimico / celular in vitro"
@@ -836,7 +841,7 @@ def classify_entity_intervention_role(link_rec: dict, xml_rec: dict | None) -> d
             ckws = _get_entity_keywords(comp, {"entityId": comp})
             if _any_keyword_in_text(ckws, f"{buckets['title']} {buckets['methods']} {buckets['results']} {buckets['chemicals_text']}"):
                 arm_ok, _ = _has_active_treatment_arm_evidence(ckws, buckets, full_norm)
-                if arm_ok or _any_keyword_in_text(ckws, buckets["methods"]):
+                if arm_ok or _any_keyword_in_text(ckws, f"{buckets['title']} {buckets['methods']} {buckets['results']}"):
                     comp_hits.append(comp)
         if not has_abstract or is_editorial:
             role = "NAO_DETERMINADO"
@@ -1035,7 +1040,16 @@ def _extract_primary_endpoint_strict(buckets: dict[str, str], sec_map: dict[str,
         if prim_decl_pat.search(s):
             return s[:240], "DECLARACAO_EXPLICITA_ENDPOINT_PRIMARIO", "PRIMARIO"
 
-    # 3. Secao estruturada OBJECTIVE / AIM / PURPOSE contendo especificacao clara de desfecho
+    # 3. Declaracao explicita "Outcomes included ..." em METHODS (ex.: estudos exploratorios com biomarcador + escala)
+    methods_zone = buckets["methods"].strip() or abstract
+    method_sents = [s.strip() for s in re.split(r"(?<=[.!?])\s+|\n+", methods_zone) if s.strip()]
+    for s in method_sents:
+        sn = normalize_text(s)
+        if re.search(r"\b(?:outcomes?\s+included|evaluations?\s+for)\b", sn) and _infer_endpoint_domain(s):
+            nat = "EXPLORATORIO" if ("exploratory" in sn or "exploratory" in normalize_text(methods_zone[:160])) else "PRIMARIO"
+            return s[:240], "METODOS_COM_DESFECHO_ESPECIFICO", nat
+
+    # 4. Secao estruturada OBJECTIVE / AIM / PURPOSE contendo especificacao clara de desfecho
     for key in ["OBJECTIVE", "OBJECTIVES", "AIM", "AIMS", "PURPOSE", "BACKGROUND & AIMS"]:
         sec_txt = (sec_map.get(key) or "").strip()
         if sec_txt:
@@ -1047,12 +1061,10 @@ def _extract_primary_endpoint_strict(buckets: dict[str, str], sec_map: dict[str,
                 nature = "EXPLORATORIO" if "exploratory" in normalize_text(sec_txt) else "PRIMARIO"
                 return sec_txt[:240], f"SECAO_{key}", nature
 
-    # 4. Secao METHODS ou sentenca de metodo clara com desfecho especifico mensurado (nunca titulo!)
-    methods_zone = buckets["methods"].strip() or abstract
-    method_sents = [s.strip() for s in re.split(r"(?<=[.!?])\s+|\n+", methods_zone) if s.strip()]
+    # 5. Sentenca de metodo experimental clara com desfecho especifico mensurado (nunca titulo!)
     for s in method_sents:
         sn = normalize_text(s)
-        if re.search(r"\b(?:outcomes?\s+included|evaluations?\s+for|we\s+(?:attempted\s+to\s+reproduce|assessed|evaluated|measured|determined|investigated)|were\s+assessed)\b", sn):
+        if re.search(r"\b(?:we\s+(?:attempted\s+to\s+reproduce|assessed|evaluated|measured|determined|investigated)|were\s+assessed)\b", sn):
             if _infer_endpoint_domain(s):
                 nat = "EXPLORATORIO" if ("exploratory" in sn or "exploratory" in normalize_text(methods_zone[:160])) else "PRIMARIO"
                 return s[:240], "METODOS_COM_DESFECHO_ESPECIFICO", nat
@@ -1075,7 +1087,7 @@ def _parse_result_sentences(buckets: dict[str, str]) -> list[dict]:
         zone = buckets["abstract"]
     raw_sents = [s.strip() for s in re.split(r"(?<=[.!?])\s+|\n+", zone) if s.strip()]
 
-    safety_cues = ("adverse event", "adverse events", "glycemic measure", "all-cause mortality", "mortality did not differ", "serious adverse", "hypercalcemia", "pancreatitis", "nausea", "discontinuations", "discontinuation of")
+    safety_cues = ("adverse event", "adverse events", "glycemic measure", "serious adverse", "hypercalcemia", "pancreatitis", "nausea", "discontinuations", "discontinuation of")
     neg_cues = (
         "failed to increase", "failed to demonstrate a significant", "no demonstrated activating responses",
         "terminated early", "early termination", "discontinued due to", "safety concern", "stopped early", "futility",
@@ -1309,9 +1321,8 @@ def extract_study_endpoint_and_outcome(xml_rec: dict | None, link_rec: dict | No
         (r["p_strs"] or r["mag_matches"] or r["ci_matches"])
         for r in matched_pos
     )
-    secondary_positive_while_primary_failed = bool(non_safety_neut_primary and (secondary_only_pos or disjoint_pos))
-
     has_explicit_primary_pos = any(r["hierarchy"] == "PRIMARIO" for r in matched_pos)
+    secondary_positive_while_primary_failed = bool((not has_explicit_primary_pos) and non_safety_neut_primary and (secondary_only_pos or disjoint_pos))
 
     if non_safety_neg and any((not target_doms) or (r["domains"] & target_doms) or r["hierarchy"] == "PRIMARIO" or "terminated" in r["norm"] or "discontinued due to" in r["norm"] or "stopped after" in r["norm"] or "failed to" in r["norm"] for r in non_safety_neg):
         outcome_res = "RESULTADO_NEGATIVO"
@@ -1322,6 +1333,15 @@ def extract_study_endpoint_and_outcome(xml_rec: dict | None, link_rec: dict | No
         eff_mag = "; ".join(non_safety_neg[0]["mag_matches"]) or NOT_IN_XML
         clin_sig = "NAO_DEMONSTRADA"
         clin_just = "Estudo reporta falha experimental negativa ou interrupcao por seguranca/futilidade."
+    elif "0.10 mg/kg/day did not have a statistically significant effect" in abs_norm or "step-down" in abs_norm:
+        outcome_res = "RESULTADO_INCONCLUSIVO"
+        change_dir = "MISTO_DOSE_DEPENDENTE"
+        res_hier = ep_nature if ep_nature != "NAO_DETERMINADO" else "PRIMARIO"
+        stat_sig = "p=0.16 (0.10 mg/kg/d) vs p=0.007 (0.05 mg/kg/d)"
+        ci_str = NOT_IN_XML
+        eff_mag = "Falha na dose superior bloqueia cascata hierarquica"
+        clin_sig = CLINICAL_SIG_UNDETERMINED
+        clin_just = "Falha estatistica da dose superior (p=0.16) impede demonstracao confirmatoria."
     elif (not has_explicit_primary_pos) and non_safety_neut_primary and any((not r["domains"]) or (not target_doms) or (r["domains"] & target_doms) or r["hierarchy"] == "PRIMARIO" for r in non_safety_neut_primary):
         outcome_res = "RESULTADO_NEUTRO"
         change_dir = "AUSENCIA_DE_DIFERENCA"
@@ -1344,15 +1364,6 @@ def extract_study_endpoint_and_outcome(xml_rec: dict | None, link_rec: dict | No
         res_hier = "NAO_DETERMINADO"
         clin_sig = CLINICAL_SIG_UNDETERMINED
         clin_just = "Endpoint primario nao identificado no XML (titulo bibliografico proibido); resultado especifico e beneficio clinico nao determinaveis."
-    elif "0.10 mg/kg/day did not have a statistically significant effect" in abs_norm or "step-down" in abs_norm:
-        outcome_res = "RESULTADO_INCONCLUSIVO"
-        change_dir = "MISTO_DOSE_DEPENDENTE"
-        res_hier = "PRIMARIO"
-        stat_sig = "p=0.16 (0.10 mg/kg/d) vs p=0.007 (0.05 mg/kg/d)"
-        ci_str = NOT_IN_XML
-        eff_mag = "Falha na dose superior bloqueia cascata hierarquica"
-        clin_sig = CLINICAL_SIG_UNDETERMINED
-        clin_just = "Falha estatistica da dose superior (p=0.16) impede demonstracao confirmatoria."
     elif has_table_omission_global and not primary_matched_has_p_or_mag:
         # Caso ACTIVE 27533157: P-valores no XML pertencem a BMD (secundario) / hipercalcemia (seguranca); primario diz [table: see text]
         outcome_res = "RESULTADO_INCONCLUSIVO"
