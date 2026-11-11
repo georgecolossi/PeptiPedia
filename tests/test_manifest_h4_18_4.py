@@ -18,9 +18,10 @@ TESTS_DIR = os.path.dirname(os.path.abspath(__file__))
 if TESTS_DIR not in sys.path:
     sys.path.insert(0, TESTS_DIR)
 
-from git_manifest_verifier import validate_active_manifest_directory
+from git_manifest_verifier import validate_active_manifest_directory, verify_historical_manifest_at_commit
 
 REPO_ROOT = os.path.abspath(os.path.join(TESTS_DIR, ".."))
+H4_18_4_COMMIT_SHA = "975fb2bc42ae306dc9ac0bd4ade525e60b5b0c82"
 MANIFEST_REL_PATH = "research/evidence/MANIFESTO_ARQUIVOS_H4_18_4.csv"
 MANIFEST_FULL_PATH = os.path.join(REPO_ROOT, MANIFEST_REL_PATH)
 SHA256_REGEX = re.compile(r"^[a-f0-9]{64}$")
@@ -89,9 +90,21 @@ class TestManifestH4184(unittest.TestCase):
         self.assertGreaterEqual(active_h4184_count, 14, "Manifesto deve catalogar todos os artefatos ativos da H4.18.4.")
 
     def test_all_git_tracked_files_cataloged_with_strict_lf_sha256(self):
-        """Valida paridade estrita SHA-256 + tamanhoBytes com zero tolerancia a CRLF sobre todos os tracked files."""
-        rows = validate_active_manifest_directory(REPO_ROOT, MANIFEST_REL_PATH)
-        self.assertGreaterEqual(len(rows), 620)
+        """Valida paridade estrita SHA-256 + tamanhoBytes contra o commit historico congelado da H4.18.4 (975fb2bc)."""
+        summary = verify_historical_manifest_at_commit(
+            REPO_ROOT,
+            H4_18_4_COMMIT_SHA,
+            MANIFEST_REL_PATH,
+            path_col="caminhoRelativo",
+            size_col="tamanhoBytes",
+            hash_col="hashSha256",
+            expected_crlf_paths=(),
+            expected_1byte_mixed_paths=(),
+            expected_uncataloged_paths=(),
+            require_zero_crlf_in_git_tree=True,
+        )
+        self.assertGreaterEqual(summary["rows"], 620)
+        self.assertEqual(summary["rows"], summary["exact_matches"])
 
         res = subprocess.run(
             ["git", "ls-files", "--eol"],
