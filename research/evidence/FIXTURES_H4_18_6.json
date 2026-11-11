@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "H4.18.6",
+  "note": "Distincao estrita entre fixtures sinteticas de teste e controles reais baseados em XML PubMed/catalogo do repositorio. Nenhuma fixture sintetica atesta presenca do campo no catalogo atual.",
+  "synthetic_negative_fixtures": [
+    {
+      "fixtureId": "NEG_H62_OBJECTIVE_NO_PRIMARY",
+      "description": "OBJECTIVE declara avaliacao sem hierarquia primaria explicita.",
+      "entityId": "semaglutide",
+      "expectedHierarchy": "ENDPOINT_IDENTIFIED_HIERARCHY_UNKNOWN",
+      "forbiddenHierarchy": "PRIMARY_EXPLICIT"
+    },
+    {
+      "fixtureId": "NEG_H62_RESULTS_ONLY_MENTION",
+      "description": "Variavel e P-valor aparecem apenas em RESULTS, sem protocolo em OBJECTIVE/METHODS.",
+      "entityId": "semaglutide",
+      "expectedHierarchy": "ENDPOINT_NOT_IDENTIFIED",
+      "expectedLinked": false
+    },
+    {
+      "fixtureId": "NEG_H63_CROSS_ENDPOINT_NEGATIVE",
+      "description": "Frase negativa referente a outro endpoint (BMD) nao contamina desfecho primario positivo (Body Weight).",
+      "entityId": "semaglutide",
+      "expectedOutcomeResult": "RESULTADO_POSITIVO",
+      "forbiddenOutcomeResult": "RESULTADO_NEGATIVO"
+    },
+    {
+      "fixtureId": "NEG_H63_DIFFERENT_POPULATION_RESULT",
+      "description": "Resultado positivo ocorre apenas em voluntarios saudaveis em ensaio de pacientes.",
+      "entityId": "semaglutide",
+      "expectedLinked": false
+    },
+    {
+      "fixtureId": "NEG_H64_ENTITY_NO_DOCUMENTED_ARM",
+      "description": "Entidade mencionada em contexto sem descricao de braco experimental.",
+      "entityId": "bpc-157",
+      "expectedArmIdentified": false,
+      "expectedArm": "BRACO_NAO_DOCUMENTADO_NO_XML"
+    },
+    {
+      "fixtureId": "NEG_H65_MCID_DIFFERENT_VARIABLE",
+      "description": "Frase global/conclusao sobre MCID refere-se a biomarcador distinto do endpoint primario.",
+      "entityId": "semaglutide",
+      "forbiddenClinicalSignificance": "BENEFICIO_CLINICO_DEMONSTRADO"
+    },
+    {
+      "fixtureId": "NEG_H66_GLOBAL_COMBINATION_PHRASE",
+      "description": "Palavra 'combination' aparece apenas na discussao/hipotese sem coadministracao no mesmo braco.",
+      "stackId": "wolverine-stack",
+      "forbiddenStackCategory": "COMBINACAO_COMPLETA"
+    }
+  ],
+  "synthetic_positive_fixtures": [
+    {
+      "fixtureId": "POS_H67_ALIGNED_PRIMARY_ARM_MCID_INDICATION",
+      "description": "Fixture sintetica completa com PRIMARY_EXPLICIT, braco documentado, desfecho vinculado, MCID no mesmo endpoint e campo indication individual.",
+      "entityId": "semaglutide",
+      "expectedVerdict": "VALIDADO_DIRETAMENTE_PARA_ALEGACAO"
+    },
+    {
+      "fixtureId": "POS_H67_STACK_SAME_ARM_COADMIN",
+      "description": "Fixture sintetica de stack com coadministracao simultanea explicita de todos os componentes no mesmo braco em pacientes clinicos.",
+      "stackId": "wolverine-stack",
+      "expectedStackCategory": "COMBINACAO_COMPLETA"
+    }
+  ],
+  "real_catalog_xml_controls": [
+    {
+      "controlId": "REAL_XML_UNMODIFIED_STUDIES_DATA_33567185",
+      "dataOrigin": "REAL_CATALOG_PLUS_REAL_NCBI_XML",
+      "pmid": "33567185",
+      "entityId": "semaglutide",
+      "catalogHasExplicitIndicationField": false,
+      "expectedVerdictUnmodified": "VALIDO_COM_LIMITACAO"
+    },
+    {
+      "controlId": "REAL_XML_GHRP2_15646370_COMPARATOR_FAILURE",
+      "dataOrigin": "REAL_CATALOG_PLUS_REAL_NCBI_XML",
+      "pmid": "15646370",
+      "entityId": "ghrp-2",
+      "forbiddenOutcomeResult": "RESULTADO_NEGATIVO"
+    },
+    {
+      "controlId": "REAL_XML_CAGRISEMA_40544432_40544433",
+      "dataOrigin": "REAL_CATALOG_PLUS_REAL_NCBI_XML",
+      "pmids": ["40544432", "40544433"],
+      "entityId": "cagrilintide",
+      "expectedRole": "COMPONENTE_DE_COMBINACAO",
+      "forbiddenClinicalSignificance": "BENEFICIO_CLINICO_DEMONSTRADO"
+    },
+    {
+      "controlId": "REAL_XML_EMBARK_LEUPRORELIN_37119051",
+      "dataOrigin": "REAL_CATALOG_PLUS_REAL_NCBI_XML",
+      "pmid": "37119051",
+      "entityId": "leuprorelin",
+      "expectedRole": "INTERVENCAO_CONCOMITANTE",
+      "forbiddenClinicalSignificance": "BENEFICIO_CLINICO_DEMONSTRADO"
+    },
+    {
+      "controlId": "REAL_XML_LARAZOTIDE_23163616_EXPLORATORY",
+      "dataOrigin": "REAL_CATALOG_PLUS_REAL_NCBI_XML",
+      "pmid": "23163616",
+      "entityId": "larazotide",
+      "expectedHierarchy": "EXPLORATORY_EXPLICIT",
+      "expectedOutcomeResult": "RESULTADO_NEUTRO"
+    },
+    {
+      "controlId": "REAL_XML_OVERLAY_PIVOTAL_MONOTHERAPY_8_TRIALS",
+      "dataOrigin": "REAL_NCBI_XML_WITH_SYNTHETIC_INDICATION_OVERLAY",
+      "pmids": ["33567185", "37952131", "35658024", "27295427", "26132939", "22982184", "31189511", "40421736"],
+      "expectedVerdictWithExplicitIndication": "VALIDADO_DIRETAMENTE_PARA_ALEGACAO"
+    }
+  ]
+}

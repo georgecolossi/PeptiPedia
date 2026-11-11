@@ -684,8 +684,8 @@ def _extract_arm_phrase_from_sentence(sent: str, kw: str) -> str:
     kn = normalize_text(kw)
     pat = re.escape(kn)
     extract_pats = [
-        rf"(?:to\s+receive|receiving|assigned\s+to|randomized\s+to|randomised\s+to|administered|treated\s+with|given|injected\s+with|infused\s+with)\s+((?:either\s+|the\s+|combination\s+of\s+)?[^.;]{{0,50}}\b{pat}\b[^.;]{{0,70}})",
-        rf"(\b(?:once[- ]weekly|once[- ]daily|daily|twice[- ]daily|subcutaneous|oral|intranasal|topical|intravenous)\b[^.;]{{0,30}}\b{pat}\b[^.;]{{0,55}})",
+        rf"(?:to\s+receive|receiving|assigned\s+to|randomized\s+to|randomised\s+to|administered|treated\s+with|given|injected\s+with|infused\s+with)\s+((?:either\s+|the\s+|combination\s+of\s+)?(?:(?<=\d)\.(?=\d)|[^.;]){{0,50}}\b{pat}\b(?:(?<=\d)\.(?=\d)|[^.;]){{0,70}})",
+        rf"(\b(?:once[- ]weekly|once[- ]daily|daily|twice[- ]daily|subcutaneous|oral|intranasal|topical|intravenous)\b(?:(?<=\d)\.(?=\d)|[^.;]){{0,30}}\b{pat}\b(?:(?<=\d)\.(?=\d)|[^.;]){{0,55}})",
         rf"(\b{pat}\b\s*(?:\([^)]{{2,45}}\)|\d+(?:\.\d+)?\s*(?:mg|mcg|ug|iu|nmol|um|nm|%)(?:/[a-z]+)*)?\s*(?:group|arm|monotherapy|alone|treatment)?)",
     ]
     clean_s = sent.strip()
