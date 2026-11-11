@@ -1,15 +1,13 @@
 """
-Validacao estrita e criptografica do Manifesto de Arquivos H4.18.2.
-Zero tolerancia a CRLF, autorreferencia proibida, cobertura integral de git ls-files,
-identificacao explicita de preservacao historica H4.14-H4.18.1 (coluna statusHistorico),
-validacao dos 6 relatorios e 3 matrizes H4.18.2 e 5 testes negativos em diretorio temporario.
+Validacao historica criptografica do Manifesto de Arquivos H4.18.2 contra o SHA congelado.
+Zero tolerancia a CRLF, autorreferencia proibida, preservacao do commit final da H4.18.2
+apos o inicio da fase auditora H4.18.3, seguindo o mesmo padrao de H4.14-H4.18.1.
 """
 
 import csv
 import hashlib
 import os
 import re
-import subprocess
 import sys
 import tempfile
 import unittest
@@ -18,8 +16,12 @@ TESTS_DIR = os.path.dirname(os.path.abspath(__file__))
 if TESTS_DIR not in sys.path:
     sys.path.insert(0, TESTS_DIR)
 
-from git_manifest_verifier import validate_active_manifest_directory
+from git_manifest_verifier import (
+    validate_active_manifest_directory,
+    verify_historical_manifest_at_commit,
+)
 
+H4_18_2_COMMIT_SHA = "0bb65119841114c64a3950196a1cddf85b8c7ca1"
 REPO_ROOT = os.path.abspath(os.path.join(TESTS_DIR, ".."))
 MANIFEST_REL_PATH = "research/evidence/MANIFESTO_ARQUIVOS_H4_18_2.csv"
 MANIFEST_FULL_PATH = os.path.join(REPO_ROOT, MANIFEST_REL_PATH)
@@ -81,27 +83,21 @@ class TestManifestH4182(unittest.TestCase):
         self.assertGreaterEqual(hist_count, 10, "Manifesto deve identificar explicitamente artefatos historicos preservados.")
 
     def test_all_git_tracked_files_cataloged_with_strict_lf_sha256(self):
-        """Valida paridade estrita SHA-256 + tamanhoBytes com zero tolerancia a CRLF sobre todos os tracked files."""
-        rows = validate_active_manifest_directory(REPO_ROOT, MANIFEST_REL_PATH)
-        self.assertGreaterEqual(len(rows), 595)
-
-        res = subprocess.run(
-            ["git", "ls-files", "--eol"],
-            cwd=REPO_ROOT,
-            capture_output=True,
-            text=True,
-            check=True,
+        """Audita H4.18.2 contra o SHA congelado 0bb65119841114c64a3950196a1cddf85b8c7ca1 com 0 CRLF."""
+        summary = verify_historical_manifest_at_commit(
+            REPO_ROOT,
+            H4_18_2_COMMIT_SHA,
+            MANIFEST_REL_PATH,
+            path_col="caminhoRelativo",
+            size_col="tamanhoBytes",
+            hash_col="hashSha256",
+            expected_crlf_paths=(),
+            expected_1byte_mixed_paths=(),
+            expected_uncataloged_paths=(),
+            require_zero_crlf_in_git_tree=True,
         )
-        crlf_or_mixed = []
-        for line in res.stdout.splitlines():
-            if not line.strip():
-                continue
-            parts = line.split("\t", 1)
-            meta = parts[0]
-            fname = parts[1] if len(parts) > 1 else ""
-            if "w/crlf" in meta or "w/mixed" in meta or "i/crlf" in meta or "i/mixed" in meta:
-                crlf_or_mixed.append(f"{fname} ({meta.strip()})")
-        self.assertEqual(len(crlf_or_mixed), 0, f"Arquivos com CRLF/mixed detectados: {crlf_or_mixed}")
+        self.assertEqual(summary["rows"], 598)
+        self.assertEqual(summary["exact_matches"], 598)
 
     def test_h4182_closing_deliverables_and_historical_preservation(self):
         """Verifica 6 relatorios H4.18.2, 3 matrizes CSV, log base H4.18.1, veredito estrito e preservacao H4.14-H4.18.1."""
