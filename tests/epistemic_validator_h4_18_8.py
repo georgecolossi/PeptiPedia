@@ -703,14 +703,14 @@ def _sentence_matches_target_endpoint(r: dict, target_doms: set[str], ep_stems: 
     if not r_doms:
         if r["hierarchy"] == "PRIMARIO" and ep_hierarchy == "PRIMARY_EXPLICIT":
             return True
-        if ep_stems and len(ep_stems & set(re.findall(r"[a-z0-9-]{4,}", r["norm"]))) >= 2:
+        if ep_stems and len(ep_stems & set(re.findall(r"[a-z0-9-]{4,}", r["norm"]))) >= (1 if len(ep_stems) <= 2 else 2):
             return True
         if ep_hierarchy == "PRIMARY_EXPLICIT" and any(k in r["norm"] for k in ("neither of the primary endpoints", "met the primary endpoint", "met the composite primary", "achieved the primary endpoint")):
             return True
         if "responders" in ep_stems and "responders" in r["norm"] and ep_hierarchy == "PRIMARY_EXPLICIT":
             return True
     if not target_doms and ep_stems:
-        return len(ep_stems & set(re.findall(r"[a-z0-9-]{4,}", r["norm"]))) >= 2
+        return len(ep_stems & set(re.findall(r"[a-z0-9-]{4,}", r["norm"]))) >= (1 if len(ep_stems) <= 2 else 2)
     return False
 
 
@@ -949,16 +949,17 @@ def extract_study_endpoint_and_outcome_h4_18_8(xml_rec: dict | None, link_rec: d
         outcome_link_status = "RESULTADO_NAO_VINCULADO_VARIAVEL_DIVERGENTE"
         clin_sig, clin_just, clin_proven, clin_missing, bundle_conf = CLINICAL_SIG_UNDETERMINED, "Sinal estatistico em endpoint secundario/divergente.", f"{ep_hier}; BRACO_IDENTIFICADO", "DESFECHO_NO_ENDPOINT_ALVO", "INCOMPLETA"
     else:
-        ref_r = matched_arm_ok[0] if matched_arm_ok else (matched_ep[0] if matched_ep else (parsed_res[0] if parsed_res else None))
+        parsed_div = [r for r in parsed_res if r["arm_linkage"] == "RESULTADO_BRACO_DIVERGENTE"]
+        ref_r = matched_arm_ok[0] if matched_arm_ok else (parsed_div[0] if parsed_div else (matched_ep[0] if matched_ep else (parsed_res[0] if parsed_res else None)))
         outcome_res = "RESULTADO_INCONCLUSIVO" if len(abstract) > 60 else "RESULTADO_NAO_EXTRAIVEL"
         change_dir, res_hier, stat_sig, ci_str, eff_mag = NOT_IDENTIFIED_XML, ep_hier, NOT_IN_XML, NOT_IN_XML, NOT_IN_XML
-        arm_link_status = "RESULTADO_VINCULADO_AO_BRACO" if matched_arm_ok else ("RESULTADO_BRACO_INDETERMINADO" if matched_ep else ARM_NOT_DOCUMENTED)
-        arm_link_reason = matched_arm_ok[0]["arm_reason"] if matched_arm_ok else "Nenhuma sentenca positiva/negativa vinculavel ao endpoint e ao braco."
+        arm_link_status = "RESULTADO_VINCULADO_AO_BRACO" if matched_arm_ok else ("RESULTADO_BRACO_DIVERGENTE" if parsed_div else ("RESULTADO_BRACO_INDETERMINADO" if (matched_ep or arm_identified) else ARM_NOT_DOCUMENTED))
+        arm_link_reason = matched_arm_ok[0]["arm_reason"] if matched_arm_ok else (parsed_div[0]["arm_reason"] if parsed_div else "Nenhuma sentenca positiva/negativa vinculavel ao endpoint e ao braco.")
         if ref_r:
             out_quote = ref_r["text"].strip()[:220]
             out_sec = ref_r["section"]
             doc_unit = f"[{out_sec}] Sentenca descritiva no XML sem estatistica inferencial conclusiva"
-        outcome_link_status = "RESULTADO_NAO_VINCULADO_VARIAVEL_DIVERGENTE" if parsed_res else "RESULTADO_NAO_EXTRAIVEL_XML"
+        outcome_link_status = "RESULTADO_NAO_VINCULADO_BRACO_OU_COMB_DIVERGENTE" if parsed_div else ("RESULTADO_NAO_VINCULADO_VARIAVEL_DIVERGENTE" if parsed_res else "RESULTADO_NAO_EXTRAIVEL_XML")
         clin_sig, clin_just, clin_proven, clin_missing, bundle_conf = CLINICAL_SIG_UNDETERMINED, "Correspondencia especifica nao demonstravel.", f"{ep_hier}", "EVIDENCIA_VINCULADA_NO_XML", "INCOMPLETA"
 
     has_stat_sig = bool(outcome_res == "RESULTADO_POSITIVO" and outcome_linked and stat_sig not in (NOT_IN_XML, "NAO_SIGNIFICATIVO", "NAO_SIGNIFICATIVO_OU_INTERROMPIDO") and not stat_sig.startswith("P-VALOR_NO_XML"))

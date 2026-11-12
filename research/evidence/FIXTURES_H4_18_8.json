@@ -1,0 +1,771 @@
+{
+  "schemaVersion": "H4.18.8",
+  "generatedDate": "2026-11-12",
+  "fixtureNature": "CONTROLE_SINTETICO_ADVERSARIAL_E_OVERLAY_REAL_SEPARADOS",
+  "zeroPromotionToCatalogEvidence": true,
+  "separationRule": "Fixtures sinteticos habitam exclusivamente 'syntheticFixtures' com pmid='SYN_*' e NUNCA entram em js/* nem nos 1.584 vinculos reais dos CSVs. Fixtures reais verificam regressivamente research/evidence/MATRIZ_*_H4_18_8.csv.",
+  "syntheticFixtures": {
+    "H8_1_arm_outcome_linkage": [
+      {
+        "fixtureId": "syn_h81_nominal_mention_only",
+        "description": "Cenario H8.1 #1: Entidade citada apenas nominalmente em coorte/estudo geral sem predicado documental ligando resultado ao braco.",
+        "linkRec": {
+          "linkId": "SYN::H81::NOMINAL",
+          "entityId": "aod-9604",
+          "entityType": "synthetic_fixture",
+          "pmid": "SYN_H81_01",
+          "isStack": false
+        },
+        "xmlRec": {
+          "pmid": "SYN_H81_01",
+          "title": "Randomized trial of AOD-9604 in adults with obesity.",
+          "abstract": "METHODS: In this trial, adults were randomized to AOD-9604 or placebo. The primary endpoint was body weight change at 12 weeks. RESULTS: Outcomes were assessed in the AOD-9604 trial over 12 weeks and body weight reductions were reported in the overall cohort (P = 0.02).",
+          "structuredSections": {
+            "METHODS": "In this trial, adults were randomized to AOD-9604 or placebo. The primary endpoint was body weight change at 12 weeks.",
+            "RESULTS": "Outcomes were assessed in the AOD-9604 trial over 12 weeks and body weight reductions were reported in the overall cohort (P = 0.02)."
+          },
+          "pubTypes": ["Randomized Controlled Trial"],
+          "chemicals": ["AOD-9604"],
+          "meshTerms": ["Humans"]
+        },
+        "expected": {
+          "armOutcomeLinkageStatus": "RESULTADO_BRACO_INDETERMINADO",
+          "outcomeEndpointLinked": false,
+          "studyClinicalSignificanceEvidence": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA"
+        }
+      },
+      {
+        "fixtureId": "syn_h81_comparator_win",
+        "description": "Cenario H8.1 #2: Comparador ativo supera entidade alvo; nunca credita entidade alvo.",
+        "linkRec": {
+          "linkId": "SYN::H81::COMP_WIN",
+          "entityId": "liraglutide",
+          "entityType": "synthetic_fixture",
+          "pmid": "SYN_H81_02",
+          "isStack": false
+        },
+        "xmlRec": {
+          "pmid": "SYN_H81_02",
+          "title": "Phase 3 randomized comparison of tirzepatide versus liraglutide in obesity.",
+          "abstract": "METHODS: In this phase 3 trial, patients were randomly assigned to receive liraglutide 3.0 mg or tirzepatide 15 mg for 52 weeks. The primary endpoint was percentage change in body weight. RESULTS: Tirzepatide significantly reduced body weight more than liraglutide (95% CI -8.1 to -4.3; P < 0.001).",
+          "structuredSections": {
+            "METHODS": "In this phase 3 trial, patients were randomly assigned to receive liraglutide 3.0 mg or tirzepatide 15 mg for 52 weeks. The primary endpoint was percentage change in body weight.",
+            "RESULTS": "Tirzepatide significantly reduced body weight more than liraglutide (95% CI -8.1 to -4.3; P < 0.001)."
+          },
+          "pubTypes": ["Randomized Controlled Trial", "Clinical Trial, Phase III"],
+          "chemicals": ["liraglutide", "tirzepatide"],
+          "meshTerms": ["Humans"]
+        },
+        "expected": {
+          "armOutcomeLinkageStatus": "RESULTADO_BRACO_DIVERGENTE",
+          "outcomeEndpointLinked": false,
+          "studyClinicalSignificanceEvidence_not": "BENEFICIO_CLINICO_DEMONSTRADO"
+        }
+      },
+      {
+        "fixtureId": "syn_h81_placebo_only_sentence",
+        "description": "Cenario H8.1 #3: Desfecho favoravel descrito exclusivamente no grupo placebo deve ser bloqueado como DIVERGENTE.",
+        "linkRec": {
+          "linkId": "SYN::H81::PLACEBO_ONLY",
+          "entityId": "cagrilintide",
+          "entityType": "synthetic_fixture",
+          "pmid": "SYN_H81_03",
+          "isStack": false
+        },
+        "xmlRec": {
+          "pmid": "SYN_H81_03",
+          "title": "Phase 3 trial of cagrilintide.",
+          "abstract": "METHODS: Patients received cagrilintide 2.4 mg or placebo. The primary endpoint was body weight reduction. RESULTS: Mean body weight significantly reduced by -6.5% in the placebo group (95% CI -8.0 to -5.0; P < 0.001).",
+          "structuredSections": {
+            "METHODS": "Patients received cagrilintide 2.4 mg or placebo. The primary endpoint was body weight reduction.",
+            "RESULTS": "Mean body weight significantly reduced by -6.5% in the placebo group (95% CI -8.0 to -5.0; P < 0.001)."
+          },
+          "pubTypes": ["Randomized Controlled Trial", "Clinical Trial, Phase III"],
+          "chemicals": ["cagrilintide"],
+          "meshTerms": ["Humans"]
+        },
+        "expected": {
+          "armOutcomeLinkageStatus": "RESULTADO_BRACO_DIVERGENTE",
+          "outcomeEndpointLinked": false
+        }
+      },
+      {
+        "fixtureId": "syn_h81_unattributed_multi_dose",
+        "description": "Cenario H8.1 #4: Ensaio multi-dose com sentenca de resultado sem dose identificavel retorna INDETERMINADO.",
+        "linkRec": {
+          "linkId": "SYN::H81::MULTI_DOSE_NO_TOKEN",
+          "entityId": "eloralintide",
+          "entityType": "synthetic_fixture",
+          "pmid": "SYN_H81_04",
+          "isStack": false
+        },
+        "xmlRec": {
+          "pmid": "SYN_H81_04",
+          "title": "Dose-ranging trial of eloralintide.",
+          "abstract": "METHODS: Participants were randomized to eloralintide 1 mg, 3 mg, 6 mg, or placebo. The primary endpoint was body weight change at 48 weeks. RESULTS: Significant body weight reductions occurred in treated participants (95% CI -12.0 to -7.0; P < 0.001).",
+          "structuredSections": {
+            "METHODS": "Participants were randomized to eloralintide 1 mg, 3 mg, 6 mg, or placebo. The primary endpoint was body weight change at 48 weeks.",
+            "RESULTS": "Significant body weight reductions occurred in treated participants (95% CI -12.0 to -7.0; P < 0.001)."
+          },
+          "pubTypes": ["Randomized Controlled Trial"],
+          "chemicals": ["eloralintide"],
+          "meshTerms": ["Humans"]
+        },
+        "expected": {
+          "armOutcomeLinkageStatus": "RESULTADO_BRACO_INDETERMINADO",
+          "outcomeEndpointLinked": false
+        }
+      },
+      {
+        "fixtureId": "syn_h81_dose_mismatch",
+        "description": "Cenario H8.1 #5: Dose declarada no link (3 mg) difere da dose reportada na sentenca (4 mg) -> DIVERGENTE.",
+        "linkRec": {
+          "linkId": "SYN::H81::DOSE_MISMATCH",
+          "entityId": "mazdutide",
+          "entityType": "synthetic_fixture",
+          "pmid": "SYN_H81_05",
+          "declaredDose": "3 mg",
+          "isStack": false
+        },
+        "xmlRec": {
+          "pmid": "SYN_H81_05",
+          "title": "Phase 3 mazdutide trial.",
+          "abstract": "METHODS: Patients received mazdutide 3 mg, 4 mg, or placebo. The primary endpoint was percentage change in body weight. RESULTS: Mazdutide 4 mg reduced body weight by -11% vs placebo (95% CI -13.0 to -9.0; P < 0.001).",
+          "structuredSections": {
+            "METHODS": "Patients received mazdutide 3 mg, 4 mg, or placebo. The primary endpoint was percentage change in body weight.",
+            "RESULTS": "Mazdutide 4 mg reduced body weight by -11% vs placebo (95% CI -13.0 to -9.0; P < 0.001)."
+          },
+          "pubTypes": ["Randomized Controlled Trial", "Clinical Trial, Phase III"],
+          "chemicals": ["mazdutide"],
+          "meshTerms": ["Humans"]
+        },
+        "expected": {
+          "armOutcomeLinkageStatus": "RESULTADO_BRACO_DIVERGENTE",
+          "outcomeEndpointLinked": false
+        }
+      },
+      {
+        "fixtureId": "syn_h81_baseline_with_entity_and_pvalue",
+        "description": "Cenario H8.1 #6a: Sentenca basal ou recrutamento mencionando entidade e P-valor nao e desfecho vinculado.",
+        "linkRec": {
+          "linkId": "SYN::H81::BASELINE_ONLY",
+          "entityId": "ziconotide",
+          "entityType": "synthetic_fixture",
+          "pmid": "SYN_H81_06A",
+          "isStack": false
+        },
+        "xmlRec": {
+          "pmid": "SYN_H81_06A",
+          "title": "Trial of intrathecal ziconotide.",
+          "abstract": "METHODS: Patients were randomized to ziconotide or placebo. The primary endpoint was pain score reduction. RESULTS: At baseline, patients assigned to ziconotide and placebo had similar pain intensity scores (P = 0.63).",
+          "structuredSections": {
+            "METHODS": "Patients were randomized to ziconotide or placebo. The primary endpoint was pain score reduction.",
+            "RESULTS": "At baseline, patients assigned to ziconotide and placebo had similar pain intensity scores (P = 0.63)."
+          },
+          "pubTypes": ["Randomized Controlled Trial"],
+          "chemicals": ["ziconotide"],
+          "meshTerms": ["Humans"]
+        },
+        "expected": {
+          "armOutcomeLinkageStatus": "RESULTADO_BRACO_INDETERMINADO",
+          "outcomeEndpointLinked": false
+        }
+      },
+      {
+        "fixtureId": "syn_h81_contextual_prior_exposure",
+        "description": "Cenario H8.1 #6b: Entidade aparece apenas em clausula contextual/exposicao previa ('previously treated with X').",
+        "linkRec": {
+          "linkId": "SYN::H81::PRIOR_EXPOSURE",
+          "entityId": "semaglutide",
+          "entityType": "synthetic_fixture",
+          "pmid": "SYN_H81_06B",
+          "isStack": false
+        },
+        "xmlRec": {
+          "pmid": "SYN_H81_06B",
+          "title": "Tirzepatide in patients previously treated with semaglutide.",
+          "abstract": "METHODS: Patients received tirzepatide or semaglutide. The primary endpoint was HbA1c change. RESULTS: In adults previously treated with semaglutide, switching to tirzepatide reduced HbA1c by -1.4% (95% CI -1.7 to -1.1; P < 0.001).",
+          "structuredSections": {
+            "METHODS": "Patients received tirzepatide or semaglutide. The primary endpoint was HbA1c change.",
+            "RESULTS": "In adults previously treated with semaglutide, switching to tirzepatide reduced HbA1c by -1.4% (95% CI -1.7 to -1.1; P < 0.001)."
+          },
+          "pubTypes": ["Randomized Controlled Trial"],
+          "chemicals": ["semaglutide", "tirzepatide"],
+          "meshTerms": ["Humans"]
+        },
+        "expected": {
+          "armOutcomeLinkageStatus": "RESULTADO_BRACO_DIVERGENTE",
+          "outcomeEndpointLinked": false
+        }
+      },
+      {
+        "fixtureId": "syn_h81_combo_a_plus_b_in_monotherapy",
+        "description": "Regra '+' H8.1: Estudo de combinacao A+B nao pode creditar link de monoterapia isolada.",
+        "linkRec": {
+          "linkId": "SYN::H81::COMBO_PLUS",
+          "entityId": "ghrp-6",
+          "entityType": "synthetic_fixture",
+          "pmid": "SYN_H81_07",
+          "isStack": false
+        },
+        "xmlRec": {
+          "pmid": "SYN_H81_07",
+          "title": "Randomized trial of GHRH + GHRP-6 administration.",
+          "abstract": "METHODS: Adults received intravenous GHRH+GHRP-6 or placebo. The primary endpoint was peak GH secretion. RESULTS: GHRH+GHRP-6 significantly increased peak GH levels vs placebo (P < 0.001).",
+          "structuredSections": {
+            "METHODS": "Adults received intravenous GHRH+GHRP-6 or placebo. The primary endpoint was peak GH secretion.",
+            "RESULTS": "GHRH+GHRP-6 significantly increased peak GH levels vs placebo (P < 0.001)."
+          },
+          "pubTypes": ["Randomized Controlled Trial"],
+          "chemicals": ["GHRH", "GHRP-6"],
+          "meshTerms": ["Humans"]
+        },
+        "expected": {
+          "armOutcomeLinkageStatus": "RESULTADO_BRACO_DIVERGENTE",
+          "outcomeEndpointLinked": false
+        }
+      },
+      {
+        "fixtureId": "syn_h81_lab_concentration_guard",
+        "description": "Guarda mg/dL: concentracao laboratorial '50 mg per deciliter' nao dispara divergencia de dose contra '2 mg'.",
+        "linkRec": {
+          "linkId": "SYN::H81::LAB_GUARD",
+          "entityId": "tesamorelin",
+          "entityType": "synthetic_fixture",
+          "pmid": "SYN_H81_08",
+          "declaredDose": "2 mg",
+          "isStack": false
+        },
+        "xmlRec": {
+          "pmid": "SYN_H81_08",
+          "title": "Randomised trial of tesamorelin 2 mg daily.",
+          "abstract": "METHODS: Patients received daily subcutaneous tesamorelin 2 mg or placebo. The primary endpoint was percent change in visceral adipose tissue. RESULTS: Visceral adipose tissue decreased by 15.2% in the tesamorelin group while triglycerides decreased by 50 mg per deciliter (95% CI -18.0 to -12.0; P < 0.001).",
+          "structuredSections": {
+            "METHODS": "Patients received daily subcutaneous tesamorelin 2 mg or placebo. The primary endpoint was percent change in visceral adipose tissue.",
+            "RESULTS": "Visceral adipose tissue decreased by 15.2% in the tesamorelin group while triglycerides decreased by 50 mg per deciliter (95% CI -18.0 to -12.0; P < 0.001)."
+          },
+          "pubTypes": ["Randomized Controlled Trial"],
+          "chemicals": ["tesamorelin"],
+          "meshTerms": ["Humans"]
+        },
+        "expected": {
+          "armOutcomeLinkageStatus": "RESULTADO_VINCULADO_AO_BRACO",
+          "outcomeEndpointLinked": true
+        }
+      },
+      {
+        "fixtureId": "syn_h81_positive_explicit_arm_link",
+        "description": "Controle positivo H8.1: predicado documental explicito ligando entidade, dose e contraste contra placebo.",
+        "linkRec": {
+          "linkId": "SYN::H81::POS_CTRL",
+          "entityId": "semaglutide",
+          "entityType": "synthetic_fixture",
+          "pmid": "SYN_H81_09",
+          "declaredDose": "2.4 mg",
+          "isStack": false
+        },
+        "xmlRec": {
+          "pmid": "SYN_H81_09",
+          "title": "Phase 3 randomized trial of semaglutide 2.4 mg.",
+          "abstract": "METHODS: Patients with obesity were randomized to once-weekly semaglutide 2.4 mg or placebo. The primary endpoint was percentage change in body weight. RESULTS: Mean body weight change was -14.9% in the semaglutide 2.4 mg group as compared with -2.4% with placebo (95% CI -13.4 to -11.5; P < 0.001).",
+          "structuredSections": {
+            "METHODS": "Patients with obesity were randomized to once-weekly semaglutide 2.4 mg or placebo. The primary endpoint was percentage change in body weight.",
+            "RESULTS": "Mean body weight change was -14.9% in the semaglutide 2.4 mg group as compared with -2.4% with placebo (95% CI -13.4 to -11.5; P < 0.001)."
+          },
+          "pubTypes": ["Randomized Controlled Trial", "Clinical Trial, Phase III"],
+          "chemicals": ["semaglutide"],
+          "meshTerms": ["Humans", "Obesity"]
+        },
+        "expected": {
+          "armOutcomeLinkageStatus": "RESULTADO_VINCULADO_AO_BRACO",
+          "outcomeEndpointLinked": true,
+          "outcomeResult": "RESULTADO_POSITIVO"
+        }
+      }
+    ],
+    "H8_2_clinical_bundle_integrity": [
+      {
+        "fixtureId": "syn_h82_mcid_only_in_discussion",
+        "description": "Cenario H8.2 #1 (STEP-1): magnitude+IC+P na sentenca primaria de RESULTS e MCID apenas em DISCUSSION -> proibicao integral de emprestimo.",
+        "linkRec": {
+          "linkId": "SYN::H82::DISC_MCID",
+          "entityId": "semaglutide",
+          "entityType": "synthetic_fixture",
+          "pmid": "SYN_H82_01",
+          "isStack": false
+        },
+        "xmlRec": {
+          "pmid": "SYN_H82_01",
+          "title": "Phase 3 randomized trial of semaglutide with discussion MCID.",
+          "abstract": "METHODS: In this phase 3 trial, 1961 adults with obesity were randomized to semaglutide 2.4 mg or placebo for 68 weeks. The primary endpoint was mean percentage change in body weight. RESULTS: With semaglutide, mean change in body weight was -14.9% vs -2.4% with placebo (estimated treatment difference -12.4 percentage points; 95% CI -13.4 to -11.5; P < 0.001). DISCUSSION: This reduction reflects clinically meaningful weight loss.",
+          "structuredSections": {
+            "METHODS": "In this phase 3 trial, 1961 adults with obesity were randomized to semaglutide 2.4 mg or placebo for 68 weeks. The primary endpoint was mean percentage change in body weight.",
+            "RESULTS": "With semaglutide, mean change in body weight was -14.9% vs -2.4% with placebo (estimated treatment difference -12.4 percentage points; 95% CI -13.4 to -11.5; P < 0.001).",
+            "DISCUSSION": "This reduction reflects clinically meaningful weight loss."
+          },
+          "pubTypes": ["Randomized Controlled Trial", "Clinical Trial, Phase III"],
+          "chemicals": ["semaglutide"],
+          "meshTerms": ["Humans", "Obesity"]
+        },
+        "expected": {
+          "armOutcomeLinkageStatus": "RESULTADO_VINCULADO_AO_BRACO",
+          "studyEndpointHierarchy": "PRIMARY_EXPLICIT",
+          "studyClinicalSignificanceEvidence": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA",
+          "studyClinicalMcidEvidence_contains": "DISCUSSION",
+          "clinicalEvidenceBundleConfidence": "INCOMPLETA"
+        }
+      },
+      {
+        "fixtureId": "syn_h82_responder_without_own_ci",
+        "description": "Cenario H8.2 #2 (GLORY-1): limiar respondedor >=5% sem IC95% proprio na mesma clausula (heranca da clausula continua bloqueada).",
+        "linkRec": {
+          "linkId": "SYN::H82::RESP_NO_OWN_CI",
+          "entityId": "mazdutide",
+          "entityType": "synthetic_fixture",
+          "pmid": "SYN_H82_02",
+          "isStack": false
+        },
+        "xmlRec": {
+          "pmid": "SYN_H82_02",
+          "title": "Phase 3 randomized trial of mazdutide in obesity.",
+          "abstract": "METHODS: In this phase 3 trial, adults received mazdutide 6 mg or placebo for 48 weeks. The coprimary end points were percentage change in body weight and weight reduction of 5% or more. RESULTS: With mazdutide 6 mg, mean percentage change in body weight was -13.9% (95% CI -15.3 to -12.5; P < 0.001), and 73.9% of participants had weight reduction of 5% or more versus 10.5% with placebo.",
+          "structuredSections": {
+            "METHODS": "In this phase 3 trial, adults received mazdutide 6 mg or placebo for 48 weeks. The coprimary end points were percentage change in body weight and weight reduction of 5% or more.",
+            "RESULTS": "With mazdutide 6 mg, mean percentage change in body weight was -13.9% (95% CI -15.3 to -12.5; P < 0.001), and 73.9% of participants had weight reduction of 5% or more versus 10.5% with placebo."
+          },
+          "pubTypes": ["Randomized Controlled Trial", "Clinical Trial, Phase III"],
+          "chemicals": ["mazdutide"],
+          "meshTerms": ["Humans", "Obesity"]
+        },
+        "expected": {
+          "armOutcomeLinkageStatus": "RESULTADO_VINCULADO_AO_BRACO",
+          "studyClinicalSignificanceEvidence": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA",
+          "clinicalCriteriaMissing_contains": "IC95% proprio"
+        }
+      },
+      {
+        "fixtureId": "syn_h82_secondary_mcid_no_borrowing",
+        "description": "Cenario H8.2 #3: MCID presente apenas em sentenca de endpoint secundario enquanto primario esta incompleto.",
+        "linkRec": {
+          "linkId": "SYN::H82::SEC_MCID",
+          "entityId": "semaglutide",
+          "entityType": "synthetic_fixture",
+          "pmid": "SYN_H82_03",
+          "isStack": false
+        },
+        "xmlRec": {
+          "pmid": "SYN_H82_03",
+          "title": "Phase 3 trial with secondary MCID only.",
+          "abstract": "METHODS: In this phase 3 trial, patients received semaglutide 2.4 mg or placebo. The primary endpoint was body weight reduction. RESULTS: With semaglutide, body weight reduced by -10.5% vs placebo (P < 0.001). As a secondary endpoint, waist circumference achieved clinically meaningful reduction of -8.5 cm (95% CI -10.2 to -6.8; P < 0.001).",
+          "structuredSections": {
+            "METHODS": "In this phase 3 trial, patients received semaglutide 2.4 mg or placebo. The primary endpoint was body weight reduction.",
+            "RESULTS": "With semaglutide, body weight reduced by -10.5% vs placebo (P < 0.001). As a secondary endpoint, waist circumference achieved clinically meaningful reduction of -8.5 cm (95% CI -10.2 to -6.8; P < 0.001)."
+          },
+          "pubTypes": ["Randomized Controlled Trial", "Clinical Trial, Phase III"],
+          "chemicals": ["semaglutide"],
+          "meshTerms": ["Humans", "Obesity"]
+        },
+        "expected": {
+          "studyClinicalSignificanceEvidence": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA",
+          "clinicalEvidenceBundleConfidence": "INCOMPLETA"
+        }
+      },
+      {
+        "fixtureId": "syn_h82_domain_identity_mismatch",
+        "description": "Cenario H8.2 #4: Endpoint primario e body weight mas unica sentenca completa com MCID mede waist circumference.",
+        "linkRec": {
+          "linkId": "SYN::H82::IDENTITY_MISMATCH",
+          "entityId": "tirzepatide",
+          "entityType": "synthetic_fixture",
+          "pmid": "SYN_H82_04",
+          "isStack": false
+        },
+        "xmlRec": {
+          "pmid": "SYN_H82_04",
+          "title": "Phase 3 trial comparing weight vs waist circumference.",
+          "abstract": "METHODS: In this phase 3 trial, patients received tirzepatide 15 mg or placebo. The primary endpoint was percentage change in body weight. RESULTS: In the tirzepatide 15 mg group, clinically relevant waist circumference loss reached -11.0% vs placebo (95% CI -13.0 to -9.0; P < 0.001).",
+          "structuredSections": {
+            "METHODS": "In this phase 3 trial, patients received tirzepatide 15 mg or placebo. The primary endpoint was percentage change in body weight.",
+            "RESULTS": "In the tirzepatide 15 mg group, clinically relevant waist circumference loss reached -11.0% vs placebo (95% CI -13.0 to -9.0; P < 0.001)."
+          },
+          "pubTypes": ["Randomized Controlled Trial", "Clinical Trial, Phase III"],
+          "chemicals": ["tirzepatide"],
+          "meshTerms": ["Humans", "Obesity"]
+        },
+        "expected": {
+          "studyClinicalSignificanceEvidence": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA"
+        }
+      },
+      {
+        "fixtureId": "syn_h82_non_primary_hierarchy",
+        "description": "Cenario H8.2 #5: Hierarquia secundaria explicita com pacote completo nao promove BENEFICIO_CLINICO_DEMONSTRADO.",
+        "linkRec": {
+          "linkId": "SYN::H82::SEC_HIER",
+          "entityId": "semaglutide",
+          "entityType": "synthetic_fixture",
+          "pmid": "SYN_H82_05",
+          "isStack": false
+        },
+        "xmlRec": {
+          "pmid": "SYN_H82_05",
+          "title": "Phase 3 trial with secondary endpoint only.",
+          "abstract": "METHODS: In this phase 3 trial, patients received semaglutide 2.4 mg or placebo. The secondary endpoint was percentage change in body weight. RESULTS: In the semaglutide 2.4 mg group, clinically meaningful weight reduction was -12.0% vs placebo (95% CI -14.0 to -10.0; P < 0.001).",
+          "structuredSections": {
+            "METHODS": "In this phase 3 trial, patients received semaglutide 2.4 mg or placebo. The secondary endpoint was percentage change in body weight.",
+            "RESULTS": "In the semaglutide 2.4 mg group, clinically meaningful weight reduction was -12.0% vs placebo (95% CI -14.0 to -10.0; P < 0.001)."
+          },
+          "pubTypes": ["Randomized Controlled Trial", "Clinical Trial, Phase III"],
+          "chemicals": ["semaglutide"],
+          "meshTerms": ["Humans", "Obesity"]
+        },
+        "expected": {
+          "studyEndpointHierarchy": "SECONDARY_EXPLICIT",
+          "studyClinicalSignificanceEvidence": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA"
+        }
+      },
+      {
+        "fixtureId": "syn_h82_mcid_without_ci",
+        "description": "Cenario H8.2 #6a: Magnitude + P-valor + MCID na mesma sentenca sem IC95% nao promove BENEFICIO_CLINICO_DEMONSTRADO.",
+        "linkRec": {
+          "linkId": "SYN::H82::NO_CI",
+          "entityId": "liraglutide",
+          "entityType": "synthetic_fixture",
+          "pmid": "SYN_H82_06A",
+          "isStack": false
+        },
+        "xmlRec": {
+          "pmid": "SYN_H82_06A",
+          "title": "Phase 3 liraglutide trial missing CI.",
+          "abstract": "METHODS: In this phase 3 trial, patients received liraglutide 3.0 mg or placebo. The primary endpoint was body weight change. RESULTS: In the liraglutide group, clinically meaningful weight reduction was -8.0% vs placebo (P < 0.001).",
+          "structuredSections": {
+            "METHODS": "In this phase 3 trial, patients received liraglutide 3.0 mg or placebo. The primary endpoint was body weight change.",
+            "RESULTS": "In the liraglutide group, clinically meaningful weight reduction was -8.0% vs placebo (P < 0.001)."
+          },
+          "pubTypes": ["Randomized Controlled Trial", "Clinical Trial, Phase III"],
+          "chemicals": ["liraglutide"],
+          "meshTerms": ["Humans", "Obesity"]
+        },
+        "expected": {
+          "armOutcomeLinkageStatus": "RESULTADO_VINCULADO_AO_BRACO",
+          "studyClinicalSignificanceEvidence": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA",
+          "clinicalCriteriaMissing_contains": "intervalo de confianca"
+        }
+      },
+      {
+        "fixtureId": "syn_h82_mcid_without_pvalue",
+        "description": "Cenario H8.2 #6b: Magnitude + IC95% + MCID na mesma sentenca sem P-valor explicito nao promove BENEFICIO_CLINICO_DEMONSTRADO.",
+        "linkRec": {
+          "linkId": "SYN::H82::NO_P",
+          "entityId": "liraglutide",
+          "entityType": "synthetic_fixture",
+          "pmid": "SYN_H82_06B",
+          "isStack": false
+        },
+        "xmlRec": {
+          "pmid": "SYN_H82_06B",
+          "title": "Phase 3 liraglutide trial missing P-value.",
+          "abstract": "METHODS: In this phase 3 trial, patients received liraglutide 3.0 mg or placebo. The primary endpoint was body weight change. RESULTS: In the liraglutide group, liraglutide produced clinically meaningful weight reduction of -8.0% vs placebo (95% CI -9.5 to -6.5).",
+          "structuredSections": {
+            "METHODS": "In this phase 3 trial, patients received liraglutide 3.0 mg or placebo. The primary endpoint was body weight change.",
+            "RESULTS": "In the liraglutide group, liraglutide produced clinically meaningful weight reduction of -8.0% vs placebo (95% CI -9.5 to -6.5)."
+          },
+          "pubTypes": ["Randomized Controlled Trial", "Clinical Trial, Phase III"],
+          "chemicals": ["liraglutide"],
+          "meshTerms": ["Humans", "Obesity"]
+        },
+        "expected": {
+          "studyClinicalSignificanceEvidence": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA",
+          "clinicalCriteriaMissing_contains": "P-valor"
+        }
+      },
+      {
+        "fixtureId": "syn_h82_positive_mace3_same_sentence",
+        "description": "Cenario H8.2 #7a: Evento clinico duro MACE-3 com HR + IC95% + P-valor na mesma sentenca valida BENEFICIO_CLINICO_DEMONSTRADO.",
+        "linkRec": {
+          "linkId": "SYN::H82::POS_MACE3",
+          "entityId": "semaglutide",
+          "entityType": "synthetic_fixture",
+          "pmid": "SYN_H82_07A",
+          "isStack": false
+        },
+        "xmlRec": {
+          "pmid": "SYN_H82_07A",
+          "title": "Phase 3 cardiovascular outcomes trial of semaglutide.",
+          "abstract": "METHODS: In this phase 3 cardiovascular outcomes trial, 17604 adults were randomized to semaglutide 2.4 mg or placebo. The primary cardiovascular end point was a composite of death from cardiovascular causes, nonfatal myocardial infarction, or nonfatal stroke. RESULTS: A primary cardiovascular end-point event occurred in 6.5% in the semaglutide group versus 8.0% in the placebo group (hazard ratio, 0.80; 95% confidence interval, 0.72 to 0.90; P<0.001).",
+          "structuredSections": {
+            "METHODS": "In this phase 3 cardiovascular outcomes trial, 17604 adults were randomized to semaglutide 2.4 mg or placebo. The primary cardiovascular end point was a composite of death from cardiovascular causes, nonfatal myocardial infarction, or nonfatal stroke.",
+            "RESULTS": "A primary cardiovascular end-point event occurred in 6.5% in the semaglutide group versus 8.0% in the placebo group (hazard ratio, 0.80; 95% confidence interval, 0.72 to 0.90; P<0.001)."
+          },
+          "pubTypes": ["Randomized Controlled Trial", "Clinical Trial, Phase III"],
+          "chemicals": ["semaglutide"],
+          "meshTerms": ["Humans"]
+        },
+        "expected": {
+          "armOutcomeLinkageStatus": "RESULTADO_VINCULADO_AO_BRACO",
+          "studyEndpointHierarchy": "PRIMARY_EXPLICIT",
+          "studyClinicalSignificanceEvidence": "BENEFICIO_CLINICO_DEMONSTRADO",
+          "studyClinicalMcidEvidence_contains": "MACE-3",
+          "clinicalEvidenceBundleConfidence": "COMPLETA_NO_MESMO_DESFECHO"
+        }
+      },
+      {
+        "fixtureId": "syn_h82_positive_responder_own_ci",
+        "description": "Cenario H8.2 #7b: Limiar respondedor >=5% com IC95% proprio e P-valor na mesma clausula valida BENEFICIO_CLINICO_DEMONSTRADO.",
+        "linkRec": {
+          "linkId": "SYN::H82::POS_RESP",
+          "entityId": "tirzepatide",
+          "entityType": "synthetic_fixture",
+          "pmid": "SYN_H82_07B",
+          "isStack": false
+        },
+        "xmlRec": {
+          "pmid": "SYN_H82_07B",
+          "title": "Phase 3 tirzepatide trial in obesity.",
+          "abstract": "METHODS: In this phase 3 trial, 2539 adults were randomized to tirzepatide 15 mg or placebo. The coprimary end points were percentage change in weight and weight reduction of 5% or more. RESULTS: The percentage of participants who had weight reduction of 5% or more was 90.9% with tirzepatide 15 mg versus 34.5% with placebo (95% CI 88.0 to 93.0; P < 0.001).",
+          "structuredSections": {
+            "METHODS": "In this phase 3 trial, 2539 adults were randomized to tirzepatide 15 mg or placebo. The coprimary end points were percentage change in weight and weight reduction of 5% or more.",
+            "RESULTS": "The percentage of participants who had weight reduction of 5% or more was 90.9% with tirzepatide 15 mg versus 34.5% with placebo (95% CI 88.0 to 93.0; P < 0.001)."
+          },
+          "pubTypes": ["Randomized Controlled Trial", "Clinical Trial, Phase III"],
+          "chemicals": ["tirzepatide"],
+          "meshTerms": ["Humans", "Obesity"]
+        },
+        "expected": {
+          "armOutcomeLinkageStatus": "RESULTADO_VINCULADO_AO_BRACO",
+          "studyClinicalSignificanceEvidence": "BENEFICIO_CLINICO_DEMONSTRADO",
+          "studyClinicalMcidEvidence_contains": "IC95% proprio",
+          "clinicalEvidenceBundleConfidence": "COMPLETA_NO_MESMO_DESFECHO"
+        }
+      }
+    ],
+    "H7_1_endpoint_hierarchy_preserved": [
+      {
+        "fixtureId": "syn_h71_primary_objective_safety",
+        "description": "H7.1 preservado: primary objective != PRIMARY_EXPLICIT.",
+        "linkRec": {
+          "linkId": "SYN::H71::OBJ",
+          "entityId": "tesamorelin",
+          "entityType": "synthetic_fixture",
+          "pmid": "SYN_H71_01",
+          "isStack": false
+        },
+        "xmlRec": {
+          "pmid": "SYN_H71_01",
+          "title": "Phase 2 randomized trial of tesamorelin.",
+          "abstract": "METHODS: Patients received tesamorelin 2 mg or placebo. The primary objective was safety evaluation. RESULTS: In the tesamorelin 2 mg group, adverse events were tolerable (P = 0.04).",
+          "structuredSections": {
+            "METHODS": "Patients received tesamorelin 2 mg or placebo. The primary objective was safety evaluation.",
+            "RESULTS": "In the tesamorelin 2 mg group, adverse events were tolerable (P = 0.04)."
+          },
+          "pubTypes": ["Randomized Controlled Trial"],
+          "chemicals": ["tesamorelin"],
+          "meshTerms": ["Humans"]
+        },
+        "expected": {
+          "studyEndpointIdentified": true,
+          "studyEndpointHierarchy": "ENDPOINT_IDENTIFIED_HIERARCHY_UNKNOWN",
+          "studyClinicalSignificanceEvidence": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA"
+        }
+      },
+      {
+        "fixtureId": "syn_h71_secondary_explicit",
+        "description": "H7.1 preservado: apenas secondary endpoint declarado.",
+        "linkRec": {
+          "linkId": "SYN::H71::SEC",
+          "entityId": "semaglutide",
+          "entityType": "synthetic_fixture",
+          "pmid": "SYN_H71_02",
+          "isStack": false
+        },
+        "xmlRec": {
+          "pmid": "SYN_H71_02",
+          "title": "Semaglutide glycemic study.",
+          "abstract": "METHODS: Patients received semaglutide 1.0 mg or placebo. The secondary endpoint was HbA1c change at week 24. RESULTS: In the semaglutide 1.0 mg group, HbA1c decreased by -1.2% (95% CI -1.5 to -0.9; P < 0.001).",
+          "structuredSections": {
+            "METHODS": "Patients received semaglutide 1.0 mg or placebo. The secondary endpoint was HbA1c change at week 24.",
+            "RESULTS": "In the semaglutide 1.0 mg group, HbA1c decreased by -1.2% (95% CI -1.5 to -0.9; P < 0.001)."
+          },
+          "pubTypes": ["Randomized Controlled Trial"],
+          "chemicals": ["semaglutide"],
+          "meshTerms": ["Humans"]
+        },
+        "expected": {
+          "studyEndpointHierarchy": "SECONDARY_EXPLICIT",
+          "studyClinicalSignificanceEvidence": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA"
+        }
+      },
+      {
+        "fixtureId": "syn_h71_secondary_pos_primary_neutral",
+        "description": "H7.1/H8.2 preservado: desfecho secundario positivo nao salva primario neutro.",
+        "linkRec": {
+          "linkId": "SYN::H71::SEC_POS_PRIM_NEUT",
+          "entityId": "semaglutide",
+          "entityType": "synthetic_fixture",
+          "pmid": "SYN_H71_03",
+          "isStack": false
+        },
+        "xmlRec": {
+          "pmid": "SYN_H71_03",
+          "title": "Phase 3 trial with neutral primary and positive secondary.",
+          "abstract": "METHODS: In this phase 3 trial, patients received semaglutide or placebo. The primary endpoint was body weight change at week 52. RESULTS: Semaglutide did not meet the primary endpoint for body weight (P = 0.41). Secondary HbA1c significantly decreased by -0.9% (95% CI -1.2 to -0.6; P < 0.001).",
+          "structuredSections": {
+            "METHODS": "In this phase 3 trial, patients received semaglutide or placebo. The primary endpoint was body weight change at week 52.",
+            "RESULTS": "Semaglutide did not meet the primary endpoint for body weight (P = 0.41). Secondary HbA1c significantly decreased by -0.9% (95% CI -1.2 to -0.6; P < 0.001)."
+          },
+          "pubTypes": ["Randomized Controlled Trial", "Clinical Trial, Phase III"],
+          "chemicals": ["semaglutide"],
+          "meshTerms": ["Humans"]
+        },
+        "expected": {
+          "outcomeResult": "RESULTADO_NEUTRO",
+          "studyClinicalSignificanceEvidence": "NAO_DEMONSTRADA"
+        }
+      }
+    ],
+    "H7_4_stack_coadministration": [
+      {
+        "fixtureId": "syn_h74_coadmin_confirmed",
+        "stackComponents": ["bpc-157", "tb-500"],
+        "xmlRec": {
+          "pmid": "SYN_H74_01",
+          "title": "Randomised trial of BPC-157 coadministered with TB-500.",
+          "abstract": "METHODS: Patients were randomized to simultaneous coadministration of BPC-157 plus TB-500 in the same active arm versus placebo for 12 weeks. RESULTS: Concurrent BPC-157 and TB-500 improved healing.",
+          "structuredSections": {
+            "METHODS": "Patients were randomized to simultaneous coadministration of BPC-157 plus TB-500 in the same active arm versus placebo for 12 weeks.",
+            "RESULTS": "Concurrent BPC-157 and TB-500 improved healing."
+          },
+          "pubTypes": ["Randomized Controlled Trial"],
+          "chemicals": ["BPC-157", "TB-500"],
+          "meshTerms": ["Humans"]
+        },
+        "expectedStateH74": "COADMINISTRACAO_CONFIRMADA",
+        "expectedCombined": true
+      },
+      {
+        "fixtureId": "syn_h74_same_arm_no_overlap",
+        "stackComponents": ["bpc-157", "tb-500"],
+        "xmlRec": {
+          "pmid": "SYN_H74_02",
+          "title": "Clinical study mentioning BPC-157 and TB-500.",
+          "abstract": "METHODS: Patients were assigned to receive BPC-157 and TB-500 in the same treatment arm. RESULTS: Outcomes were assessed at week 8.",
+          "structuredSections": {
+            "METHODS": "Patients were assigned to receive BPC-157 and TB-500 in the same treatment arm.",
+            "RESULTS": "Outcomes were assessed at week 8."
+          },
+          "pubTypes": ["Clinical Trial"],
+          "chemicals": ["BPC-157", "TB-500"],
+          "meshTerms": ["Humans"]
+        },
+        "expectedStateH74": "MESMO_BRACO_SEM_SOBREPOSICAO_COMPROVADA",
+        "expectedCombined": false
+      },
+      {
+        "fixtureId": "syn_h74_sequential",
+        "stackComponents": ["cjc-1295", "ipamorelin"],
+        "xmlRec": {
+          "pmid": "SYN_H74_03",
+          "title": "Sequential dosing of CJC-1295 followed by ipamorelin.",
+          "abstract": "METHODS: Patients received CJC-1295 for 4 weeks followed by ipamorelin sequentially after washout. RESULTS: GH responses were measured.",
+          "structuredSections": {
+            "METHODS": "Patients received CJC-1295 for 4 weeks followed by ipamorelin sequentially after washout.",
+            "RESULTS": "GH responses were measured."
+          },
+          "pubTypes": ["Clinical Trial"],
+          "chemicals": ["CJC-1295", "ipamorelin"],
+          "meshTerms": ["Humans"]
+        },
+        "expectedStateH74": "ADMINISTRACAO_SEQUENCIAL",
+        "expectedCombined": false
+      },
+      {
+        "fixtureId": "syn_h74_mention_only",
+        "stackComponents": ["epitalon", "thymalin"],
+        "xmlRec": {
+          "pmid": "SYN_H74_04",
+          "title": "Monotherapy trial of Epitalon on circadian melatonin.",
+          "abstract": "METHODS: Patients received Epitalon alone. RESULTS: Epitalon altered melatonin rhythms. CONCLUSIONS: Epitalon plus Thymalin combination warrants future evaluation.",
+          "structuredSections": {
+            "METHODS": "Patients received Epitalon alone.",
+            "RESULTS": "Epitalon altered melatonin rhythms.",
+            "CONCLUSIONS": "Epitalon plus Thymalin combination warrants future evaluation."
+          },
+          "pubTypes": ["Clinical Trial"],
+          "chemicals": ["Epitalon"],
+          "meshTerms": ["Humans"]
+        },
+        "expectedStateH74": "COMBINACAO_APENAS_MENCIONADA",
+        "expectedCombined": false
+      },
+      {
+        "fixtureId": "syn_h74_indeterminate",
+        "stackComponents": ["semaglutide", "cagrilintide"],
+        "xmlRec": {
+          "pmid": "SYN_H74_05",
+          "title": "Observational metabolic follow-up cohort.",
+          "abstract": "METHODS: In this clinical cohort, adults exposed to semaglutide and cagrilintide were followed during a 12-month period without explicit arm schedule. RESULTS: Metabolic changes were described.",
+          "structuredSections": {
+            "METHODS": "In this clinical cohort, adults exposed to semaglutide and cagrilintide were followed during a 12-month period without explicit arm schedule.",
+            "RESULTS": "Metabolic changes were described."
+          },
+          "pubTypes": ["Clinical Study"],
+          "chemicals": ["semaglutide", "cagrilintide"],
+          "meshTerms": ["Humans"]
+        },
+        "expectedStateH74": "SOBREPOSICAO_TEMPORAL_INDETERMINADA",
+        "expectedCombined": false
+      },
+      {
+        "fixtureId": "syn_h74_no_evidence",
+        "stackComponents": ["bpc-157", "ghk-cu"],
+        "xmlRec": {
+          "pmid": "SYN_H74_06",
+          "title": "Monotherapy BPC-157 trial.",
+          "abstract": "METHODS: Patients received oral BPC-157 versus placebo. RESULTS: Endoscopic scores improved.",
+          "structuredSections": {
+            "METHODS": "Patients received oral BPC-157 versus placebo.",
+            "RESULTS": "Endoscopic scores improved."
+          },
+          "pubTypes": ["Randomized Controlled Trial"],
+          "chemicals": ["BPC-157"],
+          "meshTerms": ["Humans"]
+        },
+        "expectedStateH74": "SEM_EVIDENCIA_DE_COMBINACAO",
+        "expectedCombined": false
+      }
+    ]
+  },
+  "realCatalogValidationFixtures": {
+    "positiveClinicalTrials": [
+      {"study": "SELECT", "entityId": "semaglutide", "pmid": "37952131", "expectedClinicalSig": "BENEFICIO_CLINICO_DEMONSTRADO", "expectedHierarchy": "PRIMARY_EXPLICIT", "expectedArmLinkage": "RESULTADO_VINCULADO_AO_BRACO"},
+      {"study": "SURMOUNT-1", "entityId": "tirzepatide", "pmid": "35658024", "expectedClinicalSig": "BENEFICIO_CLINICO_DEMONSTRADO", "expectedHierarchy": "PRIMARY_EXPLICIT", "expectedArmLinkage": "RESULTADO_VINCULADO_AO_BRACO"},
+      {"study": "LEADER", "entityId": "liraglutide", "pmid": "27295427", "expectedClinicalSig": "BENEFICIO_CLINICO_DEMONSTRADO", "expectedHierarchy": "PRIMARY_EXPLICIT", "expectedArmLinkage": "RESULTADO_VINCULADO_AO_BRACO"},
+      {"study": "REWIND", "entityId": "dulaglutide", "pmid": "31189511", "expectedClinicalSig": "BENEFICIO_CLINICO_DEMONSTRADO", "expectedHierarchy": "PRIMARY_EXPLICIT", "expectedArmLinkage": "RESULTADO_VINCULADO_AO_BRACO"}
+    ],
+    "strictDowngradesAndNegativeRegressions": [
+      {"case": "STEP-1 H8.2 downgrade (DISCUSSION MCID forbidden)", "entityId": "semaglutide", "pmid": "33567185", "expectedArmLinkage": "RESULTADO_VINCULADO_AO_BRACO", "expectedOutcome": "RESULTADO_POSITIVO", "expectedClinicalSig": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA"},
+      {"case": "GLORY-1 H8.2 downgrade (responder without own 95% CI)", "entityId": "mazdutide", "pmid": "40421736", "filterDose": "AUSENTE_NO_CATALOGO", "expectedArmLinkage": "RESULTADO_VINCULADO_AO_BRACO", "expectedOutcome": "RESULTADO_POSITIVO", "expectedClinicalSig": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA"},
+      {"case": "GLORY-1 H8.1 dose divergence (protocol 3 mg vs 4/6 mg)", "entityId": "mazdutide", "pmid": "40421736", "filterDose": "3 mg", "expectedArmLinkage": "RESULTADO_BRACO_DIVERGENTE", "expectedClinicalSig": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA"},
+      {"case": "GHRP-6 + GHRH combo guard in monotherapy", "entityId": "ghrp-6", "pmid": "14693411", "expectedArmLinkage": "RESULTADO_BRACO_DIVERGENTE"},
+      {"case": "AOD-9604 H8.1 nominal mention blocked", "entityId": "aod-9604", "pmid": "11673763", "expectedArmLinkage": "RESULTADO_BRACO_INDETERMINADO", "expectedClinicalSig": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA"},
+      {"case": "Zenagamtide 40550231 safety primary undetermined", "entityId": "zenagamtide", "pmid": "40550231", "expectedArmLinkage": "RESULTADO_BRACO_INDETERMINADO", "expectedClinicalSig": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA"},
+      {"case": "Zenagamtide 42532080 arm-linked HbA1c positive without MCID", "entityId": "zenagamtide", "pmid": "42532080", "expectedArmLinkage": "RESULTADO_VINCULADO_AO_BRACO", "expectedOutcome": "RESULTADO_POSITIVO", "expectedClinicalSig": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA"},
+      {"case": "MGF-E-peptide 24253050 negative preclinical linked", "entityId": "mgf-e-peptide", "pmid": "24253050", "expectedArmLinkage": "RESULTADO_VINCULADO_AO_BRACO", "expectedOutcome": "RESULTADO_NEGATIVO", "expectedClinicalSig": "NAO_DEMONSTRADA"},
+      {"case": "ACE-031 objective-not-primary", "entityId": "ace-031", "pmid": "27462804", "expectedHierarchy": "ENDPOINT_IDENTIFIED_HIERARCHY_UNKNOWN", "expectedClinicalSig": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA"},
+      {"case": "SCALE missing CI/MCID", "entityId": "liraglutide", "pmid": "26132939", "expectedArmLinkage": "RESULTADO_VINCULADO_AO_BRACO", "expectedClinicalSig": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA"},
+      {"case": "STEPS missing CI/MCID", "entityId": "teduglutide", "pmid": "22982184", "expectedArmLinkage": "RESULTADO_VINCULADO_AO_BRACO", "expectedClinicalSig": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA"},
+      {"case": "ACTIVE incomplete anchor", "entityId": "abaloparatide", "pmid": "27533157", "expectedArmLinkage": "RESULTADO_VINCULADO_AO_BRACO", "expectedClinicalSig": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA"},
+      {"case": "SURMOUNT-OSA apnea missing MCID", "entityId": "tirzepatide", "pmid": "38912654", "expectedArmLinkage": "RESULTADO_VINCULADO_AO_BRACO", "expectedOutcome": "RESULTADO_POSITIVO", "expectedClinicalSig": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA"},
+      {"case": "STARS apraglutide PS volume missing CI", "entityId": "apraglutide", "pmid": "42692160", "expectedArmLinkage": "RESULTADO_VINCULADO_AO_BRACO", "expectedOutcome": "RESULTADO_POSITIVO", "expectedClinicalSig": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA"},
+      {"case": "PRONOUNCE leuprorelin comparator", "entityId": "leuprorelin", "pmid": "34459214", "expectedRole": "COMPARADOR_ATIVO", "expectedArmLinkage": "RESULTADO_BRACO_DIVERGENTE", "expectedClinicalSig": "NAO_DEMONSTRADA"},
+      {"case": "EMBARK leuprorelin concomitant", "entityId": "leuprorelin", "pmid": "37119051", "expectedRole": "INTERVENCAO_CONCOMITANTE", "expectedArmLinkage": "RESULTADO_BRACO_DIVERGENTE", "expectedClinicalSig": "NAO_DEMONSTRADA"},
+      {"case": "CagriSema cagrilintide combo-only", "entityId": "cagrilintide", "pmid": "40544433", "expectedRole": "COMPONENTE_DE_COMBINACAO", "expectedArmLinkage": "RESULTADO_BRACO_DIVERGENTE", "expectedClinicalSig": "NAO_DEMONSTRADA"},
+      {"case": "GHRP-2 undocumented arm", "entityId": "ghrp-2", "pmid": "15646370", "expectedArmLinkage": "BRACO_NAO_DOCUMENTADO_NO_XML", "expectedClinicalSig": "SIGNIFICANCIA_CLINICA_NAO_DETERMINADA"},
+      {"case": "Tesamorelin 2mg vs triglyceride mg/dL", "entityId": "tesamorelin", "pmid": "18057338", "expectedArmLinkage": "RESULTADO_VINCULADO_AO_BRACO", "expectedOutcome": "RESULTADO_POSITIVO"},
+      {"case": "Linaclotide vs. split regression", "entityId": "linaclotide", "pmid": "22986437", "expectedArmLinkage": "RESULTADO_VINCULADO_AO_BRACO", "expectedOutcome": "RESULTADO_POSITIVO"},
+      {"case": "Thymosin-alpha-1 marginal P preserved", "entityId": "thymosin-alpha-1", "pmid": "23327199", "expectedArmLinkage": "RESULTADO_VINCULADO_AO_BRACO", "expectedOutcome": "RESULTADO_INCONCLUSIVO"},
+      {"case": "Survodutide middot 0.6 mg dose match", "entityId": "survodutide", "pmid": "38330987", "expectedArmLinkage": "RESULTADO_VINCULADO_AO_BRACO", "expectedOutcome": "RESULTADO_POSITIVO"},
+      {"case": "Eloralintide multi-dose vs placebo contrast", "entityId": "eloralintide", "pmid": "41207310", "expectedArmLinkage": "RESULTADO_VINCULADO_AO_BRACO", "expectedOutcome": "RESULTADO_POSITIVO"},
+      {"case": "Cagrilintide 0.3 mg range 0.3-4.5 mg", "entityId": "cagrilintide", "pmid": "34798060", "expectedArmLinkage": "RESULTADO_VINCULADO_AO_BRACO", "expectedOutcome": "RESULTADO_POSITIVO"}
+    ]
+  }
+}

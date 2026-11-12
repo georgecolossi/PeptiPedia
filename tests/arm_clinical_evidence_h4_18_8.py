@@ -734,7 +734,7 @@ def _sentence_has_documentary_arm_outcome_link(
             rf"(?:\s*,[^.;]{{0,70}},)?\s*"
             rf"(?:as\s+compared\s+with\s+(?:the\s+)?(?:placebo|saline|vehicle)[^.;]{{0,25}},?\s*)?"
             rf"(?:also\s+|significantly\s+|dose-dependently\s+|potently\s+|statistically\s+significantly\s+)?"
-            rf"(?:reduced|decreased|increased|improved|lowered|prolonged|achieved|met\s+the\s+primary|offered\s+no|failed\s+to\s+(?:increase|inhibit|reduce|improve|demonstrate|show|meet|achieve|alter|differ)|did\s+not\s+(?:have\s+a\s+statistically\s+significant|significantly\s+(?:reduce|improve|differ|alter|meet|achieve))|was\s+(?:associated\s+with|superior\s+to|noninferior\s+to|more\s+effective\s+than)|led\s+to|resulted\s+in|elicited|evoked|produced)\b",
+            rf"(?:reduced|decreased|increased|improved|lowered|prolonged|achieved|met\s+the\s+primary|offered\s+no|failed\s+to\s+(?:increase|inhibit|reduce|improve|demonstrate|show|meet|achieve|alter|differ)|did\s+not\s+(?:have\s+a\s+statistically\s+significant|(?:significantly\s+)?(?:reduce|improve|differ|alter|meet|achieve))|was\s+(?:associated\s+with|superior\s+to|noninferior\s+to|more\s+effective\s+than)|led\s+to|resulted\s+in|elicited|evoked|produced)\b",
             sent_norm,
         )
     )
