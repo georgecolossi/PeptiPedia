@@ -147,6 +147,13 @@ class TestManifestH4188(unittest.TestCase):
         with open(base_log, "rb") as blf:
             self.assertNotIn(b"\r", blf.read())
 
+        repro_log = os.path.join(REPO_ROOT, "reports/evidence/H4_18_8_FINAL_HEAD_REPRODUCIBILITY_043ba70a.log")
+        self.assertTrue(os.path.exists(repro_log), "Log de reprodutibilidade da H4.18.8 ausente")
+        with open(repro_log, "rb") as rlf:
+            raw_r = rlf.read()
+        self.assertNotIn(b"\r", raw_r)
+        self.assertGreater(len(raw_r), 10000, "Log de reprodutibilidade da H4.18.8 incompleto")
+
         for rel in (
             "research/evidence/MANIFESTO_ARQUIVOS_H4_14.csv",
             "research/evidence/MANIFESTO_ARQUIVOS_H4_15.csv",

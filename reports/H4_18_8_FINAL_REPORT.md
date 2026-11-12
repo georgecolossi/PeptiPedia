@@ -44,5 +44,16 @@ O mandato `H4.18.8` eliminou duas falhas semânticas residuais identificadas na 
 
 ## 2. Evidência Versionada e Hashes de Fechamento
 
-- Log da base H4.18.7: `reports/evidence/H4_18_7_BASE_REPRODUCIBILITY_69601e31.log` (`261.307` bytes, SHA-256 `b58f0b62f0ccd91739eab75e7c6515961625a5685dcd02aa0150151466f2c8c8`).
-- Commit final de código e matrizes + log final de reprodutibilidade externa da H4.18.8: registrados na seção de fechamento após push e verificação em clone limpo não raso.
+- **Log da base H4.18.7 (versionado via `git add -f`):** [`reports/evidence/H4_18_7_BASE_REPRODUCIBILITY_69601e31.log`](evidence/H4_18_7_BASE_REPRODUCIBILITY_69601e31.log) (`261.307` bytes, SHA-256 `b58f0b62f0ccd91739eab75e7c6515961625a5685dcd02aa0150151466f2c8c8`).
+- **Commit code-complete reproduzido em clone remoto limpo:** `043ba70a0cf5a94f57a3a432c2be2483bd0a3f60` (`EXIT=0`, idempotência pós-reexecução `git status --short == ""`, `ATIVAS 18/18 OK`, `REGRESSAO 38/38 OK`, `E2E 3/3 OK`).
+- **Log final de reprodutibilidade externa H4.18.8 (versionado via `git add -f`):** [`reports/evidence/H4_18_8_FINAL_HEAD_REPRODUCIBILITY_043ba70a.log`](evidence/H4_18_8_FINAL_HEAD_REPRODUCIBILITY_043ba70a.log) (`101.000` bytes, SHA-256 `f49b769af916d1a345b4d922502f29aebd1ce68940202c3474f68f7a02760e3d`).
+- **Checksums SHA-256 das matrizes finais (`research/evidence/`):**
+  - `FIXTURES_H4_18_8.json`: `47.314` bytes (`f7da47e19b7dd65b...`)
+  - `MATRIZ_INTERVENCAO_REAL_H4_18_8.csv`: `1.477.760` bytes (`a54f6dfe877e9278...`)
+  - `MATRIZ_ENDPOINTS_E_DESFECHOS_H4_18_8.csv`: `2.527.607` bytes (`05124e2263660999...`)
+  - `MATRIZ_INDICACOES_E_PROVENIENCIA_H4_18_8.csv`: `1.277.160` bytes (`39236581a2dbd6ca...`)
+  - `MATRIZ_VALIDACAO_FINAL_POR_VINCULO_H4_18_8.csv`: `4.431.827` bytes (`991ea1d69002da2b...`)
+  - `MATRIZ_STACKS_INDIVIDUAL_H4_18_8.csv`: `215.159` bytes (`ec5e0657302f4b34...`)
+  - `MATRIZ_REAVALIACAO_73_CLINICA_H4_18_8.csv`: `106.904` bytes (`bc3edc16827d7fa5...`)
+  - `MATRIZ_COMPARACAO_H4187_VS_H4188.csv`: `1.773.796` bytes (`d2cda8fef380378d...`)
+  - `MATRIZ_TESTES_ADVERSARIAIS_H4_18_8.csv`: `49.350` bytes (`0d3f5f8acfcc0322...`)

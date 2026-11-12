@@ -16,7 +16,7 @@
 - **8 Matrizes CSV (`research/evidence/`):** `MATRIZ_INTERVENCAO_REAL_H4_18_8.csv`, `MATRIZ_ENDPOINTS_E_DESFECHOS_H4_18_8.csv`, `MATRIZ_INDICACOES_E_PROVENIENCIA_H4_18_8.csv`, `MATRIZ_VALIDACAO_FINAL_POR_VINCULO_H4_18_8.csv`, `MATRIZ_STACKS_INDIVIDUAL_H4_18_8.csv`, `MATRIZ_REAVALIACAO_73_CLINICA_H4_18_8.csv`, `MATRIZ_COMPARACAO_H4187_VS_H4188.csv`, `MATRIZ_TESTES_ADVERSARIAIS_H4_18_8.csv`.
 - **Manifesto criptográfico:** `research/evidence/MANIFESTO_ARQUIVOS_H4_18_8.csv`.
 - **8 Relatórios (`reports/`):** `H4_18_8_ARM_OUTCOME_LINKAGE_AUDIT.md`, `H4_18_8_CLINICAL_BUNDLE_AUDIT.md`, `H4_18_8_ADVERSARIAL_TEST_REPORT.md`, `H4_18_8_H4187_VS_H4188_COMPARISON.md`, `H4_18_8_DEPENDENCY_AUDIT.md`, `H4_18_8_TEST_REPORT.md`, `H4_18_8_FINAL_REPORT.md`, `H4_18_8_HANDOFF.md`.
-- **Logs rastreáveis versionados (`reports/evidence/`, via `git add -f`):** `H4_18_7_BASE_REPRODUCIBILITY_69601e31.log` e o log final de reprodutibilidade externa da H4.18.8.
+- **Logs rastreáveis versionados (`reports/evidence/`, via `git add -f`):** [`H4_18_7_BASE_REPRODUCIBILITY_69601e31.log`](evidence/H4_18_7_BASE_REPRODUCIBILITY_69601e31.log) (`261.307` bytes, SHA-256 `b58f0b62f0ccd91739eab75e7c6515961625a5685dcd02aa0150151466f2c8c8`) e [`H4_18_8_FINAL_HEAD_REPRODUCIBILITY_043ba70a.log`](evidence/H4_18_8_FINAL_HEAD_REPRODUCIBILITY_043ba70a.log) (`101.000` bytes, SHA-256 `f49b769af916d1a345b4d922502f29aebd1ce68940202c3474f68f7a02760e3d`, validando o commit code-complete `043ba70a0cf5a94f57a3a432c2be2483bd0a3f60` em clone remoto limpo não raso).
 
 ## 2. Estado de Governança
 

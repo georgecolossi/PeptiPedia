@@ -39,4 +39,13 @@
 
 ## 3. Fechamento do Log de Reprodutibilidade em Clone Limpo
 
-- A execução independente em clone remoto limpo e não raso (`git clone --no-single-branch --branch audit/h4-18-8-strict-arm-outcome-clinical-bundle`) sobre o commit code-complete produz o log integral `reports/evidence/H4_18_8_FINAL_HEAD_REPRODUCIBILITY_<SHA8>.log`, versionado diretamente na branch via `git add -f` no commit de fechamento.
+- **Commit code-complete reproduzido em clone remoto limpo não raso (`git clone --no-single-branch --branch audit/h4-18-8-strict-arm-outcome-clinical-bundle`)**: `043ba70a0cf5a94f57a3a432c2be2483bd0a3f60`
+- **Log integral versionado diretamente na branch (via `git add -f`)**: [`reports/evidence/H4_18_8_FINAL_HEAD_REPRODUCIBILITY_043ba70a.log`](evidence/H4_18_8_FINAL_HEAD_REPRODUCIBILITY_043ba70a.log)
+- **Tamanho / SHA-256 do log H4.18.8**: `101.000` bytes / `f49b769af916d1a345b4d922502f29aebd1ce68940202c3474f68f7a02760e3d`
+- **Checks aprovados dentro do clone limpo (`EXIT=0`)**:
+  - `git ls-files --eol` (`0` arquivos CRLF/mixed)
+  - Idempotência pós-reexecução de `tests/epistemic_validator_h4_18_8.py` (`git status --short == ""`)
+  - `test_epistemic_validator_h4_18_8.py` (8/8 OK)
+  - `test_manifest_h4_18_8.py` (4/4 OK)
+  - `test_manifest_h4_18_7.py` (4/4 OK contra `69601e31697b64fe62387c6caf1cde13d7a8b5f3`)
+  - `run_suite_taxonomy.py --category ATIVAS` (18/18 OK), `--category REGRESSAO` (38/38 OK) e `--category E2E` (3/3 suítes Playwright OK).
