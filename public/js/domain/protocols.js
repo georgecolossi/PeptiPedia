@@ -530,8 +530,8 @@
       "EVIDÊNCIA CLÍNICA MÁXIMA (GRAU A): Aprovado pela FDA, EMA e Anvisa com vasta literatura clínica (programa STEP 1 a 8, NEJM 2021). Protocolo de titulação mensal mandatória para evitar êmese severa e desidratação."
     ],
     "sources": [
-      "Once-Weekly Semaglutide in Adults with Overweight or Obesity (STEP-1)",
-      "Semaglutide and Cardiovascular Outcomes in Obesity without Diabetes (SELECT Trial)"
+      "Once-Weekly Semaglutide in Adults with Overweight or Obesity (STEP-1). PMID: 33567185.",
+      "Semaglutide and Cardiovascular Outcomes in Obesity without Diabetes (SELECT Trial). PMID: 37952131."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -578,8 +578,8 @@
       "EVIDÊNCIA CLÍNICA MÁXIMA (GRAU A): Aprovado com base nos ensaios SURMOUNT-1 (NEJM 2022) e SURPASS. Apresentou média de perda de até 22.5% do peso corporal total na dose de 15 mg."
     ],
     "sources": [
-      "Tirzepatide Once Weekly for the Treatment of Obesity (SURMOUNT-1)",
-      "Tirzepatide versus Semaglutide Once Weekly in Patients with Type 2 Diabetes (SURPASS-2)"
+      "Tirzepatide Once Weekly for the Treatment of Obesity (SURMOUNT-1). PMID: 35658024.",
+      "Tirzepatide versus Semaglutide Once Weekly in Patients with Type 2 Diabetes (SURPASS-2). PMID: 34170647."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
@@ -2907,7 +2907,7 @@
       "APROVAÇÃO REGULATÓRIA FORMAL (FDA 2017 / 2022 NDA 208743): Abaloparatida (Tymlos®) é aprovada pela FDA para o tratamento de mulheres na pós-menopausa com osteoporose de alto risco para fratura e para aumento de massa óssea em homens com osteoporose de alto risco. A autorização FDA não implica registro automático na Anvisa ou EMA (onde o pedido foi retirado pelo patrocinador em 2018)."
     ],
     "sources": [
-      "Effect of Abaloparatide vs Placebo on New Vertebral Fractures in Postmenopausal Women With Osteoporosis: A Randomized Clinical Trial"
+      "Effect of Abaloparatide vs Placebo on New Vertebral Fractures in Postmenopausal Women With Osteoporosis: A Randomized Clinical Trial. PMID: 27533157."
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
