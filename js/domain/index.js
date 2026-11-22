@@ -9,17 +9,24 @@
     const { COMPOUNDS_STORE } = require('./compounds.js');
     const { STACKS_STORE } = require('./stacks.js');
     const { PROTOCOLS_STORE } = require('./protocols.js');
-    module.exports = factory(COMPOUNDS_STORE, STACKS_STORE, PROTOCOLS_STORE);
+    let stackEvidence = null;
+    try {
+      stackEvidence = require('./stack-evidence.js').STACK_EVIDENCE_STORE;
+    } catch (err) {
+      stackEvidence = null;
+    }
+    module.exports = factory(COMPOUNDS_STORE, STACKS_STORE, PROTOCOLS_STORE, stackEvidence);
   } else {
-    root.DomainEngine = factory(root.COMPOUNDS_STORE, root.STACKS_STORE, root.PROTOCOLS_STORE);
+    root.DomainEngine = factory(root.COMPOUNDS_STORE, root.STACKS_STORE, root.PROTOCOLS_STORE, root.STACK_EVIDENCE_STORE);
   }
-}(typeof self !== 'undefined' ? self : this, function (compounds, stacks, protocols) {
+}(typeof self !== 'undefined' ? self : this, function (compounds, stacks, protocols, stackEvidence) {
   'use strict';
 
-  function createEngineInstance(cList, sList, pList) {
+  function createEngineInstance(cList, sList, pList, evidenceStore) {
     const activeCompounds = cList || [];
     const activeStacks = sList || [];
     const activeProtocols = pList || [];
+    const activeStackEvidence = (evidenceStore && evidenceStore.stacks) || {};
 
     const compoundsMap = new Map(activeCompounds.map(c => [c.id, c]));
     const stacksMap = new Map(activeStacks.map(s => [s.id, s]));
@@ -47,6 +54,16 @@
 
     function getProtocolsByStack(stackId) {
       return activeProtocols.filter(p => p.subjectType === 'stack' && p.stackId === stackId);
+    }
+
+    // Evidencia documental por componente (M2 Lotes 1-3). Retorna null quando o
+    // stack nao possui matriz de evidencia registrada.
+    function getStackEvidence(stackId) {
+      return activeStackEvidence[stackId] || null;
+    }
+
+    function getAllStackEvidence() {
+      return activeStackEvidence;
     }
 
     // 2. Referential Integrity Validator (supports custom stores parameterization)
@@ -208,6 +225,7 @@
           primarySources: s.sources || [],
           protocol: primaryProto,
           protocols: sProtos,
+          evidenceMatrix: getStackEvidence(s.id),
           auditDate: "2026-11-08"
         };
       });
@@ -220,6 +238,8 @@
       getAllStacks,
       getProtocolsByCompound,
       getProtocolsByStack,
+      getStackEvidence,
+      getAllStackEvidence,
       validateReferentialIntegrity,
       rebuildPeptidesDatabase,
       rebuildResearchStacks,
@@ -227,5 +247,5 @@
     };
   }
 
-  return createEngineInstance(compounds, stacks, protocols);
+  return createEngineInstance(compounds, stacks, protocols, stackEvidence);
 }));
