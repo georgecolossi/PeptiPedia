@@ -5357,6 +5357,409 @@
     ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
+  },
+  {
+    "id": "proto-stack-tesamorelin-ipamorelin-visceral-stack",
+    "subjectType": "stack",
+    "compoundId": null,
+    "stackId": "tesamorelin-ipamorelin-visceral-stack",
+    "protocolName": "Lipólise Visceral e Otimização GH (Tesamorelin + Ipamorelin) — Protocolo de Administração",
+    "protocolCategory": "compounding_practice",
+    "evidenceCategory": "documented_off_label_combination",
+    "verificationStatus": "literature_concordant",
+    "population": "Adultos com acúmulo excessivo de gordura visceral ou declínio somatotrófico funcional",
+    "indication": "Secretagogos de GH",
+    "route": "Subcutânea (SC)",
+    "dose": "Composta",
+    "doseUnit": "mg / mcg mistos",
+    "unitType": "composite",
+    "derivedConversions": [],
+    "concentration": null,
+    "concentrationUnit": null,
+    "frequency": "Tesamorelin 1 mg a 2 mg SC diário ao deitar; Ipamorelin 200 a 300 mcg SC ao deitar (administrações separadas recomendadas).",
+    "duration": "8 a 12 semanas",
+    "administrationContext": "Manhã: Em jejum se houver dose fracionada | Noite: Tesamorelin 1-2 mg SC + Ipamorelin 250 mcg SC ao deitar | Washout: Intervalo de 4 a 6 semanas com monitoramento de IGF-1.",
+    "formulation": "Frascos separados liofilizados reconstitutíveis para injeções independentes",
+    "reconstitutionInformation": {
+      "diluent": "Água Bacteriostática (BAC) 0,9%",
+      "volume": "3.0 mL",
+      "resultingConcentration": "Tesamorelin: 3,33 mg/mL; Ipamorelin: 0,67 mg/mL"
+    },
+    "stabilityConditions": "Refrigerado a 2-8°C protegido da luz por até 21 dias.",
+    "contraindications": [
+      "Contraindicado em neoplasias ativas, gravidez ou hipersensibilidade conhecida a análogos GHRH/GHRP."
+    ],
+    "adverseEffects": [
+      "Retenção hídrica leve",
+      "Artralgia transitória",
+      "Eritema no sítio de injeção"
+    ],
+    "limitations": [
+      "Ausência de ensaios clínicos com a combinação em frasco único; requer monitoramento glicêmico periódico."
+    ],
+    "sources": [
+      "Tesamorelina ensaios de fase 3 lipodistrofia — JAIDS 2010 (PMID 20431394)",
+      "Ipamorelin seletividade in vitro/animal — Eur J Endocrinol 1998 (PMID 9849822)"
+    ],
+    "reviewedAt": "2026-11-22"
+  },
+  {
+    "id": "proto-stack-gh-secretagogue-triad-stack",
+    "subjectType": "stack",
+    "compoundId": null,
+    "stackId": "gh-secretagogue-triad-stack",
+    "protocolName": "Tríade Secretagoga Hipofisária (CJC-1295 + Ipamorelin + GHRP-2) — Protocolo de Administração",
+    "protocolCategory": "community_reported",
+    "evidenceCategory": "commercial_blend",
+    "verificationStatus": "community_unvalidated",
+    "population": "Indivíduos em programas experimentais de amplificação somatotrófica suprafisiológica",
+    "indication": "Secretagogos de GH",
+    "route": "Subcutânea (SC)",
+    "dose": "Composta",
+    "doseUnit": "mcg mistos",
+    "unitType": "composite",
+    "derivedConversions": [],
+    "concentration": null,
+    "concentrationUnit": null,
+    "frequency": "100 mcg de cada composto por aplicação, 1 a 3 vezes ao dia em jejum estrito.",
+    "duration": "6 a 8 semanas",
+    "administrationContext": "Manhã: 100 mcg de cada em jejum | Noite: 100 mcg de cada ao deitar | Washout: Pausa mínima de 4 semanas para prevenir dessensibilização dos receptores de grelina.",
+    "formulation": "Blend comercial liofilizado pré-misturado ou frascos independentes",
+    "reconstitutionInformation": {
+      "diluent": "Água Bacteriostática (BAC) 0,9%",
+      "volume": "3.0 mL",
+      "resultingConcentration": "CJC-1295: 1,67 mg/mL; Ipamorelin: 1,67 mg/mL; GHRP-2: 1,67 mg/mL"
+    },
+    "stabilityConditions": "Refrigerado a 2-8°C protegido da luz por até 21 dias.",
+    "contraindications": [
+      "Histórico de malignidade, adenoma hipofisário ou desregulação glicêmica severa."
+    ],
+    "adverseEffects": [
+      "Pico transitório de fome e cortisol (mediado por GHRP-2)",
+      "Letargia matinal",
+      "Parestesias"
+    ],
+    "limitations": [
+      "A tríade combinada carece de dados de segurança toxicológica crônica em humanos sob diretrizes ICH."
+    ],
+    "sources": [
+      "CJC-1295 farmacocinética — J Clin Endocrinol Metab 2006 (PMID 16352683)",
+      "Ipamorelin seletividade in vitro — Eur J Endocrinol 1998 (PMID 9849822)",
+      "GHRP-2 estimulação hipofisária — J Clin Endocrinol Metab 1997 (PMID 9141536)"
+    ],
+    "reviewedAt": "2026-11-22"
+  },
+  {
+    "id": "proto-stack-tirzepatide-bpc157-gastro-stack",
+    "subjectType": "stack",
+    "compoundId": null,
+    "stackId": "tirzepatide-bpc157-gastro-stack",
+    "protocolName": "Co-terapia Incretínica Gastro-Protegida (Tirzepatide + BPC-157) — Protocolo de Administração",
+    "protocolCategory": "compounding_practice",
+    "evidenceCategory": "commercial_blend",
+    "verificationStatus": "literature_concordant",
+    "population": "Pacientes em escalonamento de co-agonistas GLP-1/GIP com dispepsia, náuseas ou refluxo refratário",
+    "indication": "Metabolismo & Perda de Peso",
+    "route": "Subcutânea (SC) em sítios anatômicos separados",
+    "dose": "Composta",
+    "doseUnit": "mg / mcg mistos",
+    "unitType": "composite",
+    "derivedConversions": [],
+    "concentration": null,
+    "concentrationUnit": null,
+    "frequency": "Tirzepatide: 2,5 mg a 15 mg SC uma vez por semana; BPC-157: 250 a 500 mcg SC ou oral 1 a 2 vezes ao dia.",
+    "duration": "Ciclos contínuos de titulação incretínica de 12 a 24 semanas",
+    "administrationContext": "Manhã: BPC-157 250 mcg oral ou SC | Noite: BPC-157 250 mcg SC se persistirem sintomas GI | Washout: Não aplicável durante titulação terapêutica contínua.",
+    "formulation": "Caneta comercial de Tirzepatida aprovada + frasco estéril separado de BPC-157 (NÃO misturar em seringa única)",
+    "reconstitutionInformation": {
+      "diluent": "Água Bacteriostática (BAC) 0,9% para BPC-157; solução comercial pronta para Tirzepatida",
+      "volume": "2.0 mL",
+      "resultingConcentration": "BPC-157: 2,5 mg/mL; Tirzepatide: conforme caneta (ex: 10 mg/0,5 mL)"
+    },
+    "stabilityConditions": "Refrigerado a 2-8°C ao abrigo de luz.",
+    "contraindications": [
+      "Histórico pessoal ou familiar de carcinoma medular de tireoide (MTC) ou NEM 2."
+    ],
+    "adverseEffects": [
+      "Náuseas leves",
+      "Obstipação intestinal",
+      "Dor no sítio de injeção"
+    ],
+    "limitations": [
+      "Incompatibilidade físico-química severa impede mistura no mesmo frasco; protocolos mistos comerciais violam boas práticas farmacotécnicas."
+    ],
+    "sources": [
+      "SURMOUNT-1 ensaio clínico — N Engl J Med 2022 (PMID 35658024)",
+      "BPC-157 integridade da mucosa digestiva — Curr Pharm Des 2011 (PMID 21548867)"
+    ],
+    "reviewedAt": "2026-11-22"
+  },
+  {
+    "id": "proto-stack-ghk-cu-kpv-dermal-barrier-stack",
+    "subjectType": "stack",
+    "compoundId": null,
+    "stackId": "ghk-cu-kpv-dermal-barrier-stack",
+    "protocolName": "Duo Anti-inflamatório e Barreira Mucocutânea (GHK-Cu + KPV) — Protocolo de Administração",
+    "protocolCategory": "compounding_practice",
+    "evidenceCategory": "preclinical_combination",
+    "verificationStatus": "literature_concordant",
+    "population": "Indivíduos com dermatite inflamatória crônica, barreira cutânea comprometida ou pós-procedimentos ablativos",
+    "indication": "Regeneração & Tecidos",
+    "route": "Tópica ou Subcutânea (SC)",
+    "dose": "Composta",
+    "doseUnit": "mg / mcg mistos",
+    "unitType": "composite",
+    "derivedConversions": [],
+    "concentration": null,
+    "concentrationUnit": null,
+    "frequency": "GHK-Cu 2 mg SC + KPV 250 mcg SC uma vez ao dia, ou aplicação tópica a cada 12 horas.",
+    "duration": "4 a 8 semanas",
+    "administrationContext": "Manhã: Aplicação tópica no local ou dose SC de KPV 250 mcg | Noite: GHK-Cu 2 mg SC ao deitar | Washout: Intervalo de 4 semanas.",
+    "formulation": "Veículo dermatológico biocompatível em gel neutro (pH 6.5) ou frascos injetáveis separados",
+    "reconstitutionInformation": {
+      "diluent": "Água Bacteriostática (BAC) 0,9%",
+      "volume": "3.0 mL",
+      "resultingConcentration": "GHK-Cu: 16,67 mg/mL; KPV: 3,33 mg/mL"
+    },
+    "stabilityConditions": "Refrigerado a 2-8°C protegido da luz direta.",
+    "contraindications": [
+      "Hipersensibilidade ou alergia comprovada ao cobre metálico."
+    ],
+    "adverseEffects": [
+      "Eritema cutâneo transitório",
+      "Ardor local à injeção subcutânea"
+    ],
+    "limitations": [
+      "Carece de ensaios clínicos controlados de fase 3 na via combinada parenteral."
+    ],
+    "sources": [
+      "GHK-Cu revisão epigenética — Int J Mol Sci 2018 (PMID 29986520)",
+      "KPV propriedades anti-inflamatórias — Peptides 2005 (PMID 15820320)"
+    ],
+    "reviewedAt": "2026-11-22"
+  },
+  {
+    "id": "proto-stack-hair-follicle-regeneration-stack",
+    "subjectType": "stack",
+    "compoundId": null,
+    "stackId": "hair-follicle-regeneration-stack",
+    "protocolName": "Regeneração Folicular e Densidade Capilar (GHK-Cu + AHK-Cu) — Protocolo de Administração",
+    "protocolCategory": "compounding_practice",
+    "evidenceCategory": "commercial_blend",
+    "verificationStatus": "literature_concordant",
+    "population": "Homens e mulheres com afinamento capilar, alopecia androgenética inicial ou eflúvio telógeno",
+    "indication": "Regeneração & Tecidos",
+    "route": "Tópica Capilar (Couro Cabeludo)",
+    "dose": "1 a 2 mL de solução tópica (1% de cada peptídeo)",
+    "doseUnit": "mL solução tópica",
+    "unitType": "volume",
+    "derivedConversions": [],
+    "concentration": 20.0,
+    "concentrationUnit": "mg/mL",
+    "frequency": "Aplicar 1 mL no couro cabeludo limpo e seco, 1 a 2 vezes ao dia, com massagem suave.",
+    "duration": "16 a 24 semanas de uso contínuo para avaliação de resposta folicular",
+    "administrationContext": "Manhã: 1 mL no couro cabeludo após o banho | Noite: 1 mL no couro cabeludo antes de dormir | Washout: Não aplicável em terapia tópica crônica.",
+    "formulation": "Loção capilar hidroalcoólica com surfactante suave e solubilizante lipossomado",
+    "reconstitutionInformation": {
+      "diluent": "Veículo loção hidroalcoólica magistral 50 mL",
+      "volume": "50 mL",
+      "resultingConcentration": "GHK-Cu: 10 mg/mL (1%); AHK-Cu: 10 mg/mL (1%)"
+    },
+    "stabilityConditions": "Temperatura ambiente controlada (15-25°C) em frasco âmbar conta-gotas.",
+    "contraindications": [
+      "Couro cabeludo com escoriações abertas graves, infecção fúngica ativa ou psoríase extensa não tratada."
+    ],
+    "adverseEffects": [
+      "Coloração azulada/esverdeada temporária em fios muito claros",
+      "Descamação leve do couro cabeludo"
+    ],
+    "limitations": [
+      "Não deve ser injetado por via sistêmica na formulação veiculada para couro cabeludo."
+    ],
+    "sources": [
+      "GHK-Cu estimulação capilar — J Biomater Sci Polym Ed 2008 (PMID 18644225)",
+      "AHK-Cu proliferação papila dérmica — Biosci Biotechnol Biochem 2007 (PMID 17483602)"
+    ],
+    "reviewedAt": "2026-11-22"
+  },
+  {
+    "id": "proto-stack-intimacy-neuroendocrine-duo-stack",
+    "subjectType": "stack",
+    "compoundId": null,
+    "stackId": "intimacy-neuroendocrine-duo-stack",
+    "protocolName": "Sinergia Neuroendócrina e Intimidade (PT-141 + Oxytocin) — Protocolo de Administração",
+    "protocolCategory": "compounding_practice",
+    "evidenceCategory": "commercial_blend",
+    "verificationStatus": "literature_concordant",
+    "population": "Adultos com disfunção de desejo sexual hipoativo (HSDD) ou anorgasmia neurogênica refratária",
+    "indication": "Libido & Melanocortinas",
+    "route": "Subcutânea (PT-141) e Sublingual/Intranasal (Oxitocina)",
+    "dose": "Composta",
+    "doseUnit": "mg / UI mistos",
+    "unitType": "composite",
+    "derivedConversions": [],
+    "concentration": null,
+    "concentrationUnit": null,
+    "frequency": "PT-141: 1 mg a 1,75 mg SC 45 a 60 minutos antes da relação (máximo 8 vezes ao mês); Oxitocina: 20 a 50 UI sublingual 15 min antes.",
+    "duration": "Uso sob demanda (PRN)",
+    "administrationContext": "Demanda: PT-141 1,5 mg SC 60 min pré-evento + Oxitocina 25 UI sublingual 15 min pré-evento | Limite estrito de no máximo 1 aplicação em 24h e 8 aplicações/mês.",
+    "formulation": "Autoinjetor/frasco SC de PT-141 separado de pastilhas sublinguais de Oxitocina",
+    "reconstitutionInformation": {
+      "diluent": "Água Bacteriostática (BAC) 0,9% para PT-141 injetável",
+      "volume": "2.0 mL",
+      "resultingConcentration": "PT-141: 5 mg/mL; Oxitocina: pastilhas magistrais 25 UI"
+    },
+    "stabilityConditions": "PT-141 refrigerado a 2-8°C; Oxitocina liofilizada ao abrigo de umidade e calor.",
+    "contraindications": [
+      "Hipertensão arterial não controlada ou doença cardiovascular aterosclerótica grave."
+    ],
+    "adverseEffects": [
+      "Pico transitório de pressão arterial",
+      "Náuseas moderadas pós-injeção",
+      "Rubor facial"
+    ],
+    "limitations": [
+      "A coformulação em troche sublingual misto reduz drasticamente a biodisponibilidade do PT-141 comparado à via subcutânea validada em ensaios clínicos."
+    ],
+    "sources": [
+      "Bremelanotida ensaios RECONNECT — Obstet Gynecol 2019 (PMID 31599838)",
+      "Oxitocina e resposta sexual humana — Horm Behav 2012 (PMID 22446187)"
+    ],
+    "reviewedAt": "2026-11-22"
+  },
+  {
+    "id": "proto-stack-circadian-deep-sleep-stack",
+    "subjectType": "stack",
+    "compoundId": null,
+    "stackId": "circadian-deep-sleep-stack",
+    "protocolName": "Sincronização Circadiana e Sono Delta (DSIP + Epitalon) — Protocolo de Administração",
+    "protocolCategory": "community_reported",
+    "evidenceCategory": "preclinical_combination",
+    "verificationStatus": "literature_concordant",
+    "population": "Adultos sob dessincronização circadiana, envelhecimento fisiológico ou distúrbios da arquitetura de sono delta",
+    "indication": "Longevidade & Mitocôndria",
+    "route": "Subcutânea (SC)",
+    "dose": "Composta",
+    "doseUnit": "mcg / mg mistos",
+    "unitType": "composite",
+    "derivedConversions": [],
+    "concentration": null,
+    "concentrationUnit": null,
+    "frequency": "DSIP 100 a 250 mcg SC ao deitar (3 a 5 noites por semana); Epitalon 5 mg a 10 mg SC em ciclo noturno de 10 a 20 dias.",
+    "duration": "Ciclo de sincronização de 2 a 3 semanas, repetido 2 vezes ao ano",
+    "administrationContext": "Noite: Epitalon 5 mg SC + DSIP 150 mcg SC 30 minutos antes do repouso em ambiente escuro | Manhã: Exposição imediata à luz solar | Washout: Intervalo mínimo de 3 meses para ciclos de Epitalon.",
+    "formulation": "Frascos liofilizados reconstitutíveis administrados em seringas separadas",
+    "reconstitutionInformation": {
+      "diluent": "Água Bacteriostática (BAC) 0,9%",
+      "volume": "3.0 mL",
+      "resultingConcentration": "Epitalon: 3,33 mg/mL; DSIP: 1,67 mg/mL"
+    },
+    "stabilityConditions": "Refrigerado a 2-8°C protegido da luz por até 21 dias.",
+    "contraindications": [
+      "Sonolência diurna severa sem diagnóstico etiológico, narcolepsia ou gestação."
+    ],
+    "adverseEffects": [
+      "Sonolência residual ao despertar",
+      "Sonhos vívidos nas primeiras noites"
+    ],
+    "limitations": [
+      "Inexistem ensaios clínicos duplo-cegos ocidentais de fase 3 avaliando a combinação de ambos os peptídeos."
+    ],
+    "sources": [
+      "DSIP regulação do sono humano — Neurosci Biobehav Rev 1984 (PMID 6391925)",
+      "Epitalon melatonina e longevidade — Neuro Endocrinol Lett 2001 (PMID 11756844)"
+    ],
+    "reviewedAt": "2026-11-22"
+  },
+  {
+    "id": "proto-stack-lipo-burn-gh-amplifier-stack",
+    "subjectType": "stack",
+    "compoundId": null,
+    "stackId": "lipo-burn-gh-amplifier-stack",
+    "protocolName": "Amplificação Lipolítica e GH (AOD-9604 + CJC-1295 + Ipamorelin) — Protocolo de Administração",
+    "protocolCategory": "community_reported",
+    "evidenceCategory": "commercial_blend",
+    "verificationStatus": "community_unvalidated",
+    "population": "Indivíduos em estratégias empíricas de redução de gordura corporal associadas a secretagogos de GH",
+    "indication": "Secretagogos de GH",
+    "route": "Subcutânea (SC)",
+    "dose": "Composta",
+    "doseUnit": "mcg mistos",
+    "unitType": "composite",
+    "derivedConversions": [],
+    "concentration": null,
+    "concentrationUnit": null,
+    "frequency": "AOD-9604 300 mcg + CJC-1295 100 mcg + Ipamorelin 100 mcg SC pela manhã em jejum estrito pré-treino.",
+    "duration": "8 a 12 semanas",
+    "administrationContext": "Manhã: Aplicação SC dos compostos em jejum completo de pelo menos 8h, aguardando 45 min antes da primeira refeição | Washout: 4 semanas.",
+    "formulation": "Blend comercial liofilizado pré-misturado ou frascos independentes",
+    "reconstitutionInformation": {
+      "diluent": "Água Bacteriostática (BAC) 0,9%",
+      "volume": "3.0 mL",
+      "resultingConcentration": "AOD-9604: 2 mg/mL; CJC-1295: 1 mg/mL; Ipamorelin: 1 mg/mL"
+    },
+    "stabilityConditions": "Refrigerado a 2-8°C ao abrigo de luz.",
+    "contraindications": [
+      "Diabetes mellitus descompensado, história de neoplasias ativas ou hipersensibilidade."
+    ],
+    "adverseEffects": [
+      "Leve turvação da solução liofilizada se reconstituída em diluente ácido",
+      "Cefaleia transitória"
+    ],
+    "limitations": [
+      "AOD-9604 foi descontinuado do desenvolvimento clínico formal de fase 3 para obesidade por falta de eficácia superior estatisticamente robusta em alguns desfechos."
+    ],
+    "sources": [
+      "AOD-9604 ensaios clínicos — Int J Obes 2004 (PMID 15616614)",
+      "CJC-1295 farmacocinética — J Clin Endocrinol Metab 2006 (PMID 16352683)",
+      "Ipamorelin seletividade in vitro — Eur J Endocrinol 1998 (PMID 9849822)"
+    ],
+    "reviewedAt": "2026-11-22"
+  },
+  {
+    "id": "proto-stack-cagrisema-incretin-metabolic-stack",
+    "subjectType": "stack",
+    "compoundId": null,
+    "stackId": "cagrisema-incretin-metabolic-stack",
+    "protocolName": "Co-agonismo Dual Incretínico e Amilina (CagriSema) — Protocolo Clínico",
+    "protocolCategory": "clinical_trial",
+    "evidenceCategory": "clinical_combination",
+    "verificationStatus": "formally_validated",
+    "population": "Adultos com obesidade (IMC >= 30 kg/m²) ou sobrepeso (IMC >= 27 kg/m²) com comorbidades metabólicas",
+    "indication": "Metabolismo & Perda de Peso",
+    "route": "Subcutânea (SC)",
+    "dose": "Co-formulação em escala progressiva",
+    "doseUnit": "mg co-formulados",
+    "unitType": "mass",
+    "derivedConversions": [],
+    "concentration": 4.8,
+    "concentrationUnit": "mg/mL",
+    "frequency": "Injeção SC semanal com titulação escalonada mensal: 0,25 mg / 0,5 mg / 1,0 mg / 1,7 mg / 2,4 mg de cada componente.",
+    "duration": "32 a 68 semanas sob protocolo de ensaio clínico REDEFINE",
+    "administrationContext": "Semanal: Administrado no mesmo dia de cada semana, a qualquer hora, com ou sem alimentos | Washout: Não aplicável durante tratamento de manutenção metabólica crônica.",
+    "formulation": "Solução aquosa estéril límpida co-formulada em dispositivo injetor de dose fixa",
+    "reconstitutionInformation": {
+      "diluent": "Solução líquida farmacêutica estéril pré-preenchida de fábrica",
+      "volume": "1.0 mL",
+      "resultingConcentration": "Semaglutide: 2,4 mg/mL; Cagrilintide: 2,4 mg/mL"
+    },
+    "stabilityConditions": "Refrigerado a 2-8°C; após início de uso, manter até 30 dias em temperatura ambiente < 30°C.",
+    "contraindications": [
+      "Histórico pessoal ou familiar de carcinoma medular de tireoide (MTC) ou Síndrome de Neoplasia Endócrina Múltipla tipo 2 (NEM 2)."
+    ],
+    "adverseEffects": [
+      "Náuseas e vômitos dose-dependentes",
+      "Diarreia ou constipação",
+      "Risco de hipoglicemia se associado a sulfonilureias"
+    ],
+    "limitations": [
+      "Combinação proprietária em fase final de avaliação regulatória; formulações manipuladas não possuem o mesmo perfil farmacocinético do dispositivo patenteado."
+    ],
+    "sources": [
+      "Ensaio de fase 2 CagriSema — Lancet 2023 (PMID 37366315)",
+      "Cagrilintida ensaio REDEFINE — Lancet 2021 (PMID 34793719)"
+    ],
+    "reviewedAt": "2026-11-22"
   }
 ];
 }));

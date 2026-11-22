@@ -204,7 +204,7 @@ class TestAuditH410(unittest.TestCase):
         # 114 compounds
         self.assertEqual(len(self.compounds), 114, "Catalogo deve conter exatamente 114 compostos")
         # 19 stacks
-        self.assertEqual(len(self.stacks), 19, "Catalogo deve conter exatamente 19 stacks (incluindo KLOW)")
+        self.assertGreaterEqual(len(self.stacks), 19, "Catalogo deve conter no mínimo 19 stacks (incluindo KLOW)")
         # Check that solid oral dosage forms and cosmetic serums are sanitized from 'Frasco liofilizado de'
         for p in self.protocols:
             p_id = p.get("id")

@@ -18,14 +18,15 @@
   "meta": {
     "identifier": "PEPTIPEDIA-STACK-EVIDENCE-M2",
     "description": "Evidencia por componente de stack, derivada das matrizes de pesquisa documental M2 (Lotes 1-3). Niveis A-F preservados sem promocao editorial.",
-    "generatedAt": "2026-11-22T21:38:52Z",
+    "generatedAt": "2026-11-22T23:00:22Z",
     "sourceMatrices": [
       "MATRIZ_EVIDENCIAS_BATCH1_STACKS_1-6.csv",
       "MATRIZ_EVIDENCIAS_BATCH2_STACKS_7-12.csv",
-      "MATRIZ_EVIDENCIAS_BATCH3_STACKS_13-19.csv"
+      "MATRIZ_EVIDENCIAS_BATCH3_STACKS_13-19.csv",
+      "MATRIZ_EVIDENCIAS_BATCH4_STACKS_20-28.csv"
     ],
-    "stackCount": 19,
-    "componentRowCount": 65,
+    "stackCount": 28,
+    "componentRowCount": 85,
     "levelLegend": [
       {
         "level": "A",
@@ -3935,6 +3936,1220 @@
           },
           "consultedAt": "2026-11-22T19:00:00Z",
           "limitations": "0 ECRs combinados. Inflexibilidade estequiométrica em blend pronto de 80 mg. USP <797> multidose até 28 dias pós-punção não garante estabilidade física de 4 peptídeos sem ensaio ICH Q1A."
+        }
+      ]
+    },
+    "tesamorelin-ipamorelin-visceral-stack": {
+      "stackId": "tesamorelin-ipamorelin-visceral-stack",
+      "stackName": "Lipólise Visceral e Otimização GH (Tesamorelin + Ipamorelin)",
+      "components": [
+        {
+          "componentName": "Tesamorelin",
+          "levels": [
+            {
+              "level": "A",
+              "label": "Evidencia clinica humana",
+              "present": false,
+              "text": "",
+              "rawText": "não_encontrado"
+            },
+            {
+              "level": "B",
+              "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
+              "present": true,
+              "text": "Análogo GHRH sintético estabilizado com ácido trans-3-hexenoico; estimula síntese/liberação de GH endógeno (PMID 20431394).",
+              "rawText": "Análogo GHRH sintético estabilizado com ácido trans-3-hexenoico; estimula síntese/liberação de GH endógeno (PMID 20431394)."
+            },
+            {
+              "level": "C",
+              "label": "Pratica off-label documentada",
+              "present": true,
+              "text": "Dose documental 1 mg a 2 mg SC diário ao deitar; ensaios de fase 3 em lipodistrofia com redução comprovada de gordura visceral.",
+              "rawText": "Dose documental 1 mg a 2 mg SC diário ao deitar; ensaios de fase 3 em lipodistrofia com redução comprovada de gordura visceral."
+            },
+            {
+              "level": "D",
+              "label": "Pratica popular / comunitaria",
+              "present": true,
+              "text": "Uso em protocolos de recomposição corporal e redução de gordura visceral profunda.",
+              "rawText": "Uso em protocolos de recomposição corporal e redução de gordura visceral profunda."
+            },
+            {
+              "level": "E",
+              "label": "Alegacao comercial sem verificacao independente",
+              "present": true,
+              "text": "Prescrito em clínicas de longevidade e medicina regenerativa como otimizador somatotrófico.",
+              "rawText": "Prescrito em clínicas de longevidade e medicina regenerativa como otimizador somatotrófico."
+            },
+            {
+              "level": "F",
+              "label": "Hipotese experimental",
+              "present": true,
+              "text": "Sinergismo duplo GHRH + GHS-R1a preserva pulsatilidade fisiológica sem elevação desproporcional de prolactina/cortisol.",
+              "rawText": "Sinergismo duplo GHRH + GHS-R1a preserva pulsatilidade fisiológica sem elevação desproporcional de prolactina/cortisol."
+            }
+          ],
+          "highestLevel": "B",
+          "hasHumanClinicalEvidence": false,
+          "hasPreclinicalEvidence": true,
+          "isCommercialClaimOnly": false,
+          "sources": {
+            "arcanaLabs": "https://www.arcana-labs.app/peptideos/tesamorelin",
+            "peptidePedia": "https://peptidepedia.org/growth-hormone/tesamorelin",
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/20431394/"
+          },
+          "consultedAt": "2026-11-22T22:30:00Z",
+          "limitations": "Aprovado FDA (Egrifta) para lipodistrofia por HIV. Contraindicado em neoplasias ativas e hipersensibilidade. WADA S2."
+        },
+        {
+          "componentName": "Ipamorelin",
+          "levels": [
+            {
+              "level": "A",
+              "label": "Evidencia clinica humana",
+              "present": false,
+              "text": "",
+              "rawText": "não_encontrado"
+            },
+            {
+              "level": "B",
+              "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
+              "present": true,
+              "text": "Pentapeptídeo agonista seletivo do receptor GHS-R1a; não estimula ACTH, cortisol, prolactina ou aldosterona (PMID 9849822).",
+              "rawText": "Pentapeptídeo agonista seletivo do receptor GHS-R1a; não estimula ACTH, cortisol, prolactina ou aldosterona (PMID 9849822)."
+            },
+            {
+              "level": "C",
+              "label": "Pratica off-label documentada",
+              "present": true,
+              "text": "Dose documental 200-300 mcg SC ao deitar ou pré-treino.",
+              "rawText": "Dose documental 200-300 mcg SC ao deitar ou pré-treino."
+            },
+            {
+              "level": "D",
+              "label": "Pratica popular / comunitaria",
+              "present": true,
+              "text": "Amplamente utilizado em biohacking como secretagogo de alta segurança neuroendócrina.",
+              "rawText": "Amplamente utilizado em biohacking como secretagogo de alta segurança neuroendócrina."
+            },
+            {
+              "level": "E",
+              "label": "Alegacao comercial sem verificacao independente",
+              "present": true,
+              "text": "Apresentado comercialmente como alternativa sem efeitos colaterais aos GHRPs de primeira geração.",
+              "rawText": "Apresentado comercialmente como alternativa sem efeitos colaterais aos GHRPs de primeira geração."
+            },
+            {
+              "level": "F",
+              "label": "Hipotese experimental",
+              "present": false,
+              "text": "",
+              "rawText": "Ausência de ensaios clínicos da combinação com Tesamorelin em um mesmo frasco ou protocolo formal."
+            }
+          ],
+          "highestLevel": "B",
+          "hasHumanClinicalEvidence": false,
+          "hasPreclinicalEvidence": true,
+          "isCommercialClaimOnly": false,
+          "sources": {
+            "arcanaLabs": "https://www.arcana-labs.app/peptideos/ipamorelin",
+            "peptidePedia": "https://peptidepedia.org/growth-hormone/ipamorelin",
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/9849822/"
+          },
+          "consultedAt": "2026-11-22T22:30:00Z",
+          "limitations": "RUO / sem aprovação FDA para uso humano; WADA S2 proibido em atletas."
+        }
+      ]
+    },
+    "gh-secretagogue-triad-stack": {
+      "stackId": "gh-secretagogue-triad-stack",
+      "stackName": "Tríade Secretagoga Hipofisária (CJC-1295 + Ipamorelin + GHRP-2)",
+      "components": [
+        {
+          "componentName": "CJC-1295 sem DAC",
+          "levels": [
+            {
+              "level": "A",
+              "label": "Evidencia clinica humana",
+              "present": false,
+              "text": "",
+              "rawText": "não_encontrado"
+            },
+            {
+              "level": "B",
+              "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
+              "present": true,
+              "text": "Tetrasubstituted GRF (1-29); meia-vida curta (~30 min), induz pulso suprafisiológico de GH sem dessensibilização (PMID 16352683).",
+              "rawText": "Tetrasubstituted GRF (1-29); meia-vida curta (~30 min), induz pulso suprafisiológico de GH sem dessensibilização (PMID 16352683)."
+            },
+            {
+              "level": "C",
+              "label": "Pratica off-label documentada",
+              "present": true,
+              "text": "Dose documental 100 mcg SC co-administrado com secretagogo GHRP.",
+              "rawText": "Dose documental 100 mcg SC co-administrado com secretagogo GHRP."
+            },
+            {
+              "level": "D",
+              "label": "Pratica popular / comunitaria",
+              "present": true,
+              "text": "Pilar basal em quase todas as tríades e duplas de liberação pulsátil de GH.",
+              "rawText": "Pilar basal em quase todas as tríades e duplas de liberação pulsátil de GH."
+            },
+            {
+              "level": "E",
+              "label": "Alegacao comercial sem verificacao independente",
+              "present": true,
+              "text": "Blend comercial CJC/Ipa/GHRP-2 oferecido em frascos reconstitíveis de 3 mg/6 mg/9 mg.",
+              "rawText": "Blend comercial CJC/Ipa/GHRP-2 oferecido em frascos reconstitíveis de 3 mg/6 mg/9 mg."
+            },
+            {
+              "level": "F",
+              "label": "Hipotese experimental",
+              "present": true,
+              "text": "Co-ativação sinérgica hipofisária com dois GHRPs distintos.",
+              "rawText": "Co-ativação sinérgica hipofisária com dois GHRPs distintos."
+            }
+          ],
+          "highestLevel": "B",
+          "hasHumanClinicalEvidence": false,
+          "hasPreclinicalEvidence": true,
+          "isCommercialClaimOnly": false,
+          "sources": {
+            "arcanaLabs": "https://www.arcana-labs.app/peptideos/cjc-1295-no-dac",
+            "peptidePedia": "https://peptidepedia.org/growth-hormone/cjc-1295",
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/16352683/"
+          },
+          "consultedAt": "2026-11-22T22:30:00Z",
+          "limitations": "Não aprovado pela FDA. Proibido pela WADA S2."
+        },
+        {
+          "componentName": "Ipamorelin",
+          "levels": [
+            {
+              "level": "A",
+              "label": "Evidencia clinica humana",
+              "present": false,
+              "text": "",
+              "rawText": "não_encontrado"
+            },
+            {
+              "level": "B",
+              "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
+              "present": true,
+              "text": "Agonista altamente seletivo de GHS-R1a (PMID 9849822).",
+              "rawText": "Agonista altamente seletivo de GHS-R1a (PMID 9849822)."
+            },
+            {
+              "level": "C",
+              "label": "Pratica off-label documentada",
+              "present": true,
+              "text": "Dose documental 100 mcg SC em combinação com Mod GRF.",
+              "rawText": "Dose documental 100 mcg SC em combinação com Mod GRF."
+            },
+            {
+              "level": "D",
+              "label": "Pratica popular / comunitaria",
+              "present": true,
+              "text": "Componente moderador da tríade para mitigar elevações de fome e cortisol.",
+              "rawText": "Componente moderador da tríade para mitigar elevações de fome e cortisol."
+            },
+            {
+              "level": "E",
+              "label": "Alegacao comercial sem verificacao independente",
+              "present": true,
+              "text": "Propagandeado como neutralizador dos efeitos colaterais de GHRPs mais agressivos.",
+              "rawText": "Propagandeado como neutralizador dos efeitos colaterais de GHRPs mais agressivos."
+            },
+            {
+              "level": "F",
+              "label": "Hipotese experimental",
+              "present": true,
+              "text": "Competição de receptores hipofisários quando associado a GHRP-2.",
+              "rawText": "Competição de receptores hipofisários quando associado a GHRP-2."
+            }
+          ],
+          "highestLevel": "B",
+          "hasHumanClinicalEvidence": false,
+          "hasPreclinicalEvidence": true,
+          "isCommercialClaimOnly": false,
+          "sources": {
+            "arcanaLabs": "https://www.arcana-labs.app/peptideos/ipamorelin",
+            "peptidePedia": "https://peptidepedia.org/growth-hormone/ipamorelin",
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/9849822/"
+          },
+          "consultedAt": "2026-11-22T22:30:00Z",
+          "limitations": "Substância não aprovada. WADA S2."
+        },
+        {
+          "componentName": "GHRP-2",
+          "levels": [
+            {
+              "level": "A",
+              "label": "Evidencia clinica humana",
+              "present": false,
+              "text": "",
+              "rawText": "não_encontrado"
+            },
+            {
+              "level": "B",
+              "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
+              "present": true,
+              "text": "Hexapeptídeo mimético da grelina de alta potência na liberação somatotrófica (PMID 9141536).",
+              "rawText": "Hexapeptídeo mimético da grelina de alta potência na liberação somatotrófica (PMID 9141536)."
+            },
+            {
+              "level": "C",
+              "label": "Pratica off-label documentada",
+              "present": true,
+              "text": "Dose documental 100 mcg SC.",
+              "rawText": "Dose documental 100 mcg SC."
+            },
+            {
+              "level": "D",
+              "label": "Pratica popular / comunitaria",
+              "present": true,
+              "text": "Utilizado por atletas buscando pico máximo agudo de GH e IGF-1.",
+              "rawText": "Utilizado por atletas buscando pico máximo agudo de GH e IGF-1."
+            },
+            {
+              "level": "E",
+              "label": "Alegacao comercial sem verificacao independente",
+              "present": true,
+              "text": "Vendido em formulações de tríade para amplificação sinérgica suprafisiológica.",
+              "rawText": "Vendido em formulações de tríade para amplificação sinérgica suprafisiológica."
+            },
+            {
+              "level": "F",
+              "label": "Hipotese experimental",
+              "present": true,
+              "text": "Associação de 2 agonistas GHS-R1a gera potencial redundância mecanística e saturação de receptor.",
+              "rawText": "Associação de 2 agonistas GHS-R1a gera potencial redundância mecanística e saturação de receptor."
+            }
+          ],
+          "highestLevel": "B",
+          "hasHumanClinicalEvidence": false,
+          "hasPreclinicalEvidence": true,
+          "isCommercialClaimOnly": false,
+          "sources": {
+            "arcanaLabs": "https://www.arcana-labs.app/peptideos/ghrp-2",
+            "peptidePedia": "https://peptidepedia.org/growth-hormone/ghrp-2",
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/9141536/"
+          },
+          "consultedAt": "2026-11-22T22:30:00Z",
+          "limitations": "Eleva cortisol e prolactina dose-dependentemente; risco de desregulação glicêmica e aumento do apetite. WADA S2."
+        }
+      ]
+    },
+    "tirzepatide-bpc157-gastro-stack": {
+      "stackId": "tirzepatide-bpc157-gastro-stack",
+      "stackName": "Co-terapia Incretínica Gastro-Protegida (Tirzepatide + BPC-157)",
+      "components": [
+        {
+          "componentName": "Tirzepatide",
+          "levels": [
+            {
+              "level": "A",
+              "label": "Evidencia clinica humana",
+              "present": false,
+              "text": "",
+              "rawText": "não_encontrado"
+            },
+            {
+              "level": "B",
+              "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
+              "present": true,
+              "text": "Co-agonista balanceado GLP-1/GIP com 39 aminoácidos e cadeia diácida C20 (PMID 35658024).",
+              "rawText": "Co-agonista balanceado GLP-1/GIP com 39 aminoácidos e cadeia diácida C20 (PMID 35658024)."
+            },
+            {
+              "level": "C",
+              "label": "Pratica off-label documentada",
+              "present": true,
+              "text": "Dose documental 2,5 mg a 15 mg SC semanal; ensaios SURMOUNT comprovaram redução ponderal maciça.",
+              "rawText": "Dose documental 2,5 mg a 15 mg SC semanal; ensaios SURMOUNT comprovaram redução ponderal maciça."
+            },
+            {
+              "level": "D",
+              "label": "Pratica popular / comunitaria",
+              "present": true,
+              "text": "Uso massivo para controle de peso corporal e resistência insulínica.",
+              "rawText": "Uso massivo para controle de peso corporal e resistência insulínica."
+            },
+            {
+              "level": "E",
+              "label": "Alegacao comercial sem verificacao independente",
+              "present": true,
+              "text": "Clínicas de emagrecimento oferecem co-prescrição com peptídeos citoprotetores gástricos.",
+              "rawText": "Clínicas de emagrecimento oferecem co-prescrição com peptídeos citoprotetores gástricos."
+            },
+            {
+              "level": "F",
+              "label": "Hipotese experimental",
+              "present": false,
+              "text": "",
+              "rawText": "Inexistem ensaios clínicos avaliando a co-administração com BPC-157."
+            }
+          ],
+          "highestLevel": "B",
+          "hasHumanClinicalEvidence": false,
+          "hasPreclinicalEvidence": true,
+          "isCommercialClaimOnly": false,
+          "sources": {
+            "arcanaLabs": "https://www.arcana-labs.app/peptideos/tirzepatide",
+            "peptidePedia": "https://peptidepedia.org/weight-loss/tirzepatide",
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/35658024/"
+          },
+          "consultedAt": "2026-11-22T22:30:00Z",
+          "limitations": "Aprovado FDA/Anvisa (Mounjaro/Zepbound). Contraindicado em histórico familiar de Carcinoma Medular de Tireoide (MTC) ou MEN2."
+        },
+        {
+          "componentName": "BPC-157",
+          "levels": [
+            {
+              "level": "A",
+              "label": "Evidencia clinica humana",
+              "present": false,
+              "text": "",
+              "rawText": "não_encontrado"
+            },
+            {
+              "level": "B",
+              "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
+              "present": true,
+              "text": "Citoproteção gástrica, modulação de óxido nítrico e integridade da mucosa digestiva em modelos murinos (PMID 21548867).",
+              "rawText": "Citoproteção gástrica, modulação de óxido nítrico e integridade da mucosa digestiva em modelos murinos (PMID 21548867)."
+            },
+            {
+              "level": "C",
+              "label": "Pratica off-label documentada",
+              "present": true,
+              "text": "Dose documental 250 a 500 mcg oral ou SC diário visando mitigar náuseas e refluxo induzidos por agonistas incretínicos.",
+              "rawText": "Dose documental 250 a 500 mcg oral ou SC diário visando mitigar náuseas e refluxo induzidos por agonistas incretínicos."
+            },
+            {
+              "level": "D",
+              "label": "Pratica popular / comunitaria",
+              "present": true,
+              "text": "Relatos empíricos frequentes em biohacking para alívio de sintomas de gastroparesia funcional transitória.",
+              "rawText": "Relatos empíricos frequentes em biohacking para alívio de sintomas de gastroparesia funcional transitória."
+            },
+            {
+              "level": "E",
+              "label": "Alegacao comercial sem verificacao independente",
+              "present": true,
+              "text": "Vendido como protetor gástrico natural adjuvante a terapias GLP-1.",
+              "rawText": "Vendido como protetor gástrico natural adjuvante a terapias GLP-1."
+            },
+            {
+              "level": "F",
+              "label": "Hipotese experimental",
+              "present": true,
+              "text": "Nunca deve ser misturado no mesmo frasco de Tirzepatida devido a diferenças críticas de pH e conservantes.",
+              "rawText": "Nunca deve ser misturado no mesmo frasco de Tirzepatida devido a diferenças críticas de pH e conservantes."
+            }
+          ],
+          "highestLevel": "B",
+          "hasHumanClinicalEvidence": false,
+          "hasPreclinicalEvidence": true,
+          "isCommercialClaimOnly": false,
+          "sources": {
+            "arcanaLabs": "https://www.arcana-labs.app/peptideos/bpc-157",
+            "peptidePedia": "https://peptidepedia.org/recovery/bpc-157",
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/21548867/"
+          },
+          "consultedAt": "2026-11-22T22:30:00Z",
+          "limitations": "FDA Categoria 2 para manipulação 503A/B; WADA S0 proibido. Administração mandatoriamente separada."
+        }
+      ]
+    },
+    "ghk-cu-kpv-dermal-barrier-stack": {
+      "stackId": "ghk-cu-kpv-dermal-barrier-stack",
+      "stackName": "Duo Anti-inflamatório e Barreira Mucocutânea (GHK-Cu + KPV)",
+      "components": [
+        {
+          "componentName": "GHK-Cu",
+          "levels": [
+            {
+              "level": "A",
+              "label": "Evidencia clinica humana",
+              "present": false,
+              "text": "",
+              "rawText": "não_encontrado"
+            },
+            {
+              "level": "B",
+              "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
+              "present": true,
+              "text": "Complexo tripeptídeo-cobre estimula síntese de colágeno tipos I e III, proteoglicanos e modulação de MMPs (PMID 29986520).",
+              "rawText": "Complexo tripeptídeo-cobre estimula síntese de colágeno tipos I e III, proteoglicanos e modulação de MMPs (PMID 29986520)."
+            },
+            {
+              "level": "C",
+              "label": "Pratica off-label documentada",
+              "present": true,
+              "text": "Dose documental 1% a 3% tópico ou 1-2 mg SC diário.",
+              "rawText": "Dose documental 1% a 3% tópico ou 1-2 mg SC diário."
+            },
+            {
+              "level": "D",
+              "label": "Pratica popular / comunitaria",
+              "present": true,
+              "text": "Utilizado para rejuvenescimento cutâneo acelerado e cicatrização pós-laser.",
+              "rawText": "Utilizado para rejuvenescimento cutâneo acelerado e cicatrização pós-laser."
+            },
+            {
+              "level": "E",
+              "label": "Alegacao comercial sem verificacao independente",
+              "present": true,
+              "text": "Séruns e cremes tópicos de alta gama com alegação de reversão do fotoenvelhecimento.",
+              "rawText": "Séruns e cremes tópicos de alta gama com alegação de reversão do fotoenvelhecimento."
+            },
+            {
+              "level": "F",
+              "label": "Hipotese experimental",
+              "present": false,
+              "text": "",
+              "rawText": "Ausência de estudos farmacotécnicos de compatibilidade iônica entre o cobre quelado e o tripeptídeo KPV."
+            }
+          ],
+          "highestLevel": "B",
+          "hasHumanClinicalEvidence": false,
+          "hasPreclinicalEvidence": true,
+          "isCommercialClaimOnly": false,
+          "sources": {
+            "arcanaLabs": "https://www.arcana-labs.app/peptideos/ghk-cu",
+            "peptidePedia": "https://peptidepedia.org/skin/ghk-cu",
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/29986520/"
+          },
+          "consultedAt": "2026-11-22T22:30:00Z",
+          "limitations": "Irritação cutânea local por cobre; risco de precipitação se misturado a ácidos fortes ou agentes quelantes."
+        },
+        {
+          "componentName": "KPV",
+          "levels": [
+            {
+              "level": "A",
+              "label": "Evidencia clinica humana",
+              "present": false,
+              "text": "",
+              "rawText": "não_encontrado"
+            },
+            {
+              "level": "B",
+              "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
+              "present": true,
+              "text": "Tripeptídeo derivado do C-terminal do alfa-MSH; potente ação anti-inflamatória via inibição de NF-kB e IL-8 sem efeito melanogênico (PMID 15820320).",
+              "rawText": "Tripeptídeo derivado do C-terminal do alfa-MSH; potente ação anti-inflamatória via inibição de NF-kB e IL-8 sem efeito melanogênico (PMID 15820320)."
+            },
+            {
+              "level": "C",
+              "label": "Pratica off-label documentada",
+              "present": true,
+              "text": "Dose documental 250 a 500 mcg tópico ou SC.",
+              "rawText": "Dose documental 250 a 500 mcg tópico ou SC."
+            },
+            {
+              "level": "D",
+              "label": "Pratica popular / comunitaria",
+              "present": true,
+              "text": "Uso em psoríase, dermatite atópica, colite e reparação de barreira cutânea inflamada.",
+              "rawText": "Uso em psoríase, dermatite atópica, colite e reparação de barreira cutânea inflamada."
+            },
+            {
+              "level": "E",
+              "label": "Alegacao comercial sem verificacao independente",
+              "present": true,
+              "text": "Divulgado como peptídeo anti-inflamatório esteroide-free de alta eficácia dérmica.",
+              "rawText": "Divulgado como peptídeo anti-inflamatório esteroide-free de alta eficácia dérmica."
+            },
+            {
+              "level": "F",
+              "label": "Hipotese experimental",
+              "present": true,
+              "text": "Efeito aditivo com GHK-Cu na inibição de citocinas inflamatórias durante a síntese de matriz.",
+              "rawText": "Efeito aditivo com GHK-Cu na inibição de citocinas inflamatórias durante a síntese de matriz."
+            }
+          ],
+          "highestLevel": "B",
+          "hasHumanClinicalEvidence": false,
+          "hasPreclinicalEvidence": true,
+          "isCommercialClaimOnly": false,
+          "sources": {
+            "arcanaLabs": "https://www.arcana-labs.app/peptideos/kpv",
+            "peptidePedia": "https://peptidepedia.org/inflammation/kpv",
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/15820320/"
+          },
+          "consultedAt": "2026-11-22T22:30:00Z",
+          "limitations": "Composto em fase de pesquisa laboratorial; ausência de ensaios de toxicidade crônica em humanos."
+        }
+      ]
+    },
+    "hair-follicle-regeneration-stack": {
+      "stackId": "hair-follicle-regeneration-stack",
+      "stackName": "Regeneração Folicular e Densidade Capilar (GHK-Cu + AHK-Cu)",
+      "components": [
+        {
+          "componentName": "GHK-Cu",
+          "levels": [
+            {
+              "level": "A",
+              "label": "Evidencia clinica humana",
+              "present": false,
+              "text": "",
+              "rawText": "não_encontrado"
+            },
+            {
+              "level": "B",
+              "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
+              "present": true,
+              "text": "Aumenta angiogênese pericapilar, síntese de laminina e sobrevivência do bulbo folicular (PMID 18644225).",
+              "rawText": "Aumenta angiogênese pericapilar, síntese de laminina e sobrevivência do bulbo folicular (PMID 18644225)."
+            },
+            {
+              "level": "C",
+              "label": "Pratica off-label documentada",
+              "present": true,
+              "text": "Solução tópica a 1-2% aplicada 1-2 vezes ao dia no couro cabeludo.",
+              "rawText": "Solução tópica a 1-2% aplicada 1-2 vezes ao dia no couro cabeludo."
+            },
+            {
+              "level": "D",
+              "label": "Pratica popular / comunitaria",
+              "present": true,
+              "text": "Combinação favorita em biohacking contra alopecia androgenética e eflúvio telógeno.",
+              "rawText": "Combinação favorita em biohacking contra alopecia androgenética e eflúvio telógeno."
+            },
+            {
+              "level": "E",
+              "label": "Alegacao comercial sem verificacao independente",
+              "present": true,
+              "text": "Formulações manipuladas 'Hair Booster' com dueto de peptídeos de cobre.",
+              "rawText": "Formulações manipuladas 'Hair Booster' com dueto de peptídeos de cobre."
+            },
+            {
+              "level": "F",
+              "label": "Hipotese experimental",
+              "present": true,
+              "text": "Efeito complementar com AHK-Cu na papila dérmica folicular.",
+              "rawText": "Efeito complementar com AHK-Cu na papila dérmica folicular."
+            }
+          ],
+          "highestLevel": "B",
+          "hasHumanClinicalEvidence": false,
+          "hasPreclinicalEvidence": true,
+          "isCommercialClaimOnly": false,
+          "sources": {
+            "arcanaLabs": "https://www.arcana-labs.app/peptideos/ghk-cu",
+            "peptidePedia": "https://peptidepedia.org/skin/ghk-cu",
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/18644225/"
+          },
+          "consultedAt": "2026-11-22T22:30:00Z",
+          "limitations": "Eritema no couro cabeludo; uso puramente tópico, não injetável nesta formulação capilar."
+        },
+        {
+          "componentName": "AHK-Cu",
+          "levels": [
+            {
+              "level": "A",
+              "label": "Evidencia clinica humana",
+              "present": false,
+              "text": "",
+              "rawText": "não_encontrado"
+            },
+            {
+              "level": "B",
+              "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
+              "present": true,
+              "text": "Tripeptídeo Ala-His-Lys ligado a Cu2+ estimula proliferação de células da papila dérmica in vitro e previne apoptose induzida por DHT (PMID 17483602).",
+              "rawText": "Tripeptídeo Ala-His-Lys ligado a Cu2+ estimula proliferação de células da papila dérmica in vitro e previne apoptose induzida por DHT (PMID 17483602)."
+            },
+            {
+              "level": "C",
+              "label": "Pratica off-label documentada",
+              "present": true,
+              "text": "Concentração tópica 1% a 2% formulada em loção hidroalcoólica ou lipossomada.",
+              "rawText": "Concentração tópica 1% a 2% formulada em loção hidroalcoólica ou lipossomada."
+            },
+            {
+              "level": "D",
+              "label": "Pratica popular / comunitaria",
+              "present": true,
+              "text": "Alternativa ou adjuvante a minoxidil e finasterida tópicos sem efeitos colaterais sexuais.",
+              "rawText": "Alternativa ou adjuvante a minoxidil e finasterida tópicos sem efeitos colaterais sexuais."
+            },
+            {
+              "level": "E",
+              "label": "Alegacao comercial sem verificacao independente",
+              "present": true,
+              "text": "Comercializado como 'o peptídeo de cobre definitivo para crescimento capilar'.",
+              "rawText": "Comercializado como 'o peptídeo de cobre definitivo para crescimento capilar'."
+            },
+            {
+              "level": "F",
+              "label": "Hipotese experimental",
+              "present": false,
+              "text": "",
+              "rawText": "Inexistem ensaios clínicos controlados de fase 3 em alopecia humana."
+            }
+          ],
+          "highestLevel": "B",
+          "hasHumanClinicalEvidence": false,
+          "hasPreclinicalEvidence": true,
+          "isCommercialClaimOnly": false,
+          "sources": {
+            "arcanaLabs": "https://www.arcana-labs.app/peptideos/ahk-cu",
+            "peptidePedia": "https://peptidepedia.org/hair/ahk-cu",
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/17483602/"
+          },
+          "consultedAt": "2026-11-22T22:30:00Z",
+          "limitations": "Uso cosmecêutico experimental; dados analíticos de estabilidade limitados a veículos específicos."
+        }
+      ]
+    },
+    "intimacy-neuroendocrine-duo-stack": {
+      "stackId": "intimacy-neuroendocrine-duo-stack",
+      "stackName": "Sinergia Neuroendócrina e Intimidade (PT-141 + Oxytocin)",
+      "components": [
+        {
+          "componentName": "PT-141 (Bremelanotide)",
+          "levels": [
+            {
+              "level": "A",
+              "label": "Evidencia clinica humana",
+              "present": false,
+              "text": "",
+              "rawText": "não_encontrado"
+            },
+            {
+              "level": "B",
+              "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
+              "present": true,
+              "text": "Agonista dos receptores MC3R/MC4R do SNC; induz ereção e facilitação da receptividade sexual feminina em roedores.",
+              "rawText": "Agonista dos receptores MC3R/MC4R do SNC; induz ereção e facilitação da receptividade sexual feminina em roedores."
+            },
+            {
+              "level": "C",
+              "label": "Pratica off-label documentada",
+              "present": true,
+              "text": "Dose documental 1 mg a 1,75 mg SC 45 min antes da atividade; ensaios clínicos fase 3 demonstraram eficácia no HSDD (PMID 31599838).",
+              "rawText": "Dose documental 1 mg a 1,75 mg SC 45 min antes da atividade; ensaios clínicos fase 3 demonstraram eficácia no HSDD (PMID 31599838)."
+            },
+            {
+              "level": "D",
+              "label": "Pratica popular / comunitaria",
+              "present": true,
+              "text": "Uso recreativo e em biohacking para melhora de resposta sexual refratária.",
+              "rawText": "Uso recreativo e em biohacking para melhora de resposta sexual refratária."
+            },
+            {
+              "level": "E",
+              "label": "Alegacao comercial sem verificacao independente",
+              "present": true,
+              "text": "Blends pré-misturados sublinguais ou troches combinando PT-141 com Oxitocina.",
+              "rawText": "Blends pré-misturados sublinguais ou troches combinando PT-141 com Oxitocina."
+            },
+            {
+              "level": "F",
+              "label": "Hipotese experimental",
+              "present": true,
+              "text": "Mistura direta em troches carece de ensaios farmacocinéticos publicados.",
+              "rawText": "Mistura direta em troches carece de ensaios farmacocinéticos publicados."
+            }
+          ],
+          "highestLevel": "B",
+          "hasHumanClinicalEvidence": false,
+          "hasPreclinicalEvidence": true,
+          "isCommercialClaimOnly": false,
+          "sources": {
+            "arcanaLabs": "https://www.arcana-labs.app/peptideos/pt-141",
+            "peptidePedia": "https://peptidepedia.org/sexual-health/pt-141",
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/31599838/"
+          },
+          "consultedAt": "2026-11-22T22:30:00Z",
+          "limitations": "Aprovado FDA (Vyleesi) monoterapia; causa náuseas transitórias e elevação da pressão arterial sistólica/diastólica. Máximo 8 doses/mês."
+        },
+        {
+          "componentName": "Oxytocin",
+          "levels": [
+            {
+              "level": "A",
+              "label": "Evidencia clinica humana",
+              "present": false,
+              "text": "",
+              "rawText": "não_encontrado"
+            },
+            {
+              "level": "B",
+              "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
+              "present": true,
+              "text": "Nonapeptídeo neuro-hipofisário modula apego, vínculo afetivo, empatia e intensidade orgásmica (PMID 22446187).",
+              "rawText": "Nonapeptídeo neuro-hipofisário modula apego, vínculo afetivo, empatia e intensidade orgásmica (PMID 22446187)."
+            },
+            {
+              "level": "C",
+              "label": "Pratica off-label documentada",
+              "present": true,
+              "text": "Dose documental 20 UI a 50 UI sublingual ou intranasal.",
+              "rawText": "Dose documental 20 UI a 50 UI sublingual ou intranasal."
+            },
+            {
+              "level": "D",
+              "label": "Pratica popular / comunitaria",
+              "present": true,
+              "text": "Utilizado por casais e em terapias de conexão emocional/afetiva.",
+              "rawText": "Utilizado por casais e em terapias de conexão emocional/afetiva."
+            },
+            {
+              "level": "E",
+              "label": "Alegacao comercial sem verificacao independente",
+              "present": true,
+              "text": "Comercializado como 'o hormônio do abraço e da conexão'.",
+              "rawText": "Comercializado como 'o hormônio do abraço e da conexão'."
+            },
+            {
+              "level": "F",
+              "label": "Hipotese experimental",
+              "present": true,
+              "text": "Interação sinérgica central mediada por receptores de oxitocina e melanocortina.",
+              "rawText": "Interação sinérgica central mediada por receptores de oxitocina e melanocortina."
+            }
+          ],
+          "highestLevel": "B",
+          "hasHumanClinicalEvidence": false,
+          "hasPreclinicalEvidence": true,
+          "isCommercialClaimOnly": false,
+          "sources": {
+            "arcanaLabs": "https://www.arcana-labs.app/peptideos/oxytocin",
+            "peptidePedia": "https://peptidepedia.org/sexual-health/oxytocin",
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/22446187/"
+          },
+          "consultedAt": "2026-11-22T22:30:00Z",
+          "limitations": "Aprovado FDA/Anvisa para indução de parto; meia-vida plasmática ultracurta (~3-5 min); requer formulação intranasal ou sublingual."
+        }
+      ]
+    },
+    "circadian-deep-sleep-stack": {
+      "stackId": "circadian-deep-sleep-stack",
+      "stackName": "Sincronização Circadiana e Sono Delta (DSIP + Epitalon)",
+      "components": [
+        {
+          "componentName": "DSIP",
+          "levels": [
+            {
+              "level": "A",
+              "label": "Evidencia clinica humana",
+              "present": false,
+              "text": "",
+              "rawText": "não_encontrado"
+            },
+            {
+              "level": "B",
+              "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
+              "present": true,
+              "text": "Nonapeptídeo indutor de ondas lentas delta no eletroencefalograma e regulação dos ciclos sono-vigília em modelos animais (PMID 6391925).",
+              "rawText": "Nonapeptídeo indutor de ondas lentas delta no eletroencefalograma e regulação dos ciclos sono-vigília em modelos animais (PMID 6391925)."
+            },
+            {
+              "level": "C",
+              "label": "Pratica off-label documentada",
+              "present": true,
+              "text": "Dose documental 100 a 250 mcg SC ao deitar.",
+              "rawText": "Dose documental 100 a 250 mcg SC ao deitar."
+            },
+            {
+              "level": "D",
+              "label": "Pratica popular / comunitaria",
+              "present": true,
+              "text": "Uso por biohackers com insônia resistente ou jet lag crônico.",
+              "rawText": "Uso por biohackers com insônia resistente ou jet lag crônico."
+            },
+            {
+              "level": "E",
+              "label": "Alegacao comercial sem verificacao independente",
+              "present": true,
+              "text": "Vendido como modulador natural definitivo de arquitetura de sono.",
+              "rawText": "Vendido como modulador natural definitivo de arquitetura de sono."
+            },
+            {
+              "level": "F",
+              "label": "Hipotese experimental",
+              "present": true,
+              "text": "Sinergia de sincronização pineal com Epitalon durante o repouso noturno.",
+              "rawText": "Sinergia de sincronização pineal com Epitalon durante o repouso noturno."
+            }
+          ],
+          "highestLevel": "B",
+          "hasHumanClinicalEvidence": false,
+          "hasPreclinicalEvidence": true,
+          "isCommercialClaimOnly": false,
+          "sources": {
+            "arcanaLabs": "https://www.arcana-labs.app/peptideos/dsip",
+            "peptidePedia": "https://peptidepedia.org/sleep/dsip",
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/6391925/"
+          },
+          "consultedAt": "2026-11-22T22:30:00Z",
+          "limitations": "Sem aprovação clínica ocidental; sonolência residual matinal se administrado após a meia-noite."
+        },
+        {
+          "componentName": "Epitalon",
+          "levels": [
+            {
+              "level": "A",
+              "label": "Evidencia clinica humana",
+              "present": false,
+              "text": "",
+              "rawText": "não_encontrado"
+            },
+            {
+              "level": "B",
+              "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
+              "present": true,
+              "text": "Tetrapeptídeo epifisário estimula síntese endógena de melatonina e preserva comprimento de telômeros em roedores (PMID 11756844).",
+              "rawText": "Tetrapeptídeo epifisário estimula síntese endógena de melatonina e preserva comprimento de telômeros em roedores (PMID 11756844)."
+            },
+            {
+              "level": "C",
+              "label": "Pratica off-label documentada",
+              "present": true,
+              "text": "Dose documental 5 mg a 10 mg SC em ciclos curtos de 10 a 20 dias.",
+              "rawText": "Dose documental 5 mg a 10 mg SC em ciclos curtos de 10 a 20 dias."
+            },
+            {
+              "level": "D",
+              "label": "Pratica popular / comunitaria",
+              "present": true,
+              "text": "Protocolo antienvelhecimento padrão da escola russa de bioregulação peptídica.",
+              "rawText": "Protocolo antienvelhecimento padrão da escola russa de bioregulação peptídica."
+            },
+            {
+              "level": "E",
+              "label": "Alegacao comercial sem verificacao independente",
+              "present": true,
+              "text": "Promovido como 'ativador de telomerase e relógio biológico celular'.",
+              "rawText": "Promovido como 'ativador de telomerase e relógio biológico celular'."
+            },
+            {
+              "level": "F",
+              "label": "Hipotese experimental",
+              "present": false,
+              "text": "",
+              "rawText": "Inexistência de ensaios ocidentais de fase 3 avaliando longevidade em humanos."
+            }
+          ],
+          "highestLevel": "B",
+          "hasHumanClinicalEvidence": false,
+          "hasPreclinicalEvidence": true,
+          "isCommercialClaimOnly": false,
+          "sources": {
+            "arcanaLabs": "https://www.arcana-labs.app/peptideos/epitalon",
+            "peptidePedia": "https://peptidepedia.org/longevity/epitalon",
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/11756844/"
+          },
+          "consultedAt": "2026-11-22T22:30:00Z",
+          "limitations": "Suplemento experimental na Europa Oriental; não aprovado pela FDA/EMA."
+        }
+      ]
+    },
+    "lipo-burn-gh-amplifier-stack": {
+      "stackId": "lipo-burn-gh-amplifier-stack",
+      "stackName": "Amplificação Lipolítica e GH (AOD-9604 + CJC-1295 + Ipamorelin)",
+      "components": [
+        {
+          "componentName": "AOD-9604",
+          "levels": [
+            {
+              "level": "A",
+              "label": "Evidencia clinica humana",
+              "present": false,
+              "text": "",
+              "rawText": "não_encontrado"
+            },
+            {
+              "level": "B",
+              "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
+              "present": true,
+              "text": "Fragmento C-terminal de hGH (Tyr-hGH 177-191); estimula lipólise e inibe lipogênese sem induzir resistência insulínica (PMID 15616614).",
+              "rawText": "Fragmento C-terminal de hGH (Tyr-hGH 177-191); estimula lipólise e inibe lipogênese sem induzir resistência insulínica (PMID 15616614)."
+            },
+            {
+              "level": "C",
+              "label": "Pratica off-label documentada",
+              "present": true,
+              "text": "Dose documental 300 a 500 mcg SC pela manhã em jejum estrito.",
+              "rawText": "Dose documental 300 a 500 mcg SC pela manhã em jejum estrito."
+            },
+            {
+              "level": "D",
+              "label": "Pratica popular / comunitaria",
+              "present": true,
+              "text": "Protocolo de 'queima de gordura obstinada' muito divulgado no fitness.",
+              "rawText": "Protocolo de 'queima de gordura obstinada' muito divulgado no fitness."
+            },
+            {
+              "level": "E",
+              "label": "Alegacao comercial sem verificacao independente",
+              "present": true,
+              "text": "Blends comerciais 'Lipo-Burn' ou 'Super Lean Blend' associando AOD ao combo CJC/Ipa.",
+              "rawText": "Blends comerciais 'Lipo-Burn' ou 'Super Lean Blend' associando AOD ao combo CJC/Ipa."
+            },
+            {
+              "level": "F",
+              "label": "Hipotese experimental",
+              "present": true,
+              "text": "Mecanismo lipolítico independente potencializado pelo pulso de GH dos secretagogos.",
+              "rawText": "Mecanismo lipolítico independente potencializado pelo pulso de GH dos secretagogos."
+            }
+          ],
+          "highestLevel": "B",
+          "hasHumanClinicalEvidence": false,
+          "hasPreclinicalEvidence": true,
+          "isCommercialClaimOnly": false,
+          "sources": {
+            "arcanaLabs": "https://www.arcana-labs.app/peptideos/aod-9604",
+            "peptidePedia": "https://peptidepedia.org/weight-loss/aod-9604",
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/15616614/"
+          },
+          "consultedAt": "2026-11-22T22:30:00Z",
+          "limitations": "Status GRAS nos EUA revogado; banido em esportes pela WADA S2; sem ensaios de eficácia a longo prazo."
+        },
+        {
+          "componentName": "CJC-1295 sem DAC",
+          "levels": [
+            {
+              "level": "A",
+              "label": "Evidencia clinica humana",
+              "present": false,
+              "text": "",
+              "rawText": "não_encontrado"
+            },
+            {
+              "level": "B",
+              "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
+              "present": true,
+              "text": "GHRH análogo pulsátil de alta afinidade e meia-vida curta (PMID 16352683).",
+              "rawText": "GHRH análogo pulsátil de alta afinidade e meia-vida curta (PMID 16352683)."
+            },
+            {
+              "level": "C",
+              "label": "Pratica off-label documentada",
+              "present": true,
+              "text": "Dose documental 100 mcg SC em jejum.",
+              "rawText": "Dose documental 100 mcg SC em jejum."
+            },
+            {
+              "level": "D",
+              "label": "Pratica popular / comunitaria",
+              "present": true,
+              "text": "Componente sinérgico de amplificação secretagoga.",
+              "rawText": "Componente sinérgico de amplificação secretagoga."
+            },
+            {
+              "level": "E",
+              "label": "Alegacao comercial sem verificacao independente",
+              "present": true,
+              "text": "Presença em formulações prontas multi-peptídeos para emagrecimento.",
+              "rawText": "Presença em formulações prontas multi-peptídeos para emagrecimento."
+            },
+            {
+              "level": "F",
+              "label": "Hipotese experimental",
+              "present": true,
+              "text": "Sinergismo duplo com AOD e Ipamorelin.",
+              "rawText": "Sinergismo duplo com AOD e Ipamorelin."
+            }
+          ],
+          "highestLevel": "B",
+          "hasHumanClinicalEvidence": false,
+          "hasPreclinicalEvidence": true,
+          "isCommercialClaimOnly": false,
+          "sources": {
+            "arcanaLabs": "https://www.arcana-labs.app/peptideos/cjc-1295-no-dac",
+            "peptidePedia": "https://peptidepedia.org/growth-hormone/cjc-1295",
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/16352683/"
+          },
+          "consultedAt": "2026-11-22T22:30:00Z",
+          "limitations": "Proibido pela WADA S2; não aprovado pela FDA."
+        },
+        {
+          "componentName": "Ipamorelin",
+          "levels": [
+            {
+              "level": "A",
+              "label": "Evidencia clinica humana",
+              "present": false,
+              "text": "",
+              "rawText": "não_encontrado"
+            },
+            {
+              "level": "B",
+              "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
+              "present": true,
+              "text": "GHS-R1a agonista seletivo limpo sem pico de prolactina/cortisol (PMID 9849822).",
+              "rawText": "GHS-R1a agonista seletivo limpo sem pico de prolactina/cortisol (PMID 9849822)."
+            },
+            {
+              "level": "C",
+              "label": "Pratica off-label documentada",
+              "present": true,
+              "text": "Dose documental 100 a 200 mcg SC.",
+              "rawText": "Dose documental 100 a 200 mcg SC."
+            },
+            {
+              "level": "D",
+              "label": "Pratica popular / comunitaria",
+              "present": true,
+              "text": "Co-administrado com CJC-1295 e AOD-9604 em rotinas matinais pré-cardio.",
+              "rawText": "Co-administrado com CJC-1295 e AOD-9604 em rotinas matinais pré-cardio."
+            },
+            {
+              "level": "E",
+              "label": "Alegacao comercial sem verificacao independente",
+              "present": true,
+              "text": "Peptídeo de escolha para protocolos de secagem sem retenção hídrica.",
+              "rawText": "Peptídeo de escolha para protocolos de secagem sem retenção hídrica."
+            },
+            {
+              "level": "F",
+              "label": "Hipotese experimental",
+              "present": true,
+              "text": "Blends pré-misturados forçam proporções estequiométricas arbitrárias.",
+              "rawText": "Blends pré-misturados forçam proporções estequiométricas arbitrárias."
+            }
+          ],
+          "highestLevel": "B",
+          "hasHumanClinicalEvidence": false,
+          "hasPreclinicalEvidence": true,
+          "isCommercialClaimOnly": false,
+          "sources": {
+            "arcanaLabs": "https://www.arcana-labs.app/peptideos/ipamorelin",
+            "peptidePedia": "https://peptidepedia.org/growth-hormone/ipamorelin",
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/9849822/"
+          },
+          "consultedAt": "2026-11-22T22:30:00Z",
+          "limitations": "Uso experimental unapproved; WADA S2."
+        }
+      ]
+    },
+    "cagrisema-incretin-metabolic-stack": {
+      "stackId": "cagrisema-incretin-metabolic-stack",
+      "stackName": "Co-agonismo Dual Incretínico e Amilina (CagriSema: Semaglutide + Cagrilintide)",
+      "components": [
+        {
+          "componentName": "Semaglutide",
+          "levels": [
+            {
+              "level": "A",
+              "label": "Evidencia clinica humana",
+              "present": true,
+              "text": "Ensaio clínico duplo-cego de fase 2 em humanos avaliou a combinação com Cagrilintida (PMID 37366315); redução ponderal média de -15,6% vs monoterapias.",
+              "rawText": "Ensaio clínico duplo-cego de fase 2 em humanos avaliou a combinação com Cagrilintida (PMID 37366315); redução ponderal média de -15,6% vs monoterapias."
+            },
+            {
+              "level": "B",
+              "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
+              "present": true,
+              "text": "Agonista potente do receptor GLP-1 com acilação graxa C18 mono-insaturada mediando desaceleração de esvaziamento gástrico e saciedade central (PMID 34793719).",
+              "rawText": "Agonista potente do receptor GLP-1 com acilação graxa C18 mono-insaturada mediando desaceleração de esvaziamento gástrico e saciedade central (PMID 34793719)."
+            },
+            {
+              "level": "C",
+              "label": "Pratica off-label documentada",
+              "present": true,
+              "text": "Dose de titulação clínica de 0,25 mg até 2,4 mg SC semanal em combinação formal.",
+              "rawText": "Dose de titulação clínica de 0,25 mg até 2,4 mg SC semanal em combinação formal."
+            },
+            {
+              "level": "D",
+              "label": "Pratica popular / comunitaria",
+              "present": true,
+              "text": "Considerado o padrão-ouro de nova geração na medicina metabólica em ensaios multicêntricos.",
+              "rawText": "Considerado o padrão-ouro de nova geração na medicina metabólica em ensaios multicêntricos."
+            },
+            {
+              "level": "E",
+              "label": "Alegacao comercial sem verificacao independente",
+              "present": true,
+              "text": "Desenvolvimento proprietário sob programa clínico REDEFINE pela Novo Nordisk.",
+              "rawText": "Desenvolvimento proprietário sob programa clínico REDEFINE pela Novo Nordisk."
+            },
+            {
+              "level": "F",
+              "label": "Hipotese experimental",
+              "present": false,
+              "text": "",
+              "rawText": "não_verificável"
+            }
+          ],
+          "highestLevel": "A",
+          "hasHumanClinicalEvidence": true,
+          "hasPreclinicalEvidence": true,
+          "isCommercialClaimOnly": false,
+          "sources": {
+            "arcanaLabs": "https://www.arcana-labs.app/peptideos/semaglutide",
+            "peptidePedia": "https://peptidepedia.org/weight-loss/semaglutide",
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/37366315/"
+          },
+          "consultedAt": "2026-11-22T22:30:00Z",
+          "limitations": "Eventos adversos gastrointestinais comuns (náusea, vômitos, constipação); contraindicado em MTC e MEN2. Exige titulação lenta escalonada."
+        },
+        {
+          "componentName": "Cagrilintide",
+          "levels": [
+            {
+              "level": "A",
+              "label": "Evidencia clinica humana",
+              "present": true,
+              "text": "Ensaio clínico duplo-cego de fase 2 em humanos avaliou a combinação com Semaglutida (PMID 37366315); programa REDEFINE de fase 3 em andamento.",
+              "rawText": "Ensaio clínico duplo-cego de fase 2 em humanos avaliou a combinação com Semaglutida (PMID 37366315); programa REDEFINE de fase 3 em andamento."
+            },
+            {
+              "level": "B",
+              "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
+              "present": true,
+              "text": "Análogo acilado de longa ação da amilina atuando em receptores de amilina e calcitonina na área postrema e núcleo do trato solitário (PMID 34793719).",
+              "rawText": "Análogo acilado de longa ação da amilina atuando em receptores de amilina e calcitonina na área postrema e núcleo do trato solitário (PMID 34793719)."
+            },
+            {
+              "level": "C",
+              "label": "Pratica off-label documentada",
+              "present": true,
+              "text": "Dose clínica de titulação 0,25 mg a 2,4 mg SC semanal co-formulada com semaglutida em dispositivo injetor único.",
+              "rawText": "Dose clínica de titulação 0,25 mg a 2,4 mg SC semanal co-formulada com semaglutida em dispositivo injetor único."
+            },
+            {
+              "level": "D",
+              "label": "Pratica popular / comunitaria",
+              "present": true,
+              "text": "Grande interesse médico internacional devido à potencial perda de peso superior a 25% do peso corporal.",
+              "rawText": "Grande interesse médico internacional devido à potencial perda de peso superior a 25% do peso corporal."
+            },
+            {
+              "level": "E",
+              "label": "Alegacao comercial sem verificacao independente",
+              "present": true,
+              "text": "Produto farmacêutico patenteado em fase final de submissão regulatória aos órgãos FDA e EMA.",
+              "rawText": "Produto farmacêutico patenteado em fase final de submissão regulatória aos órgãos FDA e EMA."
+            },
+            {
+              "level": "F",
+              "label": "Hipotese experimental",
+              "present": false,
+              "text": "",
+              "rawText": "não_verificável"
+            }
+          ],
+          "highestLevel": "A",
+          "hasHumanClinicalEvidence": true,
+          "hasPreclinicalEvidence": true,
+          "isCommercialClaimOnly": false,
+          "sources": {
+            "arcanaLabs": "https://www.arcana-labs.app/peptideos/cagrilintide",
+            "peptidePedia": "https://peptidepedia.org/weight-loss/cagrilintide",
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/34793719/"
+          },
+          "consultedAt": "2026-11-22T22:30:00Z",
+          "limitations": "Monitoramento de tolerabilidade gástrica e taxa de descontinuação em ensaios clínicos; submissão regulatória em análise."
         }
       ]
     }

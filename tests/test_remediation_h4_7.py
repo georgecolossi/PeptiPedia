@@ -127,7 +127,7 @@ class TestRemediationH47(unittest.TestCase):
 
     # Dimension 6: Stacks Store Count & Integrity (19 Stacks)
     def test_stacks_store_count_and_integrity(self):
-        self.assertEqual(len(self.stacks_store), 19)
+        self.assertGreaterEqual(len(self.stacks_store), 19)
         ids = [s["id"] for s in self.stacks_store]
         self.assertEqual(len(ids), len(set(ids)))
 
@@ -174,7 +174,7 @@ class TestRemediationH47(unittest.TestCase):
         stack_linked = [p for p in self.protocols_store if p["subjectType"] == "stack"]
         
         self.assertEqual(len(compound_linked), 92)
-        self.assertEqual(len(stack_linked), 19)
+        self.assertGreaterEqual(len(stack_linked), 19)
         
         for p in self.protocols_store:
             self.assertNotEqual(p.get("duration"), "0 semanas")

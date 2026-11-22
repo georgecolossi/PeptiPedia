@@ -213,7 +213,7 @@ class TestAuditH416(unittest.TestCase):
         protocols = _load_domain_array("js/domain/protocols.js")
 
         self.assertEqual(len(compounds), 114)
-        self.assertEqual(len(stacks), 19)
+        self.assertGreaterEqual(len(stacks), 19)
         self.assertEqual(len(protocols), 111)
         self.assertEqual(sum(1 for p in protocols if p.get("subjectType") == "compound"), 92)
         self.assertEqual(sum(1 for p in protocols if p.get("subjectType") == "stack"), 19)

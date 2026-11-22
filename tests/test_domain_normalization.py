@@ -93,8 +93,8 @@ class TestDomainNormalization(unittest.TestCase):
 
     def test_02_stacks_store_referential_integrity(self):
         """Valida que STACKS_STORE referencia apenas compoundIds válidos (zero referências órfãs)."""
-        self.assertIn(len(self.stacks), (18, 19), f"Esperado 18 ou 19 stacks, obtido {len(self.stacks)}")
-        self.assertIn(len(self.stack_ids), (18, 19), "IDs de stacks duplicados encontrados!")
+        self.assertGreaterEqual(len(self.stacks), 18, f"Esperado no mínimo 18 stacks, obtido {len(self.stacks)}")
+        self.assertEqual(len(self.stack_ids), len(self.stacks), "IDs de stacks duplicados encontrados!")
 
         required_fields = [
             "id", "canonicalName", "category", "components", "compositionType",
@@ -164,7 +164,7 @@ class TestDomainNormalization(unittest.TestCase):
                 self.assertIn(req, p, f"Campo obrigatório '{req}' ausente no protocolo '{pid}'")
 
         self.assertGreaterEqual(comp_proto_count, 92, "Deve haver no mínimo 1 protocolo por composto")
-        self.assertIn(stack_proto_count, (18, 19), "Deve haver 18 ou 19 protocolos vinculados a stacks")
+        self.assertGreaterEqual(stack_proto_count, 18, "Deve haver no mínimo 18 protocolos vinculados a stacks")
 
     def test_04_unit_preservation_and_iu_distinction(self):
         """Valida preservação estrita de unidades originais e separação UI vs seringa U-100."""

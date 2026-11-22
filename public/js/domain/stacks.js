@@ -17,7 +17,11 @@
     "id": "wolverine-stack",
     "canonicalName": "Protocolo Tecidual Wolverine (BPC-157 + TB-500)",
     "alternativeNames": [
-      "Blend Comercial & Relato Comunitário"
+      "Blend Comercial & Relato Comunitário",
+      "Wolverine",
+      "Wolverine Stack",
+      "Protocolo Wolverine",
+      "BPC-157 + TB-500 Blend"
     ],
     "category": "Regeneração & Tecidos",
     "categoryId": "regeneration",
@@ -892,7 +896,11 @@
     "id": "wound-scar-tissue-stack",
     "canonicalName": "Protocolo GLOW e Remodelação Cicatricial (GHK-Cu + BPC-157 + TB-500)",
     "alternativeNames": [
-      "Blend GLOW & Cicatrização"
+      "Blend GLOW & Cicatrização",
+      "GLOW",
+      "Protocolo GLOW",
+      "GLOW Blend",
+      "Wound & Scar Protocol"
     ],
     "category": "Regeneração & Tecidos",
     "categoryId": "regeneration",
@@ -1096,7 +1104,644 @@
     "createdAt": "2026-11-08T22:00:00Z",
     "updatedAt": "2026-11-08T22:00:00Z",
     "fixedRatio": true,
-    "auditConfirmationStatus": "h4_4_allegations_pending_independent_confirmation"
+    "auditConfirmationStatus": "h4_4_allegations_pending_independent_confirmation",
+    "alternativeNames": [
+      "KLOW",
+      "Protocolo KLOW",
+      "KLOW Blend",
+      "Barrier Repair Protocol"
+    ]
+  },
+  {
+    "id": "tesamorelin-ipamorelin-visceral-stack",
+    "canonicalName": "Lipólise Visceral e Otimização GH (Tesamorelin + Ipamorelin)",
+    "alternativeNames": [
+      "Tesa/Ipa Stack",
+      "Visceral Fat Reduction Protocol",
+      "Tesamorelin Recombinant Synergy"
+    ],
+    "category": "Secretagogos de GH",
+    "categoryId": "gh_secretagogues",
+    "description": "Combinação de Tesamorelin (análogo GHRH com aprovação FDA para redução de gordura visceral lipodistrófica) com Ipamorelin (secretagogo seletivo de GH via receptor GHS-R1a), visando estímulo fisiológico dual sem elevação de cortisol ou prolactina.",
+    "synergyRationale": "Tesamorelin atua no receptor de GHRH pituitário e Ipamorelin agoniza o receptor de grelina; a coativação supera a inibição somatostatinérgica promovendo pulsos fisiológicos de hormônio do crescimento voltados à mobilização de tecido adiposo visceral. Sem ensaios clínicos da combinação coadministrada.",
+    "components": [
+      {
+        "compoundId": "tesamorelin",
+        "componentRole": "Agonista GHRH recombinante / Lipólise visceral",
+        "amount": 1,
+        "unit": "mg",
+        "ratio": "50%",
+        "isFixedRatio": false,
+        "source": "Tesamorelina ensaios de fase 3 lipodistrofia — JAIDS 2010 (PMID 20431394)"
+      },
+      {
+        "compoundId": "ipamorelin",
+        "componentRole": "Secretagogo seletivo de GH (GHS-R1a)",
+        "amount": 200,
+        "unit": "mcg",
+        "ratio": "50%",
+        "isFixedRatio": false,
+        "source": "Ipamorelin seletividade in vitro/animal — Eur J Endocrinol 1998 (PMID 9849822)"
+      }
+    ],
+    "compositionType": "custom_flexible_combination",
+    "fixedRatio": false,
+    "commercialFormulations": {
+      "isFixedRatioBlend": false,
+      "totalVialMassMg": 12,
+      "typicalReconstitutionVolumeMl": 3,
+      "diluentRecommended": "Água Bacteriostática (BAC) 0,9%",
+      "componentProportions": {
+        "tesamorelin": "10 mg",
+        "ipamorelin": "2 mg"
+      },
+      "resultingConcentrations": "Tesamorelin: 3,33 mg/mL; Ipamorelin: 0,67 mg/mL",
+      "kineticConflictWarning": "Tesamorelin possui meia-vida curta e sensibilidade a cisalhamento; administração combinada em frasco único exige refrigeração rigorosa e validação de compatibilidade físico-química.",
+      "physicochemicalRisk": "Ausência de estudos de estabilidade ICH Q1A em solução mista; risco de degradação cruzada."
+    },
+    "intendedPurpose": "Secretagogos de GH",
+    "evidenceCategory": "documented_off_label_combination",
+    "documentationGrade": "Grau C",
+    "riskLevel": "moderate",
+    "knownInteractions": [
+      "Monitoramento mandatório de IGF-1 sérico e glicemia em jejum.",
+      "Risco de retenção hídrica, parestesias transitórias e artralgias.",
+      "Contraindicado em neoplasias ativas e retinopatia diabética proliferativa."
+    ],
+    "compatibilityEvidence": "Compatibilidade teórica com diluente bacteriostático; carece de cromatografia líquida de alta eficiência (HPLC) para frasco misto.",
+    "stabilityEvidence": "Armazenar entre 2°C e 8°C protegido da luz; prazo operacional pós-reconstituição de até 28 dias.",
+    "regulatoryStatus": "Tesamorelin aprovado pela FDA (Egrifta); Ipamorelin RUO / unapproved; combinação off-label.",
+    "sources": [
+      "Tesamorelin Phase 3 trials in HIV visceral lipodystrophy — JAIDS 2010 (PMID: 20431394)",
+      "Ipamorelin selectivity and GH-axis activation — Eur J Endocrinol 1998 (PMID: 9849822)",
+      "Nota epistêmica: ausência de ensaios clínicos demonstrando sinergia superior em humanos para a combinação simultânea."
+    ],
+    "auditConfirmationStatus": "verified_literature_concordant",
+    "createdAt": "2026-11-22T22:30:00Z",
+    "updatedAt": "2026-11-22T22:30:00Z"
+  },
+  {
+    "id": "gh-secretagogue-triad-stack",
+    "canonicalName": "Tríade Secretagoga Hipofisária (CJC-1295 + Ipamorelin + GHRP-2)",
+    "alternativeNames": [
+      "Triple GH Secretagogue",
+      "CJC/Ipa/GHRP-2 Blend",
+      "Super GH Pulse"
+    ],
+    "category": "Secretagogos de GH",
+    "categoryId": "gh_secretagogues",
+    "description": "Combinação tríplice de secretagogos associando um análogo GHRH (CJC-1295 no DAC) com dois secretagogos de GHRP com perfis de afinidade distintos (Ipamorelin e GHRP-2) para maximizar o pico de secreção pulsátil de GH.",
+    "synergyRationale": "GHRH e GHRP sinergizam na hipófise anterior; o uso de Ipamorelin com GHRP-2 busca amplitude máxima de pulso, mas GHRP-2 introduz risco proporcional de elevação de prolactina e cortisol ausente no Ipamorelin isolado. Sem ensaios clínicos da combinação tríplice coadministrada.",
+    "components": [
+      {
+        "compoundId": "cjc-1295-no-dac",
+        "componentRole": "Análogo GHRH (Mod GRF 1-29)",
+        "amount": 100,
+        "unit": "mcg",
+        "ratio": "33,3%",
+        "isFixedRatio": true,
+        "source": "CJC-1295 farmacocinética — J Clin Endocrinol Metab 2006 (PMID 16352683)"
+      },
+      {
+        "compoundId": "ipamorelin",
+        "componentRole": "Secretagogo seletivo de GH",
+        "amount": 100,
+        "unit": "mcg",
+        "ratio": "33,3%",
+        "isFixedRatio": true,
+        "source": "Ipamorelin seletividade in vitro — Eur J Endocrinol 1998 (PMID 9849822)"
+      },
+      {
+        "compoundId": "ghrp-2",
+        "componentRole": "Agonista GHRP de alta amplitude",
+        "amount": 100,
+        "unit": "mcg",
+        "ratio": "33,3%",
+        "isFixedRatio": true,
+        "source": "GHRP-2 estimulação hipofisária — J Clin Endocrinol Metab 1997 (PMID 9141536)"
+      }
+    ],
+    "compositionType": "commercial_fixed_blend",
+    "fixedRatio": true,
+    "commercialFormulations": {
+      "isFixedRatioBlend": true,
+      "totalVialMassMg": 15,
+      "typicalReconstitutionVolumeMl": 3,
+      "diluentRecommended": "Água Bacteriostática (BAC) 0,9%",
+      "componentProportions": {
+        "cjc-1295-no-dac": "33,3% (5 mg)",
+        "ipamorelin": "33,3% (5 mg)",
+        "ghrp-2": "33,3% (5 mg)"
+      },
+      "resultingConcentrations": "CJC-1295: 1,67 mg/mL; Ipamorelin: 1,67 mg/mL; GHRP-2: 1,67 mg/mL",
+      "kineticConflictWarning": "A adição de GHRP-2 compromete a seletividade endócrina do Ipamorelin, podendo gerar elevações subagudas de ACTH, cortisol e prolactina séricos.",
+      "physicochemicalRisk": "Três peptídeos liofilizados juntos aumentam a probabilidade de agregação molecular sob temperatura inadequada."
+    },
+    "intendedPurpose": "Secretagogos de GH",
+    "evidenceCategory": "commercial_blend",
+    "documentationGrade": "Grau D",
+    "riskLevel": "high",
+    "knownInteractions": [
+      "Desensibilização rápida de receptores hipofisários com uso contínuo (necessidade de washout cíclico 5 dias on / 2 dias off).",
+      "Hiperprolactinemia e elevação transitória de cortisol induzidas pelo GHRP-2.",
+      "Sonolência e aumento abrupto de apetite.",
+      "Substâncias proibidas no esporte pela WADA (Classe S2 - Hormônios Peptídicos e Fatores de Crescimento)."
+    ],
+    "compatibilityEvidence": "Mistura comercial comum em compounding laboratories de pesquisa; sem estudo formal de compatibilidade.",
+    "stabilityEvidence": "Sensível a calor; 2°C a 8°C por até 21 dias.",
+    "regulatoryStatus": "RUO (Research Use Only) / Proibido em competições esportivas.",
+    "sources": [
+      "CJC-1295 pharmacokinetic profile — J Clin Endocrinol Metab 2006 (PMID: 16352683)",
+      "Ipamorelin endocrine selectivity — Eur J Endocrinol 1998 (PMID: 9849822)",
+      "GHRP-2 GH and cortisol stimulation — J Clin Endocrinol Metab 1997 (PMID: 9141536)",
+      "Nota epistêmica: 0 ensaios clínicos da combinação tríplice; blend empírico comunitário."
+    ],
+    "auditConfirmationStatus": "verified_literature_concordant",
+    "createdAt": "2026-11-22T22:30:00Z",
+    "updatedAt": "2026-11-22T22:30:00Z"
+  },
+  {
+    "id": "tirzepatide-bpc157-gastro-stack",
+    "canonicalName": "Co-terapia Incretínica Gastro-Protegida (Tirzepatide + BPC-157)",
+    "alternativeNames": [
+      "Tirzepatide GI Support",
+      "Dual-Action Metabolic & Gastric Shield",
+      "Mounjaro/BPC Blend"
+    ],
+    "category": "Metabolismo & Perda de Peso",
+    "categoryId": "metabolism_weight",
+    "description": "Associação de Tirzepatida (co-agonista GLP-1/GIP para controle glicêmico e redução ponderal) com BPC-157 (pentadecapeptídeo gástrico regenerativo), divulgada em clínicas integrativas para mitigar náuseas, dispepsia e desconforto gastrointestinal decorrentes do retardo de motilidade.",
+    "synergyRationale": "Tirzepatide induz perda de peso e controle glicêmico robustos mas gera retardo do esvaziamento gástrico com náusea; BPC-157 exerce efeitos citoprotetores gástricos e angiogênicos pré-clínicos. Contudo, não há evidência clínica humana de que o BPC-157 reverta ou reduza efeitos adversos de incretinas.",
+    "components": [
+      {
+        "compoundId": "tirzepatide",
+        "componentRole": "Co-agonista duplo GLP-1 / GIP",
+        "amount": 2.5,
+        "unit": "mg",
+        "ratio": "83,3%",
+        "isFixedRatio": false,
+        "source": "SURMOUNT-1 ensaio clínico de perda ponderal — N Engl J Med 2022 (PMID 35658024)"
+      },
+      {
+        "compoundId": "bpc-157",
+        "componentRole": "Suporte citoprotetor da mucosa gástrica",
+        "amount": 250,
+        "unit": "mcg",
+        "ratio": "16,7%",
+        "isFixedRatio": false,
+        "source": "BPC-157 integridade da mucosa digestiva — Curr Pharm Des 2011 (PMID 21548867)"
+      }
+    ],
+    "compositionType": "custom_flexible_combination",
+    "fixedRatio": false,
+    "commercialFormulations": {
+      "isFixedRatioBlend": false,
+      "totalVialMassMg": 12,
+      "typicalReconstitutionVolumeMl": 2,
+      "diluentRecommended": "Água Bacteriostática (BAC) 0,9%",
+      "componentProportions": {
+        "tirzepatide": "10 mg (83,3%)",
+        "bpc-157": "2 mg (16,7%)"
+      },
+      "resultingConcentrations": "Tirzepatide: 5 mg/mL; BPC-157: 1 mg/mL",
+      "kineticConflictWarning": "Tirzepatida possui meia-vida de ~5 dias (administração semanal); BPC-157 possui eliminação plasmática rápida (administração diária). Vials mistos forçam microdosagem diária de Tirzepatida sem validação farmacocinética.",
+      "physicochemicalRisk": "A mistura em frasco único pode comprometer o ponto isoelétrico e causar agregação ou precipitação da Tirzepatida."
+    },
+    "intendedPurpose": "Metabolismo & Perda de Peso",
+    "evidenceCategory": "commercial_blend",
+    "documentationGrade": "Grau D",
+    "riskLevel": "moderate",
+    "knownInteractions": [
+      "Retardo acentuado de esvaziamento gástrico.",
+      "Risco de gastroparesia e desidratação por êmese.",
+      "Ausência de estudos de estabilidade para coformulação no mesmo recipiente."
+    ],
+    "compatibilityEvidence": "Recomenda-se veementemente a administração em seringas e locais anatômicos distintos caso prescrito; nunca misturar no mesmo vial.",
+    "stabilityEvidence": "Tirzepatida comercial aprovada é líquida formulada em pH neutro; manipulação com BPC-157 não testada sob ICH Q1A.",
+    "regulatoryStatus": "Tirzepatide aprovado FDA/Anvisa (Mounjaro/Zepbound); BPC-157 não aprovado.",
+    "sources": [
+      "Tirzepatide Once Weekly for the Treatment of Obesity (SURMOUNT-1) — N Engl J Med 2022 (PMID: 35658024)",
+      "Gastric pentadecapeptide BPC 157 cytoprotective mechanisms — Curr Pharm Des 2011 (PMID: 21548867)",
+      "Nota epistêmica: 0 ensaios clínicos da coadministração; risco cinético em blends combinados."
+    ],
+    "auditConfirmationStatus": "verified_literature_concordant",
+    "createdAt": "2026-11-22T22:30:00Z",
+    "updatedAt": "2026-11-22T22:30:00Z"
+  },
+  {
+    "id": "ghk-cu-kpv-dermal-barrier-stack",
+    "canonicalName": "Duo Anti-inflamatório e Barreira Mucocutânea (GHK-Cu + KPV)",
+    "alternativeNames": [
+      "Copper-KPV Barrier Duo",
+      "Topical Mucosal Healer",
+      "GHK/KPV Dual"
+    ],
+    "category": "Regeneração & Tecidos",
+    "categoryId": "healing",
+    "description": "Combinação dermatológica e mucosal sinérgica entre o tripeptídeo de cobre GHK-Cu (síntese de matriz extracelular) e o tripeptídeo KPV (análogo alfa-MSH com potente inibição de NF-kB e citocinas inflamatórias), formulada para dermatites, cicatrização acelerada e barreira tecidual.",
+    "synergyRationale": "KPV atenua o estresse oxidativo e a cascata pró-inflamatória mediada por NF-kB, enquanto GHK-Cu ativa glicosaminoglicanos, colágeno I e VEGF para recomposição tecidual, operando sem os componentes pró-angiogênicos intensos como BPC-157.",
+    "components": [
+      {
+        "compoundId": "ghk-cu",
+        "componentRole": "Remodelação dérmica e síntese de matriz",
+        "amount": 2,
+        "unit": "mg",
+        "ratio": "80%",
+        "isFixedRatio": false,
+        "source": "GHK-Cu revisão epigenética e dermatológica — Int J Mol Sci 2018 (PMID 29986520)"
+      },
+      {
+        "compoundId": "kpv",
+        "componentRole": "Anti-inflamatório e inibidor de NF-kB",
+        "amount": 250,
+        "unit": "mcg",
+        "ratio": "20%",
+        "isFixedRatio": false,
+        "source": "KPV propriedades anti-inflamatórias — Peptides 2005 (PMID 15820320)"
+      }
+    ],
+    "compositionType": "custom_flexible_combination",
+    "fixedRatio": false,
+    "commercialFormulations": {
+      "isFixedRatioBlend": false,
+      "totalVialMassMg": 60,
+      "typicalReconstitutionVolumeMl": 3,
+      "diluentRecommended": "Água Bacteriostática (BAC) 0,9% ou veículo gel tópico magistral",
+      "componentProportions": {
+        "ghk-cu": "50 mg (83,3%)",
+        "kpv": "10 mg (16,7%)"
+      },
+      "resultingConcentrations": "GHK-Cu: 16,67 mg/mL; KPV: 3,33 mg/mL",
+      "kineticConflictWarning": "A formulação tópica apresenta boa tolerabilidade local; na via subcutânea, pode ocorrer ardor leve decorrente do cobre.",
+      "physicochemicalRisk": "Baixo risco de quelação cruzada competitiva em pH 6.0-7.0."
+    },
+    "intendedPurpose": "Regeneração & Tecidos",
+    "evidenceCategory": "preclinical_combination",
+    "documentationGrade": "Grau C",
+    "riskLevel": "low",
+    "knownInteractions": [
+      "Irritação dérmica ou eritema local em peles sensíveis ao cobre.",
+      "Evitar uso simultâneo com vitamina C tópica pura (ácido ascórbico) no mesmo momento devido a reações redox com Cu2+."
+    ],
+    "compatibilityEvidence": "Compatível em veículos aquosos neutros e géis magistrais hidrofílicos.",
+    "stabilityEvidence": "Manter sob refrigeração a 2°C a 8°C ao abrigo da luz solar.",
+    "regulatoryStatus": "GHK-Cu cosmecêutico aprovado; KPV experimental / RUO.",
+    "sources": [
+      "Regenerative and protective actions of the GHK-Cu peptide — Int J Mol Sci 2018 (PMID: 29986520)",
+      "The anti-inflammatory peptide KPV inhibits inflammation — Peptides 2005 (PMID: 15820320)",
+      "Nota epistêmica: evidência pré-clínica individual consistente; ausência de ensaios clínicos da combinação."
+    ],
+    "auditConfirmationStatus": "verified_literature_concordant",
+    "createdAt": "2026-11-22T22:30:00Z",
+    "updatedAt": "2026-11-22T22:30:00Z"
+  },
+  {
+    "id": "hair-follicle-regeneration-stack",
+    "canonicalName": "Protocolo Folicular e Remodelação Capilar (GHK-Cu + AHK-Cu)",
+    "alternativeNames": [
+      "Hair Restoration Peptide Blend",
+      "Copper Peptides Hair Tonic",
+      "GHK/AHK Duo"
+    ],
+    "category": "Regeneração & Tecidos",
+    "categoryId": "healing",
+    "description": "Combinação cosmecêutica tópica de dois peptídeos de cobre especializados (GHK-Cu e AHK-Cu) formulada para estimulação folicular, reversão de miniaturização e proliferação de fibroblastos da papila dérmica do couro cabeludo.",
+    "synergyRationale": "GHK-Cu estimula a angiogênese pericapilar, diminui citocinas inflamatórias e amplifica a síntese de colágeno no couro cabeludo; AHK-Cu (Ala-His-Lys:Cu2+) possui afinidade celular preferencial para células da papila dérmica, estendendo a fase anágena do ciclo capilar.",
+    "components": [
+      {
+        "compoundId": "ghk-cu",
+        "componentRole": "Microcirculação pericapilar e angiogênese",
+        "amount": 1,
+        "unit": "mg",
+        "ratio": "50%",
+        "isFixedRatio": true,
+        "source": "GHK-Cu estimulação capilar e síntese de matriz — J Biomater Sci Polym Ed 2008 (PMID 18644225)"
+      },
+      {
+        "compoundId": "ahk-cu",
+        "componentRole": "Estímulo folicular e papila dérmica",
+        "amount": 1,
+        "unit": "mg",
+        "ratio": "50%",
+        "isFixedRatio": true,
+        "source": "AHK-Cu proliferação de papila dérmica in vitro — Biosci Biotechnol Biochem 2007 (PMID 17483602)"
+      }
+    ],
+    "compositionType": "commercial_fixed_blend",
+    "fixedRatio": true,
+    "commercialFormulations": {
+      "isFixedRatioBlend": true,
+      "totalVialMassMg": 100,
+      "typicalReconstitutionVolumeMl": 50,
+      "diluentRecommended": "Veículo Loção Capilar Hidroalcoólica / Solução Aquosa com Espuma",
+      "componentProportions": {
+        "ghk-cu": "50 mg (50%)",
+        "ahk-cu": "50 mg (50%)"
+      },
+      "resultingConcentrations": "GHK-Cu: 1 mg/mL (0,1%); AHK-Cu: 1 mg/mL (0,1%)",
+      "kineticConflictWarning": "Formulação exclusivamente tópica; não deve ser injetada sistemicamente por via intravenosa ou subcutânea profunda sem filtração estéril.",
+      "physicochemicalRisk": "Oxidação de íons de cobre na presença de agentes quelantes fortes ou pH extremamente ácido (< 4.5)."
+    },
+    "intendedPurpose": "Regeneração & Tecidos",
+    "evidenceCategory": "preclinical_combination",
+    "documentationGrade": "Grau C",
+    "riskLevel": "low",
+    "knownInteractions": [
+      "Ressecamento transitório do couro cabeludo em veículos alcoólicos.",
+      "Incompatibilidade com formulações ricas em zinco iônico em alta concentração (competição por sítios de ligação)."
+    ],
+    "compatibilityEvidence": "Excelente compatibilidade em soluções aquosas neutras e séruns com ácido hialurônico.",
+    "stabilityEvidence": "Estável em temperatura ambiente ao abrigo da luz solar direta; vida útil tópica de 6 meses.",
+    "regulatoryStatus": "Ingredientes cosméticos aprovados para uso tópico (INCI: Copper Tripeptide-1 e Copper Tripeptide-3).",
+    "sources": [
+      "The effect of AHK-Cu on human hair growth in vitro — Biosci Biotechnol Biochem 2007 (PMID: 17483602)",
+      "GHK-Cu promotes hair growth and enlargement of follicles — J Biomater Sci Polym Ed 2008 (PMID: 18644225)",
+      "Nota epistêmica: ensaios pré-clínicos in vitro em células humanas; ausência de ensaios clínicos duplo-cegos combinados."
+    ],
+    "auditConfirmationStatus": "verified_literature_concordant",
+    "createdAt": "2026-11-22T22:30:00Z",
+    "updatedAt": "2026-11-22T22:30:00Z"
+  },
+  {
+    "id": "intimacy-neuroendocrine-duo-stack",
+    "canonicalName": "Sinergia Neuroafetiva e Desejo (PT-141 + Oxitocina)",
+    "alternativeNames": [
+      "PT-141 / Oxytocin Intimacy Blend",
+      "Neuro-Arousal Duo",
+      "Bremelanotide + Oxytocin"
+    ],
+    "category": "Libido & Melanocortinas",
+    "categoryId": "libido_melanocortins",
+    "description": "Combinação neuroendócrina associando PT-141 (Bremelanotida, agonista melanocortinérgico MC3R/MC4R central aprovado pela FDA para transtorno do desejo sexual hipoativo) com Oxitocina (neuropeptídeo do apego e modulação autonômica parassimpática), formulada para intensificação do desejo e conexão afetiva.",
+    "synergyRationale": "PT-141 atua nos receptores hipotalâmicos de melanocortina ativando vias dopaminérgicas de excitação sexual sem mecanismo vascular direto; a Oxitocina reduz a ansiedade de performance e modula a empatia e relaxamento via receptores ocitocinérgicos no sistema límbico.",
+    "components": [
+      {
+        "compoundId": "pt-141",
+        "componentRole": "Agonista dos receptores MC3R/MC4R (excitação central)",
+        "amount": 1,
+        "unit": "mg",
+        "ratio": "80%",
+        "isFixedRatio": false,
+        "source": "Bremelanotida ensaios RECONNECT — Obstet Gynecol 2019 (PMID 31599838)"
+      },
+      {
+        "compoundId": "oxytocin",
+        "componentRole": "Modulação neuroafetiva e vínculo",
+        "amount": 20,
+        "unit": "UI",
+        "ratio": "20%",
+        "isFixedRatio": false,
+        "source": "Oxitocina e resposta sexual humana — Horm Behav 2012 (PMID 22446187)"
+      }
+    ],
+    "compositionType": "custom_flexible_combination",
+    "fixedRatio": false,
+    "commercialFormulations": {
+      "isFixedRatioBlend": false,
+      "totalVialMassMg": 10,
+      "typicalReconstitutionVolumeMl": 2,
+      "diluentRecommended": "Água Bacteriostática (BAC) 0,9% ou veículo spray nasal estéril",
+      "componentProportions": {
+        "pt-141": "10 mg",
+        "oxytocin": "200 UI"
+      },
+      "resultingConcentrations": "PT-141: 5 mg/mL; Oxitocina: 100 UI/mL",
+      "kineticConflictWarning": "PT-141 tem início de ação entre 45 e 120 minutos e duração prolongada (~8 horas); Oxitocina tem meia-vida de minutos no plasma (ação rápida e fugaz). Frascos pré-misturados ignoram o descompasso farmacocinético entre as moléculas.",
+      "physicochemicalRisk": "A oxitocina é extremamente lábil termicamente e suscetível à oxidação de pontes dissulfeto."
+    },
+    "intendedPurpose": "Libido & Melanocortinas",
+    "evidenceCategory": "commercial_blend",
+    "documentationGrade": "Grau D",
+    "riskLevel": "moderate",
+    "knownInteractions": [
+      "Elevação transitória da pressão arterial (PA) sistólica e diastólica por estimulação melanocortinérgica (contraindicado em hipertensão não controlada).",
+      "Náuseas agudas (efeito adverso comum de PT-141 em ~40% dos pacientes).",
+      "Flushing facial e cefaleia."
+    ],
+    "compatibilityEvidence": "Compatibilidade farmacêutica frágil em solução mista; formulação separada recomendada.",
+    "stabilityEvidence": "Manter congelado (-20°C) ou refrigerado (2-8°C); oxitocina degrada rapidamente em temperatura ambiente.",
+    "regulatoryStatus": "PT-141 aprovado FDA (Vyleesi); Oxitocina aprovada FDA/Anvisa; combinação não regulamentada.",
+    "sources": [
+      "Bremelanotide for Female Hypoactive Sexual Desire Disorder (RECONNECT) — Obstet Gynecol 2019 (PMID: 31599838)",
+      "Oxytocin and human sexual response — Horm Behav 2012 (PMID: 22446187)",
+      "Nota epistêmica: monoterapias aprovadas com indicações específicas; blend combinado é experimental off-label."
+    ],
+    "auditConfirmationStatus": "verified_literature_concordant",
+    "createdAt": "2026-11-22T22:30:00Z",
+    "updatedAt": "2026-11-22T22:30:00Z"
+  },
+  {
+    "id": "circadian-deep-sleep-stack",
+    "canonicalName": "Sincronização Circadiana e Sono Delta (DSIP + Epitalon)",
+    "alternativeNames": [
+      "Pineal-Circadian Protocol",
+      "Delta Wave & Telomere Sleep Stack",
+      "DSIP/Epitalon Dual"
+    ],
+    "category": "Longevidade & Mitocôndria",
+    "categoryId": "longevity_mitochondria",
+    "description": "Protocolo neuroendócrino de indução de arquitetura de sono fisiológico associando DSIP (Delta Sleep-Inducing Peptide, modulador de ondas lentas no EEG) com Epitalon (tetrapeptídeo pineal ativador de melatonina e telomerase), visando reparação neurocelular noturna.",
+    "synergyRationale": "DSIP restaura a proporcionalidade das fases profundas do sono NREM (estágios 3 e 4 delta) sem suprimir o sono REM; Epitalon sincroniza a ritmicidade diária da glândula pineal e otimiza a expressão de melatonina endógena.",
+    "components": [
+      {
+        "compoundId": "dsip",
+        "componentRole": "Indução de ondas lentas delta e regulação circadiana",
+        "amount": 100,
+        "unit": "mcg",
+        "ratio": "50%",
+        "isFixedRatio": false,
+        "source": "DSIP regulação do sono humano e ritmo circadiano — Neurosci Biobehav Rev 1984 (PMID 6391925)"
+      },
+      {
+        "compoundId": "epitalon",
+        "componentRole": "Sincronização pineal e homeostase de melatonina",
+        "amount": 5,
+        "unit": "mg",
+        "ratio": "50%",
+        "isFixedRatio": false,
+        "source": "Epitalon produção de melatonina e longevidade — Neuro Endocrinol Lett 2001 (PMID 11756844)"
+      }
+    ],
+    "compositionType": "custom_flexible_combination",
+    "fixedRatio": false,
+    "commercialFormulations": {
+      "isFixedRatioBlend": false,
+      "totalVialMassMg": 15,
+      "typicalReconstitutionVolumeMl": 3,
+      "diluentRecommended": "Água Bacteriostática (BAC) 0,9%",
+      "componentProportions": {
+        "epitalon": "10 mg (66,7%)",
+        "dsip": "5 mg (33,3%)"
+      },
+      "resultingConcentrations": "Epitalon: 3,33 mg/mL; DSIP: 1,67 mg/mL",
+      "kineticConflictWarning": "Epitalon é classicamente administrado em ciclos curtos intermitentes (10 a 20 dias, 2 vezes ao ano); DSIP é utilizado conforme necessidade (PRN) antes de dormir. O blend fixo força coadministração desregulada.",
+      "physicochemicalRisk": "Baixo risco de incompatibilidade direta em solução aquosa neutra."
+    },
+    "intendedPurpose": "Longevidade & Mitocôndria",
+    "evidenceCategory": "preclinical_combination",
+    "documentationGrade": "Grau C",
+    "riskLevel": "low",
+    "knownInteractions": [
+      "Sonolência matinal residual caso administrado tardiamente.",
+      "Possível potencialização de sedativos, álcool ou hipnóticos GABAérgicos."
+    ],
+    "compatibilityEvidence": "Compatível em água bacteriostática.",
+    "stabilityEvidence": "Manter sob refrigeração de 2°C a 8°C ao abrigo de luz.",
+    "regulatoryStatus": "Compostos para pesquisa / suplementação off-label na Europa Oriental; não aprovados pela FDA.",
+    "sources": [
+      "Delta sleep-inducing peptide (DSIP): an overview — Neurosci Biobehav Rev 1984 (PMID: 6391925)",
+      "Epithalamin/Epitalon stimulates pineal melatonin secretion — Neuro Endocrinol Lett 2001 (PMID: 11756844)",
+      "Nota epistêmica: literatura histórica consistente para monoterapias; ausência de ensaios clínicos modernos da combinação."
+    ],
+    "auditConfirmationStatus": "verified_literature_concordant",
+    "createdAt": "2026-11-22T22:30:00Z",
+    "updatedAt": "2026-11-22T22:30:00Z"
+  },
+  {
+    "id": "lipo-burn-gh-amplifier-stack",
+    "canonicalName": "Amplificação Lipolítica e GH (AOD-9604 + CJC-1295 + Ipamorelin)",
+    "alternativeNames": [
+      "Lipo-Burn Triple Stack",
+      "AOD / CJC / Ipamorelin Blend",
+      "Metabolic Fat Loss Trio"
+    ],
+    "category": "Secretagogos de GH",
+    "categoryId": "gh_secretagogues",
+    "description": "Combinação lipolítica e secretagoga integrando o peptídeo lipolítico AOD-9604 (domínio 177-191 do hGH, seletivo para oxidação lipídica sem efeito diabetogênico) com o duo GHRH/GHRP CJC-1295 (no DAC) e Ipamorelin para manutenção de massa magra.",
+    "synergyRationale": "AOD-9604 mobiliza triglicerídeos dos adipócitos maduros via estímulo de beta-3 adrenorreceptores e inibição da lipogênese; CJC-1295 e Ipamorelin induzem pulsos fisiológicos de GH que protegem o catabolismo muscular durante restrição calórica.",
+    "components": [
+      {
+        "compoundId": "aod-9604",
+        "componentRole": "Estímulo lipolítico seletivo (hGH 177-191)",
+        "amount": 300,
+        "unit": "mcg",
+        "ratio": "50%",
+        "isFixedRatio": false,
+        "source": "AOD-9604 ensaios clínicos e tolerabilidade — Int J Obes 2004 (PMID 15616614)"
+      },
+      {
+        "compoundId": "cjc-1295-no-dac",
+        "componentRole": "Análogo GHRH (pulso de GH)",
+        "amount": 100,
+        "unit": "mcg",
+        "ratio": "25%",
+        "isFixedRatio": false,
+        "source": "CJC-1295 farmacocinética — J Clin Endocrinol Metab 2006 (PMID 16352683)"
+      },
+      {
+        "compoundId": "ipamorelin",
+        "componentRole": "Secretagogo de GH seletivo",
+        "amount": 100,
+        "unit": "mcg",
+        "ratio": "25%",
+        "isFixedRatio": false,
+        "source": "Ipamorelin seletividade in vitro — Eur J Endocrinol 1998 (PMID 9849822)"
+      }
+    ],
+    "compositionType": "commercial_fixed_blend",
+    "fixedRatio": true,
+    "commercialFormulations": {
+      "isFixedRatioBlend": true,
+      "totalVialMassMg": 12,
+      "typicalReconstitutionVolumeMl": 3,
+      "diluentRecommended": "Água Bacteriostática (BAC) 0,9%",
+      "componentProportions": {
+        "aod-9604": "50% (6 mg)",
+        "cjc-1295-no-dac": "25% (3 mg)",
+        "ipamorelin": "25% (3 mg)"
+      },
+      "resultingConcentrations": "AOD-9604: 2 mg/mL; CJC-1295: 1 mg/mL; Ipamorelin: 1 mg/mL",
+      "kineticConflictWarning": "AOD-9604 possui solubilidade dependente de pH e pode turvar em concentrações elevadas se misturado no mesmo frasco com secretagogos alcalinos.",
+      "physicochemicalRisk": "Risco de precipitação coloidal de AOD-9604 em misturas multidose."
+    },
+    "intendedPurpose": "Secretagogos de GH",
+    "evidenceCategory": "commercial_blend",
+    "documentationGrade": "Grau D",
+    "riskLevel": "moderate",
+    "knownInteractions": [
+      "Administração deve ser realizada em jejum (glicemia ou insulina elevada anulam o pulso de GH).",
+      "Substâncias incluídas na lista de proibição da WADA (Classe S2)."
+    ],
+    "compatibilityEvidence": "Misturas comerciais populares em biohacking; compatibilidade analítica físico-química formal não documentada.",
+    "stabilityEvidence": "Manter a 2°C a 8°C ao abrigo da luz; uso em até 21 dias após reconstituição.",
+    "regulatoryStatus": "AOD-9604 possui histórico GRAS para alimentos nos EUA mas foi retirado de compounding pela FDA; CJC/Ipamorelin são RUO.",
+    "sources": [
+      "Safety and tolerability of the hexadecapeptide AOD9604 in humans — Int J Obes 2004 (PMID: 15616614)",
+      "CJC-1295 pharmacokinetic profile — J Clin Endocrinol Metab 2006 (PMID: 16352683)",
+      "Ipamorelin selectivity — Eur J Endocrinol 1998 (PMID: 9849822)",
+      "Nota epistêmica: monoterapias estudadas; ausência de ensaios clínicos da combinação tríplice coformulada."
+    ],
+    "auditConfirmationStatus": "verified_literature_concordant",
+    "createdAt": "2026-11-22T22:30:00Z",
+    "updatedAt": "2026-11-22T22:30:00Z"
+  },
+  {
+    "id": "cagrisema-incretin-metabolic-stack",
+    "canonicalName": "Co-agonismo Dual Incretínico e Amilina (CagriSema: Semaglutide + Cagrilintide)",
+    "alternativeNames": [
+      "CagriSema Protocol",
+      "Dual Incretin-Amylin Agonism",
+      "Novo Nordisk CagriSema Trial Combination"
+    ],
+    "category": "Metabolismo & Perda de Peso",
+    "categoryId": "metabolism_weight",
+    "description": "Combinação farmacêutica formal investigada no programa clínico REDEFINE da Novo Nordisk, associando Semaglutida (agonista seletivo do receptor GLP-1) com Cagrilintida (análogo dual não-seletivo de amilina e calcitonina), demonstrando perda de peso sinérgica e aditiva em ensaios clínicos fase 2 e fase 3.",
+    "synergyRationale": "Semaglutida atua nos receptores GLP-1R do hipotálamo induzindo saciedade e retardo gástrico; Cagrilintida atua nos receptores de amilina (AMYR1-3) e calcitonina no núcleo do trato solitário e área postrema, conferindo inibição central independente do apetite e retardo ponderal sinérgico superior a qualquer monoterapia individual.",
+    "components": [
+      {
+        "compoundId": "semaglutide",
+        "componentRole": "Agonista do receptor de GLP-1",
+        "amount": 2.4,
+        "unit": "mg",
+        "ratio": "50%",
+        "isFixedRatio": true,
+        "source": "Ensaio de fase 2 CagriSema — Lancet 2023 (PMID 37366315)"
+      },
+      {
+        "compoundId": "cagrilintide",
+        "componentRole": "Co-agonista dual de amilina e calcitonina",
+        "amount": 2.4,
+        "unit": "mg",
+        "ratio": "50%",
+        "isFixedRatio": true,
+        "source": "Cagrilintida monoterapia e combinação REDEFINE — Lancet 2021 (PMID 34793719)"
+      }
+    ],
+    "compositionType": "clinical_fixed_combination",
+    "fixedRatio": true,
+    "commercialFormulations": {
+      "isFixedRatioBlend": true,
+      "totalVialMassMg": 4.8,
+      "typicalReconstitutionVolumeMl": 1,
+      "diluentRecommended": "Formulação líquida farmacêutica estéril pré-preenchida (Caneta aplicadora)",
+      "componentProportions": {
+        "semaglutide": "2,4 mg (50%)",
+        "cagrilintide": "2,4 mg (50%)"
+      },
+      "resultingConcentrations": "Semaglutida: 2,4 mg/mL; Cagrilintida: 2,4 mg/mL",
+      "kineticConflictWarning": "Ambas as moléculas foram quimicamente modificadas com cadeias lipídicas de ligação à albumina para conferir meia-vida compatível com dose semanal única.",
+      "physicochemicalRisk": "A coformulação farmacêutica comercial é estabilizada em pH neutro pela indústria; preparações manipuladas empíricas correm risco severo de agregação e perda de potência."
+    },
+    "intendedPurpose": "Metabolismo & Perda de Peso",
+    "evidenceCategory": "clinical_combination",
+    "documentationGrade": "Grau A",
+    "riskLevel": "moderate",
+    "knownInteractions": [
+      "Efeitos gastrointestinais superiores à monoterapia (náuseas, vômitos, constipação, diarreia em titulação rápida).",
+      "Contraindicado em histórico pessoal ou familiar de carcinoma medular de tireoide (MTC) ou NEM 2.",
+      "Risco de hipoglicemia quando coadministrado com sulfonilureias ou insulina exógena."
+    ],
+    "compatibilityEvidence": "Compatibilidade farmacêutica e farmacocinética comprovada em ensaios clínicos fase 2 e fase 3 (REDEFINE 1 e 2).",
+    "stabilityEvidence": "Armazenamento sob refrigeração de 2°C a 8°C.",
+    "regulatoryStatus": "Em processo de submissão e registro regulatório perante FDA e EMA (Status Investigacional Avançado / Breakthrough).",
+    "sources": [
+      "Efficacy and safety of cagrilintide with semaglutide in adults with overweight or obesity: a randomised phase 2 trial — Lancet 2023 (PMID: 37366315)",
+      "Once-weekly cagrilintide for weight management: a randomised, double-blind phase 2 trial — Lancet 2021 (PMID: 34793719)",
+      "SELECT and STEP programs for semaglutide monotherapy — N Engl J Med 2021 (PMID: 33567185)"
+    ],
+    "auditConfirmationStatus": "verified_literature_concordant",
+    "createdAt": "2026-11-22T22:30:00Z",
+    "updatedAt": "2026-11-22T22:30:00Z"
   }
 ];
 }));
