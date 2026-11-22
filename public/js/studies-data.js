@@ -1008,6 +1008,22 @@ const CLINICAL_STUDIES_DATABASE = [
     "year": 2013,
     "doi": "10.1124/jpet.112.199497",
     "pmid": "23055539",
+    "editorialQuarantine": true,
+    "editorialStatus": "EXPRESSION_OF_CONCERN",
+    "editorialNotices": [
+      {
+        "type": "expression_of_concern",
+        "pmid": "34551989",
+        "year": 2021,
+        "note": "Notice of Concern emitido para o artigo primário PMID 23055539."
+      },
+      {
+        "type": "retraction",
+        "pmid": "40312093",
+        "year": 2025,
+        "note": "Retraction Notice do estudo mecanístico correlato (Benoist et al., JPET 2014)."
+      }
+    ],
     "studyDesign": "Estudo Pré-Clínico In Vivo e Farmacocinético em Modelos Animais (AVISO EDITORIAL: Artigo sob Notice of Concern — PMID 34551989)",
     "sampleSize": "Modelos murinos tratados com escopolamina e ensaios microssomais hepáticos in vitro",
     "duration": "Avaliações morfológicas e eletrofisiológicas seriadas",

@@ -4155,7 +4155,24 @@ window.COMPOUNDS_STORE = (function () {
                 "journal": "J Pharmacol Exp Ther. 2013 Jan;344(1):141-54",
                 "doi": "10.1124/jpet.112.199497",
                 "pmid": "23055539",
-                "url": "https://pubmed.ncbi.nlm.nih.gov/23055539/"
+                "url": "https://pubmed.ncbi.nlm.nih.gov/23055539/",
+                "hasExpressionOfConcern": true,
+                "editorialQuarantine": true,
+                "editorialStatus": "EXPRESSION_OF_CONCERN"
+            }
+        ],
+        "retractionNotices": [
+            {
+                "type": "expression_of_concern",
+                "pmid": "34551989",
+                "year": 2021,
+                "targetPmid": "23055539"
+            },
+            {
+                "type": "retraction",
+                "pmid": "40312093",
+                "year": 2025,
+                "targetPmid": "25187433"
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",

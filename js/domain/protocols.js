@@ -1865,6 +1865,22 @@
     "sources": [
       "The novel angiotensin IV analog Dihexa promotes spinogenesis and facilitates synaptogenesis in hippocampal neurons"
     ],
+    "editorialQuarantine": true,
+    "editorialStatus": "EXPRESSION_OF_CONCERN",
+    "editorialNotices": [
+      {
+        "type": "expression_of_concern",
+        "pmid": "34551989",
+        "year": 2021,
+        "targetPmid": "23055539"
+      },
+      {
+        "type": "retraction",
+        "pmid": "40312093",
+        "year": 2025,
+        "targetPmid": "25187433"
+      }
+    ],
     "h4_4_pendency_flag": "none",
     "reviewedAt": "2026-11-08"
   },

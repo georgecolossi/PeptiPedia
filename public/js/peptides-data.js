@@ -5592,12 +5592,30 @@ const PEPTIDES_DATABASE = [
         "link": "https://pubmed.ncbi.nlm.nih.gov/23055539/",
         "phase": "Pré-clínico (sob Notice of Concern: PMID 34551989)",
         "participants": "Modelos murinos tratados com escopolamina e animais idosos",
-        "keyFindings": "Estudo pré-clínico original objeto de Notice of Concern (PMID 34551989); o artigo mecanístico subsequente de via c-Met (Benoist et al., 2014) foi formalmente retratado (PMID 40312093)."
+        "keyFindings": "Estudo pré-clínico original objeto de Notice of Concern (PMID 34551989); o artigo mecanístico subsequente de via c-Met (Benoist et al., 2014) foi formalmente retratado (PMID 40312093).",
+        "editorialQuarantine": true,
+        "editorialStatus": "EXPRESSION_OF_CONCERN"
       }
     ],
     "scientificReferences": [
       "McCoy AT, et al. Evaluation of metabolically stabilized angiotensin IV analogs as procognitive/antidementia agents. J Pharmacol Exp Ther. 2013;344(1):141-54. PMID: 23055539 (Notice of Concern: PMID 34551989)",
       "Retraction notice (Benoist CC et al., 2014): J Pharmacol Exp Ther. 2025. PMID: 40312093"
+    ],
+    "retractionNotices": [
+      {
+        "type": "expression_of_concern",
+        "pmid": "34551989",
+        "year": 2021,
+        "targetPmid": "23055539",
+        "note": "Notice of Concern sobre o artigo primário de McCoy et al. (2013)."
+      },
+      {
+        "type": "retraction",
+        "pmid": "40312093",
+        "year": 2025,
+        "targetPmid": "25187433",
+        "note": "Retraction Notice do artigo mecanístico de Benoist et al. (JPET 2014)."
+      }
     ],
     "fullTextStudies": [
       {
@@ -5605,7 +5623,9 @@ const PEPTIDES_DATABASE = [
         "journal": "Journal of Pharmacology and Experimental Therapeutics (2013; Notice of Concern 2021: PMID 34551989)",
         "pmid": "23055539",
         "doi": "10.1124/jpet.112.199497",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/23055539/"
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23055539/",
+        "editorialQuarantine": true,
+        "editorialStatus": "EXPRESSION_OF_CONCERN"
       }
     ],
     "popularityScore": 88,
