@@ -4018,6 +4018,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+  function renderStackEvidenceMatrix(stack) {
+    if (!stack || !stack.evidenceMatrix || !Array.isArray(stack.evidenceMatrix.components)) {
+      return '';
+    }
+    const components = stack.evidenceMatrix.components;
+    return `
+      <div class="mb-3 p-3 bg-slate-950/70 rounded-xl border border-slate-800/80 text-[11px] text-slate-300">
+        <div class="flex items-center justify-between mb-2">
+          <strong class="text-cyan-400 font-mono text-[10px] uppercase tracking-wider flex items-center gap-1">
+            <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+            Matriz de Evidência por Componente (M2):
+          </strong>
+          <span class="text-[9px] font-mono text-slate-400">Níveis A a F</span>
+        </div>
+        <div class="space-y-1.5 divide-y divide-slate-800/60">
+          ${components.map(comp => {
+            const levels = comp.levels || [];
+            const activeLevels = levels.filter(l => l.present);
+            const levelBadges = activeLevels.map(l => {
+              let colorClass = 'bg-slate-800 text-slate-300 border-slate-700';
+              if (l.level === 'A') colorClass = 'bg-emerald-950 text-emerald-300 border-emerald-800';
+              if (l.level === 'B') colorClass = 'bg-cyan-950 text-cyan-300 border-cyan-800';
+              if (l.level === 'C') colorClass = 'bg-indigo-950 text-indigo-300 border-indigo-800';
+              if (l.level === 'D') colorClass = 'bg-amber-950 text-amber-300 border-amber-800';
+              if (l.level === 'E') colorClass = 'bg-purple-950 text-purple-300 border-purple-800';
+              if (l.level === 'F') colorClass = 'bg-slate-900 text-slate-400 border-slate-800';
+              return `<span class="px-1.5 py-0.5 rounded text-[9px] font-mono border ${colorClass}" title="${escapeHtml(l.text)}">Nível ${l.level}</span>`;
+            }).join(' ');
+
+            return `
+              <div class="pt-1.5 first:pt-0">
+                <div class="flex items-center justify-between gap-1 mb-0.5">
+                  <span class="font-bold font-mono text-slate-200 text-[10px]">${escapeHtml(comp.componentName)}</span>
+                  <div class="flex gap-1 flex-wrap">${levelBadges || '<span class="text-[9px] text-slate-500 font-mono">Sem Nível</span>'}</div>
+                </div>
+                ${comp.limitations ? `<p class="text-[10px] text-slate-400 leading-tight italic line-clamp-2">${escapeHtml(comp.limitations)}</p>` : ''}
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    `;
+  }
+
   function renderStacks() {
     if (!elements.stacksContainer) return;
 
@@ -4051,6 +4095,13 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         evCategoryBadge = `<span class="text-[9px] uppercase font-mono px-2 py-0.5 rounded-full bg-cyan-950/80 text-cyan-300 border border-cyan-800/60 font-semibold inline-flex items-center gap-1"><i data-lucide="flask-conical" class="w-3 h-3"></i>Racional Mecanístico</span>`;
       }
+
+      // H5 Escalation Badge (B2): nenhum dos 19 stacks possui ensaio clinico da combinacao
+      // coadministrada em humanos. Selo obrigatorio de transparencia epistemica.
+      const h5Badge = `
+        <span class="text-[9px] uppercase font-mono px-2 py-0.5 rounded-full bg-fuchsia-950/70 text-fuchsia-300 border border-fuchsia-800/60 font-bold inline-flex items-center gap-1" title="Nenhum ensaio clinico avaliou a combinacao completa coadministrada em humanos. A evidencia refere-se a componentes isolados.">
+          <i data-lucide="microscope" class="w-3 h-3"></i>Sem Evidência Combinada Humana
+        </span>`;
 
       // Risk Badge
       let riskBadge = '';
@@ -4088,6 +4139,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="flex items-center gap-1 flex-wrap">
               ${evCategoryBadge}
               ${riskBadge}
+              ${h5Badge}
               ${stack.badge ? `
                 <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-800/60 font-semibold tracking-wide flex-shrink-0">
                   ${stack.badge}
@@ -4132,6 +4184,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <strong class="text-cyan-400 block text-[11px] font-mono">Sinergia Bioquímica:</strong>
             ${stack.synergyRationale}
           </div>
+
+          ${renderStackEvidenceMatrix(stack)}
 
           ${blendHtml}
 
