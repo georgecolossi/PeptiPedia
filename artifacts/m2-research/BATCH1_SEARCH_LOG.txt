@@ -1,0 +1,31 @@
+SEARCH LOG — PEPTIPEDIA M2 BATCH 1 | 2026-11-12T18:19:59Z
+Stack 1: wolverine-stack (BPC-157 + TB-500)
+  BPC-157: PubMed Query: 'BPC-157' AND (clinical OR systematic review) | 202 hits | Top PMIDs: 40005999, 40756949 | Arcana: /peptideos/bpc-157 (10mg, 500mcg/dia SC) | PeptidePedia: /recovery/bpc-157
+  TB-500: PubMed Query: 'thymosin beta-4' OR 'TB-500' | 135 hits | Top PMIDs: 17468232, 41476424 | Arcana: /peptideos/tb500-thymosin-b4 (5mg, 2.5mg 2x/sem) | PeptidePedia: /recovery/tb-500
+  Combo: PubMed Query: 'BPC-157' AND ('TB-500' OR 'thymosin beta-4') | 15 hits (revisões + PMID 34324435 joelho) | CT.gov: 0 | Arcana: /peptideos/bpc-157-tb500-combo-wolverine (10mg, 1mg/dia) | PeptidePedia: /guides/bpc-157-vs-tb-500
+
+Stack 2: gh-pulse-stack (CJC-1295 + Ipamorelin)
+  CJC-1295: PubMed: 'CJC-1295' OR 'mod GRF 1-29' | 35 hits | Top PMIDs: 16352683, 41476424 | Arcana: /peptideos/cjc-1295-sem-dac (5mg, 100mcg 3x/dia) | PeptidePedia: /performance/cjc-1295
+  Ipamorelin: PubMed: 'ipamorelin' | 51 hits | Top PMIDs: 9849822, 41476424 | Arcana: /peptideos/ipamorelin (5mg, 200mcg 2x/dia) | PeptidePedia: /performance/ipamorelin
+  Combo: PubMed: 'CJC-1295' AND 'ipamorelin' | 11 hits (revisões) | CT.gov: 0 | Arcana: /peptideos/cjc-1295-ipamorelin-combo (10mg, 200mcg/dia) | PeptidePedia: /guides/cjc-1295-vs-ipamorelin
+
+Stack 3: fountain-of-youth-stack (Epitalon + GHK-Cu + Timosina Alfa-1)
+  Epitalon: PubMed: 'epitalon' OR 'epithalon' | 141 hits | Top PMIDs: 12374906, 40141333 | Arcana: /peptideos/epithalon (10mg, 5mg/dia) | PeptidePedia: /longevity/epithalon
+  GHK-Cu: PubMed: 'GHK-Cu' AND (skin OR collagen) | 86 hits | Top PMIDs: 29986520, 35083444 | Arcana: /peptideos/ghk-cu (50mg, 3mg/dia) | PeptidePedia: /aesthetics/ghk-cu
+  Timosina Alfa-1: PubMed: 'thymosin alpha-1' AND clinical | 140 hits | Top PMIDs: 11381492, 15546254 | Arcana: /peptideos/thymosin-alpha-1 (5mg, 1.6mg 2x/sem) | PeptidePedia: /longevity/thymosin-alpha-1
+  Combo: PubMed: 'epitalon' AND 'GHK-Cu' AND 'thymosin' | 0 hits | CT.gov: 0 | Arcana: não existe blend | PeptidePedia: /guides/best-peptides-for-anti-aging
+
+Stack 4: neuro-focus-stack (Semax + Selank)
+  Semax: PubMed: 'semax' AND (stroke OR cognitive) | 66 hits | Top PMIDs: 32342318 (fMRI), 11517472 | Arcana: /peptideos/semax (10mg, 200mcg/dia) | PeptidePedia: /cognitive/semax
+  Selank: PubMed: 'selank' AND (anxiety OR clinical) | 34 hits | Top PMIDs: 32342318 (fMRI), 18454096 | Arcana: /peptideos/selank (5mg, 275mcg/dia) | PeptidePedia: /cognitive/selank
+  Combo: PubMed: 'semax' AND 'selank' | 11 hits | Top PMIDs: 32342318, 11443939 | CT.gov: 0 | Arcana: /peptideos/semax-selank-combo (10mg) | PeptidePedia: /guides/selank-vs-semax
+
+Stack 5: mitochondrial-recharge-stack (SS-31 + MOTS-c)
+  SS-31: PubMed: 'elamipretide' OR 'SS-31' | 127 hits | Top PMIDs: 41335372 (First Approval), 38602181, 37268435 | Arcana: /peptideos/ss-31-elamipretide (10mg, 500mcg/dia) | PeptidePedia: /longevity/ss-31
+  MOTS-c: PubMed: 'MOTS-c' AND metabolism | 246 hits | Top PMIDs: 25738459, 36761202 | Arcana: /peptideos/mots-c (10mg, 5mg 2x/sem) | PeptidePedia: não listado
+  Combo: PubMed: 'SS-31' AND 'MOTS-c' | 1 hit (revisão esportiva) | CT.gov: 0 | Arcana: não existe blend | PeptidePedia: /guides/epithalon-vs-ss-31
+
+Stack 6: gut-barrier-stack (BPC-157 Arginato + KPV)
+  BPC-157 Arginato: PubMed: 'BPC-157' AND ('arginate' OR 'oral') | 19 hits | Top PMIDs: 30915550, 36228773 | Arcana: /peptideos/bpc-157 (injetável) | PeptidePedia: /recovery/bpc-157
+  KPV: PubMed: 'Lys-Pro-Val' OR 'KPV' AND colitis | 30 hits | Top PMIDs: 18061177, 35245681 | Arcana: /peptideos/kpv | PeptidePedia: /longevity/kpv
+  Combo: PubMed: 'BPC-157' AND 'KPV' | 1 hit (PCAC regulatório) | CT.gov: 0 | Arcana: /peptideos/ghk-cu-kpv-combo | PeptidePedia: /guides/bpc-157-vs-kpv

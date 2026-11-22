@@ -293,6 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
     selectedStatus: 'all',
 
     selectedRoute: 'all',
+    selectedStackCategory: 'all',
 
     sortBy: 'popularity', // 'popularity', 'evidence', 'name'
 
@@ -4018,172 +4019,148 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   function renderStacks() {
-
     if (!elements.stacksContainer) return;
 
+    const activeCat = state.selectedStackCategory || 'all';
+    const displayedStacks = activeCat === 'all'
+      ? RESEARCH_STACKS
+      : RESEARCH_STACKS.filter(s => s.category === activeCat);
 
+    // Update active filter pill styles
+    document.querySelectorAll('.stack-filter-btn').forEach(btn => {
+      const isSel = btn.dataset.stackFilter === activeCat;
+      if (isSel) {
+        btn.className = 'stack-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20 transition-all';
+      } else {
+        btn.className = 'stack-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-all';
+      }
+    });
 
-    elements.stacksContainer.innerHTML = RESEARCH_STACKS.map(stack => {
-
+    elements.stacksContainer.innerHTML = displayedStacks.map(stack => {
       const durationDisplay = stack.protocolSchedule?.duration || (stack.durationWeeks ? `${stack.durationWeeks} semanas` : 'Duração personalizada');
-
       const summaryText = stack.summary || stack.objective || '';
 
+      // Evidence Category Badge
+      let evCategoryBadge = '';
+      if (stack.evidenceCategory === 'commercial_blend' || stack.compositionType === 'commercial_fixed_blend' || stack.compositionType === 'commercial_blend') {
+        evCategoryBadge = `<span class="text-[9px] uppercase font-mono px-2 py-0.5 rounded-full bg-amber-950/80 text-amber-300 border border-amber-800/60 font-semibold inline-flex items-center gap-1"><i data-lucide="package" class="w-3 h-3"></i>Blend Comercial</span>`;
+      } else if (stack.evidenceCategory === 'clinical_phase2_isolated' || stack.evidenceCategory === 'clinical_phase3_isolated' || stack.evidenceCategory === 'clinical_proven') {
+        evCategoryBadge = `<span class="text-[9px] uppercase font-mono px-2 py-0.5 rounded-full bg-emerald-950/80 text-emerald-300 border border-emerald-800/60 font-semibold inline-flex items-center gap-1"><i data-lucide="check-circle-2" class="w-3 h-3"></i>Ensaio Monoterápico</span>`;
+      } else if (stack.riskLevel === 'contraindicated' || stack.evidenceCategory === 'unverified_combination') {
+        evCategoryBadge = `<span class="text-[9px] uppercase font-mono px-2 py-0.5 rounded-full bg-rose-950/80 text-rose-300 border border-rose-800/60 font-semibold inline-flex items-center gap-1"><i data-lucide="alert-octagon" class="w-3 h-3"></i>Combinação Não Validada</span>`;
+      } else {
+        evCategoryBadge = `<span class="text-[9px] uppercase font-mono px-2 py-0.5 rounded-full bg-cyan-950/80 text-cyan-300 border border-cyan-800/60 font-semibold inline-flex items-center gap-1"><i data-lucide="flask-conical" class="w-3 h-3"></i>Racional Mecanístico</span>`;
+      }
 
+      // Risk Badge
+      let riskBadge = '';
+      if (stack.riskLevel === 'contraindicated') {
+        riskBadge = `<span class="text-[9px] uppercase font-mono px-2 py-0.5 rounded-full bg-red-950 text-red-300 border border-red-700/80 font-bold inline-flex items-center gap-1 animate-pulse"><i data-lucide="alert-octagon" class="w-3 h-3 text-red-400"></i>Contraindicado</span>`;
+      } else if (stack.riskLevel === 'high') {
+        riskBadge = `<span class="text-[9px] uppercase font-mono px-2 py-0.5 rounded-full bg-orange-950/80 text-orange-300 border border-orange-700/60 font-semibold inline-flex items-center gap-1"><i data-lucide="alert-triangle" class="w-3 h-3"></i>Alto Risco</span>`;
+      } else if (stack.riskLevel === 'moderate') {
+        riskBadge = `<span class="text-[9px] uppercase font-mono px-2 py-0.5 rounded-full bg-amber-950/80 text-amber-300 border border-amber-700/60 font-semibold inline-flex items-center gap-1"><i data-lucide="shield-alert" class="w-3 h-3"></i>Risco Moderado</span>`;
+      } else {
+        riskBadge = `<span class="text-[9px] uppercase font-mono px-2 py-0.5 rounded-full bg-emerald-950/80 text-emerald-300 border border-emerald-700/60 font-semibold inline-flex items-center gap-1"><i data-lucide="shield-check" class="w-3 h-3"></i>Baixo Risco</span>`;
+      }
+
+      // Blend info or Kinetic Conflict
+      const blendObj = stack.blendDetails || stack.commercialFormulations;
+      let blendHtml = '';
+      if (blendObj) {
+        blendHtml = `
+          <div class="text-[11px] text-amber-200/90 bg-amber-950/25 p-2.5 rounded-xl border border-amber-800/40 mb-3 space-y-1">
+            <div class="flex items-center justify-between font-mono text-[10px] text-amber-400 font-semibold">
+              <span>Blend Fixo: ${blendObj.totalVialMassMg || 80} mg total</span>
+              <span>Diluente: ${blendObj.typicalReconstitutionVolumeMl || 3} mL</span>
+            </div>
+            ${blendObj.kineticConflictWarning ? `<p class="text-[10px] text-amber-300/80 leading-snug">${blendObj.kineticConflictWarning}</p>` : ''}
+          </div>
+        `;
+      }
 
       return `
-
       <div class="bg-slate-900/80 border border-slate-800/80 hover:border-cyan-500/40 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-950/20 flex flex-col justify-between">
-
         <div>
-
-          <!-- Topo do Card: Categoria e Badge -->
-
-          <div class="flex items-center justify-between gap-2 mb-2">
-
+          <!-- Topo do Card: Categoria e Badges -->
+          <div class="flex flex-wrap items-center justify-between gap-1.5 mb-2">
             <span class="text-[10px] font-mono uppercase tracking-wider text-cyan-400 font-semibold">${stack.category}</span>
-
-            ${stack.badge ? `
-
-              <span class="text-[10px] uppercase font-mono px-2.5 py-0.5 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-800/60 font-semibold tracking-wide flex-shrink-0">
-
-                ${stack.badge}
-
-              </span>
-
-            ` : ''}
-
+            <div class="flex items-center gap-1 flex-wrap">
+              ${evCategoryBadge}
+              ${riskBadge}
+              ${stack.badge ? `
+                <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-800/60 font-semibold tracking-wide flex-shrink-0">
+                  ${stack.badge}
+                </span>
+              ` : ''}
+            </div>
           </div>
-
-
 
           <!-- Título com largura total -->
-
           <h3 class="text-base sm:text-lg font-bold text-white font-mono leading-snug mb-2.5">${stack.title}</h3>
 
-
-
           <!-- Metadados do Stack: Duração com quebra responsiva e contagem de peptídeos -->
-
           <div class="flex flex-wrap items-center gap-2 mb-3">
-
             <div class="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-lg bg-slate-950/90 text-cyan-300 border border-cyan-900/50 font-mono font-medium max-w-full leading-tight">
-
               <i data-lucide="clock" class="w-3.5 h-3.5 text-cyan-400 flex-shrink-0"></i>
-
               <span class="break-words">${durationDisplay}</span>
-
             </div>
-
             <div class="inline-flex items-center gap-1 text-[11px] px-2 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/60 font-mono flex-shrink-0">
-
               <i data-lucide="layers" class="w-3 h-3 text-slate-400"></i>
-
               <span>${stack.peptides.length} Compostos</span>
-
             </div>
-
           </div>
-
-
 
           <p class="text-xs text-slate-300 mb-4 leading-relaxed">${summaryText}</p>
 
-
-
           <div class="mb-4">
-
             <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1.5">Composição do Stack:</span>
-
             <div class="flex flex-wrap gap-1.5">
-
               ${stack.peptides.map(pId => {
-
                 const pep = PEPTIDES_DATABASE.find(p => p.id === pId);
-
                 const name = pep ? pep.name : pId;
-
                 return `
-
                   <span data-pep-modal-id="${pId}" class="stack-pep-tag text-xs font-mono font-semibold px-2.5 py-1 rounded-lg bg-cyan-950 text-cyan-300 border border-cyan-800/50 cursor-pointer hover:bg-cyan-900 transition-colors">
-
                     ${name}
-
                   </span>
-
                 `;
-
               }).join('')}
-
             </div>
-
           </div>
-
-
 
           <div class="text-xs text-slate-300 bg-slate-950/60 p-3 rounded-xl border border-slate-800/60 mb-3 space-y-1">
-
             <strong class="text-cyan-400 block text-[11px] font-mono">Sinergia Bioquímica:</strong>
-
             ${stack.synergyRationale}
-
           </div>
 
-
+          ${blendHtml}
 
           <div class="space-y-1.5 text-xs bg-slate-900/60 p-3 rounded-xl border border-slate-800/40 mb-4 text-slate-300">
-
             ${stack.protocolSchedule?.morning ? `<div><strong class="text-slate-400 font-mono">Manhã:</strong> ${stack.protocolSchedule.morning}</div>` : ''}
-
             ${stack.protocolSchedule?.evening ? `<div><strong class="text-slate-400 font-mono">Noite:</strong> ${stack.protocolSchedule.evening}</div>` : ''}
-
             ${stack.protocolSchedule?.weeklyNotes ? `<div><strong class="text-slate-400 font-mono">Semanal / Obs:</strong> ${stack.protocolSchedule.weeklyNotes}</div>` : ''}
-
             ${stack.protocolSchedule?.washout ? `<div><strong class="text-amber-400 font-mono">Pausa (Washout):</strong> ${stack.protocolSchedule.washout}</div>` : ''}
-
           </div>
-
         </div>
-
-
 
         <div>
-
           ${stack.safetyAlert ? `
-
             <div class="text-[11px] text-rose-300/80 bg-rose-950/20 p-2.5 rounded-lg border border-rose-900/30 mb-3 flex items-start gap-1.5">
-
               <i data-lucide="alert-circle" class="w-3.5 h-3.5 flex-shrink-0 mt-0.5 text-rose-400"></i>
-
               <span>${stack.safetyAlert}</span>
-
             </div>
-
           ` : ''}
-
           <button 
-
             data-load-stack-id="${stack.id}"
-
             class="load-stack-btn w-full py-2.5 bg-slate-800 hover:bg-cyan-500 text-slate-200 hover:text-slate-950 rounded-xl text-xs font-bold transition-all duration-200 flex items-center justify-center gap-2 border border-slate-700">
-
             <i data-lucide="plus-circle" class="w-4 h-4"></i>
-
             <span>Carregar Peptídeos deste Stack no Planejador</span>
-
           </button>
-
         </div>
-
       </div>
-
     `}).join('');
 
-
-
     lucide.createIcons();
-
-
 
     elements.stacksContainer.querySelectorAll('.stack-pep-tag').forEach(tag => {
 
@@ -6523,6 +6500,21 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('hashchange', handleUrlHash);
 
 
+
+        // Filtros de Categoria para Stacks
+    document.querySelectorAll('.stack-filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        state.selectedStackCategory = btn.dataset.stackFilter;
+        renderStacks();
+      });
+    });
+
+    // Atalhos Rápidos da Seção Hero
+    document.querySelectorAll('.hero-quick-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        switchTab(btn.dataset.quickTab || btn.dataset.tab);
+      });
+    });
 
     // Atalho ESC
 

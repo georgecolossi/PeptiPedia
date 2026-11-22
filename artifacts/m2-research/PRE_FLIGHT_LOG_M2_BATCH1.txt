@@ -1,0 +1,13 @@
+PRE-FLIGHT LOG — PEPTIPEDIA M2 BATCH 1
+Timestamp: 2026-11-12T18:19:59Z | Mandate: m_2026-11-12T17-47-09-546Z_add5d28d | Cycle: c_2026-11-12T17-47-09-546Z_b9845af0
+1. FONTES PRIORITÁRIAS:
+- Arcana Labs (https://www.arcana-labs.app/peptideos): HTTP 200 OK | 119 rotas peptídeos/combos indexadas | DISPONÍVEL
+- PeptidePedia (https://peptidepedia.org/all-peptides): HTTP 200 OK | 23 entidades estruturadas + guias | DISPONÍVEL
+- PubMed / ClinicalTrials.gov API: ACESSÍVEL (173 PMIDs validados com DOI/periódico/ano)
+2. ESPAÇO ISOLADO E GOVERNANÇA:
+- Diretório: ./artifacts/m2-research/ (local, untracked)
+- Git: branch audit/h4-18-8-strict-arm-outcome-clinical-bundle (HEAD c7485840); main 71c52a87 intacta
+- Zero modificações em arquivos rastreados fora ./artifacts/
+3. INVENTÁRIO CANÔNICO:
+- 19 stacks em js/domain/stacks.js | 0 IDs ausentes em compounds.js | Lote 1: Stacks 1 a 6 selecionadas
+STATUS: ✅ PRÉ-FLIGHT PASSOU
