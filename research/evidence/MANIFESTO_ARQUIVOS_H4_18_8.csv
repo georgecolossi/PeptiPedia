@@ -25,8 +25,8 @@ favicon.ico,Configuracao,108,b6a3c79ff930f6df2b5c7d74e2ef3cbc4ca0a1e72a6033d8584
 harness/independent_verifier.py,Configuracao,5326,15ba1bafed82359d9f4e899b690992854a6a5b1cc1d711750bc28234f046e6de,"Arquivo de configuracao, governanca ou documentacao do repositorio",PRESERVADO_REPO
 harness/mutation_tester.py,Configuracao,5258,03f869e4ad908ad2b509da4fd16f996566522f8a6d0aa36d57ba8559c4d70c81,"Arquivo de configuracao, governanca ou documentacao do repositorio",PRESERVADO_REPO
 harness/report_validator.py,Configuracao,3656,d5428d9fe03df2d586aa0238007b0c36e15a9977e66d4747011c81cb5bc515c3,"Arquivo de configuracao, governanca ou documentacao do repositorio",PRESERVADO_REPO
-index.html,Frontend,106699,b73105e2268489e076eab9bb831157d8f0b0adab49171d8dc6af03b08b6d3abb,Asset ou pagina estatica do aplicativo PeptiPedia,PRESERVADO_CATALOGO
-js/app.js,Catalogo JS,187296,ab2e97fc40ee3eeb3b8cdb717f4f299d1ec02fefa4f72fcf4d36b0a885ff03c5,Dado estruturado e logica de catalogo frontend/dominio do PeptiPedia,PRESERVADO_CATALOGO
+index.html,Frontend,108758,cd61a547259291a40ef41a6fb16057a7d408da9a22f7db5a29f6f8d150091076,Asset ou pagina estatica do aplicativo PeptiPedia,PRESERVADO_CATALOGO
+js/app.js,Catalogo JS,196332,3adfc6f112423aee019e201194e7479b306f495a5e7060c239d45b598db266d3,Dado estruturado e logica de catalogo frontend/dominio do PeptiPedia,PRESERVADO_CATALOGO
 js/calculator.js,Catalogo JS,45230,7b1c98d792c5a04511edd6dda36c0eb4024f48d4ed791f7e3912225ea5a6fc82,Dado estruturado e logica de catalogo frontend/dominio do PeptiPedia,PRESERVADO_CATALOGO
 js/domain/compounds.js,Catalogo JS,750937,f49ee5765600513e071885ca025b73b0fb33608410ea2ee98f999cb821a08ff3,Dado estruturado e logica de catalogo frontend/dominio do PeptiPedia,PRESERVADO_CATALOGO
 js/domain/index.js,Catalogo JS,11252,a8d10d5d3bf4d0a11241c2c723ed01bff8335570c0909389b3376d4ff3b1fbb5,Dado estruturado e logica de catalogo frontend/dominio do PeptiPedia,PRESERVADO_CATALOGO
@@ -41,8 +41,8 @@ js/stacks-data.js,Catalogo JS,85870,a89f87c2da29e3febf3bca165661a99ffa981084d93c
 js/studies-data.js,Catalogo JS,123777,28b67d346bae9cdd24259f9db2c2a7f47151001abf8e726d60ed4a248562c909,Dado estruturado e logica de catalogo frontend/dominio do PeptiPedia,PRESERVADO_CATALOGO
 public/css/style.css,Frontend,11868,e0131ed1764fc1199a6755ba822b4c81e465ed953929691be5f9465377c43ed6,Asset ou pagina estatica do aplicativo PeptiPedia,PRESERVADO_CATALOGO
 public/favicon.ico,Frontend,108,b6a3c79ff930f6df2b5c7d74e2ef3cbc4ca0a1e72a6033d8584a18069f780a4a,Asset ou pagina estatica do aplicativo PeptiPedia,PRESERVADO_CATALOGO
-public/index.html,Frontend,106699,b73105e2268489e076eab9bb831157d8f0b0adab49171d8dc6af03b08b6d3abb,Asset ou pagina estatica do aplicativo PeptiPedia,PRESERVADO_CATALOGO
-public/js/app.js,Catalogo JS,187296,ab2e97fc40ee3eeb3b8cdb717f4f299d1ec02fefa4f72fcf4d36b0a885ff03c5,Dado estruturado e logica de catalogo frontend/dominio do PeptiPedia,PRESERVADO_CATALOGO
+public/index.html,Frontend,108758,cd61a547259291a40ef41a6fb16057a7d408da9a22f7db5a29f6f8d150091076,Asset ou pagina estatica do aplicativo PeptiPedia,PRESERVADO_CATALOGO
+public/js/app.js,Catalogo JS,196332,3adfc6f112423aee019e201194e7479b306f495a5e7060c239d45b598db266d3,Dado estruturado e logica de catalogo frontend/dominio do PeptiPedia,PRESERVADO_CATALOGO
 public/js/calculator.js,Catalogo JS,45230,7b1c98d792c5a04511edd6dda36c0eb4024f48d4ed791f7e3912225ea5a6fc82,Dado estruturado e logica de catalogo frontend/dominio do PeptiPedia,PRESERVADO_CATALOGO
 public/js/domain/compounds.js,Catalogo JS,750937,f49ee5765600513e071885ca025b73b0fb33608410ea2ee98f999cb821a08ff3,Dado estruturado e logica de catalogo frontend/dominio do PeptiPedia,PRESERVADO_CATALOGO
 public/js/domain/index.js,Catalogo JS,11252,a8d10d5d3bf4d0a11241c2c723ed01bff8335570c0909389b3376d4ff3b1fbb5,Dado estruturado e logica de catalogo frontend/dominio do PeptiPedia,PRESERVADO_CATALOGO

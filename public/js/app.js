@@ -155,23 +155,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // Sinônimos opcionais de busca. Não modificam o conteúdo das fichas.
 
   const PEPTIDE_SEARCH_ALIASES = Object.freeze({
-
-    'semaglutide': ['Ozempic', 'Wegovy', 'Rybelsus'],
-
+    'semaglutide': ['Ozempic', 'Wegovy', 'Rybelsus', 'CagriSema'],
+    'cagrilintide': ['CagriSema', 'CagriSema Blend'],
+    'ghk-cu': ['GLOW', 'KLOW', 'GLOW Blend', 'KLOW Blend', 'GLOW Protocol', 'KLOW Protocol'],
+    'bpc-157': ['GLOW', 'KLOW', 'Wolverine', 'GLOW Blend', 'KLOW Blend', 'Wolverine Stack', 'GLOW Protocol', 'KLOW Protocol'],
+    'tb-500': ['GLOW', 'KLOW', 'Wolverine', 'GLOW Blend', 'KLOW Blend', 'Wolverine Stack', 'GLOW Protocol', 'KLOW Protocol'],
+    'kpv': ['KLOW', 'KLOW Blend', 'KLOW Protocol'],
     'tirzepatide': ['Mounjaro', 'Zepbound'],
-
     'epitalon': ['Epithalon', 'Epithalone'],
-
     'cjc-1295-no-dac': ['Mod GRF 1-29', 'Modified GRF 1-29', 'CJC sem DAC'],
-
     'cjc-1295-dac': ['CJC com DAC'],
-
     'pt-141': ['Bremelanotida', 'Bremelanotide', 'Vyleesi'],
-
     'ss-31': ['Elamipretide'],
-
     'melanotan-2': ['MT-2', 'MT2']
-
   });
 
 
@@ -685,7 +681,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const filtered = getFilteredPeptides();
 
+    // Stacks cruzados correspondentes à busca
+    const matchingStacks = (state.searchQuery.trim() && typeof RESEARCH_STACKS !== 'undefined')
+      ? RESEARCH_STACKS.filter(s => {
+          const q = normalizeText(state.searchQuery.trim());
+          const nameMatch = normalizeText(s.name || s.title || '').includes(q);
+          const idMatch = normalizeText(s.id || '').includes(q);
+          const catMatch = normalizeText(s.category || '').includes(q);
+          const descMatch = normalizeText(s.description || s.objective || '').includes(q);
+          const compMatch = (s.components || []).some(c => normalizeText(c.name || c.peptideId || '').includes(q));
+          let nickMatch = false;
+          if (s.id === 'wound-scar-tissue-stack' && (q.includes('glow') || 'glow'.includes(q))) nickMatch = true;
+          if (s.id === 'klow-barrier-repair-stack' && (q.includes('klow') || 'klow'.includes(q))) nickMatch = true;
+          if (s.id === 'wolverine-stack' && (q.includes('wolverine') || 'wolverine'.includes(q))) nickMatch = true;
+          if (s.id === 'cagrisema-incretin-metabolic-stack' && (q.includes('cagrisema') || 'cagrisema'.includes(q))) nickMatch = true;
+          return nameMatch || idMatch || catMatch || descMatch || compMatch || nickMatch;
+        })
+      : [];
 
+    let matchingStacksBannerHtml = '';
+    if (matchingStacks.length > 0) {
+      matchingStacks.slice(0, 2).forEach(st => {
+        matchingStacksBannerHtml += `
+          <div class="col-span-full mb-3 p-4 rounded-2xl bg-gradient-to-r from-cyan-950/80 via-slate-900 to-slate-900/90 border border-cyan-500/50 shadow-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0 border border-cyan-500/30">
+                <i data-lucide="layers" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-[10px] font-mono uppercase tracking-wider text-cyan-400 font-bold">Stack Clínico / Famoso Encontrado</span>
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700">Evidência ${escapeHtml(st.evidenceLevel || 'E')}</span>
+                </div>
+                <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">${escapeHtml(st.name || st.title)}</h4>
+                <p class="text-xs text-slate-300 line-clamp-1 mt-0.5">${(st.components || []).length} compostos combinados • ${escapeHtml(st.objective || st.description || '')}</p>
+              </div>
+            </div>
+            <button data-switch-to-stack="${escapeHtml(st.id)}" class="switch-to-stack-btn px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs rounded-xl transition-all shadow-md flex items-center gap-2 whitespace-nowrap cursor-pointer">
+              <span>Ver este Stack na aba Stacks</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        `;
+      });
+    }
 
     // Ordenação
 
@@ -714,6 +753,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     if (filtered.length === 0) {
+
+      if (matchingStacksBannerHtml) {
+        elements.cardsGrid.innerHTML = `
+          ${matchingStacksBannerHtml}
+          <div class="col-span-full py-8 text-center text-slate-400 bg-slate-900/40 rounded-2xl border border-slate-800 p-6">
+            <p class="text-xs text-slate-300">Este termo corresponde a um protocolo/stack composto acima. Clique em "Ver este Stack" para visualizar os dados completos.</p>
+          </div>
+        `;
+        lucide.createIcons();
+        attachStackSwitchListeners();
+        return;
+      }
 
       elements.cardsGrid.innerHTML = `
 
@@ -745,7 +796,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    let cardsHtml = '';
+    let cardsHtml = matchingStacksBannerHtml;
 
     filtered.forEach((peptide, index) => {
 
@@ -994,6 +1045,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
 
     attachCardActionListeners();
+    attachStackSwitchListeners();
 
   }
 
@@ -1085,6 +1137,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
+  }
+
+  function jumpToStack(stackId) {
+    if (!stackId) return;
+    const stacksTabBtn = document.querySelector(".nav-tab-link[data-tab='stacks']");
+    if (stacksTabBtn) {
+      stacksTabBtn.click();
+    }
+    state.selectedStackCategory = 'all';
+    state.stackSearchQuery = '';
+    if (elements.stackSearchInput) {
+      elements.stackSearchInput.value = '';
+    }
+    renderStacks();
+
+    setTimeout(() => {
+      const targetCard = document.querySelector(`.stack-card[data-stack-id="${stackId}"]`);
+      if (targetCard) {
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        targetCard.classList.add('ring-4', 'ring-cyan-400', 'scale-[1.01]');
+        setTimeout(() => {
+          targetCard.classList.remove('ring-4', 'ring-cyan-400', 'scale-[1.01]');
+        }, 2500);
+      }
+    }, 180);
+  }
+
+  function attachStackSwitchListeners() {
+    document.querySelectorAll('.switch-to-stack-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const stackId = btn.dataset.switchToStack;
+        if (stackId) {
+          jumpToStack(stackId);
+        }
+      });
+    });
   }
 
 
@@ -2105,7 +2194,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
         </div>
 
-
+        <!-- Stacks e Protocolos Combinados com este Composto -->
+        ${(() => {
+          const related = (typeof RESEARCH_STACKS !== 'undefined' && Array.isArray(RESEARCH_STACKS))
+            ? RESEARCH_STACKS.filter(s => (s.peptides || []).includes(peptide.id) || (s.components || []).some(c => c.peptideId === peptide.id))
+            : [];
+          if (related.length === 0) return '';
+          return `
+            <div class="space-y-3 pt-3 border-t border-slate-800">
+              <h4 class="text-sm font-bold uppercase tracking-wider text-cyan-300 flex items-center gap-2">
+                <i data-lucide="layers" class="w-4 h-4 text-cyan-400"></i>
+                Stacks e Protocolos com este Composto (${related.length})
+              </h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                ${related.map(st => `
+                  <div class="p-3 bg-slate-950/70 border border-slate-800 rounded-xl flex items-center justify-between gap-2 hover:border-cyan-500/40 transition-colors">
+                    <div>
+                      <span class="text-[10px] font-mono uppercase text-cyan-400 block">${escapeHtml(st.category || 'Stack')}</span>
+                      <span class="text-xs font-bold text-white block truncate max-w-[200px]">${escapeHtml(st.title || st.name)}</span>
+                      <span class="text-[10px] text-slate-400">${st.peptides.length} compostos • Evidência ${escapeHtml(st.evidenceLevel || 'E')}</span>
+                    </div>
+                    <button data-jump-to-stack-id="${escapeHtml(st.id)}" class="modal-jump-stack-btn px-2.5 py-1.5 bg-cyan-950 hover:bg-cyan-900 text-cyan-300 border border-cyan-800/60 rounded-lg text-[11px] font-mono font-bold flex items-center gap-1 transition-colors shrink-0">
+                      <span>Ver Stack</span>
+                      <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                    </button>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        })()}
 
         <!-- Barra de Ações Rápidas no Rodapé do Modal -->
 
@@ -2162,6 +2280,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('overflow-hidden');
 
     lucide.createIcons();
+
+    elements.detailModalContent?.querySelectorAll('.modal-jump-stack-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const stackId = btn.dataset.jumpToStackId;
+        closePeptideModal();
+        jumpToStack(stackId);
+      });
+    });
 
 
 
@@ -3504,6 +3631,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     lucide.createIcons();
 
+    elements.detailModalContent?.querySelectorAll('.modal-jump-stack-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const stackId = btn.dataset.jumpToStackId;
+        closePeptideModal();
+        jumpToStack(stackId);
+      });
+    });
+
 
 
     document.getElementById('print-protocol-now-btn')?.addEventListener('click', () => {
@@ -4066,7 +4202,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!elements.stacksContainer) return;
 
     const activeCat = state.selectedStackCategory || 'all';
-    const query = (state.stackSearchQuery || state.searchQuery || '').trim().toLowerCase();
+    const query = (state.stackSearchQuery || '').trim().toLowerCase();
 
     let displayedStacks = activeCat === 'all'
       ? RESEARCH_STACKS
@@ -4077,9 +4213,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const idMatch = s.id?.toLowerCase().includes(query);
         const nameMatch = s.name?.toLowerCase().includes(query) || s.title?.toLowerCase().includes(query);
         const altMatch = (s.alternativeNames || []).some(alt => alt.toLowerCase().includes(query));
-        const summaryMatch = s.summary?.toLowerCase().includes(query);
+        const summaryMatch = s.summary?.toLowerCase().includes(query) || s.objective?.toLowerCase().includes(query);
         const pepMatch = (s.peptides || []).some(p => p.toLowerCase().includes(query));
-        return idMatch || nameMatch || altMatch || summaryMatch || pepMatch;
+        const compMatch = (s.components || []).some(c => (c.name || c.peptideId || '').toLowerCase().includes(query));
+        let nickMatch = false;
+        if (s.id === 'wound-scar-tissue-stack' && (query.includes('glow') || 'glow'.includes(query))) nickMatch = true;
+        if (s.id === 'klow-barrier-repair-stack' && (query.includes('klow') || 'klow'.includes(query))) nickMatch = true;
+        if (s.id === 'wolverine-stack' && (query.includes('wolverine') || 'wolverine'.includes(query))) nickMatch = true;
+        if (s.id === 'cagrisema-incretin-metabolic-stack' && (query.includes('cagrisema') || 'cagrisema'.includes(query))) nickMatch = true;
+        return idMatch || nameMatch || altMatch || summaryMatch || pepMatch || compMatch || nickMatch;
       });
     }
 
@@ -6385,6 +6527,16 @@ document.addEventListener('DOMContentLoaded', () => {
     elements.stackSearchInput?.addEventListener('input', (e) => {
       state.stackSearchQuery = e.target.value;
       renderStacks();
+    });
+
+    document.querySelectorAll('.jump-stack-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetStackId = btn.dataset.jumpStack;
+        if (targetStackId) {
+          jumpToStack(targetStackId);
+        }
+      });
     });
 
 
