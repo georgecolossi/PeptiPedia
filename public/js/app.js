@@ -4716,6 +4716,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       peptideCalculator.setValues({
 
+        compoundId: activeCompoundId,
+
         vialMg: vialInput.value,
 
         waterMl: waterInput.value,
@@ -4986,6 +4988,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function selectCompoundPreset(compoundId) {
 
       activeCompoundId = compoundId;
+      if (typeof peptideCalculator !== 'undefined' && typeof peptideCalculator.setCompound === 'function') {
+        peptideCalculator.setCompound(compoundId);
+      }
 
       const c = (typeof peptideCalculator.getCompoundById === 'function')
 
@@ -5262,6 +5267,9 @@ document.addEventListener('DOMContentLoaded', () => {
     clearBtn?.addEventListener('click', () => {
 
       activeCompoundId = null;
+      if (typeof peptideCalculator !== 'undefined' && typeof peptideCalculator.setCompound === 'function') {
+        peptideCalculator.setCompound(null);
+      }
 
       if (vialInput) vialInput.value = '';
 
