@@ -197,7 +197,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (H4.3.1)"
+    "pendingScientificReview": "Concluído (H4.3.1)",
+    "epistemicClass": "preclinical"
   },
   {
     "id": "bpc-157-arginate",
@@ -328,7 +329,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "preclinical"
   },
   {
     "id": "tb-500",
@@ -477,7 +479,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (H4.3.1)"
+    "pendingScientificReview": "Concluído (H4.3.1)",
+    "epistemicClass": "preclinical"
   },
   {
     "id": "ghk-cu",
@@ -655,7 +658,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (H4.3.1)"
+    "pendingScientificReview": "Concluído (H4.3.1)",
+    "epistemicClass": "clinical"
   },
   {
     "id": "ipamorelin",
@@ -803,7 +807,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (H4.3.1)"
+    "pendingScientificReview": "Concluído (H4.3.1)",
+    "epistemicClass": "clinical"
   },
   {
     "id": "cjc-1295-no-dac",
@@ -934,7 +939,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (H4.3.1)"
+    "pendingScientificReview": "Concluído (H4.3.1)",
+    "epistemicClass": "preclinical"
   },
   {
     "id": "sermorelin",
@@ -1066,7 +1072,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "published_protocol"
   },
   {
     "id": "tesamorelin",
@@ -1239,7 +1246,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (H4.3.1)"
+    "pendingScientificReview": "Concluído (H4.3.1)",
+    "epistemicClass": "clinical"
   },
   {
     "id": "semaglutide",
@@ -1413,7 +1421,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (H4.3.1)"
+    "pendingScientificReview": "Concluído (H4.3.1)",
+    "epistemicClass": "clinical"
   },
   {
     "id": "tirzepatide",
@@ -1595,7 +1604,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (H4.3.1)"
+    "pendingScientificReview": "Concluído (H4.3.1)",
+    "epistemicClass": "clinical"
   },
   {
     "id": "retatrutide",
@@ -1822,7 +1832,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (H4.3.1)"
+    "pendingScientificReview": "Concluído (H4.3.1)",
+    "epistemicClass": "published_protocol"
   },
   {
     "id": "aod-9604",
@@ -1959,7 +1970,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (H4.3.1)"
+    "pendingScientificReview": "Concluído (H4.3.1)",
+    "epistemicClass": "preclinical"
   },
   {
     "id": "epitalon",
@@ -2104,7 +2116,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (H4.3.1)"
+    "pendingScientificReview": "Concluído (H4.3.1)",
+    "epistemicClass": "preclinical"
   },
   {
     "id": "mots-c",
@@ -2250,7 +2263,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (H4.3.1)"
+    "pendingScientificReview": "Concluído (H4.3.1)",
+    "epistemicClass": "preclinical"
   },
   {
     "id": "ss-31",
@@ -2395,7 +2409,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "published_protocol"
   },
   {
     "id": "semax",
@@ -2621,7 +2636,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "published_protocol"
   },
   {
     "id": "selank",
@@ -2817,7 +2833,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "published_protocol"
   },
   {
     "id": "cerebrolysin",
@@ -2961,7 +2978,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "published_protocol"
   },
   {
     "id": "thymosin-alpha-1",
@@ -3103,7 +3121,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (H4.3.1)"
+    "pendingScientificReview": "Concluído (H4.3.1)",
+    "epistemicClass": "published_protocol"
   },
   {
     "id": "pt-141",
@@ -3240,7 +3259,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (H4.3.1)"
+    "pendingScientificReview": "Concluído (H4.3.1)",
+    "epistemicClass": "clinical"
   },
   {
     "id": "dsip",
@@ -3383,7 +3403,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "clinical"
   },
   {
     "id": "igf-1-lr3",
@@ -3509,7 +3530,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (H4.3.1)"
+    "pendingScientificReview": "Concluído (H4.3.1)",
+    "epistemicClass": "preclinical"
   },
   {
     "id": "cagrilintide",
@@ -3687,7 +3709,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (H4.3.1)"
+    "pendingScientificReview": "Concluído (H4.3.1)",
+    "epistemicClass": "published_protocol"
   },
   {
     "id": "survodutide",
@@ -3833,7 +3856,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "published_protocol"
   },
   {
     "id": "orforglipron",
@@ -3999,7 +4023,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "ara-290",
@@ -4146,7 +4171,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "clinical"
   },
   {
     "id": "kpv",
@@ -4286,7 +4312,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (H4.3.1)"
+    "pendingScientificReview": "Concluído (H4.3.1)",
+    "epistemicClass": "preclinical"
   },
   {
     "id": "ll-37",
@@ -4435,7 +4462,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "preclinical"
   },
   {
     "id": "vip",
@@ -4561,7 +4589,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "clinical"
   },
   {
     "id": "humanin",
@@ -4706,7 +4735,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "preclinical"
   },
   {
     "id": "kisspeptin",
@@ -4852,7 +4882,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "clinical"
   },
   {
     "id": "glutathione",
@@ -4979,7 +5010,8 @@ const PEPTIDES_DATABASE = [
         "doi": "10.1007/s00394-014-0706-z",
         "url": "https://pubmed.ncbi.nlm.nih.gov/24791752/"
       }
-    ]
+    ],
+    "epistemicClass": "published_protocol"
   },
   {
     "id": "nad-plus",
@@ -5113,7 +5145,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "preclinical"
   },
   {
     "id": "oxytocin",
@@ -5243,7 +5276,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "published_protocol"
   },
   {
     "id": "thymalin",
@@ -5379,7 +5413,8 @@ const PEPTIDES_DATABASE = [
         "doi": null,
         "url": "https://pubmed.ncbi.nlm.nih.gov/12577695/"
       }
-    ]
+    ],
+    "epistemicClass": "preclinical"
   },
   {
     "id": "pinealon",
@@ -5525,7 +5560,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "preclinical"
   },
   {
     "id": "dihexa",
@@ -5654,7 +5690,8 @@ const PEPTIDES_DATABASE = [
       }
     ],
     "calculatorBlocked": true,
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "controversial"
   },
   {
     "id": "ghrp-2",
@@ -5787,7 +5824,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "clinical"
   },
   {
     "id": "ghrp-6",
@@ -5919,7 +5957,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "clinical"
   },
   {
     "id": "hexarelin",
@@ -6044,7 +6083,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "clinical"
   },
   {
     "id": "peg-mgf",
@@ -6177,7 +6217,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "preclinical"
   },
   {
     "id": "melanotan-1",
@@ -6287,7 +6328,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "clinical"
   },
   {
     "id": "melanotan-2",
@@ -6410,7 +6452,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "preclinical"
   },
   {
     "id": "snap-8",
@@ -6526,7 +6569,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "5-amino-1mq",
@@ -6652,7 +6696,8 @@ const PEPTIDES_DATABASE = [
       }
     ],
     "calculatorBlocked": true,
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "preclinical"
   },
   {
     "id": "cjc-1295-dac",
@@ -6786,7 +6831,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (H4.3.1)"
+    "pendingScientificReview": "Concluído (H4.3.1)",
+    "epistemicClass": "published_protocol"
   },
   {
     "id": "follistatin-344",
@@ -6932,7 +6978,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "preclinical"
   },
   {
     "id": "igf-1-des",
@@ -7057,7 +7104,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "preclinical"
   },
   {
     "id": "argireline",
@@ -7205,7 +7253,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "clinical"
   },
   {
     "id": "mazdutide",
@@ -7362,7 +7411,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "published_protocol"
   },
   {
     "id": "cortexin",
@@ -7535,7 +7585,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "published_protocol"
   },
   {
     "id": "larazotide",
@@ -7683,7 +7734,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "published_protocol"
   },
   {
     "id": "slu-pp-332",
@@ -7800,7 +7852,8 @@ const PEPTIDES_DATABASE = [
       }
     ],
     "calculatorBlocked": true,
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "preclinical"
   },
   {
     "id": "slu-pp-915",
@@ -7915,7 +7968,8 @@ const PEPTIDES_DATABASE = [
       }
     ],
     "calculatorBlocked": true,
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "preclinical"
   },
   {
     "id": "liraglutide",
@@ -8124,7 +8178,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "clinical"
   },
   {
     "id": "teduglutide",
@@ -8318,7 +8373,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "clinical"
   },
   {
     "id": "setmelanotide",
@@ -8493,7 +8549,8 @@ const PEPTIDES_DATABASE = [
     "scientificReferences": [
       "Clément K, et al. Efficacy and safety of setmelanotide, an MC4R agonist, in individuals with severe obesity due to LEPR or POMC deficiency: single-arm, open-label, multicentre, phase 3 trials. PubMed. 2020. DOI: 10.1016/S2213-8587(20)30364-8. PMID: 33137293.",
       "Haqq AM, et al. Efficacy and safety of setmelanotide, a melanocortin-4 receptor agonist, in patients with Bardet-Biedl syndrome and Alström syndrome: a multicentre, randomised, double-blind, placebo-controlled, phase 3 trial with an open-label period. PubMed. 2022. DOI: 10.1016/S2213-8587(22)00277-7. PMID: 36356613."
-    ]
+    ],
+    "epistemicClass": "regulatory"
   },
   {
     "id": "abaloparatide",
@@ -8615,7 +8672,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "ace-031",
@@ -8725,7 +8783,8 @@ const PEPTIDES_DATABASE = [
       }
     ],
     "calculatorBlocked": true,
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "published_protocol"
   },
   {
     "id": "ahk-cu",
@@ -8858,7 +8917,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "b7-33",
@@ -8976,7 +9036,8 @@ const PEPTIDES_DATABASE = [
       }
     ],
     "calculatorBlocked": true,
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "dulaglutide",
@@ -9102,7 +9163,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "eloralintide",
@@ -9238,7 +9300,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "published_protocol"
   },
   {
     "id": "foxo4-dri",
@@ -9347,7 +9410,8 @@ const PEPTIDES_DATABASE = [
       }
     ],
     "calculatorBlocked": true,
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "gonadorelin",
@@ -9471,7 +9535,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "hcg",
@@ -9597,7 +9662,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "somatropin",
@@ -9789,7 +9855,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (H4.3.1)"
+    "pendingScientificReview": "Concluído (H4.3.1)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "menotropin-hmg",
@@ -9913,7 +9980,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "palmitoyl-pentapeptide-4",
@@ -10046,7 +10114,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "published_protocol"
   },
   {
     "id": "pe-22-28",
@@ -10164,7 +10233,8 @@ const PEPTIDES_DATABASE = [
       }
     ],
     "calculatorBlocked": true,
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "ptd-dbm",
@@ -10273,7 +10343,8 @@ const PEPTIDES_DATABASE = [
       }
     ],
     "calculatorBlocked": true,
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "triptorelin",
@@ -10396,7 +10467,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "acth-1-39",
@@ -10526,7 +10598,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "adipotide",
@@ -10636,7 +10709,8 @@ const PEPTIDES_DATABASE = [
       }
     ],
     "calculatorBlocked": true,
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "bronchogen",
@@ -10777,7 +10851,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "cardiogen",
@@ -10905,7 +10980,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "chonluten",
@@ -11032,7 +11108,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "cortagen",
@@ -11170,7 +11247,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "dermorphin",
@@ -11290,7 +11368,8 @@ const PEPTIDES_DATABASE = [
       }
     ],
     "calculatorBlocked": true,
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "hgh-fragment-176-191",
@@ -11437,7 +11516,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "livagen",
@@ -11566,7 +11646,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "mgf-e-peptide",
@@ -11712,7 +11793,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "orexin-a",
@@ -11875,7 +11957,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "orexin-b",
@@ -12005,7 +12088,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "pancragen",
@@ -12152,7 +12236,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "pnc-27",
@@ -12265,7 +12350,8 @@ const PEPTIDES_DATABASE = [
       }
     ],
     "calculatorBlocked": true,
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "prostamax",
@@ -12400,7 +12486,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "thymogen",
@@ -12549,7 +12636,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "thymulin",
@@ -12680,7 +12768,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "vesugen",
@@ -12816,7 +12905,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "vilon",
@@ -12953,7 +13043,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "teriparatide",
@@ -13069,7 +13160,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "palopegteriparatide",
@@ -13181,7 +13273,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "octreotide",
@@ -13294,7 +13387,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "lanreotide",
@@ -13406,7 +13500,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "pasireotide",
@@ -13519,7 +13614,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "ziconotide",
@@ -13632,7 +13728,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "degarelix",
@@ -13744,7 +13841,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "ganirelix",
@@ -13856,7 +13954,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "cetrorelix",
@@ -13968,7 +14067,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "leuprorelin",
@@ -14082,7 +14182,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "goserelin",
@@ -14194,7 +14295,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "atosiban",
@@ -14310,7 +14412,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "linaclotide",
@@ -14421,7 +14524,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "plecanatide",
@@ -14532,7 +14636,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "dasiglucagon",
@@ -14643,7 +14748,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "glucagon",
@@ -14758,7 +14864,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "desmopressin",
@@ -14874,7 +14981,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "pramlintide",
@@ -14987,7 +15095,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "enfuvirtide",
@@ -15097,7 +15206,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "exenatide",
@@ -15212,7 +15322,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "lixisenatide",
@@ -15326,7 +15437,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "Concluído (Bula Aprovada)"
+    "pendingScientificReview": "Concluído (Bula Aprovada)",
+    "epistemicClass": "regulatory"
   },
   {
     "id": "apraglutide",
@@ -15470,7 +15582,8 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   },
   {
     "id": "zenagamtide",
@@ -15644,13 +15757,10 @@ const PEPTIDES_DATABASE = [
         ]
       }
     ],
-    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)"
+    "pendingScientificReview": "P5.1 (Revisão Científica Aprofundada)",
+    "epistemicClass": "unverified"
   }
 ];
-;
-;
-;
-;
 
 // Categorias com metadados e contadores dinâmicos
 const PEPTIDE_CATEGORIES = [

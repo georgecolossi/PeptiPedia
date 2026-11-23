@@ -9,6 +9,37 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
+  const EPISTEMIC_TAXONOMY_MAP = Object.freeze({
+    'clinical': 'clinical',
+    'clinical_evidence': 'clinical',
+    'clinical_proven': 'clinical',
+    'clinical_pilot': 'clinical',
+    'regulatory': 'regulatory',
+    'regulatory_info': 'regulatory',
+    'approved_label': 'regulatory',
+    'fda_approved_monogenic_obesity': 'regulatory',
+    'published_protocol': 'published_protocol',
+    'published-protocol': 'published_protocol',
+    'clinical_trial_only': 'published_protocol',
+    'preclinical': 'preclinical',
+    'preclinical_empirical': 'preclinical',
+    'pharmacological': 'pharmacological',
+    'pharmacological_evidence': 'pharmacological',
+    'community_practice': 'community_practice',
+    'community-practice': 'community_practice',
+    'anecdotal': 'anecdotal',
+    'anecdotal_report': 'anecdotal',
+    'commercial': 'commercial',
+    'commercial_claim': 'commercial',
+    'hypothesis': 'hypothesis',
+    'scientific_hypothesis': 'hypothesis',
+    'controversial': 'controversial',
+    'controversial_info': 'controversial',
+    'unverified': 'unverified',
+    'investigational_no_dose': 'unverified',
+    'community_unvalidated': 'unverified'
+  });
+
   // ----------------------------------------------------
   // H4.7: Sincronizacao do Dominio Normalizado e Contadores de Categorias
   // ----------------------------------------------------
@@ -643,35 +674,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
   function getEvidenceBadgeHtml(evidenceType, epistemicClass) {
-    const ep = (epistemicClass || evidenceType || '').toLowerCase();
+    const raw = (epistemicClass || evidenceType || '').toLowerCase().trim();
+    const ep = EPISTEMIC_TAXONOMY_MAP[raw] || 'unverified';
     
-    if (ep === 'clinical_evidence' || ep === 'clinical_proven') {
-      return `<span class="badge-epistemic-clinical text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="check-circle-2" class="w-3 h-3"></i>Evidência Clínica</span>`;
-    } else if (ep === 'regulatory_info' || ep === 'approved_label') {
-      return `<span class="badge-epistemic-regulatory text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="shield-check" class="w-3 h-3"></i>Informação Regulatória</span>`;
-    } else if (ep === 'clinical_pilot') {
-      return `<span class="badge-clinical-pilot text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="microscope" class="w-3 h-3"></i>Estudo Piloto Humano</span>`;
-    } else if (ep === 'clinical_trial_only') {
-      return `<span class="badge-trial-only text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="flask-conical" class="w-3 h-3"></i>Braço de Ensaio Clínico</span>`;
-    } else if (ep === 'pharmacological_evidence') {
-      return `<span class="badge-epistemic-pharmacological text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="dna" class="w-3 h-3"></i>Evidência Farmacológica</span>`;
-    } else if (ep === 'published_protocol') {
-      return `<span class="badge-epistemic-published-protocol text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="book-open" class="w-3 h-3"></i>Protocolo Publicado</span>`;
-    } else if (ep === 'community_practice') {
-      return `<span class="badge-epistemic-community-practice text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="users" class="w-3 h-3"></i>Prática Popular</span>`;
-    } else if (ep === 'anecdotal_report') {
-      return `<span class="badge-epistemic-anecdotal text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="message-square" class="w-3 h-3"></i>Relato Anedótico</span>`;
-    } else if (ep === 'commercial_claim') {
-      return `<span class="badge-epistemic-commercial text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="package" class="w-3 h-3"></i>Alegação Comercial</span>`;
-    } else if (ep === 'scientific_hypothesis') {
-      return `<span class="badge-epistemic-hypothesis text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="sparkles" class="w-3 h-3"></i>Hipótese Mecanística</span>`;
-    } else if (ep === 'controversial_info') {
-      return `<span class="badge-epistemic-controversial text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="help-circle" class="w-3 h-3"></i>Informação Controversa</span>`;
-    } else if (ep === 'investigational_no_dose' || ep === 'unverified') {
-      return `<span class="badge-no-dose text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm bg-amber-950/80 text-amber-300 border border-amber-700/60"><i data-lucide="alert-octagon" class="w-3 h-3"></i>Investigacional (Sem Dose Humana)</span>`;
-    } else {
-      return `<span class="badge-epistemic-preclinical text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="microscope" class="w-3 h-3"></i>Evidência Pré-Clínica / Empírica</span>`;
+    switch (ep) {
+      case 'clinical':
+        return `<span class="badge-epistemic-clinical text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="check-circle-2" class="w-3 h-3"></i>Evidência Clínica</span>`;
+      case 'regulatory':
+        return `<span class="badge-epistemic-regulatory text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="shield-check" class="w-3 h-3"></i>Informação Regulatória</span>`;
+      case 'published_protocol':
+        return `<span class="badge-epistemic-published-protocol text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="book-open" class="w-3 h-3"></i>Protocolo Publicado</span>`;
+      case 'preclinical':
+        return `<span class="badge-epistemic-preclinical text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="microscope" class="w-3 h-3"></i>Evidência Pré-Clínica</span>`;
+      case 'pharmacological':
+        return `<span class="badge-epistemic-pharmacological text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="dna" class="w-3 h-3"></i>Evidência Farmacológica</span>`;
+      case 'community_practice':
+        return `<span class="badge-epistemic-community-practice text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="users" class="w-3 h-3"></i>Prática Popular</span>`;
+      case 'anecdotal':
+        return `<span class="badge-epistemic-anecdotal text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="message-square" class="w-3 h-3"></i>Relato Anedótico</span>`;
+      case 'commercial':
+        return `<span class="badge-epistemic-commercial text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="package" class="w-3 h-3"></i>Alegação Comercial</span>`;
+      case 'hypothesis':
+        return `<span class="badge-epistemic-hypothesis text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="sparkles" class="w-3 h-3"></i>Hipótese Mecanística</span>`;
+      case 'controversial':
+        return `<span class="badge-epistemic-controversial text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="alert-triangle" class="w-3 h-3"></i>Controverso / Retratado</span>`;
+      case 'unverified':
+      default:
+        return `<span class="badge-epistemic-unverified text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="alert-octagon" class="w-3 h-3"></i>Não Verificado / Sem Dose</span>`;
     }
   }
 
@@ -4578,6 +4609,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (newUnit === currentDoseUnit && convertValue) return;
 
+      if (newUnit === 'UI') {
+        const activeCompId = (peptideCalculator.activeCompoundId || '').toLowerCase().trim();
+        const isSomatropin = activeCompId === 'somatropin' || activeCompId === 'hgh' || activeCompId === 'somatropina' || activeCompId === 'genotropin' || activeCompId === 'norditropin' || activeCompId === 'humatrope' || activeCompId === 'omnitrope' || activeCompId === 'saizen' || activeCompId === 'serostim';
+        if (!isSomatropin) {
+          showToast("A unidade UI (Unidades Internacionais) é de uso estrito e exclusivo para Somatropina (rhGH) conforme o Padrão Internacional OMS 98/574 (1 mg = 3,00 UI). Para outros compostos, utilize mcg ou mg.", "warning");
+          return;
+        }
+      }
+
 
 
       const oldVal = parseFloat(doseInput?.value) || 0;
@@ -5428,6 +5468,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if (doseInput) doseInput.value = '';
 
 
+
+    if (typeof peptideCalculator !== 'undefined' && peptideCalculator.setCompound) {
+      peptideCalculator.setCompound(peptide.id);
+      const isSomatropin = peptide.id === 'somatropin';
+      const unitUiBtn = document.getElementById('calc-unit-ui-btn');
+      if (unitUiBtn) {
+        if (isSomatropin) {
+          unitUiBtn.classList.remove('opacity-40', 'cursor-not-allowed');
+          unitUiBtn.title = "Unidades Internacionais (HGH/rhGH - Padrão OMS 98/574: 1 mg = 3,00 UI)";
+        } else {
+          unitUiBtn.classList.add('opacity-40', 'cursor-not-allowed');
+          unitUiBtn.title = "Unidade UI restrita à Somatropina (OMS 98/574)";
+        }
+      }
+      if (!isSomatropin && currentDoseUnit === 'UI') {
+        setDoseUnit('mcg', true);
+      }
+    }
 
     const event = new Event('input', { bubbles: true });
 

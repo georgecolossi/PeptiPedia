@@ -131,6 +131,7 @@
           substanceType: c.substanceType,
           evidenceLevel: c.evidenceSummary?.level || "Pré-Clínico",
           evidenceScore: c.evidenceSummary?.score || 70,
+          epistemicClass: c.epistemicClass || c.evidenceSummary?.epistemicClass || "unverified",
           protocolEvidenceType: c.evidenceSummary?.protocolEvidenceType || "preclinical_empirical",
           protocolEvidenceNote: c.evidenceSummary?.protocolEvidenceNote || "",
           structure: c.sequence && c.sequence !== "N/A" ? `${c.canonicalName} (${c.sequence.split('-').length} aa)` : c.canonicalName,

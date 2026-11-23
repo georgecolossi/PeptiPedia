@@ -123,6 +123,7 @@ class TestUnitLogicV8(unittest.TestCase):
                     let crashes = 0, total = 0, defaultsOk = true;
                     for (const p of presets) {
                         calc.reset();
+                        calc.setCompound(p.id);
                         const p0 = p.presentations[0], d0 = p.doses[0];
                         if (p0.officialCommercial) calc.setOfficialPresentation(p0);
                         else calc.setValues({ vialMg: p0.vialMg, waterMl: p0.waterMl });
@@ -133,6 +134,7 @@ class TestUnitLogicV8(unittest.TestCase):
                                 total++;
                                 try {
                                     calc.reset();
+                                    calc.setCompound(p.id);
                                     if (pres.officialCommercial) calc.setOfficialPresentation(pres);
                                     else calc.setValues({ vialMg: pres.vialMg, waterMl: pres.waterMl });
                                     calc.setValues({ doseValue: d.val, doseUnit: d.unit });

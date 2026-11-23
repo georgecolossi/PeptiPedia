@@ -14,7 +14,9 @@ class PeptideCalculator {
     this.frequencyPerWeek = 7;
     this.vialCost = 0;
     this.activePresentation = null;
-this.syringeConfigs = {
+    this.activeCompoundId = null;
+    this.unitRestrictionError = null;
+    this.syringeConfigs = {
       u100: { capacityMl: 1.0, units: 100, label: "Seringa U-100 de 1,0 mL (capacidade: 100 unidades U-100)", tickInterval: 10 },
       u50: { capacityMl: 0.5, units: 50, label: "Seringa U-100 de 0,5 mL (capacidade: 50 unidades U-100)", tickInterval: 5 },
       u30: { capacityMl: 0.3, units: 30, label: "Seringa U-100 de 0,3 mL (capacidade: 30 unidades U-100 — Alta precisão)", tickInterval: 5 }
@@ -344,13 +346,13 @@ this.syringeConfigs = {
           { label: "36 UI / 12,0 mg (3.0 mL Cartucho Pen -> 12 UI/mL)", vialMg: 12.0, waterMl: 3.0, suggestedSyringe: "u100" }
         ],
         doses: [
-          { label: "0,6 UI (~0,20 mg - Iniciação DGH Adultos)", val: 0.6, unit: "UI", context: "Iniciação na Deficiência de GH no Adulto (Genotropin®)", evidence: "Classe A (Bula FDA/EMA/Anvisa)" },
-          { label: "0,9 UI (~0,30 mg - Titulação Fisiológica DGH)", val: 0.9, unit: "UI", context: "Titulação mensal guiada por IGF-1 sérico normal", evidence: "Classe A (Diretriz AACE/Endocrine Society)" },
-          { label: "1,5 UI (~0,50 mg - Dose Teto em Idosos)", val: 1.5, unit: "UI", context: "Reposição em idosos para mitigar risco de edema/artralgia", evidence: "Classe A (Diretrizes Clínicas)" },
-          { label: "2,0 UI (~0,66 mg - Prática Biohacking / Lipólise)", val: 2.0, unit: "UI", context: "Relatos em fóruns para suporte lipolítico (Proibido WADA)", evidence: "Classe C (Prática Comunitária / Empírico)" },
-          { label: "3,0 UI (~1,00 mg - Prática Comunitária Avançada)", val: 3.0, unit: "UI", context: "Relatos de fisioculturismo (sem hipertrofia contrátil comprovada)", evidence: "Classe C (Prática Comunitária)" },
-          { label: "4,0 UI (~1,33 mg - Prática Esportiva Teto)", val: 4.0, unit: "UI", context: "Alto risco de intolerância à glicose e síndrome do túnel do carpo", evidence: "Classe C (Prática Comunitária)" },
-          { label: "18,0 UI (~6,00 mg - Dose Resgate Caquexia HIV)", val: 18.0, unit: "UI", context: "Dose máxima de bula aprovada na caquexia por HIV (Serostim®)", evidence: "Classe A (Bula FDA)" }
+          { label: "0,6 UI (~0,20 mg - Iniciação DGH Adultos)", val: 0.6, unit: "UI", context: "Dose inicial de titulação recomendada em bula aprovada (Genotropin® FDA NDA 020280 / Anvisa) exclusivamente para Deficiência de GH no Adulto (AGHD) com monitoramento obrigatório de IGF-1 sérico. Não constitui recomendação universal para outros fins.", evidence: "Bula Oficial Aprovada (FDA/EMA/Anvisa)" },
+          { label: "0,9 UI (~0,30 mg - Titulação Fisiológica DGH)", val: 0.9, unit: "UI", context: "Dose de titulação mensal fisiológica descrita em diretrizes internacionais de endocrinologia (AACE/Endocrine Society) para normalização de IGF-1 sérico.", evidence: "Diretrizes Clínicas de Endocrinologia" },
+          { label: "1,5 UI (~0,50 mg - Dose Teto em Idosos)", val: 1.5, unit: "UI", context: "Limite posológico recomendado em pacientes idosos com deficiência severa para mitigar risco de edema periférico e síndrome do túnel do carpo.", evidence: "Diretrizes Clínicas de Endocrinologia" },
+          { label: "2,0 UI (~0,66 mg - Prática Biohacking / Lipólise)", val: 2.0, unit: "UI", context: "Regime empírico relatado em fóruns de biohacking e longevidade. Uso off-label sem comprovação clínica formal; proibido pela WADA no esporte.", evidence: "Prática Popular / Biohacking (Empírico)" },
+          { label: "3,0 UI (~1,00 mg - Prática Comunitária Avançada)", val: 3.0, unit: "UI", context: "Dose empírica relatada em fóruns de musculação. Ausência de evidência científica de hipertrofia muscular contrátil em indivíduos eugonádicos; risco aumentado de resistência insulínica.", evidence: "Prática Popular / Sem Comprovação" },
+          { label: "4,0 UI (~1,33 mg - Prática Esportiva Teto / Alto Risco)", val: 4.0, unit: "UI", context: "Dose empírica de alto risco associada a descompensação glicêmica, acromegalia subclínica e retenção hídrica severa.", evidence: "Prática Popular / Risco Elevado" },
+          { label: "18,0 UI (~6,00 mg - Dose Resgate Caquexia HIV)", val: 18.0, unit: "UI", context: "Dose suprafisiológica máxima aprovada em bula oficial (Serostim® FDA NDA 020604) estritamente restrita a caquexia severa associada ao HIV.", evidence: "Bula Oficial Aprovada (FDA NDA 020604)" }
         ]
       }
     ];
@@ -392,7 +394,11 @@ this.syringeConfigs = {
   }
 
   setValues(params = {}) {
-    const { vialMg, waterMl, doseValue, doseUnit, desiredDoseMcg, syringeType, frequencyPerWeek, vialCost, officialPresentation, clearOfficial } = params;
+    const { compoundId, compound, vialMg, waterMl, doseValue, doseUnit, desiredDoseMcg, syringeType, frequencyPerWeek, vialCost, officialPresentation, clearOfficial } = params;
+
+    if (compoundId !== undefined || compound !== undefined) {
+      this.setCompound(compoundId !== undefined ? compoundId : compound);
+    }
 
     const parseStrictPositiveFinite = (val) => {
       if (val === null || val === undefined || val === '') return null;
@@ -428,7 +434,19 @@ this.syringeConfigs = {
       this.waterMl = parseStrictPositiveFinite(waterMl);
     }
     
-    if (doseUnit) this.doseUnit = (doseUnit === 'mg' || doseUnit === 'UI') ? doseUnit : 'mcg';
+    if (doseUnit) {
+      if (doseUnit === 'UI') {
+        this.doseUnit = 'UI';
+        if (this.isSomatropinActive()) {
+          this.unitRestrictionError = null;
+        } else {
+          this.unitRestrictionError = "A unidade UI (Unidades Internacionais) é de uso estrito e exclusivo para Somatropina (rhGH) conforme o Padrão Internacional OMS 98/574 (1 mg = 3,00 UI). Para outros compostos peptídicos, utilize unidades ponderais (mcg ou mg).";
+        }
+      } else {
+        this.doseUnit = (doseUnit === 'mg') ? 'mg' : 'mcg';
+        this.unitRestrictionError = null;
+      }
+    }
 
     if (doseValue !== undefined) {
       const parsed = parseStrictPositiveFinite(doseValue);
@@ -500,8 +518,61 @@ this.syringeConfigs = {
     return (this.compoundPresets || []).find(c => c.id === id.trim()) || null;
   }
 
+  isSomatropinActive() {
+    const id = (this.activeCompoundId || '').toLowerCase().trim();
+    return id === 'somatropin' || id === 'hgh' || id === 'somatropina' || id === 'genotropin' || id === 'norditropin' || id === 'humatrope' || id === 'omnitrope' || id === 'saizen' || id === 'serostim';
+  }
+
+  setCompound(compoundOrId) {
+    if (!compoundOrId) {
+      this.activeCompoundId = null;
+      return;
+    }
+    if (typeof compoundOrId === 'string') {
+      this.activeCompoundId = compoundOrId.trim();
+    } else if (typeof compoundOrId === 'object' && compoundOrId.id) {
+      this.activeCompoundId = compoundOrId.id.trim();
+    }
+    if (this.doseUnit === 'UI') {
+      if (!this.isSomatropinActive()) {
+        this.unitRestrictionError = "A unidade UI (Unidades Internacionais) é de uso estrito e exclusivo para Somatropina (rhGH) conforme o Padrão Internacional OMS 98/574 (1 mg = 3,00 UI). Para outros compostos peptídicos, utilize unidades ponderais (mcg ou mg).";
+      } else {
+        this.unitRestrictionError = null;
+      }
+    }
+  }
+
   calculate() {
     const config = this.syringeConfigs[this.syringeType] || this.syringeConfigs.u100;
+
+    // Bloqueio de violacao de unidade: UI exclusiva para Somatropina
+    if ((this.doseUnit === 'UI' || this.unitRestrictionError) && !this.isSomatropinActive()) {
+      return {
+        isValid: false,
+        errorType: "unit_restriction_violation",
+        errorMessage: this.unitRestrictionError || "A unidade UI (Unidades Internacionais) é permitida exclusivamente para Somatropina (rhGH) conforme o Padrão Internacional OMS 98/574 (1 mg = 3,00 UI). Para outros compostos peptídicos, utilize unidades ponderais (mcg ou mg).",
+        vialMg: this.vialMg,
+        waterMl: this.waterMl,
+        doseUnit: this.doseUnit,
+        doseValue: this.doseValue,
+        desiredDoseMcg: null,
+        syringeType: this.syringeType,
+        syringeLabel: config.label,
+        maxSyringeUnits: config.units,
+        concentrationMgPerMl: null,
+        concentrationMcgPerMl: null,
+        mcgPerUnit: null,
+        volumePerDoseMl: null,
+        unitsOnSyringe: null,
+        exactUnitsNumber: 0,
+        totalDosesInVial: null,
+        daysDuration: null,
+        costPerDose: null,
+        fillPercentage: 0,
+        warning: "A unidade UI é restrita estritamente à Somatropina (rhGH). Selecione mcg ou mg.",
+        warningLevel: "danger"
+      };
+    }
 
     // Validação estrita: se qualquer entrada obrigatória estiver ausente ou não for número finito positivo (>0), não produzir resultado numérico
     const hasVial = typeof this.vialMg === 'number' && Number.isFinite(this.vialMg) && this.vialMg > 0;
@@ -847,4 +918,8 @@ const peptideCalculator = new PeptideCalculator();
 if (typeof window !== 'undefined') {
   window.PeptideCalculator = PeptideCalculator;
   window.peptideCalculator = peptideCalculator;
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { PeptideCalculator, peptideCalculator };
 }

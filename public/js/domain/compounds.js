@@ -72,7 +72,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 92,
             "popularityScore": 99,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "Revisão sistemática ortopédica 2025 (PMID 40756949) identificou 35 estudos pré-clínicos e apenas 1 série retrospectiva (n=12), sem ensaios clínicos randomizados fase 3 em humanos ou dados clínicos formais de segurança; citações espúrias anteriores expurgadas na H4.17."
+            "protocolEvidenceNote": "Revisão sistemática ortopédica 2025 (PMID 40756949) identificou 35 estudos pré-clínicos e apenas 1 série retrospectiva (n=12), sem ensaios clínicos randomizados fase 3 em humanos ou dados clínicos formais de segurança; citações espúrias anteriores expurgadas na H4.17.",
+            "epistemicClass": "preclinical"
         },
         "sources": [
             {
@@ -161,7 +162,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "preclinical"
     },
     {
         "id": "bpc-157-arginate",
@@ -232,7 +234,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 88,
             "popularityScore": 90,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "Sal estável de arginina desenvolvido para estabilidade ácida em modelos pré-clínicos (PMID 34267654, PMID 36200148); inexistem ensaios clínicos randomizados fase 3 em humanos."
+            "protocolEvidenceNote": "Sal estável de arginina desenvolvido para estabilidade ácida em modelos pré-clínicos (PMID 34267654, PMID 36200148); inexistem ensaios clínicos randomizados fase 3 em humanos.",
+            "epistemicClass": "preclinical"
         },
         "sources": [
             {
@@ -265,7 +268,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "preclinical"
     },
     {
         "id": "tb-500",
@@ -338,7 +342,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 86,
             "popularityScore": 97,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: O TB-500 é quimicamente definido como o heptapeptídeo sintético Ac-LKKTETQ (fragmento 17-23 da Timosina Beta-4). Os ensaios clínicos em humanos foram conduzidos exclusivamente com a proteína precursora completa Timosina Beta-4 (43 aminoácidos, formulação oftálmica RGN-259), cujos desfechos primários de eficácia no ensaio de 72 pacientes foram nulos/não significativos. Não existem ensaios clínicos controlados de Fase 2 ou 3 em humanos demonstrando eficácia ou segurança do fragmento isolado TB-500 administrado por via injetável para reparo tendíneo ou muscular."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: O TB-500 é quimicamente definido como o heptapeptídeo sintético Ac-LKKTETQ (fragmento 17-23 da Timosina Beta-4). Os ensaios clínicos em humanos foram conduzidos exclusivamente com a proteína precursora completa Timosina Beta-4 (43 aminoácidos, formulação oftálmica RGN-259), cujos desfechos primários de eficácia no ensaio de 72 pacientes foram nulos/não significativos. Não existem ensaios clínicos controlados de Fase 2 ou 3 em humanos demonstrando eficácia ou segurança do fragmento isolado TB-500 administrado por via injetável para reparo tendíneo ou muscular.",
+            "epistemicClass": "preclinical"
         },
         "sources": [
             {
@@ -385,7 +390,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "preclinical"
     },
     {
         "id": "ghk-cu",
@@ -458,7 +464,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 91,
             "popularityScore": 94,
             "protocolEvidenceType": "clinical_pilot",
-            "protocolEvidenceNote": "EVIDÊNCIAS COSMÉTICAS E PILOTO: Comprovado extensamente em ensaios clínicos dermatológicos para síntese de colágeno dérmico e cicatrização. A aplicação injetável subcutânea sistêmica (1.5 a 2.5 mg/dia) é uma prática comum de longevidade na literatura de biohacking."
+            "protocolEvidenceNote": "EVIDÊNCIAS COSMÉTICAS E PILOTO: Comprovado extensamente em ensaios clínicos dermatológicos para síntese de colágeno dérmico e cicatrização. A aplicação injetável subcutânea sistêmica (1.5 a 2.5 mg/dia) é uma prática comum de longevidade na literatura de biohacking.",
+            "epistemicClass": "clinical"
         },
         "sources": [
             {
@@ -547,7 +554,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "clinical"
     },
     {
         "id": "ipamorelin",
@@ -619,7 +627,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 89,
             "popularityScore": 98,
             "protocolEvidenceType": "clinical_pilot",
-            "protocolEvidenceNote": "ESTUDOS NESTA BASE (SEM FASE 2 INDEXADA): As referências indexadas nesta base limitam-se à caracterização pré-clínica seletiva de GH (PMID 9849822; PMID 10373343) e à modelagem farmacocinética-farmacodinâmica de Fase 1 em adultos saudáveis (PMID 10496658). Ensaios clínicos de Fase 2 em íleo paralítico não integram este pacote XML e o composto não possui aprovação regulatória (FDA/EMA/Anvisa)."
+            "protocolEvidenceNote": "ESTUDOS NESTA BASE (SEM FASE 2 INDEXADA): As referências indexadas nesta base limitam-se à caracterização pré-clínica seletiva de GH (PMID 9849822; PMID 10373343) e à modelagem farmacocinética-farmacodinâmica de Fase 1 em adultos saudáveis (PMID 10496658). Ensaios clínicos de Fase 2 em íleo paralítico não integram este pacote XML e o composto não possui aprovação regulatória (FDA/EMA/Anvisa).",
+            "epistemicClass": "clinical"
         },
         "sources": [
             {
@@ -666,7 +675,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "clinical"
     },
     {
         "id": "cjc-1295-no-dac",
@@ -737,7 +747,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 87,
             "popularityScore": 95,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO: Mod GRF (1-29) sem DAC é um análogo tetrassubstituído de hGRF(1-29) fundamentado em ensaios pré-clínicos de estabilidade frente à DPP-IV e ativação hipofisária (Jetté et al., Endocrinology 2005, PMID 15817669; Bongers et al., 1992, PMID 1353684). NÃO há ensaio clínico randomizado isolado específico para Mod GRF (1-29) sem DAC em humanos; os ensaios clínicos publicados com CJC-1295 referem-se à molécula conjugada à albumina (com DAC, PMID: 15817669)."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO: Mod GRF (1-29) sem DAC é um análogo tetrassubstituído de hGRF(1-29) fundamentado em ensaios pré-clínicos de estabilidade frente à DPP-IV e ativação hipofisária (Jetté et al., Endocrinology 2005, PMID 15817669; Bongers et al., 1992, PMID 1353684). NÃO há ensaio clínico randomizado isolado específico para Mod GRF (1-29) sem DAC em humanos; os ensaios clínicos publicados com CJC-1295 referem-se à molécula conjugada à albumina (com DAC, PMID: 15817669).",
+            "epistemicClass": "preclinical"
         },
         "sources": [
             {
@@ -770,7 +781,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "preclinical"
     },
     {
         "id": "sermorelin",
@@ -846,7 +858,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 96,
             "popularityScore": 92,
             "protocolEvidenceType": "clinical_trial_only",
-            "protocolEvidenceNote": "HISTÓRICO REGULATÓRIO PEDIÁTRICO DESCONTINUADO / EVIDÊNCIA ADULTA LIMITADA: Historicamente aprovado pela FDA (Geref) para deficiência pediátrica de GH e posteriormente descontinuado comercialmente. Para uso adulto/envelhecimento, os registros indexados nesta base limitam-se a ensaio piloto pequeno em 19 idosos saudáveis (PMID 9141536, single-blind) e a um editorial sem resumo experimental (PMID 18046908), não sustentando eficácia Fase 3 nem indicação antienvelhecimento confirmada."
+            "protocolEvidenceNote": "HISTÓRICO REGULATÓRIO PEDIÁTRICO DESCONTINUADO / EVIDÊNCIA ADULTA LIMITADA: Historicamente aprovado pela FDA (Geref) para deficiência pediátrica de GH e posteriormente descontinuado comercialmente. Para uso adulto/envelhecimento, os registros indexados nesta base limitam-se a ensaio piloto pequeno em 19 idosos saudáveis (PMID 9141536, single-blind) e a um editorial sem resumo experimental (PMID 18046908), não sustentando eficácia Fase 3 nem indicação antienvelhecimento confirmada.",
+            "epistemicClass": "published_protocol"
         },
         "sources": [
             {
@@ -883,7 +896,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "published_protocol"
     },
     {
         "id": "tesamorelin",
@@ -960,7 +974,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 97,
             "popularityScore": 93,
             "protocolEvidenceType": "clinical_proven",
-            "protocolEvidenceNote": "EVIDÊNCIA CLÍNICA ROBUSTA: Aprovado pelo FDA em 2010 com o nome comercial Egrifta. Comprovado em ensaios multicêntricos randomizados duplo-cegos (NEJM 2007) com dose de 1.4 a 2.0 mg/dia para eliminação de gordura visceral profunda."
+            "protocolEvidenceNote": "EVIDÊNCIA CLÍNICA ROBUSTA: Aprovado pelo FDA em 2010 com o nome comercial Egrifta. Comprovado em ensaios multicêntricos randomizados duplo-cegos (NEJM 2007) com dose de 1.4 a 2.0 mg/dia para eliminação de gordura visceral profunda.",
+            "epistemicClass": "clinical"
         },
         "sources": [
             {
@@ -993,7 +1008,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "clinical"
     },
     {
         "id": "semaglutide",
@@ -1070,7 +1086,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 99,
             "popularityScore": 100,
             "protocolEvidenceType": "clinical_proven",
-            "protocolEvidenceNote": "EVIDÊNCIA CLÍNICA MÁXIMA (GRAU A): Aprovado pela FDA, EMA e Anvisa com vasta literatura clínica (programa STEP 1 a 8, NEJM 2021). Protocolo de titulação mensal mandatória para evitar êmese severa e desidratação."
+            "protocolEvidenceNote": "EVIDÊNCIA CLÍNICA MÁXIMA (GRAU A): Aprovado pela FDA, EMA e Anvisa com vasta literatura clínica (programa STEP 1 a 8, NEJM 2021). Protocolo de titulação mensal mandatória para evitar êmese severa e desidratação.",
+            "epistemicClass": "clinical"
         },
         "sources": [
             {
@@ -1099,7 +1116,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "clinical"
     },
     {
         "id": "tirzepatide",
@@ -1175,7 +1193,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 99,
             "popularityScore": 99,
             "protocolEvidenceType": "clinical_proven",
-            "protocolEvidenceNote": "EVIDÊNCIA CLÍNICA MÁXIMA (GRAU A): Aprovado com base nos ensaios SURMOUNT-1 (NEJM 2022) e SURPASS. Apresentou média de perda de até 22.5% do peso corporal total na dose de 15 mg."
+            "protocolEvidenceNote": "EVIDÊNCIA CLÍNICA MÁXIMA (GRAU A): Aprovado com base nos ensaios SURMOUNT-1 (NEJM 2022) e SURPASS. Apresentou média de perda de até 22.5% do peso corporal total na dose de 15 mg.",
+            "epistemicClass": "clinical"
         },
         "sources": [
             {
@@ -1204,7 +1223,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "clinical"
     },
     {
         "id": "retatrutide",
@@ -1275,7 +1295,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 95,
             "popularityScore": 98,
             "protocolEvidenceType": "clinical_trial_only",
-            "protocolEvidenceNote": "ENSAIOS CLÍNICOS FASE 2 (SEM APROVAÇÃO REGULATÓRIA): Dados clínicos publicados no NEJM em 2023 (Jastreboff et al., N Engl J Med 2023; 389:514-526; PMID: 37366315; DOI: 10.1056/NEJMoa2301972) com esquemas paralelos de escalonamento (coortes 1, 4, 8 e 12 mg), demonstrando perda ponderal média de até 24,2% às 48 semanas no braço de 12 mg. Estudos de Fase 3 em andamento; ainda sem aprovação da FDA, EMA ou Anvisa."
+            "protocolEvidenceNote": "ENSAIOS CLÍNICOS FASE 2 (SEM APROVAÇÃO REGULATÓRIA): Dados clínicos publicados no NEJM em 2023 (Jastreboff et al., N Engl J Med 2023; 389:514-526; PMID: 37366315; DOI: 10.1056/NEJMoa2301972) com esquemas paralelos de escalonamento (coortes 1, 4, 8 e 12 mg), demonstrando perda ponderal média de até 24,2% às 48 semanas no braço de 12 mg. Estudos de Fase 3 em andamento; ainda sem aprovação da FDA, EMA ou Anvisa.",
+            "epistemicClass": "published_protocol"
         },
         "sources": [
             {
@@ -1296,7 +1317,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "published_protocol"
     },
     {
         "id": "aod-9604",
@@ -1365,7 +1387,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 84,
             "popularityScore": 89,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "AVISO EPISTÊMICO E REGULATÓRIO: As fontes PubMed indexadas nesta base correspondem exclusivamente a modelos murinos (camundongos ob/ob em Heffernan 2001, PMID 11673763; ratos Zucker em Ng 2000, PMID 11146367) e ensaio analítico/metabólico antidoping in vitro em urina (Cox et al. 2015, PMID 25208511). Programas clínicos históricos não resultaram em aprovação regulatória por FDA, EMA ou Anvisa para emagrecimento ou osteoartrite."
+            "protocolEvidenceNote": "AVISO EPISTÊMICO E REGULATÓRIO: As fontes PubMed indexadas nesta base correspondem exclusivamente a modelos murinos (camundongos ob/ob em Heffernan 2001, PMID 11673763; ratos Zucker em Ng 2000, PMID 11146367) e ensaio analítico/metabólico antidoping in vitro em urina (Cox et al. 2015, PMID 25208511). Programas clínicos históricos não resultaram em aprovação regulatória por FDA, EMA ou Anvisa para emagrecimento ou osteoartrite.",
+            "epistemicClass": "preclinical"
         },
         "sources": [
             {
@@ -1412,7 +1435,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "preclinical"
     },
     {
         "id": "epitalon",
@@ -1484,7 +1508,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 90,
             "popularityScore": 96,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "EVIDÊNCIA EXPERIMENTAL E HISTÓRICA: Desenvolvido pelo Prof. Vladimir Khavinson (Instituto de São Petersburgo). Estudos primários indexados com dados verificáveis demonstram ativação de telomerase e aumento replicativo in vitro em culturas celulares humanas e modelos murinos. Relatos de acompanhamento clínico humano de 12 anos e posologias empíricas de 5 a 10 mg/dia provêm de monografias e publicações soviéticas/russas, carecendo de ensaios clínicos controlados randomizados de fase 3 indexados para validação formal de longevidade ou segurança oncológica humana."
+            "protocolEvidenceNote": "EVIDÊNCIA EXPERIMENTAL E HISTÓRICA: Desenvolvido pelo Prof. Vladimir Khavinson (Instituto de São Petersburgo). Estudos primários indexados com dados verificáveis demonstram ativação de telomerase e aumento replicativo in vitro em culturas celulares humanas e modelos murinos. Relatos de acompanhamento clínico humano de 12 anos e posologias empíricas de 5 a 10 mg/dia provêm de monografias e publicações soviéticas/russas, carecendo de ensaios clínicos controlados randomizados de fase 3 indexados para validação formal de longevidade ou segurança oncológica humana.",
+            "epistemicClass": "preclinical"
         },
         "sources": [
             {
@@ -1531,7 +1556,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "preclinical"
     },
     {
         "id": "mots-c",
@@ -1602,7 +1628,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 89,
             "popularityScore": 93,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO: A posologia comum de 5 mg a 10 mg 3x por semana (ou antes de treinos intensos) é uma prática empírica estabelecida na comunidade de longevidade, extrapolada do estudo de referência de Lee et al. (Cell Metabolism 2015). Não há ensaio clínico randomizado fase 2 concluído."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO: A posologia comum de 5 mg a 10 mg 3x por semana (ou antes de treinos intensos) é uma prática empírica estabelecida na comunidade de longevidade, extrapolada do estudo de referência de Lee et al. (Cell Metabolism 2015). Não há ensaio clínico randomizado fase 2 concluído.",
+            "epistemicClass": "preclinical"
         },
         "sources": [
             {
@@ -1635,7 +1662,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "preclinical"
     },
     {
         "id": "ss-31",
@@ -1708,7 +1736,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 92,
             "popularityScore": 88,
             "protocolEvidenceType": "clinical_trial_only",
-            "protocolEvidenceNote": "APROVAÇÃO ACELERADA FDA (EUA): A FDA concedeu aprovação acelerada em 19 de setembro de 2025 para Forzinity (elamipretida) exclusivamente para melhora da força muscular em pacientes com síndrome de Barth com peso igual ou superior a 30 kg. Essa aprovação não equivale a aval regulatório para longevidade, cardiomiopatia em geral ou miopatia mitocondrial primária (ensaio pivotal MMPOWER-3 de 2023 não atingiu seus desfechos primários de teste de caminhada ou fadiga frente ao placebo). Não há aprovação confirmada pela ANVISA, EMA ou outras agências regulatórias internacionais para este fármaco."
+            "protocolEvidenceNote": "APROVAÇÃO ACELERADA FDA (EUA): A FDA concedeu aprovação acelerada em 19 de setembro de 2025 para Forzinity (elamipretida) exclusivamente para melhora da força muscular em pacientes com síndrome de Barth com peso igual ou superior a 30 kg. Essa aprovação não equivale a aval regulatório para longevidade, cardiomiopatia em geral ou miopatia mitocondrial primária (ensaio pivotal MMPOWER-3 de 2023 não atingiu seus desfechos primários de teste de caminhada ou fadiga frente ao placebo). Não há aprovação confirmada pela ANVISA, EMA ou outras agências regulatórias internacionais para este fármaco.",
+            "epistemicClass": "published_protocol"
         },
         "sources": [
             {
@@ -1737,7 +1766,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "published_protocol"
     },
     {
         "id": "semax",
@@ -1812,7 +1842,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 94,
             "popularityScore": 96,
             "protocolEvidenceType": "clinical_trial_only",
-            "protocolEvidenceNote": "EVIDÊNCIA CLÍNICA NA RÚSSIA: Aprovado pelo Ministério da Saúde da Federação Russa e incluído na lista oficial de medicamentos vitais. Utilizado clinicamente como gotas nasais 0.1% (nootrópico) e 1.0% (pós-AVC isquêmico)."
+            "protocolEvidenceNote": "EVIDÊNCIA CLÍNICA NA RÚSSIA: Aprovado pelo Ministério da Saúde da Federação Russa e incluído na lista oficial de medicamentos vitais. Utilizado clinicamente como gotas nasais 0.1% (nootrópico) e 1.0% (pós-AVC isquêmico).",
+            "epistemicClass": "published_protocol"
         },
         "sources": [
             {
@@ -1871,7 +1902,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "published_protocol"
     },
     {
         "id": "selank",
@@ -1945,7 +1977,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 92,
             "popularityScore": 91,
             "protocolEvidenceType": "clinical_trial_only",
-            "protocolEvidenceNote": "EVIDÊNCIA CLÍNICA NA RÚSSIA: Aprovado pelo Ministério da Saúde Russo como ansiolítico e nootrópico. Ausência comprovada de efeitos colaterais comuns a benzodiazepínicos (sem sedação, sem tolerância, sem síndrome de abstinência)."
+            "protocolEvidenceNote": "EVIDÊNCIA CLÍNICA NA RÚSSIA: Aprovado pelo Ministério da Saúde Russo como ansiolítico e nootrópico. Ausência comprovada de efeitos colaterais comuns a benzodiazepínicos (sem sedação, sem tolerância, sem síndrome de abstinência).",
+            "epistemicClass": "published_protocol"
         },
         "sources": [
             {
@@ -1991,7 +2024,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "published_protocol"
     },
     {
         "id": "cerebrolysin",
@@ -2066,7 +2100,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 97,
             "popularityScore": 97,
             "protocolEvidenceType": "clinical_trial_only",
-            "protocolEvidenceNote": "USO REGIONAL COM EVIDÊNCIA CLÍNICA CONTROVERSA: Extrato peptídico porcino aprovado regionalmente em >50 países (sem aprovação da FDA). Embora o ensaio CARS de Fase 2 em AVC (PMID 26564102) tenha sugerido melhora motora em 90 dias, a revisão sistemática Cochrane atualizada de 2023 (PMID 37818733; 7 ECRs, n=1773) concluiu que provavelmente não há benefício na mortalidade global (RR 0,96; IC 95% 0,65-1,41) e apontou potencial aumento de eventos adversos graves não fatais (RR 2,39; IC 95% 1,10-5,23)."
+            "protocolEvidenceNote": "USO REGIONAL COM EVIDÊNCIA CLÍNICA CONTROVERSA: Extrato peptídico porcino aprovado regionalmente em >50 países (sem aprovação da FDA). Embora o ensaio CARS de Fase 2 em AVC (PMID 26564102) tenha sugerido melhora motora em 90 dias, a revisão sistemática Cochrane atualizada de 2023 (PMID 37818733; 7 ECRs, n=1773) concluiu que provavelmente não há benefício na mortalidade global (RR 0,96; IC 95% 0,65-1,41) e apontou potencial aumento de eventos adversos graves não fatais (RR 2,39; IC 95% 1,10-5,23).",
+            "epistemicClass": "published_protocol"
         },
         "sources": [
             {
@@ -2099,7 +2134,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "published_protocol"
     },
     {
         "id": "thymosin-alpha-1",
@@ -2172,7 +2208,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 98,
             "popularityScore": 97,
             "protocolEvidenceType": "clinical_trial_only",
-            "protocolEvidenceNote": "APROVAÇÃO REGULATÓRIA INTERNACIONAL: Aprovado em mais de 30 países (Zadaxin) primariamente como adjuvante para hepatite B crônica e imunodeficiências secundárias selecionadas. Seu uso em sepse grave (ensaio ETASS de 2013) e infecções virais agudas (como COVID-19) foi investigado em ensaios clínicos com resultados preliminares ou exploratórios, não constituindo recomendação de eficácia comprovada para essas condições agudas."
+            "protocolEvidenceNote": "APROVAÇÃO REGULATÓRIA INTERNACIONAL: Aprovado em mais de 30 países (Zadaxin) primariamente como adjuvante para hepatite B crônica e imunodeficiências secundárias selecionadas. Seu uso em sepse grave (ensaio ETASS de 2013) e infecções virais agudas (como COVID-19) foi investigado em ensaios clínicos com resultados preliminares ou exploratórios, não constituindo recomendação de eficácia comprovada para essas condições agudas.",
+            "epistemicClass": "published_protocol"
         },
         "sources": [
             {
@@ -2219,7 +2256,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "published_protocol"
     },
     {
         "id": "pt-141",
@@ -2293,7 +2331,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 96,
             "popularityScore": 95,
             "protocolEvidenceType": "clinical_proven",
-            "protocolEvidenceNote": "EVIDÊNCIA CLÍNICA ROBUSTA: Aprovado pelo FDA em 2019 (Vyleesi) para o tratamento de disfunção do desejo sexual hipoativo (HSDD) generalizado em mulheres pré-menopáusicas. Dose de bula: 1.75 mg SC sob demanda."
+            "protocolEvidenceNote": "EVIDÊNCIA CLÍNICA ROBUSTA: Aprovado pelo FDA em 2019 (Vyleesi) para o tratamento de disfunção do desejo sexual hipoativo (HSDD) generalizado em mulheres pré-menopáusicas. Dose de bula: 1.75 mg SC sob demanda.",
+            "epistemicClass": "clinical"
         },
         "sources": [
             {
@@ -2326,7 +2365,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "clinical"
     },
     {
         "id": "dsip",
@@ -2396,7 +2436,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 82,
             "popularityScore": 88,
             "protocolEvidenceType": "clinical_pilot",
-            "protocolEvidenceNote": "ENSAIOS PILOTO: Isolado originalmente por Schoenenberger e Monnier em Basileia (Suíça). Estudado clinicamente em pacientes com insônia crônica grave em doses de 100 a 250 mcg SC ao deitar."
+            "protocolEvidenceNote": "ENSAIOS PILOTO: Isolado originalmente por Schoenenberger e Monnier em Basileia (Suíça). Estudado clinicamente em pacientes com insônia crônica grave em doses de 100 a 250 mcg SC ao deitar.",
+            "epistemicClass": "clinical"
         },
         "sources": [
             {
@@ -2429,7 +2470,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "clinical"
     },
     {
         "id": "igf-1-lr3",
@@ -2501,7 +2543,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 78,
             "popularityScore": 93,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "ALERTA SEVERO / PRÁTICA EMPÍRICA: Dosagens de 20 a 50 mcg/dia são estritamente práticas empíricas clandestinas originadas no fisiculturismo. NÃO há aprovação para uso humano devido à alta afinidade mitogênica e ao risco de acelerar o crescimento de pólipos e tumores ocultos."
+            "protocolEvidenceNote": "ALERTA SEVERO / PRÁTICA EMPÍRICA: Dosagens de 20 a 50 mcg/dia são estritamente práticas empíricas clandestinas originadas no fisiculturismo. NÃO há aprovação para uso humano devido à alta afinidade mitogênica e ao risco de acelerar o crescimento de pólipos e tumores ocultos.",
+            "epistemicClass": "preclinical"
         },
         "sources": [
             {
@@ -2534,7 +2577,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "preclinical"
     },
     {
         "id": "cagrilintide",
@@ -2607,7 +2651,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 94,
             "popularityScore": 95,
             "protocolEvidenceType": "clinical_trial_only",
-            "protocolEvidenceNote": "Monoterapia Fase 2 avaliada em Lau et al., Lancet 2021 (NCT03856047, PMID 34798060, n=706, -6,0% a -10,8% vs -3,0% placebo em 26 sem). Coformulação/coadministração com semaglutida (CagriSema) avaliada separadamente em Fase 2 (PMID 37364590, NCT04982575) e Fase 3a REDEFINE 1/2 (PMID 40544433 NCT05567796; PMID 40544432 NCT05394519), permanecendo em desenvolvimento clínico sem bula comercial aprovada."
+            "protocolEvidenceNote": "Monoterapia Fase 2 avaliada em Lau et al., Lancet 2021 (NCT03856047, PMID 34798060, n=706, -6,0% a -10,8% vs -3,0% placebo em 26 sem). Coformulação/coadministração com semaglutida (CagriSema) avaliada separadamente em Fase 2 (PMID 37364590, NCT04982575) e Fase 3a REDEFINE 1/2 (PMID 40544433 NCT05567796; PMID 40544432 NCT05394519), permanecendo em desenvolvimento clínico sem bula comercial aprovada.",
+            "epistemicClass": "published_protocol"
         },
         "sources": [
             {
@@ -2668,7 +2713,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "published_protocol"
     },
     {
         "id": "survodutide",
@@ -2741,7 +2787,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 93,
             "popularityScore": 91,
             "protocolEvidenceType": "clinical_trial_only",
-            "protocolEvidenceNote": "ENSAIO CLÍNICO FASE 2 (SEM APROVAÇÃO REGULATÓRIA): Dados publicados no NEJM 2024 em MASH/fibrose (PMID 38847460) e no Lancet Diabetes Endocrinol 2024 em obesidade (PMID 38330987), com escalonamento semanal de pesquisa de 0,6 mg a 6,0 mg. Aguarda confirmação em ensaios de Fase 3; sem registro aprovado."
+            "protocolEvidenceNote": "ENSAIO CLÍNICO FASE 2 (SEM APROVAÇÃO REGULATÓRIA): Dados publicados no NEJM 2024 em MASH/fibrose (PMID 38847460) e no Lancet Diabetes Endocrinol 2024 em obesidade (PMID 38330987), com escalonamento semanal de pesquisa de 0,6 mg a 6,0 mg. Aguarda confirmação em ensaios de Fase 3; sem registro aprovado.",
+            "epistemicClass": "published_protocol"
         },
         "sources": [
             {
@@ -2774,7 +2821,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "published_protocol"
     },
     {
         "id": "orforglipron",
@@ -2851,7 +2899,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 98,
             "popularityScore": 89,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "APROVAÇÃO REGULATÓRIA FDA: Aprovado pelo FDA em 01/04/2026 sob o nome comercial Foundayo (Eli Lilly) através do National Priority Voucher Program, especificamente para o controle crônico de peso em adultos com obesidade ou sobrepeso com comorbidades associadas. ATENÇÃO: A aprovação inicial de bula é para controle crônico de peso; a indicação para diabetes tipo 2 foi investigada em ensaios clínicos paralelos mas segue cronograma regulatório específico e não deve ser considerada automaticamente aprovada nesta bula inicial."
+            "protocolEvidenceNote": "APROVAÇÃO REGULATÓRIA FDA: Aprovado pelo FDA em 01/04/2026 sob o nome comercial Foundayo (Eli Lilly) através do National Priority Voucher Program, especificamente para o controle crônico de peso em adultos com obesidade ou sobrepeso com comorbidades associadas. ATENÇÃO: A aprovação inicial de bula é para controle crônico de peso; a indicação para diabetes tipo 2 foi investigada em ensaios clínicos paralelos mas segue cronograma regulatório específico e não deve ser considerada automaticamente aprovada nesta bula inicial.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -2868,7 +2917,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "ara-290",
@@ -2942,7 +2992,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 88,
             "popularityScore": 86,
             "protocolEvidenceType": "clinical_pilot",
-            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO: Avaliado em ensaios clínicos humanos de fase 2 para neuropatia de pequenas fibras e dor neuropática em sarcoidose e diabetes (PMID: 28475703). Dose clínica de 4 mg SC diária por 28 dias."
+            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO: Avaliado em ensaios clínicos humanos de fase 2 para neuropatia de pequenas fibras e dor neuropática em sarcoidose e diabetes (PMID: 28475703). Dose clínica de 4 mg SC diária por 28 dias.",
+            "epistemicClass": "clinical"
         },
         "sources": [
             {
@@ -2975,7 +3026,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "clinical"
     },
     {
         "id": "kpv",
@@ -3050,7 +3102,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 87,
             "popularityScore": 88,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO: A dose de 200 a 500 mcg SC ou oral é uma prática empírica da comunidade de pesquisa em medicina funcional derivada de ensaios in vitro e murinos de colite (PMID: 18061177). Não há ensaios clínicos controlados de fase 3 em humanos."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO: A dose de 200 a 500 mcg SC ou oral é uma prática empírica da comunidade de pesquisa em medicina funcional derivada de ensaios in vitro e murinos de colite (PMID: 18061177). Não há ensaios clínicos controlados de fase 3 em humanos.",
+            "epistemicClass": "preclinical"
         },
         "sources": [
             {
@@ -3083,7 +3136,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "preclinical"
     },
     {
         "id": "ll-37",
@@ -3156,7 +3210,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 85,
             "popularityScore": 84,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO: A dosagem de 100 a 250 mcg SC em dias alternados é uma prática empírica de pesquisa em imunomodulação. LL-37 é um peptídeo antimicrobiano humano sem ensaios clínicos randomizados fase 3 aprovando uso sistêmico recreativo. O estudo bioinorgânico PMID 42708248 (Dalton Trans 2026) avalia exclusivamente coordenação de LL-37 com íons Cu(II) e Zn(II) em solução, sem testar ou comprovar compatibilidade físico-química/clínica da combinação LL-37 + GHK-Cu."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO: A dosagem de 100 a 250 mcg SC em dias alternados é uma prática empírica de pesquisa em imunomodulação. LL-37 é um peptídeo antimicrobiano humano sem ensaios clínicos randomizados fase 3 aprovando uso sistêmico recreativo. O estudo bioinorgânico PMID 42708248 (Dalton Trans 2026) avalia exclusivamente coordenação de LL-37 com íons Cu(II) e Zn(II) em solução, sem testar ou comprovar compatibilidade físico-química/clínica da combinação LL-37 + GHK-Cu.",
+            "epistemicClass": "preclinical"
         },
         "sources": [
             {
@@ -3201,7 +3256,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "preclinical"
     },
     {
         "id": "vip",
@@ -3276,7 +3332,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 86,
             "popularityScore": 85,
             "protocolEvidenceType": "clinical_pilot",
-            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO: Investigado em protocolos de spray nasal (50 mcg/dose) e SC para hipertensão pulmonar e Síndrome de Resposta Inflamatória Crônica (CIRS / mofo) pelo protocolo Shoemaker (PMID: 20442436). Alerta sobre efeitos vasodilatadores."
+            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO: Investigado em protocolos de spray nasal (50 mcg/dose) e SC para hipertensão pulmonar e Síndrome de Resposta Inflamatória Crônica (CIRS / mofo) pelo protocolo Shoemaker (PMID: 20442436). Alerta sobre efeitos vasodilatadores.",
+            "epistemicClass": "clinical"
         },
         "sources": [
             {
@@ -3309,7 +3366,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "clinical"
     },
     {
         "id": "humanin",
@@ -3381,7 +3439,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 86,
             "popularityScore": 85,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO: Dosagens de 1 a 2 mg SC 2 a 3x por semana representam protocolos empíricos de pesquisa celular de longevidade. A literatura em modelos murinos demonstra citoproteção e bloqueio de apoptose mediada por Bax (PMID: 11371646). Não existem ensaios fase 3 em humanos."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO: Dosagens de 1 a 2 mg SC 2 a 3x por semana representam protocolos empíricos de pesquisa celular de longevidade. A literatura em modelos murinos demonstra citoproteção e bloqueio de apoptose mediada por Bax (PMID: 11371646). Não existem ensaios fase 3 em humanos.",
+            "epistemicClass": "preclinical"
         },
         "sources": [
             {
@@ -3414,7 +3473,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "preclinical"
     },
     {
         "id": "kisspeptin",
@@ -3487,7 +3547,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 89,
             "popularityScore": 90,
             "protocolEvidenceType": "clinical_pilot",
-            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO: Ensaios clínicos humanos pioneiros demonstraram que kisspeptina estimula a secreção pulsátil de LH e testosterona sem supressão retrógrada do eixo gonadal (PMID: 21632807). Posologia típica de 100 a 200 mcg SC."
+            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO: Ensaios clínicos humanos pioneiros demonstraram que kisspeptina estimula a secreção pulsátil de LH e testosterona sem supressão retrógrada do eixo gonadal (PMID: 21632807). Posologia típica de 100 a 200 mcg SC.",
+            "epistemicClass": "clinical"
         },
         "sources": [
             {
@@ -3520,7 +3581,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "clinical"
     },
     {
         "id": "glutathione",
@@ -3599,7 +3661,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 96,
             "popularityScore": 92,
             "protocolEvidenceType": "clinical_trial_only",
-            "protocolEvidenceNote": "ESCOPO CLÍNICO VERIFICADO: O ECR indexado nesta base (Richie et al., Eur J Nutr 2015, PMID 24791752, n=54 adultos saudáveis) demonstrou elevação de estoques celulares de GSH apenas com suplementação ORAL (250 ou 1.000 mg/dia por 6 meses). Uso injetável IM/IV (200-600 mg) ou indicações fora de farmacopeia/antidoto clínico específico (como cistite/hepatopatia empírica) não são comprovados diretamente por este ECR."
+            "protocolEvidenceNote": "ESCOPO CLÍNICO VERIFICADO: O ECR indexado nesta base (Richie et al., Eur J Nutr 2015, PMID 24791752, n=54 adultos saudáveis) demonstrou elevação de estoques celulares de GSH apenas com suplementação ORAL (250 ou 1.000 mg/dia por 6 meses). Uso injetável IM/IV (200-600 mg) ou indicações fora de farmacopeia/antidoto clínico específico (como cistite/hepatopatia empírica) não são comprovados diretamente por este ECR.",
+            "epistemicClass": "published_protocol"
         },
         "sources": [
             {
@@ -3618,7 +3681,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "published_protocol"
     },
     {
         "id": "nad-plus",
@@ -3697,7 +3761,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 93,
             "popularityScore": 94,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "AVISO EPISTÊMICO: O estudo citado de Gomes et al. (Cell 2013, PMID 24360282) é estritamente pré-clínico em modelos murinos e NÃO um ensaio clínico humano. Os ensaios clínicos randomizados indexados (Martens et al., Nat Commun 2018, PMID 29599478; Yoshino et al., Science 2021, PMID 33888596) avaliaram os precursores ORAIS nicotinamida ribosídeo (NR) e nicotinamida mononucleotídeo (NMN), NÃO a administração subcutânea (SC) ou intravenosa (IV) de NAD+ livre, cujos protocolos parenterais (50-100 mg SC ou 250-500 mg IV) permanecem empíricos e carecem de ECRs fase 3 publicados nesta base."
+            "protocolEvidenceNote": "AVISO EPISTÊMICO: O estudo citado de Gomes et al. (Cell 2013, PMID 24360282) é estritamente pré-clínico em modelos murinos e NÃO um ensaio clínico humano. Os ensaios clínicos randomizados indexados (Martens et al., Nat Commun 2018, PMID 29599478; Yoshino et al., Science 2021, PMID 33888596) avaliaram os precursores ORAIS nicotinamida ribosídeo (NR) e nicotinamida mononucleotídeo (NMN), NÃO a administração subcutânea (SC) ou intravenosa (IV) de NAD+ livre, cujos protocolos parenterais (50-100 mg SC ou 250-500 mg IV) permanecem empíricos e carecem de ECRs fase 3 publicados nesta base.",
+            "epistemicClass": "preclinical"
         },
         "sources": [
             {
@@ -3744,7 +3809,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "preclinical"
     },
     {
         "id": "oxytocin",
@@ -3824,7 +3890,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 95,
             "popularityScore": 91,
             "protocolEvidenceType": "clinical_trial_only",
-            "protocolEvidenceNote": "APROVAÇÃO OBSTÉTRICA VS USO INTRANASAL INVESTIGACIONAL: Aprovada mundialmente pela FDA/Anvisa para indicações obstétricas e hemorragia pós-parto (PMID 29949473). Protocolos intranasais sociais/comportamentais (10-24 UI, PMID 15931222 em voluntários saudáveis) permanecem investigacionais, e o ensaio multicêntrico de Fase 2 no NEJM em transtorno do espectro autista (SOARS-B, n=290, PMID 34644471) apresentou resultado neutro/negativo no desfecho primário (P=0,61)."
+            "protocolEvidenceNote": "APROVAÇÃO OBSTÉTRICA VS USO INTRANASAL INVESTIGACIONAL: Aprovada mundialmente pela FDA/Anvisa para indicações obstétricas e hemorragia pós-parto (PMID 29949473). Protocolos intranasais sociais/comportamentais (10-24 UI, PMID 15931222 em voluntários saudáveis) permanecem investigacionais, e o ensaio multicêntrico de Fase 2 no NEJM em transtorno do espectro autista (SOARS-B, n=290, PMID 34644471) apresentou resultado neutro/negativo no desfecho primário (P=0,61).",
+            "epistemicClass": "published_protocol"
         },
         "sources": [
             {
@@ -3871,7 +3938,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "published_protocol"
     },
     {
         "id": "thymalin",
@@ -3947,7 +4015,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 88,
             "popularityScore": 87,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "AVISO EPISTÊMICO E DOCUMENTAL: O único registro PubMed ativo (Khavinson & Morozov, Adv Gerontol 2002;10:74-84, PMID 12577695, sem DOI indexado no XML) é uma revisão narrativa em russo descrevendo seguimento observacional regional de Timalina associada a Epitalamina (não um ECR cego de monoterapia em padrões ICH/GCP). Posologias empíricas de 10 mg/dia por 10 dias não possuem validação por ensaios clínicos randomizados controlados modernos nem aprovação por FDA, EMA ou Anvisa."
+            "protocolEvidenceNote": "AVISO EPISTÊMICO E DOCUMENTAL: O único registro PubMed ativo (Khavinson & Morozov, Adv Gerontol 2002;10:74-84, PMID 12577695, sem DOI indexado no XML) é uma revisão narrativa em russo descrevendo seguimento observacional regional de Timalina associada a Epitalamina (não um ECR cego de monoterapia em padrões ICH/GCP). Posologias empíricas de 10 mg/dia por 10 dias não possuem validação por ensaios clínicos randomizados controlados modernos nem aprovação por FDA, EMA ou Anvisa.",
+            "epistemicClass": "preclinical"
         },
         "sources": [
             {
@@ -3965,7 +4034,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "preclinical"
     },
     {
         "id": "pinealon",
@@ -4038,7 +4108,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 86,
             "popularityScore": 87,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "AVISO EPISTÊMICO: Os estudos PubMed indexados para Pinealon (Khavinson et al., Rejuvenation Res 2011, PMID 21978084 em cultura de neurônios cerebelares/PC12; Arutjunyan et al., Int J Clin Exp Med 2012, PMID 22567179 em prole de ratas com hiper-homocisteinemia pré-natal) são exclusivamente pré-clínicos in vitro e em roedores. Não existem ensaios clínicos randomizados em humanos na literatura ativa comprovando eficácia cognitiva ou validando doses de 2 a 5 mg SC/oral."
+            "protocolEvidenceNote": "AVISO EPISTÊMICO: Os estudos PubMed indexados para Pinealon (Khavinson et al., Rejuvenation Res 2011, PMID 21978084 em cultura de neurônios cerebelares/PC12; Arutjunyan et al., Int J Clin Exp Med 2012, PMID 22567179 em prole de ratas com hiper-homocisteinemia pré-natal) são exclusivamente pré-clínicos in vitro e em roedores. Não existem ensaios clínicos randomizados em humanos na literatura ativa comprovando eficácia cognitiva ou validando doses de 2 a 5 mg SC/oral.",
+            "epistemicClass": "preclinical"
         },
         "sources": [
             {
@@ -4070,7 +4141,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "preclinical"
     },
     {
         "id": "dihexa",
@@ -4144,7 +4216,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 85,
             "popularityScore": 88,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO OBRIGATÓRIO: A dosagem oral de 5 a 20 mg diários é uma prática empírica de biohacking. O estudo original (McCoy et al., 2013; PMID 23055539) permanece sob Notice of Concern (PMID 34551989) e o artigo de mecanismo via c-Met (Benoist et al., 2014) foi RETRATADO formalmente (PMID 40312093). NÃO possui ensaios clínicos fase 3 em humanos; bioatividade sinaptogênica não validada por pares."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO OBRIGATÓRIO: A dosagem oral de 5 a 20 mg diários é uma prática empírica de biohacking. O estudo original (McCoy et al., 2013; PMID 23055539) permanece sob Notice of Concern (PMID 34551989) e o artigo de mecanismo via c-Met (Benoist et al., 2014) foi RETRATADO formalmente (PMID 40312093). NÃO possui ensaios clínicos fase 3 em humanos; bioatividade sinaptogênica não validada por pares.",
+            "epistemicClass": "controversial"
         },
         "sources": [
             {
@@ -4176,7 +4249,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "controversial"
     },
     {
         "id": "ghrp-2",
@@ -4255,7 +4329,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 91,
             "popularityScore": 89,
             "protocolEvidenceType": "clinical_pilot",
-            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Aprovado no Japão sob o nome Pralmorelina para diagnóstico da reserva hipofisária de GH, com farmacocinética e farmacodinâmica avaliadas em humanos por Pihoker et al., J Clin Endocrinol Metab 1998 (PMID 9543135, DOI 10.1210/jcem.83.4.4744) e caracterização farmacológica em Doi et al., 2004 (PMID 15646370) e Ohara et al., 2017 (PMID 28623445). Referência cruzada espúria anterior ao ipamorelin expurgada na H4.17."
+            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Aprovado no Japão sob o nome Pralmorelina para diagnóstico da reserva hipofisária de GH, com farmacocinética e farmacodinâmica avaliadas em humanos por Pihoker et al., J Clin Endocrinol Metab 1998 (PMID 9543135, DOI 10.1210/jcem.83.4.4744) e caracterização farmacológica em Doi et al., 2004 (PMID 15646370) e Ohara et al., 2017 (PMID 28623445). Referência cruzada espúria anterior ao ipamorelin expurgada na H4.17.",
+            "epistemicClass": "clinical"
         },
         "sources": [
             {
@@ -4302,7 +4377,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "clinical"
     },
     {
         "id": "ghrp-6",
@@ -4376,7 +4452,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 88,
             "popularityScore": 87,
             "protocolEvidenceType": "clinical_pilot",
-            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA HISTÓRICA: O primeiro hexapeptídeo secretagogo prototípico sintetizado pela equipe do Dr. Cyril Bowers (PMID: 7920995). Notório por desencadear estímulo imediato e potente de apetite hipotalâmico via receptor de grelina."
+            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA HISTÓRICA: O primeiro hexapeptídeo secretagogo prototípico sintetizado pela equipe do Dr. Cyril Bowers (PMID: 7920995). Notório por desencadear estímulo imediato e potente de apetite hipotalâmico via receptor de grelina.",
+            "epistemicClass": "clinical"
         },
         "sources": [
             {
@@ -4422,7 +4499,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "clinical"
     },
     {
         "id": "hexarelin",
@@ -4496,7 +4574,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 89,
             "popularityScore": 86,
             "protocolEvidenceType": "clinical_pilot",
-            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO LIMITADA: Hexapeptídeo secretagogo de GH (PMID: 8954038 avaliou liberação aguda de GH, prolactina e cortisol em homens adultos saudáveis; não é ensaio terapêutico de cardiopatia isquêmica nem Fase 2 clínica de eficácia). Sofre dessensibilização rápida; requer precaução frente a extrapolação clínica."
+            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA PILOTO LIMITADA: Hexapeptídeo secretagogo de GH (PMID: 8954038 avaliou liberação aguda de GH, prolactina e cortisol em homens adultos saudáveis; não é ensaio terapêutico de cardiopatia isquêmica nem Fase 2 clínica de eficácia). Sofre dessensibilização rápida; requer precaução frente a extrapolação clínica.",
+            "epistemicClass": "clinical"
         },
         "sources": [
             {
@@ -4529,7 +4608,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "clinical"
     },
     {
         "id": "peg-mgf",
@@ -4603,7 +4683,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 84,
             "popularityScore": 87,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO OBRIGATÓRIO: PEG-MGF é uma variante peguilada experimental de pesquisa do domínio E do IGF-1 (Ec/MGF). Os artigos indexados (Ates et al., FEBS Lett 2007, PMID 17531227; Matheny et al., 2010, PMID 20130113; Kandalla et al., 2011, PMID 21354439) investigaram o peptídeo nativo MGF/domínio E em culturas musculares e modelos pré-clínicos; NÃO existem ensaios clínicos randomizados publicados avaliando segurança ou eficácia do PEG-MGF sintético peguilado em seres humanos. Referência cruzada espúria anterior ao BPC-157 expurgada na H4.17."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO OBRIGATÓRIO: PEG-MGF é uma variante peguilada experimental de pesquisa do domínio E do IGF-1 (Ec/MGF). Os artigos indexados (Ates et al., FEBS Lett 2007, PMID 17531227; Matheny et al., 2010, PMID 20130113; Kandalla et al., 2011, PMID 21354439) investigaram o peptídeo nativo MGF/domínio E em culturas musculares e modelos pré-clínicos; NÃO existem ensaios clínicos randomizados publicados avaliando segurança ou eficácia do PEG-MGF sintético peguilado em seres humanos. Referência cruzada espúria anterior ao BPC-157 expurgada na H4.17.",
+            "epistemicClass": "preclinical"
         },
         "sources": [
             {
@@ -4664,7 +4745,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "preclinical"
     },
     {
         "id": "melanotan-1",
@@ -4740,7 +4822,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 96,
             "popularityScore": 92,
             "protocolEvidenceType": "clinical_proven",
-            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA ROBUSTA: Aprovado pela FDA e pela Agência Europeia de Medicamentos (EMA) sob a marca Scenesse para fotoproteção em protoporfiria eritropoiética (PMID: 26132941). Ativação seletiva de MC1R para melanogênese com mínimos efeitos pressóricos ou de náusea comparado ao Melanotan II."
+            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA ROBUSTA: Aprovado pela FDA e pela Agência Europeia de Medicamentos (EMA) sob a marca Scenesse para fotoproteção em protoporfiria eritropoiética (PMID: 26132941). Ativação seletiva de MC1R para melanogênese com mínimos efeitos pressóricos ou de náusea comparado ao Melanotan II.",
+            "epistemicClass": "clinical"
         },
         "sources": [
             {
@@ -4773,7 +4856,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "clinical"
     },
     {
         "id": "melanotan-2",
@@ -4846,7 +4930,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 88,
             "popularityScore": 93,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO SEVERO: A dosagem de 250 a 500 mcg SC 2 a 3x por semana é uma prática empírica comum na comunidade online. Melanotan II é um agonista cíclico não seletivo com ação em MC1R, MC3R, MC4R e MC5R. NÃO possui aprovação sanitária para consumo recreativo devido a riscos de náuseas agudas, pico pressórico e hiperpigmentação heterogênea."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO SEVERO: A dosagem de 250 a 500 mcg SC 2 a 3x por semana é uma prática empírica comum na comunidade online. Melanotan II é um agonista cíclico não seletivo com ação em MC1R, MC3R, MC4R e MC5R. NÃO possui aprovação sanitária para consumo recreativo devido a riscos de náuseas agudas, pico pressórico e hiperpigmentação heterogênea.",
+            "epistemicClass": "preclinical"
         },
         "sources": [
             {
@@ -4865,7 +4950,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "preclinical"
     },
     {
         "id": "snap-8",
@@ -4940,7 +5026,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 45,
             "popularityScore": 86,
             "protocolEvidenceType": "community_unvalidated",
-            "protocolEvidenceNote": "LACUNA BIBLIOGRÁFICA DOCUMENTADA (H4.17): Busca sistemática no PubMed para 'SNAP-8' e 'acetyl octapeptide-3' retornou 0 estudos clínicos indexados nesta verificação (citação espúria anterior expurgada na H4.17). Comercializado como insumo cosmético tópico sem validação clínica indexada no PubMed; JAMAIS injetar."
+            "protocolEvidenceNote": "LACUNA BIBLIOGRÁFICA DOCUMENTADA (H4.17): Busca sistemática no PubMed para 'SNAP-8' e 'acetyl octapeptide-3' retornou 0 estudos clínicos indexados nesta verificação (citação espúria anterior expurgada na H4.17). Comercializado como insumo cosmético tópico sem validação clínica indexada no PubMed; JAMAIS injetar.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -4949,7 +5036,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "5-amino-1mq",
@@ -5022,7 +5110,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 88,
             "popularityScore": 91,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO: Pequena molécula inibidora de NNMT investigada em modelos pré-clínicos murinos (Neelakantan et al., Biochem Pharmacol 2018, PMID 29155147; Dimet-Wiley et al., Sci Rep 2022, PMID 35013352). Sem ensaios clínicos controlados de Fase 3 em humanos; citação espúria anterior expurgada na H4.17."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO: Pequena molécula inibidora de NNMT investigada em modelos pré-clínicos murinos (Neelakantan et al., Biochem Pharmacol 2018, PMID 29155147; Dimet-Wiley et al., Sci Rep 2022, PMID 35013352). Sem ensaios clínicos controlados de Fase 3 em humanos; citação espúria anterior expurgada na H4.17.",
+            "epistemicClass": "preclinical"
         },
         "sources": [
             {
@@ -5055,7 +5144,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "preclinical"
     },
     {
         "id": "cjc-1295-dac",
@@ -5129,7 +5219,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 89,
             "popularityScore": 92,
             "protocolEvidenceType": "clinical_trial_only",
-            "protocolEvidenceNote": "ENSAIO CLÍNICO PRECOCE / PK-PD EM VOLUNTÁRIOS SAUDÁVEIS: Posologia semanal de 30 a 60 mcg/kg via SC avaliada apenas em adultos saudáveis (PMIDs 16352683 e 17018654; ConjuChem) para cinética de GH e IGF-1 via conjugação covalente à albumina (t1/2 ~6-8 dias). Não há ensaios confirmatórios de Fase 3 nem aprovação regulatória pela FDA, EMA ou Anvisa."
+            "protocolEvidenceNote": "ENSAIO CLÍNICO PRECOCE / PK-PD EM VOLUNTÁRIOS SAUDÁVEIS: Posologia semanal de 30 a 60 mcg/kg via SC avaliada apenas em adultos saudáveis (PMIDs 16352683 e 17018654; ConjuChem) para cinética de GH e IGF-1 via conjugação covalente à albumina (t1/2 ~6-8 dias). Não há ensaios confirmatórios de Fase 3 nem aprovação regulatória pela FDA, EMA ou Anvisa.",
+            "epistemicClass": "published_protocol"
         },
         "sources": [
             {
@@ -5162,7 +5253,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "published_protocol"
     },
     {
         "id": "follistatin-344",
@@ -5235,7 +5327,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 85,
             "popularityScore": 88,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "ALERTA SEVERO / PRÁTICA EMPÍRICA: Dosagens de 50 a 100 mcg diários por ciclos curtos (10 a 20 dias) são exclusivamente empíricas no meio esportivo. A folistatina nativa é um ligante de alta afinidade da miostatina e ativina. Não possui aprovação formal da FDA para ganho de massa magra em indivíduos saudáveis."
+            "protocolEvidenceNote": "ALERTA SEVERO / PRÁTICA EMPÍRICA: Dosagens de 50 a 100 mcg diários por ciclos curtos (10 a 20 dias) são exclusivamente empíricas no meio esportivo. A folistatina nativa é um ligante de alta afinidade da miostatina e ativina. Não possui aprovação formal da FDA para ganho de massa magra em indivíduos saudáveis.",
+            "epistemicClass": "preclinical"
         },
         "sources": [
             {
@@ -5268,7 +5361,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "preclinical"
     },
     {
         "id": "igf-1-des",
@@ -5341,7 +5435,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 82,
             "popularityScore": 87,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "ADVERTÊNCIA RIGOROSA: Dosagem empírica de 20 a 50 mcg via IM local pré/pós-treino. Trata-se de variante truncada natural do IGF-1 com ação hiperlocalizada e meia-vida ultracurta. Uso estritamente restrito a pesquisa in vitro e modelos experimentais."
+            "protocolEvidenceNote": "ADVERTÊNCIA RIGOROSA: Dosagem empírica de 20 a 50 mcg via IM local pré/pós-treino. Trata-se de variante truncada natural do IGF-1 com ação hiperlocalizada e meia-vida ultracurta. Uso estritamente restrito a pesquisa in vitro e modelos experimentais.",
+            "epistemicClass": "preclinical"
         },
         "sources": [
             {
@@ -5388,7 +5483,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "preclinical"
     },
     {
         "id": "argireline",
@@ -5458,7 +5554,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 91,
             "popularityScore": 90,
             "protocolEvidenceType": "clinical_pilot",
-            "protocolEvidenceNote": "CLASSIFICAÇÃO COSMÉTICA: Uso exclusivamente TÓPICO em creme/sérum cosmético. Blanes-Mira et al. (Int J Cosmet Sci 2002, PMID 18498523) avaliaram mecanisticamente a inibição do complexo SNARE e realizaram teste topográfico tópico exploratório em voluntárias (emulsão 10% por 30 dias), sem descrição no resumo PubMed de ensaio clínico randomizado duplo-cego fase 3; Kluczyk et al. (Chem Biodivers 2021, PMID 33482052) trata apenas de análise química RP-HPLC/MS. NÃO possui aprovação ou indicação para administração injetável."
+            "protocolEvidenceNote": "CLASSIFICAÇÃO COSMÉTICA: Uso exclusivamente TÓPICO em creme/sérum cosmético. Blanes-Mira et al. (Int J Cosmet Sci 2002, PMID 18498523) avaliaram mecanisticamente a inibição do complexo SNARE e realizaram teste topográfico tópico exploratório em voluntárias (emulsão 10% por 30 dias), sem descrição no resumo PubMed de ensaio clínico randomizado duplo-cego fase 3; Kluczyk et al. (Chem Biodivers 2021, PMID 33482052) trata apenas de análise química RP-HPLC/MS. NÃO possui aprovação ou indicação para administração injetável.",
+            "epistemicClass": "clinical"
         },
         "sources": [
             {
@@ -5491,7 +5588,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "clinical"
     },
     {
         "id": "mazdutide",
@@ -5564,7 +5662,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 95,
             "popularityScore": 94,
             "protocolEvidenceType": "clinical_trial_only",
-            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Avaliado em ensaio Fase 2 controlado por placebo em Nat Commun 2023 (Ji et al., NCT04904913, PMID 38092790, DOI 10.1038/s41467-023-44067-4, n=248, 24 sem: -6,7% com 3 mg, -10,4% com 4,5 mg e -11,3% com 6 mg vs +1,0% placebo) e em ensaio Fase 3 GLORY-1 no NEJM 2025 (Ji et al., NCT05607680, PMID 40421736, DOI 10.1056/NEJMoa2411528, n=610, 48 sem: -14,01% com 6 mg vs +0,30% placebo). Citação espúria anterior e alegação não comprovada de -18,6% expurgadas na H4.17."
+            "protocolEvidenceNote": "VALIDAÇÃO CLÍNICA: Avaliado em ensaio Fase 2 controlado por placebo em Nat Commun 2023 (Ji et al., NCT04904913, PMID 38092790, DOI 10.1038/s41467-023-44067-4, n=248, 24 sem: -6,7% com 3 mg, -10,4% com 4,5 mg e -11,3% com 6 mg vs +1,0% placebo) e em ensaio Fase 3 GLORY-1 no NEJM 2025 (Ji et al., NCT05607680, PMID 40421736, DOI 10.1056/NEJMoa2411528, n=610, 48 sem: -14,01% com 6 mg vs +0,30% placebo). Citação espúria anterior e alegação não comprovada de -18,6% expurgadas na H4.17.",
+            "epistemicClass": "published_protocol"
         },
         "sources": [
             {
@@ -5597,7 +5696,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "published_protocol"
     },
     {
         "id": "cortexin",
@@ -5668,7 +5768,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 89,
             "popularityScore": 87,
             "protocolEvidenceType": "clinical_trial_only",
-            "protocolEvidenceNote": "Ensaios clínicos randomizados conduzidos em AVC isquêmico agudo/recuperação precoce (Belova et al., 2016, PMID 27845314; Khabirov et al., 2020, PMID 33449527) e isquemia cerebral crônica (Fedin et al., 2018, PMID 30335070), além de estudos mecanísticos de neuroproteção/inibição de caspase-8 (PMID 28251948, PMID 34260655). Citações espúrias anteriores expurgadas na H4.17."
+            "protocolEvidenceNote": "Ensaios clínicos randomizados conduzidos em AVC isquêmico agudo/recuperação precoce (Belova et al., 2016, PMID 27845314; Khabirov et al., 2020, PMID 33449527) e isquemia cerebral crônica (Fedin et al., 2018, PMID 30335070), além de estudos mecanísticos de neuroproteção/inibição de caspase-8 (PMID 28251948, PMID 34260655). Citações espúrias anteriores expurgadas na H4.17.",
+            "epistemicClass": "published_protocol"
         },
         "sources": [
             {
@@ -5743,7 +5844,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "published_protocol"
     },
     {
         "id": "larazotide",
@@ -5813,7 +5915,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 93,
             "popularityScore": 92,
             "protocolEvidenceType": "clinical_trial_only",
-            "protocolEvidenceNote": "ENSAIO CLÍNICO FASE 2b COM RESULTADOS MISTOS (SEM APROVAÇÃO): No ensaio multicêntrico Fase 2b em doença celíaca (n=342, PMID 25683116; ver também Fase 2 PMID 23163616), apenas a dose oral de 0,5 mg 3x/dia atingiu o desfecho primário sintomático frente ao placebo (p=0,022), enquanto as doses de 1 mg e 2 mg não diferiram do placebo em nenhum desfecho. Molécula sem aprovação regulatória."
+            "protocolEvidenceNote": "ENSAIO CLÍNICO FASE 2b COM RESULTADOS MISTOS (SEM APROVAÇÃO): No ensaio multicêntrico Fase 2b em doença celíaca (n=342, PMID 25683116; ver também Fase 2 PMID 23163616), apenas a dose oral de 0,5 mg 3x/dia atingiu o desfecho primário sintomático frente ao placebo (p=0,022), enquanto as doses de 1 mg e 2 mg não diferiram do placebo em nenhum desfecho. Molécula sem aprovação regulatória.",
+            "epistemicClass": "published_protocol"
         },
         "sources": [
             {
@@ -5847,7 +5950,8 @@ window.COMPOUNDS_STORE = (function () {
         ],
         "createdAt": "2026-10-28T00:00:00Z",
         "updatedAt": "2026-11-08T19:00:00Z",
-        "clinicalStatus": "Investigacional Clínico (Fase 2b Misto / Sem Aprovação)"
+        "clinicalStatus": "Investigacional Clínico (Fase 2b Misto / Sem Aprovação)",
+        "epistemicClass": "published_protocol"
     },
     {
         "id": "slu-pp-332",
@@ -5924,7 +6028,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 88,
             "popularityScore": 91,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO: Composto sintético não-peptídico pré-clínico (PubChem CID 5338394, fórmula molecular C18H14N2O2, peso molecular 290,3 g/mol) investigado em modelos murinos (Billon et al., ACS Chem Biol 2023 PMID 36988910; JPET 2024 PMID 37739806). NÃO possui ensaios clínicos em humanos nem aprovação FDA/EMA/Anvisa. Citações espúrias e massa molecular incorreta corrigidas na H4.17."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO: Composto sintético não-peptídico pré-clínico (PubChem CID 5338394, fórmula molecular C18H14N2O2, peso molecular 290,3 g/mol) investigado em modelos murinos (Billon et al., ACS Chem Biol 2023 PMID 36988910; JPET 2024 PMID 37739806). NÃO possui ensaios clínicos em humanos nem aprovação FDA/EMA/Anvisa. Citações espúrias e massa molecular incorreta corrigidas na H4.17.",
+            "epistemicClass": "preclinical"
         },
         "sources": [
             {
@@ -5957,7 +6062,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "preclinical"
     },
     {
         "id": "slu-pp-915",
@@ -6032,7 +6138,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 86,
             "popularityScore": 89,
             "protocolEvidenceType": "preclinical_empirical",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO: Composto sintético de 2ª geração contendo boro (PubChem CID 142532359, fórmula molecular C17H13BFNO3S, peso molecular 341,2 g/mol; Hampton et al., Eur J Med Chem 2023 PMID 37421886; Billon et al., JPET 2026 PMID 41421047). Dados exclusivamente pré-clínicos in vitro/in vivo; sem aprovação humana."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO: Composto sintético de 2ª geração contendo boro (PubChem CID 142532359, fórmula molecular C17H13BFNO3S, peso molecular 341,2 g/mol; Hampton et al., Eur J Med Chem 2023 PMID 37421886; Billon et al., JPET 2026 PMID 41421047). Dados exclusivamente pré-clínicos in vitro/in vivo; sem aprovação humana.",
+            "epistemicClass": "preclinical"
         },
         "sources": [
             {
@@ -6065,7 +6172,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "preclinical"
     },
     {
         "id": "liraglutide",
@@ -6143,7 +6251,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 99,
             "popularityScore": 98,
             "protocolEvidenceType": "clinical_proven",
-            "protocolEvidenceNote": "EVIDÊNCIA CLÍNICA PADRÃO OURO: Aprovado globalmente pela FDA, EMA e Anvisa. Eficácia e segurança comprovadas nos ensaios cardiovasculares LEADER (NEJM 2016, n=9.340) e nos ensaios de controle ponderal do programa SCALE (NEJM 2015, n=3.731)."
+            "protocolEvidenceNote": "EVIDÊNCIA CLÍNICA PADRÃO OURO: Aprovado globalmente pela FDA, EMA e Anvisa. Eficácia e segurança comprovadas nos ensaios cardiovasculares LEADER (NEJM 2016, n=9.340) e nos ensaios de controle ponderal do programa SCALE (NEJM 2015, n=3.731).",
+            "epistemicClass": "clinical"
         },
         "sources": [
             {
@@ -6172,7 +6281,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "clinical"
     },
     {
         "id": "teduglutide",
@@ -6252,7 +6362,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 99,
             "popularityScore": 92,
             "protocolEvidenceType": "clinical_proven",
-            "protocolEvidenceNote": "EVIDÊNCIA CLÍNICA PADRÃO OURO: Aprovado pelo FDA (2012), EMA (2012) e Anvisa (2018) para Síndrome do Intestino Curto (SBS). Eficácia e segurança comprovadas nos ensaios clínicos pivotais de Fase 3 STEPS (Gastroenterology 2012, n=86) e no ensaio de adaptação intestinal (Gut 2011, n=83)."
+            "protocolEvidenceNote": "EVIDÊNCIA CLÍNICA PADRÃO OURO: Aprovado pelo FDA (2012), EMA (2012) e Anvisa (2018) para Síndrome do Intestino Curto (SBS). Eficácia e segurança comprovadas nos ensaios clínicos pivotais de Fase 3 STEPS (Gastroenterology 2012, n=86) e no ensaio de adaptação intestinal (Gut 2011, n=83).",
+            "epistemicClass": "clinical"
         },
         "sources": [
             {
@@ -6281,7 +6392,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "clinical"
     },
     {
         "id": "setmelanotide",
@@ -6359,7 +6471,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 96,
             "popularityScore": 90,
             "protocolEvidenceType": "fda_approved_monogenic_obesity",
-            "protocolEvidenceNote": "APROVAÇÃO REGULATÓRIA FORMAL (FDA 2020 / 2022 / abril de 2026 NDA 213793; EMA 2021 / 2022 / abril-maio de 2026 EU/1/21/1564; Anvisa: sem registro ativo): 1) FDA (EUA): Aprovado para controle crônico de peso e alívio da hiperfagia em Obesidade Hipotalâmica Adquirida (AHO) a partir de 4 anos de idade (etiologia lesional decorrente de dano estrutural ou cirúrgico ao hipotálamo/SNC, craniofaringiomas ou radioterapia — NÃO é condição monogênica); Síndrome de Bardet-Biedl (BBS) a partir de 2 anos de idade; e deficiência genética de POMC, PCSK1 ou LEPR a partir de 2 anos de idade confirmada por teste genético (variantes patogênicas, provavelmente patogênicas ou VUS no contexto clínico adequado). 2) EMA (União Europeia): Aprovado para o tratamento da obesidade e controle da fome em Obesidade Hipotalâmica Adquirida (aHO) a partir de 4 anos de idade (autorização ampliada pela Comissão Europeia em abril-maio de 2026, Decisão C(2026) 3032); Síndrome de Bardet-Biedl (BBS) a partir de 2 anos de idade; e deficiência bialélica confirmada de perda de função de POMC (incluindo PCSK1) ou LEPR a partir de 2 anos de idade. 3) Bula FDA 2026 (Estabilidade e Armazenamento): A bula oficial (Seção 16 / Tabela 19) especifica armazenamento refrigerado de frascos fechados a 2°C a 8°C no cartucho original até o vencimento; após retirada do refrigerador, tolera temperaturas de 2°C a 25°C por até 30 dias com breves excursões permitidas até 30°C (podendo retornar à refrigeração). O descarte é mandatório após 30 dias da primeira perfuração (abertura). 4) Anvisa (Brasil): Não possui registro sanitário comercial ativo no sistema oficial de medicamentos da Anvisa (consulta em banco de dados oficial realizada em 22/10/2026 no portal Consulta de Medicamentos da Anvisa sob os termos 'setmelanotida' e 'Imcivree', sem registro comercial deferido). A aquisição por pessoa física para tratamento individual submete-se às normas de importação da RDC Anvisa nº 81/2008 sob prescrição médica: a Anvisa veda remessa postal convencional (Correios) para produtos com exigência de conservação especial de temperatura; ressalta-se que modalidades de remessa expressa (courier) não estão automaticamente autorizadas de forma tácita, exigindo qualificação operacional e estrito cumprimento documental, mantendo-se a importação formal com Licença de Importação (LI) e módulo LPCO no Portal Único Siscomex como procedimento aduaneiro padrão sujeito à fiscalização da autoridade sanitária. O medicamento não está listado nas tabelas de controle especial da Portaria SVS/MS nº 344/98. A ausência de registro sanitário nacional proíbe a comercialização, distribuição ou estocagem comercial em território brasileiro. LIMITAÇÃO DE USO FORMAL: NÃO é indicado nem esperado ser eficaz para variantes benignas/provavelmente benignas, outras síndromes genéticas não relacionadas, ou obesidade comum (poligênica)."
+            "protocolEvidenceNote": "APROVAÇÃO REGULATÓRIA FORMAL (FDA 2020 / 2022 / abril de 2026 NDA 213793; EMA 2021 / 2022 / abril-maio de 2026 EU/1/21/1564; Anvisa: sem registro ativo): 1) FDA (EUA): Aprovado para controle crônico de peso e alívio da hiperfagia em Obesidade Hipotalâmica Adquirida (AHO) a partir de 4 anos de idade (etiologia lesional decorrente de dano estrutural ou cirúrgico ao hipotálamo/SNC, craniofaringiomas ou radioterapia — NÃO é condição monogênica); Síndrome de Bardet-Biedl (BBS) a partir de 2 anos de idade; e deficiência genética de POMC, PCSK1 ou LEPR a partir de 2 anos de idade confirmada por teste genético (variantes patogênicas, provavelmente patogênicas ou VUS no contexto clínico adequado). 2) EMA (União Europeia): Aprovado para o tratamento da obesidade e controle da fome em Obesidade Hipotalâmica Adquirida (aHO) a partir de 4 anos de idade (autorização ampliada pela Comissão Europeia em abril-maio de 2026, Decisão C(2026) 3032); Síndrome de Bardet-Biedl (BBS) a partir de 2 anos de idade; e deficiência bialélica confirmada de perda de função de POMC (incluindo PCSK1) ou LEPR a partir de 2 anos de idade. 3) Bula FDA 2026 (Estabilidade e Armazenamento): A bula oficial (Seção 16 / Tabela 19) especifica armazenamento refrigerado de frascos fechados a 2°C a 8°C no cartucho original até o vencimento; após retirada do refrigerador, tolera temperaturas de 2°C a 25°C por até 30 dias com breves excursões permitidas até 30°C (podendo retornar à refrigeração). O descarte é mandatório após 30 dias da primeira perfuração (abertura). 4) Anvisa (Brasil): Não possui registro sanitário comercial ativo no sistema oficial de medicamentos da Anvisa (consulta em banco de dados oficial realizada em 22/10/2026 no portal Consulta de Medicamentos da Anvisa sob os termos 'setmelanotida' e 'Imcivree', sem registro comercial deferido). A aquisição por pessoa física para tratamento individual submete-se às normas de importação da RDC Anvisa nº 81/2008 sob prescrição médica: a Anvisa veda remessa postal convencional (Correios) para produtos com exigência de conservação especial de temperatura; ressalta-se que modalidades de remessa expressa (courier) não estão automaticamente autorizadas de forma tácita, exigindo qualificação operacional e estrito cumprimento documental, mantendo-se a importação formal com Licença de Importação (LI) e módulo LPCO no Portal Único Siscomex como procedimento aduaneiro padrão sujeito à fiscalização da autoridade sanitária. O medicamento não está listado nas tabelas de controle especial da Portaria SVS/MS nº 344/98. A ausência de registro sanitário nacional proíbe a comercialização, distribuição ou estocagem comercial em território brasileiro. LIMITAÇÃO DE USO FORMAL: NÃO é indicado nem esperado ser eficaz para variantes benignas/provavelmente benignas, outras síndromes genéticas não relacionadas, ou obesidade comum (poligênica).",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -6401,7 +6514,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "abaloparatide",
@@ -6477,7 +6591,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 95,
             "popularityScore": 88,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "APROVAÇÃO REGULATÓRIA FORMAL (FDA 2017 / 2022 NDA 208743): Abaloparatida (Tymlos®) é aprovada pela FDA para o tratamento de mulheres na pós-menopausa com osteoporose de alto risco para fratura e para aumento de massa óssea em homens com osteoporose de alto risco. A autorização FDA não implica registro automático na Anvisa ou EMA (onde o pedido foi retirado pelo patrocinador em 2018)."
+            "protocolEvidenceNote": "APROVAÇÃO REGULATÓRIA FORMAL (FDA 2017 / 2022 NDA 208743): Abaloparatida (Tymlos®) é aprovada pela FDA para o tratamento de mulheres na pós-menopausa com osteoporose de alto risco para fratura e para aumento de massa óssea em homens com osteoporose de alto risco. A autorização FDA não implica registro automático na Anvisa ou EMA (onde o pedido foi retirado pelo patrocinador em 2018).",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -6498,7 +6613,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "ace-031",
@@ -6571,7 +6687,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 76,
             "popularityScore": 82,
             "protocolEvidenceType": "clinical_trial_only",
-            "protocolEvidenceNote": "AVISO REGULATÓRIO E DE SEGURANÇA: O ACE-031 é uma proteína de fusão biológica investigacional cujo ensaio clínico de Fase 2 em meninos com Distrofia Muscular de Duchenne (DMD) foi interrompido após o segundo regime de dose devido a preocupações de segurança vascular (epistaxe e telangiectasias cutâneas/mucosas). NÃO possui aprovação da FDA, EMA ou Anvisa. NÃO há dose terapêutica autorizada nem perfil de segurança para uso fora de pesquisa."
+            "protocolEvidenceNote": "AVISO REGULATÓRIO E DE SEGURANÇA: O ACE-031 é uma proteína de fusão biológica investigacional cujo ensaio clínico de Fase 2 em meninos com Distrofia Muscular de Duchenne (DMD) foi interrompido após o segundo regime de dose devido a preocupações de segurança vascular (epistaxe e telangiectasias cutâneas/mucosas). NÃO possui aprovação da FDA, EMA ou Anvisa. NÃO há dose terapêutica autorizada nem perfil de segurança para uso fora de pesquisa.",
+            "epistemicClass": "published_protocol"
         },
         "sources": [
             {
@@ -6588,7 +6705,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "published_protocol"
     },
     {
         "id": "ahk-cu",
@@ -6659,7 +6777,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 68,
             "popularityScore": 79,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: O AHK-Cu é um tripeptídeo complexado com cobre investigado exclusivamente em modelos in vitro e em folículos capilares humanos isolados ex vivo para estímulo folicular. NÃO possui aprovação regulatória da FDA, EMA ou Anvisa como medicamento injetável ou para tratamento de alopecia. Não há ensaios clínicos controlados em humanos para via injetável."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: O AHK-Cu é um tripeptídeo complexado com cobre investigado exclusivamente em modelos in vitro e em folículos capilares humanos isolados ex vivo para estímulo folicular. NÃO possui aprovação regulatória da FDA, EMA ou Anvisa como medicamento injetável ou para tratamento de alopecia. Não há ensaios clínicos controlados em humanos para via injetável.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -6676,7 +6795,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "b7-33",
@@ -6749,7 +6869,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 75,
             "popularityScore": 77,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: O B7-33 é um peptídeo sintético desenhado funcionalmente para reproduzir os efeitos antifibróticos e vasodilatadores da relaxina-2 humana através do receptor RXFP1, sem ativar a via oncogênica dependente de cAMP. Trata-se de molécula estritamente investigacional, sem ensaios clínicos de Fase 2 ou 3 em humanos e sem registro em nenhuma agência regulatória."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: O B7-33 é um peptídeo sintético desenhado funcionalmente para reproduzir os efeitos antifibróticos e vasodilatadores da relaxina-2 humana através do receptor RXFP1, sem ativar a via oncogênica dependente de cAMP. Trata-se de molécula estritamente investigacional, sem ensaios clínicos de Fase 2 ou 3 em humanos e sem registro em nenhuma agência regulatória.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -6778,7 +6899,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "dulaglutide",
@@ -6858,7 +6980,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 98,
             "popularityScore": 95,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "APROVAÇÃO REGULATÓRIA FORMAL (FDA 2014 / 2020 NDA 125469; EMA 2014; Anvisa nº 112600187): Dulaglutida (Trulicity®) é aprovada para o controle glicêmico no diabetes mellitus tipo 2 (em adultos e pacientes pediátricos a partir de 10 anos) e para redução de eventos cardiovasculares adversos maiores (MACE) em adultos com DM2 e doença cardiovascular estabelecida ou múltiplos fatores de risco. Não possui aprovação isolada como medicamento monoterapêutico para perda de peso em indivíduos sem diabetes."
+            "protocolEvidenceNote": "APROVAÇÃO REGULATÓRIA FORMAL (FDA 2014 / 2020 NDA 125469; EMA 2014; Anvisa nº 112600187): Dulaglutida (Trulicity®) é aprovada para o controle glicêmico no diabetes mellitus tipo 2 (em adultos e pacientes pediátricos a partir de 10 anos) e para redução de eventos cardiovasculares adversos maiores (MACE) em adultos com DM2 e doença cardiovascular estabelecida ou múltiplos fatores de risco. Não possui aprovação isolada como medicamento monoterapêutico para perda de peso em indivíduos sem diabetes.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -6879,7 +7002,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "eloralintide",
@@ -6953,7 +7077,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 88,
             "popularityScore": 91,
             "protocolEvidenceType": "clinical_trial_only",
-            "protocolEvidenceNote": "POSOLOGIA RESTRITA A BRAÇO DE ENSAIO CLÍNICO EXPERIMENTAL (Fase 2, NCT06230523): As doses de 1 mg, 3 mg, 6 mg e 9 mg semanais foram administradas sob supervisão clínica em centros de pesquisa nos EUA. O composto não possui aprovação pela FDA, EMA ou Anvisa. Não há posologia autorizada de rotina."
+            "protocolEvidenceNote": "POSOLOGIA RESTRITA A BRAÇO DE ENSAIO CLÍNICO EXPERIMENTAL (Fase 2, NCT06230523): As doses de 1 mg, 3 mg, 6 mg e 9 mg semanais foram administradas sob supervisão clínica em centros de pesquisa nos EUA. O composto não possui aprovação pela FDA, EMA ou Anvisa. Não há posologia autorizada de rotina.",
+            "epistemicClass": "published_protocol"
         },
         "sources": [
             {
@@ -6970,7 +7095,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "published_protocol"
     },
     {
         "id": "foxo4-dri",
@@ -7042,7 +7168,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 72,
             "popularityScore": 85,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: O FOXO4-DRI é um peptídeo sintético retro-inverso concebido em pesquisa pré-clínica para eliminar seletivamente células senescentes por apoptose mediada por p53. Trata-se de reagente estritamente de bancada experimental, sem ensaios clínicos de Fase 1, 2 ou 3 em seres humanos e sem aprovação em nenhum órgão sanitário mundial."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: O FOXO4-DRI é um peptídeo sintético retro-inverso concebido em pesquisa pré-clínica para eliminar seletivamente células senescentes por apoptose mediada por p53. Trata-se de reagente estritamente de bancada experimental, sem ensaios clínicos de Fase 1, 2 ou 3 em seres humanos e sem aprovação em nenhum órgão sanitário mundial.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -7059,7 +7186,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "gonadorelin",
@@ -7137,7 +7265,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 85,
             "popularityScore": 83,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "CLASSIFICAÇÃO TAXONÔMICA E REGULATÓRIA: A gonadorelina é o decapeptídeo nativo sintético agonista do receptor GnRH hipofisário (HPG), NÃO sendo uma melanocortina (não atua em receptores MC1R-MC5R). Possui duas aplicações médicas formais estritamente diferenciadas: (1) Teste diagnóstico de reserva hipofisária (Factrel / Luforan: bolus de 100 mcg IV/SC); e (2) Tratamento especializado de fertilidade em amenorreia hipotalâmica mediante infusão subcutânea PULSÁTIL via microbomba computadorizada (Lutrelef). Injeções isoladas diárias ou em bolus empírico não reproduzem a pulsatilidade fisiológica e causam dessensibilização e hipogonadismo paradoxal."
+            "protocolEvidenceNote": "CLASSIFICAÇÃO TAXONÔMICA E REGULATÓRIA: A gonadorelina é o decapeptídeo nativo sintético agonista do receptor GnRH hipofisário (HPG), NÃO sendo uma melanocortina (não atua em receptores MC1R-MC5R). Possui duas aplicações médicas formais estritamente diferenciadas: (1) Teste diagnóstico de reserva hipofisária (Factrel / Luforan: bolus de 100 mcg IV/SC); e (2) Tratamento especializado de fertilidade em amenorreia hipotalâmica mediante infusão subcutânea PULSÁTIL via microbomba computadorizada (Lutrelef). Injeções isoladas diárias ou em bolus empírico não reproduzem a pulsatilidade fisiológica e causam dessensibilização e hipogonadismo paradoxal.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -7158,7 +7287,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "hcg",
@@ -7238,7 +7368,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 96,
             "popularityScore": 97,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "CLASSIFICAÇÃO TAXONÔMICA E REGULATÓRIA: O hCG é um hormônio biológico glicoproteico heterodimérico gonadotrófico, potente ativador dos receptores de LH (LHCGR) nas células de Leydig, NÃO sendo uma melanocortina. Possui aprovação formal da FDA, EMA e Anvisa para hipogonadismo hipogonadotrófico masculino, criptorquidia e indução de fertilidade. O uso com finalidade de perda de peso ('dieta do hCG') é expressamente repudiado e PROIBIDO pelas agências regulatórias por ausência de eficácia e riscos biológicos."
+            "protocolEvidenceNote": "CLASSIFICAÇÃO TAXONÔMICA E REGULATÓRIA: O hCG é um hormônio biológico glicoproteico heterodimérico gonadotrófico, potente ativador dos receptores de LH (LHCGR) nas células de Leydig, NÃO sendo uma melanocortina. Possui aprovação formal da FDA, EMA e Anvisa para hipogonadismo hipogonadotrófico masculino, criptorquidia e indução de fertilidade. O uso com finalidade de perda de peso ('dieta do hCG') é expressamente repudiado e PROIBIDO pelas agências regulatórias por ausência de eficácia e riscos biológicos.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -7259,7 +7390,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "somatropin",
@@ -7339,7 +7471,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 99,
             "popularityScore": 99,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "CLASSIFICAÇÃO FARMACOLÓGICA E CONVERSÃO DE UNIDADES: A somatropina é o HORMÔNIO BIOLÓGICO RECOMBINANTE EXÓGENO (rhGH de 191 aminoácidos), e NÃO um secretagogo de GH (secretagogos estimulam a hipófise a secretar GH endógeno, enquanto o rhGH introduz o hormônio ativo exógeno diretamente). EQUIVALÊNCIA DE UNIDADES FARMACOPEICAS: 1 mg de somatropina corresponde a aproximadamente 3 UI (Unidades Internacionais de atividade hormonal biológica). ATENÇÃO: UI hormonais NÃO são idênticas às marcações volumétricas de uma seringa de insulina U-100 (onde 100 UI = 1,0 mL). A dose volumétrica na seringa depende estritamente da quantidade de diluente adicionada ao frasco liofilizado. INDICAÇÕES DE BULA E CONTEXTO DE COMPOSIÇÃO CORPORAL: Aprovado formalmente para Deficiência de GH (DGH) em crianças e adultos (Genotropin®) e Caquexia no HIV (Serostim®). No fisiculturismo e melhoramento estético, relatos empíricos descrevem uso para definição e lipólise; contudo, ensaios clínicos controlados e revisões sistemáticas (Liu et al. 2008, Hermansen et al. 2017) comprovam que em indivíduos saudáveis o rhGH promove ganho de massa magra prioritariamente por retenção hídrica extracelular e síntese de matriz de colágeno, sem ganho significativo de força isométrica máxima ou hipertrofia muscular contrátil isolada. O uso para fins esportivos é proibido pela WADA."
+            "protocolEvidenceNote": "CLASSIFICAÇÃO FARMACOLÓGICA E CONVERSÃO DE UNIDADES: A somatropina é o HORMÔNIO BIOLÓGICO RECOMBINANTE EXÓGENO (rhGH de 191 aminoácidos), e NÃO um secretagogo de GH (secretagogos estimulam a hipófise a secretar GH endógeno, enquanto o rhGH introduz o hormônio ativo exógeno diretamente). EQUIVALÊNCIA DE UNIDADES FARMACOPEICAS: 1 mg de somatropina corresponde a aproximadamente 3 UI (Unidades Internacionais de atividade hormonal biológica). ATENÇÃO: UI hormonais NÃO são idênticas às marcações volumétricas de uma seringa de insulina U-100 (onde 100 UI = 1,0 mL). A dose volumétrica na seringa depende estritamente da quantidade de diluente adicionada ao frasco liofilizado. INDICAÇÕES DE BULA E CONTEXTO DE COMPOSIÇÃO CORPORAL: Aprovado formalmente para Deficiência de GH (DGH) em crianças e adultos (Genotropin®) e Caquexia no HIV (Serostim®). No fisiculturismo e melhoramento estético, relatos empíricos descrevem uso para definição e lipólise; contudo, ensaios clínicos controlados e revisões sistemáticas (Liu et al. 2008, Hermansen et al. 2017) comprovam que em indivíduos saudáveis o rhGH promove ganho de massa magra prioritariamente por retenção hídrica extracelular e síntese de matriz de colágeno, sem ganho significativo de força isométrica máxima ou hipertrofia muscular contrátil isolada. O uso para fins esportivos é proibido pela WADA.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -7380,7 +7513,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "menotropin-hmg",
@@ -7458,7 +7592,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 92,
             "popularityScore": 86,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "CLASSIFICAÇÃO TAXONÔMICA E REGULATÓRIA: A menotropina (hMG) é uma preparação biológica natural purificada contendo atividades de FSH e LH, pertencente ao eixo gonadotrófico reprodutivo (HPG), NÃO sendo uma melanocortina. Possui aprovação formal para estimulação ovariana na reprodução assistida e para indução de espermatogênese em homens com hipogonadismo hipogonadotrófico em associação com hCG. Não é secretagogo nem peptídeo sintético simples."
+            "protocolEvidenceNote": "CLASSIFICAÇÃO TAXONÔMICA E REGULATÓRIA: A menotropina (hMG) é uma preparação biológica natural purificada contendo atividades de FSH e LH, pertencente ao eixo gonadotrófico reprodutivo (HPG), NÃO sendo uma melanocortina. Possui aprovação formal para estimulação ovariana na reprodução assistida e para indução de espermatogênese em homens com hipogonadismo hipogonadotrófico em associação com hCG. Não é secretagogo nem peptídeo sintético simples.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -7479,7 +7614,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "palmitoyl-pentapeptide-4",
@@ -7550,7 +7686,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 80,
             "popularityScore": 84,
             "protocolEvidenceType": "clinical_trial_only",
-            "protocolEvidenceNote": "CLASSIFICAÇÃO COSMÉTICA E CIENTÍFICA: O Palmitoyl Pentapeptide-4 (Matrixyl®) é um ingrediente cosmético (matriquine sintético lipofilizado) destinado exclusivamente à aplicação dermatológica TÓPICA. NÃO É UM MEDICAMENTO APROVADO pela FDA, EMA ou Anvisa. Não possui indicação terapêutica nem aprovação para administração parenteral (injetável), sendo o uso injetável terminantemente contraindicado."
+            "protocolEvidenceNote": "CLASSIFICAÇÃO COSMÉTICA E CIENTÍFICA: O Palmitoyl Pentapeptide-4 (Matrixyl®) é um ingrediente cosmético (matriquine sintético lipofilizado) destinado exclusivamente à aplicação dermatológica TÓPICA. NÃO É UM MEDICAMENTO APROVADO pela FDA, EMA ou Anvisa. Não possui indicação terapêutica nem aprovação para administração parenteral (injetável), sendo o uso injetável terminantemente contraindicado.",
+            "epistemicClass": "published_protocol"
         },
         "sources": [
             {
@@ -7566,7 +7703,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "published_protocol"
     },
     {
         "id": "pe-22-28",
@@ -7638,7 +7776,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 70,
             "popularityScore": 78,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: O PE-22-28 é um peptídeo sintético linear de 7 aminoácidos derivado da espadina, desenvolvido em modelos animais de neurociência básica como bloqueador do canal de potássio TREK-1. Trata-se de substância estritamente investigacional, sem ensaios clínicos de Fase 1, 2 ou 3 em seres humanos e sem registro em nenhuma autoridade regulatória sanitária mundial."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: O PE-22-28 é um peptídeo sintético linear de 7 aminoácidos derivado da espadina, desenvolvido em modelos animais de neurociência básica como bloqueador do canal de potássio TREK-1. Trata-se de substância estritamente investigacional, sem ensaios clínicos de Fase 1, 2 ou 3 em seres humanos e sem registro em nenhuma autoridade regulatória sanitária mundial.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -7671,7 +7810,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "ptd-dbm",
@@ -7743,7 +7883,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 71,
             "popularityScore": 81,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: O PTD-DBM é um peptídeo sintético de transdução desenvolvido na Universidade de Yonsei para interromper a interação CXXC5-Dishevelled e reativar a via Wnt/beta-catenina no folículo capilar. É um composto puramente de bancada laboratorial, sem ensaios clínicos controlados de Fase 1, 2 ou 3 em humanos e sem qualquer autorização regulatória médica."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: O PTD-DBM é um peptídeo sintético de transdução desenvolvido na Universidade de Yonsei para interromper a interação CXXC5-Dishevelled e reativar a via Wnt/beta-catenina no folículo capilar. É um composto puramente de bancada laboratorial, sem ensaios clínicos controlados de Fase 1, 2 ou 3 em humanos e sem qualquer autorização regulatória médica.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -7760,7 +7901,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "triptorelin",
@@ -7838,7 +7980,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 97,
             "popularityScore": 93,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "APROVAÇÃO REGULATÓRIA FORMAL (FDA NDA 020715 / Anvisa nº 169300007 / EMA): A triptorelina é um análogo sintético de GnRH de alta potência aprovado formalmente para o tratamento paliativo do carcinoma avançado de próstata, endometriose, puberdade precoce central e preservação ovariana durante quimioterapia. Trata-se de formulação depot de supressão hormonal profunda. O uso empírico como 'tiro único' para restabelecimento de eixo (PCT) em fisiculturismo é desprovido de respaldo científico formal e apresenta sério risco de colapso gonadal permanente."
+            "protocolEvidenceNote": "APROVAÇÃO REGULATÓRIA FORMAL (FDA NDA 020715 / Anvisa nº 169300007 / EMA): A triptorelina é um análogo sintético de GnRH de alta potência aprovado formalmente para o tratamento paliativo do carcinoma avançado de próstata, endometriose, puberdade precoce central e preservação ovariana durante quimioterapia. Trata-se de formulação depot de supressão hormonal profunda. O uso empírico como 'tiro único' para restabelecimento de eixo (PCT) em fisiculturismo é desprovido de respaldo científico formal e apresenta sério risco de colapso gonadal permanente.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -7854,7 +7997,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "acth-1-39",
@@ -7930,7 +8074,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 72,
             "popularityScore": 76,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: O ACTH(1-39) é o peptídeo monomérico nativo corticotrófico de 39 resíduos. NÃO se confunde com formulações comerciais extrativas purificadas como Acthar Gel ou Cortrophin Gel, que são misturas biológicas de origem porcina em gelatina de depósito expressas em Unidades USP (não em miligramas de peptídeo sintético). Não possui protocolo posológico parenteral validado como peptídeo sintético isolado nesta base de dados."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: O ACTH(1-39) é o peptídeo monomérico nativo corticotrófico de 39 resíduos. NÃO se confunde com formulações comerciais extrativas purificadas como Acthar Gel ou Cortrophin Gel, que são misturas biológicas de origem porcina em gelatina de depósito expressas em Unidades USP (não em miligramas de peptídeo sintético). Não possui protocolo posológico parenteral validado como peptídeo sintético isolado nesta base de dados.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -7957,7 +8102,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "adipotide",
@@ -8030,7 +8176,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 65,
             "popularityScore": 73,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: Peptidomimético pró-apoptótico vascular dirigido à vasculatura de gordura branca. Não possui aprovação na FDA, EMA ou Anvisa. Em primatas não humanos (Barnhart et al., 2011, PMID 22072637), provocou disfunção tubular renal e lesões histopatológicas renais. Não há qualquer protocolo de uso ou segurança aprovado para humanos."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: Peptidomimético pró-apoptótico vascular dirigido à vasculatura de gordura branca. Não possui aprovação na FDA, EMA ou Anvisa. Em primatas não humanos (Barnhart et al., 2011, PMID 22072637), provocou disfunção tubular renal e lesões histopatológicas renais. Não há qualquer protocolo de uso ou segurança aprovado para humanos.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -8047,7 +8194,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "bronchogen",
@@ -8118,7 +8266,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 60,
             "popularityScore": 62,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: Tetrapeptídeo biorregulador pulmonar em divergência de sequência documental. A literatura científica russa (ex: PMID 21240358) descreve a sequência Ala-Asp-Glu-Leu (ADEL), enquanto o registro internacional PubChem (CID 11690869) e CAS Registry (857267-12-0) associa formalmente 'Bronchogen' à sequência Ala-Glu-Asp-Leu (AEDL). Ambas as moléculas são isômeros estruturais de mesma fórmula (C18H30N4O9) e mesma massa molecular (446,5 g/mol). Devido à indefinição quanto à equivalência farmacológica e de identidade primária, a ficha é mantida sob IDENTIDADE_PENDENTE. Calculadora e conversões bloqueadas fail-closed."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: Tetrapeptídeo biorregulador pulmonar em divergência de sequência documental. A literatura científica russa (ex: PMID 21240358) descreve a sequência Ala-Asp-Glu-Leu (ADEL), enquanto o registro internacional PubChem (CID 11690869) e CAS Registry (857267-12-0) associa formalmente 'Bronchogen' à sequência Ala-Glu-Asp-Leu (AEDL). Ambas as moléculas são isômeros estruturais de mesma fórmula (C18H30N4O9) e mesma massa molecular (446,5 g/mol). Devido à indefinição quanto à equivalência farmacológica e de identidade primária, a ficha é mantida sob IDENTIDADE_PENDENTE. Calculadora e conversões bloqueadas fail-closed.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -8147,7 +8296,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "cardiogen",
@@ -8216,7 +8366,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 58,
             "popularityScore": 60,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: Tetrapeptídeo de pesquisa avaliado em explantes organotípicos de tecido cardíaco de ratos. Não há ensaios clínicos humanos randomizados nem aprovação na FDA, EMA ou Anvisa. Calculadora indisponível."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: Tetrapeptídeo de pesquisa avaliado em explantes organotípicos de tecido cardíaco de ratos. Não há ensaios clínicos humanos randomizados nem aprovação na FDA, EMA ou Anvisa. Calculadora indisponível.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -8234,7 +8385,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "chonluten",
@@ -8302,7 +8454,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 55,
             "popularityScore": 58,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: Tripeptídeo investigado em culturas celulares in vitro de monócitos humanos (THP-1). Não possui ensaios clínicos em humanos nem aprovação em agências regulatórias. Não há dose humana estabelecida."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: Tripeptídeo investigado em culturas celulares in vitro de monócitos humanos (THP-1). Não possui ensaios clínicos em humanos nem aprovação em agências regulatórias. Não há dose humana estabelecida.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -8321,7 +8474,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "cortagen",
@@ -8391,7 +8545,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 59,
             "popularityScore": 63,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: Tetrapeptídeo biorregulador derivado de estudos neuroprotetores experimentais em camundongos. Não possui ensaios clínicos controlados de fase 3 nem registro terapêutico na FDA, EMA ou Anvisa. Calculadora indisponível."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: Tetrapeptídeo biorregulador derivado de estudos neuroprotetores experimentais em camundongos. Não possui ensaios clínicos controlados de fase 3 nem registro terapêutico na FDA, EMA ou Anvisa. Calculadora indisponível.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -8436,7 +8591,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "dermorphin",
@@ -8511,7 +8667,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 66,
             "popularityScore": 75,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CRÍTICO DE SUBSTÂNCIA CONTROLADA E RISCO VITAL: A dermorfina é um peptídeo opioide de alta potência isolado da pele de anfíbios (Phyllomedusa sauvagei) contendo D-alanina na posição 2. Apresenta afinidade e potência analgésica de 30 a 40 vezes superior à morfina sobre o receptor mu-opioide. NÃO possui aprovação médica para analgesia clínica. A calculadora está sumariamente desativada."
+            "protocolEvidenceNote": "AVISO CRÍTICO DE SUBSTÂNCIA CONTROLADA E RISCO VITAL: A dermorfina é um peptídeo opioide de alta potência isolado da pele de anfíbios (Phyllomedusa sauvagei) contendo D-alanina na posição 2. Apresenta afinidade e potência analgésica de 30 a 40 vezes superior à morfina sobre o receptor mu-opioide. NÃO possui aprovação médica para analgesia clínica. A calculadora está sumariamente desativada.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -8540,7 +8697,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "hgh-fragment-176-191",
@@ -8610,7 +8768,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 64,
             "popularityScore": 82,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: O Fragmento 176-191 nativo da somatropina humana possui 16 aminoácidos (Phe-Leu-Arg-Ile-Val-Gln-Cys-Arg-Ser-Val-Glu-Gly-Ser-Cys-Gly-Phe; FLRIVQCRSVEGSCGF; PM 1799,1 g/mol, PubChem CID 16131230, CAS 66004-57-7) com ponte dissulfeto Cys182-Cys189. DIFERENCIAÇÃO TRIPARTITE OBRIGATÓRIA: (1) hGH 176–191 nativo possui 16 resíduos iniciando em Phe176; (2) hGH 177–191 possui 15 resíduos iniciando em Leu177; (3) AOD-9604 é o análogo modificado de 16 resíduos constituído por Tyr-hGH 177-191. Os ensaios clínicos realizados com AOD-9604 NÃO podem ser transpostos ao fragmento 176-191. Inexistem ensaios clínicos humanos publicados que comprovem perda ponderal para a molécula 176-191 pura. Calculadora bloqueada fail-closed."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: O Fragmento 176-191 nativo da somatropina humana possui 16 aminoácidos (Phe-Leu-Arg-Ile-Val-Gln-Cys-Arg-Ser-Val-Glu-Gly-Ser-Cys-Gly-Phe; FLRIVQCRSVEGSCGF; PM 1799,1 g/mol, PubChem CID 16131230, CAS 66004-57-7) com ponte dissulfeto Cys182-Cys189. DIFERENCIAÇÃO TRIPARTITE OBRIGATÓRIA: (1) hGH 176–191 nativo possui 16 resíduos iniciando em Phe176; (2) hGH 177–191 possui 15 resíduos iniciando em Leu177; (3) AOD-9604 é o análogo modificado de 16 resíduos constituído por Tyr-hGH 177-191. Os ensaios clínicos realizados com AOD-9604 NÃO podem ser transpostos ao fragmento 176-191. Inexistem ensaios clínicos humanos publicados que comprovem perda ponderal para a molécula 176-191 pura. Calculadora bloqueada fail-closed.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -8649,7 +8808,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "livagen",
@@ -8719,7 +8879,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 57,
             "popularityScore": 61,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: Tetrapeptídeo sintético estudado na literatura laboratorial russa sobre cromatina de linfócitos em indivíduos idosos e enzimas hepáticas de roedores. Não possui ensaios clínicos terapêuticos nem aprovação em órgãos regulatórios. Calculadora indisponível."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: Tetrapeptídeo sintético estudado na literatura laboratorial russa sobre cromatina de linfócitos em indivíduos idosos e enzimas hepáticas de roedores. Não possui ensaios clínicos terapêuticos nem aprovação em órgãos regulatórios. Calculadora indisponível.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -8735,7 +8896,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "mgf-e-peptide",
@@ -8806,7 +8968,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 61,
             "popularityScore": 77,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: O MGF E-Peptide investigacional de 24 resíduos (YQPPSTNKNTKSQRRKGSTFEEHK; CAS 1356779-84-4) possui fórmula molecular recalculada C121H194N40O40 e PM 2849,1 g/mol (massa monoisotópica 2847,44 Da). Associações prévias ao CID 137700201 foram formalmente removidas por divergência estrutural irreconciliável no PubChem (que identifica beta-Hydroxythioacetylfentanyl). Não existem ensaios clínicos em humanos que demonstrem eficácia anabólica; estudos limitados a modelos in vitro e animais. Calculadora bloqueada fail-closed."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: O MGF E-Peptide investigacional de 24 resíduos (YQPPSTNKNTKSQRRKGSTFEEHK; CAS 1356779-84-4) possui fórmula molecular recalculada C121H194N40O40 e PM 2849,1 g/mol (massa monoisotópica 2847,44 Da). Associações prévias ao CID 137700201 foram formalmente removidas por divergência estrutural irreconciliável no PubChem (que identifica beta-Hydroxythioacetylfentanyl). Não existem ensaios clínicos em humanos que demonstrem eficácia anabólica; estudos limitados a modelos in vitro e animais. Calculadora bloqueada fail-closed.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -8847,7 +9010,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "orexin-a",
@@ -8920,7 +9084,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 71,
             "popularityScore": 80,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: Neuropeptídeo endógeno modulador da vigília e estabilidade do sono REM. Foi avaliado em ensaio clínico piloto randomizado cruzado via intranasal em 14 pacientes com narcolepsia e cataplexia (Weinhold et al., 2014, PMID 24406723). Embora tenha mostrado modulação modesta de parâmetros de sono e atenção, NÃO possui aprovação pela FDA, EMA ou Anvisa nem dose terapêutica comercialmente estabelecida. Calculadora bloqueada."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: Neuropeptídeo endógeno modulador da vigília e estabilidade do sono REM. Foi avaliado em ensaio clínico piloto randomizado cruzado via intranasal em 14 pacientes com narcolepsia e cataplexia (Weinhold et al., 2014, PMID 24406723). Embora tenha mostrado modulação modesta de parâmetros de sono e atenção, NÃO possui aprovação pela FDA, EMA ou Anvisa nem dose terapêutica comercialmente estabelecida. Calculadora bloqueada.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -8961,7 +9126,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "orexin-b",
@@ -9029,7 +9195,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 62,
             "popularityScore": 67,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: A Orexina B humana é o neuropeptídeo linear de 28 aminoácidos (RSGPPGLQGRLQRLLQASGNHAAGILTM-NH2, Guide to Pharmacology Ligand ID 1699, PubChem CID desvinculado (CID 44404987 revertido C->N MTLIGAAHNGSAQLLRQLRGQLGPPGSR-NH2; CAS 205599-76-4), CAS 205640-91-1, PM 2899,4 g/mol) amidado no C-terminal com resíduos Ser2 e Ser18 verificados. O CAS 202801-92-1 corresponde à variante murina (Pro2, Asn18) e não identifica a forma humana. Farmacologicamente, apresenta seletividade e preferência por receptores OX2R (evitando-se a alegação errônea de equipotência universal com OX1R). NÃO possui pontes dissulfeto e NÃO pode herdar dados de ensaios da Orexina A. Inexistem ensaios clínicos terapêuticos em humanos. Calculadora bloqueada fail-closed."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: A Orexina B humana é o neuropeptídeo linear de 28 aminoácidos (RSGPPGLQGRLQRLLQASGNHAAGILTM-NH2, Guide to Pharmacology Ligand ID 1699, PubChem CID desvinculado (CID 44404987 revertido C->N MTLIGAAHNGSAQLLRQLRGQLGPPGSR-NH2; CAS 205599-76-4), CAS 205640-91-1, PM 2899,4 g/mol) amidado no C-terminal com resíduos Ser2 e Ser18 verificados. O CAS 202801-92-1 corresponde à variante murina (Pro2, Asn18) e não identifica a forma humana. Farmacologicamente, apresenta seletividade e preferência por receptores OX2R (evitando-se a alegação errônea de equipotência universal com OX1R). NÃO possui pontes dissulfeto e NÃO pode herdar dados de ensaios da Orexina A. Inexistem ensaios clínicos terapêuticos em humanos. Calculadora bloqueada fail-closed.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -9046,7 +9213,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "pancragen",
@@ -9116,7 +9284,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 58,
             "popularityScore": 64,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO: Tetrapeptídeo biorregulador pancreático. Fórmula molecular recalculada C26H37N7O8 e PM 575,6 g/mol. CID 11954310 prévio removido por pertencer a esteroide incompatível no PubChem (Boldenone undecylenate). Calculadora bloqueada fail-closed."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO: Tetrapeptídeo biorregulador pancreático. Fórmula molecular recalculada C26H37N7O8 e PM 575,6 g/mol. CID 11954310 prévio removido por pertencer a esteroide incompatível no PubChem (Boldenone undecylenate). Calculadora bloqueada fail-closed.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -9163,7 +9332,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "pnc-27",
@@ -9234,7 +9404,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 56,
             "popularityScore": 68,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: O peptídeo investigacional antitumoral PNC-27 possui 32 aminoácidos (PPLSQETFSDLWKLLKKWKMRRNQFWVKVQRG; CAS 1356779-90-2). Sua estrutura primária corresponde estritamente ao PubChem CID 16201774, com fórmula C188H293N53O44S, massa molecular média de 4031,8 g/mol e massa monoisotópica recalculada de 4029,20 Da (corrigindo a divergência de 4028,18 Da). A associação prévia ao CID 137700204 foi removida por corresponder no PubChem a uma ceramida (C32 Ceramide). Inexistem ensaios clínicos humanos de fase avançada; evidência restrita a modelos pré-clínicos in vitro e animais. Calculadora bloqueada fail-closed."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: O peptídeo investigacional antitumoral PNC-27 possui 32 aminoácidos (PPLSQETFSDLWKLLKKWKMRRNQFWVKVQRG; CAS 1356779-90-2). Sua estrutura primária corresponde estritamente ao PubChem CID 16201774, com fórmula C188H293N53O44S, massa molecular média de 4031,8 g/mol e massa monoisotópica recalculada de 4029,20 Da (corrigindo a divergência de 4028,18 Da). A associação prévia ao CID 137700204 foi removida por corresponder no PubChem a uma ceramida (C32 Ceramide). Inexistem ensaios clínicos humanos de fase avançada; evidência restrita a modelos pré-clínicos in vitro e animais. Calculadora bloqueada fail-closed.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -9263,7 +9434,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "prostamax",
@@ -9331,7 +9503,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 55,
             "popularityScore": 57,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO: Tetrapeptídeo biorregulador prostático. Fórmula molecular corrigida para C20H33N5O9 e PM 487,5 g/mol (PubChem CID 9848296, CAS 857267-16-4). Calculadora bloqueada fail-closed."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO: Tetrapeptídeo biorregulador prostático. Fórmula molecular corrigida para C20H33N5O9 e PM 487,5 g/mol (PubChem CID 9848296, CAS 857267-16-4). Calculadora bloqueada fail-closed.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -9371,7 +9544,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "thymogen",
@@ -9445,7 +9619,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 65,
             "popularityScore": 70,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: Dipeptídeo sintético L-Glu-L-Trp isolado e sintetizado a partir de frações do extrato tímico Thymalin. Possui aprovações regulatórias regionais na Rússia para adjuvância imune, mas NÃO possui aprovação pela FDA, EMA ou Anvisa. A literatura histórica clínica é heterogênea e carece de ensaios multicêntricos de fase 3 em padrões ICH/GCP contemporâneos. Não há posologia internacionalmente validada nesta base. Calculadora bloqueada."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: Dipeptídeo sintético L-Glu-L-Trp isolado e sintetizado a partir de frações do extrato tímico Thymalin. Possui aprovações regulatórias regionais na Rússia para adjuvância imune, mas NÃO possui aprovação pela FDA, EMA ou Anvisa. A literatura histórica clínica é heterogênea e carece de ensaios multicêntricos de fase 3 em padrões ICH/GCP contemporâneos. Não há posologia internacionalmente validada nesta base. Calculadora bloqueada.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -9491,7 +9666,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "thymulin",
@@ -9560,7 +9736,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 63,
             "popularityScore": 66,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: A Timulina (Facteur Thymique Sérique - FTS, CAS 63958-90-7, PubChem CID 71300623 para o apo-peptídeo) possui como entidade molecular livre o nonapeptídeo C33H54N12O15 com peso molecular de 858,9 g/mol (massa monoisotópica 858,38 Da). DIFERENCIAÇÃO QUÍMICA MANDATÓRIA: (1) O nonapeptídeo apo livre é biologicamente inativo; (2) A atividade hormonal requer a complexação estequiométrica 1:1 com íon Zn(II) gerando [C33H52N12O15Zn] com PM de 922,2 g/mol. A declaração prévia de fórmula C33H54N12O15Zn com massa de 916,2 g/mol foi rejeitada e corrigida por incompatibilidade estequiométrica. CID 444051 anterior removido por apontar para TLK-117. Calculadora bloqueada fail-closed."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: A Timulina (Facteur Thymique Sérique - FTS, CAS 63958-90-7, PubChem CID 71300623 para o apo-peptídeo) possui como entidade molecular livre o nonapeptídeo C33H54N12O15 com peso molecular de 858,9 g/mol (massa monoisotópica 858,38 Da). DIFERENCIAÇÃO QUÍMICA MANDATÓRIA: (1) O nonapeptídeo apo livre é biologicamente inativo; (2) A atividade hormonal requer a complexação estequiométrica 1:1 com íon Zn(II) gerando [C33H52N12O15Zn] com PM de 922,2 g/mol. A declaração prévia de fórmula C33H54N12O15Zn com massa de 916,2 g/mol foi rejeitada e corrigida por incompatibilidade estequiométrica. CID 444051 anterior removido por apontar para TLK-117. Calculadora bloqueada fail-closed.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -9577,7 +9754,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "vesugen",
@@ -9646,7 +9824,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 57,
             "popularityScore": 62,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: Tripeptídeo sintético biorregulador estudado em culturas in vitro de células endoteliais vasculares humanas. Não possui aprovação pela FDA, EMA ou Anvisa nem ensaios clínicos controlados de desfechos cardiovasculares. Sem dose terapêutica validada. Calculadora indisponível."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: Tripeptídeo sintético biorregulador estudado em culturas in vitro de células endoteliais vasculares humanas. Não possui aprovação pela FDA, EMA ou Anvisa nem ensaios clínicos controlados de desfechos cardiovasculares. Sem dose terapêutica validada. Calculadora indisponível.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -9678,7 +9857,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "vilon",
@@ -9747,7 +9927,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 58,
             "popularityScore": 64,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: Dipeptídeo sintético Lys-Glu investigado na literatura laboratorial russa sobre transdução de sinal em timócitos de camundongos e monócitos humanos THP-1. Não possui aprovação por FDA, EMA ou Anvisa nem ensaios clínicos contemporâneos metodologicamente robustos. Sem posologia validada. Calculadora indisponível."
+            "protocolEvidenceNote": "AVISO CIENTÍFICO E REGULATÓRIO: Dipeptídeo sintético Lys-Glu investigado na literatura laboratorial russa sobre transdução de sinal em timócitos de camundongos e monócitos humanos THP-1. Não possui aprovação por FDA, EMA ou Anvisa nem ensaios clínicos contemporâneos metodologicamente robustos. Sem posologia validada. Calculadora indisponível.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -9793,7 +9974,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "teriparatide",
@@ -9874,7 +10056,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 95,
             "popularityScore": 88,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 021318), EMA e ANVISA (Forsteo) para tratamento de osteoporose com alto risco de fratura em mulheres pós-menopausa e homens. Agente osteoanabólico endócrino de prescrição estrita. Conversão empírica em frasco de pesquisa bloqueada fail-closed."
+            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 021318), EMA e ANVISA (Forsteo) para tratamento de osteoporose com alto risco de fratura em mulheres pós-menopausa e homens. Agente osteoanabólico endócrino de prescrição estrita. Conversão empírica em frasco de pesquisa bloqueada fail-closed.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -9887,7 +10070,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "palopegteriparatide",
@@ -9964,7 +10148,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 94,
             "popularityScore": 86,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA em agosto/2024 (NDA 216793) e pela EMA em novembro/2023 (Yorvipath) como terapia hormonal de reposição para hipoparatireoidismo em adultos. Pró-fármaco peguilado com ligante liberável. Calculadora bloqueada."
+            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA em agosto/2024 (NDA 216793) e pela EMA em novembro/2023 (Yorvipath) como terapia hormonal de reposição para hipoparatireoidismo em adultos. Pró-fármaco peguilado com ligante liberável. Calculadora bloqueada.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -10001,7 +10186,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "octreotide",
@@ -10079,7 +10265,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 96,
             "popularityScore": 90,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 019661), EMA e ANVISA (Sandostatin / Sandostatin LAR) para acromegalia, tumores neuroendócrinos secretores gastroentero-pancreáticos (GEP-NETs) e controle agudo de hemorragia por varizes esofágicas. Calculadora bloqueada."
+            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 019661), EMA e ANVISA (Sandostatin / Sandostatin LAR) para acromegalia, tumores neuroendócrinos secretores gastroentero-pancreáticos (GEP-NETs) e controle agudo de hemorragia por varizes esofágicas. Calculadora bloqueada.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -10092,7 +10279,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "lanreotide",
@@ -10169,7 +10357,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 95,
             "popularityScore": 87,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 022110), EMA e ANVISA (Somatuline Autogel) para acromegalia e tumores neuroendócrinos gastroenteropancreáticos (GEP-NETs) avançados ou metastáticos. Formulação depot pronta para injeção subcutânea profunda. Calculadora bloqueada."
+            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 022110), EMA e ANVISA (Somatuline Autogel) para acromegalia e tumores neuroendócrinos gastroenteropancreáticos (GEP-NETs) avançados ou metastáticos. Formulação depot pronta para injeção subcutânea profunda. Calculadora bloqueada.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -10182,7 +10371,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "pasireotide",
@@ -10260,7 +10450,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 94,
             "popularityScore": 85,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 200677 e NDA 203255), EMA e ANVISA (Signifor / Signifor LAR) para Doença de Cushing em adultos inelegíveis ou refratários à cirurgia hipofisária e acromegalia. Calculadora bloqueada."
+            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 200677 e NDA 203255), EMA e ANVISA (Signifor / Signifor LAR) para Doença de Cushing em adultos inelegíveis ou refratários à cirurgia hipofisária e acromegalia. Calculadora bloqueada.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -10273,7 +10464,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "ziconotide",
@@ -10351,7 +10543,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 95,
             "popularityScore": 84,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 021060) e EMA (Prialt) exclusivamente para infusão intratecal contínua no manejo de dor crônica grave e refratária em pacientes com falha ou intolerância a opióides sistêmicos. Proibida administração intravenosa ou peridural. Calculadora bloqueada."
+            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 021060) e EMA (Prialt) exclusivamente para infusão intratecal contínua no manejo de dor crônica grave e refratária em pacientes com falha ou intolerância a opióides sistêmicos. Proibida administração intravenosa ou peridural. Calculadora bloqueada.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -10364,7 +10557,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "degarelix",
@@ -10441,7 +10635,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 95,
             "popularityScore": 87,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 022201), EMA e ANVISA (Firmagon) para tratamento do câncer de próstata avançado hormônio-dependente. Antagonista seletivo de GnRH com supressão androgênica imediata sem efeito 'flare-up'. Calculadora bloqueada."
+            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 022201), EMA e ANVISA (Firmagon) para tratamento do câncer de próstata avançado hormônio-dependente. Antagonista seletivo de GnRH com supressão androgênica imediata sem efeito 'flare-up'. Calculadora bloqueada.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -10478,7 +10673,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "ganirelix",
@@ -10555,7 +10751,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 95,
             "popularityScore": 86,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 021057), EMA e ANVISA (Orgalutran) para prevenção de picos prematuros de hormônio luteinizante (LH) em mulheres sob hiperestimulação ovariana controlada em técnicas de reprodução assistida (FIV/ICSI). Calculadora bloqueada."
+            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 021057), EMA e ANVISA (Orgalutran) para prevenção de picos prematuros de hormônio luteinizante (LH) em mulheres sob hiperestimulação ovariana controlada em técnicas de reprodução assistida (FIV/ICSI). Calculadora bloqueada.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -10568,7 +10765,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "cetrorelix",
@@ -10645,7 +10843,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 95,
             "popularityScore": 86,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 021197), EMA e ANVISA (Cetrotide) para prevenção de ovulação prematura em pacientes submetidas à estimulação ovariana controlada seguida por aspiração oocitária e reprodução assistida. Calculadora bloqueada."
+            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 021197), EMA e ANVISA (Cetrotide) para prevenção de ovulação prematura em pacientes submetidas à estimulação ovariana controlada seguida por aspiração oocitária e reprodução assistida. Calculadora bloqueada.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -10682,7 +10881,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "leuprorelin",
@@ -10761,7 +10961,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 96,
             "popularityScore": 92,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 019732, NDA 020517), EMA e ANVISA (Lupron / Eligard / Camcevi) para câncer de próstata avançado, endometriose, leiomioma uterino (mioma) e puberdade precoce central. Agonista potente de GnRH de ação depot. Calculadora bloqueada."
+            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 019732, NDA 020517), EMA e ANVISA (Lupron / Eligard / Camcevi) para câncer de próstata avançado, endometriose, leiomioma uterino (mioma) e puberdade precoce central. Agonista potente de GnRH de ação depot. Calculadora bloqueada.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -10798,7 +10999,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "goserelin",
@@ -10875,7 +11077,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 96,
             "popularityScore": 90,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 019726, NDA 020578), EMA e ANVISA (Zoladex 3,6 mg e Zoladex LA 10,8 mg) para carcinoma de próstata avançado, carcinoma de mama avançado em pré e perimenopausa, endometriose e afinamento do endométrio pré-ablação. Calculadora bloqueada."
+            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 019726, NDA 020578), EMA e ANVISA (Zoladex 3,6 mg e Zoladex LA 10,8 mg) para carcinoma de próstata avançado, carcinoma de mama avançado em pré e perimenopausa, endometriose e afinamento do endométrio pré-ablação. Calculadora bloqueada.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -10912,7 +11115,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "atosiban",
@@ -10992,7 +11196,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 95,
             "popularityScore": 84,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela EMA (Tractocile) e ANVISA para tocólise e adiamento do parto prematuro iminente em gestantes adultas entre a 24ª e a 33ª semana de gestação. Antagonista seletivo do receptor de ocitocina com uso estritamente hospitalar intravenoso. Calculadora bloqueada."
+            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela EMA (Tractocile) e ANVISA para tocólise e adiamento do parto prematuro iminente em gestantes adultas entre a 24ª e a 33ª semana de gestação. Antagonista seletivo do receptor de ocitocina com uso estritamente hospitalar intravenoso. Calculadora bloqueada.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -11039,7 +11244,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "linaclotide",
@@ -11115,7 +11321,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 95,
             "popularityScore": 89,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 202811), EMA (Constella) e ANVISA (Linzess) para síndrome do intestino irritável com constipação (SII-C) e constipação idiopática crônica em adultos. Peptídeo sintético de administração oral com ação estritamente luminal entérica. Calculadora bloqueada."
+            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 202811), EMA (Constella) e ANVISA (Linzess) para síndrome do intestino irritável com constipação (SII-C) e constipação idiopática crônica em adultos. Peptídeo sintético de administração oral com ação estritamente luminal entérica. Calculadora bloqueada.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -11128,7 +11335,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "plecanatide",
@@ -11204,7 +11412,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 95,
             "popularityScore": 87,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 208745) para tratamento da constipação idiopática crônica (CIC) e síndrome do intestino irritável com constipação (SII-C) em adultos. Análogo sintético da uroguanilina de administração oral. Calculadora bloqueada."
+            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 208745) para tratamento da constipação idiopática crônica (CIC) e síndrome do intestino irritável com constipação (SII-C) em adultos. Análogo sintético da uroguanilina de administração oral. Calculadora bloqueada.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -11241,7 +11450,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "dasiglucagon",
@@ -11317,7 +11527,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 95,
             "popularityScore": 89,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 214231) e EMA (Zegalogue) para tratamento da hipoglicemia grave em pacientes com diabetes mellitus a partir de 6 anos de idade. Solução aquosa estável pronta para uso sem necessidade de reconstituição. Calculadora bloqueada."
+            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 214231) e EMA (Zegalogue) para tratamento da hipoglicemia grave em pacientes com diabetes mellitus a partir de 6 anos de idade. Solução aquosa estável pronta para uso sem necessidade de reconstituição. Calculadora bloqueada.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -11354,7 +11565,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "glucagon",
@@ -11434,7 +11646,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 97,
             "popularityScore": 94,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 020928, NDA 210134), EMA e ANVISA (GlucaGen / Baqsimi) para tratamento de emergência de hipoglicemia severa em pacientes diabéticos e como agente diagnóstico relaxante muscular gastrointestinal em exames radiológicos. Calculadora bloqueada."
+            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 020928, NDA 210134), EMA e ANVISA (GlucaGen / Baqsimi) para tratamento de emergência de hipoglicemia severa em pacientes diabéticos e como agente diagnóstico relaxante muscular gastrointestinal em exames radiológicos. Calculadora bloqueada.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -11447,7 +11660,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "desmopressin",
@@ -11528,7 +11742,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 97,
             "popularityScore": 93,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 017922, NDA 019955), EMA e ANVISA (DDAVP) para diabetes insipidus central, enurese noturna primária em crianças acima de 5 anos, noctúria em adultos e hemofilia A leve / doença de von Willebrand tipo 1. Calculadora bloqueada."
+            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 017922, NDA 019955), EMA e ANVISA (DDAVP) para diabetes insipidus central, enurese noturna primária em crianças acima de 5 anos, noctúria em adultos e hemofilia A leve / doença de von Willebrand tipo 1. Calculadora bloqueada.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -11565,7 +11780,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "pramlintide",
@@ -11643,7 +11859,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 95,
             "popularityScore": 88,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA em 2005 (NDA 021332, SymlinPen) como adjuvante prandial à terapia com insulina em pacientes com diabetes tipo 1 ou diabetes tipo 2 com controle glicêmico inadequado. Análogo estável da amilina humana. Calculadora bloqueada."
+            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA em 2005 (NDA 021332, SymlinPen) como adjuvante prandial à terapia com insulina em pacientes com diabetes tipo 1 ou diabetes tipo 2 com controle glicêmico inadequado. Análogo estável da amilina humana. Calculadora bloqueada.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -11680,7 +11897,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "enfuvirtide",
@@ -11755,7 +11973,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 95,
             "popularityScore": 86,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 021481), EMA e ANVISA (Fuzeon) para tratamento de infecção pelo vírus HIV-1 em combinação com outros agentes antirretrovirais em pacientes adultos e pediátricos multiexperimentados com falência virológica. Primeiro inibidor de fusão peptídico aprovado no mundo. Calculadora bloqueada."
+            "protocolEvidenceNote": "STATUS REGULATÓRIO: Aprovado pela FDA (NDA 021481), EMA e ANVISA (Fuzeon) para tratamento de infecção pelo vírus HIV-1 em combinação com outros agentes antirretrovirais em pacientes adultos e pediátricos multiexperimentados com falência virológica. Primeiro inibidor de fusão peptídico aprovado no mundo. Calculadora bloqueada.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -11768,7 +11987,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "exenatide",
@@ -11847,7 +12067,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 95,
             "popularityScore": 91,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "STATUS REGULATÓRIO E NOTA COMERCIAL: Primeiro agonista do receptor de GLP-1 aprovado no mundo pela FDA (NDA 021457) e ANVISA. Na União Europeia, a autorização de comercialização do Byetta foi retirada voluntariamente pela AstraZeneca em 01/01/2026 por razões puramente comerciais e de demanda de mercado (não por razões de segurança ou eficácia clínica), mantendo aprovação integral e comercialização ativa no Brasil e EUA. Calculadora bloqueada."
+            "protocolEvidenceNote": "STATUS REGULATÓRIO E NOTA COMERCIAL: Primeiro agonista do receptor de GLP-1 aprovado no mundo pela FDA (NDA 021457) e ANVISA. Na União Europeia, a autorização de comercialização do Byetta foi retirada voluntariamente pela AstraZeneca em 01/01/2026 por razões puramente comerciais e de demanda de mercado (não por razões de segurança ou eficácia clínica), mantendo aprovação integral e comercialização ativa no Brasil e EUA. Calculadora bloqueada.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -11864,7 +12085,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "lixisenatide",
@@ -11942,7 +12164,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 95,
             "popularityScore": 88,
             "protocolEvidenceType": "approved_label",
-            "protocolEvidenceNote": "STATUS REGULATÓRIO E NOTA COMERCIAL: Aprovado pela FDA (NDA 208470, Adlyxin) e ANVISA (Lyxumia / Soliqua) para diabetes tipo 2. Na União Europeia, a autorização comercial do Lyxumia foi retirada voluntariamente pela Sanofi em 18/12/2025 por decisões puramente comerciais do detentor de registro (mantendo aprovação ativa e segura nos EUA e Brasil). Calculadora bloqueada."
+            "protocolEvidenceNote": "STATUS REGULATÓRIO E NOTA COMERCIAL: Aprovado pela FDA (NDA 208470, Adlyxin) e ANVISA (Lyxumia / Soliqua) para diabetes tipo 2. Na União Europeia, a autorização comercial do Lyxumia foi retirada voluntariamente pela Sanofi em 18/12/2025 por decisões puramente comerciais do detentor de registro (mantendo aprovação ativa e segura nos EUA e Brasil). Calculadora bloqueada.",
+            "epistemicClass": "regulatory"
         },
         "sources": [
             {
@@ -11959,7 +12182,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "regulatory"
     },
     {
         "id": "apraglutide",
@@ -12032,7 +12256,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 82,
             "popularityScore": 81,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "STATUS CIENTÍFICO E REGULATÓRIO: Análogo de GLP-2 sintético investigacional com resultados pivotais de Fase 3 concluídos (Estudo STARS, n=163, PMID 42692160) demonstrando redução na necessidade de suporte parenteral em pacientes com síndrome do intestino curto associada a falência intestinal. Não possui aprovação comercial final ou registro ANVISA deferido neste momento. Calculadora bloqueada fail-closed."
+            "protocolEvidenceNote": "STATUS CIENTÍFICO E REGULATÓRIO: Análogo de GLP-2 sintético investigacional com resultados pivotais de Fase 3 concluídos (Estudo STARS, n=163, PMID 42692160) demonstrando redução na necessidade de suporte parenteral em pacientes com síndrome do intestino curto associada a falência intestinal. Não possui aprovação comercial final ou registro ANVISA deferido neste momento. Calculadora bloqueada fail-closed.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -12049,7 +12274,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     },
     {
         "id": "zenagamtide",
@@ -12123,7 +12349,8 @@ window.COMPOUNDS_STORE = (function () {
             "score": 83,
             "popularityScore": 85,
             "protocolEvidenceType": "investigational_no_dose",
-            "protocolEvidenceNote": "STATUS CIENTÍFICO E REGULATÓRIO: Coagonista unimolecular investigacional de GLP-1R e receptores de amilina (anteriormente denominado sob o codinome amycretin / amicretina). Inclui ensaio clínico randomizado de Fase 1b/2a unicêntrico em sobrepeso/obesidade focado primariamente em segurança/tolerabilidade e PK com peso exploratório (The Lancet 2025, n=125, PMID 40550231, NCT06064006), além de ensaios de Fase 2 em DM2 avaliando formas subcutânea (n=262, 36 semanas, The Lancet 2026, PMID 42532080) e oral (n=186, 36 semanas, The Lancet 2026, PMID 42532079), com Fase 3 em andamento. Não possui registro comercial nem aprovação da ANVISA ou FDA. Calculadora bloqueada fail-closed."
+            "protocolEvidenceNote": "STATUS CIENTÍFICO E REGULATÓRIO: Coagonista unimolecular investigacional de GLP-1R e receptores de amilina (anteriormente denominado sob o codinome amycretin / amicretina). Inclui ensaio clínico randomizado de Fase 1b/2a unicêntrico em sobrepeso/obesidade focado primariamente em segurança/tolerabilidade e PK com peso exploratório (The Lancet 2025, n=125, PMID 40550231, NCT06064006), além de ensaios de Fase 2 em DM2 avaliando formas subcutânea (n=262, 36 semanas, The Lancet 2026, PMID 42532080) e oral (n=186, 36 semanas, The Lancet 2026, PMID 42532079), com Fase 3 em andamento. Não possui registro comercial nem aprovação da ANVISA ou FDA. Calculadora bloqueada fail-closed.",
+            "epistemicClass": "unverified"
         },
         "sources": [
             {
@@ -12164,7 +12391,8 @@ window.COMPOUNDS_STORE = (function () {
             }
         ],
         "createdAt": "2026-10-28T00:00:00Z",
-        "updatedAt": "2026-11-08T19:00:00Z"
+        "updatedAt": "2026-11-08T19:00:00Z",
+        "epistemicClass": "unverified"
     }
 ];
 })();
