@@ -808,7 +808,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const statusBadge = getStatusBadgeHtml(peptide.statusType, peptide.status);
 
-      const evidenceBadge = getEvidenceBadgeHtml(peptide.protocolEvidenceType);
+      const evidenceBadge = getEvidenceBadgeHtml(peptide.protocolEvidenceType, peptide.epistemicClass);
 
       const biologicBadge = (peptide.isBiologicProtein || peptide.entityType === 'biologic_protein')
 
@@ -1404,7 +1404,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
               ${getStatusBadgeHtml(peptide.statusType, peptide.status)}
 
-              ${getEvidenceBadgeHtml(peptide.protocolEvidenceType)}
+              ${getEvidenceBadgeHtml(peptide.protocolEvidenceType, peptide.epistemicClass)}
 
               ${modalBiologicBadge}
 
