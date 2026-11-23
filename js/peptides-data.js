@@ -9629,9 +9629,9 @@ const PEPTIDES_DATABASE = [
     "summary": "Hormônio do crescimento humano recombinante exógeno de 191 aminoácidos (rhGH, não secretagogo). Aprovado para deficiência de GH e caquexia no HIV. Ampla literatura investigativa e empírica sobre composição corporal, lipólise e preservação tecidual, com distinção rigorosa entre retenção hídrica extracelular e hipertrofia de miofibrilas.",
     "mechanism": "Liga-se aos receptores de GH (GHR) na superfície celular ativando a via JAK2-STAT5 e estimulando a síntese hepática e periférica de IGF-1, induzindo captação de aminoácidos, anabolismo proteico e lipólise no tecido adiposo.",
     "researchProtocols": {
-      "typicalDose": "Clínica: 0,15 a 0,3 mg/dia (~0,45 a 0,9 UI/dia) na DGH ou até 6 mg/dia (~18 UI/dia) em caquexia por HIV. Prática empírica relatada (Classe C): 2 a 4 UI/dia (~0,66 a 1,33 mg/dia) para suporte lipolítico; 4 a 8+ UI/dia em protocolos avançados.",
-      "defaultDoseNumber": 0.2,
-      "defaultUnit": "mg",
+      "typicalDose": "Clínica (DGH Adultos): 0,6 a 0,9 UI/dia (~0,2 a 0,3 mg/dia); Resgate Caquexia HIV: até 18 UI/dia (~6 mg/dia). Prática Comunitária (Fóruns/Biohacking): 2 a 4 UI/dia (~0,66 a 1,33 mg/dia); 4 a 8+ UI/dia em relatos avançados.",
+      "defaultDoseNumber": 0.6,
+      "defaultUnit": "UI",
       "frequency": "1x ao dia (à noite)",
       "defaultFrequency": "1x ao dia",
       "duration": "Tratamento prolongado sob estrita monitorização de IGF-1 sérico e glicemia.",

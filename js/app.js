@@ -643,34 +643,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  function getEvidenceBadgeHtml(evidenceType) {
-
-    if (evidenceType === 'approved_label') {
-
-      return `<span class="badge-approved-label text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm bg-emerald-950/80 text-emerald-300 border border-emerald-700/60"><i data-lucide="award" class="w-3 h-3"></i>Bula Aprovada</span>`;
-
-    } else if (evidenceType === 'clinical_trial_only') {
-
-      return `<span class="badge-trial-only text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm bg-indigo-950/80 text-indigo-300 border border-indigo-700/60"><i data-lucide="flask-conical" class="w-3 h-3"></i>Braço de Ensaio</span>`;
-
-    } else if (evidenceType === 'investigational_no_dose') {
-
-      return `<span class="badge-no-dose text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm bg-amber-950/80 text-amber-300 border border-amber-700/60"><i data-lucide="alert-octagon" class="w-3 h-3"></i>Investigacional (Sem Dose Humana)</span>`;
-
-    } else if (evidenceType === 'clinical_proven') {
-
-      return `<span class="badge-clinical-proven text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="check-circle-2" class="w-3 h-3"></i>Ensaio Clínico em Humanos</span>`;
-
-    } else if (evidenceType === 'clinical_pilot') {
-
+  function getEvidenceBadgeHtml(evidenceType, epistemicClass) {
+    const ep = (epistemicClass || evidenceType || '').toLowerCase();
+    
+    if (ep === 'clinical_evidence' || ep === 'clinical_proven') {
+      return `<span class="badge-epistemic-clinical text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="check-circle-2" class="w-3 h-3"></i>Evidência Clínica</span>`;
+    } else if (ep === 'regulatory_info' || ep === 'approved_label') {
+      return `<span class="badge-epistemic-regulatory text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="shield-check" class="w-3 h-3"></i>Informação Regulatória</span>`;
+    } else if (ep === 'clinical_pilot') {
       return `<span class="badge-clinical-pilot text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="microscope" class="w-3 h-3"></i>Estudo Piloto Humano</span>`;
-
+    } else if (ep === 'clinical_trial_only') {
+      return `<span class="badge-trial-only text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="flask-conical" class="w-3 h-3"></i>Braço de Ensaio Clínico</span>`;
+    } else if (ep === 'pharmacological_evidence') {
+      return `<span class="badge-epistemic-pharmacological text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="dna" class="w-3 h-3"></i>Evidência Farmacológica</span>`;
+    } else if (ep === 'published_protocol') {
+      return `<span class="badge-epistemic-published-protocol text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="book-open" class="w-3 h-3"></i>Protocolo Publicado</span>`;
+    } else if (ep === 'community_practice') {
+      return `<span class="badge-epistemic-community-practice text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="users" class="w-3 h-3"></i>Prática Popular</span>`;
+    } else if (ep === 'anecdotal_report') {
+      return `<span class="badge-epistemic-anecdotal text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="message-square" class="w-3 h-3"></i>Relato Anedótico</span>`;
+    } else if (ep === 'commercial_claim') {
+      return `<span class="badge-epistemic-commercial text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="package" class="w-3 h-3"></i>Alegação Comercial</span>`;
+    } else if (ep === 'scientific_hypothesis') {
+      return `<span class="badge-epistemic-hypothesis text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="sparkles" class="w-3 h-3"></i>Hipótese Mecanística</span>`;
+    } else if (ep === 'controversial_info') {
+      return `<span class="badge-epistemic-controversial text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="help-circle" class="w-3 h-3"></i>Informação Controversa</span>`;
+    } else if (ep === 'investigational_no_dose' || ep === 'unverified') {
+      return `<span class="badge-no-dose text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm bg-amber-950/80 text-amber-300 border border-amber-700/60"><i data-lucide="alert-octagon" class="w-3 h-3"></i>Investigacional (Sem Dose Humana)</span>`;
     } else {
-
-      return `<span class="badge-preclinical-empirical text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="alert-triangle" class="w-3 h-3"></i>Prática Empírica Online</span>`;
-
+      return `<span class="badge-epistemic-preclinical text-[9px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-sm"><i data-lucide="microscope" class="w-3 h-3"></i>Evidência Pré-Clínica / Empírica</span>`;
     }
-
   }
 
 
@@ -4512,6 +4514,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         { label: '5.0 mg', val: 5.0 }
 
+      ],
+
+      UI: [
+
+        { label: '0.6 UI (Iniciação DGH)', val: 0.6 },
+
+        { label: '0.9 UI (Titulação DGH)', val: 0.9 },
+
+        { label: '1.5 UI (Idosos)', val: 1.5 },
+
+        { label: '2.0 UI (Biohacking / Lipólise)', val: 2.0 },
+
+        { label: '3.0 UI (Comunitário)', val: 3.0 },
+
+        { label: '18.0 UI (Caquexia HIV)', val: 18.0 }
+
       ]
 
     };
@@ -4574,6 +4592,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
           doseInput.value = Math.round(oldVal * 1000);
 
+        } else if (newUnit === 'UI' && currentDoseUnit === 'mg') {
+
+          doseInput.value = +(oldVal * 3.0).toFixed(2);
+
+        } else if (newUnit === 'UI' && currentDoseUnit === 'mcg') {
+
+          doseInput.value = +((oldVal / 1000) * 3.0).toFixed(2);
+
+        } else if (newUnit === 'mg' && currentDoseUnit === 'UI') {
+
+          doseInput.value = +(oldVal / 3.0).toFixed(4);
+
+        } else if (newUnit === 'mcg' && currentDoseUnit === 'UI') {
+
+          doseInput.value = Math.round((oldVal / 3.0) * 1000);
+
         }
 
       }
@@ -4586,9 +4620,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (doseInput) {
 
-        doseInput.step = currentDoseUnit === 'mg' ? '0.05' : '25';
+        doseInput.step = currentDoseUnit === 'mg' ? '0.05' : (currentDoseUnit === 'UI' ? '0.1' : '25');
 
-        doseInput.min = currentDoseUnit === 'mg' ? '0.01' : '1';
+        doseInput.min = currentDoseUnit === 'mg' ? '0.01' : (currentDoseUnit === 'UI' ? '0.1' : '1');
 
       }
 
@@ -4602,23 +4636,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-      if (unitMcgBtn && unitMgBtn) {
+      const unitUiBtn = document.getElementById('calc-unit-ui-btn');
 
-        if (currentDoseUnit === 'mcg') {
+      const activeClass = 'calc-unit-btn px-2.5 py-1 rounded-md text-[11px] font-bold font-mono transition-all bg-cyan-500 text-slate-950 shadow-sm';
 
-          unitMcgBtn.className = 'calc-unit-btn px-2.5 py-1 rounded-md text-[11px] font-bold font-mono transition-all bg-cyan-500 text-slate-950 shadow-sm';
+      const inactiveClass = 'calc-unit-btn px-2.5 py-1 rounded-md text-[11px] font-bold font-mono transition-all text-slate-400 hover:text-white';
 
-          unitMgBtn.className = 'calc-unit-btn px-2.5 py-1 rounded-md text-[11px] font-bold font-mono transition-all text-slate-400 hover:text-white';
 
-        } else {
 
-          unitMgBtn.className = 'calc-unit-btn px-2.5 py-1 rounded-md text-[11px] font-bold font-mono transition-all bg-cyan-500 text-slate-950 shadow-sm';
+      if (unitMcgBtn) unitMcgBtn.className = currentDoseUnit === 'mcg' ? activeClass : inactiveClass;
 
-          unitMcgBtn.className = 'calc-unit-btn px-2.5 py-1 rounded-md text-[11px] font-bold font-mono transition-all text-slate-400 hover:text-white';
+      if (unitMgBtn) unitMgBtn.className = currentDoseUnit === 'mg' ? activeClass : inactiveClass;
 
-        }
-
-      }
+      if (unitUiBtn) unitUiBtn.className = currentDoseUnit === 'UI' ? activeClass : inactiveClass;
 
 
 
@@ -4633,6 +4663,8 @@ document.addEventListener('DOMContentLoaded', () => {
     unitMcgBtn?.addEventListener('click', () => setDoseUnit('mcg', true));
 
     unitMgBtn?.addEventListener('click', () => setDoseUnit('mg', true));
+
+    document.getElementById('calc-unit-ui-btn')?.addEventListener('click', () => setDoseUnit('UI', true));
 
 
 

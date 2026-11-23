@@ -326,6 +326,32 @@ this.syringeConfigs = {
           { label: "1,2 mg (Escalonamento 2 Sem 9-12)", val: 1.2, unit: "mg", context: "Ensaio Fase 2/3", evidence: "Classe B (Ensaios Clínicos Lancet)" },
           { label: "2,4 mg (Manutenção Máxima Ensaio)", val: 2.4, unit: "mg", context: "Dose teto semanal ensaios de obesidade", evidence: "Classe B (Ensaios Clínicos Lancet)" }
         ]
+      },
+      {
+        id: "somatropin",
+        name: "HGH (Somatropina Recombinante / rhGH)",
+        category: "Hormônios Recombinantes & Proteínas (rhGH)",
+        synonyms: ["hgh", "somatropin", "somatropina", "genotropin", "norditropin", "omnitrope", "humatrope", "saizen", "serostim"],
+        defaultUnit: "UI",
+        isBiologicProtein: true,
+        notice: "AVISO CRÍTICO DE UNIDADES DE HGH: 1 UI hormonal de Somatropina NÃO equivale a 1 unidade na seringa U-100! 1 mg de rhGH = 3,00 UI de atividade biológica (Padrão Internacional OMS 98/574). 100 unidades na seringa U-100 equivalem a 1,0 mL de volume. A quantidade de UI administrada por traço na seringa depende exclusivamente da concentração obtida na reconstituição (ex: frasco de 10 UI em 1,0 mL -> 1 UI = 10 unidades na seringa U-100; em 2,0 mL -> 1 UI = 20 unidades).",
+        presentations: [
+          { label: "10 UI / 3,33 mg (1.0 mL BAC -> 10 UI/mL)", vialMg: 3.33, waterMl: 1.0, suggestedSyringe: "u100" },
+          { label: "10 UI / 3,33 mg (2.0 mL BAC -> 5 UI/mL)", vialMg: 3.33, waterMl: 2.0, suggestedSyringe: "u100" },
+          { label: "15 UI / 5,0 mg (1.5 mL Solvente -> 10 UI/mL)", vialMg: 5.0, waterMl: 1.5, suggestedSyringe: "u100" },
+          { label: "15 UI / 5,0 mg (2.0 mL Solvente -> 7,5 UI/mL)", vialMg: 5.0, waterMl: 2.0, suggestedSyringe: "u100" },
+          { label: "30 UI / 10,0 mg (2.0 mL Solvente -> 15 UI/mL)", vialMg: 10.0, waterMl: 2.0, suggestedSyringe: "u100" },
+          { label: "36 UI / 12,0 mg (3.0 mL Cartucho Pen -> 12 UI/mL)", vialMg: 12.0, waterMl: 3.0, suggestedSyringe: "u100" }
+        ],
+        doses: [
+          { label: "0,6 UI (~0,20 mg - Iniciação DGH Adultos)", val: 0.6, unit: "UI", context: "Iniciação na Deficiência de GH no Adulto (Genotropin®)", evidence: "Classe A (Bula FDA/EMA/Anvisa)" },
+          { label: "0,9 UI (~0,30 mg - Titulação Fisiológica DGH)", val: 0.9, unit: "UI", context: "Titulação mensal guiada por IGF-1 sérico normal", evidence: "Classe A (Diretriz AACE/Endocrine Society)" },
+          { label: "1,5 UI (~0,50 mg - Dose Teto em Idosos)", val: 1.5, unit: "UI", context: "Reposição em idosos para mitigar risco de edema/artralgia", evidence: "Classe A (Diretrizes Clínicas)" },
+          { label: "2,0 UI (~0,66 mg - Prática Biohacking / Lipólise)", val: 2.0, unit: "UI", context: "Relatos em fóruns para suporte lipolítico (Proibido WADA)", evidence: "Classe C (Prática Comunitária / Empírico)" },
+          { label: "3,0 UI (~1,00 mg - Prática Comunitária Avançada)", val: 3.0, unit: "UI", context: "Relatos de fisioculturismo (sem hipertrofia contrátil comprovada)", evidence: "Classe C (Prática Comunitária)" },
+          { label: "4,0 UI (~1,33 mg - Prática Esportiva Teto)", val: 4.0, unit: "UI", context: "Alto risco de intolerância à glicose e síndrome do túnel do carpo", evidence: "Classe C (Prática Comunitária)" },
+          { label: "18,0 UI (~6,00 mg - Dose Resgate Caquexia HIV)", val: 18.0, unit: "UI", context: "Dose máxima de bula aprovada na caquexia por HIV (Serostim®)", evidence: "Classe A (Bula FDA)" }
+        ]
       }
     ];
   }
@@ -402,13 +428,19 @@ this.syringeConfigs = {
       this.waterMl = parseStrictPositiveFinite(waterMl);
     }
     
-    if (doseUnit) this.doseUnit = doseUnit === 'mg' ? 'mg' : 'mcg';
+    if (doseUnit) this.doseUnit = (doseUnit === 'mg' || doseUnit === 'UI') ? doseUnit : 'mcg';
 
     if (doseValue !== undefined) {
       const parsed = parseStrictPositiveFinite(doseValue);
       if (parsed !== null) {
         this.doseValue = parsed;
-        const calcMcg = this.doseUnit === 'mg' ? parsed * 1000 : parsed;
+        let calcMcg = parsed;
+        if (this.doseUnit === 'mg') {
+          calcMcg = parsed * 1000;
+        } else if (this.doseUnit === 'UI') {
+          // Padrão OMS 98/574: 1 mg rhGH = 3,00 UI de atividade biológica (1 UI = 333,333 mcg)
+          calcMcg = parsed * (1000 / 3.0);
+        }
         this.desiredDoseMcg = Number.isFinite(calcMcg) && calcMcg > 0 ? calcMcg : null;
       } else {
         this.doseValue = null;
@@ -418,7 +450,12 @@ this.syringeConfigs = {
       const parsed = parseStrictPositiveFinite(desiredDoseMcg);
       if (parsed !== null) {
         this.desiredDoseMcg = parsed;
-        const calcVal = this.doseUnit === 'mg' ? +(parsed / 1000).toFixed(4) : parsed;
+        let calcVal = parsed;
+        if (this.doseUnit === 'mg') {
+          calcVal = +(parsed / 1000).toFixed(4);
+        } else if (this.doseUnit === 'UI') {
+          calcVal = +(parsed / (1000 / 3.0)).toFixed(2);
+        }
         this.doseValue = Number.isFinite(calcVal) && calcVal > 0 ? calcVal : null;
       } else {
         this.doseValue = null;

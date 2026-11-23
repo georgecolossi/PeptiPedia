@@ -3123,15 +3123,15 @@
     "population": "Adultos com AGHD",
     "indication": "Reposição de hormônio do crescimento",
     "route": "Subcutânea (SC)",
-    "dose": 0.2,
-    "doseUnit": "mg",
-    "unitType": "mass",
+    "dose": 0.6,
+    "doseUnit": "UI",
+    "unitType": "biological_iu",
     "derivedConversions": [
       {
-        "convertedValue": 0.6,
-        "convertedUnit": "UI",
+        "convertedValue": 0.2,
+        "convertedUnit": "mg",
         "method": "who_standard",
-        "rationale": "1 mg rhGH = 3,00 UI (OMS 98/574)"
+        "rationale": "1 UI = 0,333 mg | 1 mg rhGH = 3,00 UI (OMS 98/574)"
       }
     ],
     "concentration": 3.33,

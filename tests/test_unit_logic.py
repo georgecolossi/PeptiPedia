@@ -143,7 +143,7 @@ class TestUnitLogicV8(unittest.TestCase):
                     }
                     return { count: presets.length, defaultsOk, total, crashes };
                 }""")
-                self.assertEqual(presets_reg["count"], 16)
+                self.assertEqual(presets_reg["count"], 17)
                 self.assertTrue(presets_reg["defaultsOk"])
                 self.assertEqual(presets_reg["crashes"], 0)
             finally:
