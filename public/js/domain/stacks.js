@@ -904,33 +904,33 @@
     ],
     "category": "Regeneração & Tecidos",
     "categoryId": "regeneration",
-    "description": "Combinação comunitária tríplice (amplamente conhecida como GLOW) e investigada em medicina regenerativa para remodelamento cicatricial e suporte conjuntivo.",
-    "synergyRationale": "BPC-157 promove angiogênese inicial; TB-500 atua na migração celular de fibroblastos; GHK-Cu orquestra a maturação equilibrada de colágeno tipos I e III. Sem ensaios clínicos da mistura tríplice.",
+    "description": "Combinação tríplice comunitária (conhecida como GLOW Blend) investigada em medicina regenerativa teórica para remodelamento cicatricial e suporte conjuntivo, baseada exclusivamente na sobreposição de mecanismos isolados.",
+    "synergyRationale": "A hipótese teórica de sinergia baseia-se na sobreposição funcional de mecanismos investigados exclusivamente em modelos pré-clínicos isolados: BPC-157 estimula angiogênese precoce via VEGFR2 e reparo de tecidos moles; TB-500 orquestra motilidade e migração de fibroblastos/queratinócitos via regulação da actina; GHK-Cu modula a síntese equilibrada de colágeno tipos I e III e a expressão de MMPs dérmicas. NÃO existem ensaios clínicos em humanos nem estudos pré-clínicos in vivo de mistura avaliando a administração concomitante dos três peptídeos; a sinergia permanece uma extrapolação mecanicista teórica, não um fato comprovado.",
     "components": [
       {
         "compoundId": "ghk-cu",
         "componentRole": "Componente ativo (GHK-Cu)",
         "amount": 2,
         "unit": "mg",
-        "ratio": "71,4% (50 mg)",
+        "ratio": "71,4% (50 mg no frasco 70 mg 5:1:1; ou 2 mg/dia em frascos separados)",
         "isFixedRatio": true,
         "source": "GHK-Cu revisão isolada — Int J Mol Sci 2018 (PMID 29986520)"
       },
       {
         "compoundId": "bpc-157",
         "componentRole": "Componente ativo (BPC-157)",
-        "amount": 250,
+        "amount": 400,
         "unit": "mcg",
-        "ratio": "14,3% (10 mg)",
+        "ratio": "14,3% (10 mg no frasco 70 mg 5:1:1; ou 250-500 mcg/dia em frascos separados)",
         "isFixedRatio": true,
         "source": "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)"
       },
       {
         "compoundId": "tb-500",
         "componentRole": "Componente ativo (TB-500)",
-        "amount": 2.5,
-        "unit": "mg",
-        "ratio": "14,3% (10 mg)",
+        "amount": 400,
+        "unit": "mcg",
+        "ratio": "14,3% (10 mg no frasco 70 mg 5:1:1; ou 2,0-2,5 mg 2x/sem em frascos separados)",
         "isFixedRatio": true,
         "source": "TB-500 revisão isolada — Expert Opin Biol Ther 2012 (PMID 22074294)"
       }
@@ -950,7 +950,7 @@
       "resultingConcentrations": "GHK-Cu: 16,67 mg/mL; BPC-157: 3,33 mg/mL; TB-500: 3,33 mg/mL",
       "kineticConflictWarning": "O blend pronto força a administração diária de TB-500 e impede ajuste isolado da dose de cobre.",
       "physicochemicalRisk": "Risco moderado de clivagem catalítica de ligações peptídicas por íons Cu2+ livres sob luz e calor.",
-      "mathematicalReconciliation": "Conciliação analítica: O frasco liofilizado comercial contém 70 mg total com proporção fixa 5:1:1 (GHK-Cu 50 mg, BPC-157 10 mg, TB-500 10 mg). Reconstituído em 3 mL de BAC, cada 0,15 mL fornece GHK-Cu 2,5 mg, BPC-157 500 mcg e TB-500 500 mcg. As quantidades unitárias declaradas no array components (2 mg / 250 mcg / 2,5 mg) refletem monoterapias teóricas que não coincidem com a razão fixa 5:1:1 do frasco único."
+      "mathematicalReconciliation": "Conciliação analítica e posológica: 1) Composição comercial divulgada: frasco único liofilizado de 70 mg com proporção fixa 5:1:1 (GHK-Cu 50 mg [71,4%], BPC-157 10 mg [14,3%], TB-500 10 mg [14,3%]). Reconstituído em 3,0 mL de BAC 0,9%, cada 0,12 mL fornece GHK-Cu ~2,0 mg, BPC-157 ~400 mcg e TB-500 ~400 mcg. 2) Variante de formulação (frascos separados): permite administração diária de BPC-157 (250-500 mcg) e GHK-Cu (1,5-2,0 mg) e administração intermitente em bolus de TB-500 (2,0-2,5 mg 2x/semana), respeitando a farmacocinética independente e evitando microdosagem forçada. 3) Quantidade verificada: ausência de testes sob diretrizes ICH Q1A ou laudos oficiais com validação analítica para a solução combinada."
     },
     "intendedPurpose": "Regeneração & Tecidos",
     "evidenceCategory": "commercial_blend",
@@ -1031,43 +1031,45 @@
     "canonicalName": "Protocolo KLOW e Reparação Mucocutânea (GHK-Cu + BPC-157 + TB-500 + KPV)",
     "synonyms": [
       "KLOW",
+      "Protocolo KLOW",
       "KLOW Blend",
-      "Quad Stack de Reparação Mucocutânea"
+      "Quad Stack de Reparação Mucocutânea",
+      "Barrier Repair Protocol"
     ],
-    "category": "Cicatrizantes & Teciduais",
-    "categoryId": "healing",
+    "category": "Regeneração & Tecidos",
+    "categoryId": "regeneration",
     "compositionType": "commercial_fixed_blend",
     "components": [
       {
         "compoundId": "ghk-cu",
         "role": "remodeling",
-        "amount": "2 mg",
+        "amount": 1.67,
         "unit": "mg",
-        "ratio": "62,5% (50 mg)",
+        "ratio": "62,5% (50 mg / razão 5:1:1:1 comercial; ou 1,5-2,0 mg em frascos separados)",
         "source": "GHK-Cu revisão isolada — Int J Mol Sci 2018 (PMID 29986520)"
       },
       {
         "compoundId": "bpc-157",
         "role": "angiogenic",
-        "amount": "250 mcg",
+        "amount": 333,
         "unit": "mcg",
-        "ratio": "12,5% (10 mg)",
+        "ratio": "12,5% (10 mg / razão 5:1:1:1 comercial; ou 250-500 mcg em frascos separados)",
         "source": "BPC-157 pré-clínico isolado — PubMed 2011 (PMID 21030672)"
       },
       {
         "compoundId": "tb-500",
         "role": "cell_migration",
-        "amount": "500 mcg",
+        "amount": 333,
         "unit": "mcg",
-        "ratio": "12,5% (10 mg)",
+        "ratio": "12,5% (10 mg / razão 5:1:1:1 comercial; ou 2,0-2,5 mg 2x/sem em frascos separados)",
         "source": "TB-500 revisão isolada — Expert Opin Biol Ther 2012 (PMID 22074294)"
       },
       {
         "compoundId": "kpv",
         "role": "anti_inflammatory",
-        "amount": "250 mcg",
+        "amount": 333,
         "unit": "mcg",
-        "ratio": "12,5% (10 mg)",
+        "ratio": "12,5% (10 mg / razão 5:1:1:1 comercial; ou 250-500 mcg em frascos separados)",
         "source": "KPV pré-clínico isolado — Gastroenterology 2008 (PMID 18061177)"
       }
     ],
@@ -1083,12 +1085,13 @@
         "kpv": "12,5% (10 mg)"
       },
       "resultingConcentrations": "GHK-Cu: 16,67 mg/mL; BPC-157: 3,33 mg/mL; TB-500: 3,33 mg/mL; KPV: 3,33 mg/mL",
-      "kineticConflictWarning": "O blend comercial pronto de 80 mg fixa a razão estequiométrica e força administração diária de TB-500 (microdosagem) e KPV, sem flexibilidade de titulação isolada.",
-      "physicochemicalRisk": "A alta constante de afinidade de GHK-Cu (log beta ≈ 16,4) reduz o risco de remoção estequiométrica de cobre por quelação competitiva com KPV em pH neutro, mas a mistura quádrupla carece de dados analíticos por HPLC/MS."
+      "kineticConflictWarning": "O blend comercial de 80 mg impõe razão estequiométrica fixa (5:1:1:1) e força a administração diária em microdoses de TB-500 (~333 mcg/dia), ao contrário do regime pulsátil clássico (2,0 a 2,5 mg 2x/semana), além de impedir o ajuste isolado das doses de cobre ou de KPV.",
+      "physicochemicalRisk": "A alta afinidade de GHK-Cu (log beta ≈ 16,4) reduz a perda estequiométrica de cobre por quelação competitiva com KPV em pH neutro, mas a mistura liofilizada quádrupla e reconstituída carece de ensaios formais de estabilidade ICH Q1A e integridade molecular por HPLC-MS.",
+      "mathematicalReconciliation": "Diferenciação posológica e analítica dos três cenários: 1) Composição comercial divulgada: frasco de 80 mg liofilizado com razão fixa 5:1:1:1 (GHK-Cu 50 mg, BPC-157 10 mg, TB-500 10 mg, KPV 10 mg). Reconstituído em 3,0 mL de BAC 0,9%, uma alíquota de 0,10 mL (10 UI) fornece 1,67 mg de GHK-Cu e 333 mcg de cada um dos demais compostos. 2) Variante de formulação (frascos separados): elimina a rigidez estequiométrica, permitindo posologia independente (GHK-Cu 1,5–2,0 mg/dia SC, BPC-157 250–500 mcg/dia SC, TB-500 2,0–2,5 mg 2x/semana SC e KPV 250–500 mcg oral ou SC). 3) Quantidade verificada: sem confirmação analítica independente sob BPF/GMP para misturas multicomponentes no mercado não regulado."
     },
     "evidenceCategory": "commercial_blend",
     "riskLevel": "moderate",
-    "synergyRationale": "GHK-Cu estimula síntese de colágeno e remodelação dérmica; BPC-157 ativa angiogênese via VEGF; TB-500 promove migração de queratinócitos e fibroblastos; KPV modula inflamação local via supressão de NF-kB. Ausência de ensaios clínicos da combinação completa de 4 peptídeos.",
+    "synergyRationale": "A hipótese teórica de sinergia quádrupla resulta da sobreposição conceitual de mecanismos demonstrados unicamente em modelos pré-clínicos individuais: GHK-Cu estimula síntese de colágeno e remodelação da matriz extracelular; BPC-157 promove angiogênese precoce e integridade vascular; TB-500 facilita migração celular e motilidade de queratinócitos; KPV modula a resposta inflamatória através da inibição de NF-kB e citocinas pró-inflamatórias. NÃO existem ensaios clínicos controlados em humanos nem investigações in vivo de formulação combinada que demonstrem eficácia superior ou sinergia biológica comprovada para o quarteto coadministrado.",
     "knownInteractions": [
       "Dor e irritação transitória no local da injeção decorrente do cobre.",
       "Risco de microdosagem diária de TB-500 em blends fixos.",
@@ -1109,8 +1112,10 @@
       "KLOW",
       "Protocolo KLOW",
       "KLOW Blend",
+      "Quad Stack de Reparação Mucocutânea",
       "Barrier Repair Protocol"
-    ]
+    ],
+    "description": "Quarteto peptídico de alta popularidade comunitária (conhecido como KLOW Blend), concebido para suporte regenerativo mucocutâneo e resolução inflamatória baseado na hipótese mecanística de ação complementar dos componentes isolados."
   },
   {
     "id": "tesamorelin-ipamorelin-visceral-stack",
@@ -1132,7 +1137,7 @@
         "unit": "mg",
         "ratio": "50%",
         "isFixedRatio": false,
-        "source": "Tesamorelina ensaios de fase 3 lipodistrofia — JAIDS 2010 (PMID 20431394)"
+        "source": "Tesamorelina ensaios de fase 3 lipodistrofia — J Clin Endocrinol Metab 2010 (PMID 20554713)"
       },
       {
         "compoundId": "ipamorelin",
@@ -1172,9 +1177,8 @@
     "stabilityEvidence": "Armazenar entre 2°C e 8°C protegido da luz; prazo operacional pós-reconstituição de até 28 dias.",
     "regulatoryStatus": "Tesamorelin aprovado pela FDA (Egrifta); Ipamorelin RUO / unapproved; combinação off-label.",
     "sources": [
-      "Tesamorelin Phase 3 trials in HIV visceral lipodystrophy — JAIDS 2010 (PMID: 20431394)",
-      "Ipamorelin selectivity and GH-axis activation — Eur J Endocrinol 1998 (PMID: 9849822)",
-      "Nota epistêmica: ausência de ensaios clínicos demonstrando sinergia superior em humanos para a combinação simultânea."
+      "Tesamorelina ensaios de fase 3 lipodistrofia — J Clin Endocrinol Metab 2010 (PMID 20554713)",
+      "Ipamorelin ensaio seletividade GH — Eur J Endocrinol 1998 (PMID 9849822)"
     ],
     "auditConfirmationStatus": "verified_literature_concordant",
     "createdAt": "2026-11-22T22:30:00Z",
@@ -1357,7 +1361,7 @@
         "unit": "mcg",
         "ratio": "20%",
         "isFixedRatio": false,
-        "source": "KPV propriedades anti-inflamatórias — Peptides 2005 (PMID 15820320)"
+        "source": "KPV anti-inflamatório mucosal e epitelial — Gastroenterology 2008 (PMID 18061177)"
       }
     ],
     "compositionType": "custom_flexible_combination",
@@ -1387,9 +1391,8 @@
     "stabilityEvidence": "Manter sob refrigeração a 2°C a 8°C ao abrigo da luz solar.",
     "regulatoryStatus": "GHK-Cu cosmecêutico aprovado; KPV experimental / RUO.",
     "sources": [
-      "Regenerative and protective actions of the GHK-Cu peptide — Int J Mol Sci 2018 (PMID: 29986520)",
-      "The anti-inflammatory peptide KPV inhibits inflammation — Peptides 2005 (PMID: 15820320)",
-      "Nota epistêmica: evidência pré-clínica individual consistente; ausência de ensaios clínicos da combinação."
+      "GHK-Cu revisão isolada — Int J Mol Sci 2018 (PMID 29986520)",
+      "KPV anti-inflamatório mucosal e epitelial — Gastroenterology 2008 (PMID 18061177)"
     ],
     "auditConfirmationStatus": "verified_literature_concordant",
     "createdAt": "2026-11-22T22:30:00Z",
@@ -1424,7 +1427,7 @@
         "unit": "mg",
         "ratio": "50%",
         "isFixedRatio": true,
-        "source": "AHK-Cu proliferação de papila dérmica in vitro — Biosci Biotechnol Biochem 2007 (PMID 17483602)"
+        "source": "AHK-Cu estímulo de crescimento folicular in vitro — Biol Pharm Bull 2007 (PMID 17703734)"
       }
     ],
     "compositionType": "commercial_fixed_blend",
@@ -1454,9 +1457,8 @@
     "stabilityEvidence": "Estável em temperatura ambiente ao abrigo da luz solar direta; vida útil tópica de 6 meses.",
     "regulatoryStatus": "Ingredientes cosméticos aprovados para uso tópico (INCI: Copper Tripeptide-1 e Copper Tripeptide-3).",
     "sources": [
-      "The effect of AHK-Cu on human hair growth in vitro — Biosci Biotechnol Biochem 2007 (PMID: 17483602)",
-      "GHK-Cu promotes hair growth and enlargement of follicles — J Biomater Sci Polym Ed 2008 (PMID: 18644225)",
-      "Nota epistêmica: ensaios pré-clínicos in vitro em células humanas; ausência de ensaios clínicos duplo-cegos combinados."
+      "AHK-Cu estímulo de crescimento folicular in vitro — Biol Pharm Bull 2007 (PMID 17703734)",
+      "GHK-Cu remodelação tecidual e angiogênese — J Biomater Sci Polym Ed 2008 (PMID 18644225)"
     ],
     "auditConfirmationStatus": "verified_literature_concordant",
     "createdAt": "2026-11-22T22:30:00Z",
@@ -1482,7 +1484,7 @@
         "unit": "mg",
         "ratio": "80%",
         "isFixedRatio": false,
-        "source": "Bremelanotida ensaios RECONNECT — Obstet Gynecol 2019 (PMID 31599838)"
+        "source": "Bremelanotide ensaios de fase 3 HSDD — Obstet Gynecol 2019 (PMID 31599840)"
       },
       {
         "compoundId": "oxytocin",
@@ -1491,7 +1493,7 @@
         "unit": "UI",
         "ratio": "20%",
         "isFixedRatio": false,
-        "source": "Oxitocina e resposta sexual humana — Horm Behav 2012 (PMID 22446187)"
+        "source": "Oxitocina e regulação neurocomportamental de confiança e apego — Nature 2005 (PMID 15931222)"
       }
     ],
     "compositionType": "custom_flexible_combination",
@@ -1522,9 +1524,8 @@
     "stabilityEvidence": "Manter congelado (-20°C) ou refrigerado (2-8°C); oxitocina degrada rapidamente em temperatura ambiente.",
     "regulatoryStatus": "PT-141 aprovado FDA (Vyleesi); Oxitocina aprovada FDA/Anvisa; combinação não regulamentada.",
     "sources": [
-      "Bremelanotide for Female Hypoactive Sexual Desire Disorder (RECONNECT) — Obstet Gynecol 2019 (PMID: 31599838)",
-      "Oxytocin and human sexual response — Horm Behav 2012 (PMID: 22446187)",
-      "Nota epistêmica: monoterapias aprovadas com indicações específicas; blend combinado é experimental off-label."
+      "Bremelanotide ensaios de fase 3 HSDD — Obstet Gynecol 2019 (PMID 31599840)",
+      "Oxitocina e regulação neurocomportamental de confiança e apego — Nature 2005 (PMID 15931222)"
     ],
     "auditConfirmationStatus": "verified_literature_concordant",
     "createdAt": "2026-11-22T22:30:00Z",
@@ -1559,7 +1560,7 @@
         "unit": "mg",
         "ratio": "50%",
         "isFixedRatio": false,
-        "source": "Epitalon produção de melatonina e longevidade — Neuro Endocrinol Lett 2001 (PMID 11756844)"
+        "source": "Epitalon superação de limite divisional e função epifisária — Bull Exp Biol Med 2004 (PMID 15455129)"
       }
     ],
     "compositionType": "custom_flexible_combination",
@@ -1589,9 +1590,8 @@
     "stabilityEvidence": "Manter sob refrigeração de 2°C a 8°C ao abrigo de luz.",
     "regulatoryStatus": "Compostos para pesquisa / suplementação off-label na Europa Oriental; não aprovados pela FDA.",
     "sources": [
-      "Delta sleep-inducing peptide (DSIP): an overview — Neurosci Biobehav Rev 1984 (PMID: 6391925)",
-      "Epithalamin/Epitalon stimulates pineal melatonin secretion — Neuro Endocrinol Lett 2001 (PMID: 11756844)",
-      "Nota epistêmica: literatura histórica consistente para monoterapias; ausência de ensaios clínicos modernos da combinação."
+      "DSIP indução de sono delta — Eur Neurol 1984 (PMID 6391925)",
+      "Epitalon superação de limite divisional e função epifisária — Bull Exp Biol Med 2004 (PMID 15455129)"
     ],
     "auditConfirmationStatus": "verified_literature_concordant",
     "createdAt": "2026-11-22T22:30:00Z",
@@ -1617,7 +1617,7 @@
         "unit": "mcg",
         "ratio": "50%",
         "isFixedRatio": false,
-        "source": "AOD-9604 ensaios clínicos e tolerabilidade — Int J Obes 2004 (PMID 15616614)"
+        "source": "AOD-9604 lipólise pré-clínica isolado — Int J Obes Relat Metab Disord 2001 (PMID 11673763)"
       },
       {
         "compoundId": "cjc-1295-no-dac",
@@ -1666,10 +1666,9 @@
     "stabilityEvidence": "Manter a 2°C a 8°C ao abrigo da luz; uso em até 21 dias após reconstituição.",
     "regulatoryStatus": "AOD-9604 possui histórico GRAS para alimentos nos EUA mas foi retirado de compounding pela FDA; CJC/Ipamorelin são RUO.",
     "sources": [
-      "Safety and tolerability of the hexadecapeptide AOD9604 in humans — Int J Obes 2004 (PMID: 15616614)",
-      "CJC-1295 pharmacokinetic profile — J Clin Endocrinol Metab 2006 (PMID: 16352683)",
-      "Ipamorelin selectivity — Eur J Endocrinol 1998 (PMID: 9849822)",
-      "Nota epistêmica: monoterapias estudadas; ausência de ensaios clínicos da combinação tríplice coformulada."
+      "AOD-9604 lipólise pré-clínica isolado — Int J Obes Relat Metab Disord 2001 (PMID 11673763)",
+      "CJC-1295 farmacocinética pulsátil — J Clin Endocrinol Metab 2006 (PMID 16352683)",
+      "Ipamorelin seletividade GH — Eur J Endocrinol 1998 (PMID 9849822)"
     ],
     "auditConfirmationStatus": "verified_literature_concordant",
     "createdAt": "2026-11-22T22:30:00Z",
@@ -1695,7 +1694,7 @@
         "unit": "mg",
         "ratio": "50%",
         "isFixedRatio": true,
-        "source": "Ensaio de fase 2 CagriSema — Lancet 2023 (PMID 37366315)"
+        "source": "Ensaio de fase 2 CagriSema — Lancet 2023 (PMID 37364590)"
       },
       {
         "compoundId": "cagrilintide",
@@ -1704,7 +1703,7 @@
         "unit": "mg",
         "ratio": "50%",
         "isFixedRatio": true,
-        "source": "Cagrilintida monoterapia e combinação REDEFINE — Lancet 2021 (PMID 34793719)"
+        "source": "Cagrilintida Fase 2 monoterapia — Lancet 2021 (PMID 34798060) e CagriSema Lancet 2023 (PMID 37364590)"
       }
     ],
     "compositionType": "clinical_fixed_combination",
@@ -1735,9 +1734,10 @@
     "stabilityEvidence": "Armazenamento sob refrigeração de 2°C a 8°C.",
     "regulatoryStatus": "Em processo de submissão e registro regulatório perante FDA e EMA (Status Investigacional Avançado / Breakthrough).",
     "sources": [
-      "Efficacy and safety of cagrilintide with semaglutide in adults with overweight or obesity: a randomised phase 2 trial — Lancet 2023 (PMID: 37366315)",
-      "Once-weekly cagrilintide for weight management: a randomised, double-blind phase 2 trial — Lancet 2021 (PMID: 34793719)",
-      "SELECT and STEP programs for semaglutide monotherapy — N Engl J Med 2021 (PMID: 33567185)"
+      "Efficacy and safety of co-administered once-weekly cagrilintide 2·4 mg with once-weekly semaglutide 2·4 mg in type 2 diabetes: a multicentre, randomised, double-blind, active-controlled, phase 2 trial — Lancet 2023 (PMID: 37364590)",
+      "Once-weekly cagrilintide for weight management: a randomised, double-blind phase 2 trial — Lancet 2021 (PMID: 34798060)",
+      "SELECT and STEP programs for semaglutide monotherapy — N Engl J Med 2021 (PMID: 33567185)",
+      "REDEFINE 1 Phase 3 trial CagriSema in obesity — N Engl J Med 2025 (PMID: 40544433)"
     ],
     "auditConfirmationStatus": "verified_literature_concordant",
     "createdAt": "2026-11-22T22:30:00Z",

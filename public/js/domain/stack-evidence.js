@@ -18,7 +18,7 @@
   "meta": {
     "identifier": "PEPTIPEDIA-STACK-EVIDENCE-M2",
     "description": "Evidencia por componente de stack, derivada das matrizes de pesquisa documental M2 (Lotes 1-3). Niveis A-F preservados sem promocao editorial.",
-    "generatedAt": "2026-11-22T23:00:22Z",
+    "generatedAt": "2026-11-22T23:47:23Z",
     "sourceMatrices": [
       "MATRIZ_EVIDENCIAS_BATCH1_STACKS_1-6.csv",
       "MATRIZ_EVIDENCIAS_BATCH2_STACKS_7-12.csv",
@@ -3957,8 +3957,8 @@
               "level": "B",
               "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
               "present": true,
-              "text": "Análogo GHRH sintético estabilizado com ácido trans-3-hexenoico; estimula síntese/liberação de GH endógeno (PMID 20431394).",
-              "rawText": "Análogo GHRH sintético estabilizado com ácido trans-3-hexenoico; estimula síntese/liberação de GH endógeno (PMID 20431394)."
+              "text": "Análogo GHRH sintético estabilizado com ácido trans-3-hexenoico; estimula síntese/liberação de GH endógeno (PMID 20554713).",
+              "rawText": "Análogo GHRH sintético estabilizado com ácido trans-3-hexenoico; estimula síntese/liberação de GH endógeno (PMID 20554713)."
             },
             {
               "level": "C",
@@ -3996,7 +3996,7 @@
           "sources": {
             "arcanaLabs": "https://www.arcana-labs.app/peptideos/tesamorelin",
             "peptidePedia": "https://peptidepedia.org/growth-hormone/tesamorelin",
-            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/20431394/"
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/20554713/"
           },
           "consultedAt": "2026-11-22T22:30:00Z",
           "limitations": "Aprovado FDA (Egrifta) para lipodistrofia por HIV. Contraindicado em neoplasias ativas e hipersensibilidade. WADA S2."
@@ -4439,8 +4439,8 @@
               "level": "B",
               "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
               "present": true,
-              "text": "Tripeptídeo derivado do C-terminal do alfa-MSH; potente ação anti-inflamatória via inibição de NF-kB e IL-8 sem efeito melanogênico (PMID 15820320).",
-              "rawText": "Tripeptídeo derivado do C-terminal do alfa-MSH; potente ação anti-inflamatória via inibição de NF-kB e IL-8 sem efeito melanogênico (PMID 15820320)."
+              "text": "Tripeptídeo derivado do C-terminal do alfa-MSH; potente ação anti-inflamatória via inibição de NF-kB e IL-8 sem efeito melanogênico (PMID 18061177).",
+              "rawText": "Tripeptídeo derivado do C-terminal do alfa-MSH; potente ação anti-inflamatória via inibição de NF-kB e IL-8 sem efeito melanogênico (PMID 18061177)."
             },
             {
               "level": "C",
@@ -4478,7 +4478,7 @@
           "sources": {
             "arcanaLabs": "https://www.arcana-labs.app/peptideos/kpv",
             "peptidePedia": "https://peptidepedia.org/inflammation/kpv",
-            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/15820320/"
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/18061177/"
           },
           "consultedAt": "2026-11-22T22:30:00Z",
           "limitations": "Composto em fase de pesquisa laboratorial; ausência de ensaios de toxicidade crônica em humanos."
@@ -4561,8 +4561,8 @@
               "level": "B",
               "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
               "present": true,
-              "text": "Tripeptídeo Ala-His-Lys ligado a Cu2+ estimula proliferação de células da papila dérmica in vitro e previne apoptose induzida por DHT (PMID 17483602).",
-              "rawText": "Tripeptídeo Ala-His-Lys ligado a Cu2+ estimula proliferação de células da papila dérmica in vitro e previne apoptose induzida por DHT (PMID 17483602)."
+              "text": "Tripeptídeo Ala-His-Lys ligado a Cu2+ estimula proliferação de células da papila dérmica in vitro e previne apoptose induzida por DHT (PMID 17703734).",
+              "rawText": "Tripeptídeo Ala-His-Lys ligado a Cu2+ estimula proliferação de células da papila dérmica in vitro e previne apoptose induzida por DHT (PMID 17703734)."
             },
             {
               "level": "C",
@@ -4600,7 +4600,7 @@
           "sources": {
             "arcanaLabs": "https://www.arcana-labs.app/peptideos/ahk-cu",
             "peptidePedia": "https://peptidepedia.org/hair/ahk-cu",
-            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/17483602/"
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/17703734/"
           },
           "consultedAt": "2026-11-22T22:30:00Z",
           "limitations": "Uso cosmecêutico experimental; dados analíticos de estabilidade limitados a veículos específicos."
@@ -4664,7 +4664,7 @@
           "sources": {
             "arcanaLabs": "https://www.arcana-labs.app/peptideos/pt-141",
             "peptidePedia": "https://peptidepedia.org/sexual-health/pt-141",
-            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/31599838/"
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/31599840/"
           },
           "consultedAt": "2026-11-22T22:30:00Z",
           "limitations": "Aprovado FDA (Vyleesi) monoterapia; causa náuseas transitórias e elevação da pressão arterial sistólica/diastólica. Máximo 8 doses/mês."
@@ -4683,8 +4683,8 @@
               "level": "B",
               "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
               "present": true,
-              "text": "Nonapeptídeo neuro-hipofisário modula apego, vínculo afetivo, empatia e intensidade orgásmica (PMID 22446187).",
-              "rawText": "Nonapeptídeo neuro-hipofisário modula apego, vínculo afetivo, empatia e intensidade orgásmica (PMID 22446187)."
+              "text": "Nonapeptídeo neuro-hipofisário modula apego, vínculo afetivo, empatia e intensidade orgásmica (PMID 15931222).",
+              "rawText": "Nonapeptídeo neuro-hipofisário modula apego, vínculo afetivo, empatia e intensidade orgásmica (PMID 15931222)."
             },
             {
               "level": "C",
@@ -4722,7 +4722,7 @@
           "sources": {
             "arcanaLabs": "https://www.arcana-labs.app/peptideos/oxytocin",
             "peptidePedia": "https://peptidepedia.org/sexual-health/oxytocin",
-            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/22446187/"
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/15931222/"
           },
           "consultedAt": "2026-11-22T22:30:00Z",
           "limitations": "Aprovado FDA/Anvisa para indução de parto; meia-vida plasmática ultracurta (~3-5 min); requer formulação intranasal ou sublingual."
@@ -4805,8 +4805,8 @@
               "level": "B",
               "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
               "present": true,
-              "text": "Tetrapeptídeo epifisário estimula síntese endógena de melatonina e preserva comprimento de telômeros em roedores (PMID 11756844).",
-              "rawText": "Tetrapeptídeo epifisário estimula síntese endógena de melatonina e preserva comprimento de telômeros em roedores (PMID 11756844)."
+              "text": "Tetrapeptídeo epifisário estimula síntese endógena de melatonina e preserva comprimento de telômeros em roedores (PMID 15455129).",
+              "rawText": "Tetrapeptídeo epifisário estimula síntese endógena de melatonina e preserva comprimento de telômeros em roedores (PMID 15455129)."
             },
             {
               "level": "C",
@@ -4844,7 +4844,7 @@
           "sources": {
             "arcanaLabs": "https://www.arcana-labs.app/peptideos/epitalon",
             "peptidePedia": "https://peptidepedia.org/longevity/epitalon",
-            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/11756844/"
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/15455129/"
           },
           "consultedAt": "2026-11-22T22:30:00Z",
           "limitations": "Suplemento experimental na Europa Oriental; não aprovado pela FDA/EMA."
@@ -4869,8 +4869,8 @@
               "level": "B",
               "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
               "present": true,
-              "text": "Fragmento C-terminal de hGH (Tyr-hGH 177-191); estimula lipólise e inibe lipogênese sem induzir resistência insulínica (PMID 15616614).",
-              "rawText": "Fragmento C-terminal de hGH (Tyr-hGH 177-191); estimula lipólise e inibe lipogênese sem induzir resistência insulínica (PMID 15616614)."
+              "text": "Fragmento C-terminal de hGH (Tyr-hGH 177-191); estimula lipólise e inibe lipogênese sem induzir resistência insulínica (PMID 11673763).",
+              "rawText": "Fragmento C-terminal de hGH (Tyr-hGH 177-191); estimula lipólise e inibe lipogênese sem induzir resistência insulínica (PMID 11673763)."
             },
             {
               "level": "C",
@@ -4908,7 +4908,7 @@
           "sources": {
             "arcanaLabs": "https://www.arcana-labs.app/peptideos/aod-9604",
             "peptidePedia": "https://peptidepedia.org/weight-loss/aod-9604",
-            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/15616614/"
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/11673763/"
           },
           "consultedAt": "2026-11-22T22:30:00Z",
           "limitations": "Status GRAS nos EUA revogado; banido em esportes pela WADA S2; sem ensaios de eficácia a longo prazo."
@@ -5042,15 +5042,15 @@
               "level": "A",
               "label": "Evidencia clinica humana",
               "present": true,
-              "text": "Ensaio clínico duplo-cego de fase 2 em humanos avaliou a combinação com Cagrilintida (PMID 37366315); redução ponderal média de -15,6% vs monoterapias.",
-              "rawText": "Ensaio clínico duplo-cego de fase 2 em humanos avaliou a combinação com Cagrilintida (PMID 37366315); redução ponderal média de -15,6% vs monoterapias."
+              "text": "Ensaio clínico duplo-cego de fase 2 em humanos avaliou a combinação com Cagrilintida (PMID 37364590); redução ponderal média de -15,6% vs monoterapias.",
+              "rawText": "Ensaio clínico duplo-cego de fase 2 em humanos avaliou a combinação com Cagrilintida (PMID 37364590); redução ponderal média de -15,6% vs monoterapias."
             },
             {
               "level": "B",
               "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
               "present": true,
-              "text": "Agonista potente do receptor GLP-1 com acilação graxa C18 mono-insaturada mediando desaceleração de esvaziamento gástrico e saciedade central (PMID 34793719).",
-              "rawText": "Agonista potente do receptor GLP-1 com acilação graxa C18 mono-insaturada mediando desaceleração de esvaziamento gástrico e saciedade central (PMID 34793719)."
+              "text": "Agonista potente do receptor GLP-1 com acilação graxa C18 mono-insaturada mediando desaceleração de esvaziamento gástrico e saciedade central (PMID 34798060).",
+              "rawText": "Agonista potente do receptor GLP-1 com acilação graxa C18 mono-insaturada mediando desaceleração de esvaziamento gástrico e saciedade central (PMID 34798060)."
             },
             {
               "level": "C",
@@ -5088,7 +5088,7 @@
           "sources": {
             "arcanaLabs": "https://www.arcana-labs.app/peptideos/semaglutide",
             "peptidePedia": "https://peptidepedia.org/weight-loss/semaglutide",
-            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/37366315/"
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/37364590/"
           },
           "consultedAt": "2026-11-22T22:30:00Z",
           "limitations": "Eventos adversos gastrointestinais comuns (náusea, vômitos, constipação); contraindicado em MTC e MEN2. Exige titulação lenta escalonada."
@@ -5100,15 +5100,15 @@
               "level": "A",
               "label": "Evidencia clinica humana",
               "present": true,
-              "text": "Ensaio clínico duplo-cego de fase 2 em humanos avaliou a combinação com Semaglutida (PMID 37366315); programa REDEFINE de fase 3 em andamento.",
-              "rawText": "Ensaio clínico duplo-cego de fase 2 em humanos avaliou a combinação com Semaglutida (PMID 37366315); programa REDEFINE de fase 3 em andamento."
+              "text": "Ensaio clínico duplo-cego de fase 2 em humanos avaliou a combinação com Semaglutida (PMID 37364590); programa REDEFINE de fase 3 em andamento.",
+              "rawText": "Ensaio clínico duplo-cego de fase 2 em humanos avaliou a combinação com Semaglutida (PMID 37364590); programa REDEFINE de fase 3 em andamento."
             },
             {
               "level": "B",
               "label": "Evidencia preclinica (animal / in vitro / mecanistica)",
               "present": true,
-              "text": "Análogo acilado de longa ação da amilina atuando em receptores de amilina e calcitonina na área postrema e núcleo do trato solitário (PMID 34793719).",
-              "rawText": "Análogo acilado de longa ação da amilina atuando em receptores de amilina e calcitonina na área postrema e núcleo do trato solitário (PMID 34793719)."
+              "text": "Análogo acilado de longa ação da amilina atuando em receptores de amilina e calcitonina na área postrema e núcleo do trato solitário (PMID 34798060).",
+              "rawText": "Análogo acilado de longa ação da amilina atuando em receptores de amilina e calcitonina na área postrema e núcleo do trato solitário (PMID 34798060)."
             },
             {
               "level": "C",
@@ -5146,7 +5146,7 @@
           "sources": {
             "arcanaLabs": "https://www.arcana-labs.app/peptideos/cagrilintide",
             "peptidePedia": "https://peptidepedia.org/weight-loss/cagrilintide",
-            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/34793719/"
+            "pubMed": "https://pubmed.ncbi.nlm.nih.gov/34798060/"
           },
           "consultedAt": "2026-11-22T22:30:00Z",
           "limitations": "Monitoramento de tolerabilidade gástrica e taxa de descontinuação em ensaios clínicos; submissão regulatória em análise."

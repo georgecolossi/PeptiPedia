@@ -340,8 +340,8 @@ document.addEventListener('DOMContentLoaded', () => {
     cardsGrid: document.getElementById('cards-grid'),
 
     resultsCount: document.getElementById('results-count'),
-
     stacksContainer: document.getElementById('stacks-container'),
+    stackSearchInput: document.getElementById('stack-search-input'),
 
     studiesContainer: document.getElementById('studies-container'),
 
@@ -4066,13 +4066,37 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!elements.stacksContainer) return;
 
     const activeCat = state.selectedStackCategory || 'all';
-    const displayedStacks = activeCat === 'all'
+    const query = (state.stackSearchQuery || state.searchQuery || '').trim().toLowerCase();
+
+    let displayedStacks = activeCat === 'all'
       ? RESEARCH_STACKS
       : RESEARCH_STACKS.filter(s => s.category === activeCat);
 
-    // Update active filter pill styles
+    if (query) {
+      displayedStacks = displayedStacks.filter(s => {
+        const idMatch = s.id?.toLowerCase().includes(query);
+        const nameMatch = s.name?.toLowerCase().includes(query) || s.title?.toLowerCase().includes(query);
+        const altMatch = (s.alternativeNames || []).some(alt => alt.toLowerCase().includes(query));
+        const summaryMatch = s.summary?.toLowerCase().includes(query);
+        const pepMatch = (s.peptides || []).some(p => p.toLowerCase().includes(query));
+        return idMatch || nameMatch || altMatch || summaryMatch || pepMatch;
+      });
+    }
+
+    // Update active filter pill styles and dynamic counts
     document.querySelectorAll('.stack-filter-btn').forEach(btn => {
-      const isSel = btn.dataset.stackFilter === activeCat;
+      const filter = btn.dataset.stackFilter;
+      const isSel = filter === activeCat;
+      let count = 0;
+      if (filter === 'all') {
+        count = RESEARCH_STACKS.length;
+        btn.textContent = `Todos (${count})`;
+      } else {
+        count = RESEARCH_STACKS.filter(s => s.category === filter).length;
+        const rawLabel = btn.dataset.labelPrefix || btn.textContent.split('(')[0].trim();
+        btn.dataset.labelPrefix = rawLabel;
+        btn.textContent = `${rawLabel} (${count})`;
+      }
       if (isSel) {
         btn.className = 'stack-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20 transition-all';
       } else {
@@ -4083,6 +4107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     elements.stacksContainer.innerHTML = displayedStacks.map(stack => {
       const durationDisplay = stack.protocolSchedule?.duration || (stack.durationWeeks ? `${stack.durationWeeks} semanas` : 'Duração personalizada');
       const summaryText = stack.summary || stack.objective || '';
+      const shortBrand = stack.id === 'wound-scar-tissue-stack' ? 'GLOW' : (stack.id === 'klow-barrier-repair-stack' ? 'KLOW' : (stack.id === 'wolverine-stack' ? 'Wolverine' : (stack.id === 'cagrisema-incretin-metabolic-stack' ? 'CagriSema' : '')));
 
       // Evidence Category Badge
       let evCategoryBadge = '';
@@ -4096,7 +4121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         evCategoryBadge = `<span class="text-[9px] uppercase font-mono px-2 py-0.5 rounded-full bg-cyan-950/80 text-cyan-300 border border-cyan-800/60 font-semibold inline-flex items-center gap-1"><i data-lucide="flask-conical" class="w-3 h-3"></i>Racional Mecanístico</span>`;
       }
 
-      // H5 Escalation Badge (B2): nenhum dos 19 stacks possui ensaio clinico da combinacao
+      // H5 Escalation Badge (B2): nenhum dos stacks possui ensaio clinico da combinacao
       // coadministrada em humanos. Selo obrigatorio de transparencia epistemica.
       const h5Badge = `
         <span class="text-[9px] uppercase font-mono px-2 py-0.5 rounded-full bg-fuchsia-950/70 text-fuchsia-300 border border-fuchsia-800/60 font-bold inline-flex items-center gap-1" title="Nenhum ensaio clinico avaliou a combinacao completa coadministrada em humanos. A evidencia refere-se a componentes isolados.">
@@ -4131,7 +4156,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       return `
-      <div class="bg-slate-900/80 border border-slate-800/80 hover:border-cyan-500/40 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-950/20 flex flex-col justify-between">
+      <div class="stack-card bg-slate-900/80 border border-slate-800/80 hover:border-cyan-500/40 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-950/20 flex flex-col justify-between" data-stack-id="${stack.id}">
         <div>
           <!-- Topo do Card: Categoria e Badges -->
           <div class="flex flex-wrap items-center justify-between gap-1.5 mb-2">
@@ -4148,8 +4173,11 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           </div>
 
-          <!-- Título com largura total -->
-          <h3 class="text-base sm:text-lg font-bold text-white font-mono leading-snug mb-2.5">${stack.title}</h3>
+          <!-- Título com largura total e Badge de Marca Comunitária -->
+          <div class="flex items-center gap-2 mb-2.5">
+            ${shortBrand ? `<span class="px-2.5 py-0.5 rounded-lg text-xs font-mono font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/50 shadow-sm">${shortBrand}</span>` : ''}
+            <h3 class="text-base sm:text-lg font-bold text-white font-mono leading-snug">${stack.title}</h3>
+          </div>
 
           <!-- Metadados do Stack: Duração com quebra responsiva e contagem de peptídeos -->
           <div class="flex flex-wrap items-center gap-2 mb-3">
@@ -6342,23 +6370,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         renderPeptides();
-
+        renderStacks();
       }, 150);
-
     });
 
-
-
     elements.clearSearchBtn?.addEventListener('click', () => {
-
       if (elements.searchInput) elements.searchInput.value = '';
-
       state.searchQuery = '';
-
       elements.clearSearchBtn.style.display = 'none';
-
       renderPeptides();
+      renderStacks();
+    });
 
+    elements.stackSearchInput?.addEventListener('input', (e) => {
+      state.stackSearchQuery = e.target.value;
+      renderStacks();
     });
 
 

@@ -5398,7 +5398,7 @@
       "Ausência de ensaios clínicos com a combinação em frasco único; requer monitoramento glicêmico periódico."
     ],
     "sources": [
-      "Tesamorelina ensaios de fase 3 lipodistrofia — JAIDS 2010 (PMID 20431394)",
+      "Tesamorelina ensaios de fase 3 lipodistrofia — J Clin Endocrinol Metab 2010 (PMID 20554713)",
       "Ipamorelin seletividade in vitro/animal — Eur J Endocrinol 1998 (PMID 9849822)"
     ],
     "reviewedAt": "2026-11-22"
@@ -5534,7 +5534,7 @@
     ],
     "sources": [
       "GHK-Cu revisão epigenética — Int J Mol Sci 2018 (PMID 29986520)",
-      "KPV propriedades anti-inflamatórias — Peptides 2005 (PMID 15820320)"
+      "KPV propriedades anti-inflamatórias — Gastroenterology 2008 (PMID 18061177)"
     ],
     "reviewedAt": "2026-11-22"
   },
@@ -5578,7 +5578,7 @@
     ],
     "sources": [
       "GHK-Cu estimulação capilar — J Biomater Sci Polym Ed 2008 (PMID 18644225)",
-      "AHK-Cu proliferação papila dérmica — Biosci Biotechnol Biochem 2007 (PMID 17483602)"
+      "AHK-Cu estímulo folicular in vitro — Biol Pharm Bull 2007 (PMID 17703734)"
     ],
     "reviewedAt": "2026-11-22"
   },
@@ -5622,8 +5622,8 @@
       "A coformulação em troche sublingual misto reduz drasticamente a biodisponibilidade do PT-141 comparado à via subcutânea validada em ensaios clínicos."
     ],
     "sources": [
-      "Bremelanotida ensaios RECONNECT — Obstet Gynecol 2019 (PMID 31599838)",
-      "Oxitocina e resposta sexual humana — Horm Behav 2012 (PMID 22446187)"
+      "Bremelanotida ensaios RECONNECT — Obstet Gynecol 2019 (PMID 31599840)",
+      "Oxitocina e regulação comportamental e apego — Nature 2005 (PMID 15931222)"
     ],
     "reviewedAt": "2026-11-22"
   },
@@ -5667,7 +5667,7 @@
     ],
     "sources": [
       "DSIP regulação do sono humano — Neurosci Biobehav Rev 1984 (PMID 6391925)",
-      "Epitalon melatonina e longevidade — Neuro Endocrinol Lett 2001 (PMID 11756844)"
+      "Epitalon superação de limite divisional — Bull Exp Biol Med 2004 (PMID 15455129)"
     ],
     "reviewedAt": "2026-11-22"
   },
@@ -5710,7 +5710,7 @@
       "AOD-9604 foi descontinuado do desenvolvimento clínico formal de fase 3 para obesidade por falta de eficácia superior estatisticamente robusta em alguns desfechos."
     ],
     "sources": [
-      "AOD-9604 ensaios clínicos — Int J Obes 2004 (PMID 15616614)",
+      "AOD-9604 lipólise pré-clínica isolado — Int J Obes Relat Metab Disord 2001 (PMID 11673763)",
       "CJC-1295 farmacocinética — J Clin Endocrinol Metab 2006 (PMID 16352683)",
       "Ipamorelin seletividade in vitro — Eur J Endocrinol 1998 (PMID 9849822)"
     ],
@@ -5756,8 +5756,8 @@
       "Combinação proprietária em fase final de avaliação regulatória; formulações manipuladas não possuem o mesmo perfil farmacocinético do dispositivo patenteado."
     ],
     "sources": [
-      "Ensaio de fase 2 CagriSema — Lancet 2023 (PMID 37366315)",
-      "Cagrilintida ensaio REDEFINE — Lancet 2021 (PMID 34793719)"
+      "Ensaio de fase 2 CagriSema — Lancet 2023 (PMID 37364590)",
+      "Cagrilintida Fase 2 monoterapia — Lancet 2021 (PMID 34798060) e REDEFINE Fase 3a NEJM 2025 (PMID 40544433)"
     ],
     "reviewedAt": "2026-11-22"
   }

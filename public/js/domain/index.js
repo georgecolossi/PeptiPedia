@@ -194,6 +194,7 @@
           id: s.id,
           name: s.canonicalName,
           title: s.canonicalName,
+          alternativeNames: s.alternativeNames || s.synonyms || [],
           badge: s.badge || (s.compositionType === 'commercial_fixed_blend' || s.compositionType === 'commercial_blend' ? 'Blend Comercial & Relato Comunitário' : 'Stack de Pesquisa'),
           category: s.category,
           peptides: (s.components || []).map(c => c.compoundId),

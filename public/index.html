@@ -691,17 +691,28 @@
       </p>
     </div>
 
-    <!-- Filtros de Categoria de Stacks -->
-    <div class="flex flex-wrap items-center gap-2 mb-6">
-      <button data-stack-filter="all" class="stack-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20 transition-all">Todos (19)</button>
-      <button data-stack-filter="Regeneração & Tecidos" class="stack-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-all">Regeneração & Tecidos (7)</button>
-      <button data-stack-filter="Longevidade & Mitocôndria" class="stack-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-all">Longevidade & Mitocôndria (3)</button>
-      <button data-stack-filter="Secretagogos de GH" class="stack-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-all">Secretagogos GH (2)</button>
-      <button data-stack-filter="Nootrópicos & Cognição" class="stack-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-all">Nootrópicos (2)</button>
-      <button data-stack-filter="Metabolismo & Perda de Peso" class="stack-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-all">Metabolismo (2)</button>
-      <button data-stack-filter="Imunidade & Defesa" class="stack-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-all">Imunidade (1)</button>
-      <button data-stack-filter="Libido & Melanocortinas" class="stack-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-all">Libido (1)</button>
-      <button data-stack-filter="Cicatrizantes & Teciduais" class="stack-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-all">Cicatrizantes (1)</button>
+    <!-- Busca e Filtros de Stacks -->
+    <div class="space-y-4 mb-6">
+      <div class="max-w-md relative">
+        <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500"></i>
+        <input 
+          type="text" 
+          id="stack-search-input" 
+          placeholder="Buscar stack por nome, peptídeo ou objetivo (ex: GLOW, KLOW, Wolverine)..." 
+          class="w-full pl-10 pr-4 py-2 bg-slate-900 border border-slate-800 focus:border-cyan-500 rounded-xl text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none transition-colors">
+      </div>
+
+      <!-- Filtros de Categoria de Stacks -->
+      <div class="flex flex-wrap items-center gap-2">
+        <button data-stack-filter="all" class="stack-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20 transition-all">Todos (28)</button>
+        <button data-stack-filter="Regeneração & Tecidos" class="stack-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-all">Regeneração & Tecidos (10)</button>
+        <button data-stack-filter="Secretagogos de GH" class="stack-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-all">Secretagogos GH (5)</button>
+        <button data-stack-filter="Longevidade & Mitocôndria" class="stack-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-all">Longevidade & Mitocôndria (4)</button>
+        <button data-stack-filter="Metabolismo & Perda de Peso" class="stack-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-all">Metabolismo (4)</button>
+        <button data-stack-filter="Nootrópicos & Cognição" class="stack-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-all">Nootrópicos (2)</button>
+        <button data-stack-filter="Libido & Melanocortinas" class="stack-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-all">Libido (2)</button>
+        <button data-stack-filter="Imunidade & Defesa" class="stack-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-all">Imunidade (1)</button>
+      </div>
     </div>
 
 

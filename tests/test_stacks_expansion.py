@@ -86,10 +86,10 @@ class TestStacksExpansion(unittest.TestCase):
         cagri = evidence_stacks.get("cagrisema-incretin-metabolic-stack")
         self.assertIsNotNone(cagri, "Stack CagriSema deve estar presente no store de evidência")
 
-        # Em CagriSema, ambos os componentes registram ensaio clínico duplo-cego de fase 2 em humanos (PMID 37366315)
+        # Em CagriSema, ambos os componentes registram ensaio clínico duplo-cego de fase 2 em humanos (PMID 37364590)
         for comp in cagri["components"]:
             self.assertTrue(comp["hasHumanClinicalEvidence"], f"CagriSema {comp['componentName']} deve ter Nível A presente")
-            self.assertIn("37366315", comp["levels"][0]["text"])
+            self.assertIn("37364590", comp["levels"][0]["text"])
 
     def test_05_commercial_synonyms_presence(self):
         """Valida que nomes comerciais populares (GLOW, KLOW, Wolverine) estão presentes como sinônimos."""

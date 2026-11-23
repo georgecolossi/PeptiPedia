@@ -1136,7 +1136,7 @@ const RESEARCH_STACKS = [
         "unitType": "mass",
         "route": "Subcutânea (SC)",
         "frequency": "Conforme protocolo",
-        "sourceReference": "Tesamorelina ensaios de fase 3 lipodistrofia — JAIDS 2010 (PMID 20431394)"
+        "sourceReference": "Tesamorelina ensaios de fase 3 lipodistrofia — JAIDS 2010 (PMID 20554713)"
       },
       {
         "peptideId": "ipamorelin",
@@ -1354,7 +1354,7 @@ const RESEARCH_STACKS = [
         "unitType": "mass",
         "route": "Subcutânea (SC)",
         "frequency": "Conforme protocolo",
-        "sourceReference": "KPV propriedades anti-inflamatórias — Peptides 2005 (PMID 15820320)"
+        "sourceReference": "KPV propriedades anti-inflamatórias — Peptides 2005 (PMID 18061177)"
       }
     ],
     "blendDetails": {
@@ -1419,7 +1419,7 @@ const RESEARCH_STACKS = [
         "unitType": "mass",
         "route": "Subcutânea (SC)",
         "frequency": "Conforme protocolo",
-        "sourceReference": "AHK-Cu proliferação de papila dérmica in vitro — Biosci Biotechnol Biochem 2007 (PMID 17483602)"
+        "sourceReference": "AHK-Cu proliferação de papila dérmica in vitro — Biosci Biotechnol Biochem 2007 (PMID 17703734)"
       }
     ],
     "blendDetails": {
@@ -1474,7 +1474,7 @@ const RESEARCH_STACKS = [
         "unitType": "mass",
         "route": "Subcutânea (SC)",
         "frequency": "Conforme protocolo",
-        "sourceReference": "Bremelanotida ensaios RECONNECT — Obstet Gynecol 2019 (PMID 31599838)"
+        "sourceReference": "Bremelanotida ensaios RECONNECT — Obstet Gynecol 2019 (PMID 31599840)"
       },
       {
         "peptideId": "oxytocin",
@@ -1484,7 +1484,7 @@ const RESEARCH_STACKS = [
         "unitType": "mass",
         "route": "Subcutânea (SC)",
         "frequency": "Conforme protocolo",
-        "sourceReference": "Oxitocina e resposta sexual humana — Horm Behav 2012 (PMID 22446187)"
+        "sourceReference": "Oxitocina e resposta sexual humana — Horm Behav 2012 (PMID 15931222)"
       }
     ],
     "blendDetails": {
@@ -1549,7 +1549,7 @@ const RESEARCH_STACKS = [
         "unitType": "mass",
         "route": "Subcutânea (SC)",
         "frequency": "Conforme protocolo",
-        "sourceReference": "Epitalon produção de melatonina e longevidade — Neuro Endocrinol Lett 2001 (PMID 11756844)"
+        "sourceReference": "Epitalon produção de melatonina e longevidade — Neuro Endocrinol Lett 2001 (PMID 15455129)"
       }
     ],
     "blendDetails": {
@@ -1605,7 +1605,7 @@ const RESEARCH_STACKS = [
         "unitType": "mass",
         "route": "Subcutânea (SC)",
         "frequency": "Conforme protocolo",
-        "sourceReference": "AOD-9604 ensaios clínicos e tolerabilidade — Int J Obes 2004 (PMID 15616614)"
+        "sourceReference": "AOD-9604 ensaios clínicos e tolerabilidade — Int J Obes 2004 (PMID 11673763)"
       },
       {
         "peptideId": "cjc-1295-no-dac",
@@ -1682,7 +1682,7 @@ const RESEARCH_STACKS = [
         "unitType": "mass",
         "route": "Subcutânea (SC)",
         "frequency": "Conforme protocolo",
-        "sourceReference": "Ensaio de fase 2 CagriSema — Lancet 2023 (PMID 37366315)"
+        "sourceReference": "Ensaio de fase 2 CagriSema — Lancet 2023 (PMID 37364590)"
       },
       {
         "peptideId": "cagrilintide",
@@ -1692,7 +1692,7 @@ const RESEARCH_STACKS = [
         "unitType": "mass",
         "route": "Subcutânea (SC)",
         "frequency": "Conforme protocolo",
-        "sourceReference": "Cagrilintida monoterapia e combinação REDEFINE — Lancet 2021 (PMID 34793719)"
+        "sourceReference": "Cagrilintida monoterapia e combinação REDEFINE — Lancet 2021 (PMID 34798060)"
       }
     ],
     "blendDetails": {
@@ -1709,8 +1709,8 @@ const RESEARCH_STACKS = [
       "physicochemicalRisk": "A coformulação farmacêutica comercial é estabilizada em pH neutro pela indústria; preparações manipuladas empíricas correm risco severo de agregação e perda de potência."
     },
     "primarySources": [
-      "Efficacy and safety of cagrilintide with semaglutide in adults with overweight or obesity: a randomised phase 2 trial — Lancet 2023 (PMID: 37366315)",
-      "Once-weekly cagrilintide for weight management: a randomised, double-blind phase 2 trial — Lancet 2021 (PMID: 34793719)",
+      "Efficacy and safety of co-administered once-weekly cagrilintide 2·4 mg with once-weekly semaglutide 2·4 mg in type 2 diabetes: a multicentre, randomised, double-blind, active-controlled, phase 2 trial — Lancet 2023 (PMID: 37364590)",
+      "Once-weekly cagrilintide for weight management: a randomised, double-blind phase 2 trial — Lancet 2021 (PMID: 34798060)",
       "SELECT and STEP programs for semaglutide monotherapy — N Engl J Med 2021 (PMID: 33567185)"
     ],
     "auditDate": "2026-11-22"
